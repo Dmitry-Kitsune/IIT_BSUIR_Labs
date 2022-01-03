@@ -1,0 +1,3 @@
+﻿  SP_PR5.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_PR5\SP_PR5.cpp(237): warning C4715: 'MyDlgproc': not all control paths return a value
+  SP_PR5.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_PR5\Debug\SP_PR5.exe
