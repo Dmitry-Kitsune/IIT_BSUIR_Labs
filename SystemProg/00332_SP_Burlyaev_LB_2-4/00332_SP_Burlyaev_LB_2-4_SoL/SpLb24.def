@@ -1,0 +1,10 @@
+LIBRARY
+
+EXPORTS
+	nSpLb24
+	q_fnDllCallCount @2
+	g_nFnCallCount @3
+	fnSpLb24 @4
+
+	SECTION
+	.ashare READ WRITE SHARED

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hippodrome", "Project1\Hippodrome.csproj", "{FA1DFC16-2195-4CDC-A176-1AA202E53D27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horse", "WpfControlLibrary1\Horse.csproj", "{B30A07E2-D959-436B-BEA8-CFD570A93566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA1DFC16-2195-4CDC-A176-1AA202E53D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1DFC16-2195-4CDC-A176-1AA202E53D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1DFC16-2195-4CDC-A176-1AA202E53D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1DFC16-2195-4CDC-A176-1AA202E53D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30A07E2-D959-436B-BEA8-CFD570A93566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30A07E2-D959-436B-BEA8-CFD570A93566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30A07E2-D959-436B-BEA8-CFD570A93566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30A07E2-D959-436B-BEA8-CFD570A93566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CFD9CA9-266A-4EF1-8F87-DCA3FC4C2E1C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\bin\Debug\VAPT_Lab1.exe.config
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\bin\Debug\VAPT_Lab1.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\bin\Debug\VAPT_Lab1.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\MainWindow.g.cs
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\App.g.cs
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1_MarkupCompile.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1_MarkupCompile.lref
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\MainWindow.baml
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.g.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.Properties.Resources.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.csproj.GenerateResource.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\VisAppProgTools\VAPT_Lab1\VAPT_Lab1\obj\Debug\VAPT_Lab1.csproj.AssemblyReference.cache

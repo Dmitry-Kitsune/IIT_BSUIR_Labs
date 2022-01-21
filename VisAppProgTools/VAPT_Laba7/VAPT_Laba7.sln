@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VAPT_Laba7", "VAPT_Laba7.csproj", "{34E47F68-FB15-4C6C-9C81-3DFDB852F189}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34E47F68-FB15-4C6C-9C81-3DFDB852F189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E47F68-FB15-4C6C-9C81-3DFDB852F189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E47F68-FB15-4C6C-9C81-3DFDB852F189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E47F68-FB15-4C6C-9C81-3DFDB852F189}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C61D05CE-DAD2-456A-9E11-467DAB7B464A}
+	EndGlobalSection
+EndGlobal

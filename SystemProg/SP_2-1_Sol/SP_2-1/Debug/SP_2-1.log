@@ -1,0 +1,3 @@
+﻿  SP_2-1.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(368,17): error C3861: 'wsprint': identifier not found
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(369,13): error C2143: syntax error: missing ';' before '}'
