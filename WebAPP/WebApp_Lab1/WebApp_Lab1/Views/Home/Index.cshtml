@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@ViewData["Text"]</h3>
+
+<ol type-"1.">
+
+    @for (int i = 1; i <10; i++)
+    {
+        <li>элемент @i списка</li> 
+    }
+
+</ol>
+
+<select asp-items="@ViewData["Lst"] as SelectList"></select>

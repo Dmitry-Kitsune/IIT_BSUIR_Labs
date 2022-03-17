@@ -1,0 +1,8 @@
+﻿  CMath.cpp
+  REGISTRY.CPP
+  Server332.cpp
+  Generating Code...
+Server332.def(2): warning LNK4017: DESCRIPTION statement not supported for the target platform; ignored
+     Creating library C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\TCP\LB_1_Server332_Sol\Debug\LB_1_Server332.lib and object C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\TCP\LB_1_Server332_Sol\Debug\LB_1_Server332.exp
+LB_1_Server332.exp : warning LNK4070: /OUT:SERVER.dll directive in .EXP differs from output filename 'C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\TCP\LB_1_Server332_Sol\Debug\LB_1_Server332.dll'; ignoring directive
+  LB_1_Server332.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\TCP\LB_1_Server332_Sol\Debug\LB_1_Server332.dll

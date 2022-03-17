@@ -1,0 +1,4 @@
+﻿  CMath.cpp
+  Server332.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\TCP\LB_1_Server332_Sol\LB_1_Server332\Server332.cpp(17,16): error C2065: 'CLSID_CMath': undeclared identifier
+  Generating Code...
