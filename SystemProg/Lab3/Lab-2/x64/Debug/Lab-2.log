@@ -1,0 +1,8 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Lab-2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  SP_PR3.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(84,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(315,22): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(332,22): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(121,6): warning C4101: 'hDC': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(350): warning C4715: 'Pr2_WndProc': not all control paths return a value
+  Lab-2.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\x64\Debug\Lab-3.exe

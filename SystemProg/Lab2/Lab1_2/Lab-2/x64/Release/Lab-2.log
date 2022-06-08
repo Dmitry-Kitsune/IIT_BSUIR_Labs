@@ -1,0 +1,13 @@
+﻿  SP_PR2.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(33,28): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(34,32): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(72,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(160,21): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(177,21): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
+  Generating code
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\Lab-2\SP_PR2.cpp(191): warning C4715: 'Pr2_WndProc': not all control paths return a value
+  2 of 2 functions (100.0%) were compiled.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Lab-2.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2\Lab1_2\x64\Release\Lab-2.exe

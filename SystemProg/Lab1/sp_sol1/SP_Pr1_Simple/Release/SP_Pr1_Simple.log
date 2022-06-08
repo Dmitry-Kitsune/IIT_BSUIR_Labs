@@ -1,0 +1,8 @@
+﻿  SOP_Pr1_Simple.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab1\sp_sol1\SP_Pr1_Simple\SOP_Pr1_Simple.cpp(21,28): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab1\sp_sol1\SP_Pr1_Simple\SOP_Pr1_Simple.cpp(23,32): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SP_Pr1_Simple.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab1\sp_sol1\Release\SP_Pr1_Simple.exe
