@@ -1,0 +1,12 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\bin\Debug\IIT_Dimlom_Geo1.exe.config
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\bin\Debug\IIT_Dimlom_Geo1.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\bin\Debug\IIT_Dimlom_Geo1.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.csproj.AssemblyReference.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.ProjectMenu.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.GeoDemo.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.Properties.Resources.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.csproj.GenerateResource.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.csproj.CoreCompileInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.pdb
