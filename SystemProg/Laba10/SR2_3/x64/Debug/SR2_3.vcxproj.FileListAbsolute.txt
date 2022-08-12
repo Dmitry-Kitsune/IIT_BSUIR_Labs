@@ -1,0 +1,2 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SR2_3\x64\Debug\SR2_3.vcxproj.AssemblyReference.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SR2_3\x64\Debug\SR2_3.vcxproj.SuggestedBindingRedirects.cache

@@ -1,3 +1,12 @@
 ﻿  SP_2-1.cpp
-C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(368,17): error C3861: 'wsprint': identifier not found
-C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(369,13): error C2143: syntax error: missing ';' before '}'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\resource.h(60,1): warning C4005: 'IDOK': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winuser.h(11147): message : see previous definition of 'IDOK'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(363,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(286,33): warning C4101: 'pi': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(313,33): warning C4101: 'pi': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(749,32): warning C4101: 'stExit': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(749,20): warning C4101: 'stCreation': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(822,11): warning C4101: 'message': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(859,11): warning C4101: 'wShowWind': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\SP_2-1\SP_2-1.cpp(927): warning C4715: 'TestProc_OnCommand': not all control paths return a value
+  SP_2-1.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_2-1_Sol\Debug\SP_2-1.exe

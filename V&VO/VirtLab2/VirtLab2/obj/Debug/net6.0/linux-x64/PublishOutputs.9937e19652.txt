@@ -1,0 +1,7 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\VirtLab2
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\appsettings.json
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\VirtLab2.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\VirtLab2.deps.json
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\VirtLab2.runtimeconfig.json
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\VirtLab2\VirtLab2\bin\Debug\net6.0\publish\VirtLab2.pdb

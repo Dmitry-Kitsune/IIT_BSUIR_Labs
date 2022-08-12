@@ -1,0 +1,3 @@
+﻿  SpPr1-6.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab5\SP_PR1-6Sol\SP_PR1-6\SpPr1-6.cpp(68,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+  SP_PR1-6.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab5\SP_PR1-6Sol\x64\Debug\SP_PR1-6.exe

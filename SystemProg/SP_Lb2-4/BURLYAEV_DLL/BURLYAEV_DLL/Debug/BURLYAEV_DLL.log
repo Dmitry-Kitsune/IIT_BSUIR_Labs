@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  BURLYAEV_DLL.cpp
+     Creating library C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\Debug\BURLYAEV_DLL.lib and object C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\Debug\BURLYAEV_DLL.exp
+LINK : warning LNK4039: section '.ASHARE' specified with /SECTION option does not exist
+  BURLYAEV_DLL.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\Debug\BURLYAEV_DLL.dll

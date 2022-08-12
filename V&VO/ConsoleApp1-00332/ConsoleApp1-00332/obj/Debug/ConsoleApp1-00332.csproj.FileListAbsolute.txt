@@ -1,0 +1,10 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\bin\Debug\ConsoleApp1-00332.exe.config
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\bin\Debug\ConsoleApp1-00332.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\bin\Debug\ConsoleApp1-00332.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\bin\Debug\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.csproj.AssemblyReference.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.csproj.SuggestedBindingRedirects.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.csproj.CoreCompileInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.csproj.CopyComplete
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.exe
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\V&VO\ConsoleApp1-00332\ConsoleApp1-00332\obj\Debug\ConsoleApp1-00332.pdb

@@ -1,0 +1,36 @@
+﻿  CLient_LB_2-4.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(5,16): error C2079: 'CSplb24' uses undefined class 'SPLB_API'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(6,1): error C2059: syntax error: 'public'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(10,1): error C2059: syntax error: '}'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(10,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(14,1): error C2159: more than one storage class specified
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.h(15,1): error C2159: more than one storage class specified
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(7,21): warning C4081: expected 'string'; found '...'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(17,9): warning C4079: unexpected token 'identifier'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(17,24): warning C4081: expected 'newline'; found ')'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(18,12): error C2144: syntax error: 'int' should be preceded by ';'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(18,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(23,12): error C2144: syntax error: 'int' should be preceded by ';'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(23,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(23,1): error C2086: 'int SPLB24_API': redefinition
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(18): message : see declaration of 'SPLB24_API'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(23,18): error C2065: 'nSplb24': undeclared identifier
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(23,16): error C2513: 'int': no variable declared before '='
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(25,12): error C2144: syntax error: 'int' should be preceded by ';'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(25,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(25,1): error C2086: 'int SPLB24_API': redefinition
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(18): message : see declaration of 'SPLB24_API'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(25,16): error C2374: 'g_nFnaCallCount': redefinition; multiple initialization
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(18): message : see declaration of 'g_nFnaCallCount'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(27,12): error C2144: syntax error: 'int' should be preceded by ';'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(27,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(32,12): error C2065: 'nSpLb24': undeclared identifier
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(213,47): error C2664: 'HMODULE LoadLibraryW(LPCWSTR)': cannot convert argument 1 from 'const char [6]' to 'LPCWSTR'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(213,40): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\libloaderapi.h(601,1): message : see declaration of 'LoadLibraryW'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(224,29): error C2065: 'returnERROR_FUNCTION_NOT_FOUND': undeclared identifier
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(226,25): error C2181: illegal else without matching if
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(228,29): error C2065: 'nFromLib': undeclared identifier
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(274,18): error C2601: 'About': local function definitions are illegal
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(146): message : this line contains a '{' which has not yet been matched
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\00332_SP_Burlyaev_LB_2-4\00332_SP_Burlyaev_LB_2-4_SoL\CLient_LB_2-4.cpp(146): fatal error C1075: '{': no matching token found

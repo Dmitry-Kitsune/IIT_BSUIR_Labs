@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SR2_3\Source.cpp(40,18): warning C4244: 'initializing': conversion from 'LONGLONG' to 'int', possible loss of data
+  Source.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  SR2_3.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\x64\Debug\SR2_3.exe

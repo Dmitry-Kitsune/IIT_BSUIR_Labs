@@ -1,0 +1,7 @@
+LIBRARY BURLYAEV_DLL.dll
+EXPORTS
+	Fun11 @1
+	Fun12 @2
+	Fun13 @3
+	g_nFnCallsCount @4
+	g_nDllCallsCount @5

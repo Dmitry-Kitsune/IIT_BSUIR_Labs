@@ -1,0 +1,13 @@
+﻿  stdafx.cpp
+  BURLYAEV_DLL_I.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\BURLYAEV_DLL_I\BURLYAEV_DLL_I.h(5,1): warning C4005: 'BURLYAEV_DLL_API': macro redefinition
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\BURLYAEV_DLL\BURLYAEV_DLL.h(7): message : see previous definition of 'BURLYAEV_DLL_API'
+     Creating library C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\x64\Debug\BURLYAEV_DLL_I.lib and object C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\x64\Debug\BURLYAEV_DLL_I.exp
+BURLYAEV_DLL_I.exp : warning LNK4070: /OUT:BURLYAEV_DLL.dll directive in .EXP differs from output filename 'C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\x64\Debug\BURLYAEV_DLL_I.exe'; ignoring directive
+BURLYAEV_DLL_I.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) int __cdecl Fun11(int,int)" (__imp_?Fun11@@YAHHH@Z) referenced in function wmain
+BURLYAEV_DLL_I.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) float __cdecl Fun12(int,int,int)" (__imp_?Fun12@@YAMHHH@Z) referenced in function wmain
+BURLYAEV_DLL_I.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) void __cdecl Fun13(double,double *)" (__imp_?Fun13@@YAXNPEAN@Z) referenced in function wmain
+BURLYAEV_DLL_I.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) int g_nDllCallsCount" (__imp_?g_nDllCallsCount@@3HA) referenced in function wmain
+BURLYAEV_DLL_I.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) int g_nFnCallsCount" (__imp_?g_nFnCallsCount@@3HA) referenced in function wmain
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL_v2\x64\Debug\BURLYAEV_DLL_I.exe : fatal error LNK1120: 6 unresolved externals

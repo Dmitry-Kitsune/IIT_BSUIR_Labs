@@ -1,0 +1,4 @@
+﻿  SP_LR2-5.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2_5\2-5_1\SP_LR2-5.cpp(359): warning C4715: 'CreateFileObj': not all control paths return a value
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2_5\2-5_1\SP_LR2-5.cpp(385): warning C4715: 'CreateFileProekt': not all control paths return a value
+  1.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab2_5\2-5_1\Debug\1.exe

@@ -1,0 +1,22 @@
+﻿  BURLYAEV_DLL_I.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(71,72): warning C4474: 'swprintf_s' : too many arguments passed for format string
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(71,72): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(81,55): warning C4474: 'swprintf_s' : too many arguments passed for format string
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(81,55): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(183,28): warning C4229: anachronism used: modifiers on data are ignored
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(205,24): warning C4477: 'swprintf_s' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(205,24): warning C4313: 'swprintf_s': '%s' in format string conflicts with argument 1 of type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(232,24): warning C4477: 'swprintf_s' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(232,24): warning C4313: 'swprintf_s': '%s' in format string conflicts with argument 1 of type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(242,22): warning C4477: 'swprintf_s' : format string '%2.3f' requires an argument of type 'double', but variadic argument 3 has type 'int'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(243,49): warning C4474: 'swprintf_s' : too many arguments passed for format string
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(243,49): message : placeholders and their parameters expect 5 variadic arguments, but 6 were provided
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(257,24): warning C4477: 'swprintf_s' : format string '%s' requires an argument of type 'wchar_t *', but variadic argument 1 has type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(257,24): warning C4313: 'swprintf_s': '%s' in format string conflicts with argument 1 of type 'DWORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): warning C4477: 'swprintf_s' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): warning C4477: 'swprintf_s' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'double'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): warning C4477: 'swprintf_s' : format string '%2.3f' requires an argument of type 'double', but variadic argument 3 has type 'int'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): warning C4473: 'swprintf_s' : not enough arguments passed for format string
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): message : placeholders and their parameters expect 5 variadic arguments, but 4 were provided
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\BURLYAEV_DLL_I\BURLYAEV_DLL_I.cpp(267,22): message : the missing variadic argument 5 is required by format string '%d'
+  BURLYAEV_DLL_I.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\SP_Lb2-4\BURLYAEV_DLL\x64\Debug\BURLYAEV_DLL_I.exe

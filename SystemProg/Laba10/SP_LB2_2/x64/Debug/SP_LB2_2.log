@@ -1,0 +1,17 @@
+﻿  Source.cpp
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(91,37): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(143,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(245,59): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(256,59): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(267,54): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(267,58): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(278,54): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(278,58): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(422,1): warning C4005: 'MAXCHAR': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winnt.h(1216): message : see previous definition of 'MAXCHAR'
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(460,6): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(461,1): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(611,25): warning C4805: '==': unsafe mix of type 'BOOL' and type 'bool' in operation
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(710,8): warning C4101: 'dwSize': unreferenced local variable
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\SP_LB2_2\Source.cpp(571): warning C4715: 'DlgProc_OnCommand': not all control paths return a value
+  SP_LB2_2.vcxproj -> C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Laba10\x64\Debug\SP_LB2_2.exe
