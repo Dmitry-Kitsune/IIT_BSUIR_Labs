@@ -8,16 +8,23 @@ using System.IO;
 
 namespace IIT_Dimlom_Geo1
 {
-    public class MyGeodesy : Form
+    //public class Form : System.Windows.Forms.ContainerControl
+    //{
+
+    //}
+    public class MyGeodesy
     {
         public string dirKey = "Diplom_Geo";
         public string projectKey = "Diplom_Geos";
         public string pathKey = "";
         public string comPath = "";
 
-        MyGeodesy myGeo = new MyGeodesy();
+        public string fileProj = "";
+        public string fileAllProj = "";
 
-
+        public string driveKey;
+        public string[] nameDrive;
+        public int kDisk;
         // Функция проверки дирректорий дисков
 
         public void CheckDrive(string dirName, out string strPath)
@@ -54,7 +61,36 @@ namespace IIT_Dimlom_Geo1
             }
 
         }
-        protected void KeepPath(string strCom, string strKey, string strFile)
+        //void DriveList(out int kDrive, out string[] sDrive)
+        public void DriveList(out int kDrive, out string[] sDrive)
+        {
+            // initialization of outgoing parameters
+            kDrive = 0;
+            sDrive = new string[] { "", "", "", "", "", "", "", "", "", "" };
+            // Using stndsrt program System.IO library
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+            //Organization of the loops by the number of all disks
+            foreach (DriveInfo d in allDrives)
+            {
+                //Исключение дисков А и Б
+                if ((d.Name[0] == 'A') || (d.Name[0] == 'a'))
+                    continue;
+                if ((d.Name[0] == 'B') || (d.Name[0] == 'b'))
+                    continue;
+                //Test of Disc Ready
+                if (d.IsReady == false)
+                    continue;
+                // Exclude CD drive
+                if (d.DriveFormat == "CDUDF")
+                    continue;
+                // Формирование выходных параметров
+
+                kDrive++;
+                sDrive[kDrive] = d.Name;
+            }
+        }
+        public void KeepPath(string strCom, string strKey, string strFile)
         {
             //Создание директории "Diplom_Geo" на выбранном диске
             try
@@ -79,7 +115,13 @@ namespace IIT_Dimlom_Geo1
             f2.Write(strCom);
             f2.Close();
             f1.Close();
-        } 
+        }
+        public void FilePath()
+        {
+            string sTemp = "";
+            //Проверка выбора диска на случай непредвиденного удаления директории, определяющей выбор диска
+            ChechDrive(dirKey, out diriveKey);
+        }
     }
 }
             

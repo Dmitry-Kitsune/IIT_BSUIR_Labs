@@ -163,9 +163,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyGeodesy.cs">
+    <Compile Include="SelectDrive.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyGeodesy.cs" />
     <Compile Include="FormProj.cs">
       <SubType>Form</SubType>
     </Compile>
