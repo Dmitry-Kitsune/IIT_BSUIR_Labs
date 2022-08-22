@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
+using Microsoft.Win32;
 
 namespace IIT_Dimlom_Geo1
 {
@@ -17,22 +18,114 @@ namespace IIT_Dimlom_Geo1
     {
         MyGeodesy myGeo = new MyGeodesy(); //Создаем объект класса 
         MyGeodesy mySel = new MyGeodesy(); //Создаем объект класса 
+
+       // public string this.Path[] = mySel.comPath;
+        int kDisk;
+
         public ProjectMenu()
         {
+            //this.Font = SystemFonts.IconTitleFont;
+            //SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            //this.FormClosing += new FormClosingEventHandler(FormProj_FormClosing);
+
             InitializeComponent();
 
-            //this.FileOptions.MouseHover += new
-            //    EventHandler(this.FileOptions_MouseLeave);
-            //this.FileOptions.MouseLeave += new
-            //    EventHandler(this.FileOptions_MouseLeave);
-           FormLoad();
+            this.StartPosition = FormStartPosition.Manual;
+            this.ChangeDrive.MouseHover += new
+                EventHandler(this.ChangeDrive_MouseHover);
+          
+            this.ChangeDrive.MouseLeave += new
+                EventHandler(this.ChangeDrive_MouseLeave);
+            this.StartPosition = FormStartPosition.Manual;
+           
+            this.Confirm.MouseHover += new
+                EventHandler(this.Confirm_MouseHover);
+            this.Confirm.MouseLeave += new
+                EventHandler(this.Confirm_MouseLeave);
+           
+            this.Cancel.MouseHover += new
+                EventHandler(this.Cancel_MouseHover);
+            this.Cancel.MouseLeave += new
+                EventHandler(this.Free_MouseLeave);
+
+            FormLoad();
+            CheckForm();
         }
-        protected void FormLoad()
+        //void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
+        //{
+        //    if (e.Category == UserPreferenceCategory.Window)
+        //    {
+        //        this.Font = SystemFonts.IconTitleFont;
+        //    }
+        //}
+        //void FormProj_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    SystemEvents.UserPreferenceChanged -= new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+        //}
+        private void ChangeDrive_MouseHover(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Close all processes";
+            toolStripStatusLabel1.Text = "Изменить диск";
+        }
+        private void ChangeDrive_MouseLeave(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Ready...";
+            toolStripStatusLabel1.Text = "Готов...";
+        }
+        private void Free_MouseLeave(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Ready...";
+            toolStripStatusLabel1.Text = "Готов...";
+        }
+
+        private void Confirm_MouseHover(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Close all processes";
+            toolStripStatusLabel1.Text = "Подтвердить";
+        }
+        private void Confirm_MouseLeave(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Ready...";
+            toolStripStatusLabel1.Text = "Готов...";
+        }
+        private void Cancel_MouseHover(object sender, System.EventArgs e)
+        {
+            //toolStripStatusLabel1.Text = "Close all processes";
+            toolStripStatusLabel1.Text = "Отмена";
+        }
+        //void DriveList(out int kDrive, out string[] sDrive)
+        //{
+        //    // initialization of outgoing parameters
+        //    kDrive = 0;
+        //    sDrive = new string[] { "", "", "", "", "", "", "", "", "", "" };
+        //    // Using stndsrt program System.IO library
+        //    DriveInfo[] allDrives = DriveInfo.GetDrives();
+
+        //    //Organization of the loops by the number of all disks
+        //    foreach (DriveInfo d in allDrives)
+        //    {
+        //        //Исключение дисков А и Б
+        //        if ((d.Name[0] == 'A') || (d.Name[0] == 'a'))
+        //            continue;
+        //        if ((d.Name[0] == 'B') || (d.Name[0] == 'b'))
+        //            continue;
+        //        //Test of Disc Ready
+        //        if (d.IsReady == false)
+        //            continue;
+        //        // Exclude CD drive
+        //        if (d.DriveFormat == "CDUDF")
+        //            continue;
+        //        // Формирование выходных параметров
+
+        //        kDrive++;
+        //        sDrive[kDrive] = d.Name;
+        //    }
+        //}
+        void FormLoad()
         {
             string sTmp1 = "";
-            string sTmp2 = "";
-            int kDisk;
-         
+            string sTmp2 = ""; 
+           
             myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
             if (myGeo.driveKey == "")
             {
@@ -58,7 +151,7 @@ namespace IIT_Dimlom_Geo1
                 myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
                 if(myGeo.driveKey == "")
                 {
-                    //If disc not selected
+                    //если диск не выбран
                     myGeo.DriveList(out kDisk, out myGeo.nameDrive);
                     myGeo.comPath = myGeo.nameDrive[1] + myGeo.projectKey;
                     sTmp1 = myGeo.nameDrive[1] + myGeo.dirKey;
@@ -67,39 +160,19 @@ namespace IIT_Dimlom_Geo1
                     myGeo.KeepPath(myGeo.comPath, sTmp1, sTmp2);
 
                 }
-
             }
         }
-        void DriveList(out int kDrive, out string[] sDrive)
+        
+        /// ////////////////////////////////////////////////////////
+        string sTemp1;
+        string sTemp2;
+        /// ///////////////////////////////////////////////////////
+     
+        private void CheckForm() ///////////////////////////////// не задействована
         {
-            // initialization of outgoing parameters
-            kDrive = 0;
-            sDrive = new string[] { "", "", "", "", "", "", "", "", "", "" };
-            // Using stndsrt program System.IO library
-            DriveInfo[] allDrives = DriveInfo.GetDrives();
+          //  string sTemp1;
+          //  string sTemp2;
 
-            //Organization of the loops by the number of all disks
-            foreach (DriveInfo d in allDrives)
-            {
-                //Исключение дисков А и Б
-                if ((d.Name[0] == 'A') || (d.Name[0] == 'a'))
-                    continue;
-                if ((d.Name[0] == 'B') || (d.Name[0] == 'b'))
-                    continue;
-                //Test of Disc Ready
-                if (d.IsReady == false)
-                    continue;
-                // Exclude CD drive
-                if (d.DriveFormat == "CDUDF")
-                    continue;
-                // Формирование выходных параметров
-
-                kDrive++;
-                sDrive[kDrive] = d.Name;
-            }
-        }
-        private void CheckForm(out int kDisk) /////////////////////////////////
-        {
             //mySel.DriveList(out kDisk, out mySel.nameDrive);
             mySel.DriveList(out kDisk, out mySel.nameDrive);
             //Заполнение ListBox именами дисков
@@ -116,36 +189,37 @@ namespace IIT_Dimlom_Geo1
             if (File.Exists(mySel.pathKey))
             {
                 // Если файл существует, то читаем его содержимое
-                FileStream fs = new FileStream(myGeo.pathKey, FileMode.Open, FileAccess.Read);
+                FileStream fs = new FileStream(mySel.pathKey, FileMode.Open, FileAccess.Read);
                 BinaryReader fr = new BinaryReader(fs);
-                myGeo.comPath = fr.ReadString();
+                mySel.comPath = fr.ReadString();
                 fr.Close();
                 fs.Close();
                 // Fill the empty window by current value
-                label3.Text = myGeo.comPath;
+                label3.Text = mySel.comPath;
             }
             else
             {
                 //if file not exsists (DISK NOT SELECTED)
-                label3.Text = "Isn't defined";
+                label3.Text = "Диск не определен";
             }
            // mySel.CheckDrive(mySel.dikey, out mySel.driveKey);
             mySel.CheckDrive(mySel.dirKey, out mySel.driveKey);
             if(mySel.driveKey == "")
             {
+
                 //Disk is not selected earlier
                 mySel.comPath = mySel.nameDrive[1] + mySel.projectKey;
                 sTemp1 = mySel.nameDrive[1] + mySel.dirKey;
                 sTemp2 = mySel.nameDrive[1] + mySel.dirKey + "\\brdrive.dat";
                 mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
             }
-            SelectDrive.ActiveForm.Hide();
+            //SelectDrive.ActiveForm.Hide();
         }
+
         //Button
         private void ChangeDrive_Click(object sender,EventArgs e)
         {
-           // mySel,DriveList(out kDisk, out myGeo.nameDrive);
-            mySel.DriveList(out kDisk, out mySel.nameDrive); // change to kDrive ??? 
+            myGeo.DriveList(out kDisk, out myGeo.nameDrive); 
             // if the number of disk = 1, nothing will change
             if (kDisk == 1)
                 return;
@@ -154,6 +228,42 @@ namespace IIT_Dimlom_Geo1
                 SelectDrive sdr = new SelectDrive();
                 sdr.ShowDialog(this);
             }
+        }
+
+        private void Confirm_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0)
+            {
+                //Имя диска не выделено в окне ListBox
+                MessageBox.Show("Диск не выбран", "Geodesy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBox1.SelectedIndex > 1)
+            {
+                     //Имя диска выделено в окне ListBoX
+                mySel.comPath = listBox1.SelectedItem + mySel.projectKey;
+                sTemp1 = listBox1.SelectedItem + mySel.dirKey;
+                sTemp2 = listBox1.SelectedItem + mySel.dirKey + "\\brdrive.dat";
+                    
+                    //Создание дирректории и файла
+                mySel.KeepPath(mySel.comPath, sTemp1, sTemp2); 
+                    
+                    // Проверка наличия ключевой директории на других дисках и внесение изменений в file - brdrive.dat
+                    for (int i = 1; i <= kDisk; i++)
+                    {
+                        sTemp1 = mySel.nameDrive[i] + mySel.dirKey;
+                        sTemp2 = mySel.nameDrive[i] + mySel.dirKey + "\\brdrive.dat";
+                        if (File.Exists(sTemp2))
+                            mySel.KeepPath(mySel.comPath,sTemp1,sTemp2);
+                    }
+                    SelectDrive.ActiveForm.Hide();
+            }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }

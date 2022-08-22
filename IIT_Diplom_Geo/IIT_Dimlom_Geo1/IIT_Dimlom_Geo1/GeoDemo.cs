@@ -18,6 +18,7 @@ namespace IIT_Dimlom_Geo1
     {
 
        MyGeodesy myGeo = new MyGeodesy();
+
         public GeoDemo()
         {
             InitializeComponent();
@@ -35,15 +36,18 @@ namespace IIT_Dimlom_Geo1
         private void FormLoad()
         {
             myGeo.CheckDrive(myGeo.dirKey, out myGeo.dirKey);
+            label1.Text = myGeo.comPath;
         }
         private void btExit_MouseHover(object sender, System.EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Close all processes";
+            //toolStripStatusLabel1.Text = "Close all processes";
+            toolStripStatusLabel1.Text = "Закрыть все прооцессы";
         }
 
         private void btExit_MouseLeave(object sender, System.EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Ready...";
+            //toolStripStatusLabel1.Text = "Ready...";
+            toolStripStatusLabel1.Text = "Готов...";
         }
 
         private void btExit_Click(object sender, EventArgs e)

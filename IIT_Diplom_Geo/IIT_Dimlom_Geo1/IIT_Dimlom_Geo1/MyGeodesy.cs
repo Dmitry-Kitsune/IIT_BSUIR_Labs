@@ -22,9 +22,12 @@ namespace IIT_Dimlom_Geo1
         public string fileProj = "";
         public string fileAllProj = "";
 
+
+        public string diriveKey;
         public string driveKey;
         public string[] nameDrive;
         public int kDisk;
+       
         // Функция проверки дирректорий дисков
 
         public void CheckDrive(string dirName, out string strPath)
@@ -90,7 +93,7 @@ namespace IIT_Dimlom_Geo1
                 sDrive[kDrive] = d.Name;
             }
         }
-        public void KeepPath(string strCom, string strKey, string strFile)
+        internal void KeepPath(string strCom, string strKey, string strFile)
         {
             //Создание директории "Diplom_Geo" на выбранном диске
             try
@@ -102,7 +105,8 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception)
             {
-                Console.WriteLine("The CreateDirectory operation failed as expected.");
+                //Console.WriteLine("The CreateDirectory operation failed as expected.");
+                Console.WriteLine("Операция CreateDirectory завершилась неудачно, как и ожидалось...");
             }
             finally { }
             // запись в файл brdrv.dat путь к директории с проектами
@@ -120,7 +124,37 @@ namespace IIT_Dimlom_Geo1
         {
             string sTemp = "";
             //Проверка выбора диска на случай непредвиденного удаления директории, определяющей выбор диска
-            ChechDrive(dirKey, out diriveKey);
+            CheckDrive(dirKey, out diriveKey);
+            sTemp = driveKey + dirKey + "\\brdrive,dat";
+            if (!File.Exists(sTemp))
+            {
+                DialogResult result;
+                result = MessageBox.Show("Проблемы с выбранным Диском", 
+                    "Projects",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            //Открытие и чтение файла brdrive.dat
+            FileStream fa = new FileStream(sTemp, FileMode.Open, FileAccess.Read);
+            BinaryReader faa = new BinaryReader(fa);
+            try
+            {
+                comPath = faa.ReadString();
+            }
+            catch (Exception)
+
+            {
+                Console.WriteLine("Ошибка операции чтения");
+            } 
+            finally
+            {
+                fa.Close();
+                faa.Close();
+            }
+                // Формирование пути для файлов brProj.dat b brAllProj.dat в зависимости от выбранного диска
+                fileProj = comPath + "\\brProj.dat";
+                fileAllProj = comPath + "\\brAllProj.dat";
         }
     }
 }
