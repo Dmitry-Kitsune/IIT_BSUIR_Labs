@@ -52,13 +52,16 @@ namespace IIT_Dimlom_Geo1
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.ProjectMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SelectProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.DeleteProjManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,6 +86,9 @@ namespace IIT_Dimlom_Geo1
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DeleteProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DelAllProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxOptions1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -92,9 +98,9 @@ namespace IIT_Dimlom_Geo1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(12, 27);
+            this.panel1.Location = new System.Drawing.Point(12, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 410);
+            this.panel1.Size = new System.Drawing.Size(518, 413);
             this.panel1.TabIndex = 0;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -103,10 +109,10 @@ namespace IIT_Dimlom_Geo1
             this.groupBoxOptions1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBoxOptions1.Controls.Add(this.btExit1);
             this.groupBoxOptions1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxOptions1.Location = new System.Drawing.Point(536, 27);
+            this.groupBoxOptions1.Location = new System.Drawing.Point(536, 46);
             this.groupBoxOptions1.Name = "groupBoxOptions1";
             this.groupBoxOptions1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBoxOptions1.Size = new System.Drawing.Size(249, 410);
+            this.groupBoxOptions1.Size = new System.Drawing.Size(249, 413);
             this.groupBoxOptions1.TabIndex = 1;
             this.groupBoxOptions1.TabStop = false;
             this.groupBoxOptions1.Text = "Опции";
@@ -178,19 +184,21 @@ namespace IIT_Dimlom_Geo1
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(383, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(503, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
             this.menuFileOpen,
+            this.newProjToolStripMenuItem,
             this.toolStripSeparator,
             this.saveToolStripMenuItem1,
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator1,
+            this.DeleteProjManagerToolStripMenuItem,
+            this.toolStripSeparator5,
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem,
             this.toolStripSeparator2,
@@ -199,37 +207,46 @@ namespace IIT_Dimlom_Geo1
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fileToolStripMenuItem.Text = "Файл";
             // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.newToolStripMenuItem.Text = "Новый";
-            // 
             // menuFileOpen
             // 
             this.menuFileOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ProjectMenuItem});
+            this.ProjectMenuItem,
+            this.SelectProjectToolStripMenuItem});
             this.menuFileOpen.Image = ((System.Drawing.Image)(resources.GetObject("menuFileOpen.Image")));
             this.menuFileOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuFileOpen.Name = "menuFileOpen";
             this.menuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuFileOpen.Size = new System.Drawing.Size(198, 22);
-            this.menuFileOpen.Text = "Открыть";
+            this.menuFileOpen.Size = new System.Drawing.Size(205, 22);
+            this.menuFileOpen.Text = "Открыть проект";
             // 
             // ProjectMenuItem
             // 
             this.ProjectMenuItem.Name = "ProjectMenuItem";
-            this.ProjectMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.ProjectMenuItem.Text = "Менеджер проектов";
+            this.ProjectMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.ProjectMenuItem.Text = "Изменить директорию проектов";
             this.ProjectMenuItem.Click += new System.EventHandler(this.ProjectMenuItem_Click);
+            // 
+            // SelectProjectToolStripMenuItem
+            // 
+            this.SelectProjectToolStripMenuItem.Name = "SelectProjectToolStripMenuItem";
+            this.SelectProjectToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.SelectProjectToolStripMenuItem.Text = "Выбрать проект";
+            this.SelectProjectToolStripMenuItem.Click += new System.EventHandler(this.SelectProjectToolStripMenuItem_Click);
+            // 
+            // newProjToolStripMenuItem
+            // 
+            this.newProjToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newProjToolStripMenuItem.Image")));
+            this.newProjToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newProjToolStripMenuItem.Name = "newProjToolStripMenuItem";
+            this.newProjToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newProjToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.newProjToolStripMenuItem.Text = "Новый проект";
+            this.newProjToolStripMenuItem.Click += new System.EventHandler(this.newProjToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(195, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(202, 6);
             // 
             // saveToolStripMenuItem1
             // 
@@ -237,19 +254,34 @@ namespace IIT_Dimlom_Geo1
             this.saveToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             this.saveToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
             this.saveToolStripMenuItem1.Text = "Сохранить";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.saveAsToolStripMenuItem.Text = "Сохранить как";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(195, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
+            // 
+            // DeleteProjManagerToolStripMenuItem
+            // 
+            this.DeleteProjManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeleteProjToolStripMenuItem,
+            this.DelAllProjToolStripMenuItem});
+            this.DeleteProjManagerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DeleteProjManagerToolStripMenuItem.Image")));
+            this.DeleteProjManagerToolStripMenuItem.Name = "DeleteProjManagerToolStripMenuItem";
+            this.DeleteProjManagerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.DeleteProjManagerToolStripMenuItem.Text = "Удаление проектов";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(202, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -257,7 +289,7 @@ namespace IIT_Dimlom_Geo1
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.printToolStripMenuItem.Text = "Печать";
             // 
             // printPreviewToolStripMenuItem
@@ -265,18 +297,18 @@ namespace IIT_Dimlom_Geo1
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.printPreviewToolStripMenuItem.Text = "Предпросмотр печати";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(195, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(202, 6);
             // 
             // btExit
             // 
             this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(198, 22);
+            this.btExit.Size = new System.Drawing.Size(205, 22);
             this.btExit.Text = "Выход";
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
@@ -370,13 +402,13 @@ namespace IIT_Dimlom_Geo1
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem1
@@ -394,30 +426,30 @@ namespace IIT_Dimlom_Geo1
             // contentsToolStripMenuItem1
             // 
             this.contentsToolStripMenuItem1.Name = "contentsToolStripMenuItem1";
-            this.contentsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.contentsToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.contentsToolStripMenuItem1.Text = "&Contents";
             // 
             // indexToolStripMenuItem1
             // 
             this.indexToolStripMenuItem1.Name = "indexToolStripMenuItem1";
-            this.indexToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.indexToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.indexToolStripMenuItem1.Text = "&Index";
             // 
             // searchToolStripMenuItem1
             // 
             this.searchToolStripMenuItem1.Name = "searchToolStripMenuItem1";
-            this.searchToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.searchToolStripMenuItem1.Text = "&Search";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(119, 6);
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem1.Text = "&About...";
             // 
             // label1
@@ -425,17 +457,41 @@ namespace IIT_Dimlom_Geo1
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(30, 465);
+            this.label1.Location = new System.Drawing.Point(103, 489);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 484);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(97, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "Текущий проект:";
+            // 
+            // DeleteProjToolStripMenuItem
+            // 
+            this.DeleteProjToolStripMenuItem.Name = "DeleteProjToolStripMenuItem";
+            this.DeleteProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.DeleteProjToolStripMenuItem.Text = "Удалить проект";
+            this.DeleteProjToolStripMenuItem.Click += new System.EventHandler(this.DeleteProjToolStripMenuItem_Click);
+            // 
+            // DelAllProjToolStripMenuItem
+            // 
+            this.DelAllProjToolStripMenuItem.Name = "DelAllProjToolStripMenuItem";
+            this.DelAllProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.DelAllProjToolStripMenuItem.Text = "Удалить все проекты";
+            this.DelAllProjToolStripMenuItem.Click += new System.EventHandler(this.DelAllProjToolStripMenuItem_Click);
             // 
             // GeoDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 529);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -471,7 +527,7 @@ namespace IIT_Dimlom_Geo1
         private MenuStrip menuStrip1;
         private ToolStripMenuItem optionsToolStripMenuItem1;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem newProjToolStripMenuItem;
         private ToolStripMenuItem menuFileOpen;
         private ToolStripMenuItem ProjectMenuItem;
         private ToolStripSeparator toolStripSeparator;
@@ -501,6 +557,12 @@ namespace IIT_Dimlom_Geo1
         private ToolStripSeparator toolStripSeparator6;
         private ToolStripMenuItem aboutToolStripMenuItem1;
         private Label label1;
+        private TextBox textBox1;
+        private ToolStripMenuItem SelectProjectToolStripMenuItem;
+        private ToolStripMenuItem DeleteProjManagerToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripMenuItem DeleteProjToolStripMenuItem;
+        private ToolStripMenuItem DelAllProjToolStripMenuItem;
     }
 }
 

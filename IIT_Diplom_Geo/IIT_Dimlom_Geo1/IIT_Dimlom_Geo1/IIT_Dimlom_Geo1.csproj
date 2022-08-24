@@ -202,6 +202,12 @@
     <Compile Include="SelectDrive.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SelectProj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectProj.Designer.cs">
+      <DependentUpon>SelectProj.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +229,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectProj.resx">
+      <DependentUpon>SelectProj.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

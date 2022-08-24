@@ -57,7 +57,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Ошибка операции чтения... ");
+                    Console.WriteLine($"Ошибка операции чтения... nProject = {nProject}");
                 }
                 finally
                 {
@@ -93,86 +93,86 @@ namespace IIT_Dimlom_Geo1
             {
 
             }
-                //Определение времени открытия проекта
+            //Определение времени открытия проекта
             DateTime sDateTime = DateTime.Now;
             sDateTime = DateTime.Now;
 
-                //Порядковый номер нового проекта и его строковое представление
-                
+            //Порядковый номер нового проекта и его строковое представление
+
             nProject = nMax + 1;
             sTmp = System.Convert.ToString(nProject);
 
-                //Название проекта с учетом времени создания
-            nameProject = textBox1.Text + " " + sDateTime;
+            //Название проекта с учетом времени создания
+            nameProject = textBoxNewProjName.Text + " " + sDateTime;
 
-                //Имя директории нового проекта
-            nameDirectory = myProj.comPath + "\\" + myProj.driveKey + sTmp;
-                
-                // Создание директории нового проекта
+            //Имя директории нового проекта
+            nameDirectory = myProj.comPath + "\\" + myProj.dirKey + sTmp;
 
-                try
+            // Создание директории нового проекта
+
+            try
+            {
+                if (!Directory.Exists(nameDirectory))
                 {
-                    if (!Directory.Exists(nameDirectory))
-                    {
-                        Directory.CreateDirectory(nameDirectory);
-                    }
+                    Directory.CreateDirectory(nameDirectory);
                 }
-                catch (Exception)
-                {
-                    Console.WriteLine("Ошибка операции (Создание директории нового проекта)");
-                }
-                finally{}
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Ошибка операции (Создание директории нового проекта)");
+            }
+            finally { }
 
-                // Создание файла для информации о проекте
-                try
+            // Создание файла для информации о проекте
+            try
+            {
+                if (File.Exists(myProj.fileProj))
                 {
-                    if (File.Exists(myProj.fileProj))
-                    {
-                        File.Delete(myProj.fileProj);
-                    }
+                    File.Delete(myProj.fileProj);
                 }
-                catch (Exception)
-                {
-                    Console.WriteLine("Операция удаления не удалась...");
-                }
-                finally{}
-                
-                //Запись информации в файл
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Операция удаления не удалась...");
+            }
+            finally { }
 
-                FileStream fc = new FileStream(myProj.fileProj, FileMode.CreateNew);
-                BinaryWriter fcc = new BinaryWriter(fc);
-                fcc.Write(sTmp);
-                fcc.Write(nameProject);
-                fcc.Write(nameDirectory);
-                fcc.Close();
-                fc.Close();
+            //Запись информации в файл
 
-                //Создание файла с перечислением всех проектов, если он не был создан
-                if (!File.Exists(myProj.fileAllProj))
-                {
-                    FileStream fd = new FileStream(myProj.fileAllProj, FileMode.CreateNew);
-                    BinaryWriter fdd = new BinaryWriter(fd);
-                    fd.Close();
-                    fdd.Close();
-                }
+            FileStream fc = new FileStream(myProj.fileProj, FileMode.CreateNew);
+            BinaryWriter fcc = new BinaryWriter(fc);
+            fcc.Write(sTmp);
+            fcc.Write(nameProject);
+            fcc.Write(nameDirectory);
+            fcc.Close();
+            fc.Close();
 
-                // Добавление в файл информации о новом проекте
-                if (File.Exists(myProj.fileAllProj))
-                {
-                    FileStream fe = new FileStream(myProj.fileAllProj, FileMode.Append, FileAccess.Write);
-                    BinaryWriter fee = new BinaryWriter(fe);
-                    fee.Write(sTmp);
-                    fee.Write(nameProject);
-                    fee.Write(nameDirectory);
-                    fee.Close();
-                    fe.Close();
-                }
+            //Создание файла с перечислением всех проектов, если он не был создан
+            if (!File.Exists(myProj.fileAllProj))
+            {
+                FileStream fd = new FileStream(myProj.fileAllProj, FileMode.CreateNew);
+                BinaryWriter fdd = new BinaryWriter(fd);
+                fd.Close();
+                fdd.Close();
+            }
 
-                CreateNewProj.ActiveForm.Hide();
+            // Добавление в файл информации о новом проекте
+            if (File.Exists(myProj.fileAllProj))
+            {
+                FileStream fe = new FileStream(myProj.fileAllProj, FileMode.Append, FileAccess.Write);
+                BinaryWriter fee = new BinaryWriter(fe);
+                fee.Write(sTmp);
+                fee.Write(nameProject);
+                fee.Write(nameDirectory);
+                fee.Close();
+                fe.Close();
+            }
+
+            CreateNewProj.ActiveForm.Hide();
         }
         private void Quit_Click(object sender, EventArgs e)
         {
-
+            CreateNewProj.ActiveForm.Hide();
         }
     }
 }

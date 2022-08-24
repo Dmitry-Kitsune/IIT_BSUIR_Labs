@@ -19,7 +19,9 @@ namespace IIT_Dimlom_Geo1
         MyGeodesy myGeo = new MyGeodesy(); //Создаем объект класса 
         MyGeodesy mySel = new MyGeodesy(); //Создаем объект класса 
 
-       // public string this.Path[] = mySel.comPath;
+        string sTmp1 = "";
+        string sTmp2 = "";
+        // public string this.Path[] = mySel.comPath;
         int kDisk;
 
         public ProjectMenu()
@@ -33,16 +35,16 @@ namespace IIT_Dimlom_Geo1
             this.StartPosition = FormStartPosition.Manual;
             this.ChangeDrive.MouseHover += new
                 EventHandler(this.ChangeDrive_MouseHover);
-          
+
             this.ChangeDrive.MouseLeave += new
                 EventHandler(this.ChangeDrive_MouseLeave);
             this.StartPosition = FormStartPosition.Manual;
-           
+
             this.Confirm.MouseHover += new
                 EventHandler(this.Confirm_MouseHover);
             this.Confirm.MouseLeave += new
                 EventHandler(this.Confirm_MouseLeave);
-           
+
             this.Cancel.MouseHover += new
                 EventHandler(this.Cancel_MouseHover);
             this.Cancel.MouseLeave += new
@@ -123,9 +125,9 @@ namespace IIT_Dimlom_Geo1
         //}
         void FormLoad()
         {
-            string sTmp1 = "";
-            string sTmp2 = ""; 
-           
+            //string sTmp1 = "";
+            //string sTmp2 = ""; 
+
             myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
             if (myGeo.driveKey == "")
             {
@@ -134,9 +136,12 @@ namespace IIT_Dimlom_Geo1
                 myGeo.DriveList(out kDisk, out myGeo.nameDrive);
                 if (kDisk == 1)
                 {
-                    myGeo.comPath = myGeo.nameDrive[1] + myGeo.projectKey;
-                    sTmp1 = myGeo.nameDrive[1] + myGeo.dirKey; //myGeo. ?? нет значения
-                    sTmp2 = myGeo.nameDrive[1] + myGeo.dirKey + "\\brdrive.dat";
+                    var drive = myGeo.nameDrive[0];
+                    Console.WriteLine($"[DEBUG] FormProj.FormLoad drive: {drive}");
+
+                    myGeo.comPath = drive + myGeo.projectKey;
+                    sTmp1 = drive + myGeo.dirKey; //myGeo. ?? нет значения
+                    sTmp2 = drive + myGeo.dirKey + "\\brdrive.dat";
                     //Автоматическое создание дирректории и файла
                     myGeo.KeepPath(myGeo.comPath, sTmp1, sTmp2);
                 }
@@ -149,29 +154,29 @@ namespace IIT_Dimlom_Geo1
                 }
                 //Вторичная проверка выбора диска
                 myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
-                if(myGeo.driveKey == "")
+                if (myGeo.driveKey == "")
                 {
                     //если диск не выбран
                     myGeo.DriveList(out kDisk, out myGeo.nameDrive);
-                    myGeo.comPath = myGeo.nameDrive[1] + myGeo.projectKey;
-                    sTmp1 = myGeo.nameDrive[1] + myGeo.dirKey;
-                    sTmp2 = myGeo.nameDrive[1] + myGeo.dirKey + "\\brdrive.dat";
+                    myGeo.comPath = myGeo.nameDrive[0] + myGeo.projectKey;
+                    sTmp1 = myGeo.nameDrive[0] + myGeo.dirKey;
+                    sTmp2 = myGeo.nameDrive[0] + myGeo.dirKey + "\\brdrive.dat";
                     //Автоматическое создание директории файла
                     myGeo.KeepPath(myGeo.comPath, sTmp1, sTmp2);
 
                 }
             }
         }
-        
+
         /// ////////////////////////////////////////////////////////
         string sTemp1;
         string sTemp2;
         /// ///////////////////////////////////////////////////////
-     
+
         private void CheckForm() ///////////////////////////////// не задействована
         {
-          //  string sTemp1;
-          //  string sTemp2;
+            //  string sTemp1;
+            //  string sTemp2;
 
             //mySel.DriveList(out kDisk, out mySel.nameDrive);
             mySel.DriveList(out kDisk, out mySel.nameDrive);
@@ -202,9 +207,9 @@ namespace IIT_Dimlom_Geo1
                 //if file not exsists (DISK NOT SELECTED)
                 label3.Text = "Диск не определен";
             }
-           // mySel.CheckDrive(mySel.dikey, out mySel.driveKey);
+            // mySel.CheckDrive(mySel.dikey, out mySel.driveKey);
             mySel.CheckDrive(mySel.dirKey, out mySel.driveKey);
-            if(mySel.driveKey == "")
+            if (mySel.driveKey == "")
             {
 
                 //Disk is not selected earlier
@@ -217,9 +222,9 @@ namespace IIT_Dimlom_Geo1
         }
 
         //Button
-        private void ChangeDrive_Click(object sender,EventArgs e)
+        private void ChangeDrive_Click(object sender, EventArgs e)
         {
-            myGeo.DriveList(out kDisk, out myGeo.nameDrive); 
+            myGeo.DriveList(out kDisk, out myGeo.nameDrive);
             // if the number of disk = 1, nothing will change
             if (kDisk == 1)
                 return;
@@ -232,38 +237,38 @@ namespace IIT_Dimlom_Geo1
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex < 0)
+            if (listBox1.SelectedIndex == -1)
             {
                 //Имя диска не выделено в окне ListBox
                 MessageBox.Show("Диск не выбран", "Geodesy", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (listBox1.SelectedIndex > 1)
+            if (listBox1.SelectedIndex >= 0)
             {
-                     //Имя диска выделено в окне ListBoX
+                //Имя диска выделено в окне ListBoX
                 mySel.comPath = listBox1.SelectedItem + mySel.projectKey;
                 sTemp1 = listBox1.SelectedItem + mySel.dirKey;
                 sTemp2 = listBox1.SelectedItem + mySel.dirKey + "\\brdrive.dat";
-                    
-                    //Создание дирректории и файла
-                mySel.KeepPath(mySel.comPath, sTemp1, sTemp2); 
-                    
-                    // Проверка наличия ключевой директории на других дисках и внесение изменений в file - brdrive.dat
-                    for (int i = 1; i <= kDisk; i++)
-                    {
-                        sTemp1 = mySel.nameDrive[i] + mySel.dirKey;
-                        sTemp2 = mySel.nameDrive[i] + mySel.dirKey + "\\brdrive.dat";
-                        if (File.Exists(sTemp2))
-                            mySel.KeepPath(mySel.comPath,sTemp1,sTemp2);
-                    }
-                    SelectDrive.ActiveForm.Hide();
+
+                //Создание дирректории и файла
+                mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
+
+                // Проверка наличия ключевой директории на других дисках и внесение изменений в file - brdrive.dat
+                for (int i = 1; i <= kDisk; i++)
+                {
+                    sTemp1 = mySel.nameDrive[i] + mySel.dirKey;
+                    sTemp2 = mySel.nameDrive[i] + mySel.dirKey + "\\brdrive.dat";
+                    if (File.Exists(sTemp2))
+                        mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
+                }
+                SelectDrive.ActiveForm.Hide();
             }
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
     }
 }
