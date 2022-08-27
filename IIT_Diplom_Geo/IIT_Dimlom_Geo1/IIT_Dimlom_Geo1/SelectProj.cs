@@ -33,7 +33,7 @@ namespace IIT_Dimlom_Geo1
         {
             // Восстановление переменных
             mySel.FilePath();
-
+            listBox1.Items.Clear();
             // Заполнение окна ListBox именами проектов
             if (File.Exists(mySel.fileAllProj))
             {
@@ -210,7 +210,7 @@ namespace IIT_Dimlom_Geo1
                 finally
                 {
                 }
-
+                //Кнопка делейт
                 DialogResult result;
 
                 //Контрольный запрос на удаление директории
@@ -228,6 +228,7 @@ namespace IIT_Dimlom_Geo1
                         File.Delete(mySel.fileProj);
                 }
             }
+            CheckSelect();
         }
     }
 }

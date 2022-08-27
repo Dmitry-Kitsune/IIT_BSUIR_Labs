@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIT_Dimlom_Geo1", "IIT_Dimlom_Geo1\IIT_Dimlom_Geo1.csproj", "{3CE201AA-C032-4F48-A128-E1D38A074087}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiploGeoDll", "DiploGeoDll\DiploGeoDll.csproj", "{B00CB152-EB6C-49AD-9300-E9F31F29A7E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3CE201AA-C032-4F48-A128-E1D38A074087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE201AA-C032-4F48-A128-E1D38A074087}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE201AA-C032-4F48-A128-E1D38A074087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00CB152-EB6C-49AD-9300-E9F31F29A7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00CB152-EB6C-49AD-9300-E9F31F29A7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00CB152-EB6C-49AD-9300-E9F31F29A7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00CB152-EB6C-49AD-9300-E9F31F29A7E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

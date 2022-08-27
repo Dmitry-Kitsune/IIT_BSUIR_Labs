@@ -15,7 +15,7 @@ namespace IIT_Dimlom_Geo1
     public class MyGeodesy
     {
         public readonly string dirKey = "Diplom_Geo";
-        public string projectKey = "Diplom_Geos";
+        public string projectKey = "Diplom_Projs";
         public string pathKey = "";
         public string comPath = "";
 
@@ -30,7 +30,7 @@ namespace IIT_Dimlom_Geo1
         public int kDisk;
 
         public string fileProcess = "";
-        public string fileAdd = "";
+        public string fileAdd = "Temp"; // Директория для удаления
 
 
         // Функция проверки дирректорий дисков
@@ -283,7 +283,7 @@ namespace IIT_Dimlom_Geo1
 
                 fuu.Close();
                 fu.Close();
-                // Усли проектов не осталось, то удаление информации файлов и выход из подпрограммы
+                // Если проектов не осталось, то удаление информации файлов и выход из подпрограммы
 
                 if (kRec == 0)
                 {

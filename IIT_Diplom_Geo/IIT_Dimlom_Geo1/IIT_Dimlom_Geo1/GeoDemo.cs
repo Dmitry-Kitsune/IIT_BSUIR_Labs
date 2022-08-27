@@ -19,8 +19,10 @@ namespace IIT_Dimlom_Geo1
 
         MyGeodesy myGeo = new MyGeodesy();
 
-        private string sTmp1;
+        private string sTmp1;// так же используется для удаления всех проектов
+        private string sTmp2;// для удаления всех проектов
         private int nProcess;
+        private string sTmp; // для удаления всех проектов
 
         public GeoDemo()
         {
@@ -233,7 +235,9 @@ namespace IIT_Dimlom_Geo1
 
         private void DelAllProjToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             DialogResult result;
+
             // Проверка наличия проектов
             if (!File.Exists(myGeo.fileAllProj))
             {
@@ -253,7 +257,7 @@ namespace IIT_Dimlom_Geo1
             // Восстановление переменных
             myGeo.FilePath();
 
-            //1 / U,HKJI Ha Ha.JIW[He He 6onee 500 rrpoeKToB
+            // Цикл на наличие не более 500 проектов
             for (int i = 1; i < 500; i++)
             {
                 int k = 0;

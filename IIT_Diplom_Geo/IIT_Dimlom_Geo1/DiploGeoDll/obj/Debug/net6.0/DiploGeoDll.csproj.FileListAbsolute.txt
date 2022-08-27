@@ -1,0 +1,12 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\bin\Debug\net6.0\DiploGeoDll.deps.json
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\bin\Debug\net6.0\DiploGeoDll.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\bin\Debug\net6.0\DiploGeoDll.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.csproj.AssemblyReference.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.AssemblyInfoInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.AssemblyInfo.cs
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.csproj.CoreCompileInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\refint\DiploGeoDll.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\DiploGeoDll.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\DiploGeoDll\obj\Debug\net6.0\ref\DiploGeoDll.dll

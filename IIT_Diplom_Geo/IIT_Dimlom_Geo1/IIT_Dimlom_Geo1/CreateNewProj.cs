@@ -21,8 +21,8 @@ namespace IIT_Dimlom_Geo1
         string sTmp = "";
         string nameProject = "";
         private string nameDirectory = "";
-        private int nMax = 0;
-        private int nProject = 0;
+        private int nMax = 0; //0
+        private int nProject = 0;//0
 
         public CreateNewProj()
         {
@@ -43,21 +43,26 @@ namespace IIT_Dimlom_Geo1
                 try
                 {
                     // Кол-во проектов заранее не известно
-                    while ((sTmp = fbb.ReadString()) != null)
+                    while ((sTmp = fbb.ReadString()) != null) // Переписывает в sTemp в место int строку с названием файла
                     {
                         //sTemp - строковое выражение порядкового номера проекта и преобразование его в целое число nProject
+                        Console.WriteLine($"CreateNewProj.CheckLoad-[DEBUG] Зполнение списка проектов... sTmp = {sTmp}");
                         nProject = System.Convert.ToInt32(sTmp);
                         nameProject = fbb.ReadString();
+                        nameDirectory = fbb.ReadString();
                         //Поиск максимального порядкового номера
                         if (nProject > nMax)
                             nMax = nProject;
                         //Заполнение окна ListBox
                         listBox1.Items.Add(nameProject);
+                        Console.WriteLine($"CreateNewProj.CheckLoad-[DEBUG] Зполнение списка проектов... nameProject = {nameProject}");
+                        Console.WriteLine($"CreateNewProj.CheckLoad-[DEBUG] Зполнение списка проектов... nProject = {listBox1.Items}");
+                        //nProject++;
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    Console.WriteLine($"Ошибка операции чтения... nProject = {nProject}");
+                    Console.WriteLine($"Ошибка операции чтения... nProject = {nProject},CheckLoad-[DEBUG] {e}");
                 }
                 finally
                 {
@@ -152,8 +157,11 @@ namespace IIT_Dimlom_Geo1
             {
                 FileStream fd = new FileStream(myProj.fileAllProj, FileMode.CreateNew);
                 BinaryWriter fdd = new BinaryWriter(fd);
+                Console.WriteLine($"Запись информации о проектах при создании - {myProj.fileAllProj}");
                 fd.Close();
                 fdd.Close();
+
+                
             }
 
             // Добавление в файл информации о новом проекте
@@ -164,6 +172,7 @@ namespace IIT_Dimlom_Geo1
                 fee.Write(sTmp);
                 fee.Write(nameProject);
                 fee.Write(nameDirectory);
+                Console.WriteLine($"Запись информации о проектах при создании - {myProj.fileAllProj}");
                 fee.Close();
                 fe.Close();
             }
