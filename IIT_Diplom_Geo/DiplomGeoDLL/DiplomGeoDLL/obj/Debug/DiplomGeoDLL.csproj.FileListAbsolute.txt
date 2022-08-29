@@ -1,0 +1,6 @@
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\obj\Debug\DiplomGeoDLL.csproj.AssemblyReference.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\obj\Debug\DiplomGeoDLL.csproj.CoreCompileInputs.cache
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\bin\Debug\DiplomGeoDLL.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\bin\Debug\DiplomGeoDLL.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\obj\Debug\DiplomGeoDLL.dll
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\DiplomGeoDLL\DiplomGeoDLL\obj\Debug\DiplomGeoDLL.pdb

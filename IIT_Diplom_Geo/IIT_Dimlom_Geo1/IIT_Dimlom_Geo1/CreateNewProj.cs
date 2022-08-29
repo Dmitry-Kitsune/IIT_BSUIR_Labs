@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq.Expressions;
+using DiplomGeoDLL;
 
-namespace IIT_Dimlom_Geo1
+namespace IIT_Diplom_Geo1
 {
     public partial class CreateNewProj : Form
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace IIT_Dimlom_Geo1
+namespace IIT_Diplom_Geo1
 {
     partial class GeoDemo
     {
@@ -14,8 +14,8 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 
-        public bool MaximizeBox { get; set; }
-        public bool MinimizeBox { get; set; }
+        public new bool MaximizeBox { get; set; }
+        public new bool MinimizeBox { get; set; }
         
         Form form1 = new Form();
 
@@ -43,6 +43,11 @@ namespace IIT_Dimlom_Geo1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeoDemo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxOptions1 = new System.Windows.Forms.GroupBox();
+            this.ZoomIn = new System.Windows.Forms.Button();
+            this.Move = new System.Windows.Forms.Button();
+            this.ZoomOut = new System.Windows.Forms.Button();
+            this.SelectBox = new System.Windows.Forms.Button();
+            this.PointsInput = new System.Windows.Forms.Button();
             this.btExit1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,6 +66,8 @@ namespace IIT_Dimlom_Geo1
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.DeleteProjManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DelAllProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,8 +94,6 @@ namespace IIT_Dimlom_Geo1
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.DeleteProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DelAllProjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxOptions1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -98,29 +103,86 @@ namespace IIT_Dimlom_Geo1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(12, 46);
+            this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 413);
+            this.panel1.Size = new System.Drawing.Size(625, 472);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // groupBoxOptions1
             // 
             this.groupBoxOptions1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBoxOptions1.Controls.Add(this.btExit1);
+            this.groupBoxOptions1.Controls.Add(this.Move);
+            this.groupBoxOptions1.Controls.Add(this.SelectBox);
+            this.groupBoxOptions1.Controls.Add(this.PointsInput);
             this.groupBoxOptions1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBoxOptions1.Location = new System.Drawing.Point(536, 46);
+            this.groupBoxOptions1.Location = new System.Drawing.Point(643, 74);
             this.groupBoxOptions1.Name = "groupBoxOptions1";
             this.groupBoxOptions1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBoxOptions1.Size = new System.Drawing.Size(249, 413);
+            this.groupBoxOptions1.Size = new System.Drawing.Size(206, 443);
             this.groupBoxOptions1.TabIndex = 1;
             this.groupBoxOptions1.TabStop = false;
             this.groupBoxOptions1.Text = "Опции";
             // 
+            // ZoomIn
+            // 
+            this.ZoomIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ZoomIn.BackgroundImage")));
+            this.ZoomIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ZoomIn.Location = new System.Drawing.Point(69, 39);
+            this.ZoomIn.Name = "ZoomIn";
+            this.ZoomIn.Size = new System.Drawing.Size(28, 29);
+            this.ZoomIn.TabIndex = 3;
+            this.ZoomIn.UseVisualStyleBackColor = true;
+            // 
+            // Move
+            // 
+            this.Move.Location = new System.Drawing.Point(36, 205);
+            this.Move.Name = "Move";
+            this.Move.Size = new System.Drawing.Size(110, 31);
+            this.Move.TabIndex = 5;
+            this.Move.Text = "Переместить";
+            this.Move.UseVisualStyleBackColor = true;
+            // 
+            // ZoomOut
+            // 
+            this.ZoomOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ZoomOut.BackgroundImage")));
+            this.ZoomOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ZoomOut.Location = new System.Drawing.Point(112, 39);
+            this.ZoomOut.Name = "ZoomOut";
+            this.ZoomOut.Size = new System.Drawing.Size(28, 30);
+            this.ZoomOut.TabIndex = 4;
+            this.ZoomOut.UseVisualStyleBackColor = true;
+            // 
+            // SelectBox
+            // 
+            this.SelectBox.Location = new System.Drawing.Point(36, 144);
+            this.SelectBox.Name = "SelectBox";
+            this.SelectBox.Size = new System.Drawing.Size(110, 42);
+            this.SelectBox.TabIndex = 2;
+            this.SelectBox.Text = "Выбрать область";
+            this.SelectBox.UseVisualStyleBackColor = true;
+            this.SelectBox.Click += new System.EventHandler(this.SelectBox_Click);
+            this.SelectBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.SelectBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.SelectBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // PointsInput
+            // 
+            this.PointsInput.Location = new System.Drawing.Point(81, 392);
+            this.PointsInput.Name = "PointsInput";
+            this.PointsInput.Size = new System.Drawing.Size(97, 43);
+            this.PointsInput.TabIndex = 1;
+            this.PointsInput.Text = "Загрузить точки";
+            this.PointsInput.UseVisualStyleBackColor = true;
+            this.PointsInput.Click += new System.EventHandler(this.PointsInput_Click);
+            // 
             // btExit1
             // 
             this.btExit1.BackColor = System.Drawing.SystemColors.Control;
-            this.btExit1.Location = new System.Drawing.Point(36, 366);
+            this.btExit1.Location = new System.Drawing.Point(643, 523);
             this.btExit1.Name = "btExit1";
             this.btExit1.Size = new System.Drawing.Size(75, 23);
             this.btExit1.TabIndex = 0;
@@ -137,9 +199,9 @@ namespace IIT_Dimlom_Geo1
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4,
             this.toolStripStatusLabel5});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 575);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(797, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(861, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -184,7 +246,7 @@ namespace IIT_Dimlom_Geo1
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(9, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(503, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(383, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -277,6 +339,20 @@ namespace IIT_Dimlom_Geo1
             this.DeleteProjManagerToolStripMenuItem.Name = "DeleteProjManagerToolStripMenuItem";
             this.DeleteProjManagerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.DeleteProjManagerToolStripMenuItem.Text = "Удаление проектов";
+            // 
+            // DeleteProjToolStripMenuItem
+            // 
+            this.DeleteProjToolStripMenuItem.Name = "DeleteProjToolStripMenuItem";
+            this.DeleteProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.DeleteProjToolStripMenuItem.Text = "Удалить проект";
+            this.DeleteProjToolStripMenuItem.Click += new System.EventHandler(this.DeleteProjToolStripMenuItem_Click);
+            // 
+            // DelAllProjToolStripMenuItem
+            // 
+            this.DelAllProjToolStripMenuItem.Name = "DelAllProjToolStripMenuItem";
+            this.DelAllProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.DelAllProjToolStripMenuItem.Text = "Удалить все проекты";
+            this.DelAllProjToolStripMenuItem.Click += new System.EventHandler(this.DelAllProjToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
@@ -457,7 +533,7 @@ namespace IIT_Dimlom_Geo1
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(103, 489);
+            this.label1.Location = new System.Drawing.Point(103, 552);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 1;
@@ -465,37 +541,26 @@ namespace IIT_Dimlom_Geo1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 484);
+            this.textBox1.Location = new System.Drawing.Point(0, 552);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(97, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Текущий проект:";
             // 
-            // DeleteProjToolStripMenuItem
-            // 
-            this.DeleteProjToolStripMenuItem.Name = "DeleteProjToolStripMenuItem";
-            this.DeleteProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.DeleteProjToolStripMenuItem.Text = "Удалить проект";
-            this.DeleteProjToolStripMenuItem.Click += new System.EventHandler(this.DeleteProjToolStripMenuItem_Click);
-            // 
-            // DelAllProjToolStripMenuItem
-            // 
-            this.DelAllProjToolStripMenuItem.Name = "DelAllProjToolStripMenuItem";
-            this.DelAllProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.DelAllProjToolStripMenuItem.Text = "Удалить все проекты";
-            this.DelAllProjToolStripMenuItem.Click += new System.EventHandler(this.DelAllProjToolStripMenuItem_Click);
-            // 
             // GeoDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 529);
+            this.ClientSize = new System.Drawing.Size(861, 597);
+            this.Controls.Add(this.ZoomIn);
+            this.Controls.Add(this.ZoomOut);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBoxOptions1);
+            this.Controls.Add(this.btExit1);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -563,6 +628,11 @@ namespace IIT_Dimlom_Geo1
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripMenuItem DeleteProjToolStripMenuItem;
         private ToolStripMenuItem DelAllProjToolStripMenuItem;
+        private Button PointsInput;
+        private Button Move;
+        private Button ZoomOut;
+        private Button ZoomIn;
+        private Button SelectBox;
     }
 }
 

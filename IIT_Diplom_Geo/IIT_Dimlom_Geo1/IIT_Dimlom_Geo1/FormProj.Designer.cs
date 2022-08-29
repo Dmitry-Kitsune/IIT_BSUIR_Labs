@@ -1,4 +1,4 @@
-﻿namespace IIT_Dimlom_Geo1
+﻿namespace IIT_Diplom_Geo1
 {
     partial class ProjectMenu
     {

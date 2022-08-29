@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IIT_Dimlom_Geo1.Properties
+namespace IIT_Diplom_Geo1.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace IIT_Dimlom_Geo1.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IIT_Dimlom_Geo1.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IIT_Diplom_Geo1.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

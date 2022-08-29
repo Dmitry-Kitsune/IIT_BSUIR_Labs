@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security;
+using DiplomGeoDLL;
 
-namespace IIT_Dimlom_Geo1
+namespace IIT_Diplom_Geo1
 {
     public partial class SelectProj : Form
     {
         MyGeodesy mySel = new MyGeodesy(); //Создаем объект класса 
 
         string sTmp = ""; // Еще одна sTemp
+        private string fileProj;
         private string nameProject = "";
         private string nameDirectory = "";
         private int nProcess = 0;
-
-
+        
         public SelectProj()
         {
             InitializeComponent();
@@ -73,7 +74,9 @@ namespace IIT_Dimlom_Geo1
                             fe.Close();
                             fee.Close();
                             //Проверка текущего проекта
-                            mySel.CheckOpenProj();
+                            //DllClass1.CheckOpenProj();
+                            //mySel.CheckOpenProj();
+                            DllClass1.CheckOpenProj(mySel.fileProj, out mySel.curProject, out mySel.curDirectory);
                             //кнопка Удалить не активна
                             if (nProcess == 1)
                                 btDelete.Enabled = false;

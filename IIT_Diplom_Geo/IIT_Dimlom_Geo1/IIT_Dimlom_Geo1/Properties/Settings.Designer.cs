@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IIT_Dimlom_Geo1.Properties
+namespace IIT_Diplom_Geo1.Properties
 {
 
 

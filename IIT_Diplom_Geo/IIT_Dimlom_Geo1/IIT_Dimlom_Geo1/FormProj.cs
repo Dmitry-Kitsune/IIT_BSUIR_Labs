@@ -10,8 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
 using Microsoft.Win32;
+using DiplomGeoDLL;
 
-namespace IIT_Dimlom_Geo1
+namespace IIT_Diplom_Geo1
 {
 
     public partial class ProjectMenu : Form
@@ -128,12 +129,12 @@ namespace IIT_Dimlom_Geo1
             //string sTmp1 = "";
             //string sTmp2 = ""; 
 
-            myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
+            DllClass1.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
             if (myGeo.driveKey == "")
             {
 
                 //if Disc not selected
-                myGeo.DriveList(out kDisk, out myGeo.nameDrive);
+                DllClass1.DriveList(out kDisk, out myGeo.nameDrive);
                 if (kDisk == 1)
                 {
                     var drive = myGeo.nameDrive[0];
@@ -143,7 +144,7 @@ namespace IIT_Dimlom_Geo1
                     sTmp1 = drive + myGeo.dirKey; //myGeo. ?? нет значения
                     sTmp2 = drive + myGeo.dirKey + "\\brdrive.dat";
                     //Автоматическое создание дирректории и файла
-                    myGeo.KeepPath(myGeo.comPath, sTmp1, sTmp2);
+                    DllClass1.KeepPath(myGeo.comPath, sTmp1, sTmp2);
                 }
 
                 // Форма SelectDrive  активизируется при количестве дисков больше одного
@@ -153,16 +154,16 @@ namespace IIT_Dimlom_Geo1
                     sdr.ShowDialog(this);
                 }
                 //Вторичная проверка выбора диска
-                myGeo.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
+                DllClass1.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
                 if (myGeo.driveKey == "")
                 {
                     //если диск не выбран
-                    myGeo.DriveList(out kDisk, out myGeo.nameDrive);
+                    DllClass1.DriveList(out kDisk, out myGeo.nameDrive);
                     myGeo.comPath = myGeo.nameDrive[0] + myGeo.projectKey;
                     sTmp1 = myGeo.nameDrive[0] + myGeo.dirKey;
                     sTmp2 = myGeo.nameDrive[0] + myGeo.dirKey + "\\brdrive.dat";
                     //Автоматическое создание директории файла
-                    myGeo.KeepPath(myGeo.comPath, sTmp1, sTmp2);
+                    DllClass1.KeepPath(myGeo.comPath, sTmp1, sTmp2);
 
                 }
             }
@@ -179,14 +180,14 @@ namespace IIT_Dimlom_Geo1
             //  string sTemp2;
 
             //mySel.DriveList(out kDisk, out mySel.nameDrive);
-            mySel.DriveList(out kDisk, out mySel.nameDrive);
+            DllClass1.DriveList(out kDisk, out mySel.nameDrive);
             //Заполнение ListBox именами дисков
             for (int i = 1; i <= kDisk; i++)
                 //listBox1.Items.Add(mySel.nameDrive[i]);
                 listBox1.Items.Add(mySel.nameDrive[i]);
             //Проверка выбора диска
             // mySel.CheckDrive(mySel.dirKey, out mySel.driveKey);
-            mySel.CheckDrive(mySel.dirKey, out mySel.driveKey);
+            DllClass1.CheckDrive(mySel.dirKey, out mySel.driveKey);
             //Формирование пути к файлу brdrv.dat
             //mySel.pathKey = mySel.driveKey + mySel.dirKey + "\\brdrive.dat";
             mySel.pathKey = mySel.driveKey + mySel.dirKey + "\\brdrive.dat";
@@ -208,7 +209,7 @@ namespace IIT_Dimlom_Geo1
                 label3.Text = "Диск не определен";
             }
             // mySel.CheckDrive(mySel.dikey, out mySel.driveKey);
-            mySel.CheckDrive(mySel.dirKey, out mySel.driveKey);
+            DllClass1.CheckDrive(mySel.dirKey, out mySel.driveKey);
             if (mySel.driveKey == "")
             {
 
@@ -216,7 +217,7 @@ namespace IIT_Dimlom_Geo1
                 mySel.comPath = mySel.nameDrive[1] + mySel.projectKey;
                 sTemp1 = mySel.nameDrive[1] + mySel.dirKey;
                 sTemp2 = mySel.nameDrive[1] + mySel.dirKey + "\\brdrive.dat";
-                mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
+                DllClass1.KeepPath(mySel.comPath, sTemp1, sTemp2);
             }
             //SelectDrive.ActiveForm.Hide();
         }
@@ -224,7 +225,7 @@ namespace IIT_Dimlom_Geo1
         //Button
         private void ChangeDrive_Click(object sender, EventArgs e)
         {
-            myGeo.DriveList(out kDisk, out myGeo.nameDrive);
+            DllClass1.DriveList(out kDisk, out myGeo.nameDrive);
             // if the number of disk = 1, nothing will change
             if (kDisk == 1)
                 return;
@@ -252,7 +253,7 @@ namespace IIT_Dimlom_Geo1
                 sTemp2 = listBox1.SelectedItem + mySel.dirKey + "\\brdrive.dat";
 
                 //Создание дирректории и файла
-                mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
+                DllClass1.KeepPath(mySel.comPath, sTemp1, sTemp2);
 
                 // Проверка наличия ключевой директории на других дисках и внесение изменений в file - brdrive.dat
                 for (int i = 1; i <= kDisk; i++)
@@ -260,7 +261,7 @@ namespace IIT_Dimlom_Geo1
                     sTemp1 = mySel.nameDrive[i] + mySel.dirKey;
                     sTemp2 = mySel.nameDrive[i] + mySel.dirKey + "\\brdrive.dat";
                     if (File.Exists(sTemp2))
-                        mySel.KeepPath(mySel.comPath, sTemp1, sTemp2);
+                        DllClass1.KeepPath(mySel.comPath, sTemp1, sTemp2);
                 }
                 SelectDrive.ActiveForm.Hide();
             }
