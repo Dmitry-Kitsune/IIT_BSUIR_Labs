@@ -492,6 +492,29 @@ namespace IIT_Diplom_Geo1
             if (!File.Exists(filePoint))
                 filePoint = "";
         }
+        // Написать функцию вычисления координат точек
+        private double xt;
+        private double yt;
+        void Perpendjcular(int iParam, double x1, double y1, double x2,
+            double y2, double djstl, double djst2, out double xt, out double yt)
+        {
+            xt = x2 - x1; // изменить
+            yt = y2 - y1; // изменить
+        }
+     
+        //Написать функцию вычисления способом перпендикуляров
+        void LinearResect(int iParam, double x1, double y1, double x2, double y2,
+            double dist1, double dist2, out double xt, out double yt)
+        {
+            xt = 1; //изменить
+            yt = 2; //Изменить
+        }
+
+        void Inverse(double[] x, double[] y, double[] dir, out double xt, out double yt)
+        {
+            xt = 1; //изменить
+            yt = 2; //Изменить
+        }
 
         void ShareString(string sPoint, int kPartMax, char[] seps, out int kPart, out string[] sPart)
         {

@@ -646,6 +646,7 @@ namespace IIT_Diplom_Geo1
             panel1.Invalidate();
         }
 
+
         // Загрузка данных
         private void LoadData()
         {
