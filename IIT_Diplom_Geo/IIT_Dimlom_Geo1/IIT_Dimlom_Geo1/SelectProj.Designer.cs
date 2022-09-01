@@ -28,77 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Confirm = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.btDelete = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            listBox1 = new System.Windows.Forms.ListBox();
+            textBox1 = new System.Windows.Forms.TextBox();
+            Confirm = new System.Windows.Forms.Button();
+            Cancel = new System.Windows.Forms.Button();
+            btDelete = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(49, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(405, 329);
-            this.listBox1.TabIndex = 2;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new System.Drawing.Point(49, 38);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new System.Drawing.Size(405, 329);
+            listBox1.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Существующие проекты:";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBox1.Location = new System.Drawing.Point(173, 12);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new System.Drawing.Size(148, 20);
+            textBox1.TabIndex = 3;
+            textBox1.Text = "Существующие проекты:";
+            textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Confirm
             // 
-            this.Confirm.Location = new System.Drawing.Point(49, 388);
-            this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(105, 23);
-            this.Confirm.TabIndex = 4;
-            this.Confirm.Text = "Подтвердить";
-            this.Confirm.UseVisualStyleBackColor = true;
-            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
+            Confirm.Location = new System.Drawing.Point(49, 388);
+            Confirm.Name = "Confirm";
+            Confirm.Size = new System.Drawing.Size(105, 23);
+            Confirm.TabIndex = 4;
+            Confirm.Text = "Подтвердить";
+            Confirm.UseVisualStyleBackColor = true;
+            Confirm.Click += new System.EventHandler(Confirm_Click);
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(379, 388);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 5;
-            this.Cancel.Text = "Отмена";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            Cancel.Location = new System.Drawing.Point(379, 388);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new System.Drawing.Size(75, 23);
+            Cancel.TabIndex = 5;
+            Cancel.Text = "Отмена";
+            Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += new System.EventHandler(Cancel_Click);
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(216, 388);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(105, 23);
-            this.btDelete.TabIndex = 7;
-            this.btDelete.Text = "Удалить";
-            this.btDelete.UseVisualStyleBackColor = true;
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            btDelete.Location = new System.Drawing.Point(216, 388);
+            btDelete.Name = "btDelete";
+            btDelete.Size = new System.Drawing.Size(105, 23);
+            btDelete.TabIndex = 7;
+            btDelete.Text = "Удалить";
+            btDelete.UseVisualStyleBackColor = true;
+            btDelete.Click += new System.EventHandler(btDelete_Click);
             // 
             // SelectProj
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 463);
-            this.Controls.Add(this.btDelete);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.Confirm);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SelectProj";
-            this.Text = "Выбор проекта";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(508, 463);
+            Controls.Add(btDelete);
+            Controls.Add(Cancel);
+            Controls.Add(Confirm);
+            Controls.Add(textBox1);
+            Controls.Add(listBox1);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SelectProj";
+            Text = "Выбор проекта";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

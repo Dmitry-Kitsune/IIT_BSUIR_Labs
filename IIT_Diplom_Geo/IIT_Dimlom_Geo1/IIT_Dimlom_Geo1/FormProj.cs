@@ -22,34 +22,34 @@ namespace IIT_Diplom_Geo1
 
         string sTmp1 = "";
         string sTmp2 = "";
-        // public string this.Path[] = mySel.comPath;
+        // public string Path[] = mySel.comPath;
         int kDisk;
 
         public ProjectMenu()
         {
-            //this.Font = SystemFonts.IconTitleFont;
+            //Font = SystemFonts.IconTitleFont;
             //SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            //this.FormClosing += new FormClosingEventHandler(FormProj_FormClosing);
+            //FormClosing += new FormClosingEventHandler(FormProj_FormClosing);
 
             InitializeComponent();
 
-            this.StartPosition = FormStartPosition.Manual;
-            this.ChangeDrive.MouseHover += new
-                EventHandler(this.ChangeDrive_MouseHover);
+            StartPosition = FormStartPosition.Manual;
+            ChangeDrive.MouseHover += new
+                EventHandler(ChangeDrive_MouseHover);
 
-            this.ChangeDrive.MouseLeave += new
-                EventHandler(this.ChangeDrive_MouseLeave);
-            this.StartPosition = FormStartPosition.Manual;
+            ChangeDrive.MouseLeave += new
+                EventHandler(ChangeDrive_MouseLeave);
+            StartPosition = FormStartPosition.Manual;
 
-            this.Confirm.MouseHover += new
-                EventHandler(this.Confirm_MouseHover);
-            this.Confirm.MouseLeave += new
-                EventHandler(this.Confirm_MouseLeave);
+            Confirm.MouseHover += new
+                EventHandler(Confirm_MouseHover);
+            Confirm.MouseLeave += new
+                EventHandler(Confirm_MouseLeave);
 
-            this.Cancel.MouseHover += new
-                EventHandler(this.Cancel_MouseHover);
-            this.Cancel.MouseLeave += new
-                EventHandler(this.Free_MouseLeave);
+            Cancel.MouseHover += new
+                EventHandler(Cancel_MouseHover);
+            Cancel.MouseLeave += new
+                EventHandler(Free_MouseLeave);
 
             FormLoad();
             CheckForm();
@@ -58,7 +58,7 @@ namespace IIT_Diplom_Geo1
         //{
         //    if (e.Category == UserPreferenceCategory.Window)
         //    {
-        //        this.Font = SystemFonts.IconTitleFont;
+        //        Font = SystemFonts.IconTitleFont;
         //    }
         //}
         //void FormProj_FormClosing(object sender, FormClosingEventArgs e)
@@ -269,7 +269,7 @@ namespace IIT_Diplom_Geo1
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

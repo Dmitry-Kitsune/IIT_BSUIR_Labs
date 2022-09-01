@@ -181,11 +181,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPoints.Designer.cs">
+      <DependentUpon>AddPoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewProj.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateNewProj.Designer.cs">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPolySign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPolySign.Designer.cs">
+      <DependentUpon>ListPolySign.cs</DependentUpon>
     </Compile>
     <Compile Include="MyGeodesy.cs" />
     <Compile Include="FormProj.cs">
@@ -211,6 +223,9 @@
     <Compile Include="SelectProj.Designer.cs">
       <DependentUpon>SelectProj.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPoints.resx">
+      <DependentUpon>AddPoints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +238,9 @@
     <EmbeddedResource Include="GeoDemo.resx">
       <DependentUpon>GeoDemo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListPolySign.resx">
+      <DependentUpon>ListPolySign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -231,6 +249,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SelectProj.resx">
       <DependentUpon>SelectProj.cs</DependentUpon>
@@ -260,6 +279,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomOutIcon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />

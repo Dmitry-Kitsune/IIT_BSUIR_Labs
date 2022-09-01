@@ -43,15 +43,15 @@ namespace IIT_Diplom_Geo1
             pixWidth = panel1.Bounds.Width;
             pixHeight = panel1.Bounds.Height;
 
-            this.StartPosition = FormStartPosition.Manual;
-            this.btExit1.MouseHover += new
-                EventHandler(this.btExit_MouseHover);
-            this.btExit1.MouseLeave += new
-                EventHandler(this.btExit_MouseLeave);
-            //this.FileOptions.MouseHover += new 
-            //    EventHandler(this.FileOptions_MouseLeave);
-            //this.FileOptions.MouseLeave += new 
-            //    EventHandler(this.FileOptions_MouseLeave);
+            StartPosition = FormStartPosition.Manual;
+            btExit1.MouseHover += new
+                EventHandler(btExit_MouseHover);
+            btExit1.MouseLeave += new
+                EventHandler(btExit_MouseLeave);
+            //FileOptions.MouseHover += new 
+            //    EventHandler(FileOptions_MouseLeave);
+            //FileOptions.MouseLeave += new 
+            //    EventHandler(FileOptions_MouseLeave);
             FormLoad();
         }
 
@@ -138,8 +138,8 @@ namespace IIT_Diplom_Geo1
                 // Стандартные функции
 
                 ControlPaint.DrawReversibleFrame(theRectangle,
-                    this.BackColor, FrameStyle.Dashed);
-                endPoint = this.PointToScreen(new Point(e.X, e.Y));
+                    BackColor, FrameStyle.Dashed);
+                endPoint = PointToScreen(new Point(e.X, e.Y));
 
                 // Ограничение вычерчиваемого прямоугольника только в пределах панели
                 if ((e.X > 15) && (e.X < pixWidth + 10) && (e.Y > 15) &&
@@ -150,12 +150,12 @@ namespace IIT_Diplom_Geo1
                     theRectangle = new Rectangle(startPoint.X,
                         startPoint.Y, width, height);
                     ControlPaint.DrawReversibleFrame(theRectangle,
-                        this.BackColor, FrameStyle.Dashed);
+                        BackColor, FrameStyle.Dashed);
 
                 }
 
                 ControlPaint.DrawReversibleFrame(theRectangle,
-                    this.BackColor, FrameStyle.Dashed);
+                    BackColor, FrameStyle.Dashed);
             }
             // Перемещение области (окна) данных вдоль панели не меняя масшатаба изображения
             if (nControl == 40)
@@ -288,7 +288,7 @@ namespace IIT_Diplom_Geo1
             if ((nControl == 10) && (isDrag))
             {
                 ControlPaint.DrawReversibleFrame(theRectangle,
-                    this.BackColor, FrameStyle.Dashed);
+                    BackColor, FrameStyle.Dashed);
                 if (xCurMin > xCur)
                 {
                     xCurMax = xCurMin;
@@ -682,7 +682,7 @@ namespace IIT_Diplom_Geo1
             yminCur = myGeo.ymin;
             xmaxCur = myGeo.xmax;
             ymaxCur = myGeo.ymax;
-            //8bfql1cneHHe napaMeTpOB npeo6pa3oBaHHH Koop.n11HaT
+            //Выполнение параметров преобразования Koopдинат
             myGeo.CoorWin(myGeo.xmin, myGeo.ymin, myGeo.xmax, myGeo.ymax,
                 pixWidth, pixHeight, out scaleToWin, out scaleToGeo,
                 out xBegGeo, out yBegGeo, out xEndGeo, out yEndGeo,

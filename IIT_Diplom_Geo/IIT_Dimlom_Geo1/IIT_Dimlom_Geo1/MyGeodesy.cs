@@ -9,6 +9,9 @@ using System.IO;
 using DiplomGeoDLL;
 using IIT_Diplom_Geo1;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Reflection;
+using System.Drawing.Printing;
+using System.Drawing.Drawing2D;
 
 namespace IIT_Diplom_Geo1
 {
@@ -21,34 +24,948 @@ namespace IIT_Diplom_Geo1
         public readonly string dirKey = "Diplom_Geo";
         public string projectKey = "Diplom_Projs";
         public string pathKey = "";
-        public string comPath = "";
+        //public string comPath = "";
 
-        public string curProject = "";
+        //public string curProject = "";
         public string curDirectory = "";
 
-        public string fileProj = "";
-        public string fileAllProj = "";
-
+        //public string fileProj = "";
         public string driveKey;
         public string[] nameDrive;
-        public int kDisk;
+        //public int kDisk;
         public string filePoint = ""; // Получение переменной для filePoint (путь к файлу) 
-        
-        public string fileProcess = "";
-        public string fileAdd = "Temp"; // Директория для удаления
 
+        //public string fileProcess = "";
+        //public string fileAdd = "Temp"; // Директория для удаления
+        public int kMaxTre = 299800;
+        public string sTmp = "";
+        public string cadPath = "";
+        public string tmpStr = "";
+        public string tmpSymb = "";
+        public string fileAllProj = "";
+        public string curProject = "";
+        public string curDirect = "";
+        public string comPath = "";
+        public string fileProj = "";
+        public string comDirect = "";
+        public string fileAdd = "";
+        public string fsymbPnt = "";
+        public string fsymbLine = "";
+        public string fsymbPoly = "";
+        //public string filePoint = "";
+        public string fileLine = "";
+        public string flineTopo = "";
+        public string filePoly = "";
+        public string fileNode = "";
+        public string fileDangle = "";
+        public string fileProcess = "";
+        public string fitemLine = "";
+        public string fitemPoly = "";
+        public string fsourcePnt = "";
+        public string fpointFinal = "";
+        public string fPointPixel = "";
+        public string fLinePixel = "";
+        public string fPolyPixel = "";
+        public string fpointInscr = "";
+        public string fInscrFin = "";
+        public string fpointProj = "";
+        public string flineProj = "";
+        public string ftopoProj = "";
+        public string fileItems = "";
+        public string fpolyFinal = "";
+        public string flineFinal = "";
+        public string fileAction = "";
+        public string factLine = "";
+        public string factPoly = "";
+        public string factNode = "";
+        public string fpolyCancel = "";
+        public string flineCancel = "";
+        public string flineNew = "";
+        public string fAddInscr = "";
+        public string fileContour = "";
+        public string fpolyNew = "";
+        public string fileHeight = "";
+        public string fCancLine = "";
+        public string fCancPoly = "";
+        public string fileExter = "";
+        public string fileToler = "";
+        public string fblockPoly = "";
+        public string fpolyInter = "";
+        public string fileInterval = "";
+        public string fileSplit = "";
+        public string faddPoly = "";
+        public string fileZminzmax = "";
+        public string flistAction = "";
+        public string fsourcePoly = "";
+        public string ftopoParc = "";
+        public string fnodeParc = "";
+        public string fpolyParc = "";
+        public string ftmpPoly = "";
+        public string fileTrian = "";
+        public string fnodeProj = "";
+        public string fpolyProj = "";
+        public string fileBorder = "";
+        public string factLin = "";
+        public string factPol = "";
+        public string ftrianTemp = "";
+        public string fVertex = "";
+        public string fPntLine = "";
+        public string fPolyItem = "";
+        public string pathSymbol = "";
+        public string fVertLine = "";
+        public string fProblem = "";
+        public string fgeoPoly = "";
+        public string fgeoNode = "";
+        public string fgeoLine = "";
+        public string minPath = "";
+        public int kNodeTopo;
+        public int kPntPlus;
+        public int kPntInput;
+        public int kPntSource;
+        public int kPntFin;
+        public int kPntProj;
+        public int kProjInput;
+        public int kLineProj;
+        public int kTopoProj;
+        public int kItemCoord;
+        public int kPolyFinal;
+        public int kLineInput;
+        public int kPolyCancel;
+        public int kLineCancel;
+        public int kLineNew;
+        public int kInter;
+        public int kAddInscript;
+        public int kPolyPrev;
+        public double xmin;
+        public double ymin;
+        public double xmax;
+        public double ymax;
+        public double zmin;
+        public double zmax;
+        public string[] namePnt = new string[11000];
+        public double[] xPnt = new double[11000];
+        public double[] yPnt = new double[11000];
+        public double[] zPnt = new double[11000];
+        public int[] nCode1 = new int[11000];
+        public int[] nCode2 = new int[11000];
+        public string[] nameNode = new string[20000];
+        public double[] xNode = new double[20000];
+        public double[] yNode = new double[20000];
+        public double[] zNode = new double[2000];
+        public string[] nameSour = new string[11000];
+        public double[] xSour = new double[11000];
+        public double[] ySour = new double[11000];
+        public double[] zSour = new double[11000];
+        public int[] nSour1 = new int[11000];
+        public int[] nSour2 = new int[11000];
+        public double[] xPntInscr = new double[11000];
+        public double[] yPntInscr = new double[11000];
+        public int[] iHorVerPnt = new int[11000];
+        public int[] nLineCode = new int[20000];
+        public int[] nLongRad = new int[20000];
+        public double[] sWidLine = new double[20000];
+        public double[] dstLine = new double[20000];
+        public double[] rRadLine = new double[20000];
+        public double[] xRadLine = new double[20000];
+        public double[] yRadLine = new double[20000];
+        public double[] xLin = new double[100000];
+        public double[] yLin = new double[100000];
+        public double[] zLin = new double[100000];
+        public string[] namePntFin = new string[11000];
+        public double[] xPntFin = new double[11000];
+        public double[] yPntFin = new double[11000];
+        public double[] zPntFin = new double[11000];
+        public int[] nCode1Fin = new int[11000];
+        public int[] nCode2Fin = new int[11000];
+        public int kVert;
+        public int[] nVert = new int[10000];
+        public string[] nameVert = new string[10000];
+        public double[] xVert = new double[10000];
+        public double[] yVert = new double[10000];
+        public int[] nParc = new int[100000];
+        public double[] xParc = new double[100000];
+        public double[] yParc = new double[100000];
+        public int[] nWork = new int[100000];
+        public int[] nWork1 = new int[100000];
+        public int[] nWork2 = new int[100000];
+        public int[] ixPix = new int[1000];
+        public int[] iyPix = new int[1000];
+        public double[] xSqu = new double[9610];
+        public double[] ySqu = new double[9610];
+        public int[] numCol = new int[9610];
+        public int[] ixSqu = new int[9610];
+        public int[] iySqu = new int[9610];
+        public int[] nColor = new int[9610];
+        public double[] x1Pix = new double[9610];
+        public double[] y1Pix = new double[9610];
+        public double[] x2Pix = new double[9610];
+        public double[] y2Pix = new double[9610];
+        public int[] nDat = new int[9610];
+        public double[] xCell = new double[9610];
+        public double[] yCell = new double[9610];
+        public int[] ihSymb = new int[2000];
+        public double[] xSpot = new double[200000];
+        public double[] ySpot = new double[200000];
+        public double[] xAngel = new double[50000];
+        public double[] yAngel = new double[50000];
+        public double[] xDat = new double[9610];
+        public double[] yDat = new double[9610];
+        public string[] nameProj = new string[20000];
+        public double[] xProj = new double[20000];
+        public double[] yProj = new double[20000];
+        public double[] zProj = new double[20000];
+        public int[] nProj1 = new int[20000];
+        public int[] nProj2 = new int[20000];
+        public int[] iLongProj = new int[20000];
+        public double[] RadProj = new double[20000];
+        public double[] xRadProj = new double[20000];
+        public double[] yRadProj = new double[20000];
+        public int[] kPr1 = new int[20000];
+        public int[] kPr2 = new int[20000];
+        public double[] xLinProj = new double[20000];
+        public double[] yLinProj = new double[20000];
+        public int[] kPrt1 = new int[20000];
+        public int[] kPrt2 = new int[20000];
+        public double[] xLinTopo = new double[50000];
+        public double[] yLinTopo = new double[50000];
+        public double[] RadTopo = new double[20000];
+        public int[] indexLine = new int[20000];
+        public double[] xitLine = new double[20000];
+        public double[] yitLine = new double[20000];
+        public double[] azitLine = new double[20000];
+        public string[] namePolyFin = new string[20000];
+        public double[] xLabFin = new double[20000];
+        public double[] yLabFin = new double[20000];
+        public double[] arCalcFin = new double[20000];
+        public double[] arLegFin = new double[20000];
+        public int[] nSymbFin = new int[20000];
+        public int[] iHorVer = new int[20000];
+        public int[] kt1Fin = new int[20000];
+        public int[] kt2Fin = new int[20000];
+        public double[] xPolFin = new double[50000];
+        public double[] yPolFin = new double[50000];
+        public int[] nCodeFin = new int[20000];
+        public int[] nLongFin = new int[20000];
+        public double[] sWidFin = new double[20000];
+        public double[] distFin = new double[20000];
+        public double[] rRadFin = new double[20000];
+        public double[] xRadFin = new double[20000];
+        public double[] yRadFin = new double[20000];
+        public double[] xFin = new double[200000];
+        public double[] yFin = new double[200000];
+        public int[] k1Fin = new int[20000];
+        public int[] k2Fin = new int[20000];
+        public int[] k1 = new int[20000];
+        public int[] k2 = new int[20000];
+        public int kLineAct;
+        public int nAction;
+        public int[] kActLine1 = new int[20000];
+        public int[] kActLine2 = new int[20000];
+        public double[] radAct = new double[20000];
+        public double[] xLineAct = new double[50000];
+        public double[] yLineAct = new double[50000];
+        public double[] radLine = new double[20000];
+        public int kLineTopo;
+        public int[] kl1 = new int[20000];
+        public int[] kl2 = new int[20000];
+        public int[] nTopoCode = new int[20000];
+        public double[] zPik = new double[300000];
+        public int kPolyAct;
+        public string[] nameAct = new string[20000];
+        public double[] xAct = new double[50000];
+        public double[] yAct = new double[50000];
+        public double[] aActCalc = new double[20000];
+        public double[] aActLeg = new double[20000];
+        public int[] kActPoly = new int[20000];
+        public int[] kActPoly1 = new int[20000];
+        public int[] kActPoly2 = new int[20000];
+        public double[] xPolyAct = new double[50000];
+        public double[] yPolyAct = new double[50000];
+        public int kIntAct;
+        public string[] namePoly = new string[20000];
+        public double[] xLab = new double[20000];
+        public double[] yLab = new double[20000];
+        public double[] areaPol = new double[20000];
+        public double[] areaLeg = new double[20000];
+        public string[] nameNodeAct = new string[20000];
+        public double[] xNodeAct = new double[20000];
+        public double[] yNodeAct = new double[20000];
+        public string[] nameCanc = new string[20000];
+        public double[] xLabCanc = new double[20000];
+        public double[] yLabCanc = new double[20000];
+        public double[] aCalcCanc = new double[20000];
+        public double[] aLegCanc = new double[20000];
+        public int[] kLinCanc1 = new int[20000];
+        public int[] kLinCanc2 = new int[20000];
+        public double[] RadCanc = new double[20000];
+        public double[] xLinCanc = new double[20000];
+        public double[] yLinCanc = new double[20000];
+        public int[] kLinNew1 = new int[20000];
+        public int[] kLinNew2 = new int[20000];
+        public double[] RadNew = new double[20000];
+        public double[] xLinNew = new double[20000];
+        public double[] yLinNew = new double[20000];
+        public double[] xWork1 = new double[200000];
+        public double[] yWork1 = new double[200000];
+        public double[] xDop = new double[200000];
+        public double[] yDop = new double[200000];
+        public int[] nSymbPoly = new int[20000];
+        public double[] sInter = new double[20000];
+        public double[] xInter = new double[20000];
+        public double[] yInter = new double[20000];
+        public int[] kn1 = new int[20000];
+        public int[] kn2 = new int[20000];
+        public int[] kPolyInside = new int[20000];
+        public double[] xWork = new double[200000];
+        public double[] yWork = new double[200000];
+        public double[] xAdd = new double[200000];
+        public double[] yAdd = new double[200000];
+        public double[] zDop = new double[200000];
+        public int[] nDop3 = new int[100000];
+        public string[] sAddInscr = new string[100];
+        public double[] xAddInscr = new double[100];
+        public double[] yAddInscr = new double[100];
+        public int kBorder;
+        public double[] xBorder = new double[120000];
+        public double[] yBorder = new double[120000];
+        public int[] nDop1 = new int[100000];
+        public int[] nDop2 = new int[100000];
+        public double[] xWork2 = new double[200000];
+        public double[] yWork2 = new double[200000];
+        public double[] zWork = new double[200000];
+        public string[] nameHeig = new string[120000];
+        public double[] xHeig = new double[120000];
+        public double[] yHeig = new double[120000];
+        public double[] zHeig = new double[120000];
+        public int kHeight;
+        public int[] nHeig = new int[120000];
+        public string[] nameDop = new string[200000];
+        public string[] namePik = new string[50000];
+        public double[] xPik = new double[200000];
+        public double[] yPik = new double[200000];
+        public string[] nameWork = new string[200000];
+        public string[] nameAdd = new string[200000];
+        public double[] zAdd = new double[200000];
+        public int[] kt = new int[20000];
+        public int[] numSign = new int[50000];
+        public int[] numItem = new int[50000];
+        public double[] xItem = new double[50000];
+        public double[] yItem = new double[50000];
+        public double[] azItem = new double[50000];
+        public int kDangle;
+        public double[] zParc = new double[200000];
+        public int[] ki1 = new int[20000];
+        public int[] ki2 = new int[20000];
+        public double[] xInt = new double[20000];
+        public double[] yInt = new double[20000];
+        public double[] rWork = new double[200000];
+        public double[] pWork = new double[200000];
+        public int[] ktt = new int[20000];
+        public int[] indPol = new int[50000];
+        public int[] indInter = new int[50000];
+        public double sArea;
+        public double arExter;
+        public int kPolySource;
+        public string[] nameSource = new string[20000];
+        public double[] xLabSource = new double[20000];
+        public double[] yLabSource = new double[20000];
+        public double[] arCalcSource = new double[20000];
+        public double[] arLegSource = new double[20000];
+        public int[] k1Source = new int[20000];
+        public int[] k2Source = new int[20000];
+        public double[] xSource = new double[50000];
+        public double[] ySource = new double[50000];
+        public int kNodeProj;
+        public double[] xNodeProj = new double[20000];
+        public double[] yNodeProj = new double[20000];
+        public int kPolyProj;
+        public int[] kPol1 = new int[20000];
+        public int[] kPol2 = new int[20000];
+        public int[] kPr = new int[20000];
+        public double[] xPolProj = new double[50000];
+        public double[] yPolProj = new double[50000];
+        public int[] iProj1 = new int[20000];
+        public double[] sWidProj = new double[20000];
+        public double[] zLinProj = new double[20000];
+        public int[] kPrt = new int[20000];
+        public int kNode;
+        public double[] xSel = new double[300000];
+        public double[] ySel = new double[300000];
+        public string[] nameParc = new string[20000];
+        public double[] aParcCalc = new double[20000];
+        public double[] aParcLeg = new double[20000];
+        public int[] kin1 = new int[20000];
+        public int[] kin2 = new int[20000];
+        public double[] xActInt = new double[20000];
+        public double[] yActInt = new double[20000];
+        public int[] kIndexAct = new int[20000];
+        public int[] kParc = new int[20000];
+        public int[] nExter = new int[20000];
+        public double[] radParc = new double[20000];
+        public int[] kParcDop1 = new int[20000];
+        public int[] kParcDop2 = new int[20000];
+        public double[] radDop = new double[20000];
+        public double[] xParcDop = new double[20000];
+        public double[] yParcDop = new double[20000];
+        public double[] xNodeParc = new double[20000];
+        public double[] yNodeParc = new double[20000];
+        public int[] kParc1 = new int[20000];
+        public int[] kParc2 = new int[20000];
+        public double[] xLinParc = new double[50000];
+        public double[] yLinParc = new double[50000];
+        public int[] kPolPar1 = new int[20000];
+        public int[] kPolPar2 = new int[20000];
+        public double[] xPolParc = new double[20000];
+        public double[] yPolParc = new double[20000];
+        public int kTriang;
+        public int[] nTre = new int[120000];
+        public double[] xTre = new double[120000];
+        public double[] yTre = new double[120000];
+        public double[] zTre = new double[120000];
+        public int kCavei;
+        public double hSect;
+        public double[] xCent = new double[200000];
+        public double[] yCent = new double[200000];
+        public int kSplit;
+        public double[] xSpl = new double[20000];
+        public double[] ySpl = new double[20000];
+        public double[] xCont = new double[200000];
+        public double[] yCont = new double[200000];
+        public double[] zCont = new double[200000];
+        public int[] nSpot = new int[200000];
+        public double[] zSpot = new double[200000];
+        public double[] zVert = new double[10000];
+        public double[] zSel = new double[300000];
+        public int[] nPik = new int[200000];
+        public int[] nCent = new int[200000];
+        public double[] zCent = new double[200000];
+        public string[] nameInter = new string[20000];
+        public double[] xLabInt = new double[20000];
+        public double[] yLabInt = new double[20000];
+        public double[] areaInter = new double[20000];
+        public SolidBrush[] brColor = new SolidBrush[50];
+        public Pen[] pnColor = new Pen[50];
+        public string[] sPolySymb = new string[200];
+        public int[] npSign1 = new int[200];
+        public int[] xpSign1 = new int[200];
+        public int[] ypSign1 = new int[200];
+        public int[] xpSymb = new int[200];
+        public int[] ypSymb = new int[200];
+        public int[] npItem = new int[200];
+        public int[] xpItem = new int[200];
+        public int[] ypItem = new int[200];
+        public int[] xpDescr = new int[200];
+        public int[] ypDescr = new int[200];
+        public int[] npSign2 = new int[200];
+        public int[] xpSign2 = new int[200];
+        public int[] ypSign2 = new int[200];
+        public int[] npBaseSymb = new int[200];
+        public int[] np1Sign = new int[500];
+        public int[] np2Sign = new int[500];
+        public int[] nBackCol = new int[200];
+        public int[] nOneSymb = new int[200];
+        public int[] numRec = new int[1000];
+        public int[] heiSymb = new int[1000];
+        public int[] numbUser = new int[1000];
+        public int[] numLong = new int[1000];
+        public int kSymbPnt;
+        public int kSymbLine;
+        public int kPolySymb;
+        public int hSymbPoly = 30;
+        public int kItemPoly;
+        public int kLineFinal;
+        public string[] sSymbLine = new string[200];
+        public int[] x1Line = new int[200];
+        public int[] y1Line = new int[200];
+        public int[] x2Line = new int[200];
+        public int[] y2Line = new int[200];
+        public int[] xDescr = new int[200];
+        public int[] yDescr = new int[200];
+        public int[] x1Dens = new int[200];
+        public int[] y1Dens = new int[200];
+        public int[] x1Sign = new int[200];
+        public int[] y1Sign = new int[200];
+        public int[] x2Sign = new int[200];
+        public int[] y2Sign = new int[200];
+        public int[] n1Sign = new int[200];
+        public int[] n2Sign = new int[200];
+        public int[] nColLine = new int[200];
+        public int[] nItem = new int[200];
+        public int[] nColorItm = new int[9610];
+        public int[] iWidth1 = new int[9610];
+        public int[] iWidth2 = new int[9610];
+        public int[] iStyle1 = new int[200];
+        public int[] iStyle2 = new int[200];
+        public int[] itemLoc = new int[200];
+        public int[] nBaseSymb = new int[200];
+        public string[] sInscr = new string[200];
+        public double[] hInscr = new double[200];
+        public int[] iColInscr = new int[200];
+        public int[] iDensity = new int[200];
+        public int[] hItemLine = new int[200];
+        public int[] npTxtCol = new int[200];
+        public double[] hpFont = new double[200];
+        public string[] spInscr = new string[200];
+        public int[] hItemPoly = new int[200];
+        public int kPoly;
+        public double[] xPol = new double[200000];
+        public double[] yPol = new double[200000];
+        public int[] kt1 = new int[20000];
+        public int[] kt2 = new int[20000];
+        public int[] kPolyActInt = new int[20000];
+        public double[] xOut = new double[200000];
+        public double[] yOut = new double[200000];
+        public int kNodeAct;
+        public int[] kIndexAct1 = new int[20000];
+        public int[] kIndexAct2 = new int[20000];
+        public int[] nHorVer = new int[100];
+        public int[] nInsCol = new int[100];
+        public int[] nSign1 = new int[100];
+        public int[] nSign2 = new int[100];
+        public int[] npColorLine = new int[200];
+        public int[] npColorItm = new int[200];
+        public int[] nColorLine = new int[200];
+        public string[] nameFiles = new string[100];
+        public string[] nameDir = new string[100];
+        public int hSymb = 10;
+        public double[] xGeoInscr = new double[15000];
+        public double[] yGeoInscr = new double[15000];
+        public int[] iHorVerGeo = new int[15000];
+        public int[] nGeoCode = new int[15000];
+        public int kGeo;
+        public string[] nameGeo = new string[15000];
+        public double[] xGeo = new double[15000];
+        public double[] yGeo = new double[15000];
+        public double[] zGeo = new double[15000];
+        public string[] namePnt1 = new string[2000];
+        public double[] xPnt1 = new double[2000];
+        public double[] yPnt1 = new double[2000];
+        public double[] zPnt1 = new double[2000];
+        public string[] namePnt2 = new string[2000];
+        public double[] xPnt2 = new double[2000];
+        public double[] yPnt2 = new double[2000];
+        public double[] zPnt2 = new double[2000];
+        public double[] distAver = new double[2000];
+        public double[] horAver = new double[2000];
+        public double[] verAver = new double[2000];
+        public int[] kGin = new int[1000];
+        public double[] xLineGeo = new double[1000];
+        public double[] yLineGeo = new double[1000];
+        public double[] rRadGeo = new double[1000];
+        public double[] xRadGeo = new double[1000];
+        public double[] yRadGeo = new double[1000];
+        public int[] kGeo1 = new int[1000];
+        public int[] kGeo2 = new int[1000];
+        public int[] iCode1 = new int[15000];
+        public string fileGeo = "";
+        public string fgeoGeo = "";
+        public string fGeoInscr = "";
+        public string fGeoAll = "";
+        public string filePoints = "";
+        public string flineLine = "";
+        public string flinePoly = "";
+        public int kGeoFin;
+        public int kAdd;
+        public string[] nameFin = new string[25000];
+        public double[] zFin = new double[25000];
+        public string fcalcPoint = "";
+        public string fileInscr = "";
+        public string ftahPoint = "";
+        public int kTaheo;
+        public string[] nameTah = new string[25000];
+        public double[] xTah = new double[25000];
+        public double[] yTah = new double[25000];
+        public double[] zTah = new double[25000];
+        public int[] nTah1 = new int[25000];
+        public double[] xTahInscr = new double[25000];
+        public double[] yTahInscr = new double[25000];
+        public int[] iHorVerTah = new int[25000];
+        public string fileDifer = "";
+        public string[] n1Pnt = new string[2000];
+        public string[] n2Pnt = new string[2000];
+        public double[] distDif = new double[2000];
+        public double[] horDif = new double[2000];
+        public double[] verDif = new double[2000];
+        public double[] dhDif = new double[2000];
+        public double[] verZero = new double[2000];
+        public string fileCheck = "";
+        public string[] n1Check = new string[2000];
+        public double[] distCheck = new double[2000];
+        public string[] sGeoDop1 = new string[15000];
+        public double[] xGeoDop1 = new double[15000];
+        public double[] yGeoDop1 = new double[15000];
+        public double[] zGeoDop1 = new double[15000];
+        public string[] sGeoDop2 = new string[15000];
+        public double[] xGeoDop2 = new double[15000];
+        public double[] yGeoDop2 = new double[15000];
+        public double[] zGeoDop2 = new double[15000];
+        public string fDoubtful = "";
+        public int kMeasur;
+        public int kTwo;
+        public int kStation;
+        public string sDiag = "";
+        public string[] strMeas = new string[50000];
+        public int[] indTwo = new int[15000];
+        public string fileSource = "";
+        public string statName = "";
+        public double statHeig;
+        public string[] nameStat = new string[10000];
+        public int[] numStat = new int[10000];
+        public double[] hStat = new double[10000];
+        public double[] xStat = new double[1000];
+        public double[] yStat = new double[1000];
+        public double[] zStat = new double[1000];
+        public string[] circPnt = new string[2000];
+        public double[] distPnt = new double[2000];
+        public double[] horPnt = new double[2000];
+        public double[] verPnt = new double[2000];
+        public double[] vizPnt = new double[2000];
+        private string sTemp = "";
+        public double pi = 3.1415926;
+        public string fileForm = "";
+        public string ferrorNode = "";
+        public string faddFile = "";
+        public string flineFile = "";
+        public string fpointFile = "";
+        public int kLine;
+        public string[] statDel = new string[1000];
+        public int kAver;
+        public int kDif;
+        public double hor1;
+        public double hor2;
+        public double ver;
+        public double ver1;
+        public double ver2;
+        public double dist1;
+        public double dist2;
+        public double dz1;
+        public double dz2;
+        public double dzz;
+        public string[] n1Aver = new string[15000];
+        public string[] n2Aver = new string[15000];
+        public double[] hAver = new double[15000];
+        public int kMiddle;
+        public int kzAver;
+        public double dz;
+        public string[] name1Aver = new string[15000];
+        public string[] name2Aver = new string[15000];
+        public double[] dzAver = new double[15000];
+        public string[] n1Middle = new string[15000];
+        public string[] n2Middle = new string[15000];
+        public double[] hMiddle = new double[15000];
+        public int nZero;
+        public int kName;
+        public double dx;
+        public double dy;
+        public int[] indLine = new int[15000];
+        public double[] azim = new double[2000];
+        public double[] distDop = new double[15000];
+        public double[] horDop = new double[15000];
+        public double az;
+        public double dir;
+        public int kZero;
+        public string[] nameZero = new string[10000];
+        public int[] numZero = new int[10000];
+        public double[] x1Pnt = new double[2000];
+        public double[] y1Pnt = new double[2000];
+        public double[] z1Pnt = new double[2000];
+        public double[] x2Pnt = new double[2000];
+        public double[] y2Pnt = new double[2000];
+        public double[] z2Pnt = new double[2000];
+        private int kPlus;
+        private int kDop;
+        public string nameBeg = "";
+        public string nameEnd = "";
+        public double[] revDop = new double[15000];
+        public double[] dhDop = new double[15000];
+        public double[] azDop = new double[15000];
+        public int kLineDop;
+        public double[] distAdd = new double[2000];
+        public double[] horAdd = new double[2000];
+        public double[] revAdd = new double[2000];
+        public double[] dhAdd = new double[2000];
+        public double[] azAdd = new double[2000];
+        public double[] angDop = new double[15000];
+        public int[] nUniq = new int[20000];
+        public int[] nCodeLine = new int[15000];
+        public string aeroBlock = "";
+        public string[] blockName = new string[150000];
+        public double[] xBlock = new double[150000];
+        public double[] yBlock = new double[150000];
+        public double[] zBlock = new double[150000];
+        public string[] tarName = new string[15000];
+        public double[] xTar = new double[15000];
+        public double[] yTar = new double[15000];
+        public double[] zTar = new double[15000];
+        public string currentGeo = "";
+        public string aeroStrip = "";
+        public int[] kModelStrip = new int[15000];
+        public long[] numCamera = new long[15000];
+        public string aeroSource = "";
+        public long nMod;
+        public int nLeft;
+        public int nRight;
+        public int kCamera;
+        public string[] pntName = new string[15000];
+        public double[] xLeft = new double[15000];
+        public double[] yLeft = new double[15000];
+        public double[] xRight = new double[15000];
+        public double[] yRight = new double[15000];
+        public string fstoreCam = "";
+        public long[] numCam = new long[10];
+        public string[] nameCam = new string[10];
+        public double[] focCam = new double[10];
+        public double[] xoCam = new double[10];
+        public double[] yoCam = new double[10];
+        public int[] markCam = new int[10];
+        public int[] dstrCam = new int[10];
+        public int[] nMark = new int[10];
+        public double[] xMark = new double[10];
+        public double[] yMark = new double[10];
+        public long[] numModel = new long[15000];
+        public int[] modMark = new int[15000];
+        public int[] modPoint = new int[15000];
+        public int[] modLeft = new int[15000];
+        public int[] modRight = new int[15000];
+        public string fileAero = "";
+        public string difMeasure = "";
+        public double[] xRes = new double[15000];
+        public double[] yRes = new double[15000];
+        public string[] nameDif = new string[15000];
+        public double[] xDif = new double[15000];
+        public double[] yDif = new double[15000];
+        public string fotoStrip = "";
+        public int[] k1Photo = new int[15000];
+        public int[] k2Photo = new int[15000];
+        public int[] kp1Foto = new int[15000];
+        public int[] kp2Foto = new int[15000];
+        public string freeBlock = "";
+        public string[] nameBlock = new string[15000];
+        public double[] e1Photo = new double[15000];
+        public double[] e2Photo = new double[15000];
+        public double[] e3Photo = new double[15000];
+        public string[] fotoName = new string[15000];
+        public double[] xFoto = new double[15000];
+        public double[] yFoto = new double[15000];
+        public double[] zFoto = new double[15000];
+        public string[] tmpName1 = new string[15000];
+        public string[] tmpName2 = new string[15000];
+        public double[] xPhoto = new double[15000];
+        public double[] yPhoto = new double[15000];
+        public double[] xBase = new double[15000];
+        public double[] yBase = new double[15000];
+        public double[] zBase = new double[15000];
+        public string[] namePhoto = new string[15000];
+        public double[] scaleFoto = new double[15000];
+        public int[] numPhoto = new int[15000];
+        public string[] nameTmp1 = new string[15000];
+        public string[] nameTmp2 = new string[15000];
+        public string fileDoubt = "";
+        public int kChange;
+        public string[] geoName = new string[15000];
+        public double[] tolDx = new double[10];
+        public double[] tolDy = new double[10];
+        public double[] tolDz = new double[10];
+        public string[] tmpName = new string[15000];
+        public double[] sBase = new double[15000];
+        public int nChange;
+        public string[] nameChange = new string[15000];
+        public double[] xChange = new double[15000];
+        public double[] yChange = new double[15000];
+        public double[] zChange = new double[15000];
+        public int[] nDif = new int[15000];
+        public double[] xsPhoto = new double[15000];
+        public double[] ysPhoto = new double[15000];
+        public double[] zsPhoto = new double[15000];
+        public double[] sumTol = new double[10];
+        public string difTarget = "";
+        public string difModel = "";
+        public string fotoAero = "";
+        public long[] nFotoModel = new long[15000];
+        public int[] ktPhoto = new int[15000];
+        public string difStrip = "";
+        public string difStrip1 = "";
+        public string difStrip2 = "";
+        public double[] pBlock = new double[15000];
+        public double[] focPhoto = new double[15000];
+        public double[] xoPhoto = new double[15000];
+        public double[] yoPhoto = new double[15000];
+        public int[] iVariantPhoto = new int[15000];
+        public double[] xMovePhoto = new double[15000];
+        public double[] yMovePhoto = new double[15000];
+        public string aerialPhoto = "";
+        public string frelOrient = "";
+        public double[] xlBlock = new double[15000];
+        public double[] ylBlock = new double[15000];
+        public double[] xrBlock = new double[15000];
+        public double[] yrBlock = new double[15000];
+        public int numApprox;
+        public string fbaseOrient = "";
+        public double[] remPar = new double[15000];
+        public double[] factCos = new double[15000];
+        public string fileModel = "";
+        public string fbaseDtm = "";
+        public string[] nameCheck = new string[15000];
+        public double[] xCheck = new double[15000];
+        public double[] yCheck = new double[15000];
+        public double[] zCheck = new double[15000];
+        public string curControl = "";
+        public string difControl = "";
+        public string[] nameContr = new string[15000];
+        public double[] xContr = new double[15000];
+        public double[] yContr = new double[15000];
+        public double[] zContr = new double[15000];
+        private int minArray = 999999;
+        public string monoPhoto = "";
+        public string fallGeo = "";
+        public string modRelative = "";
+        public string fotoModel = "";
+        public string modelPhoto = "";
+        public string fGeoModel = "";
+        public string fstoreGeo = "";
+        public string stereoModel = "";
+        public string modelStrip = "";
+        private double xMod1;
+        private double yMod1;
+        private double xMod2;
+        private double yMod2;
+        private double zMod1;
+        private double zMod2;
+        private char[] seps = new char[3] { ' ', ',', '\t' };
+        private string[] sDrive;
+        private int kDrive;
+        private string sText = "";
+        private int mColor;
+        public string fsymbProf = "";
+        public string fitemProf = "";
+        public string filePixel = "";
+        public string finitPnt = "";
+        public string finitLine = "";
+        public string finitHeight = "";
+        public string finitInscr = "";
+        public string finitBorder = "";
+        public string finitTrian = "";
+        public string finitDist = "";
+        public string finitVertex = "";
+        public string finitHoriz = "";
+        public string fmainProc = "";
+        public string fIzoline = "";
+        public string fContour = "";
+        public string fPntGrid = "";
+        public string fTinGrid = "";
+        public string fMergePnt = "";
+        public string fMergeLine = "";
+        public string fMergeTin = "";
+        public string fMergeInscr = "";
+        public string fInfoGrid = "";
+        public string foperBorder = "";
+        public string foperDist = "";
+        public string foperHeig = "";
+        public string foperInscr = "";
+        public string foperItems = "";
+        public string foperLine = "";
+        public string foperPnt = "";
+        public string foperTrian = "";
+        public string foperVert = "";
+        public string foperHoriz = "";
+        public string fstoreMining = "";
+        public string fileCross = "";
+        public string finitItems = "";
+        public double[] kOneSymb = new double[400];
+        public string[] sProfSymb = new string[400];
+        public int[] nprSign1 = new int[400];
+        public int[] xprSign1 = new int[400];
+        public int[] yprSign1 = new int[400];
+        public int[] xprSymb = new int[400];
+        public int[] yprSymb = new int[400];
+        public int[] nprItem = new int[400];
+        public int[] xprItem = new int[400];
+        public int[] yprItem = new int[400];
+        public int[] xprDescr = new int[400];
+        public int[] yprDescr = new int[400];
+        public int[] nprSign2 = new int[400];
+        public int[] xprSign2 = new int[400];
+        public int[] yprSign2 = new int[400];
+        public int[] nprBackCol = new int[400];
+        public int[] nprTxtCol = new int[400];
+        public double[] hprFont = new double[400];
+        public string[] sprInscr = new string[400];
+        public double[] kOneProf = new double[400];
+        public int kProfSymb;
+        public int hSymbProf = 30;
+        public int kItemProf;
+        public int[] hItemProf = new int[400];
+        public int kVertex;
+        public string[] nameLin = new string[100000];
+        public int[] nOut = new int[100000];
+        public double[] xPntGrid = new double[100000];
+        public double[] yPntGrid = new double[100000];
+        public double[] xPntMerge = new double[100000];
+        public double[] yPntMerge = new double[100000];
+        public int[] nGrid = new int[100000];
+        public int[] nMerge = new int[100000];
+        public int kCrossSect;
+        public double azCross;
+        public double dCross;
+        public int[] nCross = new int[2000];
+        public double[] xCrossBeg = new double[2000];
+        public double[] yCrossBeg = new double[2000];
+        public double[] xCrossEnd = new double[2000];
+        public double[] yCrossEnd = new double[2000];
+        public double[] areaCross = new double[2000];
+        public int kPntGrid;
+        public int kPntMerge;
+        public string[] nameGrid = new string[100000];
+        public double[] dzGrid = new double[100000];
+        public string[] nameMerge = new string[100000];
+        public double[] zPntMerge = new double[100000];
+        public double[] azBord = new double[100000];
+        public int[] np1 = new int[100000];
+        public int[] np2 = new int[100000];
+        public int[] nDop = new int[300000];
+        public double[] xGrid = new double[20000];
+        public double[] yGrid = new double[20000];
+        public int kxGrid;
+        public int kyGrid;
+        public double shagGrid;
+        public double tolGrid;
+        public double[] xTinGrid = new double[300000];
+        public double[] yTinGrid = new double[300000];
+        public double[] zTinGrid = new double[300000];
+        public double sRel;
+        public double sSech;
+        public double[] xTinMerge = new double[300000];
+        public double[] yTinMerge = new double[300000];
+        public double[] zTinMerge = new double[300000];
+        public int kTinGrid;
+        public int kTinMerge;
+        public double[] xTin = new double[300000];
+        public double[] yTin = new double[300000];
+        public double[] zTin = new double[300000];
+        public double[] xLineBord = new double[100000];
+        public double[] yLineBord = new double[100000];
+        public int kArchive;
+        public int[] nArchive = new int[1000];
+        public string[] arcName = new string[1000];
+        public string sNameArch = "";
+        public int kBordOper;
+        public double[] xBordOper = new double[100000];
+        public double[] yBordOper = new double[100000];
+        public string fileControl = "";
+        public string fArchive = "";
+        public string fArchLayer = "";
         // Переменные для метода отрисовки panel1_Paint в class GeoDemo : Form
 
         private int kPartMaX = 20; // максимальное возможное кол-во слов в водимой строке
-        char[] seps = { ' ', ',', '\t' }; // массив символов - пробел, запятая, табуляция
+        //char[] seps = { ' ', ',', '\t' }; // массив символов - пробел, запятая, табуляция
     
         // Граница вводимых данных в виде минимальных и максимальных значений координат точек
-        public double xmin, ymin, xmax, ymax, zmin, zmax;
+        // public double xmin, ymin, xmax, ymax, zmin, zmax;
 
         // Кол-во введенных точек
         public int kPoints = 0;
         // Массив имен, координат и высот точек
-        public string[] namePnt = new string[1000];
+        // public string[] namePnt = new string[1000];
         public double[] xPntGeo = new double[1000];
         public double[] yPntGeo = new double[1000];
         public double[] zPntGeo = new double[1000];
@@ -62,84 +979,340 @@ namespace IIT_Diplom_Geo1
         //public double zmax { get; private set; }
 
         // Переменные для  PointsLoad
-        public double[] xPnt;
-        public double[] yPnt;
-        public double[] zPnt;
+        // public double[] xPnt;
+        // public double[] yPnt;
+        // public double[] zPnt;
 
-        internal void FilePath()
+        //internal void FilePath()
+        //{
+        //    string sTmp = "";
+        //    //Проверка выбора диска на случай непредвиденного удаления директории, определяющей выбор диска
+        //    DllClass1.CheckDrive(dirKey, out driveKey);
+        //    tmpSymb = "";
+        //    sTmp = driveKey + dirKey + "\\brdrive.dat";
+        //    Console.WriteLine($"[DEBUG] MyGeodesy.FilePath: '{sTmp}'");
+        //    if (!File.Exists(sTmp))
+        //    {
+        //        DialogResult result;
+        //        result = MessageBox.Show("Проблемы с выбранным Диском",
+        //            "Projects",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    //Открытие и чтение файла brdrive.dat
+        //    FileStream fa = new FileStream(sTmp, FileMode.Open, FileAccess.Read);
+        //    BinaryReader faa = new BinaryReader(fa);
+        //    try
+        //    {
+        //        comPath = faa.ReadString();
+        //    }
+        //    catch (Exception)
+
+        //    {
+        //        Console.WriteLine("Ошибка операции чтения");
+        //    }
+        //    finally
+        //    {
+        //        fa.Close();
+        //        faa.Close();
+        //    }
+
+        //    // Формирование пути для файлов brProj.dat b brAllProj.dat в зависимости от выбранного диска
+        //    fileProj = comPath + "\\brProj.dat";
+        //    fileAllProj = comPath + "\\brAllProj.dat";
+
+        //    fileProcess = comPath + "\\brProc.dat";
+        //    // Формирование пути для файла fpoint.pnt (p.54)
+        //    DllClass1.CheckOpenProj(fileProj, out curProject, out curDirectory);
+        //    filePoint = curDirectory + "\\fpoint.pnt";
+        //}
+        public void FilePath()
         {
-            string sTmp = "";
-            //Проверка выбора диска на случай непредвиденного удаления директории, определяющей выбор диска
-            DllClass1.CheckDrive(dirKey, out driveKey);
-            sTmp = driveKey + dirKey + "\\brdrive.dat";
-            Console.WriteLine($"[DEBUG] MyGeodesy.FilePath: '{sTmp}'");
-            if (!File.Exists(sTmp))
+            DllClass1.DriveList(out kDrive, out sDrive);
+            tmpSymb = "";
+            for (int index = 1; index <= kDrive; ++index)
             {
-                DialogResult result;
-                result = MessageBox.Show("Проблемы с выбранным Диском",
-                    "Projects",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
+                tmpSymb = sDrive[index] + "BrwSymbol\\brwDrive.drv";
+                if (File.Exists(tmpSymb))
+                {
+                    FileStream input = new FileStream(tmpSymb, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        pathSymbol = binaryReader.ReadString();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                    fsymbPnt = pathSymbol + "brwSymb.pnt";
+                    fsymbLine = pathSymbol + "brwSymb.lin";
+                    fsymbPoly = pathSymbol + "brwSymb.pol";
+                    fitemLine = pathSymbol + "brwItem.lin";
+                    fitemPoly = pathSymbol + "brwItem.pol";
+                    fsymbProf = pathSymbol + "brwSymb.crs";
+                    fitemProf = pathSymbol + "brwItem.crs";
+                    break;
+                }
             }
-
-            //Открытие и чтение файла brdrive.dat
-            FileStream fa = new FileStream(sTmp, FileMode.Open, FileAccess.Read);
-            BinaryReader faa = new BinaryReader(fa);
+            tmpStr = "";
+            for (int index = 1; index <= kDrive; ++index)
+            {
+                tmpStr = sDrive[index] + "BrwMining\\brwDrive.dat";
+                if (File.Exists(tmpStr))
+                    break;
+            }
+            if (!File.Exists(tmpStr))
+                return;
+            FileStream input1 = new FileStream(tmpStr, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
             try
             {
-                comPath = faa.ReadString();
+                comPath = binaryReader1.ReadString();
             }
-            catch (Exception)
-
+            catch (Exception ex)
             {
-                Console.WriteLine("Ошибка операции чтения");
+                Console.WriteLine("The Read operation failed as expected.");
             }
             finally
             {
-                fa.Close();
-                faa.Close();
+                binaryReader1.Close();
+                input1.Close();
             }
-
-            // Формирование пути для файлов brProj.dat b brAllProj.dat в зависимости от выбранного диска
-            fileProj = comPath + "\\brProj.dat";
-            fileAllProj = comPath + "\\brAllProj.dat";
-
-            fileProcess = comPath + "\\brProc.dat";
-            // Формирование пути для файла fpoint.pnt (p.54)
-            DllClass1.CheckOpenProj(fileProj, out curProject, out curDirectory);
-            filePoint = curDirectory + "\\fpoint.pnt";
+            fileAllProj = comPath + "brwAll.dat";
+            fileProj = comPath + "brwProj.dat";
+            fileAdd = comPath + "brwAdd.dat";
+            fileProcess = comPath + "fileProc.pro";
+            filePixel = comPath + "filePixel.dat";
+            ftmpPoly = comPath + "ftmp.pol";
+            fPntLine = comPath + "fpntLine.dat";
+            fstoreMining = comPath + "brwMining.dat";
+            fileCross = comPath + "brwCross.dat";
+            fmainProc = comPath + "filemain.pro";
+            fProblem = comPath + "brwProblem";
+            fPointPixel = comPath + "brwPix.pnt";
+            fPolyPixel = comPath + "brwPix.pol";
+            fLinePixel = comPath + "brwPix.lin";
+            fstoreCam = comPath + "brwCamera.dat";
+            fbaseOrient = comPath + "brwOrient.dat";
+            fbaseDtm = comPath + "brwDtm.dat";
+            fstoreGeo = comPath + "brwGeo.dat";
+            filePixel = comPath + "filePixel.dat";
+            fProblem = comPath + "brwProblem";
+            fPntLine = comPath + "fpntline.dat";
+            fileControl = comPath + "fileContr.pro";
+            fArchive = comPath + "brwArchive.arh";
+            fArchLayer = comPath + "brwArchlay.arh";
+            aeroBlock = comPath + "block.geo";
+            int num = 0;
+            if (File.Exists(fileProj))
+            {
+                FileStream input2 = new FileStream(fileProj, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                try
+                {
+                    sTmp = binaryReader2.ReadString();
+                    curProject = binaryReader2.ReadString();
+                    input2.Close();
+                    binaryReader2.Close();
+                    if (sTmp != "")
+                        num = Convert.ToInt32(sTmp);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input2.Close();
+                    binaryReader2.Close();
+                }
+            }
+            if (num == 0)
+                return;
+            curDirect = "BrwProj" + sTmp;
+            minPath = comPath + curDirect;
+            try
+            {
+                if (!Directory.Exists(minPath))
+                    Directory.CreateDirectory(minPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The delete operation failed as expected.");
+            }
+            fpointInscr = minPath + "\\fpntInscr.pnt";
+            finitPnt = minPath + "\\fInitPnt.pnt";
+            finitLine = minPath + "\\fInitLine.lin";
+            finitHeight = minPath + "\\finitHeight.pnt";
+            finitInscr = minPath + "\\finitInscr.pnt";
+            finitBorder = minPath + "\\fInitBorder.lin";
+            finitDist = minPath + "\\finitDist.dat";
+            finitTrian = minPath + "\\finitTrian.tin";
+            finitVertex = minPath + "\\finitVertex.pnt";
+            finitHoriz = minPath + "\\finitHoriz.lin";
+            fIzoline = minPath + "\\fizoline.lin";
+            fContour = minPath + "\\fcontour.lin";
+            fPntGrid = minPath + "\\fpntgrid.pnt";
+            fTinGrid = minPath + "\\ftingrid.tin";
+            fMergePnt = minPath + "\\fmerge.pnt";
+            fMergeTin = minPath + "\\fmerge.tin";
+            fMergeLine = minPath + "\\fmerge.lin";
+            fMergeInscr = minPath + "\\finscr.mrg";
+            fInfoGrid = minPath + "\\finfogrid.dat";
+            foperBorder = minPath + "\\foperbord.lin";
+            foperPnt = minPath + "\\foperate.pnt";
+            foperItems = minPath + "\\foperate.itm";
+            foperLine = minPath + "\\foperate.lin";
+            foperHeig = minPath + "\\foperate.hgt";
+            foperInscr = minPath + "\\foperins.pnt";
+            foperTrian = minPath + "\\fopertin.tin";
+            foperDist = minPath + "\\foperdist.dat";
+            foperVert = minPath + "\\fopervert.pnt";
+            foperHoriz = minPath + "\\foperhor.lin";
+            fileSplit = minPath + "\\fsplit.pnt";
+            finitItems = minPath + "\\finitItem.itm";
+            fileNode = minPath + "\\fnode.nod";
+            flineTopo = minPath + "\\fline.top";
+            fileLine = minPath + "\\dtm.lin";
+            fileGeo = minPath + "\\fgeo.xyz";
+            fgeoGeo = minPath + "\\fgeoGeo.xyz";
+            fGeoAll = minPath + "\\fgeoall.pnt";
+            filePoints = minPath + "\\fpoint.pnt";
+            flineLine = minPath + "\\fline.pnt";
+            fcalcPoint = minPath + "\\fcalc.pnt";
+            fileInscr = minPath + "\\finscr.pnt";
+            ftahPoint = minPath + "\\ftah.pnt";
+            fileDifer = minPath + "\\fdifer.dif";
+            fileCheck = minPath + "\\fcheck.lin";
+            fDoubtful = minPath + "\\fdoubt.lin";
+            fileSource = minPath + "\\fsource.mea";
+            fileForm = minPath + "\\fform.lin";
+            ferrorNode = minPath + "\\ferror.nod";
+            fpointFile = minPath + "\\fpoint.add";
+            flineFile = minPath + "\\fline.add";
+            fileAero = minPath + "\\measure.mea";
+            aeroStrip = minPath + "\\strip.fot";
+            aeroSource = minPath + "\\fsource.src";
+            difMeasure = minPath + "\\difmea.dif";
+            fotoStrip = minPath + "\\fstrip.fot";
+            freeBlock = minPath + "\\frblock.fot";
+            fileDoubt = minPath + "\\fdoubt.dat";
+            difModel = minPath + "\\difmodel.dif";
+            difTarget = minPath + "\\diftarg.dif";
+            fotoAero = minPath + "\\coord.fot";
+            difStrip = minPath + "\\difstrip.dif";
+            difStrip1 = minPath + "\\difstrip1.dif";
+            difStrip2 = minPath + "\\difstrip2.dif";
+            aerialPhoto = minPath + "\\fmono.mea";
+            frelOrient = minPath + "\\forient.rel";
+            curControl = minPath + "\\curcontr.xyz";
+            difControl = minPath + "\\difcontr.dif";
+            monoPhoto = minPath + "\\filemono.mea";
+            fallGeo = minPath + "\\fallgeo.xyz";
+            modRelative = minPath + "\\fvzaim.mod";
+            fotoModel = minPath + "\\fotomod.mod";
+            modelPhoto = minPath + "\\fmodmono.mod";
+            fGeoModel = minPath + "\\fgeomod.xyz";
+            stereoModel = minPath + "\\fmodel.mea";
+            modelStrip = minPath + "\\modstrip.mod";
+            fileModel = minPath + "\\fmodel.mod";
+            currentGeo = minPath + "\\curgeo.xyz";
+            fileNode = minPath + "\\fnode.nod";
+            flineTopo = minPath + "\\fline.top";
+            fGeoInscr = minPath + "\\finscr.geo";
+            fgeoPoly = minPath + "\\fgeoPoly.pol";
+            fgeoLine = minPath + "\\geodtm.lin";
+            fgeoNode = minPath + "\\fgeonode.nod";
         }
 
-        //internal void CheckOpenProj()
-        //{
-        //    string sTmp = "";
+        public void PolySymbolLoad(string fileSymbPoly, out int kPolySymb, out int hSymbPoly)
+        {
+            kPolySymb = 0;
+            hSymbPoly = 0;
+            if (!File.Exists(fileSymbPoly))
+                return;
+            FileStream input = new FileStream(fileSymbPoly, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader((Stream)input);
+            try
+            {
+                kPolySymb = br.ReadInt32();
+                hSymbPoly = br.ReadInt32();
+                for (int i = 1; i <= kPolySymb; ++i)
+                {
+                    sPolySymb[i] = br.ReadString();
+                    npSign1[i] = br.ReadInt32();
+                    xpSign1[i] = br.ReadInt32();
+                    ypSign1[i] = br.ReadInt32();
+                    xpSymb[i] = br.ReadInt32();
+                    ypSymb[i] = br.ReadInt32();
+                    npItem[i] = br.ReadInt32();
+                    xpItem[i] = br.ReadInt32();
+                    ypItem[i] = br.ReadInt32();
+                    xpDescr[i] = br.ReadInt32();
+                    ypDescr[i] = br.ReadInt32();
+                    npSign2[i] = br.ReadInt32();
+                    xpSign2[i] = br.ReadInt32();
+                    ypSign2[i] = br.ReadInt32();
+                    nBackCol[i] = br.ReadInt32();
+                    nOneSymb[i] = br.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                br.Close();
+                input.Close();
+            }
+        }
 
-        //    if (File.Exists(fileProj))
-        //    {
-        //        FileStream fb = new FileStream(fileProj, FileMode.Open, FileAccess.Read);
-        //        BinaryReader fbb = new BinaryReader(fb);
-        //        try
-        //        {
-        //            sTmp = fbb.ReadString();
-        //            curProject = fbb.ReadString();
-        //            curDirectory = fbb.ReadString();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            Console.WriteLine($"Ошибка операции чтения CheckOpenProj {sTmp}");
-        //        }
-        //        finally
-        //        {
-        //            fb.Close();
-        //            fbb.Close();
-        //        }
-        //    }
-
-        //    if (!File.Exists(fileProj))
-        //        curProject = "";
-        //}
-
+        public void FilesRemove()
+        {
+            if (File.Exists(fileLine))
+                File.Delete(fileLine);
+            if (File.Exists(fileProcess))
+                File.Delete(fileProcess);
+            if (File.Exists(finitInscr))
+                File.Delete(finitInscr);
+            if (!File.Exists(finitBorder))
+                return;
+            File.Delete(finitBorder);
+        }
+        // Вариант удаления - 1
+        public void DeleteProject(string curDir)
+        {
+            if (Directory.Exists(curDir))
+            {
+                nameFiles = Directory.GetFiles(curDir);
+                if (nameFiles.Length > -1)
+                {
+                    for (int index = 0; index < nameFiles.Length; ++index)
+                    {
+                        if (File.Exists(nameFiles[index]))
+                            File.Delete(nameFiles[index]);
+                    }
+                }
+                else if (nameFiles.Length > -1)
+                {
+                    int num = (int)MessageBox.Show("Manually delete", curDir);
+                    return;
+                }
+            }
+            if (!Directory.Exists(curDir))
+                return;
+            Directory.Delete(curDir);
+        }
+        // Вариант удаления -2 (опционально по названию) в разработке
         internal void ProjectDelete(string delDir)
         {
             //dellDer - имя удаляемой директории 
@@ -265,6 +1438,18757 @@ namespace IIT_Diplom_Geo1
 
                 fbb.Close();
                 fb.Close();
+            }
+        }
+
+        public void PolySymbolCopy(string fsymbPoly1, string fsymbPoly2)
+        {
+            if (!File.Exists(fsymbPoly1))
+                return;
+            FileStream input = new FileStream(fsymbPoly1, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            if (File.Exists(fsymbPoly2))
+                File.Delete(fsymbPoly2);
+            FileStream output = new FileStream(fsymbPoly2, FileMode.CreateNew);
+            BinaryWriter bwp = new BinaryWriter((Stream)output);
+            try
+            {
+                int num1 = binaryReader.ReadInt32();
+                int num2 = binaryReader.ReadInt32();
+                for (int i = 1; i <= num1; ++i)
+                {
+                    sPolySymb[i] = binaryReader.ReadString();
+                    npSign1[i] = binaryReader.ReadInt32();
+                    xpSign1[i] = binaryReader.ReadInt32();
+                    ypSign1[i] = binaryReader.ReadInt32();
+                    xpSymb[i] = binaryReader.ReadInt32();
+                    ypSymb[i] = binaryReader.ReadInt32();
+                    npItem[i] = binaryReader.ReadInt32();
+                    xpItem[i] = binaryReader.ReadInt32();
+                    ypItem[i] = binaryReader.ReadInt32();
+                    xpDescr[i] = binaryReader.ReadInt32();
+                    ypDescr[i] = binaryReader.ReadInt32();
+                    npSign2[i] = binaryReader.ReadInt32();
+                    xpSign2[i] = binaryReader.ReadInt32();
+                    ypSign2[i] = binaryReader.ReadInt32();
+                    nBackCol[i] = binaryReader.ReadInt32();
+                    nOneSymb[i] = binaryReader.ReadInt32();
+                }
+                bwp.Write(num1);
+                bwp.Write(num2);
+                for (int i = 1; i <= num1; ++i)
+                {
+                    bwp.Write(sPolySymb[i]);
+                    bwp.Write(npSign1[i]);
+                    bwp.Write(xpSign1[i]);
+                    bwp.Write(ypSign1[i]);
+                    bwp.Write(xpSymb[i]);
+                    bwp.Write(ypSymb[i]);
+                    bwp.Write(npItem[i]);
+                    bwp.Write(xpItem[i]);
+                    bwp.Write(ypItem[i]);
+                    bwp.Write(xpDescr[i]);
+                    bwp.Write(ypDescr[i]);
+                    bwp.Write(npSign2[i]);
+                    bwp.Write(xpSign2[i]);
+                    bwp.Write(ypSign2[i]);
+                    bwp.Write(nBackCol[i]);
+                    bwp.Write(nOneSymb[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+                bwp.Close();
+                output.Close();
+            }
+        }
+
+        public void LineSymbolCopy(string fsymbLine1, string fsymbLine2)
+        {
+            if (!File.Exists(fsymbLine1))
+                return;
+            FileStream input = new FileStream(fsymbLine1, FileMode.Open, FileAccess.Read);
+            BinaryReader brl = new BinaryReader((Stream)input);
+            if (File.Exists(fsymbLine2))
+                File.Delete(fsymbLine2);
+            FileStream output = new FileStream(fsymbLine2, FileMode.CreateNew);
+            BinaryWriter bwl = new BinaryWriter((Stream)output);
+            try
+            {
+                int num1 = brl.ReadInt32();
+                int num2 = brl.ReadInt32();
+                for (int i = 1; i <= num1; i++)
+                {
+                    sSymbLine[i] = brl.ReadString();
+                    x1Line[i] = brl.ReadInt32();
+                    y1Line[i] = brl.ReadInt32();
+                    x2Line[i] = brl.ReadInt32();
+                    y2Line[i] = brl.ReadInt32();
+                    xDescr[i] = brl.ReadInt32();
+                    yDescr[i] = brl.ReadInt32();
+                    x1Dens[i] = brl.ReadInt32();
+                    y1Dens[i] = brl.ReadInt32();
+                    x1Sign[i] = brl.ReadInt32();
+                    y1Sign[i] = brl.ReadInt32();
+                    x2Sign[i] = brl.ReadInt32();
+                    y2Sign[i] = brl.ReadInt32();
+                    n1Sign[i] = brl.ReadInt32();
+                    n2Sign[i] = brl.ReadInt32();
+                    iStyle1[i] = brl.ReadInt32();
+                    iStyle2[i] = brl.ReadInt32();
+                    iWidth1[i] = brl.ReadInt32();
+                    iWidth2[i] = brl.ReadInt32();
+                    nColLine[i] = brl.ReadInt32();
+                    nItem[i] = brl.ReadInt32();
+                    itemLoc[i] = brl.ReadInt32();
+                    nBaseSymb[i] = brl.ReadInt32();
+                    sInscr[i] = brl.ReadString();
+                    hInscr[i] = brl.ReadDouble();
+                    iColInscr[i] = brl.ReadInt32();
+                    iDensity[i] = brl.ReadInt32();
+                }
+                bwl.Write(num1);
+                bwl.Write(num2);
+                for (int i = 1; i <= num1; ++i)
+                {
+                    bwl.Write(sSymbLine[i]);
+                    bwl.Write(x1Line[i]);
+                    bwl.Write(y1Line[i]);
+                    bwl.Write(x2Line[i]);
+                    bwl.Write(y2Line[i]);
+                    bwl.Write(xDescr[i]);
+                    bwl.Write(yDescr[i]);
+                    bwl.Write(x1Dens[i]);
+                    bwl.Write(y1Dens[i]);
+                    bwl.Write(x1Sign[i]);
+                    bwl.Write(y1Sign[i]);
+                    bwl.Write(x2Sign[i]);
+                    bwl.Write(y2Sign[i]);
+                    bwl.Write(n1Sign[i]);
+                    bwl.Write(n2Sign[i]);
+                    bwl.Write(iStyle1[i]);
+                    bwl.Write(iStyle2[i]);
+                    bwl.Write(iWidth1[i]);
+                    bwl.Write(iWidth2[i]);
+                    bwl.Write(nColLine[i]);
+                    bwl.Write(nItem[i]);
+                    bwl.Write(itemLoc[i]);
+                    bwl.Write(nBaseSymb[i]);
+                    bwl.Write(sInscr[i]);
+                    bwl.Write(hInscr[i]);
+                    bwl.Write(iColInscr[i]);
+                    bwl.Write(iDensity[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось..");
+            }
+            finally
+            {
+                brl.Close();
+                input.Close();
+                bwl.Close();
+                output.Close();
+            }
+        }
+
+        public void ProfDescription(
+     out int kProfSymb,
+     string[] symbProf,
+     int[] nprSign1,
+     int[] nprItem,
+     int[] nprSign2,
+     int[] nprBackCol,
+     int[] nprTxtCol,
+     double[] hprFont,
+     string[] sprInscr,
+     double[] kOneProf)
+        {
+            kProfSymb = 0;
+            int kArray = 999999;
+            DllClass1.stringArray(symbProf, ref kArray);
+            if (kArray < 9)
+            {
+                int num = (int)MessageBox.Show("Index array DescribeProf");
+            }
+            else
+            {
+                symbProf[1] = "Пользовательские описания";
+                nprSign1[1] = 1;
+                nprItem[1] = 0;
+                nprSign2[1] = 95;
+                nprBackCol[1] = 10;
+                nprTxtCol[1] = 0;
+                hprFont[1] = 2.0;
+                sprInscr[1] = "abcd";
+                kOneProf[1] = 5.0;
+                symbProf[2] = "Пользовательские описания";
+                nprSign1[2] = 2;
+                nprItem[2] = 0;
+                nprSign2[2] = 96;
+                nprBackCol[2] = 10;
+                nprTxtCol[2] = 0;
+                hprFont[2] = 2.0;
+                sprInscr[2] = "abcd";
+                kOneProf[2] = 5.0;
+                symbProf[3] = "Пользовательские описания";
+                nprSign1[3] = 3;
+                nprItem[3] = 0;
+                nprSign2[3] = 97;
+                nprBackCol[3] = 10;
+                nprTxtCol[3] = 0;
+                hprFont[3] = 2.0;
+                sprInscr[3] = "abcd";
+                kOneProf[3] = 5.0;
+                symbProf[4] = "Пользовательские описания";
+                nprSign1[4] = 4;
+                nprItem[4] = 0;
+                nprSign2[4] = 98;
+                nprBackCol[4] = 10;
+                nprTxtCol[4] = 0;
+                hprFont[4] = 2.0;
+                sprInscr[4] = "abcd";
+                kOneProf[4] = 5.0;
+                symbProf[5] = "Пользовательские описания";
+                nprSign1[5] = 5;
+                nprItem[5] = 0;
+                nprSign2[5] = 99;
+                nprBackCol[5] = 10;
+                nprTxtCol[5] = 0;
+                hprFont[5] = 2.0;
+                sprInscr[5] = "abcd";
+                kOneProf[5] = 5.0;
+                kProfSymb = 5;
+            }
+        }
+
+        public void ProfSymbCoord(
+     int yBegin,
+     int hSymbol,
+     int kProfSymb,
+     ref int[] xprSign1,
+     ref int[] yprSign1,
+     ref int[] xprSymbol,
+     ref int[] yprSymbol,
+     ref int[] xprItem,
+     ref int[] yprItem,
+     ref int[] xprDescr,
+     ref int[] yprDescr,
+     ref int[] xprSign2,
+     ref int[] yprSign2)
+        {
+            int num1 = yBegin - hSymbol;
+            int kArray = 999999;
+            DllClass1.intArray(xprSymbol, ref kArray);
+            DllClass1.intArray(yprSymbol, ref kArray);
+            if (kProfSymb > kArray)
+            {
+                int num2 = (int)MessageBox.Show("Индекс массива ProfSymbCoord");
+            }
+            else
+            {
+                for (int i = 1; i <= kProfSymb; ++i)
+                {
+                    num1 += hSymbol;
+                    xprSign1[i] = 5;
+                    yprSign1[i] = num1;
+                    xprSymbol[i] = 30;
+                    yprSymbol[i] = num1;
+                    xprItem[i] = 80;
+                    yprItem[i] = num1;
+                    xprDescr[i] = 120;
+                    yprDescr[i] = num1;
+                    xprSign2[i] = 275;
+                    yprSign2[i] = num1;
+                }
+            }
+        }
+
+        public void ProfSymbolKeep(int kProfSymb, string fileSymbProf, int hSymbProf)
+        {
+            if (File.Exists(fileSymbProf))
+                File.Delete(fileSymbProf);
+            FileStream output = new FileStream(fileSymbProf, FileMode.CreateNew);
+            BinaryWriter bw = new BinaryWriter((Stream)output);
+            bw.Write(kProfSymb);
+            bw.Write(hSymbProf);
+            for (int i = 1; i <= kProfSymb; i++)
+            {
+                sprInscr[i] = "abcd";
+                bw.Write(sProfSymb[i]);
+                bw.Write(nprSign1[i]);
+                bw.Write(xprSign1[i]);
+                bw.Write(yprSign1[i]);
+                bw.Write(xprSymb[i]);
+                bw.Write(yprSymb[i]);
+                bw.Write(nprItem[i]);
+                bw.Write(xprItem[i]);
+                bw.Write(yprItem[i]);
+                bw.Write(xprDescr[i]);
+                bw.Write(yprDescr[i]);
+                bw.Write(nprSign2[i]);
+                bw.Write(xprSign2[i]);
+                bw.Write(yprSign2[i]);
+                bw.Write(nprBackCol[i]);
+                bw.Write(nprTxtCol[i]);
+                bw.Write(hprFont[i]);
+                bw.Write(sprInscr[i]);
+                bw.Write(kOneProf[i]);
+            }
+            bw.Close();
+            output.Close();
+        }
+        public void ProfSymbolLoad(ref int kProfSymb, string fileSymbProf, out int hSymbProf)
+        {
+            hSymbProf = 0;
+            if (!File.Exists(fileSymbProf))
+                return;
+            FileStream input = new FileStream(fileSymbProf, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kProfSymb = binaryReader.ReadInt32();
+                hSymbProf = binaryReader.ReadInt32();
+                for (int index = 1; index <= kProfSymb; ++index)
+                {
+                    sProfSymb[index] = binaryReader.ReadString();
+                    nprSign1[index] = binaryReader.ReadInt32();
+                    xprSign1[index] = binaryReader.ReadInt32();
+                    yprSign1[index] = binaryReader.ReadInt32();
+                    xprSymb[index] = binaryReader.ReadInt32();
+                    yprSymb[index] = binaryReader.ReadInt32();
+                    nprItem[index] = binaryReader.ReadInt32();
+                    xprItem[index] = binaryReader.ReadInt32();
+                    yprItem[index] = binaryReader.ReadInt32();
+                    xprDescr[index] = binaryReader.ReadInt32();
+                    yprDescr[index] = binaryReader.ReadInt32();
+                    nprSign2[index] = binaryReader.ReadInt32();
+                    xprSign2[index] = binaryReader.ReadInt32();
+                    yprSign2[index] = binaryReader.ReadInt32();
+                    nprBackCol[index] = binaryReader.ReadInt32();
+                    nprTxtCol[index] = binaryReader.ReadInt32();
+                    hprFont[index] = binaryReader.ReadDouble();
+                    sprInscr[index] = binaryReader.ReadString();
+                    kOneProf[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void ChangeProfCoord(
+          int yBegin,
+          int hSymbol,
+          int kProfSymb,
+          ref int[] xprSign1,
+          ref int[] yprSign1,
+          ref int[] xprSymbol,
+          ref int[] yprSymbol,
+          ref int[] xprItem,
+          ref int[] yprItem,
+          ref int[] xprDescr,
+          ref int[] yprDescr,
+          ref int[] xprSign2,
+          ref int[] yprSign2)
+        {
+            int num1 = yBegin - hSymbol;
+            int kArray = 999999;
+            DllClass1.intArray(xprSymbol, ref kArray);
+            DllClass1.intArray(yprSymbol, ref kArray);
+            if (kProfSymb > kArray)
+            {
+                int num2 = (int)MessageBox.Show("Index array PolySymbCoord");
+            }
+            else
+            {
+                for (int index = 1; index <= kProfSymb; ++index)
+                {
+                    if (xprSign1[index] < 300)
+                    {
+                        num1 += hSymbol;
+                        yprSign1[index] = num1;
+                        yprSymbol[index] = num1;
+                        yprItem[index] = num1;
+                        yprDescr[index] = num1;
+                        yprSign2[index] = num1;
+                    }
+                }
+                int num3 = yBegin - hSymbol;
+                for (int index = 1; index <= kProfSymb; ++index)
+                {
+                    if (xprSign1[index] > 300)
+                    {
+                        num3 += hSymbol;
+                        yprSign1[index] = num3;
+                        yprSymbol[index] = num3;
+                        yprItem[index] = num3;
+                        yprDescr[index] = num3;
+                        yprSign2[index] = num3;
+                    }
+                }
+            }
+        }
+
+        public void ProfLastItem(ref int kItemProf, string fitemProf, string filePixel)
+        {
+            if (kItemProf <= 1)
+            {
+                if (File.Exists(fitemProf))
+                    File.Delete(fitemProf);
+                kItemProf = 0;
+            }
+            else
+            {
+                if (!File.Exists(filePixel))
+                    return;
+                int num1 = kItemProf - 1;
+                if (File.Exists(fitemProf))
+                    File.Delete(fitemProf);
+                FileStream output = new FileStream(fitemProf, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                FileStream input = new FileStream(filePixel, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    for (int index1 = 1; index1 <= num1; ++index1)
+                    {
+                        string str1 = binaryReader.ReadString();
+                        int num2 = binaryReader.ReadInt32();
+                        binaryWriter.Write(str1);
+                        binaryWriter.Write(num2);
+                        if (num2 == 0)
+                        {
+                            double num3 = binaryReader.ReadDouble();
+                            double num4 = binaryReader.ReadDouble();
+                            int num5 = binaryReader.ReadInt32();
+                            int num6 = binaryReader.ReadInt32();
+                            binaryWriter.Write(num3);
+                            binaryWriter.Write(num4);
+                            binaryWriter.Write(num5);
+                            binaryWriter.Write(num6);
+                            int num7 = binaryReader.ReadInt32();
+                            binaryWriter.Write(num7);
+                            if (num7 > 0)
+                            {
+                                for (int index2 = 1; index2 <= num7; ++index2)
+                                {
+                                    int num8 = binaryReader.ReadInt32();
+                                    int num9 = binaryReader.ReadInt32();
+                                    int num10 = binaryReader.ReadInt32();
+                                    binaryWriter.Write(num8);
+                                    binaryWriter.Write(num9);
+                                    binaryWriter.Write(num10);
+                                }
+                            }
+                        }
+                        if (num2 > 0)
+                        {
+                            int num11 = binaryReader.ReadInt32();
+                            int num12 = binaryReader.ReadInt32();
+                            string str2 = binaryReader.ReadString();
+                            double num13 = binaryReader.ReadDouble();
+                            double num14 = binaryReader.ReadDouble();
+                            int num15 = binaryReader.ReadInt32();
+                            int num16 = binaryReader.ReadInt32();
+                            binaryWriter.Write(num11);
+                            binaryWriter.Write(num12);
+                            binaryWriter.Write(str2);
+                            binaryWriter.Write(num13);
+                            binaryWriter.Write(num14);
+                            binaryWriter.Write(num15);
+                            binaryWriter.Write(num16);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                binaryReader.Close();
+                input.Close();
+                binaryWriter.Close();
+                output.Close();
+                kItemProf = num1;
+            }
+        }
+
+        public void SelItemLine(
+          string fitemLine,
+          int nSelect,
+          out int iLong,
+          out int iWid,
+          out int iHei,
+          out int kPix,
+          int[] ixSqu,
+          int[] iySqu,
+          int[] nColor,
+          out string sTxt,
+          out int mClr)
+        {
+            iLong = 0;
+            iWid = 0;
+            iHei = 0;
+            kPix = 0;
+            mClr = 0;
+            sTxt = "";
+            if (nSelect == 0 || !File.Exists(fitemLine))
+                return;
+            FileStream input = new FileStream(fitemLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                for (int index1 = 1; index1 <= nSelect; ++index1)
+                {
+                    binaryReader.ReadString();
+                    iLong = binaryReader.ReadInt32();
+                    if (iLong == 0)
+                    {
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        iWid = binaryReader.ReadInt32();
+                        iHei = binaryReader.ReadInt32();
+                        kPix = binaryReader.ReadInt32();
+                        if (kPix > 0)
+                        {
+                            for (int index2 = 1; index2 <= kPix; ++index2)
+                            {
+                                ixSqu[index2] = binaryReader.ReadInt32();
+                                iySqu[index2] = binaryReader.ReadInt32();
+                                nColor[index2] = binaryReader.ReadInt32();
+                            }
+                        }
+                    }
+                    if (iLong > 0)
+                    {
+                        binaryReader.ReadInt32();
+                        mClr = binaryReader.ReadInt32();
+                        sTxt = binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        iWid = binaryReader.ReadInt32();
+                        iHei = binaryReader.ReadInt32();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void LineDescription(out int kSymbLine, string[] symbLine)
+        {
+            kSymbLine = 0;
+            symbLine[1] = "User description";
+            symbLine[2] = "User description";
+            symbLine[3] = "User description";
+            symbLine[4] = "User description";
+            symbLine[5] = "User description";
+            symbLine[6] = "User description";
+            symbLine[7] = "User description";
+            symbLine[8] = "User description";
+            kSymbLine = 8;
+        }
+
+        public void ProfItemDraw(
+          PaintEventArgs e,
+          string fitemProf,
+          int hItem,
+          int kItemProf,
+          int[] hItemProf,
+          SolidBrush[] brColor)
+        {
+            Graphics graphics = e.Graphics;
+            int x1 = 15;
+            int num1 = 60;
+            int emSize = 8;
+            SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+            Pen pen = new Pen(Color.Black, 1f);
+            Font font1 = new Font("Arial", (float)emSize);
+            Font font2 = new Font("Arial", (float)emSize, FontStyle.Bold);
+            SolidBrush solidBrush2 = new SolidBrush(Color.Black);
+            if (kItemProf <= 0)
+                return;
+            FileStream input = new FileStream(fitemProf, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                for (int index1 = 1; index1 <= kItemProf; ++index1)
+                {
+                    string s = binaryReader.ReadString();
+                    int num2 = binaryReader.ReadInt32();
+                    int y1 = hItemProf[index1];
+                    if (num2 == 0)
+                    {
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadInt32();
+                        int num3 = binaryReader.ReadInt32();
+                        int num4 = binaryReader.ReadInt32();
+                        int num5 = num3 / 2;
+                        if (num3 >= emSize)
+                            num5 = 0;
+                        if (num4 > 0)
+                        {
+                            graphics.DrawString(s, font1, (Brush)solidBrush2, (float)x1, (float)y1);
+                            for (int index2 = 1; index2 <= num4; ++index2)
+                            {
+                                int num6 = binaryReader.ReadInt32();
+                                int num7 = binaryReader.ReadInt32();
+                                int index3 = binaryReader.ReadInt32();
+                                SolidBrush solidBrush3 = brColor[index3];
+                                int x2 = num1 + num6;
+                                int y2 = y1 + num7 + num5;
+                                graphics.FillRectangle((Brush)solidBrush3, x2, y2, 1, 1);
+                            }
+                        }
+                    }
+                    if (num2 > 0)
+                    {
+                        binaryReader.ReadInt32();
+                        binaryReader.ReadInt32();
+                        binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadInt32();
+                        binaryReader.ReadInt32();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void InscrLoadKeep(int iParam)
+        {
+            if (iParam == 1 && File.Exists(fGeoInscr))
+            {
+                FileStream input = new FileStream(fGeoInscr, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kGeo = binaryReader.ReadInt32();
+                    for (int index = 1; index <= kGeo; ++index)
+                    {
+                        xGeoInscr[index] = binaryReader.ReadDouble();
+                        yGeoInscr[index] = binaryReader.ReadDouble();
+                        iHorVerGeo[index] = binaryReader.ReadInt32();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fGeoInscr))
+                File.Delete(fGeoInscr);
+            FileStream output = new FileStream(fGeoInscr, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kGeo);
+            for (int index = 1; index <= kGeo; ++index)
+            {
+                binaryWriter.Write(xGeoInscr[index]);
+                binaryWriter.Write(yGeoInscr[index]);
+                binaryWriter.Write(iHorVerGeo[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void KeepLoadGeoAll(int iParam, ref int kGeoAll)
+        {
+            if (iParam == 1)
+            {
+                if (File.Exists(fGeoAll))
+                    File.Delete(fGeoAll);
+                FileStream output = new FileStream(fGeoAll, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kGeoAll);
+                for (int index = 1; index <= kGeoAll; ++index)
+                {
+                    binaryWriter.Write(nameGeo[index]);
+                    binaryWriter.Write(xGeo[index]);
+                    binaryWriter.Write(yGeo[index]);
+                    binaryWriter.Write(zGeo[index]);
+                    binaryWriter.Write(nGeoCode[index]);
+                    binaryWriter.Write(xGeoInscr[index]);
+                    binaryWriter.Write(yGeoInscr[index]);
+                    binaryWriter.Write(iHorVerGeo[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kGeoAll = 0;
+            if (!File.Exists(fGeoAll))
+                return;
+            FileStream input = new FileStream(fGeoAll, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kGeoAll = binaryReader.ReadInt32();
+                for (int index = 1; index <= kGeoAll; ++index)
+                {
+                    nameGeo[index] = binaryReader.ReadString();
+                    xGeo[index] = binaryReader.ReadDouble();
+                    yGeo[index] = binaryReader.ReadDouble();
+                    zGeo[index] = binaryReader.ReadDouble();
+                    nGeoCode[index] = binaryReader.ReadInt32();
+                    xGeoInscr[index] = binaryReader.ReadDouble();
+                    yGeoInscr[index] = binaryReader.ReadDouble();
+                    iHorVerGeo[index] = binaryReader.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void PointCollect(int iParam, int kGeo, string[] nameGeo, out int iCond)
+        {
+            kGeoFin = -1;
+            kAdd = 0;
+            iCond = 0;
+            int num1 = 0;
+            string text = "Name Points with problem of coordinates' calculation: ";
+            if (File.Exists(fgeoPoly))
+            {
+                FileStream input = new FileStream(fgeoPoly, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num2 = binaryReader.ReadInt32();
+                    for (int index1 = 1; index1 <= num2; ++index1)
+                    {
+                        int num3 = binaryReader.ReadInt32();
+                        for (int index2 = 1; index2 <= num3; ++index2)
+                        {
+                            nameDop[index2] = binaryReader.ReadString();
+                            xDop[index2] = binaryReader.ReadDouble();
+                            yDop[index2] = binaryReader.ReadDouble();
+                            zDop[index2] = binaryReader.ReadDouble();
+                            int num4 = 0;
+                            if (kAdd > 0)
+                            {
+                                for (int index3 = 1; index3 <= kAdd; ++index3)
+                                {
+                                    if (nameDop[index2] == nameAdd[index3])
+                                    {
+                                        ++num4;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num4 <= 0)
+                            {
+                                ++kAdd;
+                                nameAdd[kAdd] = nameDop[index2];
+                                xAdd[kAdd] = xDop[index2];
+                                yAdd[kAdd] = yDop[index2];
+                                zAdd[kAdd] = zDop[index2];
+                                if (double.IsNaN(xAdd[kAdd]) || double.IsNaN(yAdd[kAdd]) || double.IsNaN(zAdd[kAdd]))
+                                {
+                                    ++num1;
+                                    text = text + nameAdd[kAdd] + ";";
+                                    break;
+                                }
+                                ++kGeoFin;
+                                nameFin[kGeoFin] = nameAdd[kAdd];
+                                xFin[kGeoFin] = xAdd[kAdd];
+                                yFin[kGeoFin] = yAdd[kAdd];
+                                zFin[kGeoFin] = zAdd[kAdd];
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (num1 > 0)
+            {
+                iCond = -99;
+                int num5 = (int)MessageBox.Show(text);
+            }
+            else
+            {
+                if (File.Exists(filePoints))
+                {
+                    FileStream input = new FileStream(filePoints, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        kAdd = binaryReader.ReadInt32();
+                        for (int index4 = 1; index4 <= kAdd; ++index4)
+                        {
+                            nameAdd[index4] = binaryReader.ReadString();
+                            xAdd[index4] = binaryReader.ReadDouble();
+                            yAdd[index4] = binaryReader.ReadDouble();
+                            zAdd[index4] = binaryReader.ReadDouble();
+                            int num6 = 0;
+                            if (kGeoFin > 0)
+                            {
+                                for (int index5 = 0; index5 <= kGeoFin; ++index5)
+                                {
+                                    if (nameFin[index5] == nameAdd[index4])
+                                    {
+                                        ++num6;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num6 <= 0)
+                            {
+                                if (double.IsNaN(xAdd[index4]) || double.IsNaN(yAdd[index4]) || double.IsNaN(zAdd[index4]))
+                                {
+                                    ++num1;
+                                    text = text + nameAdd[index4] + ";";
+                                    break;
+                                }
+                                ++kGeoFin;
+                                nameFin[kGeoFin] = nameAdd[index4];
+                                xFin[kGeoFin] = xAdd[index4];
+                                yFin[kGeoFin] = yAdd[index4];
+                                zFin[kGeoFin] = zAdd[index4];
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+                if (num1 > 0)
+                {
+                    iCond = -99;
+                    int num7 = (int)MessageBox.Show(text);
+                }
+                else
+                {
+                    if (iParam <= 0 || kGeo <= 0 || kGeoFin <= 0)
+                        return;
+                    int index6 = -1;
+                    for (int index7 = 0; index7 <= kGeoFin; ++index7)
+                    {
+                        for (int index8 = 1; index8 <= kGeo; ++index8)
+                        {
+                            if (nameFin[index7] == nameGeo[index8])
+                            {
+                                xFin[index7] = -9999.9;
+                                yFin[index7] = -9999.9;
+                                break;
+                            }
+                        }
+                    }
+                    for (int index9 = 0; index9 <= kGeoFin; ++index9)
+                    {
+                        if (xFin[index9] != -9999.9 || yFin[index9] != -9999.9)
+                        {
+                            ++index6;
+                            nameFin[index6] = nameFin[index9];
+                            xFin[index6] = xFin[index9];
+                            yFin[index6] = yFin[index9];
+                            zFin[index6] = zFin[index9];
+                        }
+                    }
+                    kGeoFin = index6;
+                }
+            }
+        }
+
+        public void LoadKeepTaheo(int iParam)
+        {
+            if (iParam == 1 && File.Exists(ftahPoint))
+            {
+                FileStream input = new FileStream(ftahPoint, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kTaheo = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kTaheo; ++index)
+                    {
+                        nameTah[index] = binaryReader.ReadString();
+                        xTah[index] = binaryReader.ReadDouble();
+                        yTah[index] = binaryReader.ReadDouble();
+                        zTah[index] = binaryReader.ReadDouble();
+                        nTah1[index] = binaryReader.ReadInt32();
+                        xTahInscr[index] = binaryReader.ReadDouble();
+                        yTahInscr[index] = binaryReader.ReadDouble();
+                        iHorVerTah[index] = binaryReader.ReadInt32();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(ftahPoint))
+                File.Delete(ftahPoint);
+            FileStream output = new FileStream(ftahPoint, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kTaheo);
+            for (int index = 0; index <= kTaheo; ++index)
+            {
+                binaryWriter.Write(nameTah[index]);
+                binaryWriter.Write(xTah[index]);
+                binaryWriter.Write(yTah[index]);
+                binaryWriter.Write(zTah[index]);
+                binaryWriter.Write(nTah1[index]);
+                binaryWriter.Write(xTahInscr[index]);
+                binaryWriter.Write(yTahInscr[index]);
+                binaryWriter.Write(iHorVerTah[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void LoadKeepInscr(int iParam)
+        {
+            if (iParam == 1 && File.Exists(fpointInscr))
+            {
+                FileStream input = new FileStream(fpointInscr, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kPntPlus = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kPntPlus; ++index)
+                    {
+                        xPntInscr[index] = binaryReader.ReadDouble();
+                        yPntInscr[index] = binaryReader.ReadDouble();
+                        iHorVerPnt[index] = binaryReader.ReadInt32();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fpointInscr))
+                File.Delete(fpointInscr);
+            FileStream output = new FileStream(fpointInscr, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPntPlus);
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                binaryWriter.Write(xPntInscr[index]);
+                binaryWriter.Write(yPntInscr[index]);
+                binaryWriter.Write(iHorVerPnt[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void LoadKeepInscr(
+          int iParam,
+          string fCurInscr,
+          ref int kInscr,
+          double[] xPntInscr,
+          double[] yPntInscr,
+          int[] iHorVerPnt)
+        {
+            if (iParam == 1)
+            {
+                kInscr = -1;
+                if (File.Exists(fCurInscr))
+                {
+                    FileStream input = new FileStream(fCurInscr, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        kInscr = binaryReader.ReadInt32();
+                        for (int index = 0; index <= kInscr; ++index)
+                        {
+                            xPntInscr[index] = binaryReader.ReadDouble();
+                            yPntInscr[index] = binaryReader.ReadDouble();
+                            iHorVerPnt[index] = binaryReader.ReadInt32();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+            }
+            if (iParam != 2 || kInscr <= -1)
+                return;
+            if (File.Exists(fCurInscr))
+                File.Delete(fCurInscr);
+            FileStream output = new FileStream(fCurInscr, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kInscr);
+            for (int index = 0; index <= kInscr; ++index)
+            {
+                binaryWriter.Write(xPntInscr[index]);
+                binaryWriter.Write(yPntInscr[index]);
+                binaryWriter.Write(iHorVerPnt[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void InscriptionFin(int iParam)
+        {
+            if (iParam == 1 && File.Exists(fInscrFin))
+            {
+                FileStream input = new FileStream(fInscrFin, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kPntFin = binaryReader.ReadInt32();
+                    if (kPntFin > 0)
+                    {
+                        for (int index = 0; index <= kPntFin; ++index)
+                        {
+                            xPntInscr[index] = binaryReader.ReadDouble();
+                            yPntInscr[index] = binaryReader.ReadDouble();
+                            iHorVerPnt[index] = binaryReader.ReadInt32();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fInscrFin))
+                File.Delete(fInscrFin);
+            FileStream output = new FileStream(fInscrFin, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPntFin);
+            if (kPntFin > 0)
+            {
+                for (int index = 0; index <= kPntFin; ++index)
+                {
+                    binaryWriter.Write(xPntInscr[index]);
+                    binaryWriter.Write(yPntInscr[index]);
+                    binaryWriter.Write(iHorVerPnt[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void LoadInscrKeep(int iParam)
+        {
+            if (iParam == 1 && File.Exists(fpointInscr))
+            {
+                FileStream input = new FileStream(fpointInscr, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kPntPlus = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kPntPlus; ++index)
+                    {
+                        xPntInscr[index] = binaryReader.ReadDouble();
+                        yPntInscr[index] = binaryReader.ReadDouble();
+                        iHorVerPnt[index] = binaryReader.ReadInt32();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fpointInscr))
+                File.Delete(fpointInscr);
+            FileStream output = new FileStream(fpointInscr, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPntPlus);
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                binaryWriter.Write(xPntInscr[index]);
+                binaryWriter.Write(yPntInscr[index]);
+                binaryWriter.Write(iHorVerPnt[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void PointProjLoad()
+        {
+            kPntProj = -1;
+            if (!File.Exists(fpointProj))
+                return;
+            FileStream input = new FileStream(fpointProj, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPntProj = binaryReader.ReadInt32();
+                for (int index = 0; index <= kPntProj; ++index)
+                {
+                    nameProj[index] = binaryReader.ReadString();
+                    xProj[index] = binaryReader.ReadDouble();
+                    yProj[index] = binaryReader.ReadDouble();
+                    zProj[index] = binaryReader.ReadDouble();
+                    nProj1[index] = binaryReader.ReadInt32();
+                    nProj2[index] = binaryReader.ReadInt32();
+                }
+                kProjInput = binaryReader.ReadInt32();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineProjLoad()
+        {
+            kLineProj = 0;
+            if (!File.Exists(flineProj))
+                return;
+            FileStream input = new FileStream(flineProj, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineProj = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kLineProj; ++index1)
+                {
+                    iLongProj[index1] = binaryReader.ReadInt32();
+                    RadProj[index1] = binaryReader.ReadDouble();
+                    xRadProj[index1] = binaryReader.ReadDouble();
+                    yRadProj[index1] = binaryReader.ReadDouble();
+                    kPr1[index1] = binaryReader.ReadInt32();
+                    kPr2[index1] = binaryReader.ReadInt32();
+                    int num1 = kPr1[index1];
+                    int num2 = kPr2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xLinProj[index2] = binaryReader.ReadDouble();
+                        yLinProj[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void TopoProjLoad()
+        {
+            kTopoProj = 0;
+            int num1;
+            int num2 = num1 = 0;
+            if (!File.Exists(ftopoProj))
+                return;
+            FileStream input = new FileStream(ftopoProj, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kTopoProj = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kTopoProj; ++index1)
+                {
+                    RadTopo[index1] = binaryReader.ReadDouble();
+                    kPrt1[index1] = binaryReader.ReadInt32();
+                    kPrt2[index1] = binaryReader.ReadInt32();
+                    int num3 = kPrt1[index1];
+                    int num4 = kPrt2[index1];
+                    for (int index2 = num3; index2 <= num4; ++index2)
+                    {
+                        xLinTopo[index2] = binaryReader.ReadDouble();
+                        yLinTopo[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void ItemLoadKeep(int iParam)
+        {
+            if (iParam == 1)
+            {
+                kItemCoord = 0;
+                if (File.Exists(fileItems))
+                {
+                    FileStream input = new FileStream(fileItems, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        kItemCoord = binaryReader.ReadInt32();
+                        if (kItemCoord > 0)
+                        {
+                            for (int index = 1; index <= kItemCoord; ++index)
+                            {
+                                numSign[index] = binaryReader.ReadInt32();
+                                numItem[index] = binaryReader.ReadInt32();
+                                xItem[index] = binaryReader.ReadDouble();
+                                yItem[index] = binaryReader.ReadDouble();
+                                azItem[index] = binaryReader.ReadDouble();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fileItems))
+                File.Delete(fileItems);
+            FileStream output = new FileStream(fileItems, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kItemCoord);
+            if (kItemCoord > 0)
+            {
+                for (int index = 1; index <= kItemCoord; ++index)
+                {
+                    binaryWriter.Write(numSign[index]);
+                    binaryWriter.Write(numItem[index]);
+                    binaryWriter.Write(xItem[index]);
+                    binaryWriter.Write(yItem[index]);
+                    binaryWriter.Write(azItem[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void NodeProjLoad()
+        {
+            kNodeProj = 0;
+            if (!File.Exists(fnodeProj))
+                return;
+            FileStream input = new FileStream(fnodeProj, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kNodeProj = binaryReader.ReadInt32();
+                if (kNodeProj <= 0)
+                    return;
+                for (int index = 1; index <= kNodeProj; ++index)
+                {
+                    xNodeProj[index] = binaryReader.ReadDouble();
+                    yNodeProj[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void PolyProjLoad()
+        {
+            int index1 = 0;
+            kPolyProj = 0;
+            if (!File.Exists(fpolyProj))
+                return;
+            FileStream input = new FileStream(fpolyProj, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPolyProj = binaryReader.ReadInt32();
+                for (int index2 = 1; index2 <= kPolyProj; ++index2)
+                {
+                    kPol1[index2] = binaryReader.ReadInt32();
+                    kPol2[index2] = binaryReader.ReadInt32();
+                    int num1 = kPol1[index2];
+                    int num2 = kPol2[index2];
+                    int num3 = binaryReader.ReadInt32();
+                    kPr[index2] = num3;
+                    for (int index3 = 1; index3 <= num3; ++index3)
+                    {
+                        xAdd[index3] = binaryReader.ReadDouble();
+                        yAdd[index3] = binaryReader.ReadDouble();
+                        ++index1;
+                        xPolProj[index1] = xAdd[index3];
+                        yPolProj[index1] = yAdd[index3];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+            if (kPolyProj <= 0)
+                return;
+            kPol1[1] = 1;
+            kPol2[1] = kPr[1];
+            if (kPolyProj <= 1)
+                return;
+            for (int index4 = 2; index4 <= kPolyProj; ++index4)
+            {
+                kPol1[index4] = kPol2[index4 - 1] + 1;
+                kPol2[index4] = kPol2[index4 - 1] + kPr[index4];
+            }
+        }
+
+        public void LoadNode()
+        {
+            kNodeTopo = 0;
+            if (!File.Exists(fileNode))
+                return;
+            FileStream input = new FileStream(fileNode, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kNodeTopo = binaryReader.ReadInt32();
+                if (kNodeTopo <= 0)
+                    return;
+                for (int index = 1; index <= kNodeTopo; ++index)
+                {
+                    nameNode[index] = binaryReader.ReadString();
+                    xNode[index] = binaryReader.ReadDouble();
+                    yNode[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void KeepLoadAction(int iParam)
+        {
+            if (iParam == 1 && File.Exists(fileAction))
+            {
+                FileStream input = new FileStream(fileAction, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    nAction = binaryReader.ReadInt32();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fileAction))
+                File.Delete(fileAction);
+            FileStream output = new FileStream(fileAction, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(nAction);
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void NodeActLoad(int nAction)
+        {
+            string path = factNode + "." + string.Format("{0}", (object)nAction);
+            kNodeAct = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kNodeAct = binaryReader.ReadInt32();
+                if (kNodeAct <= 0)
+                    return;
+                for (int index = 1; index <= kNodeAct; ++index)
+                {
+                    nameNodeAct[index] = binaryReader.ReadString();
+                    xNodeAct[index] = binaryReader.ReadDouble();
+                    yNodeAct[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void TopoActLoad(int nAction)
+        {
+            string path = factLine + "." + string.Format("{0}", (object)nAction);
+            kLineAct = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineAct = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kLineAct; ++index1)
+                {
+                    radAct[index1] = binaryReader.ReadDouble();
+                    kActLine1[index1] = binaryReader.ReadInt32();
+                    kActLine2[index1] = binaryReader.ReadInt32();
+                    int num1 = kActLine1[index1];
+                    int num2 = kActLine2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xLineAct[index2] = binaryReader.ReadDouble();
+                        yLineAct[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void PolyActLoad(int nAction)
+        {
+            int num1;
+            int num2 = num1 = 0;
+            string path = factPoly + "." + string.Format("{0}", (object)nAction);
+            kPolyAct = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPolyAct = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kPolyAct; ++index1)
+                {
+                    nameAct[index1] = binaryReader.ReadString();
+                    xAct[index1] = binaryReader.ReadDouble();
+                    yAct[index1] = binaryReader.ReadDouble();
+                    aActCalc[index1] = binaryReader.ReadDouble();
+                    aActLeg[index1] = binaryReader.ReadDouble();
+                    kActPoly1[index1] = binaryReader.ReadInt32();
+                    kActPoly2[index1] = binaryReader.ReadInt32();
+                    int num3 = kActPoly1[index1];
+                    int num4 = kActPoly2[index1];
+                    for (int index2 = num3; index2 <= num4; ++index2)
+                    {
+                        xPolyAct[index2] = binaryReader.ReadDouble();
+                        yPolyAct[index2] = binaryReader.ReadDouble();
+                    }
+                    kPolyActInt[index1] = binaryReader.ReadInt32();
+                }
+                kIntAct = binaryReader.ReadInt32();
+                if (kIntAct <= 0)
+                    return;
+                for (int index = 1; index <= kIntAct; ++index)
+                {
+                    kIndexAct1[index] = binaryReader.ReadInt32();
+                    kIndexAct2[index] = binaryReader.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void KeepTopoAct(int nAction)
+        {
+            if (kLineAct == 0)
+                return;
+            string path = factLine + "." + string.Format("{0}", (object)nAction);
+            if (File.Exists(path))
+                File.Delete(path);
+            FileStream output = new FileStream(path, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kLineAct);
+            for (int index1 = 1; index1 <= kLineAct; ++index1)
+            {
+                binaryWriter.Write(radAct[index1]);
+                binaryWriter.Write(kActLine1[index1]);
+                binaryWriter.Write(kActLine2[index1]);
+                int num1 = kActLine1[index1];
+                int num2 = kActLine2[index1];
+                for (int index2 = num1; index2 <= num2; ++index2)
+                {
+                    binaryWriter.Write(xLineAct[index2]);
+                    binaryWriter.Write(yLineAct[index2]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void KeepPolyAct(int nAction)
+        {
+            int num1;
+            int num2 = num1 = 0;
+            if (kPolyAct == 0)
+                return;
+            string path = factPoly + "." + string.Format("{0}", (object)nAction);
+            if (File.Exists(path))
+                File.Delete(path);
+            FileStream output = new FileStream(path, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPolyAct);
+            for (int index1 = 1; index1 <= kPolyAct; ++index1)
+            {
+                binaryWriter.Write(nameAct[index1]);
+                binaryWriter.Write(xAct[index1]);
+                binaryWriter.Write(yAct[index1]);
+                binaryWriter.Write(aActCalc[index1]);
+                binaryWriter.Write(aActLeg[index1]);
+                binaryWriter.Write(kActPoly1[index1]);
+                binaryWriter.Write(kActPoly2[index1]);
+                int num3 = kActPoly1[index1];
+                int num4 = kActPoly2[index1];
+                for (int index2 = num3; index2 <= num4; ++index2)
+                {
+                    binaryWriter.Write(xPolyAct[index2]);
+                    binaryWriter.Write(yPolyAct[index2]);
+                }
+                binaryWriter.Write(kPolyActInt[index1]);
+            }
+            binaryWriter.Write(kIntAct);
+            if (kIntAct > 0)
+            {
+                for (int index = 1; index <= kIntAct; ++index)
+                {
+                    binaryWriter.Write(kIndexAct1[index]);
+                    binaryWriter.Write(kIndexAct2[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void KeepNodeAct(int nAction)
+        {
+            if (kNodeAct == 0)
+                return;
+            string path = factNode + "." + string.Format("{0}", (object)nAction);
+            if (File.Exists(path))
+                File.Delete(path);
+            FileStream output = new FileStream(path, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kNodeAct);
+            if (kNodeAct > 0)
+            {
+                for (int index = 1; index <= kNodeAct; ++index)
+                {
+                    binaryWriter.Write(nameNodeAct[index]);
+                    binaryWriter.Write(xNodeAct[index]);
+                    binaryWriter.Write(yNodeAct[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void KeepPoint()
+        {
+            int num = 0;
+            xmin = 9999999.9;
+            ymin = 9999999.9;
+            xmax = -9999999.9;
+            ymax = -9999999.9;
+            zmin = 9999999.9;
+            zmax = -9999999.9;
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                if (zPnt[index] != 0.0)
+                    ++num;
+            }
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                if (xPnt[index] < xmin)
+                    xmin = xPnt[index];
+                if (yPnt[index] < ymin)
+                    ymin = yPnt[index];
+                if (num > 0 && zPnt[index] != 0.0 && zPnt[index] < zmin)
+                    zmin = zPnt[index];
+                if (xPnt[index] > xmax)
+                    xmax = xPnt[index];
+                if (yPnt[index] > ymax)
+                    ymax = yPnt[index];
+                if (num > 0 && zPnt[index] != 0.0 && zPnt[index] > zmax)
+                    zmax = zPnt[index];
+            }
+            if (num == 0)
+            {
+                zmin = 0.0;
+                zmax = 0.0;
+            }
+            if (File.Exists(filePoint))
+                File.Delete(filePoint);
+            FileStream output = new FileStream(filePoint, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPntPlus);
+            binaryWriter.Write(xmin);
+            binaryWriter.Write(ymin);
+            binaryWriter.Write(zmin);
+            binaryWriter.Write(xmax);
+            binaryWriter.Write(ymax);
+            binaryWriter.Write(zmax);
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                binaryWriter.Write(namePnt[index]);
+                binaryWriter.Write(xPnt[index]);
+                binaryWriter.Write(yPnt[index]);
+                binaryWriter.Write(zPnt[index]);
+                binaryWriter.Write(nCode1[index]);
+                binaryWriter.Write(nCode2[index]);
+            }
+            binaryWriter.Write(kPntInput);
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void KeepPntSour()
+        {
+            if (File.Exists(fsourcePnt))
+                File.Delete(fsourcePnt);
+            FileStream output = new FileStream(fsourcePnt, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPntSource);
+            for (int index = 0; index <= kPntSource; ++index)
+            {
+                binaryWriter.Write(nameSour[index]);
+                binaryWriter.Write(xSour[index]);
+                binaryWriter.Write(ySour[index]);
+                binaryWriter.Write(zSour[index]);
+                binaryWriter.Write(nSour1[index]);
+                binaryWriter.Write(nSour2[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void KeepPointProj()
+        {
+            if (File.Exists(this.fpointProj))
+                File.Delete(this.fpointProj);
+            FileStream output = new FileStream(this.fpointProj, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(this.kPntProj);
+            if (this.kPntProj > -1)
+            {
+                for (int index = 0; index <= this.kPntProj; ++index)
+                {
+                    binaryWriter.Write(this.nameProj[index]);
+                    binaryWriter.Write(this.xProj[index]);
+                    binaryWriter.Write(this.yProj[index]);
+                    binaryWriter.Write(this.zProj[index]);
+                    binaryWriter.Write(this.nProj1[index]);
+                    binaryWriter.Write(this.nProj2[index]);
+                }
+                binaryWriter.Write(this.kProjInput);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+
+        public void GeoLineDraw(
+          PaintEventArgs e,
+          int kLine,
+          string[] namePnt1,
+          double[] xPnt1,
+          double[] yPnt1,
+          string[] namePnt2,
+          double[] xPnt2,
+          double[] yPnt2,
+          int kGeo,
+          string[] nameGeo,
+          double scaleToWin,
+          double xBegX,
+          double yBegY,
+          int xBegWin,
+          int yBegWin)
+        {
+            Graphics graphics = e.Graphics;
+            Pen pen1 = new Pen(Color.BlueViolet, 1f);
+            Pen pen2 = new Pen(Color.Red, 1f);
+            for (int index1 = 1; index1 <= kLine; ++index1)
+            {
+                if (xPnt1[index1] != 0.0 && yPnt1[index1] != 0.0 && xPnt2[index1] != 0.0 && yPnt2[index1] != 0.0)
+                {
+                    if (double.IsNaN(xPnt1[index1]) || double.IsNaN(yPnt1[index1]))
+                    {
+                        int num = (int)MessageBox.Show("Check Data");
+                        break;
+                    }
+                    int xWin1;
+                    int yWin1;
+                    DllClass1.XYtoWIN(xPnt1[index1], yPnt1[index1], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin1, out yWin1);
+                    if (xWin1 != 0 || yWin1 != 0)
+                    {
+                        if (double.IsNaN(xPnt2[index1]) || double.IsNaN(yPnt2[index1]))
+                        {
+                            int num = (int)MessageBox.Show("Check Data");
+                            break;
+                        }
+                        int xWin2;
+                        int yWin2;
+                        DllClass1.XYtoWIN(xPnt2[index1], yPnt2[index1], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin2, out yWin2);
+                        if (xWin2 != 0 || yWin2 != 0)
+                        {
+                            Point pt1 = new Point(xWin1, yWin1);
+                            Point pt2 = new Point(xWin2, yWin2);
+                            int num1 = 0;
+                            int num2 = 0;
+                            for (int index2 = 1; index2 <= kGeo; ++index2)
+                            {
+                                if (namePnt1[index1] == nameGeo[index2])
+                                    num1 = 1;
+                                if (namePnt2[index1] == nameGeo[index2])
+                                    num2 = 1;
+                            }
+                            if (num1 == 0 || num2 == 0)
+                                graphics.DrawLine(pen1, pt1, pt2);
+                            if (num1 > 0 && num2 > 0)
+                                graphics.DrawLine(pen2, pt1, pt2);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void MeasurementInput(out int iCond)
+        {
+            int k = 0;
+            int kPart = 50;
+            double num1 = 0.0;
+            iCond = 0;
+            kMeasur = 0;
+            kTwo = 0;
+            int num2 = 0;
+            kStation = 0;
+            sDiag = " ";
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Source Data";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            string str = "";
+            openFileDialog.FileName = str;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream;
+                string[] sPart;
+                if ((stream = openFileDialog.OpenFile()) != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                    int num3;
+                    k = num3 = 0;
+                    int num4 = num3;
+                    kGeo = num3;
+                    int num5;
+                    int num6 = num5 = num4;
+                    kPart = 50;
+                    num1 = 0.0;
+                    string sLine;
+                    while ((sLine = streamReader.ReadLine()) != null)
+                    {
+                        ++num6;
+                        DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                        if (k != 0)
+                        {
+                            ++kMeasur;
+                            strMeas[kMeasur] = sLine;
+                            if (k < 3)
+                            {
+                                ++kTwo;
+                                indTwo[kTwo] = kMeasur;
+                            }
+                        }
+                    }
+                    ++kTwo;
+                    indTwo[kTwo] = kMeasur + 1;
+                    kGeo = indTwo[1] - 1;
+                    if (kGeo < 2)
+                    {
+                        int num7 = (int)MessageBox.Show("Basic Points < 2", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        iCond = -99;
+                        return;
+                    }
+                    for (int i = 1; i <= kGeo; ++i)
+                    {
+                        DllClass1.ShareString(strMeas[i], kPart, seps, out k, out sPart);
+                        if (k != 0)
+                        {
+                            nameGeo[i] = sPart[1];
+                            xGeo[i] = Convert.ToDouble(sPart[2]);
+                            yGeo[i] = Convert.ToDouble(sPart[3]);
+                            zGeo[i] = 0.0;
+                            if (k == 4)
+                                zGeo[i] = Convert.ToDouble(sPart[4]);
+                        }
+                    }
+                }
+                stream.Close();
+                if (File.Exists(fileSource))
+                    File.Delete(fileSource);
+                FileStream output1 = new FileStream(fileSource, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                for (int i1 = 2; i1 <= kTwo; ++i1)
+                {
+                    int i2 = indTwo[i1 - 1];
+                    int num8 = indTwo[i1] - 1;
+                    DllClass1.ShareString(strMeas[i2], kPart, seps, out k, out sPart);
+                    if (k != 0)
+                    {
+                        statName = sPart[1];
+                        statHeig = 0.0;
+                        if (k == 2)
+                            statHeig = Convert.ToDouble(sPart[2]);
+                        ++kStation;
+                        nameStat[kStation] = statName;
+                        hStat[kStation] = statHeig;
+                        xStat[kStation] = 0.0;
+                        yStat[kStation] = 0.0;
+                        zStat[kStation] = 0.0;
+                        for (int i3 = 1; i3 <= kGeo; ++i3)
+                        {
+                            if (nameGeo[i3] == statName)
+                            {
+                                xStat[kStation] = xGeo[i3];
+                                yStat[kStation] = yGeo[i3];
+                                zStat[kStation] = zGeo[i3];
+                            }
+                        }
+                        int num9 = i2 + 1;
+                        int index4 = 0;
+                        for (int index5 = num9; index5 <= num8; ++index5)
+                        {
+                            string strMea = strMeas[index5];
+                            DllClass1.ShareString(strMea, kPart, seps, out k, out sPart);
+                            if (k < 5 && sPart[1] == statName)
+                            {
+                                ++num2;
+                                sDiag = sDiag + "\nStation " + statName + ": " + strMea;
+                            }
+                            else
+                            {
+                                ++index4;
+                                namePnt[index4] = sPart[1];
+                                circPnt[index4] = sPart[2];
+                                if (k == 5)
+                                    circPnt[index4] = "N";
+                                distPnt[index4] = Convert.ToDouble(sPart[3]);
+                                horPnt[index4] = Convert.ToDouble(sPart[4]);
+                                verPnt[index4] = Convert.ToDouble(sPart[5]);
+                                vizPnt[index4] = 0.0;
+                                if (k == 5)
+                                    vizPnt[index4] = statHeig;
+                                if (k == 6)
+                                {
+                                    vizPnt[index4] = Convert.ToDouble(sPart[6]);
+                                    if (vizPnt[index4] == 0.0)
+                                        vizPnt[index4] = statHeig;
+                                }
+                            }
+                        }
+                        if (index4 > 0)
+                        {
+                            if (circPnt[1] == "L")
+                                sTemp = "L";
+                            if (circPnt[1] == "R")
+                                sTemp = "R";
+                            int index6 = 0;
+                            for (int index7 = 1; index7 <= index4; index7 += 2)
+                            {
+                                if (circPnt[index7] != sTemp)
+                                {
+                                    index6 = index7;
+                                    break;
+                                }
+                            }
+                            if (index6 > 0)
+                            {
+                                ++num2;
+                                sDiag = sDiag + "\nStation " + statName + ": " + namePnt[index6] + "  " + circPnt[index6] + " ?";
+                            }
+                            if (circPnt[2] == "L")
+                                sTemp = "L";
+                            if (circPnt[2] == "R")
+                                sTemp = "R";
+                            int index8 = 0;
+                            for (int index9 = 2; index9 <= index4; index9 += 2)
+                            {
+                                if (circPnt[index9] != sTemp)
+                                {
+                                    index8 = index9;
+                                    break;
+                                }
+                            }
+                            if (index8 > 0)
+                            {
+                                ++num2;
+                                sDiag = sDiag + "\nStation " + statName + ": " + namePnt[index8] + " " + circPnt[index8];
+                            }
+                            binaryWriter1.Write(statName);
+                            binaryWriter1.Write(statHeig);
+                            binaryWriter1.Write(index4);
+                            for (int index10 = 1; index10 <= index4; ++index10)
+                            {
+                                binaryWriter1.Write(namePnt[index10]);
+                                binaryWriter1.Write(circPnt[index10]);
+                                binaryWriter1.Write(distPnt[index10]);
+                                GradToRad(horPnt[index10], ref horPnt[index10]);
+                                binaryWriter1.Write(horPnt[index10]);
+                                GradToRad(verPnt[index10], ref verPnt[index10]);
+                                binaryWriter1.Write(verPnt[index10]);
+                                binaryWriter1.Write(vizPnt[index10]);
+                            }
+                        }
+                    }
+                }
+                binaryWriter1.Close();
+                output1.Close();
+                if (num2 > 0)
+                {
+                    sDiag += "\n                                  ";
+                    sDiag += "\nREPAIR DATA !";
+                    int num10 = (int)MessageBox.Show(sDiag, "Lines with doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                if (File.Exists(fileLine))
+                    File.Delete(fileLine);
+                if (File.Exists(fileDifer))
+                    File.Delete(fileDifer);
+                if (File.Exists(fileNode))
+                    File.Delete(fileNode);
+                if (File.Exists(fileForm))
+                    File.Delete(fileForm);
+                if (File.Exists(flineTopo))
+                    File.Delete(flineTopo);
+                if (File.Exists(ferrorNode))
+                    File.Delete(ferrorNode);
+                if (File.Exists(fgeoPoly))
+                    File.Delete(fgeoPoly);
+                if (File.Exists(filePoints))
+                    File.Delete(filePoints);
+                if (File.Exists(flineLine))
+                    File.Delete(flineLine);
+                if (File.Exists(faddFile))
+                    File.Delete(faddFile);
+                if (File.Exists(flineFile))
+                    File.Delete(flineFile);
+                if (File.Exists(fDoubtful))
+                    File.Delete(fDoubtful);
+                if (File.Exists(fpointFile))
+                    File.Delete(fpointFile);
+                if (File.Exists(fileCheck))
+                    File.Delete(fileCheck);
+                if (File.Exists(fgeoGeo))
+                    File.Delete(fgeoGeo);
+                if (File.Exists(fileInscr))
+                    File.Delete(fileInscr);
+                if (File.Exists(ftahPoint))
+                    File.Delete(ftahPoint);
+                if (File.Exists(fGeoInscr))
+                    File.Delete(fGeoInscr);
+                if (File.Exists(fGeoAll))
+                    File.Delete(fGeoAll);
+                FileStream output2 = new FileStream(fgeoGeo, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                binaryWriter2.Write(kGeo);
+                for (int index = 1; index <= kGeo; ++index)
+                {
+                    nGeoCode[index] = 2;
+                    binaryWriter2.Write(nameGeo[index]);
+                    binaryWriter2.Write(xGeo[index]);
+                    binaryWriter2.Write(yGeo[index]);
+                    binaryWriter2.Write(zGeo[index]);
+                    binaryWriter2.Write(nGeoCode[index]);
+                }
+                binaryWriter2.Close();
+                output2.Close();
+                int index11 = 0;
+                int num11 = 0;
+                for (int index12 = 1; index12 <= kStation; ++index12)
+                {
+                    if (xStat[index12] == 0.0 || yStat[index12] == 0.0)
+                    {
+                        if (!File.Exists(fileSource))
+                            return;
+                        FileStream input = new FileStream(fileSource, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader((Stream)input);
+                        int num12 = 0;
+                        for (int index13 = 1; index13 <= kStation; ++index13)
+                        {
+                            int num13 = 0;
+                            int num14 = 0;
+                            statName = binaryReader.ReadString();
+                            statHeig = binaryReader.ReadDouble();
+                            for (int index14 = 1; index14 <= kGeo; ++index14)
+                            {
+                                if (nameGeo[index14] == statName)
+                                {
+                                    ++num13;
+                                    break;
+                                }
+                            }
+                            int num15 = binaryReader.ReadInt32();
+                            for (int index15 = 1; index15 <= num15; ++index15)
+                            {
+                                namePnt[index15] = binaryReader.ReadString();
+                                circPnt[index15] = binaryReader.ReadString();
+                                distPnt[index15] = binaryReader.ReadDouble();
+                                horPnt[index15] = binaryReader.ReadDouble();
+                                verPnt[index15] = binaryReader.ReadDouble();
+                                vizPnt[index15] = binaryReader.ReadDouble();
+                                for (int index16 = 1; index16 <= kGeo; ++index16)
+                                {
+                                    if (nameGeo[index16] == namePnt[index15])
+                                    {
+                                        ++num14;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num13 > 0 && num14 > 0)
+                                ++num11;
+                            if (!(nameStat[index12] == statName))
+                            {
+                                int num16 = 0;
+                                for (int index17 = 1; index17 <= num15; ++index17)
+                                {
+                                    if (namePnt[index17] == nameStat[index12])
+                                    {
+                                        ++num16;
+                                        break;
+                                    }
+                                }
+                                if (num16 > 0)
+                                {
+                                    ++num12;
+                                    break;
+                                }
+                            }
+                        }
+                        binaryReader.Close();
+                        input.Close();
+                        if (num12 == 0)
+                        {
+                            ++index11;
+                            statDel[index11] = nameStat[index12];
+                            int num17 = (int)MessageBox.Show("Station " + nameStat[index12] + " Deleted from Data-Impossible to define coordinates", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+                if (num11 == 0)
+                {
+                    int num18 = (int)MessageBox.Show("At least two points with known coordinates which are the ends of one line, have to be present at the initial information", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -99;
+                }
+                else
+                {
+                    if (index11 > 0)
+                    {
+                        kLine = 0;
+                        if (!File.Exists(fileSource))
+                            return;
+                        FileStream input1 = new FileStream(fileSource, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                        if (File.Exists(fileAdd))
+                            File.Delete(fileAdd);
+                        FileStream output3 = new FileStream(fileAdd, FileMode.CreateNew);
+                        BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                        for (int index18 = 1; index18 <= kStation; ++index18)
+                        {
+                            statName = binaryReader1.ReadString();
+                            statHeig = binaryReader1.ReadDouble();
+                            int num19 = binaryReader1.ReadInt32();
+                            for (int index19 = 1; index19 <= num19; ++index19)
+                            {
+                                namePnt[index19] = binaryReader1.ReadString();
+                                circPnt[index19] = binaryReader1.ReadString();
+                                distPnt[index19] = binaryReader1.ReadDouble();
+                                horPnt[index19] = binaryReader1.ReadDouble();
+                                verPnt[index19] = binaryReader1.ReadDouble();
+                                vizPnt[index19] = binaryReader1.ReadDouble();
+                            }
+                            int num20 = 0;
+                            for (int index20 = 1; index20 <= index11; ++index20)
+                            {
+                                if (statDel[index20] == statName)
+                                {
+                                    ++num20;
+                                    break;
+                                }
+                            }
+                            if (num20 <= 0)
+                            {
+                                ++kLine;
+                                binaryWriter3.Write(statName);
+                                binaryWriter3.Write(statHeig);
+                                binaryWriter3.Write(num19);
+                                for (int index21 = 1; index21 <= num19; ++index21)
+                                {
+                                    binaryWriter3.Write(namePnt[index21]);
+                                    binaryWriter3.Write(circPnt[index21]);
+                                    binaryWriter3.Write(distPnt[index21]);
+                                    binaryWriter3.Write(horPnt[index21]);
+                                    binaryWriter3.Write(verPnt[index21]);
+                                    binaryWriter3.Write(vizPnt[index21]);
+                                }
+                            }
+                        }
+                        binaryWriter3.Close();
+                        output3.Close();
+                        binaryReader1.Close();
+                        input1.Close();
+                        kStation = kLine;
+                        if (!File.Exists(fileAdd))
+                            return;
+                        FileStream input2 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                        if (File.Exists(fileSource))
+                            File.Delete(fileSource);
+                        FileStream output4 = new FileStream(fileSource, FileMode.CreateNew);
+                        BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                        for (int index22 = 1; index22 <= kStation; ++index22)
+                        {
+                            statName = binaryReader2.ReadString();
+                            statHeig = binaryReader2.ReadDouble();
+                            int num21 = binaryReader2.ReadInt32();
+                            for (int index23 = 1; index23 <= num21; ++index23)
+                            {
+                                namePnt[index23] = binaryReader2.ReadString();
+                                circPnt[index23] = binaryReader2.ReadString();
+                                distPnt[index23] = binaryReader2.ReadDouble();
+                                horPnt[index23] = binaryReader2.ReadDouble();
+                                verPnt[index23] = binaryReader2.ReadDouble();
+                                vizPnt[index23] = binaryReader2.ReadDouble();
+                            }
+                            binaryWriter4.Write(statName);
+                            binaryWriter4.Write(statHeig);
+                            binaryWriter4.Write(num21);
+                            for (int index24 = 1; index24 <= num21; ++index24)
+                            {
+                                binaryWriter4.Write(namePnt[index24]);
+                                binaryWriter4.Write(circPnt[index24]);
+                                binaryWriter4.Write(distPnt[index24]);
+                                binaryWriter4.Write(horPnt[index24]);
+                                binaryWriter4.Write(verPnt[index24]);
+                                binaryWriter4.Write(vizPnt[index24]);
+                            }
+                        }
+                        binaryWriter4.Close();
+                        output4.Close();
+                        binaryReader2.Close();
+                        input2.Close();
+                    }
+                    if (!File.Exists(fileSource))
+                        return;
+                    FileStream input = new FileStream(fileSource, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    if (File.Exists(fileCheck))
+                        File.Delete(fileCheck);
+                    FileStream output5 = new FileStream(fileCheck, FileMode.CreateNew);
+                    BinaryWriter binaryWriter5 = new BinaryWriter((Stream)output5);
+                    binaryWriter5.Write(kStation);
+                    for (int index25 = 1; index25 <= kStation; ++index25)
+                    {
+                        statName = binaryReader.ReadString();
+                        statHeig = binaryReader.ReadDouble();
+                        int num22 = binaryReader.ReadInt32();
+                        for (int index26 = 1; index26 <= num22; ++index26)
+                        {
+                            namePnt[index26] = binaryReader.ReadString();
+                            circPnt[index26] = binaryReader.ReadString();
+                            distPnt[index26] = binaryReader.ReadDouble();
+                            horPnt[index26] = binaryReader.ReadDouble();
+                            verPnt[index26] = binaryReader.ReadDouble();
+                            vizPnt[index26] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter5.Write(statName);
+                        binaryWriter5.Write(num22);
+                        for (int index27 = 1; index27 <= num22; ++index27)
+                        {
+                            binaryWriter5.Write(namePnt[index27]);
+                            binaryWriter5.Write(distPnt[index27]);
+                        }
+                    }
+                    binaryReader.Close();
+                    input.Close();
+                    binaryWriter5.Close();
+                    output5.Close();
+                }
+            }
+            else
+                iCond = -99;
+        }
+
+        public void FormLine(out int iCond)
+        {
+            iCond = 0;
+            int num1;
+            int num2 = num1 = 0;
+            kAver = 0;
+            kGeo = 0;
+            if (!File.Exists(fgeoGeo))
+            {
+                iCond = -99;
+            }
+            else
+            {
+                FileStream input1 = new FileStream(fgeoGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    kGeo = binaryReader1.ReadInt32();
+                    for (int index = 1; index <= kGeo; ++index)
+                    {
+                        nameGeo[index] = binaryReader1.ReadString();
+                        xGeo[index] = binaryReader1.ReadDouble();
+                        yGeo[index] = binaryReader1.ReadDouble();
+                        zGeo[index] = binaryReader1.ReadDouble();
+                        nGeoCode[index] = binaryReader1.ReadInt32();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader1.Close();
+                    input1.Close();
+                }
+                if (!File.Exists(fileSource))
+                    return;
+                FileStream input2 = new FileStream(fileSource, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                kDif = 0;
+                int num3 = 0;
+                for (int index1 = 1; index1 <= kStation; ++index1)
+                {
+                    statName = binaryReader2.ReadString();
+                    statHeig = binaryReader2.ReadDouble();
+                    int num4 = binaryReader2.ReadInt32();
+                    for (int index2 = 1; index2 <= num4; ++index2)
+                    {
+                        namePnt[index2] = binaryReader2.ReadString();
+                        circPnt[index2] = binaryReader2.ReadString();
+                        distPnt[index2] = binaryReader2.ReadDouble();
+                        horPnt[index2] = binaryReader2.ReadDouble();
+                        verPnt[index2] = binaryReader2.ReadDouble();
+                        vizPnt[index2] = binaryReader2.ReadDouble();
+                    }
+                    int num5 = num4 / 2;
+                    if (num4 - 2 * num5 != 0)
+                    {
+                        sDiag = "Station " + statName + "--The rule of measurements is broken";
+                        int num6 = (int)MessageBox.Show(sDiag, "Source Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        int index3 = 0;
+                        for (int index4 = 2; index4 <= num4; index4 += 2)
+                        {
+                            if (namePnt[index4 - 1] != namePnt[index4])
+                            {
+                                sDiag = "Station " + statName + "--The rule of measurements is broken";
+                                int num7 = (int)MessageBox.Show(sDiag, "Source Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            }
+                            if (namePnt[index4 - 1] == namePnt[index4])
+                            {
+                                if (circPnt[index4 - 1] == "L" && circPnt[index4] == "R")
+                                {
+                                    hor1 = horPnt[index4 - 1];
+                                    hor2 = horPnt[index4] - pi;
+                                    if (hor2 < 0.0)
+                                        hor2 += 2.0 * pi;
+                                    ver1 = verPnt[index4 - 1];
+                                    ver2 = verPnt[index4] - pi;
+                                }
+                                if (circPnt[index4 - 1] == "R" && circPnt[index4] == "L")
+                                {
+                                    hor1 = horPnt[index4];
+                                    hor2 = horPnt[index4 - 1] - pi;
+                                    if (hor2 < 0.0)
+                                        hor2 += 2.0 * pi;
+                                    ver1 = verPnt[index4];
+                                    ver2 = verPnt[index4 - 1] - pi;
+                                }
+                                if (circPnt[index4 - 1] == "L" && circPnt[index4] == "L")
+                                {
+                                    hor1 = horPnt[index4 - 1];
+                                    hor2 = horPnt[index4];
+                                    ver1 = verPnt[index4 - 1];
+                                    ver = verPnt[index4] - 0.5 * pi;
+                                    ver2 = 0.5 * pi - ver;
+                                }
+                                if (circPnt[index4 - 1] == "R" && circPnt[index4] == "R")
+                                {
+                                    hor1 = horPnt[index4 - 1] - pi;
+                                    if (hor1 < 0.0)
+                                        hor1 += 2.0 * pi;
+                                    hor2 = horPnt[index4] - pi;
+                                    if (hor2 < 0.0)
+                                        hor2 += 2.0 * pi;
+                                    ver2 = verPnt[index4] - pi;
+                                    ver = verPnt[index4 - 1] - pi - 0.5 * pi;
+                                    ver1 = 0.5 * pi - ver;
+                                }
+                                ver = 0.5 * (ver1 + ver2);
+                                ver1 -= ver;
+                                ver2 = ver - ver2;
+                                dist1 = distPnt[index4 - 1] * Math.Cos(ver1);
+                                dist2 = distPnt[index4] * Math.Cos(ver2);
+                                dz1 = dist1 * Math.Tan(ver1) - vizPnt[index4 - 1] + statHeig;
+                                dz2 = dist2 * Math.Tan(ver2) - vizPnt[index4] + statHeig;
+                                ++index3;
+                                namePnt1[index3] = statName;
+                                namePnt2[index3] = namePnt[index4];
+                                distAver[index3] = 0.5 * (dist1 + dist2);
+                                horAver[index3] = 0.5 * (hor1 + hor2);
+                                verAver[index3] = 0.5 * (dz1 + dz2);
+                                ++kDif;
+                                n1Pnt[kDif] = statName;
+                                n2Pnt[kDif] = namePnt[index4];
+                                distDif[kDif] = Math.Abs(dist1 - dist2);
+                                horDif[kDif] = Math.Abs(hor1 - hor2);
+                                verDif[kDif] = Math.Abs(ver1 - ver2);
+                                dhDif[kDif] = Math.Abs(dz1 - dz2);
+                                verZero[kDif] = ver;
+                            }
+                        }
+                        ++num3;
+                        binaryWriter1.Write(index3);
+                        for (int index5 = 1; index5 <= index3; ++index5)
+                        {
+                            binaryWriter1.Write(namePnt1[index5]);
+                            binaryWriter1.Write(namePnt2[index5]);
+                            binaryWriter1.Write(distAver[index5]);
+                            binaryWriter1.Write(horAver[index5]);
+                            binaryWriter1.Write(verAver[index5]);
+                            ++kAver;
+                            n1Aver[kAver] = namePnt1[index5];
+                            n2Aver[kAver] = namePnt2[index5];
+                            hAver[kAver] = verAver[index5];
+                        }
+                    }
+                }
+                binaryReader2.Close();
+                input2.Close();
+                binaryWriter1.Close();
+                output1.Close();
+                kMiddle = 0;
+                kzAver = 0;
+                dz1 = 0.0;
+                dzz = 0.0;
+                if (kAver > 1)
+                {
+                    for (int index6 = 1; index6 < kAver; ++index6)
+                    {
+                        int num8 = 1;
+                        dz2 = Math.Abs(hAver[index6]);
+                        for (int index7 = index6 + 1; index7 <= kAver; ++index7)
+                        {
+                            if (n1Aver[index6] == n1Aver[index7] && n2Aver[index6] == n2Aver[index7])
+                            {
+                                dz = Math.Abs(Math.Abs(hAver[index6]) - Math.Abs(hAver[index7]));
+                                if (dz > dzz)
+                                    dzz = dz;
+                                ++kzAver;
+                                name1Aver[kzAver] = n1Aver[index6];
+                                name2Aver[kzAver] = n2Aver[index6];
+                                dzAver[kzAver] = dz;
+                                dz1 += dz;
+                                ++num8;
+                                dz2 += Math.Abs(hAver[index7]);
+                            }
+                            if (n1Aver[index6] == n2Aver[index7] && n2Aver[index6] == n1Aver[index7])
+                            {
+                                dz = Math.Abs(Math.Abs(hAver[index6]) - Math.Abs(hAver[index7]));
+                                if (dz > dzz)
+                                    dzz = dz;
+                                ++kzAver;
+                                name1Aver[kzAver] = n1Aver[index6];
+                                name2Aver[kzAver] = n2Aver[index6];
+                                dzAver[kzAver] = dz;
+                                dz1 += dz;
+                                ++num8;
+                                dz2 += Math.Abs(hAver[index7]);
+                            }
+                        }
+                        if (num8 > 1)
+                        {
+                            ++kMiddle;
+                            n1Middle[kMiddle] = n1Aver[index6];
+                            n2Middle[kMiddle] = n2Aver[index6];
+                            hMiddle[kMiddle] = dz2 / (double)num8;
+                        }
+                    }
+                }
+                dz1 /= (double)kzAver;
+                int num9 = 0;
+                sTemp = " ";
+                for (int index = 1; index <= kzAver; ++index)
+                {
+                    if (dzAver[index] > 2.0 * dz1)
+                    {
+                        ++num9;
+                        sTmp = name1Aver[index] + "-" + name2Aver[index] + " or " + name2Aver[index] + "-" + name1Aver[index] + "              " + string.Format("{0:F3}", (object)dzAver[index]);
+                        sTemp = sTemp + "\n" + sTmp;
+                    }
+                }
+                sTemp += "\n                                  ";
+                sTemp += "\nDo you want to continue this process ?";
+                if (num9 > 0 && MessageBox.Show(sTemp, "Check vertical data-doubtful differences of average values", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                {
+                    iCond = -99;
+                }
+                else
+                {
+                    if (File.Exists(fileDifer))
+                        File.Delete(fileDifer);
+                    FileStream output2 = new FileStream(fileDifer, FileMode.CreateNew);
+                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                    binaryWriter2.Write(kDif);
+                    for (int index = 1; index <= kDif; ++index)
+                    {
+                        binaryWriter2.Write(n1Pnt[index]);
+                        binaryWriter2.Write(n2Pnt[index]);
+                        binaryWriter2.Write(distDif[index]);
+                        binaryWriter2.Write(horDif[index]);
+                        binaryWriter2.Write(verDif[index]);
+                        binaryWriter2.Write(dhDif[index]);
+                        binaryWriter2.Write(verZero[index]);
+                    }
+                    binaryWriter2.Close();
+                    output2.Close();
+                    if (!File.Exists(fileAdd))
+                        return;
+                    FileStream input3 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                    if (File.Exists(fileLine))
+                        File.Delete(fileLine);
+                    FileStream output3 = new FileStream(fileLine, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    binaryWriter3.Write(num3);
+                    for (int index8 = 1; index8 <= num3; ++index8)
+                    {
+                        int num10 = binaryReader3.ReadInt32();
+                        for (int index9 = 1; index9 <= num10; ++index9)
+                        {
+                            namePnt1[index9] = binaryReader3.ReadString();
+                            namePnt2[index9] = binaryReader3.ReadString();
+                            distAver[index9] = binaryReader3.ReadDouble();
+                            horAver[index9] = binaryReader3.ReadDouble();
+                            verAver[index9] = binaryReader3.ReadDouble();
+                            if (kMiddle > 0)
+                            {
+                                for (int index10 = 1; index10 <= kMiddle; ++index10)
+                                {
+                                    if (namePnt1[index9] == n1Middle[index10] && namePnt2[index9] == n2Middle[index10])
+                                    {
+                                        if (verAver[index9] == 0.0)
+                                        {
+                                            verAver[index9] = hMiddle[index10];
+                                            continue;
+                                        }
+                                        double num11 = verAver[index9] / Math.Abs(verAver[index9]);
+                                        verAver[index9] = num11 * hMiddle[index10];
+                                    }
+                                    if (namePnt1[index9] == n2Middle[index10] && namePnt2[index9] == n1Middle[index10])
+                                    {
+                                        if (verAver[index9] == 0.0)
+                                        {
+                                            verAver[index9] = hMiddle[index10];
+                                        }
+                                        else
+                                        {
+                                            double num12 = verAver[index9] / Math.Abs(verAver[index9]);
+                                            verAver[index9] = num12 * hMiddle[index10];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        binaryWriter3.Write(num10);
+                        for (int index11 = 1; index11 <= num10; ++index11)
+                        {
+                            binaryWriter3.Write(namePnt1[index11]);
+                            xPnt1[index11] = 0.0;
+                            yPnt1[index11] = 0.0;
+                            zPnt1[index11] = 0.0;
+                            int num13 = 0;
+                            for (int index12 = 1; index12 <= kGeo; ++index12)
+                            {
+                                if (namePnt1[index11] == nameGeo[index12])
+                                {
+                                    xPnt1[index11] = xGeo[index12];
+                                    yPnt1[index11] = yGeo[index12];
+                                    zPnt1[index11] = zGeo[index12];
+                                    num2 = num13 + 1;
+                                    break;
+                                }
+                            }
+                            binaryWriter3.Write(xPnt1[index11]);
+                            binaryWriter3.Write(yPnt1[index11]);
+                            binaryWriter3.Write(zPnt1[index11]);
+                            binaryWriter3.Write(namePnt2[index11]);
+                            xPnt2[index11] = 0.0;
+                            yPnt2[index11] = 0.0;
+                            zPnt2[index11] = 0.0;
+                            for (int index13 = 1; index13 <= kGeo; ++index13)
+                            {
+                                if (namePnt2[index11] == nameGeo[index13])
+                                {
+                                    xPnt2[index11] = xGeo[index13];
+                                    yPnt2[index11] = yGeo[index13];
+                                    zPnt2[index11] = zGeo[index13];
+                                    break;
+                                }
+                            }
+                            binaryWriter3.Write(xPnt2[index11]);
+                            binaryWriter3.Write(yPnt2[index11]);
+                            binaryWriter3.Write(zPnt2[index11]);
+                            binaryWriter3.Write(distAver[index11]);
+                            binaryWriter3.Write(horAver[index11]);
+                            binaryWriter3.Write(verAver[index11]);
+                        }
+                    }
+                    binaryReader3.Close();
+                    input3.Close();
+                    binaryWriter3.Close();
+                    output3.Close();
+                    kAdd = 0;
+                    nZero = 0;
+                    kName = 0;
+                    for (int index14 = 1; index14 <= num3; ++index14)
+                    {
+                        if (!File.Exists(fileLine))
+                            return;
+                        FileStream input4 = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                        if (File.Exists(fileAdd))
+                            File.Delete(fileAdd);
+                        FileStream output4 = new FileStream(fileAdd, FileMode.CreateNew);
+                        BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                        int num14 = binaryReader4.ReadInt32();
+                        binaryWriter4.Write(num14);
+                        for (int index15 = 1; index15 <= num14; ++index15)
+                        {
+                            int num15 = binaryReader4.ReadInt32();
+                            binaryWriter4.Write(num15);
+                            int num16 = 0;
+                            int index16 = 0;
+                            int index17 = 0;
+                            for (int index18 = 1; index18 <= num15; ++index18)
+                            {
+                                namePnt1[index18] = binaryReader4.ReadString();
+                                xPnt1[index18] = binaryReader4.ReadDouble();
+                                yPnt1[index18] = binaryReader4.ReadDouble();
+                                zPnt1[index18] = binaryReader4.ReadDouble();
+                                namePnt2[index18] = binaryReader4.ReadString();
+                                xPnt2[index18] = binaryReader4.ReadDouble();
+                                yPnt2[index18] = binaryReader4.ReadDouble();
+                                zPnt2[index18] = binaryReader4.ReadDouble();
+                                distAver[index18] = binaryReader4.ReadDouble();
+                                horAver[index18] = binaryReader4.ReadDouble();
+                                verAver[index18] = binaryReader4.ReadDouble();
+                                if (kAdd > 0)
+                                {
+                                    for (int index19 = 1; index19 <= kAdd; ++index19)
+                                    {
+                                        if (namePnt1[index18] == nameAdd[index19])
+                                        {
+                                            xPnt1[index18] = xAdd[index19];
+                                            yPnt1[index18] = yAdd[index19];
+                                            zPnt1[index18] = zAdd[index19];
+                                        }
+                                        else if (namePnt2[index18] == nameAdd[index19])
+                                        {
+                                            xPnt2[index18] = xAdd[index19];
+                                            yPnt2[index18] = yAdd[index19];
+                                            zPnt2[index18] = zAdd[index19];
+                                        }
+                                    }
+                                }
+                                binaryWriter4.Write(namePnt1[index18]);
+                                binaryWriter4.Write(xPnt1[index18]);
+                                binaryWriter4.Write(yPnt1[index18]);
+                                binaryWriter4.Write(zPnt1[index18]);
+                                binaryWriter4.Write(namePnt2[index18]);
+                                binaryWriter4.Write(xPnt2[index18]);
+                                binaryWriter4.Write(yPnt2[index18]);
+                                binaryWriter4.Write(zPnt2[index18]);
+                                binaryWriter4.Write(distAver[index18]);
+                                binaryWriter4.Write(horAver[index18]);
+                                binaryWriter4.Write(verAver[index18]);
+                                if (xPnt1[index18] != 0.0 && yPnt1[index18] != 0.0 && xPnt2[index18] != 0.0 && yPnt2[index18] != 0.0)
+                                {
+                                    ++index17;
+                                    indLine[index17] = index18;
+                                    dx = xPnt2[index18] - xPnt1[index18];
+                                    dy = yPnt2[index18] - yPnt1[index18];
+                                    azim[index17] = Math.Atan2(dy, dx);
+                                    if (azim[index17] < 0.0)
+                                        azim[index17] = azim[index17] + 2.0 * pi;
+                                }
+                                if (xPnt1[index18] != 0.0 && yPnt1[index18] != 0.0)
+                                    ++num16;
+                                if (xPnt2[index18] != 0.0 && yPnt2[index18] != 0.0)
+                                {
+                                    ++index16;
+                                    nameNode[index16] = namePnt1[index18];
+                                    xNode[index16] = xPnt2[index18];
+                                    yNode[index16] = yPnt2[index18];
+                                    distDop[index16] = distAver[index18];
+                                    horDop[index16] = horAver[index18];
+                                }
+                            }
+                            if (index17 == 0 && num16 == 0 && index16 > 2)
+                            {
+                                double xpt = 0.0;
+                                double ypt = 0.0;
+                                int k = -1;
+                                for (int index20 = 1; index20 <= index16; ++index20)
+                                {
+                                    ++k;
+                                    xNode[k] = xNode[index20];
+                                    yNode[k] = yNode[index20];
+                                    horDop[k] = horDop[index20];
+                                    distDop[k] = distDop[index20];
+                                }
+                                Inverse(k, ref xNode, ref yNode, ref horDop, ref distDop, out xpt, out ypt);
+                                ++kAdd;
+                                nameAdd[kAdd] = nameNode[1];
+                                xAdd[kAdd] = xpt;
+                                yAdd[kAdd] = ypt;
+                                zAdd[kAdd] = 0.0;
+                            }
+                            else if (index17 != 0)
+                            {
+                                for (int index21 = 1; index21 <= index17; ++index21)
+                                {
+                                    int index22 = indLine[index21];
+                                    az = azim[index21];
+                                    dist1 = distAver[index22];
+                                    hor1 = horAver[index22];
+                                    for (int index23 = 1; index23 <= num15; ++index23)
+                                    {
+                                        hor2 = horAver[index23];
+                                        if (hor2 < 0.0)
+                                            hor2 += 2.0 * pi;
+                                        dir = az + (hor2 - hor1);
+                                        if (dir < 0.0)
+                                            dir += 2.0 * pi;
+                                        ++kAdd;
+                                        nameAdd[kAdd] = namePnt2[index23];
+                                        xAdd[kAdd] = xPnt1[index22] + distAver[index23] * Math.Cos(dir);
+                                        yAdd[kAdd] = yPnt1[index22] + distAver[index23] * Math.Sin(dir);
+                                        zAdd[kAdd] = 0.0;
+                                    }
+                                }
+                            }
+                        }
+                        binaryReader4.Close();
+                        input4.Close();
+                        binaryWriter4.Close();
+                        output4.Close();
+                        kZero = 0;
+                        if (!File.Exists(fileAdd))
+                            return;
+                        FileStream input5 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+                        if (File.Exists(fileLine))
+                            File.Delete(fileLine);
+                        FileStream output5 = new FileStream(fileLine, FileMode.CreateNew);
+                        BinaryWriter binaryWriter5 = new BinaryWriter((Stream)output5);
+                        num3 = binaryReader5.ReadInt32();
+                        binaryWriter5.Write(num3);
+                        for (int index24 = 1; index24 <= num3; ++index24)
+                        {
+                            int num17 = binaryReader5.ReadInt32();
+                            binaryWriter5.Write(num17);
+                            for (int index25 = 1; index25 <= num17; ++index25)
+                            {
+                                namePnt1[index25] = binaryReader5.ReadString();
+                                xPnt1[index25] = binaryReader5.ReadDouble();
+                                yPnt1[index25] = binaryReader5.ReadDouble();
+                                zPnt1[index25] = binaryReader5.ReadDouble();
+                                namePnt2[index25] = binaryReader5.ReadString();
+                                xPnt2[index25] = binaryReader5.ReadDouble();
+                                yPnt2[index25] = binaryReader5.ReadDouble();
+                                zPnt2[index25] = binaryReader5.ReadDouble();
+                                distAver[index25] = binaryReader5.ReadDouble();
+                                horAver[index25] = binaryReader5.ReadDouble();
+                                verAver[index25] = binaryReader5.ReadDouble();
+                                if (xPnt1[index25] == 0.0 && yPnt1[index25] == 0.0)
+                                {
+                                    ++kZero;
+                                    ++kName;
+                                    nameZero[kName] = namePnt1[index25];
+                                }
+                                if (xPnt2[index25] == 0.0 && yPnt2[index25] == 0.0)
+                                {
+                                    ++kZero;
+                                    ++kName;
+                                    nameZero[kName] = namePnt2[index25];
+                                }
+                                binaryWriter5.Write(namePnt1[index25]);
+                                binaryWriter5.Write(xPnt1[index25]);
+                                binaryWriter5.Write(yPnt1[index25]);
+                                binaryWriter5.Write(zPnt1[index25]);
+                                binaryWriter5.Write(namePnt2[index25]);
+                                binaryWriter5.Write(xPnt2[index25]);
+                                binaryWriter5.Write(yPnt2[index25]);
+                                binaryWriter5.Write(zPnt2[index25]);
+                                binaryWriter5.Write(distAver[index25]);
+                                binaryWriter5.Write(horAver[index25]);
+                                binaryWriter5.Write(verAver[index25]);
+                            }
+                        }
+                        binaryReader5.Close();
+                        input5.Close();
+                        binaryWriter5.Close();
+                        output5.Close();
+                        if (kAdd > 0)
+                        {
+                            int index26 = 0;
+                            for (int index27 = 1; index27 <= kAdd; ++index27)
+                            {
+                                int num18 = 0;
+                                for (int index28 = 1; index28 <= kGeo; ++index28)
+                                {
+                                    if (nameAdd[index27] == nameGeo[index28])
+                                    {
+                                        ++num18;
+                                        break;
+                                    }
+                                }
+                                if (num18 <= 0)
+                                {
+                                    ++index26;
+                                    nameAdd[index26] = nameAdd[index27];
+                                    xAdd[index26] = xAdd[index27];
+                                    yAdd[index26] = yAdd[index27];
+                                    zAdd[index26] = zAdd[index27];
+                                }
+                            }
+                            kAdd = index26;
+                            if (kAdd > 1)
+                            {
+                                for (int index29 = 1; index29 < kAdd; ++index29)
+                                {
+                                    if (xAdd[index29] != -9999.9 || yAdd[index29] != -9999.9)
+                                    {
+                                        int num19 = index29 + 1;
+                                        int num20 = 1;
+                                        dx = xAdd[index29];
+                                        dy = yAdd[index29];
+                                        dz = zAdd[index29];
+                                        for (int index30 = num19; index30 <= kAdd; ++index30)
+                                        {
+                                            if ((xAdd[index30] != -9999.9 || yAdd[index30] != -9999.9) && nameAdd[index29] == nameAdd[index30])
+                                            {
+                                                ++num20;
+                                                dx += xAdd[index30];
+                                                dy += yAdd[index30];
+                                                dz += zAdd[index30];
+                                                xAdd[index30] = -9999.9;
+                                                yAdd[index30] = -9999.9;
+                                            }
+                                        }
+                                        xAdd[index29] = dx / (double)num20;
+                                        yAdd[index29] = dy / (double)num20;
+                                        zAdd[index29] = dz / (double)num20;
+                                    }
+                                }
+                                int index31 = 0;
+                                for (int index32 = 1; index32 <= kAdd; ++index32)
+                                {
+                                    if (xAdd[index32] != -9999.9 || yAdd[index32] != -9999.9)
+                                    {
+                                        ++index31;
+                                        nameAdd[index31] = nameAdd[index32];
+                                        xAdd[index31] = xAdd[index32];
+                                        yAdd[index31] = yAdd[index32];
+                                        zAdd[index31] = zAdd[index32];
+                                    }
+                                }
+                                kAdd = index31;
+                            }
+                        }
+                        if (kZero != 0)
+                        {
+                            if (numZero[nZero] == kZero)
+                            {
+                                sTmp = "";
+                                for (int index33 = 1; index33 <= kName; ++index33)
+                                    sTmp = sTmp + "\n" + nameZero[index33];
+                                int num21 = (int)MessageBox.Show(sTmp, "Problem of points calculation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            }
+                            ++nZero;
+                            numZero[nZero] = kZero;
+                        }
+                        else
+                            break;
+                    }
+                    if (!File.Exists(fileLine))
+                        return;
+                    FileStream input6 = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader6 = new BinaryReader((Stream)input6);
+                    if (File.Exists(fileForm))
+                        File.Delete(fileForm);
+                    FileStream output6 = new FileStream(fileForm, FileMode.CreateNew);
+                    BinaryWriter binaryWriter6 = new BinaryWriter((Stream)output6);
+                    int num22 = binaryReader6.ReadInt32();
+                    binaryWriter6.Write(num22);
+                    for (int index34 = 1; index34 <= num22; ++index34)
+                    {
+                        int num23 = binaryReader6.ReadInt32();
+                        binaryWriter6.Write(num23);
+                        for (int index35 = 1; index35 <= num23; ++index35)
+                        {
+                            namePnt1[index35] = binaryReader6.ReadString();
+                            xPnt1[index35] = binaryReader6.ReadDouble();
+                            yPnt1[index35] = binaryReader6.ReadDouble();
+                            zPnt1[index35] = binaryReader6.ReadDouble();
+                            namePnt2[index35] = binaryReader6.ReadString();
+                            xPnt2[index35] = binaryReader6.ReadDouble();
+                            yPnt2[index35] = binaryReader6.ReadDouble();
+                            zPnt2[index35] = binaryReader6.ReadDouble();
+                            distAver[index35] = binaryReader6.ReadDouble();
+                            horAver[index35] = binaryReader6.ReadDouble();
+                            verAver[index35] = binaryReader6.ReadDouble();
+                            binaryWriter6.Write(namePnt1[index35]);
+                            binaryWriter6.Write(xPnt1[index35]);
+                            binaryWriter6.Write(yPnt1[index35]);
+                            binaryWriter6.Write(zPnt1[index35]);
+                            binaryWriter6.Write(namePnt2[index35]);
+                            binaryWriter6.Write(xPnt2[index35]);
+                            binaryWriter6.Write(yPnt2[index35]);
+                            binaryWriter6.Write(zPnt2[index35]);
+                            binaryWriter6.Write(distAver[index35]);
+                            binaryWriter6.Write(horAver[index35]);
+                            binaryWriter6.Write(verAver[index35]);
+                        }
+                    }
+                    binaryReader6.Close();
+                    input6.Close();
+                    binaryWriter6.Close();
+                    output6.Close();
+                    SelectLine();
+                    kNode = 0;
+                    if (!File.Exists(fileAdd))
+                        return;
+                    FileStream input7 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader7 = new BinaryReader((Stream)input7);
+                    if (File.Exists(fileLine))
+                        File.Delete(fileLine);
+                    FileStream output7 = new FileStream(fileLine, FileMode.CreateNew);
+                    BinaryWriter binaryWriter7 = new BinaryWriter((Stream)output7);
+                    binaryWriter7.Write(kLine);
+                    for (int index36 = 1; index36 <= kLine; ++index36)
+                    {
+                        namePnt1[index36] = binaryReader7.ReadString();
+                        xPnt1[index36] = binaryReader7.ReadDouble();
+                        yPnt1[index36] = binaryReader7.ReadDouble();
+                        zPnt1[index36] = binaryReader7.ReadDouble();
+                        namePnt2[index36] = binaryReader7.ReadString();
+                        xPnt2[index36] = binaryReader7.ReadDouble();
+                        yPnt2[index36] = binaryReader7.ReadDouble();
+                        zPnt2[index36] = binaryReader7.ReadDouble();
+                        distAver[index36] = binaryReader7.ReadDouble();
+                        horAver[index36] = binaryReader7.ReadDouble();
+                        verAver[index36] = binaryReader7.ReadDouble();
+                        binaryWriter7.Write(namePnt1[index36]);
+                        binaryWriter7.Write(xPnt1[index36]);
+                        binaryWriter7.Write(yPnt1[index36]);
+                        binaryWriter7.Write(zPnt1[index36]);
+                        binaryWriter7.Write(namePnt2[index36]);
+                        binaryWriter7.Write(xPnt2[index36]);
+                        binaryWriter7.Write(yPnt2[index36]);
+                        binaryWriter7.Write(zPnt2[index36]);
+                        binaryWriter7.Write(distAver[index36]);
+                        binaryWriter7.Write(horAver[index36]);
+                        binaryWriter7.Write(verAver[index36]);
+                        int num24 = 0;
+                        int num25 = 0;
+                        if (kNode > 0)
+                        {
+                            for (int index37 = 1; index37 <= kNode; ++index37)
+                            {
+                                if (namePnt1[index36] == nameNode[index37])
+                                    ++num24;
+                                if (namePnt2[index36] == nameNode[index37])
+                                    ++num25;
+                            }
+                        }
+                        if (num24 == 0)
+                        {
+                            ++kNode;
+                            nameNode[kNode] = namePnt1[index36];
+                        }
+                        if (num25 == 0)
+                        {
+                            ++kNode;
+                            nameNode[kNode] = namePnt2[index36];
+                        }
+                    }
+                    output7.Close();
+                    binaryWriter7.Close();
+                    input7.Close();
+                    binaryReader7.Close();
+                    int index38 = 0;
+                    if (kNode > 0)
+                    {
+                        for (int index39 = 1; index39 <= kNode; ++index39)
+                        {
+                            int num26 = 0;
+                            for (int index40 = 1; index40 <= kGeo; ++index40)
+                            {
+                                if (nameNode[index39] == nameGeo[index40])
+                                {
+                                    ++num26;
+                                    break;
+                                }
+                            }
+                            if (num26 <= 0)
+                            {
+                                ++index38;
+                                nameNode[index38] = nameNode[index39];
+                            }
+                        }
+                        kNode = index38;
+                        for (int index41 = 1; index41 <= kNode; ++index41)
+                        {
+                            indLine[index41] = 0;
+                            for (int index42 = 1; index42 <= kLine; ++index42)
+                            {
+                                if (nameNode[index41] == namePnt1[index42])
+                                    indLine[index41] = indLine[index41] + 1;
+                                if (nameNode[index41] == namePnt2[index42])
+                                    indLine[index41] = indLine[index41] + 1;
+                            }
+                        }
+                    }
+                    int index43 = 0;
+                    if (kNode > 0)
+                    {
+                        for (int index44 = 1; index44 <= kNode; ++index44)
+                        {
+                            if (indLine[index44] >= 3)
+                            {
+                                ++index43;
+                                nameNode[index43] = nameNode[index44];
+                            }
+                        }
+                        kNode = index43;
+                        for (int index45 = 1; index45 <= kNode; ++index45)
+                        {
+                            for (int index46 = 1; index46 <= kLine; ++index46)
+                            {
+                                if (nameNode[index45] == namePnt1[index46])
+                                {
+                                    xNode[index45] = xPnt1[index46];
+                                    yNode[index45] = yPnt1[index46];
+                                    zNode[index45] = zPnt1[index46];
+                                    break;
+                                }
+                                if (nameNode[index45] == namePnt2[index46])
+                                {
+                                    xNode[index45] = xPnt2[index46];
+                                    yNode[index45] = yPnt2[index46];
+                                    zNode[index45] = zPnt2[index46];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    kAdd = 0;
+                    if (!File.Exists(fileForm))
+                        return;
+                    FileStream input8 = new FileStream(fileForm, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader8 = new BinaryReader((Stream)input8);
+                    int num27 = binaryReader8.ReadInt32();
+                    for (int index47 = 1; index47 <= num27; ++index47)
+                    {
+                        int num28 = binaryReader8.ReadInt32();
+                        for (int index48 = 1; index48 <= num28; ++index48)
+                        {
+                            n1Pnt[index48] = binaryReader8.ReadString();
+                            x1Pnt[index48] = binaryReader8.ReadDouble();
+                            y1Pnt[index48] = binaryReader8.ReadDouble();
+                            z1Pnt[index48] = binaryReader8.ReadDouble();
+                            n2Pnt[index48] = binaryReader8.ReadString();
+                            x2Pnt[index48] = binaryReader8.ReadDouble();
+                            y2Pnt[index48] = binaryReader8.ReadDouble();
+                            z2Pnt[index48] = binaryReader8.ReadDouble();
+                            distDif[index48] = binaryReader8.ReadDouble();
+                            horDif[index48] = binaryReader8.ReadDouble();
+                            verDif[index48] = binaryReader8.ReadDouble();
+                        }
+                        if (num28 == 1)
+                        {
+                            ++kAdd;
+                            nameAdd[kAdd] = n1Pnt[1];
+                            xAdd[kAdd] = x1Pnt[1];
+                            yAdd[kAdd] = y1Pnt[1];
+                            zAdd[kAdd] = z1Pnt[1];
+                        }
+                    }
+                    input8.Close();
+                    binaryReader8.Close();
+                    if (kAdd > 0)
+                    {
+                        if (!File.Exists(fileForm))
+                            return;
+                        FileStream input9 = new FileStream(fileForm, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader9 = new BinaryReader((Stream)input9);
+                        int num29 = binaryReader9.ReadInt32();
+                        for (int index49 = 1; index49 <= num29; ++index49)
+                        {
+                            int num30 = binaryReader9.ReadInt32();
+                            for (int index50 = 1; index50 <= num30; ++index50)
+                            {
+                                n1Pnt[index50] = binaryReader9.ReadString();
+                                x1Pnt[index50] = binaryReader9.ReadDouble();
+                                y1Pnt[index50] = binaryReader9.ReadDouble();
+                                z1Pnt[index50] = binaryReader9.ReadDouble();
+                                n2Pnt[index50] = binaryReader9.ReadString();
+                                x2Pnt[index50] = binaryReader9.ReadDouble();
+                                y2Pnt[index50] = binaryReader9.ReadDouble();
+                                z2Pnt[index50] = binaryReader9.ReadDouble();
+                                distDif[index50] = binaryReader9.ReadDouble();
+                                horDif[index50] = binaryReader9.ReadDouble();
+                                verDif[index50] = binaryReader9.ReadDouble();
+                            }
+                            if (num30 > 1)
+                            {
+                                for (int index51 = 1; index51 <= num30; ++index51)
+                                {
+                                    for (int index52 = 1; index52 <= kAdd; ++index52)
+                                    {
+                                        if (n1Pnt[index51] == nameAdd[index52])
+                                        {
+                                            xAdd[index52] = 0.0;
+                                            yAdd[index52] = 0.0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        input9.Close();
+                        binaryReader9.Close();
+                        int index53 = 0;
+                        for (int index54 = 1; index54 <= kAdd; ++index54)
+                        {
+                            if (xAdd[index54] != 0.0 || yAdd[index54] != 0.0)
+                            {
+                                ++index53;
+                                nameAdd[index53] = nameAdd[index54];
+                                xAdd[index53] = xAdd[index54];
+                                yAdd[index53] = yAdd[index54];
+                                zAdd[index53] = zAdd[index54];
+                            }
+                        }
+                        kAdd = index53;
+                    }
+                    if (kAdd > 0)
+                    {
+                        for (int index55 = 1; index55 <= kAdd; ++index55)
+                        {
+                            ++kNode;
+                            nameNode[kNode] = nameAdd[index55];
+                            xNode[kNode] = xAdd[index55];
+                            yNode[kNode] = yAdd[index55];
+                            zNode[kNode] = zAdd[index55];
+                        }
+                    }
+                    if (File.Exists(fileNode))
+                        File.Delete(fileNode);
+                    FileStream output8 = new FileStream(fileNode, FileMode.CreateNew);
+                    BinaryWriter binaryWriter8 = new BinaryWriter((Stream)output8);
+                    binaryWriter8.Write(kNode);
+                    if (kNode > 0)
+                    {
+                        for (int index56 = 1; index56 <= kNode; ++index56)
+                        {
+                            binaryWriter8.Write(nameNode[index56]);
+                            binaryWriter8.Write(xNode[index56]);
+                            binaryWriter8.Write(yNode[index56]);
+                            binaryWriter8.Write(zNode[index56]);
+                        }
+                    }
+                    binaryWriter8.Close();
+                    output8.Close();
+                }
+            }
+        }
+
+        public void LineTopology()
+        {
+            double num1 = 0.0;
+            int num2;
+            int num3 = num2 = 0;
+            int num4;
+            int index1 = num4 = 0;
+            kGeo = 0;
+            if (File.Exists(fgeoGeo))
+            {
+                FileStream input = new FileStream(fgeoGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                kGeo = binaryReader.ReadInt32();
+                for (int index2 = 1; index2 <= kGeo; ++index2)
+                {
+                    nameGeo[index2] = binaryReader.ReadString();
+                    xGeo[index2] = binaryReader.ReadDouble();
+                    yGeo[index2] = binaryReader.ReadDouble();
+                    zGeo[index2] = binaryReader.ReadDouble();
+                    nGeoCode[index2] = binaryReader.ReadInt32();
+                }
+                binaryReader.Close();
+                input.Close();
+            }
+            kNode = 0;
+            if (File.Exists(fileNode))
+            {
+                FileStream input = new FileStream(fileNode, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                kNode = binaryReader.ReadInt32();
+                if (kNode > 0)
+                {
+                    for (int index3 = 1; index3 <= kNode; ++index3)
+                    {
+                        nameNode[index3] = binaryReader.ReadString();
+                        xNode[index3] = binaryReader.ReadDouble();
+                        yNode[index3] = binaryReader.ReadDouble();
+                        zNode[index3] = binaryReader.ReadDouble();
+                    }
+                }
+                binaryReader.Close();
+                input.Close();
+            }
+            kLine = 0;
+            kAdd = 0;
+            if (File.Exists(fileLine))
+            {
+                FileStream input = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                kLine = binaryReader.ReadInt32();
+                for (int index4 = 1; index4 <= kLine; ++index4)
+                {
+                    namePnt1[index4] = binaryReader.ReadString();
+                    xPnt1[index4] = binaryReader.ReadDouble();
+                    yPnt1[index4] = binaryReader.ReadDouble();
+                    zPnt1[index4] = binaryReader.ReadDouble();
+                    namePnt2[index4] = binaryReader.ReadString();
+                    xPnt2[index4] = binaryReader.ReadDouble();
+                    yPnt2[index4] = binaryReader.ReadDouble();
+                    zPnt2[index4] = binaryReader.ReadDouble();
+                    distAver[index4] = binaryReader.ReadDouble();
+                    horAver[index4] = binaryReader.ReadDouble();
+                    verAver[index4] = binaryReader.ReadDouble();
+                    int num5 = 0;
+                    int num6 = 0;
+                    if (kAdd > 0)
+                    {
+                        for (int index5 = 1; index5 <= kAdd; ++index5)
+                        {
+                            if (nameAdd[index5] == namePnt1[index4])
+                                ++num5;
+                            else if (nameAdd[index5] == namePnt2[index4])
+                                ++num6;
+                        }
+                    }
+                    if (num5 == 0)
+                    {
+                        ++kAdd;
+                        nameAdd[kAdd] = namePnt1[index4];
+                        xAdd[kAdd] = xPnt1[index4];
+                        yAdd[kAdd] = yPnt1[index4];
+                        zAdd[kAdd] = zPnt1[index4];
+                    }
+                    if (num6 == 0)
+                    {
+                        ++kAdd;
+                        nameAdd[kAdd] = namePnt2[index4];
+                        xAdd[kAdd] = xPnt2[index4];
+                        yAdd[kAdd] = yPnt2[index4];
+                        zAdd[kAdd] = zPnt2[index4];
+                    }
+                }
+                binaryReader.Close();
+                input.Close();
+            }
+            if (kLine == 0)
+                return;
+            for (int index6 = 1; index6 <= kAdd; ++index6)
+            {
+                indLine[index6] = 0;
+                for (int index7 = 1; index7 <= kLine; ++index7)
+                {
+                    if (nameAdd[index6] == namePnt1[index7])
+                        indLine[index6] = indLine[index6] + 1;
+                    if (nameAdd[index6] == namePnt2[index7])
+                        indLine[index6] = indLine[index6] + 1;
+                }
+            }
+            for (int index8 = 1; index8 <= kAdd; ++index8)
+            {
+                if (indLine[index8] < 2)
+                {
+                    int num7 = 0;
+                    for (int index9 = 1; index9 <= kGeo; ++index9)
+                    {
+                        if (nameAdd[index8] == nameGeo[index9])
+                        {
+                            ++num7;
+                            break;
+                        }
+                    }
+                    if (num7 <= 0)
+                    {
+                        if (kNode > 0)
+                        {
+                            for (int index10 = 1; index10 <= kNode; ++index10)
+                            {
+                                if (nameAdd[index8] == nameNode[index10])
+                                {
+                                    ++num7;
+                                    break;
+                                }
+                            }
+                        }
+                        if (num7 <= 0)
+                        {
+                            ++num3;
+                            ++kNode;
+                            nameNode[kNode] = nameAdd[index8];
+                            xNode[kNode] = xAdd[index8];
+                            yNode[kNode] = yAdd[index8];
+                            zNode[kNode] = zAdd[index8];
+                        }
+                    }
+                }
+            }
+            if (num3 > 0)
+            {
+                if (File.Exists(fileNode))
+                    File.Delete(fileNode);
+                FileStream output = new FileStream(fileNode, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kNode);
+                if (kNode > 0)
+                {
+                    for (int index11 = 1; index11 <= kNode; ++index11)
+                    {
+                        binaryWriter.Write(nameNode[index11]);
+                        binaryWriter.Write(xNode[index11]);
+                        binaryWriter.Write(yNode[index11]);
+                        binaryWriter.Write(zNode[index11]);
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            int num8 = 0;
+            if (File.Exists(fileForm))
+            {
+                FileStream input = new FileStream(fileForm, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                int index12 = 0;
+                num8 = binaryReader.ReadInt32();
+                for (int index13 = 1; index13 <= num8; ++index13)
+                {
+                    int num9 = binaryReader.ReadInt32();
+                    for (int index14 = 1; index14 <= num9; ++index14)
+                    {
+                        n1Pnt[index14] = binaryReader.ReadString();
+                        x1Pnt[index14] = binaryReader.ReadDouble();
+                        y1Pnt[index14] = binaryReader.ReadDouble();
+                        z1Pnt[index14] = binaryReader.ReadDouble();
+                        n2Pnt[index14] = binaryReader.ReadString();
+                        x2Pnt[index14] = binaryReader.ReadDouble();
+                        y2Pnt[index14] = binaryReader.ReadDouble();
+                        z2Pnt[index14] = binaryReader.ReadDouble();
+                        distDif[index14] = binaryReader.ReadDouble();
+                        horDif[index14] = binaryReader.ReadDouble();
+                        verDif[index14] = binaryReader.ReadDouble();
+                    }
+                    kt[index13] = num9;
+                    for (int index15 = 1; index15 <= num9; ++index15)
+                    {
+                        ++index12;
+                        nameStat[index12] = n1Pnt[index15];
+                        xStat[index12] = x1Pnt[index15];
+                        yStat[index12] = y1Pnt[index15];
+                        zStat[index12] = z1Pnt[index15];
+                        namePnt[index12] = n2Pnt[index15];
+                        xPnt[index12] = x2Pnt[index15];
+                        yPnt[index12] = y2Pnt[index15];
+                        zPnt[index12] = z2Pnt[index15];
+                        distPnt[index12] = distDif[index15];
+                        horPnt[index12] = horDif[index15];
+                        verPnt[index12] = verDif[index15];
+                    }
+                }
+                input.Close();
+                binaryReader.Close();
+            }
+            if (num8 == 0)
+                return;
+            k1[1] = 1;
+            k2[1] = kt[1];
+            if (num8 > 1)
+            {
+                for (int index16 = 2; index16 <= num8; ++index16)
+                {
+                    k1[index16] = k2[index16 - 1] + 1;
+                    k2[index16] = k2[index16 - 1] + kt[index16];
+                }
+            }
+            int num10 = 0;
+            for (int index17 = 1; index17 <= kAdd; ++index17)
+            {
+                if (indLine[index17] > 1)
+                {
+                    int num11 = 0;
+                    for (int index18 = 1; index18 <= num8; ++index18)
+                    {
+                        int index19 = k1[index18];
+                        if (nameAdd[index17] == nameStat[index19])
+                        {
+                            ++num11;
+                            break;
+                        }
+                    }
+                    if (num11 <= 0)
+                    {
+                        if (kNode > 0)
+                        {
+                            for (int index20 = 1; index20 <= kNode; ++index20)
+                            {
+                                if (nameAdd[index17] == nameNode[index20])
+                                {
+                                    ++num11;
+                                    break;
+                                }
+                            }
+                        }
+                        if (num11 <= 0)
+                        {
+                            ++num10;
+                            ++kNode;
+                            nameNode[kNode] = nameAdd[index17];
+                            xNode[kNode] = xAdd[index17];
+                            yNode[kNode] = yAdd[index17];
+                            zNode[kNode] = zAdd[index17];
+                        }
+                    }
+                }
+            }
+            if (num10 > 0)
+            {
+                if (File.Exists(fileNode))
+                    File.Delete(fileNode);
+                FileStream output = new FileStream(fileNode, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kNode);
+                if (kNode > 0)
+                {
+                    for (int index21 = 1; index21 <= kNode; ++index21)
+                    {
+                        binaryWriter.Write(nameNode[index21]);
+                        binaryWriter.Write(xNode[index21]);
+                        binaryWriter.Write(yNode[index21]);
+                        binaryWriter.Write(zNode[index21]);
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            kAdd = kGeo;
+            for (int index22 = 1; index22 <= kGeo; ++index22)
+            {
+                nameAdd[index22] = nameGeo[index22];
+                xAdd[index22] = xGeo[index22];
+                yAdd[index22] = yGeo[index22];
+                zAdd[index22] = zGeo[index22];
+            }
+            if (kNode > 0)
+            {
+                for (int index23 = 1; index23 <= kNode; ++index23)
+                {
+                    ++kAdd;
+                    nameAdd[kAdd] = nameNode[index23];
+                    xAdd[kAdd] = xNode[index23];
+                    yAdd[kAdd] = yNode[index23];
+                    zAdd[kAdd] = zNode[index23];
+                }
+            }
+            kPlus = kAdd;
+            for (int index24 = 1; index24 <= kAdd; ++index24)
+            {
+                nameNode[index24] = nameAdd[index24];
+                xNode[index24] = xAdd[index24];
+                yNode[index24] = yAdd[index24];
+                zNode[index24] = zAdd[index24];
+            }
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            kLineTopo = 0;
+            kDop = 0;
+            for (int index25 = 1; index25 <= kLine; ++index25)
+            {
+                int num12 = 0;
+                if (index1 > 0)
+                {
+                    for (int index26 = 1; index26 <= index1; ++index26)
+                    {
+                        if (indLine[index26] == index25)
+                        {
+                            ++num12;
+                            break;
+                        }
+                    }
+                }
+                if (num12 <= 0)
+                {
+                    ++index1;
+                    indLine[index1] = index25;
+                    nameBeg = namePnt1[index25];
+                    nameEnd = namePnt2[index25];
+                    for (int index27 = 1; index27 <= kPlus; ++index27)
+                    {
+                        if (namePnt1[index25] == nameNode[index27])
+                        {
+                            xPnt1[index25] = xNode[index27];
+                            yPnt1[index25] = yNode[index27];
+                            zPnt1[index25] = zNode[index27];
+                            break;
+                        }
+                    }
+                    int num13 = 0;
+                    for (int index28 = 1; index28 <= kPlus; ++index28)
+                    {
+                        if (namePnt2[index25] == nameNode[index28])
+                        {
+                            ++num13;
+                            xPnt2[index25] = xNode[index28];
+                            yPnt2[index25] = yNode[index28];
+                            zPnt2[index25] = zNode[index28];
+                            break;
+                        }
+                    }
+                    double num14 = 0.0;
+                    if (xPnt1[index25] != 0.0 && yPnt1[index25] != 0.0 && xPnt2[index25] != 0.0 && yPnt2[index25] != 0.0)
+                    {
+                        dx = xPnt2[index25] - xPnt1[index25];
+                        dy = yPnt2[index25] - yPnt1[index25];
+                        num14 = Math.Atan2(dy, dx);
+                        if (num14 < 0.0)
+                            num14 += 2.0 * pi;
+                    }
+                    ++kDop;
+                    nameDop[kDop] = namePnt1[index25];
+                    xDop[kDop] = xPnt1[index25];
+                    yDop[kDop] = yPnt1[index25];
+                    zDop[kDop] = zPnt1[index25];
+                    distDop[kDop] = distAver[index25];
+                    horDop[kDop] = horAver[index25];
+                    revDop[kDop] = 0.0;
+                    dhDop[kDop] = verAver[index25];
+                    azDop[kDop] = num14;
+                    ++kDop;
+                    nameDop[kDop] = namePnt2[index25];
+                    xDop[kDop] = xPnt2[index25];
+                    yDop[kDop] = yPnt2[index25];
+                    zDop[kDop] = zPnt2[index25];
+                    distDop[kDop] = 0.0;
+                    horDop[kDop] = 0.0;
+                    revDop[kDop] = 0.0;
+                    dhDop[kDop] = 0.0;
+                    azDop[kDop] = 0.0;
+                    if (num13 > 0)
+                    {
+                        ++kLineTopo;
+                        binaryWriter1.Write(kDop);
+                        for (int index29 = 1; index29 <= kDop; ++index29)
+                        {
+                            binaryWriter1.Write(nameDop[index29]);
+                            binaryWriter1.Write(xDop[index29]);
+                            binaryWriter1.Write(yDop[index29]);
+                            binaryWriter1.Write(zDop[index29]);
+                            binaryWriter1.Write(distDop[index29]);
+                            binaryWriter1.Write(horDop[index29]);
+                            binaryWriter1.Write(revDop[index29]);
+                            binaryWriter1.Write(dhDop[index29]);
+                            binaryWriter1.Write(azDop[index29]);
+                        }
+                        kDop = 0;
+                    }
+                    else
+                    {
+                        int num15 = 0;
+                        int index30 = 0;
+                        for (int index31 = 1; index31 <= kLine; ++index31)
+                        {
+                            int num16 = 0;
+                            if (index1 > 0)
+                            {
+                                for (int index32 = 1; index32 <= index1; ++index32)
+                                {
+                                    if (indLine[index32] == index31)
+                                    {
+                                        ++num16;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num16 <= 0 && namePnt1[index31] == nameEnd)
+                            {
+                                int num17 = 0;
+                                for (int index33 = 1; index33 <= kPlus; ++index33)
+                                {
+                                    if (namePnt2[index31] == nameNode[index33])
+                                    {
+                                        ++num17;
+                                        ++num15;
+                                        xPnt2[index31] = xNode[index33];
+                                        yPnt2[index31] = yNode[index33];
+                                        zPnt2[index31] = zNode[index33];
+                                        break;
+                                    }
+                                }
+                                if (num17 > 0)
+                                {
+                                    ++index30;
+                                    kt[index30] = index31;
+                                }
+                            }
+                        }
+                        if (index30 > 0)
+                        {
+                            for (int index34 = 1; index34 <= index30; ++index34)
+                            {
+                                int index35 = kt[index34];
+                                kDop = 2;
+                                ++kDop;
+                                nameDop[kDop] = namePnt2[index35];
+                                xDop[kDop] = xPnt2[index35];
+                                yDop[kDop] = yPnt2[index35];
+                                zDop[kDop] = zPnt2[index35];
+                                distDop[kDop] = 0.0;
+                                horDop[kDop] = 0.0;
+                                revDop[kDop] = 0.0;
+                                dhDop[kDop] = 0.0;
+                                azDop[kDop] = 0.0;
+                                ++index1;
+                                indLine[index1] = index35;
+                                ++kLineTopo;
+                                binaryWriter1.Write(kDop);
+                                for (int index36 = 1; index36 <= kDop; ++index36)
+                                {
+                                    binaryWriter1.Write(nameDop[index36]);
+                                    binaryWriter1.Write(xDop[index36]);
+                                    binaryWriter1.Write(yDop[index36]);
+                                    binaryWriter1.Write(zDop[index36]);
+                                    binaryWriter1.Write(distDop[index36]);
+                                    binaryWriter1.Write(horDop[index36]);
+                                    binaryWriter1.Write(revDop[index36]);
+                                    binaryWriter1.Write(dhDop[index36]);
+                                    binaryWriter1.Write(azDop[index36]);
+                                }
+                                kDop = 0;
+                            }
+                        }
+                        int index37 = 0;
+                        for (int index38 = 1; index38 <= kLine; ++index38)
+                        {
+                            int num18 = 0;
+                            if (index1 > 0)
+                            {
+                                for (int index39 = 1; index39 <= index1; ++index39)
+                                {
+                                    if (indLine[index39] == index38)
+                                    {
+                                        ++num18;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num18 <= 0 && namePnt2[index38] == nameEnd)
+                            {
+                                int num19 = 0;
+                                for (int index40 = 1; index40 <= kPlus; ++index40)
+                                {
+                                    if (namePnt1[index38] == nameNode[index40])
+                                    {
+                                        ++num19;
+                                        ++num15;
+                                        xPnt1[index38] = xNode[index40];
+                                        yPnt1[index38] = yNode[index40];
+                                        zPnt1[index38] = zNode[index40];
+                                        break;
+                                    }
+                                }
+                                if (num19 > 0)
+                                {
+                                    ++index37;
+                                    kt[index37] = index38;
+                                }
+                            }
+                        }
+                        if (index37 > 0)
+                        {
+                            for (int index41 = 1; index41 <= index37; ++index41)
+                            {
+                                int index42 = kt[index41];
+                                kDop = 2;
+                                ++kDop;
+                                nameDop[kDop] = namePnt1[index42];
+                                xDop[kDop] = xPnt1[index42];
+                                yDop[kDop] = yPnt1[index42];
+                                zDop[kDop] = zPnt1[index42];
+                                distDop[kDop] = 0.0;
+                                horDop[kDop] = 0.0;
+                                revDop[kDop] = 0.0;
+                                dhDop[kDop] = 0.0;
+                                azDop[kDop] = 0.0;
+                                ++index1;
+                                indLine[index1] = index42;
+                                ++kLineTopo;
+                                binaryWriter1.Write(kDop);
+                                for (int index43 = 1; index43 <= kDop; ++index43)
+                                {
+                                    binaryWriter1.Write(nameDop[index43]);
+                                    binaryWriter1.Write(xDop[index43]);
+                                    binaryWriter1.Write(yDop[index43]);
+                                    binaryWriter1.Write(zDop[index43]);
+                                    binaryWriter1.Write(distDop[index43]);
+                                    binaryWriter1.Write(horDop[index43]);
+                                    binaryWriter1.Write(revDop[index43]);
+                                    binaryWriter1.Write(dhDop[index43]);
+                                    binaryWriter1.Write(azDop[index43]);
+                                }
+                                kDop = 0;
+                            }
+                        }
+                        if (num15 <= 0)
+                        {
+                            int num20 = 0;
+                            while (num20 == 0)
+                            {
+                                for (int index44 = 1; index44 <= kLine; ++index44)
+                                {
+                                    int num21 = 0;
+                                    if (index1 > 0)
+                                    {
+                                        for (int index45 = 1; index45 <= index1; ++index45)
+                                        {
+                                            if (indLine[index45] == index44)
+                                            {
+                                                ++num21;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num21 <= 0)
+                                    {
+                                        if (namePnt1[index44] == nameEnd)
+                                        {
+                                            ++kDop;
+                                            nameDop[kDop] = namePnt2[index44];
+                                            xDop[kDop] = xPnt2[index44];
+                                            yDop[kDop] = yPnt2[index44];
+                                            zDop[kDop] = zPnt2[index44];
+                                            distDop[kDop] = 0.0;
+                                            horDop[kDop] = 0.0;
+                                            revDop[kDop] = 0.0;
+                                            dhDop[kDop] = 0.0;
+                                            azDop[kDop] = 0.0;
+                                            ++index1;
+                                            indLine[index1] = index44;
+                                        }
+                                        if (namePnt2[index44] == nameEnd)
+                                        {
+                                            ++kDop;
+                                            nameDop[kDop] = namePnt1[index44];
+                                            xDop[kDop] = xPnt1[index44];
+                                            yDop[kDop] = yPnt1[index44];
+                                            zDop[kDop] = zPnt1[index44];
+                                            distDop[kDop] = 0.0;
+                                            horDop[kDop] = 0.0;
+                                            revDop[kDop] = 0.0;
+                                            dhDop[kDop] = 0.0;
+                                            azDop[kDop] = 0.0;
+                                            ++index1;
+                                            indLine[index1] = index44;
+                                        }
+                                    }
+                                }
+                                int num22 = 0;
+                                for (int index46 = 1; index46 <= kPlus; ++index46)
+                                {
+                                    if (nameDop[kDop] == nameNode[index46])
+                                    {
+                                        ++num22;
+                                        break;
+                                    }
+                                }
+                                if (num22 == 0)
+                                {
+                                    nameBeg = nameDop[kDop - 1];
+                                    nameEnd = nameDop[kDop];
+                                }
+                                else
+                                {
+                                    ++num20;
+                                    ++kLineTopo;
+                                    binaryWriter1.Write(kDop);
+                                    for (int index47 = 1; index47 <= kDop; ++index47)
+                                    {
+                                        binaryWriter1.Write(nameDop[index47]);
+                                        binaryWriter1.Write(xDop[index47]);
+                                        binaryWriter1.Write(yDop[index47]);
+                                        binaryWriter1.Write(zDop[index47]);
+                                        binaryWriter1.Write(distDop[index47]);
+                                        binaryWriter1.Write(horDop[index47]);
+                                        binaryWriter1.Write(revDop[index47]);
+                                        binaryWriter1.Write(dhDop[index47]);
+                                        binaryWriter1.Write(azDop[index47]);
+                                    }
+                                    kDop = 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            output1.Close();
+            binaryWriter1.Close();
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input1 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(flineTopo))
+                File.Delete(flineTopo);
+            FileStream output2 = new FileStream(flineTopo, FileMode.CreateNew);
+            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+            kLineDop = 0;
+            for (int index48 = 1; index48 <= kLineTopo; ++index48)
+            {
+                kAdd = binaryReader1.ReadInt32();
+                for (int index49 = 1; index49 <= kAdd; ++index49)
+                {
+                    nameAdd[index49] = binaryReader1.ReadString();
+                    xAdd[index49] = binaryReader1.ReadDouble();
+                    yAdd[index49] = binaryReader1.ReadDouble();
+                    zAdd[index49] = binaryReader1.ReadDouble();
+                    distAdd[index49] = binaryReader1.ReadDouble();
+                    horAdd[index49] = binaryReader1.ReadDouble();
+                    revAdd[index49] = binaryReader1.ReadDouble();
+                    dhAdd[index49] = binaryReader1.ReadDouble();
+                    azAdd[index49] = binaryReader1.ReadDouble();
+                }
+                int index50 = 0;
+                for (int index51 = 1; index51 <= num8; ++index51)
+                {
+                    int num23 = k1[index51];
+                    int num24 = k2[index51];
+                    int index52 = 0;
+                    for (int index53 = num23; index53 <= num24; ++index53)
+                    {
+                        ++index52;
+                        n1Pnt[index52] = nameStat[index53];
+                        x1Pnt[index52] = xStat[index53];
+                        y1Pnt[index52] = yStat[index53];
+                        z1Pnt[index52] = zStat[index53];
+                        n2Pnt[index52] = namePnt[index53];
+                        x2Pnt[index52] = xPnt[index53];
+                        y2Pnt[index52] = yPnt[index53];
+                        z2Pnt[index52] = zPnt[index53];
+                        distDif[index52] = distPnt[index53];
+                        horDif[index52] = horPnt[index53];
+                        verDif[index52] = verPnt[index53];
+                    }
+                    int num25 = 0;
+                    for (int index54 = 1; index54 <= index52; ++index54)
+                    {
+                        if (n1Pnt[index54] == nameAdd[1] && n2Pnt[index54] == nameAdd[2])
+                        {
+                            num25 = index54;
+                            break;
+                        }
+                    }
+                    if (num25 != 0)
+                    {
+                        for (int index55 = 1; index55 <= index52; ++index55)
+                        {
+                            if (num25 != index55)
+                            {
+                                for (int index56 = 1; index56 <= kPlus; ++index56)
+                                {
+                                    if (nameNode[index56] == n2Pnt[index55])
+                                    {
+                                        ++index50;
+                                        nameFin[index50] = nameNode[index56];
+                                        xFin[index50] = xNode[index56];
+                                        yFin[index50] = yNode[index56];
+                                        zFin[index50] = zNode[index56];
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (index50 == 0)
+                {
+                    kDop = 0;
+                    for (int index57 = 1; index57 <= kAdd; ++index57)
+                    {
+                        ++kDop;
+                        nameDop[kDop] = nameAdd[index57];
+                        xDop[kDop] = xAdd[index57];
+                        yDop[kDop] = yAdd[index57];
+                        zDop[kDop] = zAdd[index57];
+                        distDop[kDop] = distAdd[index57];
+                        horDop[kDop] = horAdd[index57];
+                        revDop[kDop] = revAdd[index57];
+                        dhDop[kDop] = dhAdd[index57];
+                        azDop[kDop] = azAdd[index57];
+                    }
+                    if (kDop == 3 && nameDop[1] == nameDop[3])
+                        kDop = 2;
+                    ++kLineDop;
+                    binaryWriter2.Write(kDop);
+                    for (int index58 = 1; index58 <= kDop; ++index58)
+                    {
+                        binaryWriter2.Write(nameDop[index58]);
+                        binaryWriter2.Write(xDop[index58]);
+                        binaryWriter2.Write(yDop[index58]);
+                        binaryWriter2.Write(zDop[index58]);
+                        binaryWriter2.Write(distDop[index58]);
+                        binaryWriter2.Write(horDop[index58]);
+                        binaryWriter2.Write(revDop[index58]);
+                        binaryWriter2.Write(dhDop[index58]);
+                        binaryWriter2.Write(azDop[index58]);
+                    }
+                    kDop = 0;
+                }
+                if (index50 > 0)
+                {
+                    kDop = 0;
+                    for (int index59 = 1; index59 <= index50; ++index59)
+                    {
+                        ++kDop;
+                        nameDop[kDop] = nameFin[index59];
+                        xDop[kDop] = xFin[index59];
+                        yDop[kDop] = yFin[index59];
+                        zDop[kDop] = zFin[index59];
+                        distDop[kDop] = 0.0;
+                        horDop[kDop] = 0.0;
+                        revDop[kDop] = 0.0;
+                        dhDop[kDop] = 0.0;
+                        azDop[kDop] = 0.0;
+                        for (int index60 = 1; index60 <= kAdd; ++index60)
+                        {
+                            ++kDop;
+                            nameDop[kDop] = nameAdd[index60];
+                            xDop[kDop] = xAdd[index60];
+                            yDop[kDop] = yAdd[index60];
+                            zDop[kDop] = zAdd[index60];
+                            distDop[kDop] = distAdd[index60];
+                            horDop[kDop] = horAdd[index60];
+                            revDop[kDop] = revAdd[index60];
+                            dhDop[kDop] = dhAdd[index60];
+                            azDop[kDop] = azAdd[index60];
+                        }
+                        if (kDop == 3 && nameDop[1] == nameDop[3])
+                            kDop = 2;
+                        ++kLineDop;
+                        binaryWriter2.Write(kDop);
+                        for (int index61 = 1; index61 <= kDop; ++index61)
+                        {
+                            binaryWriter2.Write(nameDop[index61]);
+                            binaryWriter2.Write(xDop[index61]);
+                            binaryWriter2.Write(yDop[index61]);
+                            binaryWriter2.Write(zDop[index61]);
+                            binaryWriter2.Write(distDop[index61]);
+                            binaryWriter2.Write(horDop[index61]);
+                            binaryWriter2.Write(revDop[index61]);
+                            binaryWriter2.Write(dhDop[index61]);
+                            binaryWriter2.Write(azDop[index61]);
+                        }
+                        kDop = 0;
+                    }
+                }
+            }
+            input1.Close();
+            binaryReader1.Close();
+            output2.Close();
+            binaryWriter2.Close();
+            int index62 = 0;
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input2 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output3 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+            kLineTopo = 0;
+            for (int index63 = 1; index63 <= kLineDop; ++index63)
+            {
+                kAdd = binaryReader2.ReadInt32();
+                for (int index64 = 1; index64 <= kAdd; ++index64)
+                {
+                    nameDop[index64] = binaryReader2.ReadString();
+                    xDop[index64] = binaryReader2.ReadDouble();
+                    yDop[index64] = binaryReader2.ReadDouble();
+                    zDop[index64] = binaryReader2.ReadDouble();
+                    distDop[index64] = binaryReader2.ReadDouble();
+                    horDop[index64] = binaryReader2.ReadDouble();
+                    revDop[index64] = binaryReader2.ReadDouble();
+                    dhDop[index64] = binaryReader2.ReadDouble();
+                    azDop[index64] = binaryReader2.ReadDouble();
+                }
+                int index65 = 0;
+                for (int index66 = 1; index66 <= num8; ++index66)
+                {
+                    int num26 = k1[index66];
+                    int num27 = k2[index66];
+                    int index67 = 0;
+                    for (int index68 = num26; index68 <= num27; ++index68)
+                    {
+                        ++index67;
+                        n1Pnt[index67] = nameStat[index68];
+                        x1Pnt[index67] = xStat[index68];
+                        y1Pnt[index67] = yStat[index68];
+                        z1Pnt[index67] = zStat[index68];
+                        n2Pnt[index67] = namePnt[index68];
+                        x2Pnt[index67] = xPnt[index68];
+                        y2Pnt[index67] = yPnt[index68];
+                        z2Pnt[index67] = zPnt[index68];
+                        distDif[index67] = distPnt[index68];
+                        horDif[index67] = horPnt[index68];
+                        verDif[index67] = verPnt[index68];
+                    }
+                    int num28 = 0;
+                    for (int index69 = 1; index69 <= index67; ++index69)
+                    {
+                        if (n1Pnt[index69] == nameDop[kAdd] && n2Pnt[index69] == nameDop[kAdd - 1])
+                        {
+                            num28 = index69;
+                            break;
+                        }
+                    }
+                    if (num28 != 0)
+                    {
+                        for (int index70 = 1; index70 <= index67; ++index70)
+                        {
+                            if (num28 != index70)
+                            {
+                                for (int index71 = 1; index71 <= kPlus; ++index71)
+                                {
+                                    if (nameNode[index71] == n2Pnt[index70])
+                                    {
+                                        ++index65;
+                                        nameFin[index65] = nameNode[index71];
+                                        xFin[index65] = xNode[index71];
+                                        yFin[index65] = yNode[index71];
+                                        zFin[index65] = zNode[index71];
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (index65 == 0)
+                {
+                    kDop = kAdd;
+                    if (kDop == 3 && nameDop[1] == nameDop[3])
+                        kDop = 2;
+                    sTmp = "";
+                    for (int index72 = 1; index72 <= kDop; ++index72)
+                        sTmp += nameDop[index72];
+                    int num29 = 0;
+                    if (index62 > 0)
+                    {
+                        for (int index73 = 1; index73 <= index62; ++index73)
+                        {
+                            if (namePnt1[index73] == sTmp)
+                            {
+                                ++num29;
+                                break;
+                            }
+                        }
+                    }
+                    if (num29 <= 0)
+                    {
+                        ++index62;
+                        namePnt1[index62] = sTmp;
+                        ++kLineTopo;
+                        binaryWriter3.Write(kDop);
+                        for (int index74 = 1; index74 <= kDop; ++index74)
+                        {
+                            binaryWriter3.Write(nameDop[index74]);
+                            binaryWriter3.Write(xDop[index74]);
+                            binaryWriter3.Write(yDop[index74]);
+                            binaryWriter3.Write(zDop[index74]);
+                            binaryWriter3.Write(distDop[index74]);
+                            binaryWriter3.Write(horDop[index74]);
+                            binaryWriter3.Write(revDop[index74]);
+                            binaryWriter3.Write(dhDop[index74]);
+                            binaryWriter3.Write(azDop[index74]);
+                        }
+                        kDop = 0;
+                    }
+                    else
+                        continue;
+                }
+                if (index65 > 0)
+                {
+                    int num30 = 0;
+                    for (int index75 = 1; index75 <= index65; ++index75)
+                    {
+                        kDop = kAdd;
+                        ++kDop;
+                        nameDop[kDop] = nameFin[index75];
+                        xDop[kDop] = xFin[index75];
+                        yDop[kDop] = yFin[index75];
+                        zDop[kDop] = zFin[index75];
+                        distDop[kDop] = 0.0;
+                        horDop[kDop] = 0.0;
+                        revDop[kDop] = 0.0;
+                        dhDop[kDop] = 0.0;
+                        azDop[kDop] = 0.0;
+                        if (kDop == 3 && nameDop[1] == nameDop[3])
+                            kDop = 2;
+                        sTmp = "";
+                        for (int index76 = 1; index76 <= kDop; ++index76)
+                            sTmp += nameDop[index76];
+                        int num31 = 0;
+                        if (index62 > 0)
+                        {
+                            for (int index77 = 1; index77 <= index62; ++index77)
+                            {
+                                if (namePnt1[index77] == sTmp)
+                                {
+                                    ++num31;
+                                    break;
+                                }
+                            }
+                        }
+                        if (num31 > 0)
+                        {
+                            ++num30;
+                        }
+                        else
+                        {
+                            ++index62;
+                            namePnt1[index62] = sTmp;
+                            ++kLineTopo;
+                            binaryWriter3.Write(kDop);
+                            for (int index78 = 1; index78 <= kDop; ++index78)
+                            {
+                                binaryWriter3.Write(nameDop[index78]);
+                                binaryWriter3.Write(xDop[index78]);
+                                binaryWriter3.Write(yDop[index78]);
+                                binaryWriter3.Write(zDop[index78]);
+                                binaryWriter3.Write(distDop[index78]);
+                                binaryWriter3.Write(horDop[index78]);
+                                binaryWriter3.Write(revDop[index78]);
+                                binaryWriter3.Write(dhDop[index78]);
+                                binaryWriter3.Write(azDop[index78]);
+                            }
+                            kDop = 0;
+                        }
+                    }
+                }
+            }
+            binaryReader2.Close();
+            input2.Close();
+            binaryWriter3.Close();
+            output3.Close();
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input3 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+            if (File.Exists(flineTopo))
+                File.Delete(flineTopo);
+            FileStream output4 = new FileStream(flineTopo, FileMode.CreateNew);
+            BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+            binaryWriter4.Write(kLineTopo);
+            for (int index79 = 1; index79 <= kLineTopo; ++index79)
+            {
+                kDop = binaryReader3.ReadInt32();
+                for (int index80 = 1; index80 <= kDop; ++index80)
+                {
+                    nameDop[index80] = binaryReader3.ReadString();
+                    xDop[index80] = binaryReader3.ReadDouble();
+                    yDop[index80] = binaryReader3.ReadDouble();
+                    zDop[index80] = binaryReader3.ReadDouble();
+                    distDop[index80] = binaryReader3.ReadDouble();
+                    horDop[index80] = binaryReader3.ReadDouble();
+                    revDop[index80] = binaryReader3.ReadDouble();
+                    dhDop[index80] = binaryReader3.ReadDouble();
+                    azDop[index80] = binaryReader3.ReadDouble();
+                }
+                for (int index81 = 2; index81 < kDop; ++index81)
+                {
+                    for (int index82 = 1; index82 <= num8; ++index82)
+                    {
+                        int num32 = k1[index82];
+                        int num33 = k2[index82];
+                        int index83 = 0;
+                        for (int index84 = num32; index84 <= num33; ++index84)
+                        {
+                            ++index83;
+                            n1Pnt[index83] = nameStat[index84];
+                            x1Pnt[index83] = xStat[index84];
+                            y1Pnt[index83] = yStat[index84];
+                            z1Pnt[index83] = zStat[index84];
+                            n2Pnt[index83] = namePnt[index84];
+                            x2Pnt[index83] = xPnt[index84];
+                            y2Pnt[index83] = yPnt[index84];
+                            z2Pnt[index83] = zPnt[index84];
+                            distDif[index83] = distPnt[index84];
+                            horDif[index83] = horPnt[index84];
+                            verDif[index83] = verPnt[index84];
+                        }
+                        int num34 = 0;
+                        for (int index85 = 1; index85 <= index83; ++index85)
+                        {
+                            if (nameDop[index81] == n1Pnt[index85] && nameDop[index81 - 1] == n2Pnt[index85])
+                            {
+                                ++num34;
+                                num1 = 0.0;
+                                dx = xDop[index81] - xDop[index81 - 1];
+                                dy = yDop[index81] - yDop[index81 - 1];
+                                double num35 = Math.Atan2(dy, dx);
+                                if (num35 < 0.0)
+                                    num35 += 2.0 * pi;
+                                distDop[index81 - 1] = distDif[index85];
+                                revDop[index81 - 1] = horDif[index85];
+                                dhDop[index81 - 1] = -verDif[index85];
+                                azDop[index81 - 1] = num35;
+                                break;
+                            }
+                        }
+                        if (num34 != 0)
+                        {
+                            int num36 = 0;
+                            for (int index86 = 1; index86 <= index83; ++index86)
+                            {
+                                if (nameDop[index81] == n1Pnt[index86] && nameDop[index81 + 1] == n2Pnt[index86])
+                                {
+                                    ++num36;
+                                    num1 = 0.0;
+                                    dx = xDop[index81 + 1] - xDop[index81];
+                                    dy = yDop[index81 + 1] - yDop[index81];
+                                    double num37 = Math.Atan2(dy, dx);
+                                    if (num37 < 0.0)
+                                        num37 += 2.0 * pi;
+                                    distDop[index81] = distDif[index86];
+                                    horDop[index81] = horDif[index86];
+                                    revDop[index81] = 0.0;
+                                    dhDop[index81] = verDif[index86];
+                                    azDop[index81] = num37;
+                                    break;
+                                }
+                            }
+                            if (num36 > 0)
+                                break;
+                        }
+                    }
+                }
+                binaryWriter4.Write(kDop);
+                for (int index87 = 1; index87 <= kDop; ++index87)
+                {
+                    for (int index88 = 1; index88 <= kGeo; ++index88)
+                    {
+                        if (nameDop[index87] == nameGeo[index88] && zGeo[index88] != 0.0)
+                        {
+                            zDop[index87] = zGeo[index88];
+                            break;
+                        }
+                    }
+                    binaryWriter4.Write(nameDop[index87]);
+                    binaryWriter4.Write(xDop[index87]);
+                    binaryWriter4.Write(yDop[index87]);
+                    binaryWriter4.Write(zDop[index87]);
+                    binaryWriter4.Write(distDop[index87]);
+                    binaryWriter4.Write(horDop[index87]);
+                    binaryWriter4.Write(revDop[index87]);
+                    binaryWriter4.Write(dhDop[index87]);
+                    binaryWriter4.Write(azDop[index87]);
+                }
+            }
+            binaryWriter4.Close();
+            output4.Close();
+            binaryReader3.Close();
+            input3.Close();
+            LineForming();
+        }
+
+        public void LineForming()
+        {
+            kNode = 0;
+            if (!File.Exists(fileNode))
+                return;
+            FileStream input1 = new FileStream(fileNode, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            kNode = binaryReader1.ReadInt32();
+            if (kNode > 0)
+            {
+                for (int index = 1; index <= kNode; ++index)
+                {
+                    nameNode[index] = binaryReader1.ReadString();
+                    xNode[index] = binaryReader1.ReadDouble();
+                    yNode[index] = binaryReader1.ReadDouble();
+                    zNode[index] = binaryReader1.ReadDouble();
+                }
+            }
+            binaryReader1.Close();
+            input1.Close();
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input2 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+            kLineTopo = binaryReader2.ReadInt32();
+            int index1 = 0;
+            for (int index2 = 1; index2 <= kLineTopo; ++index2)
+            {
+                kDop = binaryReader2.ReadInt32();
+                kt[index2] = kDop;
+                for (int index3 = 1; index3 <= kDop; ++index3)
+                {
+                    nameDop[index3] = binaryReader2.ReadString();
+                    xDop[index3] = binaryReader2.ReadDouble();
+                    yDop[index3] = binaryReader2.ReadDouble();
+                    zDop[index3] = binaryReader2.ReadDouble();
+                    distDop[index3] = binaryReader2.ReadDouble();
+                    horDop[index3] = binaryReader2.ReadDouble();
+                    revDop[index3] = binaryReader2.ReadDouble();
+                    dhDop[index3] = binaryReader2.ReadDouble();
+                    azDop[index3] = binaryReader2.ReadDouble();
+                    ++index1;
+                    nameStat[index1] = nameDop[index3];
+                    zStat[index1] = zDop[index3];
+                    hStat[index1] = dhDop[index3];
+                }
+            }
+            binaryReader2.Close();
+            input2.Close();
+            k1[1] = 1;
+            k2[1] = kt[1];
+            if (kLineTopo > 1)
+            {
+                for (int index4 = 2; index4 <= kLineTopo; ++index4)
+                {
+                    k1[index4] = k2[index4 - 1] + 1;
+                    k2[index4] = k2[index4 - 1] + kt[index4];
+                }
+            }
+            int num1 = 0;
+            for (int index5 = 1; index5 <= kGeo; ++index5)
+            {
+                if (zGeo[index5] != 0.0)
+                {
+                    ++num1;
+                    break;
+                }
+            }
+            int index6 = 0;
+            kHeight = 0;
+            if (num1 > 0)
+            {
+                for (int index7 = 1; index7 <= kLineTopo; ++index7)
+                {
+                    int num2 = 0;
+                    for (int index8 = 1; index8 <= kLineTopo; ++index8)
+                    {
+                        int index9 = k1[index8];
+                        int index10 = k2[index8];
+                        if (zStat[index9] == 0.0 || zStat[index10] == 0.0)
+                        {
+                            ++num2;
+                            int num3 = 0;
+                            for (int index11 = 1; index11 <= kGeo; ++index11)
+                            {
+                                if (nameStat[index9] == nameGeo[index11])
+                                {
+                                    if (zGeo[index11] != 0.0)
+                                    {
+                                        ++num3;
+                                        zStat[index9] = zGeo[index11];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                            for (int index12 = 1; index12 <= kGeo; ++index12)
+                            {
+                                if (nameStat[index10] == nameGeo[index12])
+                                {
+                                    if (zGeo[index12] != 0.0)
+                                    {
+                                        ++num3;
+                                        zStat[index10] = zGeo[index12];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                            int num4 = 0;
+                            if (index6 > 0 && num3 == 0)
+                            {
+                                for (int index13 = 1; index13 <= index6; ++index13)
+                                {
+                                    if (nameStat[index9] == namePnt[index13])
+                                    {
+                                        ++num4;
+                                        zStat[index9] = zPnt[index13];
+                                        break;
+                                    }
+                                }
+                                if (num4 == 0)
+                                {
+                                    for (int index14 = 1; index14 <= index6; ++index14)
+                                    {
+                                        if (nameStat[index10] == namePnt[index14])
+                                        {
+                                            ++num4;
+                                            zStat[index10] = zPnt[index14];
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            int num5 = num4;
+                            int num6 = num3;
+                            dz = 0.0;
+                            for (int index15 = index9; index15 <= index10; ++index15)
+                                dz += hStat[index15];
+                            int num7 = 0;
+                            if (num5 == 0 && num6 == 0)
+                            {
+                                index7 = 0;
+                                for (int index16 = index9 + 1; index16 < index10; ++index16)
+                                {
+                                    for (int index17 = 1; index17 <= kGeo; ++index17)
+                                    {
+                                        if (zGeo[index17] != 0.0 && nameStat[index16] == nameGeo[index17])
+                                        {
+                                            index7 = index16;
+                                            zStat[index16] = zGeo[index17];
+                                            break;
+                                        }
+                                    }
+                                    if (index7 > 0)
+                                        break;
+                                }
+                                if (index7 != 0)
+                                {
+                                    for (int index18 = index7; index18 < index10; ++index18)
+                                    {
+                                        ++num7;
+                                        zStat[index18 + 1] = zStat[index18] + hStat[index18];
+                                    }
+                                    int index19 = index7;
+                                    for (int index20 = index9; index20 < index7; ++index20)
+                                    {
+                                        ++num7;
+                                        --index19;
+                                        zStat[index19] = zStat[index19 + 1] - hStat[index19];
+                                    }
+                                }
+                                else
+                                    continue;
+                            }
+                            if (zStat[index9] != 0.0 && zStat[index10] != 0.0 && nameStat[index9] != nameStat[index10])
+                            {
+                                dz1 = zStat[index10] - zStat[index9];
+                                dz2 = dz;
+                                dz = dz1 - dz2;
+                                dz /= (double)(index10 - index9);
+                                for (int index21 = index9; index21 < index10; ++index21)
+                                {
+                                    ++num7;
+                                    hStat[index21] = hStat[index21] - dz;
+                                    zStat[index21 + 1] = zStat[index21] + hStat[index21];
+                                }
+                            }
+                            if (zStat[index9] != 0.0 && zStat[index10] == 0.0)
+                            {
+                                for (int index22 = index9; index22 < index10; ++index22)
+                                {
+                                    ++num7;
+                                    zStat[index22 + 1] = zStat[index22] + hStat[index22];
+                                }
+                            }
+                            if (zStat[index9] == 0.0 && zStat[index10] != 0.0)
+                            {
+                                int index23 = index10;
+                                for (int index24 = index9; index24 < index10; ++index24)
+                                {
+                                    ++num7;
+                                    --index23;
+                                    zStat[index23] = zStat[index23 + 1] - hStat[index23];
+                                }
+                            }
+                            if (zStat[index9] != 0.0 && nameStat[index9] == nameStat[index10])
+                            {
+                                dz /= (double)(index10 - index9);
+                                for (int index25 = index9; index25 < index10; ++index25)
+                                {
+                                    ++num7;
+                                    hStat[index25] = hStat[index25] - dz;
+                                    zStat[index25 + 1] = zStat[index25] + hStat[index25];
+                                }
+                            }
+                            if (num7 > 0)
+                            {
+                                for (int index26 = index9; index26 <= index10; ++index26)
+                                {
+                                    ++index6;
+                                    numStat[index6] = index8;
+                                    namePnt[index6] = nameStat[index26];
+                                    zPnt[index6] = zStat[index26];
+                                }
+                            }
+                        }
+                    }
+                    if (num2 == 0)
+                        break;
+                }
+                int index27 = 0;
+                for (int index28 = 1; index28 < index6; ++index28)
+                {
+                    int num8 = 0;
+                    if (index27 > 0)
+                    {
+                        for (int index29 = 1; index29 <= index27; ++index29)
+                        {
+                            if (k1[index29] == index28)
+                            {
+                                ++num8;
+                                break;
+                            }
+                        }
+                    }
+                    if (num8 <= 0)
+                    {
+                        int index30 = 1;
+                        k2[index30] = numStat[index28];
+                        n2Pnt[index30] = namePnt[index28];
+                        z2Pnt[index30] = zPnt[index28];
+                        ++index27;
+                        k1[index27] = index28;
+                        for (int index31 = index28 + 1; index31 <= index6; ++index31)
+                        {
+                            int num9 = 0;
+                            if (index27 > 0)
+                            {
+                                for (int index32 = 1; index32 <= index27; ++index32)
+                                {
+                                    if (k1[index32] == index31)
+                                    {
+                                        ++num9;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num9 <= 0 && namePnt[index28] == namePnt[index31])
+                            {
+                                ++index30;
+                                k2[index30] = numStat[index31];
+                                n2Pnt[index30] = namePnt[index31];
+                                z2Pnt[index30] = zPnt[index31];
+                                ++index27;
+                                k1[index27] = index31;
+                            }
+                        }
+                        if (index30 > 1)
+                        {
+                            for (int index33 = 1; index33 < index30; ++index33)
+                            {
+                                for (int index34 = index33 + 1; index34 <= index30; ++index34)
+                                {
+                                    if (z2Pnt[index33] > z2Pnt[index34])
+                                    {
+                                        int num10 = k2[index33];
+                                        double num11 = z2Pnt[index33];
+                                        k2[index33] = k2[index34];
+                                        z2Pnt[index33] = z2Pnt[index34];
+                                        k2[index34] = num10;
+                                        z2Pnt[index34] = num11;
+                                    }
+                                }
+                            }
+                        }
+                        ++kHeight;
+                        n1Pnt[kHeight] = n2Pnt[1];
+                        z1Pnt[kHeight] = z2Pnt[1];
+                        if (index30 == 2)
+                            z1Pnt[kHeight] = 0.5 * (z2Pnt[1] + z2Pnt[2]);
+                        if (index30 == 3)
+                            z1Pnt[kHeight] = z2Pnt[2];
+                        if (index30 == 4)
+                            z1Pnt[kHeight] = 0.5 * (z2Pnt[2] + z2Pnt[3]);
+                        if (index30 == 5)
+                            z1Pnt[kHeight] = z2Pnt[3];
+                        if (index30 > 5)
+                            z1Pnt[kHeight] = z2Pnt[index30 / 2];
+                    }
+                }
+            }
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input3 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            kLineTopo = binaryReader3.ReadInt32();
+            binaryWriter1.Write(kLineTopo);
+            for (int index35 = 1; index35 <= kLineTopo; ++index35)
+            {
+                kDop = binaryReader3.ReadInt32();
+                dz = 0.0;
+                for (int index36 = 1; index36 <= kDop; ++index36)
+                {
+                    nameDop[index36] = binaryReader3.ReadString();
+                    xDop[index36] = binaryReader3.ReadDouble();
+                    yDop[index36] = binaryReader3.ReadDouble();
+                    zDop[index36] = binaryReader3.ReadDouble();
+                    distDop[index36] = binaryReader3.ReadDouble();
+                    horDop[index36] = binaryReader3.ReadDouble();
+                    revDop[index36] = binaryReader3.ReadDouble();
+                    dhDop[index36] = binaryReader3.ReadDouble();
+                    azDop[index36] = binaryReader3.ReadDouble();
+                    dz += dhDop[index36];
+                }
+                CalcAngle(kDop, ref revDop, ref horDop, ref angDop);
+                CalcLine(kDop, ref xDop, ref yDop, ref distDop, ref angDop, ref azDop);
+                binaryWriter1.Write(kDop);
+                for (int index37 = 1; index37 <= kDop; ++index37)
+                {
+                    if (kHeight > 0)
+                    {
+                        for (int index38 = 1; index38 <= kHeight; ++index38)
+                        {
+                            if (nameDop[index37] == n1Pnt[index38])
+                            {
+                                zDop[index37] = z1Pnt[index38];
+                                break;
+                            }
+                        }
+                    }
+                    binaryWriter1.Write(nameDop[index37]);
+                    binaryWriter1.Write(xDop[index37]);
+                    binaryWriter1.Write(yDop[index37]);
+                    binaryWriter1.Write(zDop[index37]);
+                    binaryWriter1.Write(distDop[index37]);
+                    binaryWriter1.Write(angDop[index37]);
+                    binaryWriter1.Write(dhDop[index37]);
+                    binaryWriter1.Write(azDop[index37]);
+                }
+            }
+            binaryReader3.Close();
+            input3.Close();
+            binaryWriter1.Close();
+            output1.Close();
+            if (kLineTopo == 1)
+            {
+                kNode = 0;
+                if (File.Exists(fileNode))
+                    File.Delete(fileNode);
+                FileStream output2 = new FileStream(fileNode, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                binaryWriter2.Write(kNode);
+                binaryWriter2.Close();
+                output2.Close();
+            }
+            if (kNode == 0)
+            {
+                if (!File.Exists(fileAdd))
+                    return;
+                FileStream input4 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                if (File.Exists(flineTopo))
+                    File.Delete(flineTopo);
+                FileStream output3 = new FileStream(flineTopo, FileMode.CreateNew);
+                BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                kLineTopo = binaryReader4.ReadInt32();
+                binaryWriter3.Write(kLineTopo);
+                if (File.Exists(ferrorNode))
+                    File.Delete(ferrorNode);
+                FileStream output4 = new FileStream(ferrorNode, FileMode.CreateNew);
+                BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                binaryWriter4.Write(kLineTopo);
+                for (int index39 = 1; index39 <= kLineTopo; ++index39)
+                {
+                    kAdd = 0;
+                    kDop = binaryReader4.ReadInt32();
+                    for (int index40 = 1; index40 <= kDop; ++index40)
+                    {
+                        nameDop[index40] = binaryReader4.ReadString();
+                        xDop[index40] = binaryReader4.ReadDouble();
+                        yDop[index40] = binaryReader4.ReadDouble();
+                        zDop[index40] = binaryReader4.ReadDouble();
+                        distDop[index40] = binaryReader4.ReadDouble();
+                        angDop[index40] = binaryReader4.ReadDouble();
+                        dhDop[index40] = binaryReader4.ReadDouble();
+                        azDop[index40] = binaryReader4.ReadDouble();
+                    }
+                    binaryWriter3.Write(kDop);
+                    for (int index41 = 1; index41 <= kDop; ++index41)
+                    {
+                        binaryWriter3.Write(nameDop[index41]);
+                        binaryWriter3.Write(xDop[index41]);
+                        binaryWriter3.Write(yDop[index41]);
+                        binaryWriter3.Write(zDop[index41]);
+                        binaryWriter3.Write(distDop[index41]);
+                        binaryWriter3.Write(angDop[index41]);
+                        binaryWriter3.Write(dhDop[index41]);
+                        binaryWriter3.Write(azDop[index41]);
+                    }
+                    int num12 = 0;
+                    for (int index42 = 1; index42 <= kGeo; ++index42)
+                    {
+                        if (nameDop[kDop - 1] == nameGeo[index42])
+                        {
+                            ++num12;
+                            ++kAdd;
+                            indLine[kAdd] = index39;
+                            nameAdd[kAdd] = nameDop[kDop - 1];
+                            xAdd[kAdd] = Math.Abs(xDop[kDop - 1] - xGeo[index42]);
+                            yAdd[kAdd] = Math.Abs(yDop[kDop - 1] - yGeo[index42]);
+                            zAdd[kAdd] = 0.0;
+                            if (zDop[kDop - 1] != 0.0 && zGeo[index42] != 0.0)
+                                zAdd[kAdd] = Math.Abs(zDop[kDop - 1] - zGeo[index42]);
+                        }
+                    }
+                    if (num12 == 0)
+                    {
+                        for (int index43 = 1; index43 <= kGeo; ++index43)
+                        {
+                            if (nameDop[kDop] == nameGeo[index43])
+                            {
+                                ++num12;
+                                ++kAdd;
+                                indLine[kAdd] = index39;
+                                nameAdd[kAdd] = nameDop[kDop];
+                                xAdd[kAdd] = Math.Abs(xDop[kDop] - xGeo[index43]);
+                                yAdd[kAdd] = Math.Abs(yDop[kDop] - yGeo[index43]);
+                                zAdd[kAdd] = 0.0;
+                                if (zDop[kDop] != 0.0 && zGeo[index43] != 0.0)
+                                    zAdd[kAdd] = Math.Abs(zDop[kDop] - zGeo[index43]);
+                            }
+                        }
+                    }
+                    binaryWriter4.Write(kAdd);
+                    for (int index44 = 1; index44 <= kAdd; ++index44)
+                    {
+                        binaryWriter4.Write(indLine[index44]);
+                        binaryWriter4.Write(nameAdd[index44]);
+                        binaryWriter4.Write(xAdd[index44]);
+                        binaryWriter4.Write(yAdd[index44]);
+                        binaryWriter4.Write(zAdd[index44]);
+                    }
+                }
+                binaryReader4.Close();
+                input4.Close();
+                binaryWriter3.Close();
+                output3.Close();
+                binaryWriter4.Close();
+                output4.Close();
+                if (!File.Exists(flineTopo))
+                    return;
+                FileStream input5 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+                if (File.Exists(fpointFile))
+                    File.Delete(fpointFile);
+                FileStream output5 = new FileStream(fpointFile, FileMode.CreateNew);
+                BinaryWriter binaryWriter5 = new BinaryWriter((Stream)output5);
+                int num13 = 0;
+                kLineTopo = binaryReader5.ReadInt32();
+                for (int index45 = 1; index45 <= kLineTopo; ++index45)
+                {
+                    kDop = binaryReader5.ReadInt32();
+                    for (int index46 = 1; index46 <= kDop; ++index46)
+                    {
+                        nameDop[index46] = binaryReader5.ReadString();
+                        xDop[index46] = binaryReader5.ReadDouble();
+                        yDop[index46] = binaryReader5.ReadDouble();
+                        zDop[index46] = binaryReader5.ReadDouble();
+                        distDop[index46] = binaryReader5.ReadDouble();
+                        angDop[index46] = binaryReader5.ReadDouble();
+                        dhDop[index46] = binaryReader5.ReadDouble();
+                        azDop[index46] = binaryReader5.ReadDouble();
+                    }
+                    int num14 = 0;
+                    if (kDop > 2)
+                    {
+                        for (int index47 = 3; index47 <= kDop; ++index47)
+                        {
+                            for (int index48 = 1; index48 <= kGeo; ++index48)
+                            {
+                                if (nameDop[index47] == nameGeo[index48])
+                                {
+                                    num14 = index47;
+                                    break;
+                                }
+                            }
+                            if (num14 > 0)
+                                break;
+                        }
+                        if (num14 > 2)
+                            kDop = num14;
+                    }
+                    ++num13;
+                    binaryWriter5.Write(index45);
+                    binaryWriter5.Write(kDop);
+                    for (int index49 = 1; index49 <= kDop; ++index49)
+                    {
+                        binaryWriter5.Write(nameDop[index49]);
+                        binaryWriter5.Write(xDop[index49]);
+                        binaryWriter5.Write(yDop[index49]);
+                        binaryWriter5.Write(zDop[index49]);
+                    }
+                }
+                binaryReader5.Close();
+                input5.Close();
+                binaryWriter5.Close();
+                output5.Close();
+                if (!File.Exists(fpointFile))
+                    return;
+                FileStream input6 = new FileStream(fpointFile, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader6 = new BinaryReader((Stream)input6);
+                if (File.Exists(flineFile))
+                    File.Delete(flineFile);
+                FileStream output6 = new FileStream(flineFile, FileMode.CreateNew);
+                BinaryWriter binaryWriter6 = new BinaryWriter((Stream)output6);
+                binaryWriter6.Write(num13);
+                for (int index50 = 1; index50 <= num13; ++index50)
+                {
+                    int num15 = binaryReader6.ReadInt32();
+                    kDop = binaryReader6.ReadInt32();
+                    for (int index51 = 1; index51 <= kDop; ++index51)
+                    {
+                        nameDop[index51] = binaryReader6.ReadString();
+                        xDop[index51] = binaryReader6.ReadDouble();
+                        yDop[index51] = binaryReader6.ReadDouble();
+                        zDop[index51] = binaryReader6.ReadDouble();
+                    }
+                    binaryWriter6.Write(num15);
+                    binaryWriter6.Write(kDop);
+                    for (int index52 = 1; index52 <= kDop; ++index52)
+                    {
+                        binaryWriter6.Write(nameDop[index52]);
+                        binaryWriter6.Write(xDop[index52]);
+                        binaryWriter6.Write(yDop[index52]);
+                        binaryWriter6.Write(zDop[index52]);
+                    }
+                }
+                binaryReader6.Close();
+                input6.Close();
+                binaryWriter6.Close();
+                output6.Close();
+            }
+            LineAdjust();
+        }
+
+        public void LineAdjust()
+        {
+            double num1;
+            double num2 = num1 = 0.0;
+            kNode = 0;
+            if (!File.Exists(fileNode))
+                return;
+            FileStream input1 = new FileStream(fileNode, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            kNode = binaryReader1.ReadInt32();
+            if (kNode > 0)
+            {
+                for (int index = 1; index <= kNode; ++index)
+                {
+                    nameNode[index] = binaryReader1.ReadString();
+                    xNode[index] = binaryReader1.ReadDouble();
+                    yNode[index] = binaryReader1.ReadDouble();
+                    zNode[index] = binaryReader1.ReadDouble();
+                }
+            }
+            binaryReader1.Close();
+            input1.Close();
+            if (kNode > 0)
+            {
+                if (File.Exists(ferrorNode))
+                    File.Delete(ferrorNode);
+                FileStream output1 = new FileStream(ferrorNode, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                binaryWriter1.Write(kNode);
+                for (int index1 = 1; index1 <= kNode; ++index1)
+                {
+                    if (!File.Exists(fileAdd))
+                        return;
+                    FileStream input2 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    kLineTopo = binaryReader2.ReadInt32();
+                    kAdd = 0;
+                    double num3 = 0.0;
+                    double num4 = 0.0;
+                    double num5 = 0.0;
+                    int num6 = 0;
+                    for (int index2 = 1; index2 <= kLineTopo; ++index2)
+                    {
+                        kDop = binaryReader2.ReadInt32();
+                        for (int index3 = 1; index3 <= kDop; ++index3)
+                        {
+                            nameDop[index3] = binaryReader2.ReadString();
+                            xDop[index3] = binaryReader2.ReadDouble();
+                            yDop[index3] = binaryReader2.ReadDouble();
+                            zDop[index3] = binaryReader2.ReadDouble();
+                            distDop[index3] = binaryReader2.ReadDouble();
+                            angDop[index3] = binaryReader2.ReadDouble();
+                            dhDop[index3] = binaryReader2.ReadDouble();
+                            azDop[index3] = binaryReader2.ReadDouble();
+                        }
+                        if (kDop >= 3)
+                        {
+                            int index4 = kDop + 1;
+                            for (int index5 = 1; index5 <= kDop; ++index5)
+                            {
+                                --index4;
+                                if (index4 >= 3)
+                                {
+                                    if (nameDop[index4] == nameNode[index1])
+                                    {
+                                        ++kAdd;
+                                        indLine[kAdd] = index2;
+                                        nameAdd[kAdd] = nameDop[index4];
+                                        xAdd[kAdd] = xDop[index4];
+                                        yAdd[kAdd] = yDop[index4];
+                                        zAdd[kAdd] = zDop[index4];
+                                        num3 += xDop[index4];
+                                        num4 += yDop[index4];
+                                        if (zDop[index4] != 0.0)
+                                        {
+                                            ++num6;
+                                            num5 += zDop[index4];
+                                            break;
+                                        }
+                                        break;
+                                    }
+                                }
+                                else
+                                    break;
+                            }
+                        }
+                    }
+                    binaryReader2.Close();
+                    input2.Close();
+                    double num7 = num3 / (double)kAdd;
+                    double num8 = num4 / (double)kAdd;
+                    double num9 = 0.0;
+                    if (num6 > 0)
+                        num9 /= (double)num6;
+                    xNode[index1] = num7;
+                    yNode[index1] = num8;
+                    zNode[index1] = num9;
+                    binaryWriter1.Write(kAdd);
+                    for (int index6 = 1; index6 <= kAdd; ++index6)
+                    {
+                        dx = Math.Abs(xAdd[index6] - num7);
+                        dy = Math.Abs(yAdd[index6] - num8);
+                        dz = 0.0;
+                        if (zAdd[index6] != 0.0 && num9 != 0.0)
+                            dz = Math.Abs(zAdd[index6] - num9);
+                        binaryWriter1.Write(indLine[index6]);
+                        binaryWriter1.Write(nameAdd[index6]);
+                        binaryWriter1.Write(dx);
+                        binaryWriter1.Write(dy);
+                        binaryWriter1.Write(dz);
+                    }
+                }
+                binaryWriter1.Close();
+                output1.Close();
+                for (int index7 = 1; index7 <= kNode; ++index7)
+                {
+                    if (!File.Exists(fileAdd))
+                        return;
+                    FileStream input3 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                    if (File.Exists(flineTopo))
+                        File.Delete(flineTopo);
+                    FileStream output2 = new FileStream(flineTopo, FileMode.CreateNew);
+                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                    kLineTopo = binaryReader3.ReadInt32();
+                    binaryWriter2.Write(kLineTopo);
+                    for (int index8 = 1; index8 <= kLineTopo; ++index8)
+                    {
+                        kDop = binaryReader3.ReadInt32();
+                        for (int index9 = 1; index9 <= kDop; ++index9)
+                        {
+                            nameDop[index9] = binaryReader3.ReadString();
+                            xDop[index9] = binaryReader3.ReadDouble();
+                            yDop[index9] = binaryReader3.ReadDouble();
+                            zDop[index9] = binaryReader3.ReadDouble();
+                            distDop[index9] = binaryReader3.ReadDouble();
+                            angDop[index9] = binaryReader3.ReadDouble();
+                            dhDop[index9] = binaryReader3.ReadDouble();
+                            azDop[index9] = binaryReader3.ReadDouble();
+                            for (int index10 = 1; index10 <= kNode; ++index10)
+                            {
+                                if (nameDop[index9] == nameNode[index10])
+                                {
+                                    xDop[index9] = xNode[index10];
+                                    yDop[index9] = yNode[index10];
+                                    if (zNode[index10] != 0.0)
+                                    {
+                                        zDop[index9] = zNode[index10];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                            for (int index11 = 1; index11 <= kGeo; ++index11)
+                            {
+                                if (nameDop[index9] == nameGeo[index11])
+                                {
+                                    xDop[index9] = xGeo[index11];
+                                    yDop[index9] = yGeo[index11];
+                                    if (zGeo[index11] != 0.0)
+                                    {
+                                        zDop[index9] = zGeo[index11];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                        AdjustLine(kDop, ref nameDop, ref xDop, ref yDop, ref distDop, ref angDop, ref azDop);
+                        binaryWriter2.Write(kDop);
+                        for (int index12 = 1; index12 <= kDop; ++index12)
+                        {
+                            binaryWriter2.Write(nameDop[index12]);
+                            binaryWriter2.Write(xDop[index12]);
+                            binaryWriter2.Write(yDop[index12]);
+                            binaryWriter2.Write(zDop[index12]);
+                            binaryWriter2.Write(distDop[index12]);
+                            binaryWriter2.Write(angDop[index12]);
+                            binaryWriter2.Write(dhDop[index12]);
+                            binaryWriter2.Write(azDop[index12]);
+                        }
+                    }
+                    binaryReader3.Close();
+                    input3.Close();
+                    binaryWriter2.Close();
+                    output2.Close();
+                    int num10 = 0;
+                    for (int index13 = 1; index13 <= kNode; ++index13)
+                    {
+                        kAdd = 0;
+                        double num11 = 0.0;
+                        double num12 = 0.0;
+                        double num13 = 0.0;
+                        int num14 = 0;
+                        if (!File.Exists(flineTopo))
+                            return;
+                        FileStream input4 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                        kLineTopo = binaryReader4.ReadInt32();
+                        for (int index14 = 1; index14 <= kLineTopo; ++index14)
+                        {
+                            kDop = binaryReader4.ReadInt32();
+                            for (int index15 = 1; index15 <= kDop; ++index15)
+                            {
+                                nameDop[index15] = binaryReader4.ReadString();
+                                xDop[index15] = binaryReader4.ReadDouble();
+                                yDop[index15] = binaryReader4.ReadDouble();
+                                zDop[index15] = binaryReader4.ReadDouble();
+                                distDop[index15] = binaryReader4.ReadDouble();
+                                angDop[index15] = binaryReader4.ReadDouble();
+                                dhDop[index15] = binaryReader4.ReadDouble();
+                                azDop[index15] = binaryReader4.ReadDouble();
+                            }
+                            if (nameDop[kDop - 1] == nameNode[index13])
+                            {
+                                ++kAdd;
+                                nameAdd[kAdd] = nameDop[kDop - 1];
+                                xAdd[kAdd] = xDop[kDop - 1];
+                                yAdd[kAdd] = yDop[kDop - 1];
+                                zAdd[kAdd] = zDop[kDop - 1];
+                                num11 += xDop[kDop - 1];
+                                num12 += yDop[kDop - 1];
+                                if (zDop[kDop - 1] != 0.0)
+                                {
+                                    ++num14;
+                                    num13 += zDop[kDop - 1];
+                                }
+                            }
+                            if (nameDop[kDop] == nameNode[index13])
+                            {
+                                ++kAdd;
+                                nameAdd[kAdd] = nameDop[kDop];
+                                xAdd[kAdd] = xDop[kDop];
+                                yAdd[kAdd] = yDop[kDop];
+                                zAdd[kAdd] = zDop[kDop];
+                                num11 += xDop[kDop];
+                                num12 += yDop[kDop];
+                                if (zDop[kDop] != 0.0)
+                                {
+                                    ++num14;
+                                    num13 += zDop[kDop];
+                                }
+                            }
+                        }
+                        binaryReader4.Close();
+                        input4.Close();
+                        if (kAdd != 0)
+                        {
+                            double num15 = num11 / (double)kAdd;
+                            double num16 = num12 / (double)kAdd;
+                            if (num14 > 0)
+                                num13 /= (double)num14;
+                            xNode[index13] = num15;
+                            yNode[index13] = num16;
+                            zNode[index13] = num13;
+                            for (int index16 = 1; index16 <= kAdd; ++index16)
+                            {
+                                dx = Math.Abs(xAdd[index16] - num15);
+                                dy = Math.Abs(yAdd[index16] - num16);
+                                if (Math.Sqrt(dx * dx + dy * dy) > 0.001)
+                                    ++num10;
+                            }
+                        }
+                    }
+                    if (!File.Exists(flineTopo))
+                        return;
+                    FileStream input5 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+                    if (File.Exists(fileAdd))
+                        File.Delete(fileAdd);
+                    FileStream output3 = new FileStream(fileAdd, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    kLineTopo = binaryReader5.ReadInt32();
+                    binaryWriter3.Write(kLineTopo);
+                    for (int index17 = 1; index17 <= kLineTopo; ++index17)
+                    {
+                        kDop = binaryReader5.ReadInt32();
+                        for (int index18 = 1; index18 <= kDop; ++index18)
+                        {
+                            nameDop[index18] = binaryReader5.ReadString();
+                            xDop[index18] = binaryReader5.ReadDouble();
+                            yDop[index18] = binaryReader5.ReadDouble();
+                            zDop[index18] = binaryReader5.ReadDouble();
+                            distDop[index18] = binaryReader5.ReadDouble();
+                            angDop[index18] = binaryReader5.ReadDouble();
+                            dhDop[index18] = binaryReader5.ReadDouble();
+                            azDop[index18] = binaryReader5.ReadDouble();
+                            for (int index19 = 1; index19 <= kNode; ++index19)
+                            {
+                                if (nameDop[index18] == nameNode[index19])
+                                {
+                                    xDop[index18] = xNode[index19];
+                                    yDop[index18] = yNode[index19];
+                                    if (zNode[index19] != 0.0)
+                                    {
+                                        zDop[index18] = zNode[index19];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                            for (int index20 = 1; index20 <= kGeo; ++index20)
+                            {
+                                if (nameDop[index18] == nameGeo[index20])
+                                {
+                                    xDop[index18] = xGeo[index20];
+                                    yDop[index18] = yGeo[index20];
+                                    if (zGeo[index20] != 0.0)
+                                    {
+                                        zDop[index18] = zGeo[index20];
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                        binaryWriter3.Write(kDop);
+                        for (int index21 = 1; index21 <= kDop; ++index21)
+                        {
+                            binaryWriter3.Write(nameDop[index21]);
+                            binaryWriter3.Write(xDop[index21]);
+                            binaryWriter3.Write(yDop[index21]);
+                            binaryWriter3.Write(zDop[index21]);
+                            binaryWriter3.Write(distDop[index21]);
+                            binaryWriter3.Write(angDop[index21]);
+                            binaryWriter3.Write(dhDop[index21]);
+                            binaryWriter3.Write(azDop[index21]);
+                        }
+                    }
+                    binaryReader5.Close();
+                    input5.Close();
+                    binaryWriter3.Close();
+                    output3.Close();
+                    if (num10 == 0)
+                        break;
+                }
+                if (!File.Exists(fileAdd))
+                    return;
+                FileStream input6 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader6 = new BinaryReader((Stream)input6);
+                if (File.Exists(fpointFile))
+                    File.Delete(fpointFile);
+                FileStream output4 = new FileStream(fpointFile, FileMode.CreateNew);
+                BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                int index22 = 0;
+                int num17 = 0;
+                kLineTopo = binaryReader6.ReadInt32();
+                for (int index23 = 1; index23 <= kLineTopo; ++index23)
+                {
+                    kDop = binaryReader6.ReadInt32();
+                    for (int index24 = 1; index24 <= kDop; ++index24)
+                    {
+                        nameDop[index24] = binaryReader6.ReadString();
+                        xDop[index24] = binaryReader6.ReadDouble();
+                        yDop[index24] = binaryReader6.ReadDouble();
+                        zDop[index24] = binaryReader6.ReadDouble();
+                        distDop[index24] = binaryReader6.ReadDouble();
+                        angDop[index24] = binaryReader6.ReadDouble();
+                        dhDop[index24] = binaryReader6.ReadDouble();
+                        azDop[index24] = binaryReader6.ReadDouble();
+                    }
+                    int num18 = 0;
+                    if (kDop > 2)
+                    {
+                        for (int index25 = 3; index25 <= kDop; ++index25)
+                        {
+                            for (int index26 = 1; index26 <= kNode; ++index26)
+                            {
+                                if (nameDop[index25] == nameNode[index26])
+                                {
+                                    num18 = index25;
+                                    break;
+                                }
+                            }
+                            if (num18 > 0)
+                                break;
+                        }
+                        if (num18 > 2)
+                            kDop = num18;
+                    }
+                    if (num18 == 0 && kDop > 2)
+                    {
+                        for (int index27 = 3; index27 <= kDop; ++index27)
+                        {
+                            for (int index28 = 1; index28 <= kGeo; ++index28)
+                            {
+                                if (nameDop[index27] == nameGeo[index28])
+                                {
+                                    num18 = index27;
+                                    break;
+                                }
+                            }
+                            if (num18 > 0)
+                                break;
+                        }
+                        if (num18 > 2)
+                            kDop = num18;
+                    }
+                    sTmp = "";
+                    for (int index29 = 1; index29 <= kDop; ++index29)
+                        sTmp += nameDop[index29];
+                    int num19 = 0;
+                    if (index22 > 0)
+                    {
+                        for (int index30 = 1; index30 <= index22; ++index30)
+                        {
+                            if (namePnt[index30] == sTmp)
+                            {
+                                ++num19;
+                                break;
+                            }
+                        }
+                    }
+                    if (num19 <= 0)
+                    {
+                        ++index22;
+                        namePnt[index22] = sTmp;
+                        ++num17;
+                        binaryWriter4.Write(index23);
+                        binaryWriter4.Write(kDop);
+                        for (int index31 = 1; index31 <= kDop; ++index31)
+                        {
+                            binaryWriter4.Write(nameDop[index31]);
+                            binaryWriter4.Write(xDop[index31]);
+                            binaryWriter4.Write(yDop[index31]);
+                            binaryWriter4.Write(zDop[index31]);
+                        }
+                    }
+                }
+                binaryReader6.Close();
+                input6.Close();
+                binaryWriter4.Close();
+                output4.Close();
+                if (!File.Exists(fpointFile))
+                    return;
+                FileStream input7 = new FileStream(fpointFile, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader7 = new BinaryReader((Stream)input7);
+                if (File.Exists(flineFile))
+                    File.Delete(flineFile);
+                FileStream output5 = new FileStream(flineFile, FileMode.CreateNew);
+                BinaryWriter binaryWriter5 = new BinaryWriter((Stream)output5);
+                binaryWriter5.Write(num17);
+                for (int index32 = 1; index32 <= num17; ++index32)
+                {
+                    int num20 = binaryReader7.ReadInt32();
+                    kDop = binaryReader7.ReadInt32();
+                    for (int index33 = 1; index33 <= kDop; ++index33)
+                    {
+                        nameDop[index33] = binaryReader7.ReadString();
+                        xDop[index33] = binaryReader7.ReadDouble();
+                        yDop[index33] = binaryReader7.ReadDouble();
+                        zDop[index33] = binaryReader7.ReadDouble();
+                    }
+                    binaryWriter5.Write(num20);
+                    binaryWriter5.Write(kDop);
+                    for (int index34 = 1; index34 <= kDop; ++index34)
+                    {
+                        binaryWriter5.Write(nameDop[index34]);
+                        binaryWriter5.Write(xDop[index34]);
+                        binaryWriter5.Write(yDop[index34]);
+                        binaryWriter5.Write(zDop[index34]);
+                    }
+                }
+                binaryReader7.Close();
+                input7.Close();
+                binaryWriter5.Close();
+                output5.Close();
+            }
+            LineDelete();
+        }
+
+        public void LineDelete()
+        {
+            double num1;
+            double num2 = num1 = 0.0;
+            double num3;
+            double num4 = num3 = 0.0;
+            double num5 = num3;
+            double num6 = num3;
+            if (!File.Exists(fileDifer))
+                return;
+            FileStream input1 = new FileStream(fileDifer, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            kDif = binaryReader1.ReadInt32();
+            for (int index = 1; index <= kDif; ++index)
+            {
+                n1Pnt[index] = binaryReader1.ReadString();
+                n2Pnt[index] = binaryReader1.ReadString();
+                distDif[index] = binaryReader1.ReadDouble();
+                horDif[index] = binaryReader1.ReadDouble();
+                verDif[index] = binaryReader1.ReadDouble();
+                dhDif[index] = binaryReader1.ReadDouble();
+                verZero[index] = binaryReader1.ReadDouble();
+            }
+            binaryReader1.Close();
+            input1.Close();
+            if (File.Exists(ferrorNode))
+            {
+                FileStream input2 = new FileStream(ferrorNode, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                kNode = binaryReader2.ReadInt32();
+                for (int index1 = 1; index1 <= kNode; ++index1)
+                {
+                    kAdd = binaryReader2.ReadInt32();
+                    for (int index2 = 1; index2 <= kAdd; ++index2)
+                    {
+                        indLine[index2] = binaryReader2.ReadInt32();
+                        nameAdd[index2] = binaryReader2.ReadString();
+                        xAdd[index2] = binaryReader2.ReadDouble();
+                        yAdd[index2] = binaryReader2.ReadDouble();
+                        zAdd[index2] = binaryReader2.ReadDouble();
+                        double num7 = Math.Sqrt(xAdd[index2] * xAdd[index2] + yAdd[index2] * yAdd[index2]);
+                        if (num7 > num6)
+                        {
+                            num6 = num7;
+                            int num8 = indLine[index2];
+                            string str = nameAdd[index2];
+                            num5 = xAdd[index2];
+                            num4 = yAdd[index2];
+                        }
+                    }
+                }
+                binaryReader2.Close();
+                input2.Close();
+            }
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input3 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            int index3 = 0;
+            kLineTopo = binaryReader3.ReadInt32();
+            binaryWriter1.Write(kLineTopo);
+            for (int index4 = 1; index4 <= kLineTopo; ++index4)
+            {
+                kDop = binaryReader3.ReadInt32();
+                binaryWriter1.Write(kDop);
+                kt[index4] = kDop;
+                for (int index5 = 1; index5 <= kDop; ++index5)
+                {
+                    nameDop[index5] = binaryReader3.ReadString();
+                    xDop[index5] = binaryReader3.ReadDouble();
+                    yDop[index5] = binaryReader3.ReadDouble();
+                    zDop[index5] = binaryReader3.ReadDouble();
+                    distDop[index5] = binaryReader3.ReadDouble();
+                    angDop[index5] = binaryReader3.ReadDouble();
+                    dhDop[index5] = binaryReader3.ReadDouble();
+                    azDop[index5] = binaryReader3.ReadDouble();
+                    ++index3;
+                    statDel[index3] = nameDop[index5];
+                }
+                for (int index6 = 1; index6 <= kDop; ++index6)
+                {
+                    binaryWriter1.Write(nameDop[index6]);
+                    binaryWriter1.Write(xDop[index6]);
+                    binaryWriter1.Write(yDop[index6]);
+                    binaryWriter1.Write(zDop[index6]);
+                    binaryWriter1.Write(distDop[index6]);
+                    binaryWriter1.Write(angDop[index6]);
+                    binaryWriter1.Write(dhDop[index6]);
+                    binaryWriter1.Write(azDop[index6]);
+                }
+            }
+            binaryReader3.Close();
+            input3.Close();
+            binaryWriter1.Close();
+            output1.Close();
+            k1[1] = 1;
+            k2[1] = kt[1];
+            if (kLineTopo > 1)
+            {
+                for (int index7 = 2; index7 <= kLineTopo; ++index7)
+                {
+                    k1[index7] = k2[index7 - 1] + 1;
+                    k2[index7] = k2[index7 - 1] + kt[index7];
+                }
+            }
+            int num9;
+            int num10 = num9 = 0;
+            int index8 = 0;
+            if (kLineTopo > 1)
+            {
+                for (int index9 = 1; index9 < kLineTopo; ++index9)
+                {
+                    int num11 = 0;
+                    if (index8 > 0)
+                    {
+                        for (int index10 = 1; index10 <= index8; ++index10)
+                        {
+                            if (indLine[index10] == index9)
+                            {
+                                ++num11;
+                                break;
+                            }
+                        }
+                    }
+                    if (num11 <= 0)
+                    {
+                        int num12 = k1[index9];
+                        int num13 = k2[index9];
+                        for (int index11 = index9 + 1; index11 <= kLineTopo; ++index11)
+                        {
+                            int num14 = 0;
+                            if (index8 > 0)
+                            {
+                                for (int index12 = 1; index12 <= index8; ++index12)
+                                {
+                                    if (indLine[index12] == index11)
+                                    {
+                                        ++num14;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num14 <= 0 && index9 != index11 && kt[index9] == kt[index11])
+                            {
+                                int num15 = k1[index11];
+                                int num16 = k2[index11];
+                                int num17 = 0;
+                                for (int index13 = num12; index13 <= num13; ++index13)
+                                {
+                                    for (int index14 = num15; index14 <= num16; ++index14)
+                                    {
+                                        if (statDel[index13] == statDel[index14])
+                                        {
+                                            ++num17;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (num17 == kt[index9])
+                                {
+                                    ++index8;
+                                    indLine[index8] = index11;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input4 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+            if (File.Exists(flineTopo))
+                File.Delete(flineTopo);
+            FileStream output2 = new FileStream(flineTopo, FileMode.CreateNew);
+            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+            kLineTopo = binaryReader4.ReadInt32();
+            kLine = kLineTopo - index8;
+            binaryWriter2.Write(kLine);
+            for (int index15 = 1; index15 <= kLineTopo; ++index15)
+            {
+                kDop = binaryReader4.ReadInt32();
+                for (int index16 = 1; index16 <= kDop; ++index16)
+                {
+                    nameDop[index16] = binaryReader4.ReadString();
+                    xDop[index16] = binaryReader4.ReadDouble();
+                    yDop[index16] = binaryReader4.ReadDouble();
+                    zDop[index16] = binaryReader4.ReadDouble();
+                    distDop[index16] = binaryReader4.ReadDouble();
+                    angDop[index16] = binaryReader4.ReadDouble();
+                    dhDop[index16] = binaryReader4.ReadDouble();
+                    azDop[index16] = binaryReader4.ReadDouble();
+                }
+                int num18 = 0;
+                if (index8 > 0)
+                {
+                    for (int index17 = 1; index17 <= index8; ++index17)
+                    {
+                        if (indLine[index17] == index15)
+                        {
+                            ++num18;
+                            break;
+                        }
+                    }
+                }
+                if (num18 <= 0)
+                {
+                    binaryWriter2.Write(kDop);
+                    for (int index18 = 1; index18 <= kDop; ++index18)
+                    {
+                        binaryWriter2.Write(nameDop[index18]);
+                        binaryWriter2.Write(xDop[index18]);
+                        binaryWriter2.Write(yDop[index18]);
+                        binaryWriter2.Write(zDop[index18]);
+                        binaryWriter2.Write(distDop[index18]);
+                        binaryWriter2.Write(angDop[index18]);
+                        binaryWriter2.Write(dhDop[index18]);
+                        binaryWriter2.Write(azDop[index18]);
+                    }
+                }
+            }
+            binaryReader4.Close();
+            input4.Close();
+            binaryWriter2.Close();
+            output2.Close();
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input5 = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output3 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+            kAdd = 0;
+            kLineDop = 0;
+            kLine = binaryReader5.ReadInt32();
+            for (int index19 = 1; index19 <= kLine; ++index19)
+            {
+                kDop = binaryReader5.ReadInt32();
+                for (int index20 = 1; index20 <= kDop; ++index20)
+                {
+                    nameDop[index20] = binaryReader5.ReadString();
+                    xDop[index20] = binaryReader5.ReadDouble();
+                    yDop[index20] = binaryReader5.ReadDouble();
+                    zDop[index20] = binaryReader5.ReadDouble();
+                    distDop[index20] = binaryReader5.ReadDouble();
+                    angDop[index20] = binaryReader5.ReadDouble();
+                    dhDop[index20] = binaryReader5.ReadDouble();
+                    azDop[index20] = binaryReader5.ReadDouble();
+                }
+                for (int index21 = 2; index21 <= kDop; ++index21)
+                {
+                    double num19 = 0.5 * (xDop[index21 - 1] + xDop[index21]);
+                    double num20 = 0.5 * (yDop[index21 - 1] + yDop[index21]);
+                    int num21 = 0;
+                    if (kAdd > 0)
+                    {
+                        for (int index22 = 1; index22 <= kAdd; ++index22)
+                        {
+                            double num22 = xAdd[index22] - num19;
+                            double num23 = yAdd[index22] - num20;
+                            if (Math.Sqrt(num22 * num22 + num23 * num23) < 0.05)
+                            {
+                                ++num21;
+                                break;
+                            }
+                        }
+                    }
+                    if (num21 <= 0)
+                    {
+                        ++kAdd;
+                        xAdd[kAdd] = num19;
+                        yAdd[kAdd] = num20;
+                        if (!(nameDop[index21 - 1] == nameDop[index21]))
+                        {
+                            ++kLineDop;
+                            binaryWriter3.Write(nameDop[index21 - 1]);
+                            binaryWriter3.Write(xDop[index21 - 1]);
+                            binaryWriter3.Write(yDop[index21 - 1]);
+                            binaryWriter3.Write(zDop[index21 - 1]);
+                            binaryWriter3.Write(nameDop[index21]);
+                            binaryWriter3.Write(xDop[index21]);
+                            binaryWriter3.Write(yDop[index21]);
+                            binaryWriter3.Write(zDop[index21]);
+                        }
+                    }
+                }
+            }
+            binaryReader5.Close();
+            input5.Close();
+            binaryWriter3.Close();
+            output3.Close();
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input6 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader6 = new BinaryReader((Stream)input6);
+            if (File.Exists(fgeoPoly))
+                File.Delete(fgeoPoly);
+            FileStream output4 = new FileStream(fgeoPoly, FileMode.CreateNew);
+            BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+            binaryWriter4.Write(kLineDop);
+            for (int index23 = 1; index23 <= kLineDop; ++index23)
+            {
+                int num24 = 2;
+                binaryWriter4.Write(num24);
+                for (int index24 = 1; index24 <= num24; ++index24)
+                {
+                    nameAdd[index24] = binaryReader6.ReadString();
+                    xAdd[index24] = binaryReader6.ReadDouble();
+                    yAdd[index24] = binaryReader6.ReadDouble();
+                    zAdd[index24] = binaryReader6.ReadDouble();
+                    if (kGeo > 0)
+                    {
+                        for (int index25 = 1; index25 <= kGeo; ++index25)
+                        {
+                            if (nameAdd[index24] == nameGeo[index25])
+                            {
+                                xAdd[index24] = xGeo[index25];
+                                yAdd[index24] = yGeo[index25];
+                                if (zGeo[index25] != 0.0)
+                                {
+                                    zAdd[index24] = zGeo[index25];
+                                    break;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    binaryWriter4.Write(nameAdd[index24]);
+                    binaryWriter4.Write(xAdd[index24]);
+                    binaryWriter4.Write(yAdd[index24]);
+                    binaryWriter4.Write(zAdd[index24]);
+                }
+            }
+            binaryReader6.Close();
+            input6.Close();
+            binaryWriter4.Close();
+            output4.Close();
+        }
+
+        public void AllPointsInput(
+          out int iCond,
+          int kGeoFin,
+          string[] nameFin,
+          double[] xFin,
+          double[] yFin,
+          double[] zFin,
+          double zeroSpot,
+          out int kAdd,
+          string[] nameAdd,
+          double[] xAdd,
+          double[] yAdd,
+          double[] zAdd,
+          int[] nUniq)
+        {
+            int k = 0;
+            int kPart = 50;
+            double num1 = 0.0;
+            int index1 = 0;
+            double num2 = 3.1415926;
+            double num3;
+            double num4 = num3 = 0.0;
+            double num5 = num3;
+            double num6 = num3;
+            double num7;
+            double num8 = num7 = 0.0;
+            kAdd = -1;
+            iCond = 0;
+            int num9 = 0;
+            sDiag = "Lines Number with error: ";
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Source Data";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            string str = "";
+            openFileDialog.FileName = str;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream;
+                if ((stream = openFileDialog.OpenFile()) != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                    int num10;
+                    int num11 = num10 = 0;
+                    int num12 = num10;
+                    kGeo = num10;
+                    int num13 = num12;
+                    kAdd = -1;
+                    string sLine;
+                    while ((sLine = streamReader.ReadLine()) != null)
+                    {
+                        ++num13;
+                        string[] sPart;
+                        DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                        if (k < 2)
+                            num11 = 0;
+                        else if (k < 4)
+                        {
+                            ++num9;
+                            sDiag = sDiag + Convert.ToString(num13) + ";";
+                        }
+                        else if (num11 == 0)
+                        {
+                            statName = sPart[1];
+                            statHeig = Convert.ToDouble(sPart[2]);
+                            string caption = sPart[3];
+                            GradToRad(Convert.ToDouble(sPart[4]), ref hor1);
+                            int num14 = 0;
+                            int num15 = 0;
+                            for (int index2 = 0; index2 <= kGeoFin; ++index2)
+                            {
+                                if (nameFin[index2] == statName)
+                                {
+                                    ++num14;
+                                    num6 = xFin[index2];
+                                    num5 = yFin[index2];
+                                    num4 = zFin[index2];
+                                    break;
+                                }
+                            }
+                            for (int index3 = 0; index3 <= kGeoFin; ++index3)
+                            {
+                                if (nameFin[index3] == caption)
+                                {
+                                    ++num15;
+                                    num8 = xFin[index3];
+                                    num7 = yFin[index3];
+                                    double num16 = zFin[index3];
+                                    break;
+                                }
+                            }
+                            if (num14 == 0)
+                            {
+                                int num17 = (int)MessageBox.Show("Didn't find Basic Point", statName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                iCond = -99;
+                                return;
+                            }
+                            if (num15 == 0)
+                            {
+                                int num18 = (int)MessageBox.Show("Didn't find Basic Point", caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                iCond = -99;
+                                return;
+                            }
+                            dx = num8 - num6;
+                            dy = num7 - num5;
+                            num1 = Math.Atan2(dy, dx);
+                            if (num1 < 0.0)
+                                num1 += 2.0 * num2;
+                            ++index1;
+                            nameStat[kStation] = statName;
+                            hStat[index1] = statHeig;
+                            xStat[index1] = num6;
+                            yStat[index1] = num5;
+                            zStat[index1] = num4;
+                            ++num11;
+                        }
+                        else if (num11 > 0)
+                        {
+                            ++kAdd;
+                            nameAdd[kAdd] = sPart[1];
+                            dist2 = Convert.ToDouble(sPart[2]);
+                            GradToRad(Convert.ToDouble(sPart[3]), ref hor2);
+                            GradToRad(Convert.ToDouble(sPart[4]), ref ver2);
+                            ver = statHeig;
+                            if (k == 5)
+                            {
+                                ver = Convert.ToDouble(sPart[5]);
+                                if (ver == 0.0)
+                                    ver = statHeig;
+                            }
+                            ver1 = ver2 - zeroSpot;
+                            dist1 = dist2 * Math.Cos(ver1);
+                            zAdd[kAdd] = zStat[index1] + dist2 * Math.Cos(ver1) * Math.Tan(ver1) - ver + statHeig;
+                            double num19 = num1 + (hor2 - hor1);
+                            if (num19 < 0.0)
+                                num19 += 2.0 * num2;
+                            xAdd[kAdd] = xStat[index1] + dist1 * Math.Cos(num19);
+                            yAdd[kAdd] = yStat[index1] + dist1 * Math.Sin(num19);
+                            nUniq[kAdd] = 0;
+                            if (k == 6)
+                                nUniq[kAdd] = Convert.ToInt32(sPart[6]);
+                        }
+                    }
+                }
+                stream.Close();
+                if (num9 <= 0)
+                    return;
+                int num20 = (int)MessageBox.Show(sDiag, "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -99;
+            }
+            else
+                iCond = -99;
+        }
+
+        public void PrevPrint_Lines(
+          PrintPageEventArgs e,
+          double sPixInch,
+          int iScaleMap,
+          double[] xCorner,
+          double[] yCorner,
+          int kLine,
+          double[] radLin,
+          double[] xRad,
+          double[] yRad,
+          int[] k1,
+          int[] k2,
+          double[] xLin,
+          double[] yLin,
+          double[] xta,
+          double[] yta,
+          int ix,
+          int iy,
+          int ixPixel,
+          int iyPixel,
+          int iLength)
+        {
+            double[] xp = new double[10];
+            double[] yp = new double[10];
+            int y1;
+            int x1 = y1 = 0;
+            if (kLine == 0)
+                return;
+            SolidBrush iColor = new SolidBrush(Color.Black);
+            Pen pen = new Pen(Color.Black);
+            pen.Width = 1f;
+            double num1 = 0.01 * (double)iScaleMap;
+            int kp = -1;
+            for (int index = 1; index <= 5; ++index)
+            {
+                ++kp;
+                xp[kp] = xCorner[index];
+                yp[kp] = yCorner[index];
+            }
+            for (int index1 = 1; index1 <= kLine; ++index1)
+            {
+                double rad = radLin[index1];
+                double xrd = xRad[index1];
+                double yrd = yRad[index1];
+                int num2 = k1[index1];
+                int num3 = k2[index1];
+                int k = -1;
+                for (int index2 = num2; index2 <= num3; ++index2)
+                {
+                    ++k;
+                    xta[k] = xLin[index2];
+                    yta[k] = yLin[index2];
+                }
+                int kl;
+                DllClass1.ClipLine(kp, xp, yp, k, xta, yta, rad, xrd, yrd, out kl, nWork1, nWork2, xWork1, yWork1, nWork, xWork2, yWork2);
+                if (kl >= 0 && kl > -1)
+                {
+                    for (int index3 = 0; index3 <= kl; ++index3)
+                    {
+                        int index4 = nWork1[index3];
+                        int index5 = nWork2[index3];
+                        for (int index6 = index4 + 1; index6 <= index5; ++index6)
+                        {
+                            double num4 = xWork1[index6 - 1] - xCorner[2];
+                            double num5 = yWork1[index6 - 1] - yCorner[2];
+                            int int32_1 = Convert.ToInt32(10.0 * num4 / num1 / sPixInch);
+                            int int32_2 = Convert.ToInt32(10.0 * num5 / num1 / sPixInch);
+                            int x2 = ix + int32_1;
+                            int y2 = iy - int32_2;
+                            double num6 = xWork1[index6] - xCorner[2];
+                            double num7 = yWork1[index6] - yCorner[2];
+                            int int32_3 = Convert.ToInt32(10.0 * num6 / num1 / sPixInch);
+                            int int32_4 = Convert.ToInt32(10.0 * num7 / num1 / sPixInch);
+                            x1 = ix + int32_3;
+                            y1 = iy - int32_4;
+                            Point pt1 = new Point(x2, y2);
+                            Point pt2 = new Point(x1, y1);
+                            e.Graphics.DrawLine(pen, pt1, pt2);
+                        }
+                        if (iLength > 0)
+                        {
+                            double x3 = xWork1[index5] - xWork1[index4];
+                            double y3 = yWork1[index5] - yWork1[index4];
+                            double num8 = Math.Sqrt(x3 * x3 + y3 * y3);
+                            double rdn = Math.Atan2(y3, x3);
+                            if (rdn < 0.0)
+                                rdn += 6.2831852;
+                            double num9 = 0.5 * (xWork1[index5] + xWork1[index4]);
+                            double num10 = 0.5 * (yWork1[index5] + yWork1[index4]);
+                            double num11 = num9 - xCorner[2];
+                            double num12 = num10 - yCorner[2];
+                            int int32_5 = Convert.ToInt32(10.0 * num11 / num1 / sPixInch);
+                            int int32_6 = Convert.ToInt32(10.0 * num12 / num1 / sPixInch);
+                            int num13 = ix + int32_5;
+                            int num14 = iy - int32_6;
+                            string tText = string.Format("{0:F2}", (object)num8);
+                            int angle = 360 - DllClass1.RadGrad(rdn);
+                            int hText = 8;
+                            double num15 = rdn + 1.57;
+                            if (num15 >= 6.2831852)
+                                num15 -= 6.2831852;
+                            if (angle >= 0 && angle <= 45)
+                            {
+                                x1 = num13 - Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 - Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle > 45 && angle <= 90)
+                            {
+                                x1 = num13 + Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 + Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle > 90 && angle <= 135)
+                            {
+                                x1 = num13 - Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 - Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle > 135 && angle <= 180)
+                            {
+                                x1 = num13 + Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 + Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle > 180 && angle <= 225)
+                            {
+                                x1 = num13 + Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 + Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle > 225 && angle < 270)
+                            {
+                                x1 = num13 - Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 - Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle >= 270 && angle < 315)
+                            {
+                                x1 = num13 + Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 + Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            if (angle >= 315 && angle < 360)
+                            {
+                                x1 = num13 - Convert.ToInt32(6.0 * Math.Cos(num15));
+                                y1 = num14 - Convert.ToInt32(6.0 * Math.Sin(num15));
+                            }
+                            DllClass1.RotTextPrevPrint(e, tText, x1, y1, hText, angle, iColor, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void GeoLineSelect(
+          int kLine,
+          string[] namePnt1,
+          double[] xPnt1,
+          double[] yPnt1,
+          string[] namePnt2,
+          double[] xPnt2,
+          double[] yPnt2,
+          int kGeo,
+          string[] nameGeo,
+          out int kLineGeo,
+          double[] xLineGeo,
+          double[] yLineGeo)
+        {
+            kLineGeo = 0;
+            int index1 = 0;
+            if (kLine == 0)
+                return;
+            for (int index2 = 1; index2 <= kLine; ++index2)
+            {
+                int num1 = 0;
+                int num2 = 0;
+                for (int index3 = 1; index3 <= kGeo; ++index3)
+                {
+                    if (namePnt1[index2] == nameGeo[index3])
+                        num1 = 1;
+                    if (namePnt2[index2] == nameGeo[index3])
+                        num2 = 1;
+                }
+                if (num1 > 0 && num2 > 0)
+                {
+                    ++kLineGeo;
+                    int index4 = index1 + 1;
+                    xLineGeo[index4] = xPnt1[index2];
+                    yLineGeo[index4] = yPnt1[index2];
+                    index1 = index4 + 1;
+                    xLineGeo[index1] = xPnt2[index2];
+                    yLineGeo[index1] = yPnt2[index2];
+                }
+            }
+        }
+
+        public void GradToRad(double grad, ref double rad)
+        {
+            double num1 = pi / 180.0;
+            double num2 = pi / 10800.0;
+            double num3 = pi / 648000.0;
+            int num4 = (int)grad;
+            double num5 = 10000.0 * (grad - 1.0 * (double)num4);
+            int num6 = (int)(0.01 * num5);
+            double num7 = num5 - 100.0 * (double)num6;
+            rad = (double)num4 * num1 + (double)num6 * num2 + num7 * num3;
+        }
+
+        public void Inverse(
+          int k,
+          ref double[] x,
+          ref double[] y,
+          ref double[] dir,
+          ref double[] rs,
+          out double xpt,
+          out double ypt)
+        {
+            double num1 = 3.1415926;
+            double num2 = 2.0 * num1;
+            for (int index1 = 0; index1 < k; ++index1)
+            {
+                for (int index2 = index1 + 1; index2 <= k; ++index2)
+                {
+                    if (dir[index1] > dir[index2])
+                    {
+                        double num3 = x[index1];
+                        double num4 = y[index1];
+                        double num5 = dir[index1];
+                        double num6 = rs[index1];
+                        x[index1] = x[index2];
+                        y[index1] = y[index2];
+                        dir[index1] = dir[index2];
+                        rs[index1] = rs[index2];
+                        x[index2] = num3;
+                        y[index2] = num4;
+                        dir[index2] = num5;
+                        rs[index2] = num6;
+                    }
+                }
+            }
+            int index3 = k + 1;
+            x[index3] = x[1];
+            y[index3] = y[1];
+            dir[index3] = dir[1];
+            rs[index3] = rs[1];
+            double num7 = 0.0;
+            double num8 = 0.0;
+            double num9 = 0.0;
+            for (int index4 = 1; index4 <= index3; ++index4)
+            {
+                double x1 = x[index4] - x[index4 - 1];
+                double y1 = y[index4] - y[index4 - 1];
+                double num10 = Math.Atan2(y1, x1);
+                if (num10 < 0.0)
+                    num10 += num2;
+                double num11 = Math.Sqrt(x1 * x1 + y1 * y1);
+                double a = dir[index4] - dir[index4 - 1];
+                if (a < num1)
+                {
+                    double num12 = Math.Asin(rs[index4] * Math.Sin(a) / num11);
+                    double num13 = num10 + num12;
+                    if (num13 >= num2)
+                        num13 -= num2;
+                    double num14 = x[index4 - 1] + rs[index4 - 1] * Math.Cos(num13);
+                    double num15 = y[index4 - 1] + rs[index4 - 1] * Math.Sin(num13);
+                    double num16 = num7 + 1.0;
+                    double num17 = num8 + num14;
+                    double num18 = num9 + num15;
+                    double num19 = num1 - a - num12;
+                    double num20 = num10 + num1;
+                    if (num20 >= num2)
+                        num20 -= num2;
+                    double num21 = num20 - num19;
+                    if (num21 < 0.0)
+                        num21 += num2;
+                    double num22 = x[index4] + rs[index4] * Math.Cos(num21);
+                    double num23 = y[index4] + rs[index4] * Math.Sin(num21);
+                    num7 = num16 + 1.0;
+                    num8 = num17 + num22;
+                    num9 = num18 + num23;
+                }
+            }
+            xpt = num8 / num7;
+            ypt = num9 / num7;
+        }
+
+        public void SelectLine()
+        {
+            kLine = 0;
+            int index1 = 0;
+            int index2 = 0;
+            if (!File.Exists(fileLine))
+                return;
+            FileStream input1 = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            int num1 = binaryReader1.ReadInt32();
+            for (int index3 = 1; index3 <= num1; ++index3)
+            {
+                int num2 = binaryReader1.ReadInt32();
+                for (int index4 = 1; index4 <= num2; ++index4)
+                {
+                    namePnt1[index4] = binaryReader1.ReadString();
+                    xPnt1[index4] = binaryReader1.ReadDouble();
+                    yPnt1[index4] = binaryReader1.ReadDouble();
+                    zPnt1[index4] = binaryReader1.ReadDouble();
+                    namePnt2[index4] = binaryReader1.ReadString();
+                    xPnt2[index4] = binaryReader1.ReadDouble();
+                    yPnt2[index4] = binaryReader1.ReadDouble();
+                    zPnt2[index4] = binaryReader1.ReadDouble();
+                    distAver[index4] = binaryReader1.ReadDouble();
+                    horAver[index4] = binaryReader1.ReadDouble();
+                    verAver[index4] = binaryReader1.ReadDouble();
+                }
+                if (num2 != 1)
+                {
+                    int num3 = 0;
+                    if (index2 > 0)
+                    {
+                        for (int index5 = 1; index5 <= index2; ++index5)
+                        {
+                            if (indLine[index5] == index3)
+                            {
+                                ++num3;
+                                break;
+                            }
+                        }
+                    }
+                    if (num3 <= 0)
+                    {
+                        int num4 = 0;
+                        for (int index6 = 1; index6 <= num2; ++index6)
+                        {
+                            for (int index7 = 1; index7 <= kGeo; ++index7)
+                            {
+                                if (namePnt1[index6] == nameGeo[index7])
+                                {
+                                    ++num4;
+                                    xPnt1[index6] = xGeo[index7];
+                                    yPnt1[index6] = yGeo[index7];
+                                    zPnt1[index6] = zGeo[index7];
+                                    break;
+                                }
+                            }
+                        }
+                        if (num4 != 0)
+                        {
+                            int num5 = 0;
+                            for (int index8 = 1; index8 <= num2; ++index8)
+                            {
+                                for (int index9 = 1; index9 <= kGeo; ++index9)
+                                {
+                                    if (namePnt2[index8] == nameGeo[index9])
+                                    {
+                                        ++num5;
+                                        xPnt2[index8] = xGeo[index9];
+                                        yPnt2[index8] = yGeo[index9];
+                                        zPnt2[index8] = zGeo[index9];
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num5 != 0)
+                            {
+                                int num6 = 0;
+                                for (int index10 = 1; index10 <= num2; ++index10)
+                                {
+                                    for (int index11 = 1; index11 <= kGeo; ++index11)
+                                    {
+                                        if (namePnt2[index10] == nameGeo[index11])
+                                        {
+                                            ++num6;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (num6 < num2)
+                                {
+                                    ++index2;
+                                    indLine[index2] = index3;
+                                    for (int index12 = 1; index12 <= num2; ++index12)
+                                    {
+                                        int num7 = 0;
+                                        for (int index13 = 1; index13 <= kGeo; ++index13)
+                                        {
+                                            if (namePnt2[index12] == nameGeo[index13])
+                                            {
+                                                ++num7;
+                                                break;
+                                            }
+                                        }
+                                        if (num7 == 0)
+                                        {
+                                            int num8 = 0;
+                                            if (index1 > 0)
+                                            {
+                                                for (int index14 = 1; index14 <= index1; ++index14)
+                                                {
+                                                    if (namePnt1[index12] == n2Pnt[index14] && namePnt2[index12] == n1Pnt[index14])
+                                                    {
+                                                        ++num8;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            if (num8 <= 0)
+                                            {
+                                                int num9 = 0;
+                                                if (index1 > 0)
+                                                {
+                                                    for (int index15 = 1; index15 <= index1; ++index15)
+                                                    {
+                                                        if (namePnt1[index12] == n1Pnt[index15] && namePnt2[index12] == n2Pnt[index15])
+                                                        {
+                                                            ++num9;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                if (num9 <= 0)
+                                                {
+                                                    ++index1;
+                                                    n1Pnt[index1] = namePnt1[index12];
+                                                    n2Pnt[index1] = namePnt2[index12];
+                                                    distDop[index1] = distAver[index12];
+                                                    ++kLine;
+                                                    binaryWriter.Write(namePnt1[index12]);
+                                                    binaryWriter.Write(xPnt1[index12]);
+                                                    binaryWriter.Write(yPnt1[index12]);
+                                                    binaryWriter.Write(zPnt1[index12]);
+                                                    binaryWriter.Write(namePnt2[index12]);
+                                                    if (kAdd > 0)
+                                                    {
+                                                        for (int index16 = 1; index16 <= kAdd; ++index16)
+                                                        {
+                                                            if (namePnt2[index12] == nameAdd[index16])
+                                                            {
+                                                                xPnt2[index12] = xAdd[index16];
+                                                                yPnt2[index12] = yAdd[index16];
+                                                                zPnt2[index12] = zAdd[index16];
+                                                            }
+                                                        }
+                                                    }
+                                                    binaryWriter.Write(xPnt2[index12]);
+                                                    binaryWriter.Write(yPnt2[index12]);
+                                                    binaryWriter.Write(zPnt2[index12]);
+                                                    binaryWriter.Write(distAver[index12]);
+                                                    binaryWriter.Write(horAver[index12]);
+                                                    binaryWriter.Write(verAver[index12]);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            input1.Close();
+            binaryReader1.Close();
+            FileStream input2 = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+            int num10 = binaryReader2.ReadInt32();
+            for (int index17 = 1; index17 <= num10; ++index17)
+            {
+                int num11 = binaryReader2.ReadInt32();
+                for (int index18 = 1; index18 <= num11; ++index18)
+                {
+                    namePnt1[index18] = binaryReader2.ReadString();
+                    xPnt1[index18] = binaryReader2.ReadDouble();
+                    yPnt1[index18] = binaryReader2.ReadDouble();
+                    zPnt1[index18] = binaryReader2.ReadDouble();
+                    namePnt2[index18] = binaryReader2.ReadString();
+                    xPnt2[index18] = binaryReader2.ReadDouble();
+                    yPnt2[index18] = binaryReader2.ReadDouble();
+                    zPnt2[index18] = binaryReader2.ReadDouble();
+                    distAver[index18] = binaryReader2.ReadDouble();
+                    horAver[index18] = binaryReader2.ReadDouble();
+                    verAver[index18] = binaryReader2.ReadDouble();
+                }
+                if (num11 != 1)
+                {
+                    int num12 = 0;
+                    if (index2 > 0)
+                    {
+                        for (int index19 = 1; index19 <= index2; ++index19)
+                        {
+                            if (indLine[index19] == index17)
+                            {
+                                ++num12;
+                                break;
+                            }
+                        }
+                    }
+                    if (num12 <= 0)
+                    {
+                        int num13 = 0;
+                        for (int index20 = 1; index20 <= num11; ++index20)
+                        {
+                            for (int index21 = 1; index21 <= kGeo; ++index21)
+                            {
+                                if (namePnt1[index20] == nameGeo[index21])
+                                {
+                                    ++num13;
+                                    xPnt1[index20] = xGeo[index21];
+                                    yPnt1[index20] = yGeo[index21];
+                                    zPnt1[index20] = zGeo[index21];
+                                    break;
+                                }
+                            }
+                        }
+                        if (num13 != 0)
+                        {
+                            int num14 = 0;
+                            for (int index22 = 1; index22 <= num11; ++index22)
+                            {
+                                for (int index23 = 1; index23 <= kGeo; ++index23)
+                                {
+                                    if (namePnt2[index22] == nameGeo[index23])
+                                    {
+                                        ++num14;
+                                        xPnt2[index22] = xGeo[index23];
+                                        yPnt2[index22] = yGeo[index23];
+                                        zPnt2[index22] = zGeo[index23];
+                                        break;
+                                    }
+                                }
+                            }
+                            if (num14 <= 0)
+                            {
+                                ++index2;
+                                indLine[index2] = index17;
+                                for (int index24 = 1; index24 <= num11; ++index24)
+                                {
+                                    int num15 = 0;
+                                    if (index1 > 0)
+                                    {
+                                        for (int index25 = 1; index25 <= index1; ++index25)
+                                        {
+                                            if (namePnt1[index24] == n2Pnt[index25] && namePnt2[index24] == n1Pnt[index25])
+                                            {
+                                                ++num15;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num15 <= 0)
+                                    {
+                                        int num16 = 0;
+                                        if (index1 > 0)
+                                        {
+                                            for (int index26 = 1; index26 <= index1; ++index26)
+                                            {
+                                                if (namePnt1[index24] == n1Pnt[index26] && namePnt2[index24] == n2Pnt[index26])
+                                                {
+                                                    ++num16;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        if (num16 <= 0)
+                                        {
+                                            ++index1;
+                                            n1Pnt[index1] = namePnt1[index24];
+                                            n2Pnt[index1] = namePnt2[index24];
+                                            distDop[index1] = distAver[index24];
+                                            ++kLine;
+                                            binaryWriter.Write(namePnt1[index24]);
+                                            binaryWriter.Write(xPnt1[index24]);
+                                            binaryWriter.Write(yPnt1[index24]);
+                                            binaryWriter.Write(zPnt1[index24]);
+                                            binaryWriter.Write(namePnt2[index24]);
+                                            if (kAdd > 0)
+                                            {
+                                                for (int index27 = 1; index27 <= kAdd; ++index27)
+                                                {
+                                                    if (namePnt2[index24] == nameAdd[index27])
+                                                    {
+                                                        xPnt2[index24] = xAdd[index27];
+                                                        yPnt2[index24] = yAdd[index27];
+                                                        zPnt2[index24] = zAdd[index27];
+                                                    }
+                                                }
+                                            }
+                                            binaryWriter.Write(xPnt2[index24]);
+                                            binaryWriter.Write(yPnt2[index24]);
+                                            binaryWriter.Write(zPnt2[index24]);
+                                            binaryWriter.Write(distAver[index24]);
+                                            binaryWriter.Write(horAver[index24]);
+                                            binaryWriter.Write(verAver[index24]);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            input2.Close();
+            binaryReader2.Close();
+            if (!File.Exists(fileLine))
+                return;
+            FileStream input3 = new FileStream(fileLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+            int num17 = binaryReader3.ReadInt32();
+            for (int index28 = 1; index28 <= num17; ++index28)
+            {
+                int num18 = binaryReader3.ReadInt32();
+                for (int index29 = 1; index29 <= num18; ++index29)
+                {
+                    namePnt1[index29] = binaryReader3.ReadString();
+                    xPnt1[index29] = binaryReader3.ReadDouble();
+                    yPnt1[index29] = binaryReader3.ReadDouble();
+                    zPnt1[index29] = binaryReader3.ReadDouble();
+                    namePnt2[index29] = binaryReader3.ReadString();
+                    xPnt2[index29] = binaryReader3.ReadDouble();
+                    yPnt2[index29] = binaryReader3.ReadDouble();
+                    zPnt2[index29] = binaryReader3.ReadDouble();
+                    distAver[index29] = binaryReader3.ReadDouble();
+                    horAver[index29] = binaryReader3.ReadDouble();
+                    verAver[index29] = binaryReader3.ReadDouble();
+                }
+                if (num18 != 1)
+                {
+                    int num19 = 0;
+                    if (index2 > 0)
+                    {
+                        for (int index30 = 1; index30 <= index2; ++index30)
+                        {
+                            if (indLine[index30] == index28)
+                            {
+                                ++num19;
+                                break;
+                            }
+                        }
+                    }
+                    if (num19 <= 0)
+                    {
+                        int num20 = 0;
+                        for (int index31 = 1; index31 <= num18; ++index31)
+                        {
+                            for (int index32 = 1; index32 <= kGeo; ++index32)
+                            {
+                                if (namePnt1[index31] == nameGeo[index32])
+                                {
+                                    ++num20;
+                                    xPnt1[index31] = xGeo[index32];
+                                    yPnt1[index31] = yGeo[index32];
+                                    zPnt1[index31] = zGeo[index32];
+                                    break;
+                                }
+                            }
+                        }
+                        if (num20 <= 0)
+                        {
+                            int num21 = 0;
+                            for (int index33 = 1; index33 <= num18; ++index33)
+                            {
+                                for (int index34 = 1; index34 <= kGeo; ++index34)
+                                {
+                                    if (namePnt2[index33] == nameGeo[index34])
+                                    {
+                                        ++num21;
+                                        xPnt2[index33] = xGeo[index34];
+                                        yPnt2[index33] = yGeo[index34];
+                                        zPnt2[index33] = zGeo[index34];
+                                        break;
+                                    }
+                                }
+                            }
+                            ++index2;
+                            indLine[index2] = index28;
+                            for (int index35 = 1; index35 <= num18; ++index35)
+                            {
+                                int num22 = 0;
+                                if (index1 > 0)
+                                {
+                                    for (int index36 = 1; index36 <= index1; ++index36)
+                                    {
+                                        if (namePnt1[index35] == n2Pnt[index36] && namePnt2[index35] == n1Pnt[index36])
+                                        {
+                                            ++num22;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (num22 <= 0)
+                                {
+                                    int num23 = 0;
+                                    if (index1 > 0)
+                                    {
+                                        for (int index37 = 1; index37 <= index1; ++index37)
+                                        {
+                                            if (namePnt1[index35] == n1Pnt[index37] && namePnt2[index35] == n2Pnt[index37])
+                                            {
+                                                ++num23;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num23 <= 0)
+                                    {
+                                        ++index1;
+                                        n1Pnt[index1] = namePnt1[index35];
+                                        n2Pnt[index1] = namePnt2[index35];
+                                        distDop[index1] = distAver[index35];
+                                        ++kLine;
+                                        binaryWriter.Write(namePnt1[index35]);
+                                        binaryWriter.Write(xPnt1[index35]);
+                                        binaryWriter.Write(yPnt1[index35]);
+                                        binaryWriter.Write(zPnt1[index35]);
+                                        binaryWriter.Write(namePnt2[index35]);
+                                        if (kAdd > 0)
+                                        {
+                                            for (int index38 = 1; index38 <= kAdd; ++index38)
+                                            {
+                                                if (namePnt1[index35] == nameAdd[index38])
+                                                {
+                                                    xPnt1[index35] = xAdd[index38];
+                                                    yPnt1[index35] = yAdd[index38];
+                                                    zPnt1[index35] = zAdd[index38];
+                                                }
+                                                if (num21 == 0 && namePnt2[index35] == nameAdd[index38])
+                                                {
+                                                    xPnt2[index35] = xAdd[index38];
+                                                    yPnt2[index35] = yAdd[index38];
+                                                    zPnt2[index35] = zAdd[index38];
+                                                }
+                                            }
+                                        }
+                                        binaryWriter.Write(xPnt2[index35]);
+                                        binaryWriter.Write(yPnt2[index35]);
+                                        binaryWriter.Write(zPnt2[index35]);
+                                        binaryWriter.Write(distAver[index35]);
+                                        binaryWriter.Write(horAver[index35]);
+                                        binaryWriter.Write(verAver[index35]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            input3.Close();
+            binaryReader3.Close();
+            output.Close();
+            binaryWriter.Close();
+        }
+
+        public void CalcAngle(int k, ref double[] rev, ref double[] hor, ref double[] ang)
+        {
+            double num = 3.1415926;
+            if (k < 3)
+                return;
+            for (int index = 1; index <= k; ++index)
+                ang[index] = 0.0;
+            for (int index = 2; index <= k; ++index)
+            {
+                ang[index - 1] = 0.0;
+                ang[index - 1] = hor[index] - rev[index - 1];
+                if (ang[index - 1] < 0.0)
+                    ang[index - 1] = ang[index - 1] + 2.0 * num;
+            }
+        }
+
+        public void CalcLine(
+          int k,
+          ref double[] x,
+          ref double[] y,
+          ref double[] dist,
+          ref double[] ang,
+          ref double[] az)
+        {
+            double num1 = 3.1415926;
+            double num2;
+            double num3 = num2 = 0.0;
+            double x1 = x[2] - x[1];
+            double y1 = y[2] - y[1];
+            az[1] = Math.Atan2(y1, x1);
+            if (az[1] < 0.0)
+                az[1] = az[1] + 2.0 * num1;
+            if (k < 3)
+                return;
+            for (int index = 2; index <= k; ++index)
+            {
+                double num4 = az[index - 1] - num1;
+                if (num4 < 0.0)
+                    num4 += 2.0 * num1;
+                az[index] = num4 + ang[index - 1];
+                if (az[index] >= 2.0 * num1)
+                    az[index] = az[index] - 2.0 * num1;
+                x[index] = x[index - 1] + dist[index - 1] * Math.Cos(az[index - 1]);
+                y[index] = y[index - 1] + dist[index - 1] * Math.Sin(az[index - 1]);
+            }
+        }
+
+        public void AdjustLine(
+          int k,
+          ref string[] namePnt,
+          ref double[] x,
+          ref double[] y,
+          ref double[] dist,
+          ref double[] ang,
+          ref double[] az)
+        {
+            double num1;
+            double num2 = num1 = 0.0;
+            double num3 = 3.1415926;
+            for (int index = 1; index < k; ++index)
+            {
+                az[index] = 0.0;
+                double x1 = x[index + 1] - x[index];
+                double y1 = y[index + 1] - y[index];
+                dist[index] = Math.Sqrt(x1 * x1 + y1 * y1);
+                az[index] = Math.Atan2(y1, x1);
+                if (az[index] < 0.0)
+                    az[index] = az[index] + 2.0 * num3;
+                double num4 = az[index] - num3;
+                if (num4 < 0.0)
+                    num4 += 2.0 * num3;
+                ang[index] = az[index + 1] - num4;
+                if (ang[index] < 0.0)
+                    ang[index] = ang[index] + 2.0 * num3;
+            }
+        }
+
+        public void StereoDeform(out int iCond, string curModel)
+        {
+            string[] strArray1 = new string[10];
+            string[] strArray2 = new string[10];
+            string[] strArray3 = new string[10];
+            string[] strArray4 = new string[10];
+            string[] strArray5 = new string[10];
+            string[] strArray6 = new string[22];
+            string[] strArray7 = new string[22];
+            double[] rDist = new double[22];
+            double[] dDist = new double[22];
+            int num1;
+            int num2 = num1 = 0;
+            int km = num1;
+            int num3 = num1;
+            double num4;
+            double hs1 = num4 = 0.0;
+            double hs2 = num4;
+            double hp = num4;
+            double num5;
+            double foc = num5 = 0.0;
+            double yo = num5;
+            double xo = num5;
+            iCond = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num3 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num3; ++index)
+                    {
+                        kModelStrip[index] = binaryReader.ReadInt32();
+                        numCamera[index] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (File.Exists(aeroSource))
+            {
+                FileStream input = new FileStream(aeroSource, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(curModel))
+                    File.Delete(curModel);
+                FileStream output = new FileStream(curModel, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    for (int index1 = 1; index1 <= num3; ++index1)
+                    {
+                        int num6 = kModelStrip[index1];
+                        for (int index2 = 1; index2 <= num6; ++index2)
+                        {
+                            nMod = binaryReader.ReadInt64();
+                            nLeft = binaryReader.ReadInt32();
+                            nRight = binaryReader.ReadInt32();
+                            km = binaryReader.ReadInt32();
+                            int num7 = binaryReader.ReadInt32();
+                            for (int index3 = 1; index3 <= num7; ++index3)
+                            {
+                                pntName[index3] = binaryReader.ReadString();
+                                xLeft[index3] = binaryReader.ReadDouble();
+                                yLeft[index3] = binaryReader.ReadDouble();
+                                xRight[index3] = binaryReader.ReadDouble();
+                                yRight[index3] = binaryReader.ReadDouble();
+                            }
+                            binaryWriter.Write(nMod);
+                            binaryWriter.Write(nLeft);
+                            binaryWriter.Write(nRight);
+                            binaryWriter.Write(km);
+                            binaryWriter.Write(num7);
+                            for (int index4 = 1; index4 <= num7; ++index4)
+                            {
+                                binaryWriter.Write(pntName[index4]);
+                                binaryWriter.Write(xLeft[index4]);
+                                binaryWriter.Write(yLeft[index4]);
+                                binaryWriter.Write(xRight[index4]);
+                                binaryWriter.Write(yRight[index4]);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            int num8 = 0;
+            double x1;
+            double y1;
+            double x2;
+            double y2;
+            if (File.Exists(aeroBlock))
+            {
+                FileStream input = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    x1 = binaryReader.ReadDouble();
+                    y1 = binaryReader.ReadDouble();
+                    x2 = binaryReader.ReadDouble();
+                    y2 = binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    num8 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num8; ++index)
+                    {
+                        blockName[index] = binaryReader.ReadString();
+                        xBlock[index] = binaryReader.ReadDouble();
+                        yBlock[index] = binaryReader.ReadDouble();
+                        zBlock[index] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (File.Exists(curModel))
+            {
+                FileStream input1 = new FileStream(curModel, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    for (int index5 = 1; index5 <= num3; ++index5)
+                    {
+                        int num9 = kModelStrip[index5];
+                        FileStream input2 = new FileStream(fstoreCam, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                        try
+                        {
+                            kCamera = Convert.ToInt32(binaryReader2.ReadString());
+                            for (int index6 = 1; index6 <= kCamera; ++index6)
+                            {
+                                strArray1[index6] = binaryReader2.ReadString();
+                                strArray2[index6] = binaryReader2.ReadString();
+                                strArray3[index6] = binaryReader2.ReadString();
+                                strArray4[index6] = binaryReader2.ReadString();
+                                strArray5[index6] = binaryReader2.ReadString();
+                                strArray6[index6] = binaryReader2.ReadString();
+                                strArray7[index6] = binaryReader2.ReadString();
+                                numCam[index6] = (long)Convert.ToInt32(strArray1[index6]);
+                                nameCam[index6] = strArray2[index6];
+                                focCam[index6] = Convert.ToDouble(strArray3[index6]);
+                                xoCam[index6] = Convert.ToDouble(strArray4[index6]);
+                                yoCam[index6] = Convert.ToDouble(strArray5[index6]);
+                                markCam[index6] = Convert.ToInt32(strArray6[index6]);
+                                dstrCam[index6] = Convert.ToInt32(strArray7[index6]);
+                                int int32 = Convert.ToInt32(strArray6[index6]);
+                                num2 = Convert.ToInt32(strArray7[index6]);
+                                if (int32 > 0)
+                                {
+                                    for (int index7 = 1; index7 <= int32; ++index7)
+                                    {
+                                        strArray1[index7] = binaryReader2.ReadString();
+                                        strArray2[index7] = binaryReader2.ReadString();
+                                        strArray3[index7] = binaryReader2.ReadString();
+                                        nMark[index7] = Convert.ToInt32(strArray1[index7]);
+                                        xMark[index7] = Convert.ToDouble(strArray2[index7]);
+                                        yMark[index7] = Convert.ToDouble(strArray3[index7]);
+                                    }
+                                }
+                                if (num2 > 0)
+                                {
+                                    for (int index8 = 1; index8 <= num2; ++index8)
+                                    {
+                                        strArray6[index8] = binaryReader2.ReadString();
+                                        strArray7[index8] = binaryReader2.ReadString();
+                                        rDist[index8] = Convert.ToDouble(strArray6[index8]);
+                                        dDist[index8] = Convert.ToDouble(strArray7[index8]);
+                                    }
+                                }
+                                if (numCamera[index5] == numCam[index6])
+                                {
+                                    km = int32;
+                                    xo = xoCam[index6];
+                                    yo = yoCam[index6];
+                                    foc = focCam[index6];
+                                    break;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            binaryReader2.Close();
+                            input2.Close();
+                        }
+                        for (int index9 = 1; index9 <= num9; ++index9)
+                        {
+                            numModel[index9] = binaryReader1.ReadInt64();
+                            modLeft[index9] = binaryReader1.ReadInt32();
+                            modRight[index9] = binaryReader1.ReadInt32();
+                            modMark[index9] = binaryReader1.ReadInt32();
+                            modPoint[index9] = binaryReader1.ReadInt32();
+                            binaryWriter.Write(numModel[index9]);
+                            binaryWriter.Write(modLeft[index9]);
+                            binaryWriter.Write(modRight[index9]);
+                            binaryWriter.Write(modMark[index9]);
+                            binaryWriter.Write(modPoint[index9]);
+                            int kMet = modMark[index9];
+                            int k = modPoint[index9];
+                            for (int index10 = 1; index10 <= k; ++index10)
+                            {
+                                pntName[index10] = binaryReader1.ReadString();
+                                xLeft[index10] = binaryReader1.ReadDouble();
+                                yLeft[index10] = binaryReader1.ReadDouble();
+                                xRight[index10] = binaryReader1.ReadDouble();
+                                yRight[index10] = binaryReader1.ReadDouble();
+                            }
+                            if (km > 3 && kMet > 3)
+                            {
+                                int iCond1;
+                                DllClass1.PhotoCorrect(km, nMark, xMark, yMark, xo, yo, kMet, k, ref xLeft, ref yLeft, out iCond1);
+                                switch (iCond1)
+                                {
+                                    case -99:
+                                        return;
+                                    case -3:
+                                        int num10 = (int)MessageBox.Show("Fiducials - Different coordinates system", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        return;
+                                    case -2:
+                                        int num11 = (int)MessageBox.Show("Fiducials number != 4 and != 8", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        return;
+                                    case -1:
+                                        int num12 = (int)MessageBox.Show("Fiducials number < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        return;
+                                    default:
+                                        DllClass1.PhotoCorrect(km, nMark, xMark, yMark, xo, yo, kMet, k, ref xRight, ref yRight, out iCond1);
+                                        if (iCond1 == -99)
+                                            return;
+                                        if (iCond1 == -1)
+                                        {
+                                            int num13 = (int)MessageBox.Show("Fiducials number < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            return;
+                                        }
+                                        if (iCond1 == -2)
+                                        {
+                                            int num14 = (int)MessageBox.Show("Fiducials number != 4 and != 8", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            return;
+                                        }
+                                        if (iCond1 == -3)
+                                        {
+                                            int num15 = (int)MessageBox.Show("Fiducials - Different coordinates system", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            return;
+                                        }
+                                        if (num2 > 0)
+                                        {
+                                            for (int index11 = kMet + 1; index11 <= k; ++index11)
+                                            {
+                                                DllClass1.RadialDist(rDist, dDist, xLeft[index11], yLeft[index11], out x1, out y1);
+                                                xLeft[index11] = x1;
+                                                yLeft[index11] = y1;
+                                                DllClass1.RadialDist(rDist, dDist, xRight[index11], yRight[index11], out x2, out y2);
+                                                xRight[index11] = x2;
+                                                yRight[index11] = y2;
+                                            }
+                                        }
+                                        if (num8 > 0)
+                                        {
+                                            for (int index12 = kMet + 1; index12 <= k; ++index12)
+                                            {
+                                                for (int index13 = 1; index13 <= num8; ++index13)
+                                                {
+                                                    if (blockName[index13] == pntName[index12])
+                                                    {
+                                                        hp = zBlock[index13];
+                                                    }
+                                                    else
+                                                    {
+                                                        sTmp = blockName[index13];
+                                                        int num16 = 0;
+                                                        for (int index14 = 0; index14 < sTmp.Length && sTmp.IndexOf('-') <= -1; ++index14)
+                                                        {
+                                                            if (!char.IsDigit(sTmp[index14]))
+                                                            {
+                                                                ++num16;
+                                                                break;
+                                                            }
+                                                        }
+                                                        if (num16 <= 0)
+                                                        {
+                                                            int int32 = Convert.ToInt32(blockName[index13]);
+                                                            if (int32 < 0)
+                                                            {
+                                                                int num17 = Math.Abs(int32);
+                                                                if (modLeft[index9] == num17)
+                                                                    hs2 = zBlock[index13];
+                                                                else if (modRight[index9] == num17)
+                                                                    hs1 = zBlock[index13];
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                if (0.001 * hs2 <= 14.0 && 0.001 * hs1 <= 14.0)
+                                                {
+                                                    DllClass1.Refraction(xLeft[index12], yLeft[index12], foc, hs2, hp, out x1, out y1);
+                                                    xLeft[index12] = x1;
+                                                    yLeft[index12] = y1;
+                                                    DllClass1.Refraction(xRight[index12], yRight[index12], foc, hs1, hp, out x2, out y2);
+                                                    xRight[index12] = x2;
+                                                    yRight[index12] = y2;
+                                                    DllClass1.EarthCurv(xLeft[index12], yLeft[index12], foc, hs2, hp, out x1, out y1);
+                                                    xLeft[index12] = x1;
+                                                    yLeft[index12] = y1;
+                                                    DllClass1.EarthCurv(xRight[index12], yRight[index12], foc, hs1, hp, out x2, out y2);
+                                                    xRight[index12] = x2;
+                                                    yRight[index12] = y2;
+                                                }
+                                                else
+                                                    break;
+                                            }
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                            for (int index15 = 1; index15 <= k; ++index15)
+                            {
+                                binaryWriter.Write(pntName[index15]);
+                                binaryWriter.Write(xLeft[index15]);
+                                binaryWriter.Write(yLeft[index15]);
+                                binaryWriter.Write(xRight[index15]);
+                                binaryWriter.Write(yRight[index15]);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input3 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+            if (File.Exists(curModel))
+                File.Delete(curModel);
+            FileStream output1 = new FileStream(curModel, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            try
+            {
+                for (int index16 = 1; index16 <= num3; ++index16)
+                {
+                    int num18 = kModelStrip[index16];
+                    for (int index17 = 1; index17 <= num18; ++index17)
+                    {
+                        nMod = binaryReader3.ReadInt64();
+                        nLeft = binaryReader3.ReadInt32();
+                        nRight = binaryReader3.ReadInt32();
+                        int num19 = binaryReader3.ReadInt32();
+                        int num20 = binaryReader3.ReadInt32();
+                        for (int index18 = 1; index18 <= num20; ++index18)
+                        {
+                            pntName[index18] = binaryReader3.ReadString();
+                            xLeft[index18] = binaryReader3.ReadDouble();
+                            yLeft[index18] = binaryReader3.ReadDouble();
+                            xRight[index18] = binaryReader3.ReadDouble();
+                            yRight[index18] = binaryReader3.ReadDouble();
+                        }
+                        binaryWriter1.Write(nMod);
+                        binaryWriter1.Write(nLeft);
+                        binaryWriter1.Write(nRight);
+                        binaryWriter1.Write(num19);
+                        binaryWriter1.Write(num20);
+                        for (int index19 = 1; index19 <= num20; ++index19)
+                        {
+                            binaryWriter1.Write(pntName[index19]);
+                            binaryWriter1.Write(xLeft[index19]);
+                            binaryWriter1.Write(yLeft[index19]);
+                            binaryWriter1.Write(xRight[index19]);
+                            binaryWriter1.Write(yRight[index19]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input3.Close();
+                binaryReader3.Close();
+            }
+            output1.Close();
+            binaryWriter1.Close();
+        }
+
+        public void DifInterior(out int iCond, out int kMod)
+        {
+            iCond = 0;
+            int num1 = 0;
+            int num2 = 0;
+            string text = "Errors: ";
+            int num3 = 0;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num1; ++index)
+                    {
+                        kModelStrip[index] = binaryReader.ReadInt32();
+                        numCamera[index] = binaryReader.ReadInt64();
+                        num3 += kModelStrip[index];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            kMod = num3;
+            if (num3 == 1)
+                return;
+            if (File.Exists(fileAero))
+            {
+                FileStream input = new FileStream(fileAero, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    for (int index1 = 1; index1 <= num1; ++index1)
+                    {
+                        int num4 = kModelStrip[index1];
+                        for (int index2 = 1; index2 <= num4; ++index2)
+                        {
+                            long num5 = binaryReader.ReadInt64();
+                            int num6 = binaryReader.ReadInt32();
+                            int num7 = binaryReader.ReadInt32();
+                            int num8 = binaryReader.ReadInt32();
+                            int num9 = binaryReader.ReadInt32();
+                            for (int index3 = 1; index3 <= num9; ++index3)
+                            {
+                                pntName[index3] = binaryReader.ReadString();
+                                xLeft[index3] = binaryReader.ReadDouble();
+                                yLeft[index3] = binaryReader.ReadDouble();
+                                xRight[index3] = binaryReader.ReadDouble();
+                                yRight[index3] = binaryReader.ReadDouble();
+                            }
+                            if (index2 > 1)
+                            {
+                                binaryWriter.Write(num5);
+                                binaryWriter.Write(num6);
+                                binaryWriter.Write(num7);
+                                binaryWriter.Write(num8);
+                                binaryWriter.Write(num9);
+                                for (int index4 = 1; index4 <= num9; ++index4)
+                                {
+                                    binaryWriter.Write(pntName[index4]);
+                                    binaryWriter.Write(xLeft[index4]);
+                                    binaryWriter.Write(yLeft[index4]);
+                                    binaryWriter.Write(xRight[index4]);
+                                    binaryWriter.Write(yRight[index4]);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            if (File.Exists(fileAero))
+            {
+                FileStream input1 = new FileStream(fileAero, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                if (File.Exists(fileAdd))
+                {
+                    FileStream input2 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    if (File.Exists(difMeasure))
+                        File.Delete(difMeasure);
+                    FileStream output = new FileStream(difMeasure, FileMode.CreateNew);
+                    BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                    try
+                    {
+                        for (int index5 = 1; index5 <= num1; ++index5)
+                        {
+                            int num10 = kModelStrip[index5];
+                            if (num10 != 1)
+                            {
+                                for (int index6 = 1; index6 <= num10; ++index6)
+                                {
+                                    long num11 = binaryReader1.ReadInt64();
+                                    int num12 = binaryReader1.ReadInt32();
+                                    int num13 = binaryReader1.ReadInt32();
+                                    int num14 = binaryReader1.ReadInt32();
+                                    int num15 = binaryReader1.ReadInt32();
+                                    for (int index7 = 1; index7 <= num15; ++index7)
+                                    {
+                                        pntName[index7] = binaryReader1.ReadString();
+                                        xLeft[index7] = binaryReader1.ReadDouble();
+                                        yLeft[index7] = binaryReader1.ReadDouble();
+                                        xRight[index7] = binaryReader1.ReadDouble();
+                                        yRight[index7] = binaryReader1.ReadDouble();
+                                    }
+                                    if (index6 < num10)
+                                    {
+                                        int index8 = 0;
+                                        long num16 = binaryReader2.ReadInt64();
+                                        num12 = binaryReader2.ReadInt32();
+                                        num13 = binaryReader2.ReadInt32();
+                                        int num17 = binaryReader2.ReadInt32();
+                                        int num18 = binaryReader2.ReadInt32();
+                                        for (int index9 = 1; index9 <= num18; ++index9)
+                                        {
+                                            nameAdd[index9] = binaryReader2.ReadString();
+                                            xAdd[index9] = binaryReader2.ReadDouble();
+                                            yAdd[index9] = binaryReader2.ReadDouble();
+                                            xRes[index9] = binaryReader2.ReadDouble();
+                                            yRes[index9] = binaryReader2.ReadDouble();
+                                        }
+                                        for (int index10 = num14 + 1; index10 <= num15; ++index10)
+                                        {
+                                            for (int index11 = num17 + 1; index11 <= num18; ++index11)
+                                            {
+                                                if (pntName[index10] == nameAdd[index11])
+                                                {
+                                                    ++index8;
+                                                    nameDif[index8] = pntName[index10];
+                                                    xDif[index8] = xRight[index10] - xAdd[index11];
+                                                    yDif[index8] = yRight[index10] - yAdd[index11];
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        if (index8 == 0)
+                                        {
+                                            ++num2;
+                                            string str1 = Convert.ToString(num11);
+                                            string str2 = Convert.ToString(num16);
+                                            text = text + "Models " + str1 + "-" + str2 + "-Pass points are absent;";
+                                            iCond = -1;
+                                            break;
+                                        }
+                                        binaryWriter.Write(index8);
+                                        binaryWriter.Write(num11);
+                                        binaryWriter.Write(num16);
+                                        for (int index12 = 1; index12 <= index8; ++index12)
+                                        {
+                                            binaryWriter.Write(nameDif[index12]);
+                                            binaryWriter.Write(xDif[index12]);
+                                            binaryWriter.Write(yDif[index12]);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input1.Close();
+                        binaryReader1.Close();
+                    }
+                    input2.Close();
+                    binaryReader2.Close();
+                    output.Close();
+                    binaryWriter.Close();
+                }
+            }
+            if (num2 <= 0)
+                return;
+            int num19 = (int)MessageBox.Show(text, "Interior Orientation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            iCond = -1;
+        }
+
+        public void StripsJoin(out int iCond)
+        {
+            string str1 = "";
+            iCond = 0;
+            int num1 = 0;
+            int num2 = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            if (File.Exists(fotoStrip))
+            {
+                FileStream input = new FileStream(fotoStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                int index1 = 0;
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        binaryReader.ReadInt32();
+                        int num3 = binaryReader.ReadInt32();
+                        int num4 = binaryReader.ReadInt32();
+                        int num5 = binaryReader.ReadInt32();
+                        for (int index3 = 1; index3 <= num5; ++index3)
+                        {
+                            str1 = binaryReader.ReadString();
+                            double num6 = binaryReader.ReadDouble();
+                            double num7 = binaryReader.ReadDouble();
+                            double num8 = binaryReader.ReadDouble();
+                            ++index1;
+                            blockName[index1] = str1;
+                            xBlock[index1] = num6;
+                            yBlock[index1] = num7;
+                            zBlock[index1] = num8;
+                        }
+                        k1Photo[index2] = num3;
+                        k2Photo[index2] = num4;
+                        if (index2 == 1)
+                        {
+                            kp1Foto[index2] = 1;
+                            kp2Foto[index2] = num5;
+                        }
+                        if (index2 > 1)
+                        {
+                            kp1Foto[index2] = kp2Foto[index2 - 1] + 1;
+                            kp2Foto[index2] = kp2Foto[index2 - 1] + num5;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (num1 < 2)
+            {
+                if (File.Exists(freeBlock))
+                    File.Delete(freeBlock);
+                FileStream output = new FileStream(freeBlock, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(num1);
+                binaryWriter.Write(k1Photo[1]);
+                binaryWriter.Write(k2Photo[1]);
+                binaryWriter.Write(kp1Foto[1]);
+                binaryWriter.Write(kp2Foto[1]);
+                int num9 = kp1Foto[1];
+                int num10 = kp2Foto[1];
+                for (int index = num9; index <= num10; ++index)
+                {
+                    binaryWriter.Write(blockName[index]);
+                    binaryWriter.Write(xBlock[index]);
+                    binaryWriter.Write(yBlock[index]);
+                    binaryWriter.Write(zBlock[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            else
+            {
+                int index4 = 0;
+                for (int index5 = 1; index5 <= 10; ++index5)
+                {
+                    int kGeo = 0;
+                    int kPnt = 0;
+                    int num11 = 0;
+                    for (int index6 = 2; index6 <= num1; ++index6)
+                    {
+                        int num12 = kp1Foto[index6 - 1];
+                        int num13 = kp2Foto[index6 - 1];
+                        int num14 = kp1Foto[index6];
+                        int num15 = kp2Foto[index6];
+                        for (int index7 = num12; index7 <= num13; ++index7)
+                        {
+                            for (int index8 = num14; index8 <= num15; ++index8)
+                            {
+                                if (blockName[index7] == blockName[index8])
+                                {
+                                    ++kGeo;
+                                    nameBlock[kGeo] = blockName[index7];
+                                    e1Photo[kGeo] = xBlock[index7];
+                                    e2Photo[kGeo] = yBlock[index7];
+                                    e3Photo[kGeo] = zBlock[index7];
+                                    break;
+                                }
+                            }
+                        }
+                        for (int index9 = num14; index9 <= num15; ++index9)
+                        {
+                            ++kPnt;
+                            fotoName[kPnt] = blockName[index9];
+                            xFoto[kPnt] = xBlock[index9];
+                            yFoto[kPnt] = yBlock[index9];
+                            zFoto[kPnt] = zBlock[index9];
+                        }
+                        int kFin = 0;
+                        DllClass1.AbsOrient(kGeo, nameBlock, e1Photo, e2Photo, e3Photo, kPnt, fotoName, xFoto, yFoto, zFoto, ref tmpName1, ref xPhoto, ref yPhoto, ref tmpName2, ref xBase, ref yBase, ref zBase, out kFin, ref nameFin, ref xFin, ref yFin, ref zFin);
+                        if (kFin == 0)
+                            return;
+                        int index10 = 0;
+                        for (int index11 = num14; index11 <= num15; ++index11)
+                        {
+                            ++index10;
+                            blockName[index11] = nameFin[index10];
+                            xBlock[index11] = xFin[index10];
+                            yBlock[index11] = yFin[index10];
+                            zBlock[index11] = zFin[index10];
+                        }
+                        kGeo = 0;
+                        kPnt = 0;
+                        int index12 = 0;
+                        double num16 = 0.0;
+                        for (int index13 = num12; index13 <= num13; ++index13)
+                        {
+                            for (int index14 = num14; index14 <= num15; ++index14)
+                            {
+                                if (blockName[index13] == blockName[index14])
+                                {
+                                    double num17 = xBlock[index14] - xBlock[index13];
+                                    double num18 = yBlock[index14] - yBlock[index13];
+                                    double num19 = zBlock[index14] - zBlock[index13];
+                                    double num20 = Math.Sqrt(num17 * num17 + num18 * num18 + num19 * num19);
+                                    num16 += num20;
+                                    ++index12;
+                                    namePhoto[index12] = blockName[index13];
+                                    scaleFoto[index12] = num20;
+                                    numPhoto[index12] = index14;
+                                }
+                            }
+                        }
+                        double num21 = num16 / (double)index12;
+                        double num22 = 0.0;
+                        for (int index15 = 1; index15 <= index12; ++index15)
+                        {
+                            scaleFoto[index15] = Math.Abs(scaleFoto[index15] - num21);
+                            num22 += scaleFoto[index15];
+                        }
+                        double num23 = num22 / (double)index12;
+                        double num24 = 0.0;
+                        for (int index16 = 1; index16 <= index12; ++index16)
+                        {
+                            if (scaleFoto[index16] > num24)
+                            {
+                                str1 = namePhoto[index16];
+                                num24 = scaleFoto[index16];
+                                num2 = numPhoto[index16];
+                            }
+                        }
+                        if (num24 > 3.0 * num23 && index12 > 3)
+                        {
+                            for (int index17 = num14; index17 <= num15; ++index17)
+                            {
+                                int num25 = 1;
+                                if (blockName[index17] == str1)
+                                    num25 = 0;
+                                if (num25 == 0 && num2 == index17)
+                                {
+                                    ++num11;
+                                    str1 = Convert.ToString(index6);
+                                    string str2 = str1 + "_" + blockName[index17];
+                                    ++index4;
+                                    nameTmp1[index4] = str2;
+                                    nameTmp2[index4] = blockName[index17];
+                                    blockName[index17] = str2;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (num11 == 0)
+                        break;
+                }
+                for (int index18 = 2; index18 <= num1; ++index18)
+                {
+                    int num26 = kp1Foto[index18 - 1];
+                    int num27 = kp2Foto[index18 - 1];
+                    int num28 = kp1Foto[index18];
+                    int num29 = kp2Foto[index18];
+                    for (int index19 = num26; index19 <= num27; ++index19)
+                    {
+                        for (int index20 = num28; index20 <= num29; ++index20)
+                        {
+                            if (index4 > 0)
+                            {
+                                for (int index21 = 1; index21 <= index4; ++index21)
+                                {
+                                    if (nameTmp1[index21] == blockName[index20])
+                                        blockName[index20] = nameTmp2[index21];
+                                }
+                            }
+                            if (blockName[index19] == blockName[index20])
+                            {
+                                double num30 = xBlock[index20] - xBlock[index19];
+                                double num31 = yBlock[index20] - yBlock[index19];
+                                double num32 = zBlock[index20] - zBlock[index19];
+                            }
+                        }
+                    }
+                }
+                if (File.Exists(freeBlock))
+                    File.Delete(freeBlock);
+                FileStream output = new FileStream(freeBlock, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(num1);
+                for (int index22 = 1; index22 <= num1; ++index22)
+                {
+                    binaryWriter.Write(k1Photo[index22]);
+                    binaryWriter.Write(k2Photo[index22]);
+                    binaryWriter.Write(kp1Foto[index22]);
+                    binaryWriter.Write(kp2Foto[index22]);
+                    int num33 = kp1Foto[index22];
+                    int num34 = kp2Foto[index22];
+                    for (int index23 = num33; index23 <= num34; ++index23)
+                    {
+                        binaryWriter.Write(blockName[index23]);
+                        binaryWriter.Write(xBlock[index23]);
+                        binaryWriter.Write(yBlock[index23]);
+                        binaryWriter.Write(zBlock[index23]);
+                    }
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+        }
+
+        public void BlockToGeo(out int iCond, int nParam)
+        {
+            string str1 = "";
+            iCond = 0;
+            int num1 = 0;
+            int kFin1 = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            int kGeo = 0;
+            if (!File.Exists(fileGeo))
+            {
+                int num2 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                kChange = 0;
+                int num3 = 0;
+                int num4 = 0;
+                FileStream input1 = new FileStream(fileGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    kGeo = binaryReader1.ReadInt32();
+                    for (int index = 1; index <= kGeo; ++index)
+                    {
+                        geoName[index] = binaryReader1.ReadString();
+                        xGeo[index] = binaryReader1.ReadDouble();
+                        yGeo[index] = binaryReader1.ReadDouble();
+                        zGeo[index] = binaryReader1.ReadDouble();
+                        if (xGeo[index] != 0.0 || yGeo[index] != 0.0)
+                            ++num3;
+                        if (zGeo[index] != 0.0)
+                            ++num4;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (num3 < 3)
+                {
+                    int num5 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else if (num4 < 4)
+                {
+                    int num6 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    if (File.Exists(aeroStrip))
+                    {
+                        FileStream input2 = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                        try
+                        {
+                            num1 = binaryReader2.ReadInt32();
+                            for (int index = 1; index <= num1; ++index)
+                            {
+                                kModelStrip[index] = binaryReader2.ReadInt32();
+                                numCamera[index] = binaryReader2.ReadInt64();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            binaryReader2.Close();
+                            input2.Close();
+                        }
+                    }
+                    tolDx[1] = 0.0;
+                    tolDy[1] = 0.0;
+                    tolDz[1] = 0.0;
+                    if (num1 == 1)
+                        return;
+                    int kPnt = 0;
+                    if (File.Exists(freeBlock))
+                    {
+                        FileStream input3 = new FileStream(freeBlock, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                        try
+                        {
+                            int num7 = binaryReader3.ReadInt32();
+                            for (int index1 = 1; index1 <= num7; ++index1)
+                            {
+                                k1Photo[index1] = binaryReader3.ReadInt32();
+                                k2Photo[index1] = binaryReader3.ReadInt32();
+                                kp1Foto[index1] = binaryReader3.ReadInt32();
+                                kp2Foto[index1] = binaryReader3.ReadInt32();
+                                int num8 = kp1Foto[index1];
+                                int num9 = kp2Foto[index1];
+                                kPnt = num9;
+                                for (int index2 = num8; index2 <= num9; ++index2)
+                                {
+                                    blockName[index2] = binaryReader3.ReadString();
+                                    xBlock[index2] = binaryReader3.ReadDouble();
+                                    yBlock[index2] = binaryReader3.ReadDouble();
+                                    zBlock[index2] = binaryReader3.ReadDouble();
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input3.Close();
+                            binaryReader3.Close();
+                        }
+                    }
+                    int num10 = 0;
+                    int kDif;
+                    for (int index3 = 1; index3 <= 10; ++index3)
+                    {
+                        int num11 = 0;
+                        int num12 = 0;
+                        for (int index4 = 1; index4 <= kGeo; ++index4)
+                        {
+                            for (int index5 = 1; index5 <= kPnt; ++index5)
+                            {
+                                if (geoName[index4] == blockName[index5])
+                                {
+                                    if (xGeo[index4] != 0.0 || yGeo[index4] != 0.0)
+                                        ++num11;
+                                    if (zGeo[index4] != 0.0)
+                                    {
+                                        ++num12;
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                        if (num11 < 3)
+                        {
+                            int num13 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            iCond = -1;
+                            return;
+                        }
+                        if (num12 < 4)
+                        {
+                            int num14 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            iCond = -1;
+                            return;
+                        }
+                        int num15 = 0;
+                        DllClass1.AbsOrient(kGeo, geoName, xGeo, yGeo, zGeo, kPnt, blockName, xBlock, yBlock, zBlock, ref namePhoto, ref e1Photo, ref e2Photo, ref fotoName, ref xFoto, ref yFoto, ref zFoto, out kFin1, ref nameFin, ref xFin, ref yFin, ref zFin);
+                        if (kFin1 == 0)
+                            return;
+                        DllClass1.DifCoord(kGeo, geoName, xGeo, yGeo, zGeo, kFin1, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                        if (kDif == 0)
+                            return;
+                        if (num10 <= 0)
+                        {
+                            double num16 = 0.0;
+                            double num17 = 0.0;
+                            for (int index6 = 1; index6 <= kDif; ++index6)
+                            {
+                                num17 += sBase[index6];
+                                if (sBase[index6] > num16)
+                                {
+                                    str1 = tmpName[index6];
+                                    num16 = sBase[index6];
+                                }
+                            }
+                            double num18 = num17 / (double)kDif;
+                            if (kGeo > 10 && (nParam == 0 || nParam == 600))
+                            {
+                                double num19 = 3.0 * num18;
+                                int index7 = 0;
+                                if (num16 > num19)
+                                {
+                                    for (int index8 = 1; index8 <= kPnt; ++index8)
+                                    {
+                                        if (blockName[index8] == str1)
+                                        {
+                                            index7 = index8;
+                                            break;
+                                        }
+                                    }
+                                    ++num15;
+                                    ++nChange;
+                                    string str2 = Convert.ToString(nChange) + "_" + str1;
+                                    blockName[index7] = str2;
+                                    ++kChange;
+                                    nameChange[kChange] = str1;
+                                    for (int index9 = 1; index9 <= kDif; ++index9)
+                                    {
+                                        if (tmpName[index9] == str1)
+                                        {
+                                            index7 = index9;
+                                            break;
+                                        }
+                                    }
+                                    xChange[kChange] = xBase[index7];
+                                    yChange[kChange] = yBase[index7];
+                                    zChange[kChange] = zBase[index7];
+                                }
+                            }
+                            if (num15 == 0)
+                            {
+                                int kFin2 = 0;
+                                for (int index10 = 1; index10 <= kFin1; ++index10)
+                                {
+                                    if (nameFin[index10].IndexOf('-') <= -1)
+                                    {
+                                        ++kFin2;
+                                        namePhoto[kFin2] = nameFin[index10];
+                                        e1Photo[kFin2] = xFin[index10];
+                                        e2Photo[kFin2] = yFin[index10];
+                                        e3Photo[kFin2] = zFin[index10];
+                                    }
+                                }
+                                int iCond1;
+                                DifModels(kFin2, namePhoto, e1Photo, e2Photo, e3Photo, out iCond1);
+                                DifStrips(1, kFin1, nameFin, xFin, yFin, zFin, out iCond1);
+                                DllClass1.MiddleCoord(kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, out kPnt, ref blockName, ref xBlock, ref yBlock, ref zBlock, ref nDif);
+                                if (kPnt == 0)
+                                    return;
+                                kFin1 = kPnt;
+                                num10 = 1;
+                            }
+                        }
+                        else
+                            break;
+                    }
+                    if (kChange == 0)
+                    {
+                        DllClass1.Polynom(1, kGeo, geoName, xGeo, yGeo, zGeo, kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                        DllClass1.Polynom(3, kGeo, geoName, xGeo, yGeo, zGeo, kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                    }
+                    DllClass1.DifCoord(kGeo, geoName, xGeo, yGeo, zGeo, kFin1, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                    if (kDif == 0)
+                        return;
+                    double num20 = 0.0;
+                    double num21 = 0.0;
+                    double num22 = 0.0;
+                    for (int index = 1; index <= kDif; ++index)
+                    {
+                        num20 += Math.Abs(xBase[index]);
+                        num21 += Math.Abs(yBase[index]);
+                        num22 += Math.Abs(zBase[index]);
+                    }
+                    if (num20 == 0.0 && num21 == 0.0 && num22 == 0.0)
+                    {
+                        num20 = 0.0001;
+                        num21 = 0.0001;
+                        num22 = 0.0001;
+                    }
+                    tolDx[1] = num20 / (double)kDif;
+                    tolDy[1] = num21 / (double)kDif;
+                    tolDz[1] = num22 / (double)kDif;
+                    sumTol[1] = Math.Sqrt(tolDx[1] * tolDx[1] + tolDy[1] * tolDy[1] + tolDz[1] * tolDz[1]);
+                    if (File.Exists(difTarget))
+                        File.Delete(difTarget);
+                    FileStream output1 = new FileStream(difTarget, FileMode.CreateNew);
+                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                    binaryWriter1.Write(kDif);
+                    for (int index = 1; index <= kDif; ++index)
+                    {
+                        binaryWriter1.Write(tmpName[index]);
+                        binaryWriter1.Write(xBase[index]);
+                        binaryWriter1.Write(yBase[index]);
+                        binaryWriter1.Write(zBase[index]);
+                    }
+                    binaryWriter1.Close();
+                    output1.Close();
+                    xmin = 9999999.9;
+                    ymin = 9999999.9;
+                    xmax = -9999999.9;
+                    ymax = -9999999.9;
+                    zmin = 9999999.9;
+                    zmax = -9999999.9;
+                    for (int index = 1; index <= kFin1; ++index)
+                    {
+                        if (xFin[index] < xmin)
+                            xmin = xFin[index];
+                        if (xFin[index] > xmax)
+                            xmax = xFin[index];
+                        if (yFin[index] < ymin)
+                            ymin = yFin[index];
+                        if (yFin[index] > ymax)
+                            ymax = yFin[index];
+                        if (zFin[index] < zmin)
+                            zmin = zFin[index];
+                        if (zFin[index] > zmax)
+                            zmax = zFin[index];
+                    }
+                    if (File.Exists(aeroBlock))
+                        File.Delete(aeroBlock);
+                    FileStream output2 = new FileStream(aeroBlock, FileMode.CreateNew);
+                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                    binaryWriter2.Write(xmin);
+                    binaryWriter2.Write(ymin);
+                    binaryWriter2.Write(xmax);
+                    binaryWriter2.Write(ymax);
+                    binaryWriter2.Write(zmin);
+                    binaryWriter2.Write(zmax);
+                    binaryWriter2.Write(kFin1);
+                    for (int index = 1; index <= kFin1; ++index)
+                    {
+                        binaryWriter2.Write(nameFin[index]);
+                        binaryWriter2.Write(xFin[index]);
+                        binaryWriter2.Write(yFin[index]);
+                        binaryWriter2.Write(zFin[index]);
+                    }
+                    output2.Close();
+                    binaryWriter2.Close();
+                    if (kChange <= 0)
+                        return;
+                    if (kChange > 1)
+                    {
+                        for (int index11 = 1; index11 < kChange; ++index11)
+                        {
+                            if (!(nameChange[index11] == ""))
+                            {
+                                for (int index12 = index11 + 1; index12 <= kChange; ++index12)
+                                {
+                                    if (!(nameChange[index12] == "") && nameChange[index11] == nameChange[index12])
+                                        nameChange[index12] = "";
+                                }
+                            }
+                        }
+                        int index13 = 0;
+                        for (int index14 = 1; index14 <= kChange; ++index14)
+                        {
+                            if (!(nameChange[index14] == ""))
+                            {
+                                ++index13;
+                                nameChange[index13] = nameChange[index14];
+                                xChange[index13] = xChange[index14];
+                                yChange[index13] = yChange[index14];
+                                zChange[index13] = zChange[index14];
+                            }
+                        }
+                        kChange = index13;
+                    }
+                    if (File.Exists(fileDoubt))
+                        File.Delete(fileDoubt);
+                    FileStream output3 = new FileStream(fileDoubt, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    binaryWriter3.Write(kChange);
+                    for (int index = 1; index <= kChange; ++index)
+                    {
+                        binaryWriter3.Write(nameChange[index]);
+                        binaryWriter3.Write(xChange[index]);
+                        binaryWriter3.Write(yChange[index]);
+                        binaryWriter3.Write(zChange[index]);
+                    }
+                    output3.Close();
+                    binaryWriter3.Close();
+                }
+            }
+        }
+
+        public void DifModels(
+          int kFin,
+          string[] nameFin,
+          double[] xFin,
+          double[] yFin,
+          double[] zFin,
+          out int iCond)
+        {
+            iCond = 0;
+            int num1 = 0;
+            if (kFin == 0)
+            {
+                iCond = -1;
+            }
+            else
+            {
+                if (File.Exists(difModel))
+                    File.Delete(difModel);
+                FileStream output1 = new FileStream(difModel, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                int index1 = 0;
+                binaryWriter1.Write(index1);
+                output1.Close();
+                binaryWriter1.Close();
+                if (File.Exists(aeroStrip))
+                {
+                    FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        num1 = binaryReader.ReadInt32();
+                        for (int index2 = 1; index2 <= num1; ++index2)
+                        {
+                            kModelStrip[index2] = binaryReader.ReadInt32();
+                            numCamera[index2] = binaryReader.ReadInt64();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+                if (num1 == 1 && kModelStrip[1] == 1)
+                    return;
+                int index3 = 0;
+                if (File.Exists(fotoAero))
+                {
+                    FileStream input = new FileStream(fotoAero, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        index1 = 0;
+                        for (int index4 = 1; index4 <= num1; ++index4)
+                        {
+                            int num2 = kModelStrip[index4];
+                            for (int index5 = 1; index5 <= num2; ++index5)
+                            {
+                                binaryReader.ReadInt32();
+                                numModel[index5] = binaryReader.ReadInt64();
+                                int num3 = binaryReader.ReadInt32();
+                                xBase[index5] = binaryReader.ReadDouble();
+                                yBase[index5] = binaryReader.ReadDouble();
+                                zBase[index5] = binaryReader.ReadDouble();
+                                for (int index6 = 1; index6 <= num3; ++index6)
+                                {
+                                    string str = binaryReader.ReadString();
+                                    double num4 = binaryReader.ReadDouble();
+                                    double num5 = binaryReader.ReadDouble();
+                                    double num6 = binaryReader.ReadDouble();
+                                    ++index3;
+                                    nFotoModel[index3] = numModel[index5];
+                                    fotoName[index3] = str;
+                                    xFoto[index3] = num4;
+                                    yFoto[index3] = num5;
+                                    zFoto[index3] = num6;
+                                }
+                                ++index1;
+                                ktPhoto[index1] = num3;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+                if (index3 == 0)
+                    return;
+                kp1Foto[1] = 1;
+                kp2Foto[1] = ktPhoto[1];
+                if (index1 > 1)
+                {
+                    for (int index7 = 2; index7 <= index1; ++index7)
+                    {
+                        kp1Foto[index7] = kp2Foto[index7 - 1] + 1;
+                        kp2Foto[index7] = kp2Foto[index7 - 1] + ktPhoto[index7];
+                    }
+                }
+                for (int index8 = 1; index8 <= index1; ++index8)
+                {
+                    int num7 = kp1Foto[index8];
+                    int num8 = kp2Foto[index8];
+                    for (int index9 = num7; index9 <= num8; ++index9)
+                    {
+                        xFoto[index9] = xFin[index9];
+                        yFoto[index9] = yFin[index9];
+                        zFoto[index9] = zFin[index9];
+                    }
+                }
+                if (File.Exists(difModel))
+                    File.Delete(difModel);
+                FileStream output2 = new FileStream(difModel, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                for (int index10 = 2; index10 <= index1; ++index10)
+                {
+                    int index11 = kp1Foto[index10 - 1];
+                    int num9 = kp2Foto[index10 - 1];
+                    int index12 = kp1Foto[index10];
+                    int num10 = kp2Foto[index10];
+                    int index13 = 0;
+                    for (int index14 = index11; index14 <= num9; ++index14)
+                    {
+                        for (int index15 = index12; index15 <= num10; ++index15)
+                        {
+                            if (fotoName[index14] == fotoName[index15])
+                            {
+                                ++index13;
+                                nameTmp1[index13] = fotoName[index14];
+                                xBase[index13] = xFoto[index15] - xFoto[index14];
+                                yBase[index13] = yFoto[index15] - yFoto[index14];
+                                zBase[index13] = zFoto[index15] - zFoto[index14];
+                                break;
+                            }
+                        }
+                    }
+                    if (index13 != 0)
+                    {
+                        binaryWriter2.Write(nFotoModel[index11]);
+                        binaryWriter2.Write(nFotoModel[index12]);
+                        binaryWriter2.Write(index13);
+                        for (int index16 = 1; index16 <= index13; ++index16)
+                        {
+                            binaryWriter2.Write(nameTmp1[index16]);
+                            binaryWriter2.Write(xBase[index16]);
+                            binaryWriter2.Write(yBase[index16]);
+                            binaryWriter2.Write(zBase[index16]);
+                        }
+                    }
+                }
+                binaryWriter2.Close();
+                output2.Close();
+            }
+        }
+
+        public void DifStrips(
+          int iParam,
+          int kFin,
+          string[] nameFin,
+          double[] xFin,
+          double[] yFin,
+          double[] zFin,
+          out int iCond)
+        {
+            iCond = 0;
+            if (kFin == 0)
+            {
+                iCond = -1;
+            }
+            else
+            {
+                if (File.Exists(difStrip))
+                    File.Delete(difStrip);
+                FileStream output1 = new FileStream(difStrip, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                int index1 = 0;
+                binaryWriter1.Write(index1);
+                output1.Close();
+                binaryWriter1.Close();
+                int index2 = 0;
+                if (File.Exists(fotoStrip))
+                {
+                    FileStream input = new FileStream(fotoStrip, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        int num1 = binaryReader.ReadInt32();
+                        index1 = 0;
+                        for (int index3 = 1; index3 <= num1; ++index3)
+                        {
+                            binaryReader.ReadInt32();
+                            int num2 = binaryReader.ReadInt32();
+                            int num3 = binaryReader.ReadInt32();
+                            int num4 = binaryReader.ReadInt32();
+                            string str1 = Convert.ToString(num2) + "-" + Convert.ToString(num3);
+                            for (int index4 = 1; index4 <= num4; ++index4)
+                            {
+                                string str2 = binaryReader.ReadString();
+                                double num5 = binaryReader.ReadDouble();
+                                double num6 = binaryReader.ReadDouble();
+                                double num7 = binaryReader.ReadDouble();
+                                ++index2;
+                                tmpName1[index2] = str1;
+                                fotoName[index2] = str2;
+                                xFoto[index2] = num5;
+                                yFoto[index2] = num6;
+                                zFoto[index2] = num7;
+                            }
+                            ++index1;
+                            ktPhoto[index1] = num4;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input.Close();
+                        binaryReader.Close();
+                    }
+                }
+                kp1Foto[1] = 1;
+                kp2Foto[1] = ktPhoto[1];
+                if (index1 > 1)
+                {
+                    for (int index5 = 2; index5 <= index1; ++index5)
+                    {
+                        kp1Foto[index5] = kp2Foto[index5 - 1] + 1;
+                        kp2Foto[index5] = kp2Foto[index5 - 1] + ktPhoto[index5];
+                    }
+                }
+                for (int index6 = 1; index6 <= index1; ++index6)
+                {
+                    int num8 = kp1Foto[index6];
+                    int num9 = kp2Foto[index6];
+                    for (int index7 = num8; index7 <= num9; ++index7)
+                    {
+                        xFoto[index7] = xFin[index7];
+                        yFoto[index7] = yFin[index7];
+                        zFoto[index7] = zFin[index7];
+                    }
+                }
+                if (iParam == 1)
+                {
+                    if (File.Exists(difStrip))
+                        File.Delete(difStrip);
+                    FileStream output2 = new FileStream(difStrip, FileMode.CreateNew);
+                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                    if (File.Exists(difStrip1))
+                        File.Delete(difStrip1);
+                    FileStream output3 = new FileStream(difStrip1, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    for (int index8 = 2; index8 <= index1; ++index8)
+                    {
+                        int index9 = kp1Foto[index8 - 1];
+                        int num10 = kp2Foto[index8 - 1];
+                        int index10 = kp1Foto[index8];
+                        int num11 = kp2Foto[index8];
+                        int index11 = 0;
+                        for (int index12 = index9; index12 <= num10; ++index12)
+                        {
+                            for (int index13 = index10; index13 <= num11; ++index13)
+                            {
+                                if (fotoName[index12] == fotoName[index13])
+                                {
+                                    ++index11;
+                                    nameTmp1[index11] = fotoName[index12];
+                                    xBase[index11] = xFoto[index13] - xFoto[index12];
+                                    yBase[index11] = yFoto[index13] - yFoto[index12];
+                                    zBase[index11] = zFoto[index13] - zFoto[index12];
+                                    break;
+                                }
+                            }
+                        }
+                        if (index11 != 0)
+                        {
+                            binaryWriter3.Write(tmpName1[index9]);
+                            binaryWriter3.Write(tmpName1[index10]);
+                            binaryWriter3.Write(index11);
+                            for (int index14 = 1; index14 <= index11; ++index14)
+                            {
+                                binaryWriter3.Write(nameTmp1[index14]);
+                                binaryWriter3.Write(xBase[index14]);
+                                binaryWriter3.Write(yBase[index14]);
+                                binaryWriter3.Write(zBase[index14]);
+                            }
+                            binaryWriter2.Write(tmpName1[index9]);
+                            binaryWriter2.Write(tmpName1[index10]);
+                            binaryWriter2.Write(index11);
+                            for (int index15 = 1; index15 <= index11; ++index15)
+                            {
+                                binaryWriter2.Write(nameTmp1[index15]);
+                                binaryWriter2.Write(xBase[index15]);
+                                binaryWriter2.Write(yBase[index15]);
+                                binaryWriter2.Write(zBase[index15]);
+                            }
+                        }
+                    }
+                    output2.Close();
+                    binaryWriter2.Close();
+                    output3.Close();
+                    binaryWriter3.Close();
+                }
+                if (iParam != 2)
+                    return;
+                if (File.Exists(difStrip2))
+                    File.Delete(difStrip2);
+                FileStream output4 = new FileStream(difStrip2, FileMode.CreateNew);
+                BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                for (int index16 = 2; index16 <= index1; ++index16)
+                {
+                    int index17 = kp1Foto[index16 - 1];
+                    int num12 = kp2Foto[index16 - 1];
+                    int index18 = kp1Foto[index16];
+                    int num13 = kp2Foto[index16];
+                    int index19 = 0;
+                    for (int index20 = index17; index20 <= num12; ++index20)
+                    {
+                        for (int index21 = index18; index21 <= num13; ++index21)
+                        {
+                            if (fotoName[index20] == fotoName[index21])
+                            {
+                                ++index19;
+                                nameTmp1[index19] = fotoName[index20];
+                                xBase[index19] = xFoto[index21] - xFoto[index20];
+                                yBase[index19] = yFoto[index21] - yFoto[index20];
+                                zBase[index19] = zFoto[index21] - zFoto[index20];
+                                break;
+                            }
+                        }
+                    }
+                    if (index19 != 0)
+                    {
+                        binaryWriter4.Write(tmpName1[index17]);
+                        binaryWriter4.Write(tmpName1[index18]);
+                        binaryWriter4.Write(index19);
+                        for (int index22 = 1; index22 <= index19; ++index22)
+                        {
+                            binaryWriter4.Write(nameTmp1[index22]);
+                            binaryWriter4.Write(xBase[index22]);
+                            binaryWriter4.Write(yBase[index22]);
+                            binaryWriter4.Write(zBase[index22]);
+                        }
+                    }
+                }
+                output4.Close();
+                binaryWriter4.Close();
+            }
+        }
+
+        public void StripToGeo(out int iCond, int nParam)
+        {
+            string str1 = "";
+            iCond = 0;
+            int num1 = 0;
+            int kFin1 = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            int num2 = 0;
+            if (!File.Exists(fileGeo))
+            {
+                int num3 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                kChange = 0;
+                int num4 = 0;
+                int num5 = 0;
+                FileStream input1 = new FileStream(fileGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    num2 = binaryReader1.ReadInt32();
+                    for (int index = 1; index <= num2; ++index)
+                    {
+                        geoName[index] = binaryReader1.ReadString();
+                        xGeo[index] = binaryReader1.ReadDouble();
+                        yGeo[index] = binaryReader1.ReadDouble();
+                        zGeo[index] = binaryReader1.ReadDouble();
+                        if (xGeo[index] != 0.0 || yGeo[index] != 0.0)
+                            ++num4;
+                        if (zGeo[index] != 0.0)
+                            ++num5;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (num4 < 3)
+                {
+                    int num6 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else if (num5 < 4)
+                {
+                    int num7 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    if (File.Exists(aeroStrip))
+                    {
+                        FileStream input2 = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                        try
+                        {
+                            num1 = binaryReader2.ReadInt32();
+                            for (int index = 1; index <= num1; ++index)
+                            {
+                                kModelStrip[index] = binaryReader2.ReadInt32();
+                                numCamera[index] = binaryReader2.ReadInt64();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            binaryReader2.Close();
+                            input2.Close();
+                        }
+                    }
+                    tolDx[2] = 0.0;
+                    tolDy[2] = 0.0;
+                    tolDz[2] = 0.0;
+                    int index1 = 0;
+                    if (!File.Exists(fotoStrip))
+                        return;
+                    FileStream input3 = new FileStream(fotoStrip, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                    try
+                    {
+                        num1 = binaryReader3.ReadInt32();
+                        for (int index2 = 1; index2 <= num1; ++index2)
+                        {
+                            binaryReader3.ReadInt32();
+                            int num8 = binaryReader3.ReadInt32();
+                            int num9 = binaryReader3.ReadInt32();
+                            int num10 = binaryReader3.ReadInt32();
+                            k1Photo[index2] = num8;
+                            k2Photo[index2] = num9;
+                            ktPhoto[index2] = num10;
+                            for (int index3 = 1; index3 <= num10; ++index3)
+                            {
+                                str1 = binaryReader3.ReadString();
+                                double num11 = binaryReader3.ReadDouble();
+                                double num12 = binaryReader3.ReadDouble();
+                                double num13 = binaryReader3.ReadDouble();
+                                ++index1;
+                                pntName[index1] = str1;
+                                xAdd[index1] = num11;
+                                yAdd[index1] = num12;
+                                pBlock[index1] = num13;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader3.Close();
+                        input3.Close();
+                    }
+                    kp1Foto[1] = 1;
+                    kp2Foto[1] = ktPhoto[1];
+                    if (num1 > 1)
+                    {
+                        for (int index4 = 2; index4 <= num1; ++index4)
+                        {
+                            kp1Foto[index4] = kp2Foto[index4 - 1] + 1;
+                            kp2Foto[index4] = kp2Foto[index4 - 1] + ktPhoto[index4];
+                        }
+                    }
+                    int kDif;
+                    for (int index5 = 1; index5 <= num1; ++index5)
+                    {
+                        int num14 = kp1Foto[index5];
+                        int num15 = kp2Foto[index5];
+                        int kPnt = 0;
+                        int index6;
+                        for (index6 = num14; index6 <= num15; ++index6)
+                        {
+                            ++kPnt;
+                            blockName[kPnt] = pntName[index6];
+                            xBlock[kPnt] = xAdd[index6];
+                            yBlock[kPnt] = yAdd[index6];
+                            zBlock[kPnt] = pBlock[index6];
+                        }
+                        int num16 = 0;
+                        int num17 = 0;
+                        int kGeo = 0;
+                        for (int index7 = 1; index7 <= num2; ++index7)
+                        {
+                            for (index6 = 1; index6 <= kPnt; ++index6)
+                            {
+                                if (geoName[index7] == blockName[index6])
+                                {
+                                    if (xGeo[index7] != 0.0 && yGeo[index7] != 0.0 && zGeo[index7] != 0.0)
+                                    {
+                                        ++num16;
+                                        ++num17;
+                                        ++kGeo;
+                                        tarName[kGeo] = geoName[index7];
+                                        xTar[kGeo] = xGeo[index7];
+                                        yTar[kGeo] = yGeo[index7];
+                                        zTar[kGeo] = zGeo[index7];
+                                        break;
+                                    }
+                                    if (xGeo[index7] != 0.0 && yGeo[index7] != 0.0 && zGeo[index7] == 0.0)
+                                    {
+                                        ++num16;
+                                        ++kGeo;
+                                        tarName[kGeo] = geoName[index7];
+                                        xTar[kGeo] = xGeo[index7];
+                                        yTar[kGeo] = yGeo[index7];
+                                        zTar[kGeo] = zGeo[index7];
+                                        break;
+                                    }
+                                    if (xGeo[index7] == 0.0 && yGeo[index7] == 0.0 && zGeo[index7] != 0.0)
+                                    {
+                                        ++num17;
+                                        ++kGeo;
+                                        tarName[kGeo] = geoName[index7];
+                                        xTar[kGeo] = xGeo[index7];
+                                        yTar[kGeo] = yGeo[index7];
+                                        zTar[kGeo] = zGeo[index7];
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        if (num1 == 1)
+                        {
+                            if (num16 < 2)
+                            {
+                                int num18 = (int)MessageBox.Show("Horizontal Control Points < 2", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                iCond = -1;
+                                return;
+                            }
+                            if (num17 < 3)
+                            {
+                                int num19 = (int)MessageBox.Show("Vertical Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                iCond = -1;
+                                return;
+                            }
+                        }
+                        if (num1 > 1)
+                        {
+                            if (index5 == 1)
+                            {
+                                if (num16 < 2)
+                                {
+                                    int num20 = (int)MessageBox.Show("In the First Strip Horizontal Control Points < 2", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    iCond = -1;
+                                    return;
+                                }
+                                if (num17 < 3)
+                                {
+                                    int num21 = (int)MessageBox.Show("In the First Strip Vertical Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    iCond = -1;
+                                    return;
+                                }
+                            }
+                            if (num16 < 2 || num17 < 3)
+                            {
+                                int num22 = kp1Foto[index5 - 1];
+                                int num23 = kp2Foto[index5 - 1];
+                                for (index6 = num22; index6 <= num23; ++index6)
+                                {
+                                    int num24 = 0;
+                                    if (kGeo > 0)
+                                    {
+                                        for (int index8 = 1; index8 <= kGeo; ++index8)
+                                        {
+                                            if (tarName[index8] == pntName[index6])
+                                            {
+                                                ++num24;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num24 <= 0)
+                                    {
+                                        for (int index9 = 1; index9 <= kPnt; ++index9)
+                                        {
+                                            if (pntName[index6] == blockName[index9])
+                                            {
+                                                ++kGeo;
+                                                tarName[kGeo] = pntName[index6];
+                                                xTar[kGeo] = xAdd[index6];
+                                                yTar[kGeo] = yAdd[index6];
+                                                zTar[kGeo] = pBlock[index6];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        for (int index10 = 1; index10 <= 10; ++index10)
+                        {
+                            int num25 = 0;
+                            DllClass1.AbsOrient(kGeo, tarName, xTar, yTar, zTar, kPnt, blockName, xBlock, yBlock, zBlock, ref namePhoto, ref e1Photo, ref e2Photo, ref fotoName, ref xFoto, ref yFoto, ref zFoto, out kFin1, ref nameFin, ref xFin, ref yFin, ref zFin);
+                            if (kFin1 == 0)
+                                return;
+                            DllClass1.DifCoord(kGeo, tarName, xTar, yTar, zTar, kFin1, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                            if (kDif == 0)
+                                return;
+                            double num26 = 0.0;
+                            double num27 = 0.0;
+                            for (int index11 = 1; index11 <= kDif; ++index11)
+                            {
+                                num27 += sBase[index11];
+                                if (sBase[index11] > num26)
+                                {
+                                    str1 = tmpName[index11];
+                                    num26 = sBase[index11];
+                                }
+                            }
+                            double num28 = num27 / (double)kDif;
+                            if (kGeo > 10 && (nParam == 0 || nParam == 600))
+                            {
+                                double num29 = 3.0 * num28;
+                                if (num26 > num29)
+                                {
+                                    for (int index12 = 1; index12 <= kPnt; ++index12)
+                                    {
+                                        if (blockName[index12] == str1)
+                                        {
+                                            index6 = index12;
+                                            break;
+                                        }
+                                    }
+                                    ++num25;
+                                    ++nChange;
+                                    string str2 = Convert.ToString(nChange) + "_" + str1;
+                                    blockName[index6] = str2;
+                                    ++kChange;
+                                    nameChange[kChange] = str1;
+                                    for (int index13 = 1; index13 <= kDif; ++index13)
+                                    {
+                                        if (tmpName[index13] == str1)
+                                        {
+                                            index6 = index13;
+                                            break;
+                                        }
+                                    }
+                                    xChange[kChange] = xBase[index6];
+                                    yChange[kChange] = yBase[index6];
+                                    zChange[kChange] = zBase[index6];
+                                }
+                            }
+                            if (num25 == 0)
+                            {
+                                int index14 = 0;
+                                for (int index15 = num14; index15 <= num15; ++index15)
+                                {
+                                    ++index14;
+                                    pntName[index15] = nameFin[index14];
+                                    xAdd[index15] = xFin[index14];
+                                    yAdd[index15] = yFin[index14];
+                                    pBlock[index15] = zFin[index14];
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    int kPnt1 = 0;
+                    for (int index16 = 1; index16 <= num1; ++index16)
+                    {
+                        int num30 = kp1Foto[index16];
+                        int num31 = kp2Foto[index16];
+                        for (int index17 = num30; index17 <= num31; ++index17)
+                        {
+                            ++kPnt1;
+                            blockName[kPnt1] = pntName[index17];
+                            xBlock[kPnt1] = xAdd[index17];
+                            yBlock[kPnt1] = yAdd[index17];
+                            zBlock[kPnt1] = pBlock[index17];
+                        }
+                    }
+                    int kGeo1 = 0;
+                    for (int index18 = 1; index18 <= num2; ++index18)
+                    {
+                        for (int index19 = 1; index19 <= kPnt1; ++index19)
+                        {
+                            if (geoName[index18] == blockName[index19])
+                            {
+                                if (xGeo[index18] != 0.0 && yGeo[index18] != 0.0 && zGeo[index18] != 0.0)
+                                {
+                                    ++kGeo1;
+                                    tarName[kGeo1] = geoName[index18];
+                                    xTar[kGeo1] = xGeo[index18];
+                                    yTar[kGeo1] = yGeo[index18];
+                                    zTar[kGeo1] = zGeo[index18];
+                                    break;
+                                }
+                                if (xGeo[index18] != 0.0 && yGeo[index18] != 0.0 && zGeo[index18] == 0.0)
+                                {
+                                    ++kGeo1;
+                                    tarName[kGeo1] = geoName[index18];
+                                    xTar[kGeo1] = xGeo[index18];
+                                    yTar[kGeo1] = yGeo[index18];
+                                    zTar[kGeo1] = zGeo[index18];
+                                    break;
+                                }
+                                if (xGeo[index18] == 0.0 && yGeo[index18] == 0.0 && zGeo[index18] != 0.0)
+                                {
+                                    ++kGeo1;
+                                    tarName[kGeo1] = geoName[index18];
+                                    xTar[kGeo1] = xGeo[index18];
+                                    yTar[kGeo1] = yGeo[index18];
+                                    zTar[kGeo1] = zGeo[index18];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    int num32 = 0;
+                    for (int index20 = 1; index20 <= 10; ++index20)
+                    {
+                        int num33 = 0;
+                        DllClass1.AbsOrient(kGeo1, tarName, xTar, yTar, zTar, kPnt1, blockName, xBlock, yBlock, zBlock, ref namePhoto, ref e1Photo, ref e2Photo, ref fotoName, ref xFoto, ref yFoto, ref zFoto, out kFin1, ref nameFin, ref xFin, ref yFin, ref zFin);
+                        if (kFin1 == 0)
+                            return;
+                        DllClass1.DifCoord(kGeo1, tarName, xTar, yTar, zTar, kFin1, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                        if (kDif == 0)
+                            return;
+                        if (num32 <= 0)
+                        {
+                            double num34 = 0.0;
+                            double num35 = 0.0;
+                            for (int index21 = 1; index21 <= kDif; ++index21)
+                            {
+                                num35 += sBase[index21];
+                                if (sBase[index21] > num34)
+                                {
+                                    str1 = tmpName[index21];
+                                    num34 = sBase[index21];
+                                }
+                            }
+                            double num36 = num35 / (double)kDif;
+                            if (kGeo1 > 10 && (nParam == 0 || nParam == 600))
+                            {
+                                double num37 = 3.0 * num36;
+                                int index22 = 0;
+                                if (num34 > num37)
+                                {
+                                    for (int index23 = 1; index23 <= kPnt1; ++index23)
+                                    {
+                                        if (blockName[index23] == str1)
+                                        {
+                                            index22 = index23;
+                                            break;
+                                        }
+                                    }
+                                    ++num33;
+                                    ++nChange;
+                                    string str3 = Convert.ToString(nChange) + "_" + str1;
+                                    blockName[index22] = str3;
+                                    ++kChange;
+                                    nameChange[kChange] = str1;
+                                    for (int index24 = 1; index24 <= kDif; ++index24)
+                                    {
+                                        if (tmpName[index24] == str1)
+                                        {
+                                            index22 = index24;
+                                            break;
+                                        }
+                                    }
+                                    xChange[kChange] = xBase[index22];
+                                    yChange[kChange] = yBase[index22];
+                                    zChange[kChange] = zBase[index22];
+                                }
+                            }
+                            if (num33 == 0)
+                            {
+                                int kFin2 = 0;
+                                for (int index25 = 1; index25 <= kFin1; ++index25)
+                                {
+                                    if (nameFin[index25].IndexOf('-') <= -1)
+                                    {
+                                        ++kFin2;
+                                        namePhoto[kFin2] = nameFin[index25];
+                                        e1Photo[kFin2] = xFin[index25];
+                                        e2Photo[kFin2] = yFin[index25];
+                                        e3Photo[kFin2] = zFin[index25];
+                                    }
+                                }
+                                int iCond1;
+                                DifModels(kFin2, namePhoto, e1Photo, e2Photo, e3Photo, out iCond1);
+                                if (num1 > 1)
+                                    DifStrips(2, kFin1, nameFin, xFin, yFin, zFin, out iCond1);
+                                DllClass1.MiddleCoord(kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, out kPnt1, ref blockName, ref xBlock, ref yBlock, ref zBlock, ref nDif);
+                                if (kPnt1 == 0)
+                                    return;
+                                kFin1 = kPnt1;
+                                num32 = 1;
+                            }
+                        }
+                        else
+                            break;
+                    }
+                    DllClass1.Polynom(1, kGeo1, tarName, xTar, yTar, zTar, kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                    DllClass1.Polynom(3, kGeo1, tarName, xTar, yTar, zTar, kFin1, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                    DllClass1.DifCoord(kGeo1, tarName, xTar, yTar, zTar, kFin1, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                    if (kDif == 0)
+                        return;
+                    double num38 = 0.0;
+                    double num39 = 0.0;
+                    double num40 = 0.0;
+                    for (int index26 = 1; index26 <= kDif; ++index26)
+                    {
+                        num38 += Math.Abs(xBase[index26]);
+                        num39 += Math.Abs(yBase[index26]);
+                        num40 += Math.Abs(zBase[index26]);
+                    }
+                    if (num38 == 0.0 && num39 == 0.0 && num40 == 0.0)
+                    {
+                        num38 = 0.001;
+                        num39 = 0.001;
+                        num40 = 0.001;
+                    }
+                    tolDx[2] = num38 / (double)kDif;
+                    tolDy[2] = num39 / (double)kDif;
+                    tolDz[2] = num40 / (double)kDif;
+                    sumTol[2] = Math.Sqrt(tolDx[2] * tolDx[2] + tolDy[2] * tolDy[2] + tolDz[2] * tolDz[2]);
+                    double num41 = Math.Sqrt(tolDx[1] * tolDx[1] + tolDy[1] * tolDy[1] + tolDz[1] * tolDz[1]);
+                    double num42 = Math.Sqrt(tolDx[2] * tolDx[2] + tolDy[2] * tolDy[2] + tolDz[2] * tolDz[2]);
+                    if (kChange > 0)
+                    {
+                        if (kChange > 1)
+                        {
+                            for (int index27 = 1; index27 < kChange; ++index27)
+                            {
+                                if (!(nameChange[index27] == ""))
+                                {
+                                    for (int index28 = index27 + 1; index28 <= kChange; ++index28)
+                                    {
+                                        if (!(nameChange[index28] == "") && nameChange[index27] == nameChange[index28])
+                                            nameChange[index28] = "";
+                                    }
+                                }
+                            }
+                            int index29 = 0;
+                            for (int index30 = 1; index30 <= kChange; ++index30)
+                            {
+                                if (!(nameChange[index30] == ""))
+                                {
+                                    ++index29;
+                                    nameChange[index29] = nameChange[index30];
+                                    xChange[index29] = xChange[index30];
+                                    yChange[index29] = yChange[index30];
+                                    zChange[index29] = zChange[index30];
+                                }
+                            }
+                            kChange = index29;
+                        }
+                        if (File.Exists(fileDoubt))
+                            File.Delete(fileDoubt);
+                        FileStream output = new FileStream(fileDoubt, FileMode.CreateNew);
+                        BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                        binaryWriter.Write(kChange);
+                        for (int index31 = 1; index31 <= kChange; ++index31)
+                        {
+                            binaryWriter.Write(nameChange[index31]);
+                            binaryWriter.Write(xChange[index31]);
+                            binaryWriter.Write(yChange[index31]);
+                            binaryWriter.Write(zChange[index31]);
+                        }
+                        output.Close();
+                        binaryWriter.Close();
+                    }
+                    if (num1 != 1 && num42 >= num41)
+                        return;
+                    if (File.Exists(difTarget))
+                        File.Delete(difTarget);
+                    FileStream output1 = new FileStream(difTarget, FileMode.CreateNew);
+                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                    binaryWriter1.Write(kDif);
+                    for (int index32 = 1; index32 <= kDif; ++index32)
+                    {
+                        binaryWriter1.Write(tmpName[index32]);
+                        binaryWriter1.Write(xBase[index32]);
+                        binaryWriter1.Write(yBase[index32]);
+                        binaryWriter1.Write(zBase[index32]);
+                    }
+                    binaryWriter1.Close();
+                    output1.Close();
+                    if (num1 > 1 && File.Exists(difStrip2))
+                    {
+                        FileStream input4 = new FileStream(difStrip2, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                        if (File.Exists(difStrip))
+                            File.Delete(difStrip);
+                        FileStream output2 = new FileStream(difStrip, FileMode.CreateNew);
+                        BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                        try
+                        {
+                            string str4;
+                            while ((str4 = binaryReader4.ReadString()) != null)
+                            {
+                                string str5 = binaryReader4.ReadString();
+                                kDif = binaryReader4.ReadInt32();
+                                binaryWriter2.Write(str4);
+                                binaryWriter2.Write(str5);
+                                binaryWriter2.Write(kDif);
+                                if (kDif > 0)
+                                {
+                                    for (int index33 = 1; index33 <= kDif; ++index33)
+                                    {
+                                        string str6 = binaryReader4.ReadString();
+                                        double num43 = binaryReader4.ReadDouble();
+                                        double num44 = binaryReader4.ReadDouble();
+                                        double num45 = binaryReader4.ReadDouble();
+                                        binaryWriter2.Write(str6);
+                                        binaryWriter2.Write(num43);
+                                        binaryWriter2.Write(num44);
+                                        binaryWriter2.Write(num45);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input4.Close();
+                            binaryReader4.Close();
+                        }
+                        output2.Close();
+                        binaryWriter2.Close();
+                    }
+                    xmin = 9999999.9;
+                    ymin = 9999999.9;
+                    xmax = -9999999.9;
+                    ymax = -9999999.9;
+                    zmin = 9999999.9;
+                    zmax = -9999999.9;
+                    for (int index34 = 1; index34 <= kFin1; ++index34)
+                    {
+                        if (xFin[index34] < xmin)
+                            xmin = xFin[index34];
+                        if (xFin[index34] > xmax)
+                            xmax = xFin[index34];
+                        if (yFin[index34] < ymin)
+                            ymin = yFin[index34];
+                        if (yFin[index34] > ymax)
+                            ymax = yFin[index34];
+                        if (zFin[index34] < zmin)
+                            zmin = zFin[index34];
+                        if (zFin[index34] > zmax)
+                            zmax = zFin[index34];
+                    }
+                    if (File.Exists(aeroBlock))
+                        File.Delete(aeroBlock);
+                    FileStream output3 = new FileStream(aeroBlock, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    binaryWriter3.Write(xmin);
+                    binaryWriter3.Write(ymin);
+                    binaryWriter3.Write(xmax);
+                    binaryWriter3.Write(ymax);
+                    binaryWriter3.Write(zmin);
+                    binaryWriter3.Write(zmax);
+                    binaryWriter3.Write(kFin1);
+                    for (int index35 = 1; index35 <= kFin1; ++index35)
+                    {
+                        binaryWriter3.Write(nameFin[index35]);
+                        binaryWriter3.Write(xFin[index35]);
+                        binaryWriter3.Write(yFin[index35]);
+                        binaryWriter3.Write(zFin[index35]);
+                    }
+                    binaryWriter3.Close();
+                    output3.Close();
+                }
+            }
+        }
+
+        public void StereoToMono(out int iCond)
+        {
+            string[] strArray1 = new string[10];
+            string[] strArray2 = new string[10];
+            string[] strArray3 = new string[10];
+            string[] strArray4 = new string[10];
+            string[] strArray5 = new string[10];
+            string[] strArray6 = new string[22];
+            string[] strArray7 = new string[22];
+            double[] numArray1 = new double[22];
+            double[] numArray2 = new double[22];
+            iCond = 0;
+            int num1;
+            int index1 = num1 = 0;
+            double num2;
+            double num3 = num2 = 0.0;
+            double num4 = num2;
+            double num5 = num2;
+            if (!File.Exists(aeroStrip))
+            {
+                int num6 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                FileStream input1 = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    num1 = binaryReader1.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        kModelStrip[index2] = binaryReader1.ReadInt32();
+                        numCamera[index2] = binaryReader1.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (!File.Exists(fileAero))
+                {
+                    int num7 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    FileStream input2 = new FileStream(fileAero, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    if (File.Exists(fileAdd))
+                        File.Delete(fileAdd);
+                    FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                    try
+                    {
+                        for (int index3 = 1; index3 <= num1; ++index3)
+                        {
+                            int num8 = kModelStrip[index3];
+                            for (int index4 = 1; index4 <= num8; ++index4)
+                            {
+                                numModel[index4] = binaryReader2.ReadInt64();
+                                modLeft[index4] = binaryReader2.ReadInt32();
+                                modRight[index4] = binaryReader2.ReadInt32();
+                                modMark[index4] = binaryReader2.ReadInt32();
+                                modPoint[index4] = binaryReader2.ReadInt32();
+                                int num9 = modPoint[index4];
+                                int index5 = 0;
+                                int index6 = 0;
+                                for (int index7 = 1; index7 <= num9; ++index7)
+                                {
+                                    string str = binaryReader2.ReadString();
+                                    double num10 = binaryReader2.ReadDouble();
+                                    double num11 = binaryReader2.ReadDouble();
+                                    double num12 = binaryReader2.ReadDouble();
+                                    double num13 = binaryReader2.ReadDouble();
+                                    if (index7 > modMark[index4])
+                                    {
+                                        ++index5;
+                                        nameTmp1[index5] = str;
+                                        xLeft[index5] = num10;
+                                        yLeft[index5] = num11;
+                                        ++index6;
+                                        nameTmp2[index6] = str;
+                                        xRight[index6] = num12;
+                                        yRight[index6] = num13;
+                                    }
+                                }
+                                binaryWriter1.Write(modLeft[index4]);
+                                binaryWriter1.Write(index5);
+                                for (int index8 = 1; index8 <= index5; ++index8)
+                                {
+                                    binaryWriter1.Write(nameTmp1[index8]);
+                                    binaryWriter1.Write(xLeft[index8]);
+                                    binaryWriter1.Write(yLeft[index8]);
+                                }
+                                binaryWriter1.Write(modRight[index4]);
+                                binaryWriter1.Write(index6);
+                                for (int index9 = 1; index9 <= index6; ++index9)
+                                {
+                                    binaryWriter1.Write(nameTmp2[index9]);
+                                    binaryWriter1.Write(xRight[index9]);
+                                    binaryWriter1.Write(yRight[index9]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input2.Close();
+                        binaryReader2.Close();
+                    }
+                    output1.Close();
+                    binaryWriter1.Close();
+                    int index10 = 0;
+                    int index11 = 0;
+                    if (!File.Exists(fileAdd))
+                    {
+                        int num14 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        iCond = -1;
+                    }
+                    else
+                    {
+                        FileStream input3 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                        if (!File.Exists(fstoreCam))
+                        {
+                            int num15 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            iCond = -1;
+                        }
+                        else
+                        {
+                            try
+                            {
+                                for (int index12 = 1; index12 <= num1; ++index12)
+                                {
+                                    int num16 = kModelStrip[index12];
+                                    FileStream input4 = new FileStream(fstoreCam, FileMode.Open, FileAccess.Read);
+                                    BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                                    try
+                                    {
+                                        kCamera = Convert.ToInt32(binaryReader4.ReadString());
+                                        for (int index13 = 1; index13 <= kCamera; ++index13)
+                                        {
+                                            strArray1[index13] = binaryReader4.ReadString();
+                                            strArray2[index13] = binaryReader4.ReadString();
+                                            strArray3[index13] = binaryReader4.ReadString();
+                                            strArray4[index13] = binaryReader4.ReadString();
+                                            strArray5[index13] = binaryReader4.ReadString();
+                                            strArray6[index13] = binaryReader4.ReadString();
+                                            strArray7[index13] = binaryReader4.ReadString();
+                                            numCam[index13] = (long)Convert.ToInt32(strArray1[index13]);
+                                            nameCam[index13] = strArray2[index13];
+                                            focCam[index13] = Convert.ToDouble(strArray3[index13]);
+                                            xoCam[index13] = Convert.ToDouble(strArray4[index13]);
+                                            yoCam[index13] = Convert.ToDouble(strArray5[index13]);
+                                            markCam[index13] = Convert.ToInt32(strArray6[index13]);
+                                            dstrCam[index13] = Convert.ToInt32(strArray7[index13]);
+                                            int int32_1 = Convert.ToInt32(strArray6[index13]);
+                                            int int32_2 = Convert.ToInt32(strArray7[index13]);
+                                            if (int32_1 > 0)
+                                            {
+                                                for (int index14 = 1; index14 <= int32_1; ++index14)
+                                                {
+                                                    strArray1[index14] = binaryReader4.ReadString();
+                                                    strArray2[index14] = binaryReader4.ReadString();
+                                                    strArray3[index14] = binaryReader4.ReadString();
+                                                    nMark[index14] = Convert.ToInt32(strArray1[index14]);
+                                                    xMark[index14] = Convert.ToDouble(strArray2[index14]);
+                                                    yMark[index14] = Convert.ToDouble(strArray3[index14]);
+                                                }
+                                            }
+                                            if (int32_2 > 0)
+                                            {
+                                                for (int index15 = 1; index15 <= int32_2; ++index15)
+                                                {
+                                                    strArray6[index15] = binaryReader4.ReadString();
+                                                    strArray7[index15] = binaryReader4.ReadString();
+                                                    numArray1[index15] = Convert.ToDouble(strArray6[index15]);
+                                                    numArray2[index15] = Convert.ToDouble(strArray7[index15]);
+                                                }
+                                            }
+                                            if (numCamera[index12] == numCam[index13])
+                                            {
+                                                num4 = xoCam[index13];
+                                                num3 = yoCam[index13];
+                                                num5 = focCam[index13];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine("The Read operation failed as expected.");
+                                    }
+                                    finally
+                                    {
+                                        input4.Close();
+                                        binaryReader4.Close();
+                                    }
+                                    for (int index16 = 1; index16 <= num16; ++index16)
+                                    {
+                                        int num17 = binaryReader3.ReadInt32();
+                                        int num18 = binaryReader3.ReadInt32();
+                                        for (int index17 = 1; index17 <= num18; ++index17)
+                                        {
+                                            nameTmp1[index17] = binaryReader3.ReadString();
+                                            xLeft[index17] = binaryReader3.ReadDouble();
+                                            yLeft[index17] = binaryReader3.ReadDouble();
+                                        }
+                                        int num19 = binaryReader3.ReadInt32();
+                                        int num20 = binaryReader3.ReadInt32();
+                                        for (int index18 = 1; index18 <= num20; ++index18)
+                                        {
+                                            nameTmp2[index18] = binaryReader3.ReadString();
+                                            xRight[index18] = binaryReader3.ReadDouble();
+                                            yRight[index18] = binaryReader3.ReadDouble();
+                                        }
+                                        if (index16 == 1)
+                                        {
+                                            ++index10;
+                                            ktPhoto[index10] = num18;
+                                            numPhoto[index10] = num17;
+                                            focPhoto[index10] = num5;
+                                            xoPhoto[index10] = num4;
+                                            yoPhoto[index10] = num3;
+                                            for (int index19 = 1; index19 <= num18; ++index19)
+                                            {
+                                                ++index11;
+                                                namePhoto[index11] = nameTmp1[index19];
+                                                xPhoto[index11] = xLeft[index19];
+                                                yPhoto[index11] = yLeft[index19];
+                                            }
+                                            index1 = num20;
+                                            for (int index20 = 1; index20 <= num20; ++index20)
+                                            {
+                                                nameAdd[index20] = nameTmp2[index20];
+                                                xAdd[index20] = xRight[index20];
+                                                yAdd[index20] = yRight[index20];
+                                            }
+                                        }
+                                        else
+                                        {
+                                            for (int index21 = 1; index21 <= num18; ++index21)
+                                            {
+                                                int num21 = 0;
+                                                for (int index22 = 1; index22 <= index1; ++index22)
+                                                {
+                                                    if (nameTmp1[index21] == nameAdd[index22])
+                                                    {
+                                                        ++num21;
+                                                        break;
+                                                    }
+                                                }
+                                                if (num21 == 0)
+                                                {
+                                                    ++index1;
+                                                    nameAdd[index1] = nameTmp1[index21];
+                                                    xAdd[index1] = xLeft[index21];
+                                                    yAdd[index1] = yLeft[index21];
+                                                }
+                                            }
+                                            ++index10;
+                                            ktPhoto[index10] = index1;
+                                            numPhoto[index10] = num17;
+                                            focPhoto[index10] = num5;
+                                            xoPhoto[index10] = num4;
+                                            yoPhoto[index10] = num3;
+                                            for (int index23 = 1; index23 <= index1; ++index23)
+                                            {
+                                                ++index11;
+                                                namePhoto[index11] = nameAdd[index23];
+                                                xPhoto[index11] = xAdd[index23];
+                                                yPhoto[index11] = yAdd[index23];
+                                            }
+                                            if (index16 == num16)
+                                            {
+                                                ++index10;
+                                                ktPhoto[index10] = num20;
+                                                numPhoto[index10] = num19;
+                                                focPhoto[index10] = num5;
+                                                xoPhoto[index10] = num4;
+                                                yoPhoto[index10] = num3;
+                                                for (int index24 = 1; index24 <= num18; ++index24)
+                                                {
+                                                    ++index11;
+                                                    namePhoto[index11] = nameTmp2[index24];
+                                                    xPhoto[index11] = xRight[index24];
+                                                    yPhoto[index11] = yRight[index24];
+                                                }
+                                            }
+                                            else
+                                            {
+                                                index1 = num20;
+                                                for (int index25 = 1; index25 <= num20; ++index25)
+                                                {
+                                                    nameAdd[index25] = nameTmp2[index25];
+                                                    xAdd[index25] = xRight[index25];
+                                                    yAdd[index25] = yRight[index25];
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("The Read operation failed as expected.");
+                            }
+                            finally
+                            {
+                                input3.Close();
+                                binaryReader3.Close();
+                            }
+                            k1Photo[1] = 1;
+                            k2Photo[1] = ktPhoto[1];
+                            if (index10 > 1)
+                            {
+                                for (int index26 = 2; index26 <= index10; ++index26)
+                                {
+                                    k1Photo[index26] = k2Photo[index26 - 1] + 1;
+                                    k2Photo[index26] = k2Photo[index26 - 1] + ktPhoto[index26];
+                                }
+                            }
+                            int num22 = 0;
+                            if (File.Exists(aeroBlock))
+                            {
+                                FileStream input5 = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                                BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+                                try
+                                {
+                                    binaryReader5.ReadDouble();
+                                    binaryReader5.ReadDouble();
+                                    binaryReader5.ReadDouble();
+                                    binaryReader5.ReadDouble();
+                                    binaryReader5.ReadDouble();
+                                    binaryReader5.ReadDouble();
+                                    num22 = binaryReader5.ReadInt32();
+                                    for (int index27 = 1; index27 <= num22; ++index27)
+                                    {
+                                        blockName[index27] = binaryReader5.ReadString();
+                                        xBlock[index27] = binaryReader5.ReadDouble();
+                                        yBlock[index27] = binaryReader5.ReadDouble();
+                                        zBlock[index27] = binaryReader5.ReadDouble();
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("The Read operation failed as expected.");
+                                }
+                                finally
+                                {
+                                    binaryReader5.Close();
+                                    input5.Close();
+                                }
+                            }
+                            if (File.Exists(aerialPhoto))
+                                File.Delete(aerialPhoto);
+                            FileStream output2 = new FileStream(aerialPhoto, FileMode.CreateNew);
+                            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                            binaryWriter2.Write(index10);
+                            for (int index28 = 1; index28 <= index10; ++index28)
+                            {
+                                xsPhoto[index28] = 0.0;
+                                ysPhoto[index28] = 0.0;
+                                zsPhoto[index28] = 0.0;
+                                for (int index29 = 1; index29 <= num22; ++index29)
+                                {
+                                    if (blockName[index29].IndexOf('-') > -1)
+                                    {
+                                        if (Convert.ToInt32(blockName[index29].Trim('-')) == numPhoto[index28])
+                                        {
+                                            xsPhoto[index28] = xBlock[index29];
+                                            ysPhoto[index28] = yBlock[index29];
+                                            zsPhoto[index28] = zBlock[index29];
+                                            break;
+                                        }
+                                    }
+                                }
+                                int num23 = k1Photo[index28];
+                                int num24 = k2Photo[index28];
+                                binaryWriter2.Write(numPhoto[index28]);
+                                binaryWriter2.Write(ktPhoto[index28]);
+                                binaryWriter2.Write(k1Photo[index28]);
+                                binaryWriter2.Write(k2Photo[index28]);
+                                binaryWriter2.Write(focPhoto[index28]);
+                                binaryWriter2.Write(xoPhoto[index28]);
+                                binaryWriter2.Write(yoPhoto[index28]);
+                                binaryWriter2.Write(xsPhoto[index28]);
+                                binaryWriter2.Write(ysPhoto[index28]);
+                                binaryWriter2.Write(zsPhoto[index28]);
+                                e1Photo[index28] = 0.0;
+                                e2Photo[index28] = 0.0;
+                                e3Photo[index28] = 0.0;
+                                binaryWriter2.Write(e1Photo[index28]);
+                                binaryWriter2.Write(e2Photo[index28]);
+                                binaryWriter2.Write(e3Photo[index28]);
+                                iVariantPhoto[index28] = 0;
+                                xMovePhoto[index28] = 0.0;
+                                yMovePhoto[index28] = 0.0;
+                                binaryWriter2.Write(iVariantPhoto[index28]);
+                                binaryWriter2.Write(xMovePhoto[index28]);
+                                binaryWriter2.Write(yMovePhoto[index28]);
+                                int num25 = k1Photo[index28];
+                                int num26 = k2Photo[index28];
+                                for (int index30 = num25; index30 <= num26; ++index30)
+                                {
+                                    binaryWriter2.Write(namePhoto[index30]);
+                                    binaryWriter2.Write(xPhoto[index30]);
+                                    binaryWriter2.Write(yPhoto[index30]);
+                                }
+                            }
+                            binaryWriter2.Close();
+                            output2.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        public void BackDirect(out int iCond, int numXYZ)
+        {
+            int num1 = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            int num2;
+            int kFin1 = num2 = 0;
+            int num3 = num2;
+            int num4 = num2;
+            double num5;
+            double num6 = num5 = 0.0;
+            double num7 = num5;
+            double num8 = num5;
+            double num9 = num5;
+            double num10;
+            double num11 = num10 = 0.0;
+            double num12 = num10;
+            double num13 = num10;
+            double num14;
+            double e3 = num14 = 0.0;
+            double e2 = num14;
+            double e1 = num14;
+            double num15 = num14;
+            double num16 = num14;
+            double num17;
+            double num18 = num17 = 0.0;
+            double f3 = num17;
+            double f2 = num17;
+            double f1 = num17;
+            int num19;
+            int kPnt = num19 = 0;
+            double num20;
+            double ys2 = num20 = 0.0;
+            double xs2 = num20;
+            double ys1 = num20;
+            double xs1 = num20;
+            double num21 = num20;
+            double num22 = num20;
+            double num23;
+            double zs2 = num23 = 0.0;
+            double zs1 = num23;
+            double fk = num23;
+            iCond = 0;
+            if (numXYZ == 1)
+            {
+                tolDx[3] = 0.0;
+                tolDy[3] = 0.0;
+                tolDz[3] = 0.0;
+            }
+            if (numXYZ == 2)
+            {
+                tolDx[4] = 0.0;
+                tolDy[4] = 0.0;
+                tolDz[4] = 0.0;
+            }
+            if (numXYZ == 3)
+            {
+                tolDx[5] = 0.0;
+                tolDy[5] = 0.0;
+                tolDz[5] = 0.0;
+            }
+            int kDif1 = 0;
+            int num24 = 0;
+            int num25 = 0;
+            int kGeo = 0;
+            if (File.Exists(fileGeo))
+            {
+                FileStream input = new FileStream(fileGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kGeo = binaryReader.ReadInt32();
+                    for (int index = 1; index <= kGeo; ++index)
+                    {
+                        geoName[index] = binaryReader.ReadString();
+                        xGeo[index] = binaryReader.ReadDouble();
+                        yGeo[index] = binaryReader.ReadDouble();
+                        zGeo[index] = binaryReader.ReadDouble();
+                        if (xGeo[index] != 0.0 && yGeo[index] != 0.0 && zGeo[index] != 0.0)
+                            ++kDif1;
+                        if (xGeo[index] != 0.0 && yGeo[index] != 0.0 && zGeo[index] == 0.0)
+                            ++num24;
+                        if (xGeo[index] == 0.0 && yGeo[index] == 0.0 && zGeo[index] != 0.0)
+                            ++num25;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (kGeo == 0)
+            {
+                int num26 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else if (!File.Exists(aeroBlock))
+            {
+                int num27 = (int)MessageBox.Show("Beginning values of coordinates points are absent", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                FileStream input1 = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    xmin = binaryReader1.ReadDouble();
+                    ymin = binaryReader1.ReadDouble();
+                    xmax = binaryReader1.ReadDouble();
+                    ymax = binaryReader1.ReadDouble();
+                    zmin = binaryReader1.ReadDouble();
+                    zmax = binaryReader1.ReadDouble();
+                    kFin1 = binaryReader1.ReadInt32();
+                    for (int index = 1; index <= kFin1; ++index)
+                    {
+                        nameBlock[index] = binaryReader1.ReadString();
+                        xBlock[index] = binaryReader1.ReadDouble();
+                        yBlock[index] = binaryReader1.ReadDouble();
+                        zBlock[index] = binaryReader1.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (!File.Exists(aerialPhoto))
+                {
+                    int num28 = (int)MessageBox.Show("Aerial photos file isn't created", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    FileStream input2 = new FileStream(aerialPhoto, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    try
+                    {
+                        num4 = binaryReader2.ReadInt32();
+                        for (int index1 = 1; index1 <= num4; ++index1)
+                        {
+                            numPhoto[index1] = binaryReader2.ReadInt32();
+                            ktPhoto[index1] = binaryReader2.ReadInt32();
+                            k1Photo[index1] = binaryReader2.ReadInt32();
+                            k2Photo[index1] = binaryReader2.ReadInt32();
+                            focPhoto[index1] = binaryReader2.ReadDouble();
+                            xoPhoto[index1] = binaryReader2.ReadDouble();
+                            yoPhoto[index1] = binaryReader2.ReadDouble();
+                            xsPhoto[index1] = binaryReader2.ReadDouble();
+                            ysPhoto[index1] = binaryReader2.ReadDouble();
+                            zsPhoto[index1] = binaryReader2.ReadDouble();
+                            e1Photo[index1] = binaryReader2.ReadDouble();
+                            e2Photo[index1] = binaryReader2.ReadDouble();
+                            e3Photo[index1] = binaryReader2.ReadDouble();
+                            iVariantPhoto[index1] = binaryReader2.ReadInt32();
+                            xMovePhoto[index1] = binaryReader2.ReadDouble();
+                            yMovePhoto[index1] = binaryReader2.ReadDouble();
+                            int num29 = k1Photo[index1];
+                            int num30 = k2Photo[index1];
+                            for (int index2 = num29; index2 <= num30; ++index2)
+                            {
+                                namePhoto[index2] = binaryReader2.ReadString();
+                                xPhoto[index2] = binaryReader2.ReadDouble();
+                                yPhoto[index2] = binaryReader2.ReadDouble();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input2.Close();
+                        binaryReader2.Close();
+                    }
+                    if (!File.Exists(aeroStrip))
+                    {
+                        int num31 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        iCond = -1;
+                    }
+                    else
+                    {
+                        FileStream input3 = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                        try
+                        {
+                            num3 = binaryReader3.ReadInt32();
+                            for (int index = 1; index <= num3; ++index)
+                            {
+                                kModelStrip[index] = binaryReader3.ReadInt32();
+                                numCamera[index] = binaryReader3.ReadInt64();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input3.Close();
+                            binaryReader3.Close();
+                        }
+                        if (!File.Exists(frelOrient))
+                        {
+                            int num32 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            iCond = -1;
+                        }
+                        else
+                        {
+                            int index3 = 0;
+                            int index4 = 0;
+                            FileStream input4 = new FileStream(frelOrient, FileMode.Open, FileAccess.Read);
+                            BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                            double num33;
+                            double num34;
+                            try
+                            {
+                                for (int index5 = 1; index5 <= num3; ++index5)
+                                {
+                                    int num35 = kModelStrip[index5];
+                                    for (int index6 = 1; index6 <= num35; ++index6)
+                                    {
+                                        ++index4;
+                                        numModel[index6] = binaryReader4.ReadInt64();
+                                        int num36 = binaryReader4.ReadInt32();
+                                        int num37 = binaryReader4.ReadInt32();
+                                        e1 = binaryReader4.ReadDouble();
+                                        e3 = binaryReader4.ReadDouble();
+                                        f1 = binaryReader4.ReadDouble();
+                                        f2 = binaryReader4.ReadDouble();
+                                        f3 = binaryReader4.ReadDouble();
+                                        binaryReader4.ReadDouble();
+                                        binaryReader4.ReadDouble();
+                                        binaryReader4.ReadDouble();
+                                        num33 = binaryReader4.ReadDouble();
+                                        num34 = binaryReader4.ReadDouble();
+                                        int num38 = binaryReader4.ReadInt32();
+                                        modLeft[index4] = num36;
+                                        modRight[index4] = num37;
+                                        modPoint[index4] = num38;
+                                        for (int index7 = 1; index7 <= num38; ++index7)
+                                        {
+                                            string str = binaryReader4.ReadString();
+                                            double num39 = binaryReader4.ReadDouble();
+                                            double num40 = binaryReader4.ReadDouble();
+                                            double num41 = binaryReader4.ReadDouble();
+                                            double num42 = binaryReader4.ReadDouble();
+                                            ++index3;
+                                            pntName[index3] = str;
+                                            xLeft[index3] = num39;
+                                            yLeft[index3] = num40;
+                                            xRight[index3] = num41;
+                                            yRight[index3] = num42;
+                                        }
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("The Read operation failed as expected.");
+                            }
+                            finally
+                            {
+                                input4.Close();
+                                binaryReader4.Close();
+                            }
+                            kp1Foto[1] = 1;
+                            kp2Foto[1] = modPoint[1];
+                            if (index4 > 1)
+                            {
+                                for (int index8 = 2; index8 <= index4; ++index8)
+                                {
+                                    kp1Foto[index8] = kp2Foto[index8 - 1] + 1;
+                                    kp2Foto[index8] = kp2Foto[index8 - 1] + modPoint[index8];
+                                }
+                            }
+                            double num43 = 9999999.9;
+                            for (int index9 = 1; index9 <= 300; ++index9)
+                            {
+                                for (int index10 = 1; index10 <= num4; ++index10)
+                                {
+                                    num22 = 0.0;
+                                    num21 = 0.0;
+                                    num19 = 1;
+                                    int num44 = k1Photo[index10];
+                                    int num45 = k2Photo[index10];
+                                    int num46 = numPhoto[index10];
+                                    fk = focPhoto[index10];
+                                    double num47 = xoPhoto[index10];
+                                    double num48 = yoPhoto[index10];
+                                    e1 = e1Photo[index10];
+                                    e2 = e2Photo[index10];
+                                    e3 = e3Photo[index10];
+                                    double xs = xsPhoto[index10];
+                                    double ys = ysPhoto[index10];
+                                    double zs = zsPhoto[index10];
+                                    int kt = 0;
+                                    for (int index11 = num44; index11 <= num45; ++index11)
+                                    {
+                                        for (int index12 = 1; index12 <= kFin1; ++index12)
+                                        {
+                                            if (namePhoto[index11] == nameBlock[index12])
+                                            {
+                                                ++kt;
+                                                nameFin[kt] = namePhoto[index11];
+                                                xFin[kt] = xBlock[index12];
+                                                yFin[kt] = yBlock[index12];
+                                                zFin[kt] = zBlock[index12];
+                                                xFoto[kt] = xPhoto[index11];
+                                                yFoto[kt] = yPhoto[index11];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    for (int index13 = 1; index13 <= kt; ++index13)
+                                    {
+                                        for (int index14 = 1; index14 <= kGeo; ++index14)
+                                        {
+                                            if (nameFin[index13] == geoName[index14])
+                                            {
+                                                if (xGeo[index14] != 0.0 || yGeo[index14] != 0.0)
+                                                {
+                                                    xFin[index13] = xGeo[index14];
+                                                    yFin[index13] = yGeo[index14];
+                                                }
+                                                if (zGeo[index14] != 0.0)
+                                                {
+                                                    zFin[index13] = zGeo[index14];
+                                                    break;
+                                                }
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    double num49 = 999999.9;
+                                    double num50 = -9999999.9;
+                                    for (int index15 = 1; index15 <= kt; ++index15)
+                                    {
+                                        if (xFoto[index15] < num49)
+                                            num49 = xFoto[index15];
+                                        if (xFoto[index15] > num50)
+                                            num50 = xFoto[index15];
+                                    }
+                                    double num51 = (num50 - num49) / 3.0;
+                                    double num52 = num49 - 0.1;
+                                    double num53 = num49 + num51;
+                                    double num54 = num50 - num51;
+                                    double num55 = num50 + 0.1;
+                                    int index16 = 0;
+                                    int index17 = 0;
+                                    for (int index18 = 1; index18 <= kt; ++index18)
+                                    {
+                                        if (xFoto[index18] > num52 && xFoto[index18] < num53)
+                                        {
+                                            ++index16;
+                                            xAdd[index16] = xFin[index18];
+                                            yAdd[index16] = yFin[index18];
+                                            xlBlock[index16] = xFoto[index18];
+                                            ylBlock[index16] = yFoto[index18];
+                                        }
+                                        if (xFoto[index18] > num54 && xFoto[index18] < num55)
+                                        {
+                                            ++index17;
+                                            xRes[index17] = xFin[index18];
+                                            yRes[index17] = yFin[index18];
+                                            xrBlock[index17] = xFoto[index18];
+                                            yrBlock[index17] = yFoto[index18];
+                                        }
+                                    }
+                                    double num56 = 9999999.9;
+                                    double num57 = -9999999.9;
+                                    double num58 = 0.0;
+                                    double num59 = 0.0;
+                                    double num60 = 0.0;
+                                    double num61 = 0.0;
+                                    if (index16 > 1)
+                                    {
+                                        for (int index19 = 1; index19 <= index16; ++index19)
+                                        {
+                                            if (ylBlock[index19] < num56)
+                                            {
+                                                num56 = ylBlock[index19];
+                                                num9 = xAdd[index19];
+                                                num8 = yAdd[index19];
+                                            }
+                                            if (ylBlock[index19] > num57)
+                                            {
+                                                num57 = ylBlock[index19];
+                                                num7 = xAdd[index19];
+                                                num6 = yAdd[index19];
+                                            }
+                                        }
+                                        num58 = num9;
+                                        num59 = num7;
+                                        num60 = num8;
+                                        num61 = num6;
+                                        num51 = num7 - num9;
+                                        num13 = num6 - num8;
+                                        num16 = num57 - num56;
+                                    }
+                                    double num62 = 9999999.9;
+                                    double num63 = -9999999.9;
+                                    double num64 = 0.0;
+                                    double num65 = 0.0;
+                                    double num66 = 0.0;
+                                    double num67 = 0.0;
+                                    if (index17 > 1)
+                                    {
+                                        for (int index20 = 1; index20 <= index17; ++index20)
+                                        {
+                                            if (yrBlock[index20] < num62)
+                                            {
+                                                num62 = yrBlock[index20];
+                                                num9 = xRes[index20];
+                                                num8 = yRes[index20];
+                                            }
+                                            if (yrBlock[index20] > num63)
+                                            {
+                                                num63 = yrBlock[index20];
+                                                num7 = xRes[index20];
+                                                num6 = yRes[index20];
+                                            }
+                                        }
+                                        num64 = num9;
+                                        num65 = num7;
+                                        num66 = num8;
+                                        num67 = num6;
+                                        num12 = num7 - num9;
+                                        num11 = num6 - num8;
+                                        num15 = num63 - num62;
+                                    }
+                                    if (Math.Abs(num51) > Math.Abs(num13) && Math.Abs(num12) > Math.Abs(num11))
+                                    {
+                                        num19 = 2;
+                                        for (int index21 = 1; index21 <= kt; ++index21)
+                                        {
+                                            double num68 = xFin[index21];
+                                            xFin[index21] = yFin[index21];
+                                            yFin[index21] = num68;
+                                        }
+                                        double num69 = xs;
+                                        xs = ys;
+                                        ys = num69;
+                                    }
+                                    double num70 = 999999.9;
+                                    double num71 = -9999999.9;
+                                    for (int index22 = 1; index22 <= kt; ++index22)
+                                    {
+                                        if (xFoto[index22] < num70)
+                                            num70 = xFoto[index22];
+                                        if (xFoto[index22] > num71)
+                                            num71 = xFoto[index22];
+                                    }
+                                    double num72 = (num71 - num70) / 3.0;
+                                    double num73 = num70 - 0.1;
+                                    double num74 = num70 + num72;
+                                    double num75 = num71 - num72;
+                                    double num76 = num71 + 0.1;
+                                    int index23 = 0;
+                                    int index24 = 0;
+                                    for (int index25 = 1; index25 <= kt; ++index25)
+                                    {
+                                        if (xFoto[index25] > num73 && xFoto[index25] < num74)
+                                        {
+                                            ++index23;
+                                            xAdd[index23] = xFin[index25];
+                                            yAdd[index23] = yFin[index25];
+                                            xlBlock[index23] = xFoto[index25];
+                                            ylBlock[index23] = yFoto[index25];
+                                        }
+                                        if (xFoto[index25] > num75 && xFoto[index25] < num76)
+                                        {
+                                            ++index24;
+                                            xRes[index24] = xFin[index25];
+                                            yRes[index24] = yFin[index25];
+                                            xrBlock[index24] = xFoto[index25];
+                                            yrBlock[index24] = yFoto[index25];
+                                        }
+                                    }
+                                    double num77 = 9999999.9;
+                                    double num78 = -9999999.9;
+                                    double num79 = 0.0;
+                                    double num80 = 0.0;
+                                    double num81 = 0.0;
+                                    double num82 = 0.0;
+                                    if (index23 > 1)
+                                    {
+                                        for (int index26 = 1; index26 <= index23; ++index26)
+                                        {
+                                            if (ylBlock[index26] < num77)
+                                            {
+                                                num77 = ylBlock[index26];
+                                                num9 = xAdd[index26];
+                                                num8 = yAdd[index26];
+                                            }
+                                            if (ylBlock[index26] > num78)
+                                            {
+                                                num78 = ylBlock[index26];
+                                                num7 = xAdd[index26];
+                                                num6 = yAdd[index26];
+                                            }
+                                        }
+                                        num79 = num9;
+                                        num80 = num7;
+                                        num81 = num8;
+                                        num82 = num6;
+                                        num72 = num7 - num9;
+                                        num13 = num6 - num8;
+                                        num16 = num78 - num77;
+                                    }
+                                    double num83 = 9999999.9;
+                                    double num84 = -9999999.9;
+                                    double num85 = 0.0;
+                                    double num86 = 0.0;
+                                    double num87 = 0.0;
+                                    double num88 = 0.0;
+                                    if (index24 > 1)
+                                    {
+                                        for (int index27 = 1; index27 <= index24; ++index27)
+                                        {
+                                            if (yrBlock[index27] < num83)
+                                            {
+                                                num83 = yrBlock[index27];
+                                                num9 = xRes[index27];
+                                                num8 = yRes[index27];
+                                            }
+                                            if (yrBlock[index27] > num84)
+                                            {
+                                                num84 = yrBlock[index27];
+                                                num7 = xRes[index27];
+                                                num6 = yRes[index27];
+                                            }
+                                        }
+                                        num85 = num9;
+                                        num86 = num7;
+                                        num87 = num8;
+                                        num88 = num6;
+                                        num12 = num7 - num9;
+                                        num11 = num6 - num8;
+                                        num15 = num84 - num83;
+                                    }
+                                    if (num16 >= num15)
+                                    {
+                                        if (Math.Abs(num72) > Math.Abs(num13))
+                                        {
+                                            if (num72 < 0.0)
+                                            {
+                                                num22 = xs;
+                                                for (int index28 = 1; index28 <= kt; ++index28)
+                                                    xlBlock[index28] = xFin[index28] - num22;
+                                                for (int index29 = 1; index29 <= kt; ++index29)
+                                                    xFin[index29] = num22 - xlBlock[index29];
+                                            }
+                                            double num89 = num87 - num81;
+                                            double num90 = num88 - num82;
+                                            if (num89 < 0.0 && num90 < 0.0)
+                                            {
+                                                num21 = ys;
+                                                for (int index30 = 1; index30 <= kt; ++index30)
+                                                    ylBlock[index30] = yFin[index30] - num21;
+                                                for (int index31 = 1; index31 <= kt; ++index31)
+                                                    yFin[index31] = num21 - ylBlock[index31];
+                                            }
+                                        }
+                                        if (Math.Abs(num13) > Math.Abs(num72))
+                                        {
+                                            if (num13 < 0.0)
+                                            {
+                                                num21 = ys;
+                                                for (int index32 = 1; index32 <= kt; ++index32)
+                                                    ylBlock[index32] = yFin[index32] - num21;
+                                                for (int index33 = 1; index33 <= kt; ++index33)
+                                                    yFin[index33] = num21 - ylBlock[index33];
+                                            }
+                                            double num91 = num85 - num79;
+                                            double num92 = num86 - num80;
+                                            if (num91 < 0.0 && num92 < 0.0)
+                                            {
+                                                num22 = xs;
+                                                for (int index34 = 1; index34 <= kt; ++index34)
+                                                    xlBlock[index34] = xFin[index34] - num21;
+                                                for (int index35 = 1; index35 <= kt; ++index35)
+                                                    xFin[index35] = num22 - xlBlock[index35];
+                                            }
+                                        }
+                                    }
+                                    if (num16 < num15)
+                                    {
+                                        if (Math.Abs(num12) > Math.Abs(num11))
+                                        {
+                                            if (num12 < 0.0)
+                                            {
+                                                num22 = xs;
+                                                for (int index36 = 1; index36 <= kt; ++index36)
+                                                    xlBlock[index36] = xFin[index36] - num22;
+                                                for (int index37 = 1; index37 <= kt; ++index37)
+                                                    xFin[index37] = num22 - xlBlock[index37];
+                                            }
+                                            double num93 = num87 - num81;
+                                            double num94 = num88 - num82;
+                                            if (num93 < 0.0 && num94 < 0.0)
+                                            {
+                                                num21 = ys;
+                                                for (int index38 = 1; index38 <= kt; ++index38)
+                                                    ylBlock[index38] = yFin[index38] - num21;
+                                                for (int index39 = 1; index39 <= kt; ++index39)
+                                                    yFin[index39] = num21 - ylBlock[index39];
+                                            }
+                                        }
+                                        if (Math.Abs(num11) > Math.Abs(num12))
+                                        {
+                                            if (num13 < 0.0)
+                                            {
+                                                num21 = ys;
+                                                for (int index40 = 1; index40 <= kt; ++index40)
+                                                    ylBlock[index40] = yFin[index40] - num21;
+                                                for (int index41 = 1; index41 <= kt; ++index41)
+                                                    yFin[index41] = num21 - ylBlock[index41];
+                                            }
+                                            double num95 = num85 - num79;
+                                            double num96 = num86 - num80;
+                                            if (num95 < 0.0 && num96 < 0.0)
+                                            {
+                                                num22 = xs;
+                                                for (int index42 = 1; index42 <= kt; ++index42)
+                                                    xlBlock[index42] = xFin[index42] - num22;
+                                                for (int index43 = 1; index43 <= kt; ++index43)
+                                                    xFin[index43] = num22 - xlBlock[index43];
+                                            }
+                                        }
+                                    }
+                                    xMovePhoto[index10] = num22;
+                                    yMovePhoto[index10] = num21;
+                                    iVariantPhoto[index10] = num19;
+                                    if (num22 != 0.0)
+                                    {
+                                        double num97 = xs - num22;
+                                        xs = num22 - num97;
+                                    }
+                                    if (num21 != 0.0)
+                                    {
+                                        num13 = ys - num21;
+                                        ys = num21 - num13;
+                                    }
+                                    Cursor.Current = Cursors.WaitCursor;
+                                    double ee1;
+                                    double ee2;
+                                    double ee3;
+                                    double xss;
+                                    double yss;
+                                    double zss;
+                                    DllClass1.InverseResection(fk, kt, ref xFin, ref yFin, ref zFin, xFoto, yFoto, ref e1, ref e2, ref e3, ref xs, ref ys, ref zs, out ee1, out ee2, out ee3, out xss, out yss, out zss, out int _);
+                                    if (xss == 0.0 && yss == 0.0 && zss == 0.0)
+                                        return;
+                                    if (num22 != 0.0)
+                                    {
+                                        double num98 = xss - num22;
+                                        xss = num22 - num98;
+                                    }
+                                    if (num21 != 0.0)
+                                    {
+                                        num13 = yss - num21;
+                                        yss = num21 - num13;
+                                    }
+                                    xsPhoto[index10] = xss;
+                                    ysPhoto[index10] = yss;
+                                    if (num19 == 2)
+                                    {
+                                        xsPhoto[index10] = yss;
+                                        ysPhoto[index10] = xss;
+                                    }
+                                    zsPhoto[index10] = zss;
+                                    focPhoto[index10] = fk;
+                                    xoPhoto[index10] = num47;
+                                    yoPhoto[index10] = num48;
+                                    e1Photo[index10] = ee1;
+                                    e2Photo[index10] = ee2;
+                                    e3Photo[index10] = ee3;
+                                    string str = Convert.ToString(-num46);
+                                    for (int index44 = 1; index44 <= kFin1; ++index44)
+                                    {
+                                        if (str == nameBlock[index44])
+                                        {
+                                            double num99 = xBlock[index44] - xss;
+                                            double num100 = yBlock[index44] - yss;
+                                            num16 = Math.Sqrt(num99 * num99 + num100 * num100);
+                                            double num101 = xBlock[index44] - yss;
+                                            num13 = yBlock[index44] - xss;
+                                            num15 = Math.Sqrt(num101 * num101 + num13 * num13);
+                                            xBlock[index44] = xss;
+                                            yBlock[index44] = yss;
+                                            if (num15 < num16)
+                                            {
+                                                xBlock[index44] = yss;
+                                                yBlock[index44] = xss;
+                                            }
+                                            zBlock[index44] = zss;
+                                            break;
+                                        }
+                                    }
+                                }
+                                int kFin2 = 0;
+                                for (int index45 = 1; index45 <= index4; ++index45)
+                                {
+                                    int num102 = kp1Foto[index45];
+                                    int num103 = kp2Foto[index45];
+                                    int kt = 0;
+                                    for (int index46 = num102; index46 <= num103; ++index46)
+                                    {
+                                        ++kt;
+                                        blockName[kt] = pntName[index46];
+                                        xlBlock[kt] = xLeft[index46];
+                                        ylBlock[kt] = yLeft[index46];
+                                        xrBlock[kt] = xRight[index46];
+                                        yrBlock[kt] = yRight[index46];
+                                    }
+                                    int num104 = modLeft[index45];
+                                    int num105 = modRight[index45];
+                                    for (int index47 = 1; index47 <= num4; ++index47)
+                                    {
+                                        int num106 = numPhoto[index47];
+                                        num22 = xMovePhoto[index47];
+                                        num21 = yMovePhoto[index47];
+                                        num19 = iVariantPhoto[index47];
+                                        if (num104 == num106)
+                                        {
+                                            xs1 = xsPhoto[index47];
+                                            ys1 = ysPhoto[index47];
+                                            if (num19 == 2)
+                                            {
+                                                ys1 = xsPhoto[index47];
+                                                xs1 = ysPhoto[index47];
+                                            }
+                                            fk = focPhoto[index47];
+                                            num33 = xoPhoto[index47];
+                                            num34 = yoPhoto[index47];
+                                            zs1 = zsPhoto[index47];
+                                            e1 = e1Photo[index47];
+                                            e2 = e2Photo[index47];
+                                            e3 = e3Photo[index47];
+                                            break;
+                                        }
+                                    }
+                                    for (int index48 = 1; index48 <= num4; ++index48)
+                                    {
+                                        int num107 = numPhoto[index48];
+                                        if (num105 == num107)
+                                        {
+                                            xs2 = xsPhoto[index48];
+                                            ys2 = ysPhoto[index48];
+                                            if (num19 == 2)
+                                            {
+                                                ys2 = xsPhoto[index48];
+                                                xs2 = ysPhoto[index48];
+                                            }
+                                            fk = focPhoto[index48];
+                                            num33 = xoPhoto[index48];
+                                            num34 = yoPhoto[index48];
+                                            zs2 = zsPhoto[index48];
+                                            f1 = e1Photo[index48];
+                                            f2 = e2Photo[index48];
+                                            f3 = e3Photo[index48];
+                                            break;
+                                        }
+                                    }
+                                    if (num22 != 0.0)
+                                    {
+                                        double num108 = xs1 - num22;
+                                        xs1 = num22 - num108;
+                                        double num109 = xs2 - num22;
+                                        xs2 = num22 - num109;
+                                    }
+                                    if (num21 != 0.0)
+                                    {
+                                        double num110 = ys1 - num21;
+                                        ys1 = num21 - num110;
+                                        double num111 = ys2 - num21;
+                                        ys2 = num21 - num111;
+                                    }
+                                    Cursor.Current = Cursors.WaitCursor;
+                                    DllClass1.DirectResection(fk, xs1, ys1, zs1, e1, e2, e3, xs2, ys2, zs2, f1, f2, f3, kt, xlBlock, ylBlock, xrBlock, yrBlock, ref xFin, ref yFin, ref zFin);
+                                    if (num22 != 0.0)
+                                    {
+                                        for (int index49 = 1; index49 <= kt; ++index49)
+                                            xAdd[index49] = xFin[index49] - num22;
+                                        for (int index50 = 1; index50 <= kt; ++index50)
+                                            xFin[index50] = num22 - xAdd[index50];
+                                    }
+                                    if (num21 != 0.0)
+                                    {
+                                        for (int index51 = 1; index51 <= kt; ++index51)
+                                            yAdd[index51] = yFin[index51] - num21;
+                                        for (int index52 = 1; index52 <= kt; ++index52)
+                                            yFin[index52] = num21 - yAdd[index52];
+                                    }
+                                    for (int index53 = 1; index53 <= kt; ++index53)
+                                    {
+                                        ++kFin2;
+                                        fotoName[kFin2] = blockName[index53];
+                                        xBase[kFin2] = xFin[index53];
+                                        yBase[kFin2] = yFin[index53];
+                                        zBase[kFin2] = zFin[index53];
+                                    }
+                                }
+                                DllClass1.MiddleCoord(kFin2, ref fotoName, ref xBase, ref yBase, ref zBase, out kPnt, ref nameFin, ref xFin, ref yFin, ref zFin, ref nDif);
+                                if (kPnt == 0)
+                                    return;
+                                for (int index54 = 1; index54 <= kFin1; ++index54)
+                                {
+                                    for (int index55 = 1; index55 <= kPnt; ++index55)
+                                    {
+                                        if (nameBlock[index54] == nameFin[index55])
+                                        {
+                                            xBlock[index54] = xFin[index55];
+                                            yBlock[index54] = yFin[index55];
+                                            if (num19 == 2)
+                                            {
+                                                xBlock[index54] = yFin[index55];
+                                                yBlock[index54] = xFin[index55];
+                                            }
+                                            zBlock[index54] = zFin[index55];
+                                            break;
+                                        }
+                                    }
+                                }
+                                DllClass1.DifCoord(kGeo, geoName, xGeo, yGeo, zGeo, kFin1, nameBlock, xBlock, yBlock, zBlock, out kDif1, ref tmpName1, ref xFin, ref yFin, ref zFin, ref sBase);
+                                if (kDif1 == 0)
+                                    return;
+                                double num112 = 0.0;
+                                num13 = 0.0;
+                                double num113 = 0.0;
+                                if (kDif1 > 0)
+                                {
+                                    for (int index56 = 1; index56 <= kDif1; ++index56)
+                                    {
+                                        num112 += Math.Abs(xFin[index56]);
+                                        num13 += Math.Abs(yFin[index56]);
+                                        num113 += Math.Abs(zFin[index56]);
+                                    }
+                                }
+                                if (numXYZ == 1)
+                                    num18 = num112 + num13 + num113;
+                                if (numXYZ == 2)
+                                    num18 = num112 + num13;
+                                if (numXYZ == 3)
+                                    num18 = num113;
+                                if (num43 > num18)
+                                {
+                                    num43 = num18;
+                                    num1 = index9;
+                                    if (File.Exists(fileAdd))
+                                        File.Delete(fileAdd);
+                                    FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+                                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                                    binaryWriter1.Write(kFin1);
+                                    for (int index57 = 1; index57 <= kFin1; ++index57)
+                                    {
+                                        binaryWriter1.Write(nameBlock[index57]);
+                                        binaryWriter1.Write(xBlock[index57]);
+                                        binaryWriter1.Write(yBlock[index57]);
+                                        binaryWriter1.Write(zBlock[index57]);
+                                    }
+                                    binaryWriter1.Close();
+                                    output1.Close();
+                                    if (File.Exists(aerialPhoto))
+                                        File.Delete(aerialPhoto);
+                                    FileStream output2 = new FileStream(aerialPhoto, FileMode.CreateNew);
+                                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                                    binaryWriter2.Write(num4);
+                                    for (int index58 = 1; index58 <= num4; ++index58)
+                                    {
+                                        binaryWriter2.Write(numPhoto[index58]);
+                                        binaryWriter2.Write(ktPhoto[index58]);
+                                        binaryWriter2.Write(k1Photo[index58]);
+                                        binaryWriter2.Write(k2Photo[index58]);
+                                        binaryWriter2.Write(focPhoto[index58]);
+                                        binaryWriter2.Write(xoPhoto[index58]);
+                                        binaryWriter2.Write(yoPhoto[index58]);
+                                        binaryWriter2.Write(xsPhoto[index58]);
+                                        binaryWriter2.Write(ysPhoto[index58]);
+                                        binaryWriter2.Write(zsPhoto[index58]);
+                                        binaryWriter2.Write(e1Photo[index58]);
+                                        binaryWriter2.Write(e2Photo[index58]);
+                                        binaryWriter2.Write(e3Photo[index58]);
+                                        binaryWriter2.Write(iVariantPhoto[index58]);
+                                        binaryWriter2.Write(xMovePhoto[index58]);
+                                        binaryWriter2.Write(yMovePhoto[index58]);
+                                        int num114 = k1Photo[index58];
+                                        int num115 = k2Photo[index58];
+                                        for (int index59 = num114; index59 <= num115; ++index59)
+                                        {
+                                            binaryWriter2.Write(namePhoto[index59]);
+                                            binaryWriter2.Write(xPhoto[index59]);
+                                            binaryWriter2.Write(yPhoto[index59]);
+                                        }
+                                    }
+                                    binaryWriter2.Close();
+                                    output2.Close();
+                                }
+                                if (num18 < 0.001 || index9 == 298)
+                                    break;
+                            }
+                            numApprox = num1;
+                            if (File.Exists(fileAdd))
+                            {
+                                FileStream input5 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                                BinaryReader binaryReader5 = new BinaryReader((Stream)input5);
+                                try
+                                {
+                                    kPnt = binaryReader5.ReadInt32();
+                                    for (int index60 = 1; index60 <= kPnt; ++index60)
+                                    {
+                                        nameFin[index60] = binaryReader5.ReadString();
+                                        xFin[index60] = binaryReader5.ReadDouble();
+                                        yFin[index60] = binaryReader5.ReadDouble();
+                                        zFin[index60] = binaryReader5.ReadDouble();
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("The Read operation failed as expected.");
+                                }
+                                finally
+                                {
+                                    binaryReader5.Close();
+                                    input5.Close();
+                                }
+                            }
+                            DllClass1.Polynom(1, kGeo, geoName, xGeo, yGeo, zGeo, kPnt, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                            DllClass1.Polynom(3, kGeo, geoName, xGeo, yGeo, zGeo, kPnt, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+                            int kDif2;
+                            DllClass1.DifCoord(kGeo, geoName, xGeo, yGeo, zGeo, kPnt, nameFin, xFin, yFin, zFin, out kDif2, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                            if (kDif2 == 0)
+                                return;
+                            double num116 = 0.0;
+                            double num117 = 0.0;
+                            double num118 = 0.0;
+                            if (kDif2 > 0)
+                            {
+                                for (int index61 = 1; index61 <= kDif2; ++index61)
+                                {
+                                    num116 += Math.Abs(xBase[index61]);
+                                    num117 += Math.Abs(yBase[index61]);
+                                    num118 += Math.Abs(zBase[index61]);
+                                }
+                            }
+                            if (num116 == 0.0 && num117 == 0.0 && num118 == 0.0)
+                            {
+                                num116 = 0.0001;
+                                num117 = 0.0001;
+                                num118 = 0.0001;
+                            }
+                            if (numXYZ == 1)
+                            {
+                                tolDx[3] = num116 / (double)kDif2;
+                                tolDy[3] = num117 / (double)kDif2;
+                                tolDz[3] = num118 / (double)kDif2;
+                            }
+                            if (numXYZ == 2)
+                            {
+                                tolDx[4] = num116 / (double)kDif2;
+                                tolDy[4] = num117 / (double)kDif2;
+                                tolDz[4] = num118 / (double)kDif2;
+                            }
+                            if (numXYZ == 3)
+                            {
+                                tolDx[5] = num116 / (double)kDif2;
+                                tolDy[5] = num117 / (double)kDif2;
+                                tolDz[5] = num118 / (double)kDif2;
+                            }
+                            sumTol[1] = Math.Sqrt(tolDx[1] * tolDx[1] + tolDy[1] * tolDy[1] + tolDz[1] * tolDz[1]);
+                            sumTol[2] = Math.Sqrt(tolDx[2] * tolDx[2] + tolDy[2] * tolDy[2] + tolDz[2] * tolDz[2]);
+                            sumTol[3] = Math.Sqrt(tolDx[3] * tolDx[3] + tolDy[3] * tolDy[3] + tolDz[3] * tolDz[3]);
+                            sumTol[4] = Math.Sqrt(tolDx[4] * tolDx[4] + tolDy[4] * tolDy[4] + tolDz[4] * tolDz[4]);
+                            sumTol[5] = Math.Sqrt(tolDx[5] * tolDx[5] + tolDy[5] * tolDy[5] + tolDz[5] * tolDz[5]);
+                            int num119 = 0;
+                            double num120 = 9999999.9;
+                            for (int index62 = 1; index62 <= 5; ++index62)
+                            {
+                                if (sumTol[index62] != 0.0 && sumTol[index62] < num120)
+                                {
+                                    num120 = sumTol[index62];
+                                    num119 = index62;
+                                }
+                            }
+                            int num121 = 0;
+                            if (numXYZ == 1 && num119 == 3)
+                                num121 = 1;
+                            if (numXYZ == 2 && num119 == 4)
+                                num121 = 2;
+                            if (numXYZ == 3 && num119 == 5)
+                                num121 = 3;
+                            if (num121 <= 0)
+                                return;
+                            if (File.Exists(difTarget))
+                                File.Delete(difTarget);
+                            BinaryWriter binaryWriter3 = new BinaryWriter((Stream)new FileStream(difTarget, FileMode.CreateNew));
+                            binaryWriter3.Write(kDif2);
+                            for (int index63 = 1; index63 <= kDif2; ++index63)
+                            {
+                                binaryWriter3.Write(tmpName[index63]);
+                                binaryWriter3.Write(xBase[index63]);
+                                binaryWriter3.Write(yBase[index63]);
+                                binaryWriter3.Write(zBase[index63]);
+                            }
+                            binaryWriter3.Close();
+                            xmin = 9999999.9;
+                            ymin = 9999999.9;
+                            xmax = -9999999.9;
+                            ymax = -9999999.9;
+                            zmin = 9999999.9;
+                            zmax = -9999999.9;
+                            for (int index64 = 1; index64 <= kPnt; ++index64)
+                            {
+                                if (xFin[index64] < xmin)
+                                    xmin = xFin[index64];
+                                if (xFin[index64] > xmax)
+                                    xmax = xFin[index64];
+                                if (yFin[index64] < ymin)
+                                    ymin = yFin[index64];
+                                if (yFin[index64] > ymax)
+                                    ymax = yFin[index64];
+                                if (zFin[index64] < zmin)
+                                    zmin = zFin[index64];
+                                if (zFin[index64] > zmax)
+                                    zmax = zFin[index64];
+                            }
+                            if (File.Exists(aeroBlock))
+                                File.Delete(aeroBlock);
+                            BinaryWriter binaryWriter4 = new BinaryWriter((Stream)new FileStream(aeroBlock, FileMode.CreateNew));
+                            binaryWriter4.Write(xmin);
+                            binaryWriter4.Write(ymin);
+                            binaryWriter4.Write(xmax);
+                            binaryWriter4.Write(ymax);
+                            binaryWriter4.Write(zmin);
+                            binaryWriter4.Write(zmax);
+                            binaryWriter4.Write(kPnt);
+                            for (int index65 = 1; index65 <= kPnt; ++index65)
+                            {
+                                binaryWriter4.Write(nameFin[index65]);
+                                binaryWriter4.Write(xFin[index65]);
+                                binaryWriter4.Write(yFin[index65]);
+                                binaryWriter4.Write(zFin[index65]);
+                            }
+                            binaryWriter4.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        public void BaseOrient()
+        {
+            int num1 = 0;
+            if (File.Exists(aerialPhoto))
+            {
+                FileStream input = new FileStream(aerialPhoto, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index1 = 1; index1 <= num1; ++index1)
+                    {
+                        numPhoto[index1] = binaryReader.ReadInt32();
+                        ktPhoto[index1] = binaryReader.ReadInt32();
+                        k1Photo[index1] = binaryReader.ReadInt32();
+                        k2Photo[index1] = binaryReader.ReadInt32();
+                        focPhoto[index1] = binaryReader.ReadDouble();
+                        xoPhoto[index1] = binaryReader.ReadDouble();
+                        yoPhoto[index1] = binaryReader.ReadDouble();
+                        xsPhoto[index1] = binaryReader.ReadDouble();
+                        ysPhoto[index1] = binaryReader.ReadDouble();
+                        zsPhoto[index1] = binaryReader.ReadDouble();
+                        e1Photo[index1] = binaryReader.ReadDouble();
+                        e2Photo[index1] = binaryReader.ReadDouble();
+                        e3Photo[index1] = binaryReader.ReadDouble();
+                        iVariantPhoto[index1] = binaryReader.ReadInt32();
+                        xMovePhoto[index1] = binaryReader.ReadDouble();
+                        yMovePhoto[index1] = binaryReader.ReadDouble();
+                        int num2 = k1Photo[index1];
+                        int num3 = k2Photo[index1];
+                        for (int index2 = num2; index2 <= num3; ++index2)
+                        {
+                            namePhoto[index2] = binaryReader.ReadString();
+                            xPhoto[index2] = binaryReader.ReadDouble();
+                            yPhoto[index2] = binaryReader.ReadDouble();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (num1 == 0)
+                return;
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            int index3 = 0;
+            int num4 = 0;
+            if (File.Exists(fbaseOrient))
+            {
+                FileStream input = new FileStream(fbaseOrient, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    int num5 = binaryReader.ReadInt32();
+                    for (int index4 = 1; index4 <= num5; ++index4)
+                    {
+                        int num6 = binaryReader.ReadInt32();
+                        double num7 = binaryReader.ReadDouble();
+                        double num8 = binaryReader.ReadDouble();
+                        double num9 = binaryReader.ReadDouble();
+                        double num10 = binaryReader.ReadDouble();
+                        double num11 = binaryReader.ReadDouble();
+                        double num12 = binaryReader.ReadDouble();
+                        double num13 = binaryReader.ReadDouble();
+                        double num14 = binaryReader.ReadDouble();
+                        double num15 = binaryReader.ReadDouble();
+                        int num16 = binaryReader.ReadInt32();
+                        double num17 = binaryReader.ReadDouble();
+                        double num18 = binaryReader.ReadDouble();
+                        int index5 = 0;
+                        for (int index6 = 1; index6 <= num1; ++index6)
+                        {
+                            if (numPhoto[index6] == num6)
+                            {
+                                index5 = index6;
+                                break;
+                            }
+                        }
+                        if (index5 == 0)
+                        {
+                            ++num4;
+                            binaryWriter.Write(num6);
+                            binaryWriter.Write(num7);
+                            binaryWriter.Write(num8);
+                            binaryWriter.Write(num9);
+                            binaryWriter.Write(num10);
+                            binaryWriter.Write(num11);
+                            binaryWriter.Write(num12);
+                            binaryWriter.Write(num13);
+                            binaryWriter.Write(num14);
+                            binaryWriter.Write(num15);
+                            binaryWriter.Write(num16);
+                            binaryWriter.Write(num17);
+                            binaryWriter.Write(num18);
+                        }
+                        if (index5 > 0)
+                        {
+                            ++index3;
+                            nDif[index3] = numPhoto[index5];
+                            binaryWriter.Write(numPhoto[index5]);
+                            binaryWriter.Write(focPhoto[index5]);
+                            binaryWriter.Write(xoPhoto[index5]);
+                            binaryWriter.Write(yoPhoto[index5]);
+                            binaryWriter.Write(xsPhoto[index5]);
+                            binaryWriter.Write(ysPhoto[index5]);
+                            binaryWriter.Write(zsPhoto[index5]);
+                            binaryWriter.Write(e1Photo[index5]);
+                            binaryWriter.Write(e2Photo[index5]);
+                            binaryWriter.Write(e3Photo[index5]);
+                            binaryWriter.Write(iVariantPhoto[index5]);
+                            binaryWriter.Write(xMovePhoto[index5]);
+                            binaryWriter.Write(yMovePhoto[index5]);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            int num19 = num4 + index3;
+            if (File.Exists(aerialPhoto))
+            {
+                FileStream input = new FileStream(aerialPhoto, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                FileStream output = new FileStream(fileAdd, FileMode.Append, FileAccess.Write);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    int num20 = binaryReader.ReadInt32();
+                    for (int index7 = 1; index7 <= num20; ++index7)
+                    {
+                        int num21 = binaryReader.ReadInt32();
+                        binaryReader.ReadInt32();
+                        int num22 = binaryReader.ReadInt32();
+                        int num23 = binaryReader.ReadInt32();
+                        double num24 = binaryReader.ReadDouble();
+                        double num25 = binaryReader.ReadDouble();
+                        double num26 = binaryReader.ReadDouble();
+                        double num27 = binaryReader.ReadDouble();
+                        double num28 = binaryReader.ReadDouble();
+                        double num29 = binaryReader.ReadDouble();
+                        double num30 = binaryReader.ReadDouble();
+                        double num31 = binaryReader.ReadDouble();
+                        double num32 = binaryReader.ReadDouble();
+                        int num33 = binaryReader.ReadInt32();
+                        double num34 = binaryReader.ReadDouble();
+                        double num35 = binaryReader.ReadDouble();
+                        for (int index8 = num22; index8 <= num23; ++index8)
+                        {
+                            namePhoto[index8] = binaryReader.ReadString();
+                            xPhoto[index8] = binaryReader.ReadDouble();
+                            yPhoto[index8] = binaryReader.ReadDouble();
+                        }
+                        int num36 = 0;
+                        if (index3 > 0)
+                        {
+                            for (int index9 = 1; index9 <= index3; ++index9)
+                            {
+                                if (nDif[index9] == num21)
+                                {
+                                    num36 = index9;
+                                    break;
+                                }
+                            }
+                        }
+                        if (num36 == 0)
+                        {
+                            ++num19;
+                            binaryWriter.Write(num21);
+                            binaryWriter.Write(num24);
+                            binaryWriter.Write(num25);
+                            binaryWriter.Write(num26);
+                            binaryWriter.Write(num27);
+                            binaryWriter.Write(num28);
+                            binaryWriter.Write(num29);
+                            binaryWriter.Write(num30);
+                            binaryWriter.Write(num31);
+                            binaryWriter.Write(num32);
+                            binaryWriter.Write(num33);
+                            binaryWriter.Write(num34);
+                            binaryWriter.Write(num35);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input1 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(fbaseOrient))
+                File.Delete(fbaseOrient);
+            FileStream output1 = new FileStream(fbaseOrient, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            try
+            {
+                binaryWriter1.Write(num19);
+                for (int index10 = 1; index10 <= num19; ++index10)
+                {
+                    int num37 = binaryReader1.ReadInt32();
+                    double num38 = binaryReader1.ReadDouble();
+                    double num39 = binaryReader1.ReadDouble();
+                    double num40 = binaryReader1.ReadDouble();
+                    double num41 = binaryReader1.ReadDouble();
+                    double num42 = binaryReader1.ReadDouble();
+                    double num43 = binaryReader1.ReadDouble();
+                    double num44 = binaryReader1.ReadDouble();
+                    double num45 = binaryReader1.ReadDouble();
+                    double num46 = binaryReader1.ReadDouble();
+                    int num47 = binaryReader1.ReadInt32();
+                    double num48 = binaryReader1.ReadDouble();
+                    double num49 = binaryReader1.ReadDouble();
+                    binaryWriter1.Write(num37);
+                    binaryWriter1.Write(num38);
+                    binaryWriter1.Write(num39);
+                    binaryWriter1.Write(num40);
+                    binaryWriter1.Write(num41);
+                    binaryWriter1.Write(num42);
+                    binaryWriter1.Write(num43);
+                    binaryWriter1.Write(num44);
+                    binaryWriter1.Write(num45);
+                    binaryWriter1.Write(num46);
+                    binaryWriter1.Write(num47);
+                    binaryWriter1.Write(num48);
+                    binaryWriter1.Write(num49);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            output1.Close();
+            binaryWriter1.Close();
+        }
+
+        public void OneStereo(
+          out int iCond,
+          string curStrip,
+          string curAero,
+          string curPhoto,
+          string curOrient,
+          string curFoto)
+        {
+            string[] strArray1 = new string[10];
+            string[] strArray2 = new string[10];
+            string[] strArray3 = new string[10];
+            string[] strArray4 = new string[10];
+            string[] strArray5 = new string[10];
+            string[] strArray6 = new string[22];
+            string[] strArray7 = new string[22];
+            double[] numArray1 = new double[22];
+            double[] numArray2 = new double[22];
+            iCond = 0;
+            long num1 = 0;
+            double num2;
+            double num3 = num2 = 0.0;
+            double num4 = num2;
+            double fk1 = num2;
+            int num5;
+            int kt = num5 = 0;
+            int num6 = num5;
+            int num7 = num5;
+            int num8;
+            int num9 = num8 = 0;
+            int num10 = 0;
+            if (!File.Exists(curStrip))
+            {
+                int num11 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                FileStream input1 = new FileStream(curStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    num8 = binaryReader1.ReadInt32();
+                    for (int index = 1; index <= num8; ++index)
+                    {
+                        kModelStrip[index] = binaryReader1.ReadInt32();
+                        numCamera[index] = binaryReader1.ReadInt64();
+                        num10 += kModelStrip[index];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (num10 > 1)
+                {
+                    int num12 = (int)MessageBox.Show("More than one model", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    if (File.Exists(curAero))
+                    {
+                        FileStream input2 = new FileStream(curAero, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                        try
+                        {
+                            for (int index1 = 1; index1 <= num8; ++index1)
+                            {
+                                int num13 = kModelStrip[index1];
+                                FileStream input3 = new FileStream(fstoreCam, FileMode.Open, FileAccess.Read);
+                                BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                                try
+                                {
+                                    kCamera = Convert.ToInt32(binaryReader3.ReadString());
+                                    for (int index2 = 1; index2 <= kCamera; ++index2)
+                                    {
+                                        strArray1[index2] = binaryReader3.ReadString();
+                                        strArray2[index2] = binaryReader3.ReadString();
+                                        strArray3[index2] = binaryReader3.ReadString();
+                                        strArray4[index2] = binaryReader3.ReadString();
+                                        strArray5[index2] = binaryReader3.ReadString();
+                                        strArray6[index2] = binaryReader3.ReadString();
+                                        strArray7[index2] = binaryReader3.ReadString();
+                                        numCam[index2] = (long)Convert.ToInt32(strArray1[index2]);
+                                        nameCam[index2] = strArray2[index2];
+                                        focCam[index2] = Convert.ToDouble(strArray3[index2]);
+                                        xoCam[index2] = Convert.ToDouble(strArray4[index2]);
+                                        yoCam[index2] = Convert.ToDouble(strArray5[index2]);
+                                        markCam[index2] = Convert.ToInt32(strArray6[index2]);
+                                        dstrCam[index2] = Convert.ToInt32(strArray7[index2]);
+                                        int int32_1 = Convert.ToInt32(strArray6[index2]);
+                                        int int32_2 = Convert.ToInt32(strArray7[index2]);
+                                        if (int32_1 > 0)
+                                        {
+                                            for (int index3 = 1; index3 <= int32_1; ++index3)
+                                            {
+                                                strArray1[index3] = binaryReader3.ReadString();
+                                                strArray2[index3] = binaryReader3.ReadString();
+                                                strArray3[index3] = binaryReader3.ReadString();
+                                                nMark[index3] = Convert.ToInt32(strArray1[index3]);
+                                                xMark[index3] = Convert.ToDouble(strArray2[index3]);
+                                                yMark[index3] = Convert.ToDouble(strArray3[index3]);
+                                            }
+                                        }
+                                        if (int32_2 > 0)
+                                        {
+                                            for (int index4 = 1; index4 <= int32_2; ++index4)
+                                            {
+                                                strArray6[index4] = binaryReader3.ReadString();
+                                                strArray7[index4] = binaryReader3.ReadString();
+                                                numArray1[index4] = Convert.ToDouble(strArray6[index4]);
+                                                numArray2[index4] = Convert.ToDouble(strArray7[index4]);
+                                            }
+                                        }
+                                        if (numCamera[index1] == numCam[index2])
+                                        {
+                                            num4 = xoCam[index2];
+                                            num3 = yoCam[index2];
+                                            fk1 = focCam[index2];
+                                            break;
+                                        }
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine("The Read operation failed as expected.");
+                                }
+                                finally
+                                {
+                                    binaryReader3.Close();
+                                    input3.Close();
+                                }
+                                for (int index5 = 1; index5 <= num13; ++index5)
+                                {
+                                    num1 = binaryReader2.ReadInt64();
+                                    num7 = binaryReader2.ReadInt32();
+                                    num6 = binaryReader2.ReadInt32();
+                                    binaryReader2.ReadInt32();
+                                    num9 = binaryReader2.ReadInt32();
+                                    for (int index6 = 1; index6 <= num9; ++index6)
+                                    {
+                                        pntName[index6] = binaryReader2.ReadString();
+                                        xLeft[index6] = binaryReader2.ReadDouble();
+                                        yLeft[index6] = binaryReader2.ReadDouble();
+                                        xRight[index6] = binaryReader2.ReadDouble();
+                                        yRight[index6] = binaryReader2.ReadDouble();
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input2.Close();
+                            binaryReader2.Close();
+                        }
+                    }
+                    int num14 = 2;
+                    numPhoto[1] = num7;
+                    focPhoto[1] = fk1;
+                    xoPhoto[1] = num4;
+                    yoPhoto[1] = num3;
+                    ktPhoto[1] = num9;
+                    k1Photo[1] = 1;
+                    k2Photo[1] = num9;
+                    numPhoto[2] = num6;
+                    focPhoto[2] = fk1;
+                    xoPhoto[2] = num4;
+                    yoPhoto[2] = num3;
+                    ktPhoto[2] = num9;
+                    k1Photo[2] = k2Photo[1] + 1;
+                    k2Photo[2] = k2Photo[1] + num9;
+                    if (File.Exists(curPhoto))
+                        File.Delete(curPhoto);
+                    FileStream output1 = new FileStream(curPhoto, FileMode.CreateNew);
+                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                    binaryWriter1.Write(num14);
+                    for (int index7 = 1; index7 <= num14; ++index7)
+                    {
+                        binaryWriter1.Write(numPhoto[index7]);
+                        binaryWriter1.Write(ktPhoto[index7]);
+                        binaryWriter1.Write(k1Photo[index7]);
+                        binaryWriter1.Write(k2Photo[index7]);
+                        binaryWriter1.Write(focPhoto[index7]);
+                        binaryWriter1.Write(xoPhoto[index7]);
+                        binaryWriter1.Write(yoPhoto[index7]);
+                        xsPhoto[index7] = 0.0;
+                        ysPhoto[index7] = 0.0;
+                        zsPhoto[index7] = 0.0;
+                        e1Photo[index7] = 0.0;
+                        e2Photo[index7] = 0.0;
+                        e3Photo[index7] = 0.0;
+                        binaryWriter1.Write(xsPhoto[index7]);
+                        binaryWriter1.Write(ysPhoto[index7]);
+                        binaryWriter1.Write(zsPhoto[index7]);
+                        binaryWriter1.Write(e1Photo[index7]);
+                        binaryWriter1.Write(e2Photo[index7]);
+                        binaryWriter1.Write(e3Photo[index7]);
+                        iVariantPhoto[index7] = 0;
+                        xMovePhoto[index7] = 0.0;
+                        yMovePhoto[index7] = 0.0;
+                        binaryWriter1.Write(iVariantPhoto[index7]);
+                        binaryWriter1.Write(xMovePhoto[index7]);
+                        binaryWriter1.Write(yMovePhoto[index7]);
+                        int num15 = ktPhoto[index7];
+                        if (index7 == 1)
+                        {
+                            for (int index8 = 1; index8 <= num15; ++index8)
+                            {
+                                binaryWriter1.Write(pntName[index8]);
+                                binaryWriter1.Write(xLeft[index8]);
+                                binaryWriter1.Write(yLeft[index8]);
+                            }
+                        }
+                        if (index7 == 2)
+                        {
+                            for (int index9 = 1; index9 <= num15; ++index9)
+                            {
+                                binaryWriter1.Write(pntName[index9]);
+                                binaryWriter1.Write(xRight[index9]);
+                                binaryWriter1.Write(yRight[index9]);
+                            }
+                        }
+                    }
+                    binaryWriter1.Close();
+                    output1.Close();
+                    if (File.Exists(curAero))
+                    {
+                        BinaryReader binaryReader4 = new BinaryReader((Stream)new FileStream(curAero, FileMode.Open, FileAccess.Read));
+                        if (File.Exists(curOrient))
+                            File.Delete(curOrient);
+                        FileStream output2 = new FileStream(curOrient, FileMode.CreateNew);
+                        BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                        try
+                        {
+                            for (int index10 = 1; index10 <= num8; ++index10)
+                            {
+                                int num16 = kModelStrip[index10];
+                                for (int index11 = 1; index11 <= num16; ++index11)
+                                {
+                                    numModel[index11] = binaryReader4.ReadInt64();
+                                    modLeft[index11] = binaryReader4.ReadInt32();
+                                    modRight[index11] = binaryReader4.ReadInt32();
+                                    modMark[index11] = binaryReader4.ReadInt32();
+                                    modPoint[index11] = binaryReader4.ReadInt32();
+                                    num1 = numModel[index11];
+                                    int num17 = modLeft[index11];
+                                    int num18 = modRight[index11];
+                                    int num19 = modPoint[index11];
+                                    kt = 0;
+                                    for (int index12 = 1; index12 <= num19; ++index12)
+                                    {
+                                        pntName[index12] = binaryReader4.ReadString();
+                                        xLeft[index12] = binaryReader4.ReadDouble();
+                                        yLeft[index12] = binaryReader4.ReadDouble();
+                                        xRight[index12] = binaryReader4.ReadDouble();
+                                        yRight[index12] = binaryReader4.ReadDouble();
+                                        if (index12 > modMark[index11])
+                                        {
+                                            ++kt;
+                                            nameBlock[kt] = pntName[index12];
+                                            xlBlock[kt] = xLeft[index12];
+                                            ylBlock[kt] = yLeft[index12];
+                                            xrBlock[kt] = xRight[index12];
+                                            yrBlock[kt] = yRight[index12];
+                                        }
+                                    }
+                                    double ee1;
+                                    double ee3;
+                                    double ee4;
+                                    double ee5;
+                                    double ee6;
+                                    double qp;
+                                    double qm;
+                                    DllClass1.Relative(fk1, kt, xlBlock, ylBlock, xrBlock, yrBlock, out ee1, out ee3, out ee4, out ee5, out ee6, remPar, out qp, out qm);
+                                    if (ee1 == 0.0 && ee3 == 0.0 && ee4 == 0.0 && ee5 == 0.0)
+                                        return;
+                                    binaryWriter2.Write(num1);
+                                    binaryWriter2.Write(num17);
+                                    binaryWriter2.Write(num18);
+                                    binaryWriter2.Write(ee1);
+                                    binaryWriter2.Write(ee3);
+                                    binaryWriter2.Write(ee4);
+                                    binaryWriter2.Write(ee5);
+                                    binaryWriter2.Write(ee6);
+                                    binaryWriter2.Write(qp);
+                                    binaryWriter2.Write(qm);
+                                    binaryWriter2.Write(fk1);
+                                    binaryWriter2.Write(num4);
+                                    binaryWriter2.Write(num3);
+                                    binaryWriter2.Write(kt);
+                                    for (int index13 = 1; index13 <= kt; ++index13)
+                                    {
+                                        binaryWriter2.Write(nameBlock[index13]);
+                                        binaryWriter2.Write(xlBlock[index13]);
+                                        binaryWriter2.Write(ylBlock[index13]);
+                                        binaryWriter2.Write(xrBlock[index13]);
+                                        binaryWriter2.Write(yrBlock[index13]);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input1.Close();
+                            binaryReader1.Close();
+                        }
+                        binaryWriter2.Close();
+                        output2.Close();
+                    }
+                    if (!File.Exists(curOrient))
+                        return;
+                    FileStream input4 = new FileStream(curOrient, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader5 = new BinaryReader((Stream)input4);
+                    if (File.Exists(curFoto))
+                        File.Delete(curFoto);
+                    FileStream output3 = new FileStream(curFoto, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    try
+                    {
+                        binaryWriter3.Write(num8);
+                        for (int index14 = 1; index14 <= num8; ++index14)
+                        {
+                            int num20 = kModelStrip[index14];
+                            for (int j = 1; j <= num20; ++j)
+                            {
+                                binaryReader5.ReadInt64();
+                                int num21 = binaryReader5.ReadInt32();
+                                int num22 = binaryReader5.ReadInt32();
+                                double e1 = binaryReader5.ReadDouble();
+                                double e3 = binaryReader5.ReadDouble();
+                                double e4 = binaryReader5.ReadDouble();
+                                double e5 = binaryReader5.ReadDouble();
+                                double e6 = binaryReader5.ReadDouble();
+                                binaryReader5.ReadDouble();
+                                binaryReader5.ReadDouble();
+                                double fk2 = binaryReader5.ReadDouble();
+                                binaryReader5.ReadDouble();
+                                binaryReader5.ReadDouble();
+                                int kq = binaryReader5.ReadInt32();
+                                for (int index15 = 1; index15 <= kq; ++index15)
+                                {
+                                    pntName[index15] = binaryReader5.ReadString();
+                                    xLeft[index15] = binaryReader5.ReadDouble();
+                                    yLeft[index15] = binaryReader5.ReadDouble();
+                                    xRight[index15] = binaryReader5.ReadDouble();
+                                    yRight[index15] = binaryReader5.ReadDouble();
+                                }
+                                numModel[j] = num1;
+                                modLeft[j] = num21;
+                                modRight[j] = num22;
+                                double bas = 1000.0;
+                                double e2 = 0.0;
+                                DllClass1.Ftmod(j, fk2, bas, e1, e2, e3, e4, e5, e6, kq, xLeft, yLeft, xRight, yRight, ref xBase, ref yBase, ref zBase, ref xFoto, ref yFoto, ref zFoto, ref factCos);
+                                int i1 = 1;
+                                int i2 = kq;
+                                double xs1 = 0.0;
+                                double ys1 = 0.0;
+                                double zs1 = 0.0;
+                                double fScale = 1.0;
+                                double xBas = xBase[j];
+                                double yBas = yBase[j];
+                                double zBas = zBase[j];
+                                double xs2;
+                                double ys2;
+                                double zs2;
+                                DllClass1.Basis(xs1, ys1, zs1, out xs2, out ys2, out zs2, xBas, yBas, zBas, fScale, i1, i2, xFoto, yFoto, zFoto, ref xBlock, ref yBlock, ref zBlock);
+                                if (xs2 == 0.0 && ys2 == 0.0 && zs2 == 0.0)
+                                    return;
+                                int index16 = kq + 1;
+                                int num23 = -modLeft[j];
+                                pntName[index16] = Convert.ToString(num23);
+                                xBlock[index16] = xs1;
+                                yBlock[index16] = ys1;
+                                zBlock[index16] = zs1;
+                                kt = index16 + 1;
+                                int num24 = -modRight[j];
+                                pntName[kt] = Convert.ToString(num24);
+                                xBlock[kt] = xs2;
+                                yBlock[kt] = ys2;
+                                zBlock[kt] = zs2;
+                            }
+                            binaryWriter3.Write(index14);
+                            binaryWriter3.Write(modLeft[1]);
+                            binaryWriter3.Write(modRight[1]);
+                            binaryWriter3.Write(kt);
+                            for (int index17 = 1; index17 <= kt; ++index17)
+                            {
+                                binaryWriter3.Write(pntName[index17]);
+                                binaryWriter3.Write(xBlock[index17]);
+                                binaryWriter3.Write(yBlock[index17]);
+                                binaryWriter3.Write(zBlock[index17]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader5.Close();
+                        input4.Close();
+                    }
+                    binaryWriter3.Close();
+                    output3.Close();
+                }
+            }
+        }
+
+        public void RelOrient(out int iCond)
+        {
+            string[] strArray1 = new string[10];
+            string[] strArray2 = new string[10];
+            string[] strArray3 = new string[10];
+            string[] strArray4 = new string[10];
+            string[] strArray5 = new string[10];
+            string[] strArray6 = new string[22];
+            string[] strArray7 = new string[22];
+            double[] numArray1 = new double[22];
+            double[] numArray2 = new double[22];
+            iCond = 0;
+            int num1 = 0;
+            double num2;
+            double num3 = num2 = 0.0;
+            double num4 = num2;
+            double fk = num2;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num1; ++index)
+                    {
+                        kModelStrip[index] = binaryReader.ReadInt32();
+                        numCamera[index] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (!File.Exists(fileAero))
+                return;
+            FileStream input1 = new FileStream(fileAero, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(frelOrient))
+                File.Delete(frelOrient);
+            FileStream output = new FileStream(frelOrient, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            try
+            {
+                for (int index1 = 1; index1 <= num1; ++index1)
+                {
+                    int num5 = kModelStrip[index1];
+                    FileStream input2 = new FileStream(fstoreCam, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    try
+                    {
+                        kCamera = Convert.ToInt32(binaryReader2.ReadString());
+                        for (int index2 = 1; index2 <= kCamera; ++index2)
+                        {
+                            strArray1[index2] = binaryReader2.ReadString();
+                            strArray2[index2] = binaryReader2.ReadString();
+                            strArray3[index2] = binaryReader2.ReadString();
+                            strArray4[index2] = binaryReader2.ReadString();
+                            strArray5[index2] = binaryReader2.ReadString();
+                            strArray6[index2] = binaryReader2.ReadString();
+                            strArray7[index2] = binaryReader2.ReadString();
+                            numCam[index2] = (long)Convert.ToInt32(strArray1[index2]);
+                            nameCam[index2] = strArray2[index2];
+                            focCam[index2] = Convert.ToDouble(strArray3[index2]);
+                            xoCam[index2] = Convert.ToDouble(strArray4[index2]);
+                            yoCam[index2] = Convert.ToDouble(strArray5[index2]);
+                            markCam[index2] = Convert.ToInt32(strArray6[index2]);
+                            dstrCam[index2] = Convert.ToInt32(strArray7[index2]);
+                            int int32_1 = Convert.ToInt32(strArray6[index2]);
+                            int int32_2 = Convert.ToInt32(strArray7[index2]);
+                            if (int32_1 > 0)
+                            {
+                                for (int index3 = 1; index3 <= int32_1; ++index3)
+                                {
+                                    strArray1[index3] = binaryReader2.ReadString();
+                                    strArray2[index3] = binaryReader2.ReadString();
+                                    strArray3[index3] = binaryReader2.ReadString();
+                                    nMark[index3] = Convert.ToInt32(strArray1[index3]);
+                                    xMark[index3] = Convert.ToDouble(strArray2[index3]);
+                                    yMark[index3] = Convert.ToDouble(strArray3[index3]);
+                                }
+                            }
+                            if (int32_2 > 0)
+                            {
+                                for (int index4 = 1; index4 <= int32_2; ++index4)
+                                {
+                                    strArray6[index4] = binaryReader2.ReadString();
+                                    strArray7[index4] = binaryReader2.ReadString();
+                                    numArray1[index4] = Convert.ToDouble(strArray6[index4]);
+                                    numArray2[index4] = Convert.ToDouble(strArray7[index4]);
+                                }
+                            }
+                            if (numCamera[index1] == numCam[index2])
+                            {
+                                num4 = xoCam[index2];
+                                num3 = yoCam[index2];
+                                fk = focCam[index2];
+                                break;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader2.Close();
+                        input2.Close();
+                    }
+                    for (int index5 = 1; index5 <= num5; ++index5)
+                    {
+                        numModel[index5] = binaryReader1.ReadInt64();
+                        modLeft[index5] = binaryReader1.ReadInt32();
+                        modRight[index5] = binaryReader1.ReadInt32();
+                        modMark[index5] = binaryReader1.ReadInt32();
+                        modPoint[index5] = binaryReader1.ReadInt32();
+                        int num6 = modMark[index5];
+                        int num7 = modPoint[index5];
+                        int kt = 0;
+                        for (int index6 = 1; index6 <= num7; ++index6)
+                        {
+                            string str = binaryReader1.ReadString();
+                            double num8 = binaryReader1.ReadDouble();
+                            double num9 = binaryReader1.ReadDouble();
+                            double num10 = binaryReader1.ReadDouble();
+                            double num11 = binaryReader1.ReadDouble();
+                            if (index6 > modMark[index5])
+                            {
+                                ++kt;
+                                pntName[kt] = str;
+                                xLeft[kt] = num8;
+                                yLeft[kt] = num9;
+                                xRight[kt] = num10;
+                                yRight[kt] = num11;
+                            }
+                        }
+                        double ee1;
+                        double ee3;
+                        double ee4;
+                        double ee5;
+                        double ee6;
+                        double qp;
+                        double qm;
+                        DllClass1.Relative(fk, kt, xLeft, yLeft, xRight, yRight, out ee1, out ee3, out ee4, out ee5, out ee6, remPar, out qp, out qm);
+                        if (ee1 == 0.0 && ee3 == 0.0 && ee4 == 0.0 && ee5 == 0.0)
+                            return;
+                        binaryWriter.Write(numModel[index5]);
+                        binaryWriter.Write(modLeft[index5]);
+                        binaryWriter.Write(modRight[index5]);
+                        binaryWriter.Write(ee1);
+                        binaryWriter.Write(ee3);
+                        binaryWriter.Write(ee4);
+                        binaryWriter.Write(ee5);
+                        binaryWriter.Write(ee6);
+                        binaryWriter.Write(qp);
+                        binaryWriter.Write(qm);
+                        binaryWriter.Write(fk);
+                        binaryWriter.Write(num4);
+                        binaryWriter.Write(num3);
+                        binaryWriter.Write(kt);
+                        for (int index7 = 1; index7 <= kt; ++index7)
+                        {
+                            binaryWriter.Write(pntName[index7]);
+                            binaryWriter.Write(xLeft[index7]);
+                            binaryWriter.Write(yLeft[index7]);
+                            binaryWriter.Write(xRight[index7]);
+                            binaryWriter.Write(yRight[index7]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                output.Close();
+                binaryWriter.Close();
+            }
+            input1.Close();
+            binaryReader1.Close();
+        }
+
+        public void ModelPhoto(out int iCond)
+        {
+            iCond = 0;
+            int num1 = 0;
+            int index1 = 0;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        kModelStrip[index2] = binaryReader.ReadInt32();
+                        numCamera[index2] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            int kPnt = 0;
+            int kStrp = 0;
+            if (File.Exists(aeroBlock))
+            {
+                FileStream input = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    kPnt = binaryReader.ReadInt32();
+                    for (int index3 = 1; index3 <= kPnt; ++index3)
+                    {
+                        blockName[index3] = binaryReader.ReadString();
+                        xBlock[index3] = binaryReader.ReadDouble();
+                        yBlock[index3] = binaryReader.ReadDouble();
+                        zBlock[index3] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (kPnt > 1)
+            {
+                DllClass1.BaseDefine(kPnt, blockName, xBlock, yBlock, zBlock, out kStrp, ref ktPhoto, ref k1Photo, ref k2Photo, ref namePhoto, ref e1Photo, ref e2Photo, ref e3Photo);
+                if (kStrp == 0)
+                    return;
+            }
+            if (!File.Exists(frelOrient))
+                return;
+            FileStream input1 = new FileStream(frelOrient, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(fotoAero))
+                File.Delete(fotoAero);
+            FileStream output = new FileStream(fotoAero, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            try
+            {
+                for (int index4 = 1; index4 <= num1; ++index4)
+                {
+                    if (kStrp > 0)
+                        index1 = k1Photo[index4];
+                    int num2 = kModelStrip[index4];
+                    for (int j = 1; j <= num2; ++j)
+                    {
+                        double num3 = 0.0;
+                        if (kStrp > 0)
+                        {
+                            ++index1;
+                            double num4 = e1Photo[index1] - e1Photo[index1 - 1];
+                            double num5 = e2Photo[index1] - e2Photo[index1 - 1];
+                            double num6 = e3Photo[index1] - e3Photo[index1 - 1];
+                            num3 = Math.Sqrt(num4 * num4 + num5 * num5 + num6 * num6);
+                        }
+                        numModel[j] = binaryReader1.ReadInt64();
+                        modLeft[j] = binaryReader1.ReadInt32();
+                        modRight[j] = binaryReader1.ReadInt32();
+                        double e1 = binaryReader1.ReadDouble();
+                        double e3 = binaryReader1.ReadDouble();
+                        double e4 = binaryReader1.ReadDouble();
+                        double e5 = binaryReader1.ReadDouble();
+                        double e6 = binaryReader1.ReadDouble();
+                        binaryReader1.ReadDouble();
+                        binaryReader1.ReadDouble();
+                        double fk = binaryReader1.ReadDouble();
+                        binaryReader1.ReadDouble();
+                        binaryReader1.ReadDouble();
+                        int kq = binaryReader1.ReadInt32();
+                        for (int index5 = 1; index5 <= kq; ++index5)
+                        {
+                            pntName[index5] = binaryReader1.ReadString();
+                            xLeft[index5] = binaryReader1.ReadDouble();
+                            yLeft[index5] = binaryReader1.ReadDouble();
+                            xRight[index5] = binaryReader1.ReadDouble();
+                            yRight[index5] = binaryReader1.ReadDouble();
+                        }
+                        double bas = 1000.0;
+                        if (num3 > 0.0)
+                            bas = num3;
+                        double e2 = 0.0;
+                        DllClass1.Ftmod(j, fk, bas, e1, e2, e3, e4, e5, e6, kq, xLeft, yLeft, xRight, yRight, ref xBase, ref yBase, ref zBase, ref xFoto, ref yFoto, ref zFoto, ref factCos);
+                        binaryWriter.Write(index4);
+                        binaryWriter.Write(numModel[j]);
+                        binaryWriter.Write(kq);
+                        binaryWriter.Write(xBase[j]);
+                        binaryWriter.Write(yBase[j]);
+                        binaryWriter.Write(zBase[j]);
+                        for (int index6 = 1; index6 <= kq; ++index6)
+                        {
+                            binaryWriter.Write(pntName[index6]);
+                            binaryWriter.Write(xFoto[index6]);
+                            binaryWriter.Write(yFoto[index6]);
+                            binaryWriter.Write(zFoto[index6]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            output.Close();
+            binaryWriter.Close();
+        }
+
+        public void ModelsJoin(out int iCond)
+        {
+            string str1 = "";
+            iCond = 0;
+            int num1 = 0;
+            int index1 = 0;
+            int num2;
+            int num3 = num2 = 0;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        kModelStrip[index2] = binaryReader.ReadInt32();
+                        numCamera[index2] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            int index3 = 0;
+            if (File.Exists(fotoAero))
+            {
+                FileStream input = new FileStream(fotoAero, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(fotoStrip))
+                    File.Delete(fotoStrip);
+                FileStream output1 = new FileStream(fotoStrip, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output2 = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                try
+                {
+                    binaryWriter1.Write(num1);
+                    for (int index4 = 1; index4 <= num1; ++index4)
+                    {
+                        int index5 = 0;
+                        int index6 = kModelStrip[index4];
+                        for (int index7 = 1; index7 <= index6; ++index7)
+                        {
+                            num3 = binaryReader.ReadInt32();
+                            numModel[index7] = binaryReader.ReadInt64();
+                            int num4 = binaryReader.ReadInt32();
+                            xBase[index7] = binaryReader.ReadDouble();
+                            yBase[index7] = binaryReader.ReadDouble();
+                            zBase[index7] = binaryReader.ReadDouble();
+                            for (int index8 = 1; index8 <= num4; ++index8)
+                            {
+                                str1 = binaryReader.ReadString();
+                                double num5 = binaryReader.ReadDouble();
+                                double num6 = binaryReader.ReadDouble();
+                                double num7 = binaryReader.ReadDouble();
+                                ++index5;
+                                nFotoModel[index5] = numModel[index7];
+                                fotoName[index5] = str1;
+                                xFoto[index5] = num5;
+                                yFoto[index5] = num6;
+                                zFoto[index5] = num7;
+                            }
+                            if (index7 == 1)
+                            {
+                                kp1Foto[index7] = 1;
+                                kp2Foto[index7] = num4;
+                            }
+                            if (index7 > 1)
+                            {
+                                kp1Foto[index7] = kp2Foto[index7 - 1] + 1;
+                                kp2Foto[index7] = kp2Foto[index7 - 1] + num4;
+                            }
+                        }
+                        for (int index9 = 1; index9 <= 10; ++index9)
+                        {
+                            int num8 = 0;
+                            index1 = 0;
+                            for (int index10 = 1; index10 <= index6; ++index10)
+                            {
+                                double xs2;
+                                double ys2;
+                                double zs2;
+                                if (index10 == 1)
+                                {
+                                    int i1 = kp1Foto[index10];
+                                    int i2 = kp2Foto[index10];
+                                    double xs1 = 0.0;
+                                    double ys1 = 0.0;
+                                    double zs1 = 0.0;
+                                    double fScale = 1.0;
+                                    double xBas = xBase[index10];
+                                    double yBas = yBase[index10];
+                                    double zBas = zBase[index10];
+                                    DllClass1.Basis(xs1, ys1, zs1, out xs2, out ys2, out zs2, xBas, yBas, zBas, fScale, i1, i2, xFoto, yFoto, zFoto, ref xBlock, ref yBlock, ref zBlock);
+                                    if (xs2 == 0.0 && ys2 == 0.0 && zs2 == 0.0)
+                                        return;
+                                    int index11 = index1 + 1;
+                                    int int32_1 = Convert.ToInt32(numModel[index10] / 10000L);
+                                    numPhoto[index11] = -int32_1;
+                                    xsPhoto[index11] = xs1;
+                                    ysPhoto[index11] = ys1;
+                                    zsPhoto[index11] = zs1;
+                                    scaleFoto[index10] = fScale;
+                                    index1 = index11 + 1;
+                                    int int32_2 = Convert.ToInt32(numModel[index10] - (long)(int32_1 * 10000));
+                                    numPhoto[index1] = -int32_2;
+                                    xsPhoto[index1] = xs2;
+                                    ysPhoto[index1] = ys2;
+                                    zsPhoto[index1] = zs2;
+                                }
+                                if (index10 > 1)
+                                {
+                                    int i1 = kp1Foto[index10 - 1];
+                                    int i2 = kp2Foto[index10 - 1];
+                                    int num9 = kp1Foto[index10];
+                                    int num10 = kp2Foto[index10];
+                                    double num11 = 0.0;
+                                    scaleFoto[index10] = 0.0;
+                                    for (int index12 = i1; index12 <= i2; ++index12)
+                                    {
+                                        for (int index13 = num9; index13 <= num10; ++index13)
+                                        {
+                                            if (fotoName[index12] == fotoName[index13])
+                                            {
+                                                ++num11;
+                                                double num12 = (zFoto[index12] - zBase[index10 - 1]) * scaleFoto[index10 - 1] / zFoto[index13];
+                                                scaleFoto[index10] = scaleFoto[index10] + num12;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num11 == 0.0)
+                                    {
+                                        int num13 = (int)MessageBox.Show("Models: " + Convert.ToString(numModel[index10 - 1]) + "-" + Convert.ToString(numModel[index10]) + "  Common points are absent", "Models' Join", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        iCond = -1;
+                                        return;
+                                    }
+                                    scaleFoto[index10] = scaleFoto[index10] / num11;
+                                    double fScale = scaleFoto[index10];
+                                    double xBas = xBase[index10];
+                                    double yBas = yBase[index10];
+                                    double zBas = zBase[index10];
+                                    DllClass1.Basis(xsPhoto[index1], ysPhoto[index1], zsPhoto[index1], out xs2, out ys2, out zs2, xBas, yBas, zBas, fScale, num9, num10, xFoto, yFoto, zFoto, ref xBlock, ref yBlock, ref zBlock);
+                                    if (xs2 == 0.0 && ys2 == 0.0 && zs2 == 0.0)
+                                        return;
+                                    ++index1;
+                                    int int32_3 = Convert.ToInt32(numModel[index10] / 10000L);
+                                    int int32_4 = Convert.ToInt32(numModel[index10] - (long)(int32_3 * 10000));
+                                    numPhoto[index1] = -int32_4;
+                                    xsPhoto[index1] = xs2;
+                                    ysPhoto[index1] = ys2;
+                                    zsPhoto[index1] = zs2;
+                                    if (num11 > 2.0)
+                                    {
+                                        DllClass1.ModelPrecise(i1, i2, num9, num10, ref fotoName, ref xBlock, ref yBlock, ref zBlock, ref xs2, ref ys2, ref zs2);
+                                        xsPhoto[index1] = xs2;
+                                        ysPhoto[index1] = ys2;
+                                        zsPhoto[index1] = zs2;
+                                    }
+                                    int index14 = 0;
+                                    for (int index15 = i1; index15 <= i2; ++index15)
+                                    {
+                                        for (int index16 = num9; index16 <= num10; ++index16)
+                                        {
+                                            if (fotoName[index15] == fotoName[index16])
+                                            {
+                                                double num14 = xBlock[index16] - xBlock[index15];
+                                                double num15 = yBlock[index16] - yBlock[index15];
+                                                double num16 = zBlock[index16] - zBlock[index15];
+                                                ++index14;
+                                                pBlock[index14] = Math.Sqrt(num14 * num14 + num15 * num15 + num16 * num16);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (index14 > 3)
+                                    {
+                                        double num17 = 0.0;
+                                        double num18 = 0.0;
+                                        for (int index17 = 1; index17 <= index14; ++index17)
+                                        {
+                                            if (pBlock[index17] > num18)
+                                            {
+                                                num18 = pBlock[index17];
+                                                str1 = namePhoto[index17];
+                                            }
+                                            num17 += pBlock[index17];
+                                        }
+                                        double num19 = num17 / (double)index14;
+                                        if (num18 > 2.0 * num19)
+                                        {
+                                            for (int index18 = num9; index18 <= num10; ++index18)
+                                            {
+                                                if (str1 == fotoName[index18])
+                                                {
+                                                    ++num8;
+                                                    string str2 = Convert.ToString(index10) + "_" + str1;
+                                                    ++index3;
+                                                    nameTmp1[index3] = str2;
+                                                    nameTmp2[index3] = fotoName[index18];
+                                                    fotoName[index18] = fotoName[index18] + str2;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (num8 > 0)
+                                        break;
+                                }
+                            }
+                            if (num8 == 0)
+                                break;
+                        }
+                        for (int index19 = 1; index19 <= index6; ++index19)
+                        {
+                            int num20 = kp1Foto[index19];
+                            int num21 = kp2Foto[index19];
+                            binaryWriter2.Write(index19);
+                            binaryWriter2.Write(numModel[index19]);
+                            int num22 = num21 - num20 + 1;
+                            binaryWriter2.Write(num22);
+                            binaryWriter2.Write(xBase[index19]);
+                            binaryWriter2.Write(yBase[index19]);
+                            binaryWriter2.Write(zBase[index19]);
+                            for (int index20 = num20; index20 <= num21; ++index20)
+                            {
+                                binaryWriter2.Write(fotoName[index20]);
+                                binaryWriter2.Write(xBlock[index20]);
+                                binaryWriter2.Write(yBlock[index20]);
+                                binaryWriter2.Write(zBlock[index20]);
+                            }
+                        }
+                        int index21 = kp2Foto[index6];
+                        for (int index22 = 1; index22 <= index1; ++index22)
+                        {
+                            namePhoto[index22] = Convert.ToString(numPhoto[index22]);
+                            ++index21;
+                            fotoName[index21] = namePhoto[index22];
+                            xBlock[index21] = xsPhoto[index22];
+                            yBlock[index21] = ysPhoto[index22];
+                            zBlock[index21] = zsPhoto[index22];
+                        }
+                        int num23 = Math.Abs(numPhoto[1]);
+                        int num24 = Math.Abs(numPhoto[index1]);
+                        binaryWriter1.Write(index4);
+                        binaryWriter1.Write(num23);
+                        binaryWriter1.Write(num24);
+                        binaryWriter1.Write(index21);
+                        for (int index23 = 1; index23 <= index21; ++index23)
+                        {
+                            if (index3 > 0)
+                            {
+                                for (int index24 = 1; index24 <= index3; ++index24)
+                                {
+                                    if (nameTmp1[index24] == fotoName[index23])
+                                        fotoName[index23] = nameTmp2[index24];
+                                }
+                            }
+                            binaryWriter1.Write(fotoName[index23]);
+                            binaryWriter1.Write(xBlock[index23]);
+                            binaryWriter1.Write(yBlock[index23]);
+                            binaryWriter1.Write(zBlock[index23]);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    output1.Close();
+                    binaryWriter1.Close();
+                }
+                input.Close();
+                binaryReader.Close();
+                output2.Close();
+                binaryWriter2.Close();
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input1 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(fotoAero))
+                File.Delete(fotoAero);
+            FileStream output = new FileStream(fotoAero, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            try
+            {
+                for (int index25 = 1; index25 <= num1; ++index25)
+                {
+                    int num25 = kModelStrip[index25];
+                    for (int index26 = 1; index26 <= num25; ++index26)
+                    {
+                        int num26 = binaryReader1.ReadInt32();
+                        numModel[index26] = binaryReader1.ReadInt64();
+                        int num27 = binaryReader1.ReadInt32();
+                        xBase[index26] = binaryReader1.ReadDouble();
+                        yBase[index26] = binaryReader1.ReadDouble();
+                        zBase[index26] = binaryReader1.ReadDouble();
+                        binaryWriter.Write(num26);
+                        binaryWriter.Write(numModel[index26]);
+                        binaryWriter.Write(num27);
+                        binaryWriter.Write(xBase[index26]);
+                        binaryWriter.Write(yBase[index26]);
+                        binaryWriter.Write(zBase[index26]);
+                        for (int index27 = 1; index27 <= num27; ++index27)
+                        {
+                            string str3 = binaryReader1.ReadString();
+                            double num28 = binaryReader1.ReadDouble();
+                            double num29 = binaryReader1.ReadDouble();
+                            double num30 = binaryReader1.ReadDouble();
+                            binaryWriter.Write(str3);
+                            binaryWriter.Write(num28);
+                            binaryWriter.Write(num29);
+                            binaryWriter.Write(num30);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            output.Close();
+            binaryWriter.Close();
+        }
+
+        public void DifControl()
+        {
+            int kGeo = 0;
+            int kFin = 0;
+            if (File.Exists(aeroBlock))
+            {
+                FileStream input = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    kFin = binaryReader.ReadInt32();
+                    for (int index = 1; index <= kFin; ++index)
+                    {
+                        blockName[index] = binaryReader.ReadString();
+                        xBlock[index] = binaryReader.ReadDouble();
+                        yBlock[index] = binaryReader.ReadDouble();
+                        zBlock[index] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (!File.Exists(curControl))
+                return;
+            FileStream input1 = new FileStream(curControl, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            try
+            {
+                kGeo = binaryReader1.ReadInt32();
+                for (int index = 1; index <= kGeo; ++index)
+                {
+                    nameContr[index] = binaryReader1.ReadString();
+                    xContr[index] = binaryReader1.ReadDouble();
+                    yContr[index] = binaryReader1.ReadDouble();
+                    zContr[index] = binaryReader1.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            int kDif;
+            DllClass1.DifCoord(kGeo, nameContr, xContr, yContr, zContr, kFin, blockName, xBlock, yBlock, zBlock, out kDif, ref nameCheck, ref xBase, ref yBase, ref zBase, ref zCheck);
+            if (kDif == 0)
+                return;
+            if (File.Exists(difControl))
+                File.Delete(difControl);
+            FileStream output = new FileStream(difControl, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kDif);
+            for (int index = 1; index <= kDif; ++index)
+            {
+                binaryWriter.Write(nameCheck[index]);
+                binaryWriter.Write(xBase[index]);
+                binaryWriter.Write(yBase[index]);
+                binaryWriter.Write(zBase[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void LoadControl(
+          int iParam,
+          out int kControl,
+          string[] tmpName,
+          double[] xBase,
+          double[] yBase,
+          double[] zBase,
+          out double dx,
+          out double dy,
+          out double dz)
+        {
+            int num1 = 0;
+            int num2 = 0;
+            kControl = 0;
+            dx = 0.0;
+            dy = 0.0;
+            dz = 0.0;
+            double num3 = 0.0;
+            double num4 = 0.0;
+            if (iParam == 1)
+            {
+                if (File.Exists(difTarget))
+                {
+                    FileStream input = new FileStream(difTarget, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        num1 = binaryReader.ReadInt32();
+                        if (num1 > 0)
+                        {
+                            for (int index = 1; index <= num1; ++index)
+                            {
+                                tmpName[index] = binaryReader.ReadString();
+                                xBase[index] = binaryReader.ReadDouble();
+                                yBase[index] = binaryReader.ReadDouble();
+                                zBase[index] = binaryReader.ReadDouble();
+                                if (xBase[index] != 0.0 && yBase[index] != 0.0 && zBase[index] != 0.0)
+                                {
+                                    dx += Math.Abs(xBase[index]);
+                                    dy += Math.Abs(yBase[index]);
+                                    dz += Math.Abs(zBase[index]);
+                                    ++num3;
+                                    ++num4;
+                                }
+                                if (xBase[index] != 0.0 && yBase[index] != 0.0 && zBase[index] == 0.0)
+                                {
+                                    dx += Math.Abs(xBase[index]);
+                                    dy += Math.Abs(yBase[index]);
+                                    ++num3;
+                                }
+                                if (xBase[index] == 0.0 && yBase[index] == 0.0 && zBase[index] != 0.0)
+                                {
+                                    dz += Math.Abs(zBase[index]);
+                                    ++num4;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input.Close();
+                        binaryReader.Close();
+                    }
+                    dx /= num3;
+                    dy /= num3;
+                    dz /= num4;
+                }
+                kControl = num1;
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(difControl))
+            {
+                FileStream input = new FileStream(difControl, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num2 = binaryReader.ReadInt32();
+                    if (num2 > 0)
+                    {
+                        for (int index = 1; index <= num2; ++index)
+                        {
+                            tmpName[index] = binaryReader.ReadString();
+                            xBase[index] = binaryReader.ReadDouble();
+                            yBase[index] = binaryReader.ReadDouble();
+                            zBase[index] = binaryReader.ReadDouble();
+                            if (xBase[index] != 0.0 && yBase[index] != 0.0 && zBase[index] != 0.0)
+                            {
+                                dx += Math.Abs(xBase[index]);
+                                dy += Math.Abs(yBase[index]);
+                                dz += Math.Abs(zBase[index]);
+                                ++num3;
+                                ++num4;
+                            }
+                            if (xBase[index] != 0.0 && yBase[index] != 0.0 && zBase[index] == 0.0)
+                            {
+                                dx += Math.Abs(xBase[index]);
+                                dy += Math.Abs(yBase[index]);
+                                ++num3;
+                            }
+                            if (xBase[index] == 0.0 && yBase[index] == 0.0 && zBase[index] != 0.0)
+                            {
+                                dz += Math.Abs(zBase[index]);
+                                ++num4;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                dx /= num3;
+                dy /= num3;
+                dz /= num4;
+            }
+            kControl = num2;
+        }
+
+        public void CameraCopy(string sCamera1, string sCamera2)
+        {
+            if (!File.Exists(sCamera1))
+                return;
+            if (File.Exists(sCamera2))
+                File.Delete(sCamera2);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)new FileStream(sCamera2, FileMode.CreateNew));
+            FileStream input = new FileStream(sCamera1, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                string str1 = binaryReader.ReadString();
+                kCamera = Convert.ToInt32(str1);
+                binaryWriter.Write(str1);
+                for (int index1 = 1; index1 <= kCamera; ++index1)
+                {
+                    string str2 = binaryReader.ReadString();
+                    string str3 = binaryReader.ReadString();
+                    string str4 = binaryReader.ReadString();
+                    string str5 = binaryReader.ReadString();
+                    string str6 = binaryReader.ReadString();
+                    string str7 = binaryReader.ReadString();
+                    string str8 = binaryReader.ReadString();
+                    binaryWriter.Write(str2);
+                    binaryWriter.Write(str3);
+                    binaryWriter.Write(str4);
+                    binaryWriter.Write(str5);
+                    binaryWriter.Write(str6);
+                    binaryWriter.Write(str7);
+                    binaryWriter.Write(str8);
+                    int int32_1 = Convert.ToInt32(str7);
+                    int int32_2 = Convert.ToInt32(str8);
+                    if (int32_1 > 0)
+                    {
+                        for (int index2 = 1; index2 <= int32_1; ++index2)
+                        {
+                            string str9 = binaryReader.ReadString();
+                            string str10 = binaryReader.ReadString();
+                            string str11 = binaryReader.ReadString();
+                            binaryWriter.Write(str9);
+                            binaryWriter.Write(str10);
+                            binaryWriter.Write(str11);
+                        }
+                    }
+                    if (int32_2 > 0)
+                    {
+                        for (int index3 = 1; index3 <= int32_2; ++index3)
+                        {
+                            string str12 = binaryReader.ReadString();
+                            string str13 = binaryReader.ReadString();
+                            binaryWriter.Write(str12);
+                            binaryWriter.Write(str13);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input.Close();
+                binaryReader.Close();
+            }
+        }
+
+        public void ControlInput(out int iCond, string currentFile)
+        {
+            FilePath();
+            iCond = 0;
+            minArray = 999999;
+            DllClass1.stringArray(tarName, ref minArray);
+            DllClass1.doubleArray(xTar, ref minArray);
+            DllClass1.doubleArray(yTar, ref minArray);
+            DllClass1.doubleArray(zTar, ref minArray);
+            string text = "Lines Number with error: ";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Control Points File";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            string str1 = "";
+            openFileDialog.FileName = str1;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                int num1 = 0;
+                Stream stream;
+                if ((stream = openFileDialog.OpenFile()) == null)
+                    return;
+                Cursor.Current = Cursors.WaitCursor;
+                StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                int num2 = 0;
+                double num3;
+                double num4 = num3 = 0.0;
+                double num5 = num3;
+                double num6 = num3;
+                int index1 = 0;
+                char[] seps = new char[2] { ' ', ',' };
+                int k = 0;
+                int kPart = 50;
+                string sLine;
+                while ((sLine = streamReader.ReadLine()) != null)
+                {
+                    ++num1;
+                    string[] sPart;
+                    DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                    if (k < 2 || k > 4)
+                    {
+                        ++num2;
+                        string str2 = Convert.ToString(num1);
+                        text = text + str2 + "-Inadmissible symbol(maybe 'Tab'),";
+                        if (num2 > 1)
+                        {
+                            iCond = -99;
+                            break;
+                        }
+                    }
+                    else if (k == 2 && num6 == 0.0)
+                    {
+                        ++num2;
+                        string str3 = Convert.ToString(num1);
+                        text = text + str3 + ",";
+                        if (num2 > 1)
+                        {
+                            iCond = -99;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        string str4 = sPart[1];
+                        if (k == 2)
+                        {
+                            num6 = 0.0;
+                            num5 = 0.0;
+                            num4 = Convert.ToDouble(sPart[2]);
+                        }
+                        if (k == 3)
+                        {
+                            num6 = Convert.ToDouble(sPart[2]);
+                            num5 = Convert.ToDouble(sPart[3]);
+                            num4 = 0.0;
+                        }
+                        if (k == 4)
+                        {
+                            num6 = Convert.ToDouble(sPart[2]);
+                            num5 = Convert.ToDouble(sPart[3]);
+                            num4 = Convert.ToDouble(sPart[4]);
+                        }
+                        ++index1;
+                        if (index1 > minArray)
+                        {
+                            int num7 = (int)MessageBox.Show("Index array ControlInput");
+                            return;
+                        }
+                        tarName[index1] = str4;
+                        xTar[index1] = num6;
+                        yTar[index1] = num5;
+                        zTar[index1] = num4;
+                    }
+                }
+                stream.Close();
+                if (index1 == 0)
+                {
+                    int num8 = (int)MessageBox.Show("File is Empty", "Fill up Control Points Store", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (num2 > 0)
+                {
+                    int num9 = (int)MessageBox.Show(text, "Fill up Control Points Store", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    if (File.Exists(frelOrient))
+                        File.Delete(frelOrient);
+                    if (File.Exists(fotoAero))
+                        File.Delete(fotoAero);
+                    if (File.Exists(aeroBlock))
+                        File.Delete(aeroBlock);
+                    if (File.Exists(freeBlock))
+                        File.Delete(freeBlock);
+                    if (File.Exists(monoPhoto))
+                        File.Delete(monoPhoto);
+                    if (File.Exists(difMeasure))
+                        File.Delete(difMeasure);
+                    if (File.Exists(difModel))
+                        File.Delete(difModel);
+                    if (File.Exists(difStrip))
+                        File.Delete(difStrip);
+                    if (File.Exists(difTarget))
+                        File.Delete(difTarget);
+                    if (File.Exists(difControl))
+                        File.Delete(difControl);
+                    if (File.Exists(curControl))
+                        File.Delete(curControl);
+                    if (File.Exists(aerialPhoto))
+                        File.Delete(aerialPhoto);
+                    if (File.Exists(fotoStrip))
+                        File.Delete(fotoStrip);
+                    if (File.Exists(fileGeo))
+                        File.Delete(fileGeo);
+                    if (File.Exists(fallGeo))
+                        File.Delete(fallGeo);
+                    if (File.Exists(difStrip1))
+                        File.Delete(difStrip1);
+                    if (File.Exists(difStrip2))
+                        File.Delete(difStrip2);
+                    if (File.Exists(fileDoubt))
+                        File.Delete(fileDoubt);
+                    if (File.Exists(modRelative))
+                        File.Delete(modRelative);
+                    if (File.Exists(fotoModel))
+                        File.Delete(fotoModel);
+                    if (File.Exists(modelPhoto))
+                        File.Delete(modelPhoto);
+                    if (File.Exists(fileModel))
+                        File.Delete(fileModel);
+                    if (File.Exists(fGeoModel))
+                        File.Delete(fGeoModel);
+                    if (currentFile == fstoreGeo)
+                    {
+                        int num10 = 0;
+                        if (File.Exists(currentFile))
+                        {
+                            FileStream input = new FileStream(currentFile, FileMode.Open, FileAccess.Read);
+                            BinaryReader binaryReader = new BinaryReader((Stream)input);
+                            try
+                            {
+                                num10 = binaryReader.ReadInt32();
+                                for (int index2 = 1; index2 <= num10; ++index2)
+                                {
+                                    nameGeo[index2] = binaryReader.ReadString();
+                                    xGeo[index2] = binaryReader.ReadDouble();
+                                    yGeo[index2] = binaryReader.ReadDouble();
+                                    zGeo[index2] = binaryReader.ReadDouble();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("The Read operation failed as expected.");
+                            }
+                            finally
+                            {
+                                input.Close();
+                                binaryReader.Close();
+                            }
+                        }
+                        if (num10 > 0)
+                        {
+                            for (int index3 = 1; index3 <= num10; ++index3)
+                            {
+                                ++index1;
+                                if (index1 > minArray)
+                                {
+                                    int num11 = (int)MessageBox.Show("Index array ControlInput");
+                                    return;
+                                }
+                                tarName[index1] = nameGeo[index3];
+                                xTar[index1] = xGeo[index3];
+                                yTar[index1] = yGeo[index3];
+                                zTar[index1] = zGeo[index3];
+                            }
+                        }
+                    }
+                    try
+                    {
+                        if (File.Exists(currentFile))
+                            File.Delete(currentFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Delete operation failed as expected.");
+                    }
+                    FileStream output = new FileStream(currentFile, FileMode.CreateNew);
+                    BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                    binaryWriter.Write(index1);
+                    for (int index4 = 1; index4 <= index1; ++index4)
+                    {
+                        binaryWriter.Write(tarName[index4]);
+                        binaryWriter.Write(xTar[index4]);
+                        binaryWriter.Write(yTar[index4]);
+                        binaryWriter.Write(zTar[index4]);
+                    }
+                    output.Close();
+                    binaryWriter.Close();
+                }
+            }
+            else
+                iCond = -99;
+        }
+
+        public void GeoSelect(out int iCond)
+        {
+            iCond = 0;
+            int num1;
+            int num2 = num1 = 0;
+            int num3;
+            int index1 = num3 = 0;
+            int num4;
+            int num5 = num4 = 0;
+            double num6;
+            double num7 = num6 = 0.0;
+            if (File.Exists(aeroStrip))
+            {
+                FileStream input = new FileStream(aeroStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num2 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num2; ++index2)
+                    {
+                        kModelStrip[index2] = binaryReader.ReadInt32();
+                        numCamera[index2] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (File.Exists(fileAero))
+            {
+                FileStream input = new FileStream(fileAero, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    for (int index3 = 1; index3 <= num2; ++index3)
+                    {
+                        int num8 = kModelStrip[index3];
+                        for (int index4 = 1; index4 <= num8; ++index4)
+                        {
+                            numModel[index4] = binaryReader.ReadInt64();
+                            modLeft[index4] = binaryReader.ReadInt32();
+                            modRight[index4] = binaryReader.ReadInt32();
+                            modMark[index4] = binaryReader.ReadInt32();
+                            modPoint[index4] = binaryReader.ReadInt32();
+                            int num9 = modPoint[index4];
+                            for (int index5 = 1; index5 <= num9; ++index5)
+                            {
+                                string str = binaryReader.ReadString();
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadDouble();
+                                if (index5 > modMark[index4])
+                                {
+                                    ++index1;
+                                    pntName[index1] = str;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (index1 == 0)
+                return;
+            int index6 = 0;
+            int num10 = 0;
+            int num11 = 0;
+            if (File.Exists(fstoreGeo))
+            {
+                FileStream input = new FileStream(fstoreGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num12 = binaryReader.ReadInt32();
+                    for (int index7 = 1; index7 <= num12; ++index7)
+                    {
+                        string str = binaryReader.ReadString();
+                        double num13 = binaryReader.ReadDouble();
+                        double num14 = binaryReader.ReadDouble();
+                        double num15 = binaryReader.ReadDouble();
+                        for (int index8 = 1; index8 <= index1; ++index8)
+                        {
+                            if (pntName[index8] == str)
+                            {
+                                ++index6;
+                                tarName[index6] = str;
+                                xTar[index6] = num13;
+                                yTar[index6] = num14;
+                                zTar[index6] = num15;
+                                if (num13 != 0.0 || num14 != 0.0)
+                                {
+                                    ++num10;
+                                    if (num15 != 0.0)
+                                        ++num11;
+                                }
+                                if (num13 == 0.0 && num14 == 0.0 && num15 != 0.0)
+                                {
+                                    ++num11;
+                                    break;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            int index9 = 0;
+            int num16 = 0;
+            int num17 = 0;
+            if (File.Exists(currentGeo))
+            {
+                FileStream input = new FileStream(currentGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num18 = binaryReader.ReadInt32();
+                    for (int index10 = 1; index10 <= num18; ++index10)
+                    {
+                        string str = binaryReader.ReadString();
+                        double num19 = binaryReader.ReadDouble();
+                        double num20 = binaryReader.ReadDouble();
+                        double num21 = binaryReader.ReadDouble();
+                        for (int index11 = 1; index11 <= index1; ++index11)
+                        {
+                            if (pntName[index11] == str)
+                            {
+                                ++index9;
+                                geoName[index9] = str;
+                                xGeo[index9] = num19;
+                                yGeo[index9] = num20;
+                                zGeo[index9] = num21;
+                                if (num19 != 0.0 || num20 != 0.0)
+                                {
+                                    ++num16;
+                                    if (num21 != 0.0)
+                                        ++num17;
+                                }
+                                if (num19 == 0.0 && num20 == 0.0 && num21 != 0.0)
+                                {
+                                    ++num17;
+                                    break;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (index9 > 3 && num16 > 2 && num17 > 3)
+            {
+                if (File.Exists(fileGeo))
+                    File.Delete(fileGeo);
+                FileStream output1 = new FileStream(fileGeo, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                binaryWriter1.Write(index9);
+                for (int index12 = 1; index12 <= index9; ++index12)
+                {
+                    binaryWriter1.Write(geoName[index12]);
+                    binaryWriter1.Write(xGeo[index12]);
+                    binaryWriter1.Write(yGeo[index12]);
+                    binaryWriter1.Write(zGeo[index12]);
+                }
+                binaryWriter1.Close();
+                output1.Close();
+                if (File.Exists(fallGeo))
+                    File.Delete(fallGeo);
+                FileStream output2 = new FileStream(fallGeo, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                binaryWriter2.Write(index9);
+                for (int index13 = 1; index13 <= index9; ++index13)
+                {
+                    binaryWriter2.Write(geoName[index13]);
+                    binaryWriter2.Write(xGeo[index13]);
+                    binaryWriter2.Write(yGeo[index13]);
+                    binaryWriter2.Write(zGeo[index13]);
+                }
+                binaryWriter2.Close();
+                output2.Close();
+            }
+            if (index6 > 3 && num10 > 2 && num11 > 3 && index6 > index9)
+            {
+                if (File.Exists(fileGeo))
+                    File.Delete(fileGeo);
+                FileStream output3 = new FileStream(fileGeo, FileMode.CreateNew);
+                BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                binaryWriter3.Write(index6);
+                for (int index14 = 1; index14 <= index6; ++index14)
+                {
+                    binaryWriter3.Write(tarName[index14]);
+                    binaryWriter3.Write(xTar[index14]);
+                    binaryWriter3.Write(yTar[index14]);
+                    binaryWriter3.Write(zTar[index14]);
+                }
+                binaryWriter3.Close();
+                output3.Close();
+                if (File.Exists(fallGeo))
+                    File.Delete(fallGeo);
+                FileStream output4 = new FileStream(fallGeo, FileMode.CreateNew);
+                BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                binaryWriter4.Write(index6);
+                for (int index15 = 1; index15 <= index6; ++index15)
+                {
+                    binaryWriter4.Write(tarName[index15]);
+                    binaryWriter4.Write(xTar[index15]);
+                    binaryWriter4.Write(yTar[index15]);
+                    binaryWriter4.Write(zTar[index15]);
+                }
+                binaryWriter4.Close();
+                output4.Close();
+            }
+            if (index6 >= 4 || index9 >= 4)
+                return;
+            int num22 = (int)MessageBox.Show("Contol points isn't enough.Add to Store or Input for Current Project", "Control Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            iCond = -1;
+        }
+
+        public void StereoInput(out int iCond, int iKindMeasure, string curModel, string curStrip)
+        {
+            iCond = 0;
+            minArray = 999999;
+            DllClass1.stringArray(pntName, ref minArray);
+            DllClass1.doubleArray(xLeft, ref minArray);
+            DllClass1.doubleArray(yLeft, ref minArray);
+            DllClass1.doubleArray(xRight, ref minArray);
+            DllClass1.doubleArray(yRight, ref minArray);
+            FilePath();
+            string text = "Lines Number with error: ";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Stereoscopic Data";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            string str1 = "";
+            openFileDialog.FileName = str1;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                Stream stream;
+                if ((stream = openFileDialog.OpenFile()) == null)
+                    return;
+                Cursor.Current = Cursors.WaitCursor;
+                StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                int num1;
+                int num2 = num1 = 0;
+                int num3 = num1;
+                int num4 = num1;
+                int index1;
+                int num5 = index1 = 0;
+                int num6;
+                int num7 = num6 = 0;
+                int num8 = num6;
+                int index2 = num6;
+                string str2 = " ";
+                double num9;
+                double num10 = num9 = 0.0;
+                double num11 = num9;
+                double num12 = num9;
+                double num13 = num9;
+                long num14 = 0;
+                int num15;
+                int num16 = num15 = 0;
+                int num17 = num15;
+                int num18 = num15;
+                char[] seps = new char[2] { ' ', ',' };
+                int k = 0;
+                int kPart = 50;
+                string sLine;
+                while ((sLine = streamReader.ReadLine()) != null)
+                {
+                    ++num4;
+                    string[] sPart;
+                    DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                    if (k != 5)
+                    {
+                        ++num2;
+                        string str3 = Convert.ToString(num4);
+                        text = text + str3 + ",";
+                        if (num2 > 10)
+                        {
+                            iCond = -99;
+                            break;
+                        }
+                    }
+                    else if (num4 == 1)
+                    {
+                        num14 = long.Parse(sPart[1]);
+                        if (num3 == 1 && num14 <= 0L)
+                        {
+                            ++index1;
+                            kModelStrip[index1] = num5;
+                            num4 = 0;
+                            num5 = 0;
+                            int num19;
+                            num3 = num19 = 0;
+                            num8 = num19;
+                            index2 = num19;
+                        }
+                        else if (num14 > 0L && num14 <= 10000L)
+                        {
+                            ++num2;
+                            string str4 = Convert.ToString(num4);
+                            text = text + str4 + ",";
+                            if (num2 > 10)
+                            {
+                                iCond = -99;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            num3 = 0;
+                            num18 = (int)(num14 / 10000L);
+                            num17 = (int)(num14 - (long)(10000 * num18));
+                        }
+                    }
+                    else
+                    {
+                        int num20 = 0;
+                        if (num4 > 1)
+                        {
+                            str2 = sPart[1];
+                            k = 0;
+                            for (int index3 = 0; index3 < str2.Length && str2.IndexOf('-') <= -1; ++index3)
+                            {
+                                if (!char.IsDigit(str2[index3]))
+                                {
+                                    ++k;
+                                    break;
+                                }
+                            }
+                            if (k == 0)
+                                num20 = Convert.ToInt32(sPart[1]);
+                            if (k > 0)
+                                num20 = 9999;
+                            num13 = Convert.ToDouble(sPart[2]);
+                            num12 = Convert.ToDouble(sPart[3]);
+                            num11 = Convert.ToDouble(sPart[4]);
+                            num10 = Convert.ToDouble(sPart[5]);
+                        }
+                        if (num20 > 0)
+                        {
+                            num3 = 0;
+                            if (num13 != 0.0 || num12 != 0.0 || num11 != 0.0 || num10 != 0.0)
+                            {
+                                ++index2;
+                                if (index2 > minArray)
+                                {
+                                    int num21 = (int)MessageBox.Show("Index array StereoInput");
+                                    break;
+                                }
+                                pntName[index2] = str2;
+                                xLeft[index2] = num13;
+                                yLeft[index2] = num12;
+                                xRight[index2] = num11;
+                                yRight[index2] = num10;
+                            }
+                        }
+                        else if (num20 <= 0)
+                        {
+                            ++num3;
+                            for (int index4 = 1; index4 <= 8; ++index4)
+                            {
+                                string str5 = pntName[index4];
+                                k = 0;
+                                for (int index5 = 0; index5 < str5.Length && str5.IndexOf('-') <= -1; ++index5)
+                                {
+                                    if (!char.IsDigit(str5[index5]))
+                                    {
+                                        ++k;
+                                        break;
+                                    }
+                                }
+                                if (k <= 0)
+                                {
+                                    int int32 = Convert.ToInt32(pntName[index4]);
+                                    k = 0;
+                                    for (int index6 = 1; index6 <= 8; ++index6)
+                                    {
+                                        if ((int32 == index6 || int32 == index6 * 1000 || int32 == index6 * 10000) && (xLeft[index4] != 0.0 || yLeft[index4] != 0.0 || xRight[index4] != 0.0 || yRight[index4] != 0.0))
+                                        {
+                                            ++num8;
+                                            ++k;
+                                            break;
+                                        }
+                                    }
+                                    if (k == 0)
+                                        break;
+                                }
+                                else
+                                    break;
+                            }
+                            if (num8 != 0 && num8 != 4 && num8 != 8)
+                            {
+                                ++num2;
+                                text = text + "Model " + Convert.ToString(num14) + "-Possible mistake: Point, which follows after fiducials, has not relevant name." + ",";
+                                if (num2 > 10)
+                                {
+                                    iCond = -99;
+                                    break;
+                                }
+                            }
+                            else if (index2 - num8 < 6)
+                            {
+                                ++num2;
+                                text = text + "Model " + Convert.ToString(num14) + "-Possible mistake: Point, which follows after fiducials, has not relevant name." + ",";
+                                if (num2 > 10)
+                                {
+                                    iCond = -99;
+                                    break;
+                                }
+                            }
+                            else if (num3 == 1)
+                            {
+                                ++num5;
+                                binaryWriter1.Write(num14);
+                                binaryWriter1.Write(num18);
+                                binaryWriter1.Write(num17);
+                                binaryWriter1.Write(num8);
+                                binaryWriter1.Write(index2);
+                                for (int index7 = 1; index7 <= index2; ++index7)
+                                {
+                                    binaryWriter1.Write(pntName[index7]);
+                                    binaryWriter1.Write(xLeft[index7]);
+                                    binaryWriter1.Write(yLeft[index7]);
+                                    binaryWriter1.Write(xRight[index7]);
+                                    binaryWriter1.Write(yRight[index7]);
+                                }
+                                int num22;
+                                num4 = num22 = 0;
+                                num8 = num22;
+                                index2 = num22;
+                            }
+                        }
+                    }
+                }
+                stream.Close();
+                binaryWriter1.Close();
+                output1.Close();
+                if (num2 > 0)
+                {
+                    int num23 = (int)MessageBox.Show(text, "StereoScopic Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    if (num5 > 0)
+                    {
+                        ++index1;
+                        kModelStrip[index1] = num5;
+                    }
+                    if (curModel == fileAero)
+                    {
+                        if (File.Exists(frelOrient))
+                            File.Delete(frelOrient);
+                        if (File.Exists(fotoAero))
+                            File.Delete(fotoAero);
+                        if (File.Exists(aeroBlock))
+                            File.Delete(aeroBlock);
+                        if (File.Exists(freeBlock))
+                            File.Delete(freeBlock);
+                        if (File.Exists(monoPhoto))
+                            File.Delete(monoPhoto);
+                        if (File.Exists(difMeasure))
+                            File.Delete(difMeasure);
+                        if (File.Exists(difModel))
+                            File.Delete(difModel);
+                        if (File.Exists(difStrip))
+                            File.Delete(difStrip);
+                        if (File.Exists(difTarget))
+                            File.Delete(difTarget);
+                        if (File.Exists(difControl))
+                            File.Delete(difControl);
+                        if (File.Exists(curControl))
+                            File.Delete(curControl);
+                        if (File.Exists(aerialPhoto))
+                            File.Delete(aerialPhoto);
+                        if (File.Exists(aeroStrip))
+                            File.Delete(aeroStrip);
+                        if (File.Exists(fotoStrip))
+                            File.Delete(fotoStrip);
+                        if (File.Exists(fileGeo))
+                            File.Delete(fileGeo);
+                        if (File.Exists(fallGeo))
+                            File.Delete(fallGeo);
+                        if (File.Exists(difStrip1))
+                            File.Delete(difStrip1);
+                        if (File.Exists(difStrip2))
+                            File.Delete(difStrip2);
+                        if (File.Exists(fileDoubt))
+                            File.Delete(fileDoubt);
+                        if (File.Exists(modRelative))
+                            File.Delete(modRelative);
+                        if (File.Exists(fotoModel))
+                            File.Delete(fotoModel);
+                        if (File.Exists(modelPhoto))
+                            File.Delete(modelPhoto);
+                        if (File.Exists(fileModel))
+                            File.Delete(fileModel);
+                        if (File.Exists(fGeoModel))
+                            File.Delete(fGeoModel);
+                        if (File.Exists(aeroSource))
+                            File.Delete(aeroSource);
+                    }
+                    if (curModel == stereoModel)
+                    {
+                        if (File.Exists(modRelative))
+                            File.Delete(modRelative);
+                        if (File.Exists(fotoModel))
+                            File.Delete(fotoModel);
+                        if (File.Exists(modelPhoto))
+                            File.Delete(modelPhoto);
+                        if (File.Exists(fileModel))
+                            File.Delete(fileModel);
+                        if (File.Exists(fGeoModel))
+                            File.Delete(fGeoModel);
+                        if (File.Exists(aeroSource))
+                            File.Delete(aeroSource);
+                    }
+                    if (File.Exists(fileAdd))
+                    {
+                        FileStream input = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader((Stream)input);
+                        if (File.Exists(curModel))
+                            File.Delete(curModel);
+                        FileStream output2 = new FileStream(curModel, FileMode.CreateNew);
+                        BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                        try
+                        {
+                            for (int index8 = 1; index8 <= index1; ++index8)
+                            {
+                                int num24 = kModelStrip[index8];
+                                for (int index9 = 1; index9 <= num24; ++index9)
+                                {
+                                    long num25 = binaryReader.ReadInt64();
+                                    int num26 = binaryReader.ReadInt32();
+                                    int num27 = binaryReader.ReadInt32();
+                                    int num28 = binaryReader.ReadInt32();
+                                    int num29 = binaryReader.ReadInt32();
+                                    for (int index10 = 1; index10 <= num29; ++index10)
+                                    {
+                                        pntName[index10] = binaryReader.ReadString();
+                                        xLeft[index10] = binaryReader.ReadDouble();
+                                        yLeft[index10] = binaryReader.ReadDouble();
+                                        xRight[index10] = binaryReader.ReadDouble();
+                                        yRight[index10] = binaryReader.ReadDouble();
+                                    }
+                                    binaryWriter2.Write(num25);
+                                    binaryWriter2.Write(num26);
+                                    binaryWriter2.Write(num27);
+                                    binaryWriter2.Write(num28);
+                                    binaryWriter2.Write(num29);
+                                    for (int index11 = 1; index11 <= num29; ++index11)
+                                    {
+                                        binaryWriter2.Write(pntName[index11]);
+                                        binaryWriter2.Write(xLeft[index11]);
+                                        binaryWriter2.Write(yLeft[index11]);
+                                        binaryWriter2.Write(xRight[index11]);
+                                        binaryWriter2.Write(yRight[index11]);
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input.Close();
+                            binaryReader.Close();
+                        }
+                        output2.Close();
+                        binaryWriter2.Close();
+                    }
+                    if (File.Exists(curStrip))
+                        File.Delete(curStrip);
+                    FileStream output3 = new FileStream(curStrip, FileMode.CreateNew);
+                    BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                    binaryWriter3.Write(index1);
+                    for (int index12 = 1; index12 <= index1; ++index12)
+                    {
+                        numCamera[index12] = 0L;
+                        binaryWriter3.Write(kModelStrip[index12]);
+                        binaryWriter3.Write(numCamera[index12]);
+                    }
+                    output3.Close();
+                    binaryWriter3.Close();
+                    if (iKindMeasure > 1)
+                        ParallaxToCoord(iKindMeasure, curModel, curStrip);
+                    if (!File.Exists(curModel))
+                        return;
+                    FileStream input1 = new FileStream(curModel, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                    if (File.Exists(aeroSource))
+                        File.Delete(aeroSource);
+                    FileStream output4 = new FileStream(aeroSource, FileMode.CreateNew);
+                    BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+                    try
+                    {
+                        for (int index13 = 1; index13 <= index1; ++index13)
+                        {
+                            int num30 = kModelStrip[index13];
+                            for (int index14 = 1; index14 <= num30; ++index14)
+                            {
+                                long num31 = binaryReader1.ReadInt64();
+                                int num32 = binaryReader1.ReadInt32();
+                                int num33 = binaryReader1.ReadInt32();
+                                int num34 = binaryReader1.ReadInt32();
+                                int num35 = binaryReader1.ReadInt32();
+                                for (int index15 = 1; index15 <= num35; ++index15)
+                                {
+                                    pntName[index15] = binaryReader1.ReadString();
+                                    xLeft[index15] = binaryReader1.ReadDouble();
+                                    yLeft[index15] = binaryReader1.ReadDouble();
+                                    xRight[index15] = binaryReader1.ReadDouble();
+                                    yRight[index15] = binaryReader1.ReadDouble();
+                                }
+                                binaryWriter4.Write(num31);
+                                binaryWriter4.Write(num32);
+                                binaryWriter4.Write(num33);
+                                binaryWriter4.Write(num34);
+                                binaryWriter4.Write(num35);
+                                for (int index16 = 1; index16 <= num35; ++index16)
+                                {
+                                    binaryWriter4.Write(pntName[index16]);
+                                    binaryWriter4.Write(xLeft[index16]);
+                                    binaryWriter4.Write(yLeft[index16]);
+                                    binaryWriter4.Write(xRight[index16]);
+                                    binaryWriter4.Write(yRight[index16]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input1.Close();
+                        binaryReader1.Close();
+                    }
+                    output4.Close();
+                    binaryWriter4.Close();
+                }
+            }
+            else
+                iCond = -99;
+        }
+
+        public void ParallaxToCoord(int iParam, string curModel, string curStrip)
+        {
+            FilePath();
+            int num1;
+            int num2 = num1 = 0;
+            int num3 = 0;
+            if (File.Exists(curStrip))
+            {
+                FileStream input = new FileStream(curStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num3 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num3; ++index)
+                    {
+                        kModelStrip[index] = binaryReader.ReadInt32();
+                        numCamera[index] = binaryReader.ReadInt64();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (File.Exists(curModel))
+            {
+                FileStream input = new FileStream(curModel, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    for (int index1 = 1; index1 <= num3; ++index1)
+                    {
+                        int num4 = kModelStrip[index1];
+                        for (int index2 = 1; index2 <= num4; ++index2)
+                        {
+                            long num5 = binaryReader.ReadInt64();
+                            int num6 = binaryReader.ReadInt32();
+                            int num7 = binaryReader.ReadInt32();
+                            int kMark = binaryReader.ReadInt32();
+                            int k = binaryReader.ReadInt32();
+                            for (int index3 = 1; index3 <= k; ++index3)
+                            {
+                                pntName[index3] = binaryReader.ReadString();
+                                xLeft[index3] = binaryReader.ReadDouble();
+                                yLeft[index3] = binaryReader.ReadDouble();
+                                xRight[index3] = binaryReader.ReadDouble();
+                                yRight[index3] = binaryReader.ReadDouble();
+                            }
+                            DllClass1.Fiducial(iParam, k, kMark, ref xLeft, ref yLeft, ref xRight, ref yRight);
+                            binaryWriter.Write(num5);
+                            binaryWriter.Write(num6);
+                            binaryWriter.Write(num7);
+                            binaryWriter.Write(kMark);
+                            binaryWriter.Write(k);
+                            for (int index4 = 1; index4 <= k; ++index4)
+                            {
+                                binaryWriter.Write(pntName[index4]);
+                                binaryWriter.Write(xLeft[index4]);
+                                binaryWriter.Write(yLeft[index4]);
+                                binaryWriter.Write(xRight[index4]);
+                                binaryWriter.Write(yRight[index4]);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            FileStream input1 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            if (File.Exists(curModel))
+                File.Delete(curModel);
+            FileStream output1 = new FileStream(curModel, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            try
+            {
+                for (int index5 = 1; index5 <= num3; ++index5)
+                {
+                    int num8 = kModelStrip[index5];
+                    for (int index6 = 1; index6 <= num8; ++index6)
+                    {
+                        long num9 = binaryReader1.ReadInt64();
+                        int num10 = binaryReader1.ReadInt32();
+                        int num11 = binaryReader1.ReadInt32();
+                        int num12 = binaryReader1.ReadInt32();
+                        int num13 = binaryReader1.ReadInt32();
+                        for (int index7 = 1; index7 <= num13; ++index7)
+                        {
+                            pntName[index7] = binaryReader1.ReadString();
+                            xLeft[index7] = binaryReader1.ReadDouble();
+                            yLeft[index7] = binaryReader1.ReadDouble();
+                            xRight[index7] = binaryReader1.ReadDouble();
+                            yRight[index7] = binaryReader1.ReadDouble();
+                        }
+                        binaryWriter1.Write(num9);
+                        binaryWriter1.Write(num10);
+                        binaryWriter1.Write(num11);
+                        binaryWriter1.Write(num12);
+                        binaryWriter1.Write(num13);
+                        for (int index8 = 1; index8 <= num13; ++index8)
+                        {
+                            binaryWriter1.Write(pntName[index8]);
+                            binaryWriter1.Write(xLeft[index8]);
+                            binaryWriter1.Write(yLeft[index8]);
+                            binaryWriter1.Write(xRight[index8]);
+                            binaryWriter1.Write(yRight[index8]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            output1.Close();
+            binaryWriter1.Close();
+        }
+
+        public void InteriorOrient(out int kInter, string[] tmpName, double[] xDif, double[] yDif)
+        {
+            kInter = 0;
+            int index1 = 0;
+            if (File.Exists(difMeasure))
+            {
+                FileStream input = new FileStream(difMeasure, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num1;
+                    while ((num1 = binaryReader.ReadInt32()) != 0)
+                    {
+                        if (num1 > 0)
+                        {
+                            binaryReader.ReadInt64();
+                            binaryReader.ReadInt64();
+                            for (int index2 = 1; index2 <= num1; ++index2)
+                            {
+                                string str = binaryReader.ReadString();
+                                double num2 = binaryReader.ReadDouble();
+                                double num3 = binaryReader.ReadDouble();
+                                ++index1;
+                                tmpName[index1] = str;
+                                xDif[index1] = num2;
+                                yDif[index1] = num3;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            kInter = index1;
+        }
+
+        public void RelativeOrient(
+          out int kPhoto,
+          int[] numPhoto,
+          double[] xsPhoto,
+          double[] ysPhoto,
+          out int kRelate,
+          int[] modLeft,
+          int[] modRight,
+          double[] xBase,
+          double[] yBase)
+        {
+            kPhoto = 0;
+            kRelate = 0;
+            int index1 = 0;
+            int num1 = 0;
+            if (File.Exists(aeroBlock))
+            {
+                FileStream input = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    num1 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        blockName[index2] = binaryReader.ReadString();
+                        xBlock[index2] = binaryReader.ReadDouble();
+                        yBlock[index2] = binaryReader.ReadDouble();
+                        zBlock[index2] = binaryReader.ReadDouble();
+                        string str1 = blockName[index2];
+                        if (str1.IndexOf('-') > -1)
+                        {
+                            string str2 = str1.Trim('-');
+                            ++index1;
+                            numPhoto[index1] = Convert.ToInt32(str2);
+                            xsPhoto[index1] = xBlock[index2];
+                            ysPhoto[index1] = yBlock[index2];
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            kPhoto = index1;
+            if (num1 <= 0)
+                return;
+            int index3 = 0;
+            if (!File.Exists(frelOrient))
+                return;
+            FileStream input1 = new FileStream(frelOrient, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            try
+            {
+                while (binaryReader1.ReadInt64() != 0L)
+                {
+                    int num2 = binaryReader1.ReadInt32();
+                    int num3 = binaryReader1.ReadInt32();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    double num4 = binaryReader1.ReadDouble();
+                    double num5 = binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    binaryReader1.ReadDouble();
+                    int num6 = binaryReader1.ReadInt32();
+                    for (int index4 = 1; index4 <= num6; ++index4)
+                    {
+                        pntName[index4] = binaryReader1.ReadString();
+                        xLeft[index4] = binaryReader1.ReadDouble();
+                        yLeft[index4] = binaryReader1.ReadDouble();
+                        xRight[index4] = binaryReader1.ReadDouble();
+                        yRight[index4] = binaryReader1.ReadDouble();
+                    }
+                    ++index3;
+                    modLeft[index3] = num2;
+                    modRight[index3] = num3;
+                    xBase[index3] = num4;
+                    yBase[index3] = num5;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input1.Close();
+                binaryReader1.Close();
+            }
+            kRelate = index3;
+        }
+
+        public void ModelStripJoin(
+          int iParam,
+          out int kDiffer,
+          string[] tmpName,
+          double[] xBase,
+          double[] yBase,
+          double[] zBase)
+        {
+            kDiffer = 0;
+            int index1 = 0;
+            if (iParam == 1)
+            {
+                if (File.Exists(difModel))
+                {
+                    FileStream input = new FileStream(difModel, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        while (binaryReader.ReadInt64() != 0L)
+                        {
+                            binaryReader.ReadInt64();
+                            int num1 = binaryReader.ReadInt32();
+                            if (num1 > 0)
+                            {
+                                for (int index2 = 1; index2 <= num1; ++index2)
+                                {
+                                    string str = binaryReader.ReadString();
+                                    double num2 = binaryReader.ReadDouble();
+                                    double num3 = binaryReader.ReadDouble();
+                                    double num4 = binaryReader.ReadDouble();
+                                    ++index1;
+                                    tmpName[index1] = str;
+                                    xBase[index1] = num2;
+                                    yBase[index1] = num3;
+                                    zBase[index1] = num4;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input.Close();
+                        binaryReader.Close();
+                    }
+                }
+                kDiffer = index1;
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(difStrip))
+            {
+                FileStream input = new FileStream(difStrip, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    while (binaryReader.ReadString() != null)
+                    {
+                        binaryReader.ReadString();
+                        int num5 = binaryReader.ReadInt32();
+                        if (num5 > 0)
+                        {
+                            for (int index3 = 1; index3 <= num5; ++index3)
+                            {
+                                string str = binaryReader.ReadString();
+                                double num6 = binaryReader.ReadDouble();
+                                double num7 = binaryReader.ReadDouble();
+                                double num8 = binaryReader.ReadDouble();
+                                ++index1;
+                                tmpName[index1] = str;
+                                xBase[index1] = num6;
+                                yBase[index1] = num7;
+                                zBase[index1] = num8;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            kDiffer = index1;
+        }
+
+        public void ModelOrient(out int iCond)
+        {
+            iCond = 0;
+            tolDx[1] = 0.0;
+            tolDy[1] = 0.0;
+            tolDz[1] = 0.0;
+            int num1 = 0;
+            if (File.Exists(fileGeo))
+            {
+                FileStream input = new FileStream(fileGeo, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num1 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num1; ++index)
+                    {
+                        geoName[index] = binaryReader.ReadString();
+                        xGeo[index] = binaryReader.ReadDouble();
+                        yGeo[index] = binaryReader.ReadDouble();
+                        zGeo[index] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (num1 == 0)
+                return;
+            int num2 = 0;
+            if (File.Exists(aeroBlock))
+            {
+                FileStream input = new FileStream(aeroBlock, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    xmin = binaryReader.ReadDouble();
+                    ymin = binaryReader.ReadDouble();
+                    xmax = binaryReader.ReadDouble();
+                    ymax = binaryReader.ReadDouble();
+                    zmin = binaryReader.ReadDouble();
+                    zmax = binaryReader.ReadDouble();
+                    num2 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num2; ++index)
+                    {
+                        blockName[index] = binaryReader.ReadString();
+                        xBlock[index] = binaryReader.ReadDouble();
+                        yBlock[index] = binaryReader.ReadDouble();
+                        zBlock[index] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (num2 == 0)
+                return;
+            int kPnt = 0;
+            if (File.Exists(fotoModel))
+            {
+                FileStream input = new FileStream(fotoModel, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    binaryReader.ReadInt32();
+                    binaryReader.ReadInt32();
+                    binaryReader.ReadInt32();
+                    binaryReader.ReadInt32();
+                    kPnt = binaryReader.ReadInt32();
+                    for (int index = 1; index <= kPnt; ++index)
+                    {
+                        fotoName[index] = binaryReader.ReadString();
+                        xFoto[index] = binaryReader.ReadDouble();
+                        yFoto[index] = binaryReader.ReadDouble();
+                        zFoto[index] = binaryReader.ReadDouble();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (kPnt == 0)
+                return;
+            int kGeo = 0;
+            for (int index1 = 1; index1 <= kPnt; ++index1)
+            {
+                for (int index2 = 1; index2 <= num2; ++index2)
+                {
+                    if (blockName[index2].IndexOf('-') <= -1 && blockName[index2] == fotoName[index1])
+                    {
+                        ++kGeo;
+                        tarName[kGeo] = blockName[index2];
+                        xTar[kGeo] = xBlock[index2];
+                        yTar[kGeo] = yBlock[index2];
+                        zTar[kGeo] = zBlock[index2];
+                        break;
+                    }
+                }
+            }
+            if (kGeo < 4)
+                return;
+            if (kGeo > 0 && num1 > 0)
+            {
+                for (int index3 = 1; index3 <= kGeo; ++index3)
+                {
+                    for (int index4 = 1; index4 <= num1; ++index4)
+                    {
+                        if (tarName[index3] == geoName[index4])
+                        {
+                            if (xGeo[index4] != 0.0 && yGeo[index4] != 0.0)
+                            {
+                                xTar[index3] = xGeo[index4];
+                                yTar[index3] = yGeo[index4];
+                            }
+                            if (zGeo[index4] != 0.0)
+                                zTar[index3] = zGeo[index4];
+                        }
+                    }
+                }
+            }
+            if (File.Exists(fGeoModel))
+                File.Delete(fGeoModel);
+            FileStream output1 = new FileStream(fGeoModel, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            binaryWriter1.Write(kGeo);
+            for (int index = 1; index <= kGeo; ++index)
+            {
+                binaryWriter1.Write(tarName[index]);
+                binaryWriter1.Write(xTar[index]);
+                binaryWriter1.Write(yTar[index]);
+                binaryWriter1.Write(zTar[index]);
+            }
+            output1.Close();
+            binaryWriter1.Close();
+            int kFin;
+            DllClass1.AbsOrient(kGeo, tarName, xTar, yTar, zTar, kPnt, fotoName, xFoto, yFoto, zFoto, ref tmpName1, ref e1Photo, ref e2Photo, ref tmpName2, ref xBase, ref yBase, ref zBase, out kFin, ref nameFin, ref xFin, ref yFin, ref zFin);
+            if (kFin == 0)
+                return;
+            DllClass1.Polynom(1, kGeo, tarName, xTar, yTar, zTar, kFin, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+            DllClass1.Polynom(3, kGeo, tarName, xTar, yTar, zTar, kFin, ref nameFin, ref xFin, ref yFin, ref zFin, ref e1Photo, ref e2Photo, ref e3Photo, ref xBase, ref yBase, ref zBase, ref xsPhoto, ref ysPhoto, ref zsPhoto, ref xAdd, ref yAdd);
+            int kDif;
+            DllClass1.DifCoord(kGeo, tarName, xTar, yTar, zTar, kFin, nameFin, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+            if (kDif == 0)
+                return;
+            double num3 = 0.0;
+            double num4 = 0.0;
+            double num5 = 0.0;
+            if (kDif > 0)
+            {
+                for (int index = 1; index <= kDif; ++index)
+                {
+                    num3 += Math.Abs(xBase[index]);
+                    num4 += Math.Abs(yBase[index]);
+                    num5 += Math.Abs(zBase[index]);
+                }
+                if (num3 == 0.0)
+                    num3 = 1E-05;
+                if (num4 == 0.0)
+                    num4 = 1E-05;
+                if (num5 == 0.0)
+                    num5 = 1E-05;
+            }
+            tolDx[1] = num3;
+            tolDy[1] = num4;
+            tolDz[1] = num5;
+            int index5 = 0;
+            for (int index6 = 1; index6 <= kFin; ++index6)
+            {
+                if (nameFin[index6].IndexOf('-') <= -1)
+                {
+                    ++index5;
+                    nameFin[index5] = nameFin[index6];
+                    xFin[index5] = xFin[index6];
+                    yFin[index5] = yFin[index6];
+                    zFin[index5] = zFin[index6];
+                }
+            }
+            int num6 = index5;
+            xMod1 = 9999999.9;
+            yMod1 = 9999999.9;
+            xMod2 = -9999999.9;
+            yMod2 = -9999999.9;
+            zMod1 = 9999999.9;
+            zMod2 = -9999999.9;
+            for (int index7 = 1; index7 <= num6; ++index7)
+            {
+                if (xFin[index7] < xMod1)
+                    xMod1 = xFin[index7];
+                if (xFin[index7] > xMod2)
+                    xMod2 = xFin[index7];
+                if (yFin[index7] < yMod1)
+                    yMod1 = yFin[index7];
+                if (yFin[index7] > yMod2)
+                    yMod2 = yFin[index7];
+                if (zFin[index7] < zMod1)
+                    zMod1 = zFin[index7];
+                if (zFin[index7] > zMod2)
+                    zMod2 = zFin[index7];
+            }
+            if (File.Exists(fileModel))
+                File.Delete(fileModel);
+            FileStream output2 = new FileStream(fileModel, FileMode.CreateNew);
+            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+            binaryWriter2.Write(modLeft[1]);
+            binaryWriter2.Write(modRight[1]);
+            binaryWriter2.Write(xMod1);
+            binaryWriter2.Write(yMod1);
+            binaryWriter2.Write(xMod2);
+            binaryWriter2.Write(yMod2);
+            binaryWriter2.Write(zMod1);
+            binaryWriter2.Write(zMod2);
+            binaryWriter2.Write(num6);
+            for (int index8 = 1; index8 <= num6; ++index8)
+            {
+                binaryWriter2.Write(nameFin[index8]);
+                binaryWriter2.Write(xFin[index8]);
+                binaryWriter2.Write(yFin[index8]);
+                binaryWriter2.Write(zFin[index8]);
+            }
+            output2.Close();
+            binaryWriter2.Close();
+        }
+
+        public void InsertModel(out int iCond)
+        {
+            iCond = 0;
+            int num1;
+            int num2 = num1 = 0;
+            double num3;
+            double zs2 = num3 = 0.0;
+            double ys2 = num3;
+            double xs2 = num3;
+            double zs1 = num3;
+            double ys1 = num3;
+            double xs1 = num3;
+            double num4;
+            double fk = num4 = 0.0;
+            double num5 = num4;
+            double num6 = num4;
+            double num7;
+            double f3 = num7 = 0.0;
+            double f2 = num7;
+            double f1 = num7;
+            double e3 = num7;
+            double e2 = num7;
+            double e1 = num7;
+            tolDx[2] = 0.0;
+            tolDy[2] = 0.0;
+            tolDz[2] = 0.0;
+            int num8 = 0;
+            if (!File.Exists(fbaseOrient))
+            {
+                int num9 = (int)MessageBox.Show("Orientation Data is absent", "Insert Model", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -1;
+            }
+            else
+            {
+                if (File.Exists(fbaseOrient))
+                {
+                    FileStream input = new FileStream(fbaseOrient, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        num8 = binaryReader.ReadInt32();
+                        for (int index = 1; index <= num8; ++index)
+                        {
+                            numPhoto[index] = binaryReader.ReadInt32();
+                            focPhoto[index] = binaryReader.ReadDouble();
+                            xoPhoto[index] = binaryReader.ReadDouble();
+                            yoPhoto[index] = binaryReader.ReadDouble();
+                            xsPhoto[index] = binaryReader.ReadDouble();
+                            ysPhoto[index] = binaryReader.ReadDouble();
+                            zsPhoto[index] = binaryReader.ReadDouble();
+                            e1Photo[index] = binaryReader.ReadDouble();
+                            e2Photo[index] = binaryReader.ReadDouble();
+                            e3Photo[index] = binaryReader.ReadDouble();
+                            iVariantPhoto[index] = binaryReader.ReadInt32();
+                            xMovePhoto[index] = binaryReader.ReadDouble();
+                            yMovePhoto[index] = binaryReader.ReadDouble();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input.Close();
+                        binaryReader.Close();
+                    }
+                }
+                int num10 = 0;
+                if (File.Exists(modelStrip))
+                {
+                    FileStream input = new FileStream(modelStrip, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        int num11 = binaryReader.ReadInt32();
+                        for (int index = 1; index <= num11; ++index)
+                        {
+                            kModelStrip[index] = binaryReader.ReadInt32();
+                            numCamera[index] = binaryReader.ReadInt64();
+                            num10 += kModelStrip[index];
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input.Close();
+                        binaryReader.Close();
+                    }
+                }
+                if (num10 > 1)
+                {
+                    int num12 = (int)MessageBox.Show("More than one model", "Insert Model", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    int num13 = 0;
+                    if (File.Exists(stereoModel))
+                    {
+                        FileStream input = new FileStream(stereoModel, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader((Stream)input);
+                        try
+                        {
+                            numModel[1] = binaryReader.ReadInt64();
+                            modLeft[1] = binaryReader.ReadInt32();
+                            modRight[1] = binaryReader.ReadInt32();
+                            modMark[1] = binaryReader.ReadInt32();
+                            modPoint[1] = binaryReader.ReadInt32();
+                            num13 = modPoint[1];
+                            for (int index = 1; index <= num13; ++index)
+                            {
+                                pntName[index] = binaryReader.ReadString();
+                                xLeft[index] = binaryReader.ReadDouble();
+                                yLeft[index] = binaryReader.ReadDouble();
+                                xRight[index] = binaryReader.ReadDouble();
+                                yRight[index] = binaryReader.ReadDouble();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            input.Close();
+                            binaryReader.Close();
+                        }
+                    }
+                    int num14 = modLeft[1];
+                    int num15 = modRight[1];
+                    int num16 = 0;
+                    for (int index = 1; index <= num8; ++index)
+                    {
+                        int num17 = numPhoto[index];
+                        if (num14 == num17)
+                        {
+                            ++num16;
+                            xs1 = xsPhoto[index];
+                            ys1 = ysPhoto[index];
+                            zs1 = zsPhoto[index];
+                            e1 = e1Photo[index];
+                            e2 = e2Photo[index];
+                            e3 = e3Photo[index];
+                            fk = focPhoto[index];
+                            double num18 = xoPhoto[index];
+                            double num19 = yoPhoto[index];
+                            num6 = xMovePhoto[index];
+                            num5 = yMovePhoto[index];
+                            num1 = iVariantPhoto[index];
+                            break;
+                        }
+                    }
+                    int num20 = 0;
+                    for (int index = 1; index <= num8; ++index)
+                    {
+                        int num21 = numPhoto[index];
+                        if (num15 == num21)
+                        {
+                            ++num20;
+                            xs2 = xsPhoto[index];
+                            ys2 = ysPhoto[index];
+                            zs2 = zsPhoto[index];
+                            f1 = e1Photo[index];
+                            f2 = e2Photo[index];
+                            f3 = e3Photo[index];
+                            num6 = xMovePhoto[index];
+                            num5 = yMovePhoto[index];
+                            num1 = iVariantPhoto[index];
+                            break;
+                        }
+                    }
+                    if (num16 == 0 || num20 == 0)
+                    {
+                        int num22 = (int)MessageBox.Show("Orientation Data is absent", "Insert Model", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        iCond = -1;
+                    }
+                    else
+                    {
+                        if (num1 == 2)
+                        {
+                            double num23 = xs1;
+                            xs1 = ys1;
+                            ys1 = num23;
+                            double num24 = xs2;
+                            xs2 = ys2;
+                            ys2 = num24;
+                        }
+                        if (num6 != 0.0)
+                        {
+                            double num25 = xs1 - num6;
+                            xs1 = num6 - num25;
+                            double num26 = xs2 - num6;
+                            xs2 = num6 - num26;
+                        }
+                        if (num5 != 0.0)
+                        {
+                            double num27 = ys1 - num5;
+                            ys1 = num5 - num27;
+                            double num28 = ys2 - num5;
+                            ys2 = num5 - num28;
+                        }
+                        Cursor.Current = Cursors.WaitCursor;
+                        DllClass1.DirectResection(fk, xs1, ys1, zs1, e1, e2, e3, xs2, ys2, zs2, f1, f2, f3, num13, xLeft, yLeft, xRight, yRight, ref xFin, ref yFin, ref zFin);
+                        if (num6 != 0.0)
+                        {
+                            for (int index = 1; index <= num13; ++index)
+                                xAdd[index] = xFin[index] - num6;
+                            for (int index = 1; index <= num13; ++index)
+                                xFin[index] = num6 - xAdd[index];
+                        }
+                        if (num5 != 0.0)
+                        {
+                            for (int index = 1; index <= num13; ++index)
+                                yAdd[index] = yFin[index] - num5;
+                            for (int index = 1; index <= num13; ++index)
+                                yFin[index] = num5 - yAdd[index];
+                        }
+                        for (int index = 1; index <= num13; ++index)
+                        {
+                            if (num1 == 2)
+                            {
+                                double num29 = xFin[index];
+                                double num30 = yFin[index];
+                                xFin[index] = num30;
+                                yFin[index] = num29;
+                            }
+                        }
+                        int kGeo = 0;
+                        if (File.Exists(fGeoModel))
+                        {
+                            FileStream input = new FileStream(fGeoModel, FileMode.Open, FileAccess.Read);
+                            BinaryReader binaryReader = new BinaryReader((Stream)input);
+                            try
+                            {
+                                kGeo = binaryReader.ReadInt32();
+                                for (int index = 1; index <= kGeo; ++index)
+                                {
+                                    tarName[index] = binaryReader.ReadString();
+                                    xTar[index] = binaryReader.ReadDouble();
+                                    yTar[index] = binaryReader.ReadDouble();
+                                    zTar[index] = binaryReader.ReadDouble();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("The Read operation failed as expected.");
+                            }
+                            finally
+                            {
+                                input.Close();
+                                binaryReader.Close();
+                            }
+                        }
+                        double num31 = 0.0;
+                        double num32 = 0.0;
+                        double num33 = 0.0;
+                        if (kGeo > 0)
+                        {
+                            int kDif;
+                            DllClass1.DifCoord(kGeo, tarName, xTar, yTar, zTar, num13, pntName, xFin, yFin, zFin, out kDif, ref tmpName, ref xBase, ref yBase, ref zBase, ref sBase);
+                            if (kDif == 0)
+                                return;
+                            if (kDif > 0)
+                            {
+                                for (int index = 1; index <= kDif; ++index)
+                                {
+                                    num31 += Math.Abs(xBase[index]);
+                                    num32 += Math.Abs(yBase[index]);
+                                    num33 += Math.Abs(zBase[index]);
+                                }
+                            }
+                            if (num31 == 0.0)
+                                num31 = 1E-05;
+                            if (num32 == 0.0)
+                                num32 = 1E-05;
+                            if (num33 == 0.0)
+                                num33 = 1E-05;
+                        }
+                        tolDx[2] = num31;
+                        tolDy[2] = num32;
+                        tolDz[2] = num33;
+                        double num34 = Math.Sqrt(tolDx[1] * tolDx[1] + tolDy[1] * tolDy[1] + tolDz[1] * tolDz[1]);
+                        if (Math.Sqrt(tolDx[2] * tolDx[2] + tolDy[2] * tolDy[2] + tolDz[2] * tolDz[2]) > num34 || num13 <= 0)
+                            return;
+                        int index1 = 0;
+                        for (int index2 = 1; index2 <= num13; ++index2)
+                        {
+                            if (pntName[index2].IndexOf('-') <= -1)
+                            {
+                                ++index1;
+                                pntName[index1] = pntName[index2];
+                                xFin[index1] = xFin[index2];
+                                yFin[index1] = yFin[index2];
+                                zFin[index1] = zFin[index2];
+                            }
+                        }
+                        int num35 = index1;
+                        xMod1 = 9999999.9;
+                        yMod1 = 9999999.9;
+                        xMod2 = -9999999.9;
+                        yMod2 = -9999999.9;
+                        zMod1 = 9999999.9;
+                        zMod2 = -9999999.9;
+                        for (int index3 = 1; index3 <= num35; ++index3)
+                        {
+                            if (xFin[index3] < xMod1)
+                                xMod1 = xFin[index3];
+                            if (xFin[index3] > xMod2)
+                                xMod2 = xFin[index3];
+                            if (yFin[index3] < yMod1)
+                                yMod1 = yFin[index3];
+                            if (yFin[index3] > yMod2)
+                                yMod2 = yFin[index3];
+                            if (zFin[index3] < zMod1)
+                                zMod1 = zFin[index3];
+                            if (zFin[index3] > zMod2)
+                                zMod2 = zFin[index3];
+                        }
+                        if (File.Exists(fileModel))
+                            File.Delete(fileModel);
+                        FileStream output = new FileStream(fileModel, FileMode.CreateNew);
+                        BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                        binaryWriter.Write(modLeft[1]);
+                        binaryWriter.Write(modRight[1]);
+                        binaryWriter.Write(xMod1);
+                        binaryWriter.Write(yMod1);
+                        binaryWriter.Write(xMod2);
+                        binaryWriter.Write(yMod2);
+                        binaryWriter.Write(zMod1);
+                        binaryWriter.Write(zMod2);
+                        binaryWriter.Write(num35);
+                        for (int index4 = 1; index4 <= num35; ++index4)
+                        {
+                            binaryWriter.Write(pntName[index4]);
+                            binaryWriter.Write(xFin[index4]);
+                            binaryWriter.Write(yFin[index4]);
+                            binaryWriter.Write(zFin[index4]);
+                        }
+                        binaryWriter.Close();
+                        output.Close();
+                    }
+                }
+            }
+        }
+
+        public void MergeDtm()
+        {
+            int num1;
+            int num2 = num1 = 0;
+            xMod1 = 9999999.9;
+            yMod1 = 9999999.9;
+            xMod2 = -9999999.9;
+            yMod2 = -9999999.9;
+            zMod1 = 9999999.9;
+            zMod2 = -9999999.9;
+            int num3 = 0;
+            if (File.Exists(fileModel))
+            {
+                FileStream input = new FileStream(fileModel, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    num2 = binaryReader.ReadInt32();
+                    num1 = binaryReader.ReadInt32();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    num3 = binaryReader.ReadInt32();
+                    for (int index = 1; index <= num3; ++index)
+                    {
+                        nameFin[index] = binaryReader.ReadString();
+                        xFin[index] = binaryReader.ReadDouble();
+                        yFin[index] = binaryReader.ReadDouble();
+                        zFin[index] = binaryReader.ReadDouble();
+                        if (xFin[index] < xMod1)
+                            xMod1 = xFin[index];
+                        if (xFin[index] > xMod2)
+                            xMod2 = xFin[index];
+                        if (yFin[index] < yMod1)
+                            yMod1 = yFin[index];
+                        if (yFin[index] > yMod2)
+                            yMod2 = yFin[index];
+                        if (zFin[index] < zMod1)
+                            zMod1 = zFin[index];
+                        if (zFin[index] > zMod2)
+                            zMod2 = zFin[index];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (num3 == 0)
+                return;
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            int num4 = 0;
+            if (File.Exists(fbaseDtm))
+            {
+                FileStream input = new FileStream(fbaseDtm, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    double num5 = binaryReader.ReadDouble();
+                    double num6 = binaryReader.ReadDouble();
+                    double num7 = binaryReader.ReadDouble();
+                    double num8 = binaryReader.ReadDouble();
+                    double num9 = binaryReader.ReadDouble();
+                    double num10 = binaryReader.ReadDouble();
+                    binaryWriter.Write(num5);
+                    binaryWriter.Write(num6);
+                    binaryWriter.Write(num7);
+                    binaryWriter.Write(num8);
+                    binaryWriter.Write(num9);
+                    binaryWriter.Write(num10);
+                    int num11;
+                    while ((num11 = binaryReader.ReadInt32()) != 0)
+                    {
+                        int num12 = binaryReader.ReadInt32();
+                        int num13 = binaryReader.ReadInt32();
+                        for (int index = 1; index <= num13; ++index)
+                        {
+                            blockName[index] = binaryReader.ReadString();
+                            xBlock[index] = binaryReader.ReadDouble();
+                            yBlock[index] = binaryReader.ReadDouble();
+                            zBlock[index] = binaryReader.ReadDouble();
+                        }
+                        if ((num2 != num11 || num1 != num12) && (num2 != num12 || num1 != num11))
+                        {
+                            ++num4;
+                            binaryWriter.Write(num11);
+                            binaryWriter.Write(num12);
+                            binaryWriter.Write(num13);
+                            for (int index = 1; index <= num13; ++index)
+                            {
+                                binaryWriter.Write(blockName[index]);
+                                binaryWriter.Write(xBlock[index]);
+                                binaryWriter.Write(yBlock[index]);
+                                binaryWriter.Write(zBlock[index]);
+                                if (xBlock[index] < xMod1)
+                                    xMod1 = xBlock[index];
+                                if (xBlock[index] > xMod2)
+                                    xMod2 = xBlock[index];
+                                if (yBlock[index] < yMod1)
+                                    yMod1 = yBlock[index];
+                                if (yBlock[index] > yMod2)
+                                    yMod2 = yBlock[index];
+                                if (zBlock[index] < zMod1)
+                                    zMod1 = zBlock[index];
+                                if (zBlock[index] > zMod2)
+                                    zMod2 = zBlock[index];
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            if (num4 > 0)
+            {
+                FileStream input = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                if (File.Exists(fbaseDtm))
+                    File.Delete(fbaseDtm);
+                FileStream output = new FileStream(fbaseDtm, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                try
+                {
+                    binaryWriter.Write(xMod1);
+                    binaryWriter.Write(yMod1);
+                    binaryWriter.Write(xMod2);
+                    binaryWriter.Write(yMod2);
+                    binaryWriter.Write(zMod1);
+                    binaryWriter.Write(zMod2);
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    for (int index1 = 1; index1 <= num4; ++index1)
+                    {
+                        int num14 = binaryReader.ReadInt32();
+                        int num15 = binaryReader.ReadInt32();
+                        int num16 = binaryReader.ReadInt32();
+                        for (int index2 = 1; index2 <= num16; ++index2)
+                        {
+                            blockName[index2] = binaryReader.ReadString();
+                            xBlock[index2] = binaryReader.ReadDouble();
+                            yBlock[index2] = binaryReader.ReadDouble();
+                            zBlock[index2] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter.Write(num14);
+                        binaryWriter.Write(num15);
+                        binaryWriter.Write(num16);
+                        for (int index3 = 1; index3 <= num16; ++index3)
+                        {
+                            binaryWriter.Write(blockName[index3]);
+                            binaryWriter.Write(xBlock[index3]);
+                            binaryWriter.Write(yBlock[index3]);
+                            binaryWriter.Write(zBlock[index3]);
+                        }
+                    }
+                    binaryWriter.Write(num2);
+                    binaryWriter.Write(num1);
+                    binaryWriter.Write(num3);
+                    for (int index = 1; index <= num3; ++index)
+                    {
+                        binaryWriter.Write(nameFin[index]);
+                        binaryWriter.Write(xFin[index]);
+                        binaryWriter.Write(yFin[index]);
+                        binaryWriter.Write(zFin[index]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+                output.Close();
+                binaryWriter.Close();
+            }
+            else
+            {
+                if (num4 != 0)
+                    return;
+                if (File.Exists(fbaseDtm))
+                    File.Delete(fbaseDtm);
+                FileStream output = new FileStream(fbaseDtm, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(xMod1);
+                binaryWriter.Write(yMod1);
+                binaryWriter.Write(xMod2);
+                binaryWriter.Write(yMod2);
+                binaryWriter.Write(zMod1);
+                binaryWriter.Write(zMod2);
+                binaryWriter.Write(num2);
+                binaryWriter.Write(num1);
+                binaryWriter.Write(num3);
+                for (int index = 1; index <= num3; ++index)
+                {
+                    binaryWriter.Write(nameFin[index]);
+                    binaryWriter.Write(xFin[index]);
+                    binaryWriter.Write(yFin[index]);
+                    binaryWriter.Write(zFin[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+        }
+
+        public void PointSymbLoad(
+          string fsymbPnt,
+          out int kSymbPnt,
+          int[] numRec,
+          int[] numUser,
+          int[] heiSymb)
+        {
+            kSymbPnt = 0;
+            if (!File.Exists(fsymbPnt))
+                return;
+            FileStream input = new FileStream(fsymbPnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                string str;
+                while ((str = binaryReader.ReadString()) != null)
+                {
+                    int int32 = Convert.ToInt32(str);
+                    int num1 = binaryReader.ReadInt32();
+                    if (num1 == 0)
+                    {
+                        int num2 = binaryReader.ReadInt32();
+                        binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadInt32();
+                        int num3 = binaryReader.ReadInt32();
+                        int num4 = binaryReader.ReadInt32();
+                        if (num4 > 0)
+                        {
+                            for (int index = 1; index <= num4; ++index)
+                            {
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadInt32();
+                            }
+                        }
+                        int num5 = binaryReader.ReadInt32();
+                        if (num5 > 0)
+                        {
+                            for (int index = 1; index <= num5; ++index)
+                            {
+                                binaryReader.ReadInt32();
+                                binaryReader.ReadInt32();
+                                binaryReader.ReadInt32();
+                            }
+                        }
+                        ++kSymbPnt;
+                        heiSymb[kSymbPnt] = num3;
+                        numRec[kSymbPnt] = int32;
+                        numUser[kSymbPnt] = num2;
+                    }
+                    if (num1 > 0)
+                    {
+                        int num6 = binaryReader.ReadInt32();
+                        binaryReader.ReadInt32();
+                        binaryReader.ReadString();
+                        int num7 = binaryReader.ReadInt32();
+                        binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadInt32();
+                        binaryReader.ReadInt32();
+                        ++kSymbPnt;
+                        heiSymb[kSymbPnt] = num6;
+                        numRec[kSymbPnt] = int32;
+                        numUser[kSymbPnt] = num7;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineSymbolLoad(
+          string fSymbLine,
+          out int kSymbLine,
+          out int hSymbLine,
+          string[] sSymbLine,
+          int[] x1Line,
+          int[] y1Line,
+          int[] x2Line,
+          int[] y2Line,
+          int[] xDescr,
+          int[] yDescr,
+          int[] x1Dens,
+          int[] y1Dens,
+          int[] x1Sign,
+          int[] y1Sign,
+          int[] x2Sign,
+          int[] y2Sign,
+          int[] n1Sign,
+          int[] n2Sign,
+          int[] iStyle1,
+          int[] iStyle2,
+          int[] iWidth1,
+          int[] iWidth2,
+          int[] nColLine,
+          int[] nItem,
+          int[] itemLoc,
+          int[] nBaseSymb,
+          string[] sInscr,
+          double[] hInscr,
+          int[] iColInscr,
+          int[] iDensity)
+        {
+            kSymbLine = 0;
+            hSymbLine = 0;
+            if (!File.Exists(fSymbLine))
+                return;
+            FileStream input = new FileStream(fSymbLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kSymbLine = binaryReader.ReadInt32();
+                hSymbLine = binaryReader.ReadInt32();
+                for (int index = 1; index <= kSymbLine; ++index)
+                {
+                    sSymbLine[index] = binaryReader.ReadString();
+                    x1Line[index] = binaryReader.ReadInt32();
+                    y1Line[index] = binaryReader.ReadInt32();
+                    x2Line[index] = binaryReader.ReadInt32();
+                    y2Line[index] = binaryReader.ReadInt32();
+                    xDescr[index] = binaryReader.ReadInt32();
+                    yDescr[index] = binaryReader.ReadInt32();
+                    x1Dens[index] = binaryReader.ReadInt32();
+                    y1Dens[index] = binaryReader.ReadInt32();
+                    x1Sign[index] = binaryReader.ReadInt32();
+                    y1Sign[index] = binaryReader.ReadInt32();
+                    x2Sign[index] = binaryReader.ReadInt32();
+                    y2Sign[index] = binaryReader.ReadInt32();
+                    n1Sign[index] = binaryReader.ReadInt32();
+                    n2Sign[index] = binaryReader.ReadInt32();
+                    iStyle1[index] = binaryReader.ReadInt32();
+                    iStyle2[index] = binaryReader.ReadInt32();
+                    iWidth1[index] = binaryReader.ReadInt32();
+                    iWidth2[index] = binaryReader.ReadInt32();
+                    nColLine[index] = binaryReader.ReadInt32();
+                    nItem[index] = binaryReader.ReadInt32();
+                    itemLoc[index] = binaryReader.ReadInt32();
+                    nBaseSymb[index] = binaryReader.ReadInt32();
+                    sInscr[index] = binaryReader.ReadString();
+                    hInscr[index] = binaryReader.ReadDouble();
+                    iColInscr[index] = binaryReader.ReadInt32();
+                    iDensity[index] = binaryReader.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void KeepLoadBorder(int iParam, string fCurBorder)
+        {
+            if (iParam == 1)
+            {
+                if (File.Exists(fCurBorder))
+                    File.Delete(fCurBorder);
+                FileStream output = new FileStream(fCurBorder, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kBorder);
+                for (int index = 0; index <= kBorder; ++index)
+                {
+                    binaryWriter.Write(xBorder[index]);
+                    binaryWriter.Write(yBorder[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam == 2)
+            {
+                kBorder = 0;
+                if (File.Exists(fCurBorder))
+                {
+                    FileStream input = new FileStream(fCurBorder, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    kBorder = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kBorder; ++index)
+                    {
+                        xBorder[index] = binaryReader.ReadDouble();
+                        yBorder[index] = binaryReader.ReadDouble();
+                    }
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam == 3)
+            {
+                if (File.Exists(fCurBorder))
+                    File.Delete(fCurBorder);
+                FileStream output = new FileStream(fCurBorder, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kBordOper);
+                for (int index = 0; index <= kBordOper; ++index)
+                {
+                    binaryWriter.Write(xBordOper[index]);
+                    binaryWriter.Write(yBordOper[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 4)
+                return;
+            kBordOper = 0;
+            if (!File.Exists(fCurBorder))
+                return;
+            FileStream input1 = new FileStream(fCurBorder, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            kBordOper = binaryReader1.ReadInt32();
+            for (int index = 0; index <= kBordOper; ++index)
+            {
+                xBordOper[index] = binaryReader1.ReadDouble();
+                yBordOper[index] = binaryReader1.ReadDouble();
+            }
+            binaryReader1.Close();
+            input1.Close();
+        }
+
+        public void PointLoad(string fCurPnt, string fCurHeig)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            kPntPlus = 0;
+            kPntInput = 0;
+            if (!File.Exists(fCurPnt))
+                return;
+            FileStream input = new FileStream(fCurPnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPntPlus = binaryReader.ReadInt32();
+                xmin = binaryReader.ReadDouble();
+                ymin = binaryReader.ReadDouble();
+                zmin = binaryReader.ReadDouble();
+                xmax = binaryReader.ReadDouble();
+                ymax = binaryReader.ReadDouble();
+                zmax = binaryReader.ReadDouble();
+                for (int index = 0; index <= kPntPlus; ++index)
+                {
+                    namePnt[index] = binaryReader.ReadString();
+                    xPnt[index] = binaryReader.ReadDouble();
+                    yPnt[index] = binaryReader.ReadDouble();
+                    zPnt[index] = binaryReader.ReadDouble();
+                    nCode1[index] = binaryReader.ReadInt32();
+                    nCode2[index] = binaryReader.ReadInt32();
+                }
+                kPntInput = binaryReader.ReadInt32();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+            kHeight = -1;
+            for (int index = 0; index <= kPntPlus; ++index)
+            {
+                if (zPnt[index] != 0.0)
+                {
+                    ++kHeight;
+                    nameHeig[kHeight] = namePnt[index];
+                    xHeig[kHeight] = xPnt[index];
+                    yHeig[kHeight] = yPnt[index];
+                    zHeig[kHeight] = zPnt[index];
+                }
+            }
+            if (File.Exists(fCurHeig))
+                File.Delete(fCurHeig);
+            if (kHeight <= 3)
+                return;
+            FileStream output = new FileStream(fCurHeig, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kHeight);
+            for (int index = 0; index <= kHeight; ++index)
+            {
+                binaryWriter.Write(nameHeig[index]);
+                binaryWriter.Write(xHeig[index]);
+                binaryWriter.Write(yHeig[index]);
+                binaryWriter.Write(zHeig[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void PointLoadFin()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            kPntFin = 0;
+            if (!File.Exists(fpointFinal))
+                return;
+            FileStream input = new FileStream(fpointFinal, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPntFin = binaryReader.ReadInt32();
+                xmin = binaryReader.ReadDouble();
+                ymin = binaryReader.ReadDouble();
+                zmin = binaryReader.ReadDouble();
+                xmax = binaryReader.ReadDouble();
+                ymax = binaryReader.ReadDouble();
+                zmax = binaryReader.ReadDouble();
+                for (int index = 0; index <= kPntFin; ++index)
+                {
+                    namePntFin[index] = binaryReader.ReadString();
+                    xPntFin[index] = binaryReader.ReadDouble();
+                    yPntFin[index] = binaryReader.ReadDouble();
+                    zPntFin[index] = binaryReader.ReadDouble();
+                    nCode1Fin[index] = binaryReader.ReadInt32();
+                    nCode2Fin[index] = binaryReader.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineLoad(string fCurLine)
+        {
+            kLine = 0;
+            if (!File.Exists(fCurLine))
+                return;
+            FileStream input = new FileStream(fCurLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLine = binaryReader.ReadInt32();
+                if (kLine <= 0)
+                    return;
+                for (int index1 = 1; index1 <= kLine; ++index1)
+                {
+                    nLineCode[index1] = binaryReader.ReadInt32();
+                    nLongRad[index1] = binaryReader.ReadInt32();
+                    sWidLine[index1] = binaryReader.ReadDouble();
+                    dstLine[index1] = binaryReader.ReadDouble();
+                    rRadLine[index1] = binaryReader.ReadDouble();
+                    xRadLine[index1] = binaryReader.ReadDouble();
+                    yRadLine[index1] = binaryReader.ReadDouble();
+                    k1[index1] = binaryReader.ReadInt32();
+                    k2[index1] = binaryReader.ReadInt32();
+                    int num1 = k1[index1];
+                    int num2 = k2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        nameLin[index2] = binaryReader.ReadString();
+                        xLin[index2] = binaryReader.ReadDouble();
+                        yLin[index2] = binaryReader.ReadDouble();
+                        zLin[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void PolygonLoad(ref int[] kPolInside)
+        {
+            kPoly = 0;
+            if (!File.Exists(filePoly))
+                return;
+            FileStream input = new FileStream(filePoly, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPoly = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kPoly; ++index1)
+                {
+                    namePoly[index1] = binaryReader.ReadString();
+                    xLab[index1] = binaryReader.ReadDouble();
+                    yLab[index1] = binaryReader.ReadDouble();
+                    areaPol[index1] = binaryReader.ReadDouble();
+                    areaLeg[index1] = binaryReader.ReadDouble();
+                    nSymbPoly[index1] = binaryReader.ReadInt32();
+                    kt1[index1] = binaryReader.ReadInt32();
+                    kt2[index1] = binaryReader.ReadInt32();
+                    int num1 = kt1[index1];
+                    int num2 = kt2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xPol[index2] = binaryReader.ReadDouble();
+                        yPol[index2] = binaryReader.ReadDouble();
+                    }
+                    kInter = binaryReader.ReadInt32();
+                    kPolInside[index1] = kInter;
+                    if (kInter > 0)
+                    {
+                        for (int index3 = 1; index3 <= kInter; ++index3)
+                        {
+                            sInter[index3] = binaryReader.ReadDouble();
+                            kn1[index3] = binaryReader.ReadInt32();
+                            kn2[index3] = binaryReader.ReadInt32();
+                            int num3 = kn1[index3];
+                            int num4 = kn2[index3];
+                            for (int index4 = num3; index4 <= num4; ++index4)
+                            {
+                                xInter[index4] = binaryReader.ReadDouble();
+                                yInter[index4] = binaryReader.ReadDouble();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void LineTopoLoad()
+        {
+            int num1;
+            int index1 = num1 = 0;
+            kLineTopo = 0;
+            if (!File.Exists(flineTopo))
+                return;
+            FileStream input = new FileStream(flineTopo, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineTopo = binaryReader.ReadInt32();
+                for (int index2 = 1; index2 <= kLineTopo; ++index2)
+                {
+                    radLine[index2] = binaryReader.ReadDouble();
+                    kl1[index2] = binaryReader.ReadInt32();
+                    kl2[index2] = binaryReader.ReadInt32();
+                    int num2 = kl1[index2];
+                    int num3 = kl2[index2];
+                    int num4 = binaryReader.ReadInt32();
+                    for (int index3 = 1; index3 <= num4; ++index3)
+                    {
+                        xDop[index3] = binaryReader.ReadDouble();
+                        yDop[index3] = binaryReader.ReadDouble();
+                        ++index1;
+                        zLin[index1] = xDop[index3];
+                        zPik[index1] = yDop[index3];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void ItemLoadKeep(int iParam, string fLineItem)
+        {
+            if (iParam == 1)
+            {
+                kItemCoord = 0;
+                if (File.Exists(fLineItem))
+                {
+                    FileStream input = new FileStream(fLineItem, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        kItemCoord = binaryReader.ReadInt32();
+                        if (kItemCoord > 0)
+                        {
+                            for (int index = 1; index <= kItemCoord; ++index)
+                            {
+                                numSign[index] = binaryReader.ReadInt32();
+                                numItem[index] = binaryReader.ReadInt32();
+                                xItem[index] = binaryReader.ReadDouble();
+                                yItem[index] = binaryReader.ReadDouble();
+                                azItem[index] = binaryReader.ReadDouble();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+            }
+            if (iParam != 2)
+                return;
+            if (File.Exists(fLineItem))
+                File.Delete(fLineItem);
+            FileStream output = new FileStream(fLineItem, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kItemCoord);
+            if (kItemCoord > 0)
+            {
+                for (int index = 1; index <= kItemCoord; ++index)
+                {
+                    binaryWriter.Write(numSign[index]);
+                    binaryWriter.Write(numItem[index]);
+                    binaryWriter.Write(xItem[index]);
+                    binaryWriter.Write(yItem[index]);
+                    binaryWriter.Write(azItem[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void KeepLine(string fCurLine)
+        {
+            if (File.Exists(fCurLine))
+                File.Delete(fCurLine);
+            FileStream output = new FileStream(fCurLine, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kLine);
+            if (kLine > 0)
+            {
+                for (int index1 = 1; index1 <= kLine; ++index1)
+                {
+                    binaryWriter.Write(nLineCode[index1]);
+                    binaryWriter.Write(nLongRad[index1]);
+                    binaryWriter.Write(sWidLine[index1]);
+                    binaryWriter.Write(dstLine[index1]);
+                    binaryWriter.Write(rRadLine[index1]);
+                    binaryWriter.Write(xRadLine[index1]);
+                    binaryWriter.Write(yRadLine[index1]);
+                    binaryWriter.Write(k1[index1]);
+                    binaryWriter.Write(k2[index1]);
+                    int num1 = k1[index1];
+                    int num2 = k2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        binaryWriter.Write(nameLin[index2]);
+                        binaryWriter.Write(xLin[index2]);
+                        binaryWriter.Write(yLin[index2]);
+                        binaryWriter.Write(zLin[index2]);
+                    }
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void TriangInput(string fCurTriang)
+        {
+            kTriang = 0;
+            if (!File.Exists(fCurTriang))
+                return;
+            FileStream input = new FileStream(fCurTriang, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                binaryReader.ReadDouble();
+                binaryReader.ReadDouble();
+                binaryReader.ReadDouble();
+                binaryReader.ReadDouble();
+                kTriang = binaryReader.ReadInt32();
+                for (int index = 1; index <= kTriang; ++index)
+                {
+                    nTre[index] = binaryReader.ReadInt32();
+                    xTre[index] = binaryReader.ReadDouble();
+                    yTre[index] = binaryReader.ReadDouble();
+                    zTre[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input.Close();
+                binaryReader.Close();
+            }
+        }
+
+        public void KeepLoadVertex(int iParam, string fCurVertex)
+        {
+            if (iParam == 1)
+            {
+                if (File.Exists(fCurVertex))
+                    File.Delete(fCurVertex);
+                FileStream output = new FileStream(fCurVertex, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kVertex);
+                for (int index = 0; index <= kVertex; ++index)
+                {
+                    binaryWriter.Write(nameVert[index]);
+                    binaryWriter.Write(xVert[index]);
+                    binaryWriter.Write(yVert[index]);
+                    binaryWriter.Write(zVert[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kVertex = 0;
+            if (!File.Exists(fCurVertex))
+                return;
+            FileStream input = new FileStream(fCurVertex, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            kVertex = binaryReader.ReadInt32();
+            for (int index = 0; index <= kVertex; ++index)
+            {
+                nameVert[index] = binaryReader.ReadString();
+                xVert[index] = binaryReader.ReadDouble();
+                yVert[index] = binaryReader.ReadDouble();
+                zVert[index] = binaryReader.ReadDouble();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void SplitContour(
+          int iParam,
+          ref int kCont,
+          ref double hSect,
+          string fileContour,
+          double xSel,
+          double ySel,
+          out double xSplit,
+          out double ySplit,
+          double xSpl,
+          double ySpl,
+          double[] xtd,
+          double[] ytd,
+          double[] xcn,
+          double[] ycn,
+          double[] xa,
+          double[] ya,
+          ref int kSplt,
+          ref double[] xSplt,
+          ref double[] ySplt)
+        {
+            xSplit = 0.0;
+            ySplit = 0.0;
+            Cursor.Current = Cursors.WaitCursor;
+            if (iParam == 1)
+            {
+                int num1 = 0;
+                int index1 = 0;
+                double num2 = 9999999.9;
+                int num3 = 0;
+                if (!File.Exists(fileContour))
+                    return;
+                FileStream input1 = new FileStream(fileContour, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+                try
+                {
+                    hSect = binaryReader1.ReadDouble();
+                    kCont = binaryReader1.ReadInt32();
+                    if (xSel != 0.0)
+                    {
+                        if (ySel != 0.0)
+                        {
+                            if (File.Exists(fileAdd))
+                                File.Delete(fileAdd);
+                            FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                            binaryWriter.Write(hSect);
+                            binaryWriter.Write(kCont);
+                            for (int index2 = 1; index2 <= kCont; ++index2)
+                            {
+                                ++num3;
+                                int num4 = binaryReader1.ReadInt32();
+                                for (int index3 = 0; index3 <= num4; ++index3)
+                                {
+                                    xtd[index3] = binaryReader1.ReadDouble();
+                                    ytd[index3] = binaryReader1.ReadDouble();
+                                }
+                                double num5 = binaryReader1.ReadDouble();
+                                double num6 = binaryReader1.ReadDouble();
+                                double num7 = binaryReader1.ReadDouble();
+                                double num8 = binaryReader1.ReadDouble();
+                                int num9 = binaryReader1.ReadInt32();
+                                int num10 = binaryReader1.ReadInt32();
+                                int num11 = binaryReader1.ReadInt32();
+                                for (int index4 = 0; index4 <= num11; ++index4)
+                                {
+                                    xcn[index4] = binaryReader1.ReadDouble();
+                                    ycn[index4] = binaryReader1.ReadDouble();
+                                    double num12 = xcn[index4] - xSel;
+                                    double num13 = ycn[index4] - ySel;
+                                    double num14 = Math.Sqrt(num12 * num12 + num13 * num13);
+                                    if (num14 < num2)
+                                    {
+                                        num2 = num14;
+                                        num1 = num3;
+                                        index1 = index4;
+                                    }
+                                }
+                                binaryWriter.Write(num4);
+                                for (int index5 = 0; index5 <= num4; ++index5)
+                                {
+                                    binaryWriter.Write(xtd[index5]);
+                                    binaryWriter.Write(ytd[index5]);
+                                }
+                                binaryWriter.Write(num5);
+                                binaryWriter.Write(num6);
+                                binaryWriter.Write(num7);
+                                binaryWriter.Write(num8);
+                                binaryWriter.Write(num9);
+                                binaryWriter.Write(num10);
+                                binaryWriter.Write(num11);
+                                for (int index6 = 0; index6 <= num11; ++index6)
+                                {
+                                    binaryWriter.Write(xcn[index6]);
+                                    binaryWriter.Write(ycn[index6]);
+                                }
+                            }
+                            binaryWriter.Close();
+                            output.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader1.Close();
+                    input1.Close();
+                }
+                if (xSel == 0.0 && ySel == 0.0 || !File.Exists(fileAdd))
+                    return;
+                FileStream input2 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                hSect = binaryReader2.ReadDouble();
+                kCont = binaryReader2.ReadInt32();
+                if (File.Exists(fileContour))
+                    File.Delete(fileContour);
+                FileStream output1 = new FileStream(fileContour, FileMode.CreateNew);
+                BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                binaryWriter1.Write(hSect);
+                binaryWriter1.Write(kCont + 1);
+                int num15 = 0;
+                for (int index7 = 1; index7 <= kCont; ++index7)
+                {
+                    ++num15;
+                    int num16 = binaryReader2.ReadInt32();
+                    for (int index8 = 0; index8 <= num16; ++index8)
+                    {
+                        xtd[index8] = binaryReader2.ReadDouble();
+                        ytd[index8] = binaryReader2.ReadDouble();
+                    }
+                    double num17 = binaryReader2.ReadDouble();
+                    double num18 = binaryReader2.ReadDouble();
+                    double num19 = binaryReader2.ReadDouble();
+                    double num20 = binaryReader2.ReadDouble();
+                    int num21 = binaryReader2.ReadInt32();
+                    int num22 = binaryReader2.ReadInt32();
+                    int num23 = binaryReader2.ReadInt32();
+                    for (int index9 = 0; index9 <= num23; ++index9)
+                    {
+                        xcn[index9] = binaryReader2.ReadDouble();
+                        ycn[index9] = binaryReader2.ReadDouble();
+                    }
+                    if (num15 != num1)
+                    {
+                        binaryWriter1.Write(num16);
+                        for (int index10 = 0; index10 <= num16; ++index10)
+                        {
+                            binaryWriter1.Write(xtd[index10]);
+                            binaryWriter1.Write(ytd[index10]);
+                        }
+                        binaryWriter1.Write(num17);
+                        binaryWriter1.Write(num18);
+                        binaryWriter1.Write(num19);
+                        binaryWriter1.Write(num20);
+                        binaryWriter1.Write(num21);
+                        binaryWriter1.Write(num22);
+                        binaryWriter1.Write(num23);
+                        for (int index11 = 0; index11 <= num23; ++index11)
+                        {
+                            binaryWriter1.Write(xcn[index11]);
+                            binaryWriter1.Write(ycn[index11]);
+                        }
+                    }
+                    else if (num15 == num1)
+                    {
+                        xSplit = xcn[index1];
+                        ySplit = ycn[index1];
+                        double num24 = 0.0;
+                        int num25 = 0;
+                        int num26 = 0;
+                        double num27 = 0.0;
+                        double num28 = 0.0;
+                        for (int index12 = 1; index12 <= 2; ++index12)
+                        {
+                            int index13 = -1;
+                            if (index12 == 1)
+                            {
+                                for (int index14 = 0; index14 <= index1; ++index14)
+                                {
+                                    ++index13;
+                                    xa[index13] = xcn[index14];
+                                    ya[index13] = ycn[index14];
+                                }
+                            }
+                            if (index12 == 2)
+                            {
+                                for (int index15 = index1; index15 <= num23; ++index15)
+                                {
+                                    ++index13;
+                                    xa[index13] = xcn[index15];
+                                    ya[index13] = ycn[index15];
+                                }
+                            }
+                            binaryWriter1.Write(num16);
+                            for (int index16 = 0; index16 <= num16; ++index16)
+                            {
+                                binaryWriter1.Write(xtd[index16]);
+                                binaryWriter1.Write(ytd[index16]);
+                            }
+                            binaryWriter1.Write(num17);
+                            binaryWriter1.Write(num24);
+                            binaryWriter1.Write(num27);
+                            binaryWriter1.Write(num28);
+                            binaryWriter1.Write(num25);
+                            binaryWriter1.Write(num26);
+                            binaryWriter1.Write(index13);
+                            for (int index17 = 0; index17 <= index13; ++index17)
+                            {
+                                binaryWriter1.Write(xa[index17]);
+                                binaryWriter1.Write(ya[index17]);
+                            }
+                        }
+                    }
+                }
+                binaryReader2.Close();
+                input2.Close();
+                binaryWriter1.Close();
+                output1.Close();
+            }
+            if (iParam == 2)
+            {
+                int num29 = 0;
+                int num30 = 0;
+                double num31 = 9999999.9;
+                int num32 = 0;
+                if (!File.Exists(fileContour))
+                    return;
+                FileStream input3 = new FileStream(fileContour, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
+                hSect = binaryReader3.ReadDouble();
+                kCont = binaryReader3.ReadInt32();
+                if (File.Exists(ftmpPoly))
+                    File.Delete(ftmpPoly);
+                FileStream output2 = new FileStream(ftmpPoly, FileMode.CreateNew);
+                BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                binaryWriter2.Write(hSect);
+                binaryWriter2.Write(kCont);
+                for (int index18 = 1; index18 <= kCont; ++index18)
+                {
+                    ++num32;
+                    int num33 = binaryReader3.ReadInt32();
+                    for (int index19 = 0; index19 <= num33; ++index19)
+                    {
+                        xtd[index19] = binaryReader3.ReadDouble();
+                        ytd[index19] = binaryReader3.ReadDouble();
+                    }
+                    double num34 = binaryReader3.ReadDouble();
+                    double num35 = binaryReader3.ReadDouble();
+                    double num36 = binaryReader3.ReadDouble();
+                    double num37 = binaryReader3.ReadDouble();
+                    int num38 = binaryReader3.ReadInt32();
+                    int num39 = binaryReader3.ReadInt32();
+                    int num40 = binaryReader3.ReadInt32();
+                    for (int index20 = 0; index20 <= num40; ++index20)
+                    {
+                        xcn[index20] = binaryReader3.ReadDouble();
+                        ycn[index20] = binaryReader3.ReadDouble();
+                        double num41 = xcn[index20] - xSel;
+                        double num42 = ycn[index20] - ySel;
+                        double num43 = Math.Sqrt(num41 * num41 + num42 * num42);
+                        if (num43 < num31)
+                        {
+                            num31 = num43;
+                            num29 = num32;
+                            num30 = index20;
+                        }
+                    }
+                    binaryWriter2.Write(num33);
+                    for (int index21 = 0; index21 <= num33; ++index21)
+                    {
+                        binaryWriter2.Write(xtd[index21]);
+                        binaryWriter2.Write(ytd[index21]);
+                    }
+                    binaryWriter2.Write(num34);
+                    binaryWriter2.Write(num35);
+                    binaryWriter2.Write(num36);
+                    binaryWriter2.Write(num37);
+                    binaryWriter2.Write(num38);
+                    binaryWriter2.Write(num39);
+                    binaryWriter2.Write(num40);
+                    for (int index22 = 0; index22 <= num40; ++index22)
+                    {
+                        binaryWriter2.Write(xcn[index22]);
+                        binaryWriter2.Write(ycn[index22]);
+                    }
+                }
+                binaryWriter2.Close();
+                output2.Close();
+                binaryReader3.Close();
+                input3.Close();
+                if (!File.Exists(ftmpPoly))
+                    return;
+                FileStream input4 = new FileStream(ftmpPoly, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader4 = new BinaryReader((Stream)input4);
+                hSect = binaryReader4.ReadDouble();
+                kCont = binaryReader4.ReadInt32();
+                if (File.Exists(fileContour))
+                    File.Delete(fileContour);
+                FileStream output3 = new FileStream(fileContour, FileMode.CreateNew);
+                BinaryWriter binaryWriter3 = new BinaryWriter((Stream)output3);
+                binaryWriter3.Write(hSect);
+                binaryWriter3.Write(kCont - 1);
+                int num44 = 0;
+                int index23 = 0;
+                for (int index24 = 1; index24 <= kCont; ++index24)
+                {
+                    ++num44;
+                    int num45 = binaryReader4.ReadInt32();
+                    for (int index25 = 0; index25 <= num45; ++index25)
+                    {
+                        xtd[index25] = binaryReader4.ReadDouble();
+                        ytd[index25] = binaryReader4.ReadDouble();
+                    }
+                    double num46 = binaryReader4.ReadDouble();
+                    double num47 = binaryReader4.ReadDouble();
+                    double num48 = binaryReader4.ReadDouble();
+                    double num49 = binaryReader4.ReadDouble();
+                    int num50 = binaryReader4.ReadInt32();
+                    int num51 = binaryReader4.ReadInt32();
+                    int num52 = binaryReader4.ReadInt32();
+                    for (int index26 = 0; index26 <= num52; ++index26)
+                    {
+                        xcn[index26] = binaryReader4.ReadDouble();
+                        ycn[index26] = binaryReader4.ReadDouble();
+                    }
+                    if (num44 == num29)
+                    {
+                        index23 = num52;
+                        for (int index27 = 0; index27 <= num52; ++index27)
+                        {
+                            xa[index27] = xcn[index27];
+                            ya[index27] = ycn[index27];
+                        }
+                    }
+                    else
+                    {
+                        binaryWriter3.Write(num45);
+                        for (int index28 = 0; index28 <= num45; ++index28)
+                        {
+                            binaryWriter3.Write(xtd[index28]);
+                            binaryWriter3.Write(ytd[index28]);
+                        }
+                        binaryWriter3.Write(num46);
+                        binaryWriter3.Write(num47);
+                        binaryWriter3.Write(num48);
+                        binaryWriter3.Write(num49);
+                        binaryWriter3.Write(num50);
+                        binaryWriter3.Write(num51);
+                        binaryWriter3.Write(num52);
+                        for (int index29 = 0; index29 <= num52; ++index29)
+                        {
+                            binaryWriter3.Write(xcn[index29]);
+                            binaryWriter3.Write(ycn[index29]);
+                        }
+                    }
+                }
+                binaryReader4.Close();
+                input4.Close();
+                binaryWriter3.Close();
+                output3.Close();
+                if (kSplt > 0 && index23 > 0)
+                {
+                    double num53 = 9999999.9;
+                    int num54 = 0;
+                    for (int index30 = 1; index30 <= kSplt; ++index30)
+                    {
+                        double num55 = xSplt[index30] - xa[0];
+                        double num56 = ySplt[index30] - ya[0];
+                        double num57 = Math.Sqrt(num55 * num55 + num56 * num56);
+                        if (num57 < num53)
+                        {
+                            num53 = num57;
+                            num54 = index30;
+                        }
+                        double num58 = xSplt[index30] - xa[index23];
+                        double num59 = ySplt[index30] - ya[index23];
+                        double num60 = Math.Sqrt(num58 * num58 + num59 * num59);
+                        if (num60 < num53)
+                        {
+                            num53 = num60;
+                            num54 = index30;
+                        }
+                    }
+                    int index31 = 0;
+                    for (int index32 = 1; index32 <= kSplt; ++index32)
+                    {
+                        if (index32 != num54)
+                        {
+                            ++index31;
+                            xSplt[index31] = xSplt[index32];
+                            ySplt[index31] = ySplt[index32];
+                        }
+                    }
+                    kSplt = index31;
+                }
+            }
+            if (iParam != 3)
+                return;
+            xSplit = 0.0;
+            ySplit = 0.0;
+            if (!File.Exists(ftmpPoly))
+                return;
+            FileStream input = new FileStream(ftmpPoly, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            hSect = binaryReader.ReadDouble();
+            kCont = binaryReader.ReadInt32();
+            if (File.Exists(fileContour))
+                File.Delete(fileContour);
+            FileStream output4 = new FileStream(fileContour, FileMode.CreateNew);
+            BinaryWriter binaryWriter4 = new BinaryWriter((Stream)output4);
+            binaryWriter4.Write(hSect);
+            binaryWriter4.Write(kCont);
+            int num61 = 0;
+            for (int index33 = 1; index33 <= kCont; ++index33)
+            {
+                ++num61;
+                int num62 = binaryReader.ReadInt32();
+                for (int index34 = 0; index34 <= num62; ++index34)
+                {
+                    xtd[index34] = binaryReader.ReadDouble();
+                    ytd[index34] = binaryReader.ReadDouble();
+                }
+                double num63 = binaryReader.ReadDouble();
+                double num64 = binaryReader.ReadDouble();
+                double num65 = binaryReader.ReadDouble();
+                double num66 = binaryReader.ReadDouble();
+                int num67 = binaryReader.ReadInt32();
+                int num68 = binaryReader.ReadInt32();
+                int num69 = binaryReader.ReadInt32();
+                for (int index35 = 0; index35 <= num69; ++index35)
+                {
+                    xcn[index35] = binaryReader.ReadDouble();
+                    ycn[index35] = binaryReader.ReadDouble();
+                }
+                binaryWriter4.Write(num62);
+                for (int index36 = 0; index36 <= num62; ++index36)
+                {
+                    binaryWriter4.Write(xtd[index36]);
+                    binaryWriter4.Write(ytd[index36]);
+                }
+                binaryWriter4.Write(num63);
+                binaryWriter4.Write(num64);
+                binaryWriter4.Write(num65);
+                binaryWriter4.Write(num66);
+                binaryWriter4.Write(num67);
+                binaryWriter4.Write(num68);
+                binaryWriter4.Write(num69);
+                for (int index37 = 0; index37 <= num69; ++index37)
+                {
+                    binaryWriter4.Write(xcn[index37]);
+                    binaryWriter4.Write(ycn[index37]);
+                }
+            }
+            binaryReader.Close();
+            input.Close();
+            binaryWriter4.Close();
+            output4.Close();
+        }
+
+        public void KeepLoadInfoGrid(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (File.Exists(fInfoGrid))
+                    File.Delete(fInfoGrid);
+                FileStream output = new FileStream(fInfoGrid, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(shagGrid);
+                binaryWriter.Write(sRel);
+                binaryWriter.Write(sSech);
+                binaryWriter.Write(tolGrid);
+                binaryWriter.Write(kxGrid);
+                if (kxGrid > 1)
+                {
+                    for (int index = 1; index <= kxGrid; ++index)
+                        binaryWriter.Write(xGrid[index]);
+                }
+                binaryWriter.Write(kyGrid);
+                if (kyGrid > 1)
+                {
+                    for (int index = 1; index <= kyGrid; ++index)
+                        binaryWriter.Write(yGrid[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kxGrid = 0;
+            kyGrid = 0;
+            shagGrid = 0.0;
+            sRel = 0.0;
+            sSech = 0.0;
+            tolGrid = 0.0;
+            if (!File.Exists(fInfoGrid))
+                return;
+            FileStream input = new FileStream(fInfoGrid, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            shagGrid = binaryReader.ReadDouble();
+            sRel = binaryReader.ReadDouble();
+            sSech = binaryReader.ReadDouble();
+            tolGrid = binaryReader.ReadDouble();
+            kxGrid = binaryReader.ReadInt32();
+            if (kxGrid > 1)
+            {
+                for (int index = 1; index <= kxGrid; ++index)
+                    xGrid[index] = binaryReader.ReadDouble();
+            }
+            kyGrid = binaryReader.ReadInt32();
+            if (kyGrid > 1)
+            {
+                for (int index = 1; index <= kyGrid; ++index)
+                    yGrid[index] = binaryReader.ReadDouble();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void KeepLoadPntGrid(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (kPntGrid < 1)
+                    return;
+                if (File.Exists(fPntGrid))
+                    File.Delete(fPntGrid);
+                FileStream output = new FileStream(fPntGrid, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kPntGrid);
+                for (int index = 0; index <= kPntGrid; ++index)
+                {
+                    binaryWriter.Write(nameGrid[index]);
+                    binaryWriter.Write(xPntGrid[index]);
+                    binaryWriter.Write(yPntGrid[index]);
+                    binaryWriter.Write(dzGrid[index]);
+                    binaryWriter.Write(nGrid[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kPntGrid = 0;
+            if (!File.Exists(fPntGrid))
+                return;
+            FileStream input = new FileStream(fPntGrid, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            kPntGrid = binaryReader.ReadInt32();
+            for (int index = 0; index <= kPntGrid; ++index)
+            {
+                nameGrid[index] = binaryReader.ReadString();
+                xPntGrid[index] = binaryReader.ReadDouble();
+                yPntGrid[index] = binaryReader.ReadDouble();
+                dzGrid[index] = binaryReader.ReadDouble();
+                nGrid[index] = binaryReader.ReadInt32();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void ContoursInput(string fCurContour, out double hSect, out int kCavei)
+        {
+            kCavei = 0;
+            hSect = 0.0;
+            if (!File.Exists(fCurContour))
+                return;
+            FileStream input = new FileStream(fCurContour, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                hSect = binaryReader.ReadDouble();
+                kCavei = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kCavei; ++index1)
+                {
+                    int num1 = binaryReader.ReadInt32();
+                    for (int index2 = 0; index2 <= num1; ++index2)
+                    {
+                        xAdd[index2] = binaryReader.ReadDouble();
+                        yAdd[index2] = binaryReader.ReadDouble();
+                    }
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadDouble();
+                    binaryReader.ReadInt32();
+                    binaryReader.ReadInt32();
+                    int num2 = binaryReader.ReadInt32();
+                    for (int index3 = 0; index3 <= num2; ++index3)
+                    {
+                        xAdd[index3] = binaryReader.ReadDouble();
+                        yAdd[index3] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void KeepLoadTinGrid(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (kTinGrid < 4)
+                    return;
+                if (File.Exists(fTinGrid))
+                    File.Delete(fTinGrid);
+                FileStream output = new FileStream(fTinGrid, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kTinGrid);
+                for (int index = 1; index <= kTinGrid; ++index)
+                {
+                    binaryWriter.Write(xTinGrid[index]);
+                    binaryWriter.Write(yTinGrid[index]);
+                    binaryWriter.Write(zTinGrid[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kTinGrid = 0;
+            if (!File.Exists(fTinGrid))
+                return;
+            FileStream input = new FileStream(fTinGrid, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            kTinGrid = binaryReader.ReadInt32();
+            for (int index = 1; index <= kTinGrid; ++index)
+            {
+                xTinGrid[index] = binaryReader.ReadDouble();
+                yTinGrid[index] = binaryReader.ReadDouble();
+                zTinGrid[index] = binaryReader.ReadDouble();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void KeepLoadPntMerge(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (kPntMerge < 1)
+                    return;
+                if (File.Exists(fMergePnt))
+                    File.Delete(fMergePnt);
+                FileStream output = new FileStream(fMergePnt, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kPntMerge);
+                for (int index = 0; index <= kPntMerge; ++index)
+                {
+                    binaryWriter.Write(nameMerge[index]);
+                    binaryWriter.Write(xPntMerge[index]);
+                    binaryWriter.Write(yPntMerge[index]);
+                    binaryWriter.Write(zPntMerge[index]);
+                    binaryWriter.Write(nMerge[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kPntMerge = 0;
+            if (!File.Exists(fMergePnt))
+                return;
+            FileStream input = new FileStream(fMergePnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            kPntMerge = binaryReader.ReadInt32();
+            for (int index = 0; index <= kPntMerge; ++index)
+            {
+                nameMerge[index] = binaryReader.ReadString();
+                xPntMerge[index] = binaryReader.ReadDouble();
+                yPntMerge[index] = binaryReader.ReadDouble();
+                zPntMerge[index] = binaryReader.ReadDouble();
+                nMerge[index] = binaryReader.ReadInt32();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void KeepLoadTinMerge(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (kTinMerge < 4)
+                    return;
+                if (File.Exists(fMergeTin))
+                    File.Delete(fMergeTin);
+                FileStream output = new FileStream(fMergeTin, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kTinMerge);
+                for (int index = 1; index <= kTinMerge; ++index)
+                {
+                    binaryWriter.Write(xTinMerge[index]);
+                    binaryWriter.Write(yTinMerge[index]);
+                    binaryWriter.Write(zTinMerge[index]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kTinMerge = 0;
+            if (!File.Exists(fMergeTin))
+                return;
+            FileStream input = new FileStream(fMergeTin, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            kTinMerge = binaryReader.ReadInt32();
+            for (int index = 1; index <= kTinMerge; ++index)
+            {
+                xTinMerge[index] = binaryReader.ReadDouble();
+                yTinMerge[index] = binaryReader.ReadDouble();
+                zTinMerge[index] = binaryReader.ReadDouble();
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void KeepLoadArchive(
+          int iParam,
+          ref string sNameArch,
+          ref int kBorder,
+          ref int kBordOper,
+          ref double shagGrid,
+          ref int kPntGrid,
+          ref int kTinGrid,
+          ref int kPntMerge,
+          ref int kTinMerge,
+          ref int kLine,
+          string fArchMinin,
+          ref double sRel,
+          ref int kIzoline,
+          string fileIzoline,
+          ref double sSech,
+          ref int kHoriz,
+          string fileHorizontal,
+          ref int numLoad)
+        {
+            kArchive = 0;
+            if (iParam == 1)
+            {
+                FileStream output = new FileStream(fArchMinin, FileMode.Append);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(sNameArch);
+                binaryWriter.Write(shagGrid);
+                binaryWriter.Write(sRel);
+                binaryWriter.Write(sSech);
+                binaryWriter.Write(kBorder);
+                if (kBorder > 0)
+                {
+                    for (int index = 0; index <= kBorder; ++index)
+                    {
+                        binaryWriter.Write(xBorder[index]);
+                        binaryWriter.Write(yBorder[index]);
+                    }
+                }
+                binaryWriter.Write(kBordOper);
+                if (kBordOper > 0)
+                {
+                    for (int index = 0; index <= kBordOper; ++index)
+                    {
+                        binaryWriter.Write(xBordOper[index]);
+                        binaryWriter.Write(yBordOper[index]);
+                    }
+                }
+                binaryWriter.Write(kPntGrid);
+                if (kPntGrid > 0)
+                {
+                    for (int index = 0; index <= kPntGrid; ++index)
+                    {
+                        binaryWriter.Write(nameGrid[index]);
+                        binaryWriter.Write(xPntGrid[index]);
+                        binaryWriter.Write(yPntGrid[index]);
+                        binaryWriter.Write(dzGrid[index]);
+                        binaryWriter.Write(nGrid[index]);
+                    }
+                }
+                binaryWriter.Write(kTinGrid);
+                if (kTinGrid > 0)
+                {
+                    for (int index = 1; index <= kTinGrid; ++index)
+                    {
+                        binaryWriter.Write(xTinGrid[index]);
+                        binaryWriter.Write(yTinGrid[index]);
+                        binaryWriter.Write(zTinGrid[index]);
+                    }
+                }
+                binaryWriter.Write(kPntMerge);
+                if (kPntMerge > 0)
+                {
+                    for (int index = 0; index <= kPntMerge; ++index)
+                    {
+                        binaryWriter.Write(nameMerge[index]);
+                        binaryWriter.Write(xPntMerge[index]);
+                        binaryWriter.Write(yPntMerge[index]);
+                        binaryWriter.Write(zPntMerge[index]);
+                        binaryWriter.Write(nMerge[index]);
+                    }
+                }
+                binaryWriter.Write(kTinMerge);
+                if (kTinMerge > 0)
+                {
+                    for (int index = 1; index <= kTinMerge; ++index)
+                    {
+                        binaryWriter.Write(xTinMerge[index]);
+                        binaryWriter.Write(yTinMerge[index]);
+                        binaryWriter.Write(zTinMerge[index]);
+                    }
+                }
+                binaryWriter.Write(kLine);
+                if (kLine > 0)
+                {
+                    for (int index1 = 1; index1 <= kLine; ++index1)
+                    {
+                        binaryWriter.Write(nLineCode[index1]);
+                        binaryWriter.Write(nLongRad[index1]);
+                        binaryWriter.Write(sWidLine[index1]);
+                        binaryWriter.Write(dstLine[index1]);
+                        binaryWriter.Write(rRadLine[index1]);
+                        binaryWriter.Write(xRadLine[index1]);
+                        binaryWriter.Write(yRadLine[index1]);
+                        binaryWriter.Write(k1[index1]);
+                        binaryWriter.Write(k2[index1]);
+                        int num1 = k1[index1];
+                        int num2 = k2[index1];
+                        for (int index2 = num1; index2 <= num2; ++index2)
+                        {
+                            binaryWriter.Write(nameLin[index2]);
+                            binaryWriter.Write(xLin[index2]);
+                            binaryWriter.Write(yLin[index2]);
+                            binaryWriter.Write(zLin[index2]);
+                        }
+                    }
+                }
+                if (File.Exists(fileIzoline))
+                {
+                    FileStream input = new FileStream(fileIzoline, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        sRel = binaryReader.ReadDouble();
+                        kIzoline = binaryReader.ReadInt32();
+                        binaryWriter.Write(sRel);
+                        binaryWriter.Write(kIzoline);
+                        if (kIzoline > 0)
+                        {
+                            for (int index3 = 1; index3 <= kIzoline; ++index3)
+                            {
+                                int num3 = binaryReader.ReadInt32();
+                                for (int index4 = 0; index4 <= num3; ++index4)
+                                {
+                                    xDop[index4] = binaryReader.ReadDouble();
+                                    yDop[index4] = binaryReader.ReadDouble();
+                                }
+                                binaryWriter.Write(num3);
+                                for (int index5 = 0; index5 <= num3; ++index5)
+                                {
+                                    binaryWriter.Write(xDop[index5]);
+                                    binaryWriter.Write(yDop[index5]);
+                                }
+                                double num4 = binaryReader.ReadDouble();
+                                double num5 = binaryReader.ReadDouble();
+                                double num6 = binaryReader.ReadDouble();
+                                double num7 = binaryReader.ReadDouble();
+                                int num8 = binaryReader.ReadInt32();
+                                int num9 = binaryReader.ReadInt32();
+                                int num10 = binaryReader.ReadInt32();
+                                binaryWriter.Write(num4);
+                                binaryWriter.Write(num5);
+                                binaryWriter.Write(num6);
+                                binaryWriter.Write(num7);
+                                binaryWriter.Write(num8);
+                                binaryWriter.Write(num9);
+                                binaryWriter.Write(num10);
+                                for (int index6 = 0; index6 <= num10; ++index6)
+                                {
+                                    xOut[index6] = binaryReader.ReadDouble();
+                                    yOut[index6] = binaryReader.ReadDouble();
+                                }
+                                for (int index7 = 0; index7 <= num10; ++index7)
+                                {
+                                    binaryWriter.Write(xOut[index7]);
+                                    binaryWriter.Write(yOut[index7]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+                if (File.Exists(fileHorizontal))
+                {
+                    FileStream input = new FileStream(fileHorizontal, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        sSech = binaryReader.ReadDouble();
+                        kHoriz = binaryReader.ReadInt32();
+                        binaryWriter.Write(sSech);
+                        binaryWriter.Write(kHoriz);
+                        if (kHoriz > 0)
+                        {
+                            for (int index8 = 1; index8 <= kHoriz; ++index8)
+                            {
+                                int num11 = binaryReader.ReadInt32();
+                                for (int index9 = 0; index9 <= num11; ++index9)
+                                {
+                                    xDop[index9] = binaryReader.ReadDouble();
+                                    yDop[index9] = binaryReader.ReadDouble();
+                                }
+                                binaryWriter.Write(num11);
+                                for (int index10 = 0; index10 <= num11; ++index10)
+                                {
+                                    binaryWriter.Write(xDop[index10]);
+                                    binaryWriter.Write(yDop[index10]);
+                                }
+                                double num12 = binaryReader.ReadDouble();
+                                double num13 = binaryReader.ReadDouble();
+                                double num14 = binaryReader.ReadDouble();
+                                double num15 = binaryReader.ReadDouble();
+                                int num16 = binaryReader.ReadInt32();
+                                int num17 = binaryReader.ReadInt32();
+                                int num18 = binaryReader.ReadInt32();
+                                binaryWriter.Write(num12);
+                                binaryWriter.Write(num13);
+                                binaryWriter.Write(num14);
+                                binaryWriter.Write(num15);
+                                binaryWriter.Write(num16);
+                                binaryWriter.Write(num17);
+                                binaryWriter.Write(num18);
+                                for (int index11 = 0; index11 <= num18; ++index11)
+                                {
+                                    xOut[index11] = binaryReader.ReadDouble();
+                                    yOut[index11] = binaryReader.ReadDouble();
+                                }
+                                for (int index12 = 0; index12 <= num18; ++index12)
+                                {
+                                    binaryWriter.Write(xOut[index12]);
+                                    binaryWriter.Write(yOut[index12]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2)
+                return;
+            kPntGrid = 0;
+            kTinGrid = 0;
+            kPntMerge = 0;
+            kTinMerge = 0;
+            kLine = 0;
+            sRel = 0.0;
+            kIzoline = 0;
+            sSech = 0.0;
+            kHoriz = 0;
+            if (!File.Exists(fArchMinin))
+                return;
+            FileStream input1 = new FileStream(fArchMinin, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            try
+            {
+                while (binaryReader1.PeekChar() != -1)
+                {
+                    ++kArchive;
+                    sNameArch = binaryReader1.ReadString();
+                    arcName[kArchive] = sNameArch;
+                    shagGrid = binaryReader1.ReadDouble();
+                    sRel = binaryReader1.ReadDouble();
+                    sSech = binaryReader1.ReadDouble();
+                    kBorder = binaryReader1.ReadInt32();
+                    if (kBorder > 0)
+                    {
+                        for (int index = 0; index <= kBorder; ++index)
+                        {
+                            xBorder[index] = binaryReader1.ReadDouble();
+                            yBorder[index] = binaryReader1.ReadDouble();
+                        }
+                    }
+                    kBordOper = binaryReader1.ReadInt32();
+                    if (kBordOper > 0)
+                    {
+                        for (int index = 0; index <= kBordOper; ++index)
+                        {
+                            xBordOper[index] = binaryReader1.ReadDouble();
+                            yBordOper[index] = binaryReader1.ReadDouble();
+                        }
+                    }
+                    kPntGrid = binaryReader1.ReadInt32();
+                    if (kPntGrid > 0)
+                    {
+                        for (int index = 0; index <= kPntGrid; ++index)
+                        {
+                            nameGrid[index] = binaryReader1.ReadString();
+                            xPntGrid[index] = binaryReader1.ReadDouble();
+                            yPntGrid[index] = binaryReader1.ReadDouble();
+                            dzGrid[index] = binaryReader1.ReadDouble();
+                            nGrid[index] = binaryReader1.ReadInt32();
+                        }
+                    }
+                    kTinGrid = binaryReader1.ReadInt32();
+                    if (kTinGrid > 0)
+                    {
+                        for (int index = 1; index <= kTinGrid; ++index)
+                        {
+                            xTinGrid[index] = binaryReader1.ReadDouble();
+                            yTinGrid[index] = binaryReader1.ReadDouble();
+                            zTinGrid[index] = binaryReader1.ReadDouble();
+                        }
+                    }
+                    kPntMerge = binaryReader1.ReadInt32();
+                    if (kPntMerge > 0)
+                    {
+                        for (int index = 0; index <= kPntMerge; ++index)
+                        {
+                            nameMerge[index] = binaryReader1.ReadString();
+                            xPntMerge[index] = binaryReader1.ReadDouble();
+                            yPntMerge[index] = binaryReader1.ReadDouble();
+                            zPntMerge[index] = binaryReader1.ReadDouble();
+                            nMerge[index] = binaryReader1.ReadInt32();
+                        }
+                    }
+                    kTinMerge = binaryReader1.ReadInt32();
+                    if (kTinMerge > 0)
+                    {
+                        for (int index = 1; index <= kTinMerge; ++index)
+                        {
+                            xTinMerge[index] = binaryReader1.ReadDouble();
+                            yTinMerge[index] = binaryReader1.ReadDouble();
+                            zTinMerge[index] = binaryReader1.ReadDouble();
+                        }
+                    }
+                    kLine = binaryReader1.ReadInt32();
+                    if (kLine > 0)
+                    {
+                        for (int index13 = 1; index13 <= kLine; ++index13)
+                        {
+                            nLineCode[index13] = binaryReader1.ReadInt32();
+                            nLongRad[index13] = binaryReader1.ReadInt32();
+                            sWidLine[index13] = binaryReader1.ReadDouble();
+                            dstLine[index13] = binaryReader1.ReadDouble();
+                            rRadLine[index13] = binaryReader1.ReadDouble();
+                            xRadLine[index13] = binaryReader1.ReadDouble();
+                            yRadLine[index13] = binaryReader1.ReadDouble();
+                            k1[index13] = binaryReader1.ReadInt32();
+                            k2[index13] = binaryReader1.ReadInt32();
+                            int num19 = k1[index13];
+                            int num20 = k2[index13];
+                            for (int index14 = num19; index14 <= num20; ++index14)
+                            {
+                                nameLin[index14] = binaryReader1.ReadString();
+                                xLin[index14] = binaryReader1.ReadDouble();
+                                yLin[index14] = binaryReader1.ReadDouble();
+                                zLin[index14] = binaryReader1.ReadDouble();
+                            }
+                        }
+                    }
+                    if (File.Exists(fileIzoline))
+                        File.Delete(fileIzoline);
+                    FileStream output1 = new FileStream(fileIzoline, FileMode.CreateNew);
+                    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+                    try
+                    {
+                        sRel = binaryReader1.ReadDouble();
+                        kIzoline = binaryReader1.ReadInt32();
+                        binaryWriter1.Write(sRel);
+                        binaryWriter1.Write(kIzoline);
+                        if (kIzoline > 0)
+                        {
+                            for (int index15 = 1; index15 <= kIzoline; ++index15)
+                            {
+                                int num21 = binaryReader1.ReadInt32();
+                                for (int index16 = 0; index16 <= num21; ++index16)
+                                {
+                                    xDop[index16] = binaryReader1.ReadDouble();
+                                    yDop[index16] = binaryReader1.ReadDouble();
+                                }
+                                binaryWriter1.Write(num21);
+                                for (int index17 = 0; index17 <= num21; ++index17)
+                                {
+                                    binaryWriter1.Write(xDop[index17]);
+                                    binaryWriter1.Write(yDop[index17]);
+                                }
+                                double num22 = binaryReader1.ReadDouble();
+                                double num23 = binaryReader1.ReadDouble();
+                                double num24 = binaryReader1.ReadDouble();
+                                double num25 = binaryReader1.ReadDouble();
+                                int num26 = binaryReader1.ReadInt32();
+                                int num27 = binaryReader1.ReadInt32();
+                                binaryWriter1.Write(num22);
+                                binaryWriter1.Write(num23);
+                                binaryWriter1.Write(num24);
+                                binaryWriter1.Write(num25);
+                                binaryWriter1.Write(num26);
+                                binaryWriter1.Write(num27);
+                                int num28 = binaryReader1.ReadInt32();
+                                for (int index18 = 0; index18 <= num28; ++index18)
+                                {
+                                    xOut[index18] = binaryReader1.ReadDouble();
+                                    yOut[index18] = binaryReader1.ReadDouble();
+                                }
+                                binaryWriter1.Write(num28);
+                                for (int index19 = 0; index19 <= num28; ++index19)
+                                {
+                                    binaryWriter1.Write(xOut[index19]);
+                                    binaryWriter1.Write(yOut[index19]);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryWriter1.Close();
+                        output1.Close();
+                    }
+                    if (File.Exists(fileHorizontal))
+                        File.Delete(fileHorizontal);
+                    FileStream output2 = new FileStream(fileHorizontal, FileMode.CreateNew);
+                    BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+                    try
+                    {
+                        sSech = binaryReader1.ReadDouble();
+                        kHoriz = binaryReader1.ReadInt32();
+                        binaryWriter2.Write(sSech);
+                        binaryWriter2.Write(kHoriz);
+                        for (int index20 = 1; index20 <= kHoriz; ++index20)
+                        {
+                            int num29 = binaryReader1.ReadInt32();
+                            for (int index21 = 0; index21 <= num29; ++index21)
+                            {
+                                xDop[index21] = binaryReader1.ReadDouble();
+                                yDop[index21] = binaryReader1.ReadDouble();
+                            }
+                            binaryWriter2.Write(num29);
+                            for (int index22 = 0; index22 <= num29; ++index22)
+                            {
+                                binaryWriter2.Write(xDop[index22]);
+                                binaryWriter2.Write(yDop[index22]);
+                            }
+                            double num30 = binaryReader1.ReadDouble();
+                            double num31 = binaryReader1.ReadDouble();
+                            double num32 = binaryReader1.ReadDouble();
+                            double num33 = binaryReader1.ReadDouble();
+                            int num34 = binaryReader1.ReadInt32();
+                            int num35 = binaryReader1.ReadInt32();
+                            int num36 = binaryReader1.ReadInt32();
+                            binaryWriter2.Write(num30);
+                            binaryWriter2.Write(num31);
+                            binaryWriter2.Write(num32);
+                            binaryWriter2.Write(num33);
+                            binaryWriter2.Write(num34);
+                            binaryWriter2.Write(num35);
+                            for (int index23 = 0; index23 <= num36; ++index23)
+                            {
+                                xOut[index23] = binaryReader1.ReadDouble();
+                                yOut[index23] = binaryReader1.ReadDouble();
+                            }
+                            binaryWriter2.Write(num36);
+                            for (int index24 = 0; index24 <= num36; ++index24)
+                            {
+                                binaryWriter2.Write(xOut[index24]);
+                                binaryWriter2.Write(yOut[index24]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryWriter2.Close();
+                        output2.Close();
+                    }
+                    if (numLoad > 0 && kArchive == numLoad)
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader1.Close();
+                input1.Close();
+            }
+        }
+
+        public void KeepLoadCross(int iParam)
+        {
+            if (iParam == 1)
+            {
+                if (File.Exists(fileCross))
+                    File.Delete(fileCross);
+                FileStream output = new FileStream(fileCross, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kBorder);
+                if (kBorder > 0)
+                {
+                    for (int index = 0; index <= kBorder; ++index)
+                    {
+                        binaryWriter.Write(xBorder[index]);
+                        binaryWriter.Write(yBorder[index]);
+                    }
+                }
+                binaryWriter.Write(kTriang);
+                if (kTriang > 3)
+                {
+                    for (int index = 1; index <= kTriang; ++index)
+                    {
+                        binaryWriter.Write(xTre[index]);
+                        binaryWriter.Write(yTre[index]);
+                        binaryWriter.Write(zTre[index]);
+                    }
+                }
+                binaryWriter.Write(kCrossSect);
+                binaryWriter.Write(azCross);
+                binaryWriter.Write(dCross);
+                if (kCrossSect > 0)
+                {
+                    for (int index = 1; index <= kCrossSect; ++index)
+                    {
+                        binaryWriter.Write(nCross[index]);
+                        binaryWriter.Write(xCrossBeg[index]);
+                        binaryWriter.Write(yCrossBeg[index]);
+                        binaryWriter.Write(xCrossEnd[index]);
+                        binaryWriter.Write(yCrossEnd[index]);
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (iParam != 2 || !File.Exists(fileCross))
+                return;
+            FileStream input = new FileStream(fileCross, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kBorder = binaryReader.ReadInt32();
+                if (kBorder > 0)
+                {
+                    for (int index = 0; index <= kBorder; ++index)
+                    {
+                        xBorder[index] = binaryReader.ReadDouble();
+                        yBorder[index] = binaryReader.ReadDouble();
+                    }
+                }
+                kTriang = binaryReader.ReadInt32();
+                if (kTriang > 3)
+                {
+                    for (int index = 1; index <= kTriang; ++index)
+                    {
+                        xTre[index] = binaryReader.ReadDouble();
+                        yTre[index] = binaryReader.ReadDouble();
+                        zTre[index] = binaryReader.ReadDouble();
+                    }
+                }
+                kCrossSect = binaryReader.ReadInt32();
+                azCross = binaryReader.ReadDouble();
+                dCross = binaryReader.ReadDouble();
+                if (kCrossSect <= 0)
+                    return;
+                for (int index = 1; index <= kCrossSect; ++index)
+                {
+                    nCross[index] = binaryReader.ReadInt32();
+                    xCrossBeg[index] = binaryReader.ReadDouble();
+                    yCrossBeg[index] = binaryReader.ReadDouble();
+                    xCrossEnd[index] = binaryReader.ReadDouble();
+                    yCrossEnd[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void PointsDraw(
+          PaintEventArgs e,
+          int iParam,
+          int kPnt,
+          string[] namePnt,
+          double[] xPnt,
+          double[] yPnt,
+          double[] zPnt,
+          double[] xPntInscr,
+          double[] yPntInscr,
+          int[] iHorVerPnt,
+          double scaleWin,
+          double xBeg,
+          double yBeg,
+          int xWin,
+          int yWin,
+          int[] nCode1,
+          int[] nCode2,
+          int kSymbPnt,
+          int[] numRec,
+          int[] numbUser,
+          int[] ixSqu,
+          int[] iySqu,
+          int[] nColor,
+          SolidBrush[] brCol,
+          Pen[] pnCol)
+        {
+            Graphics graphics = e.Graphics;
+            string sDscr = "";
+            int xWin1 = 0;
+            int yWin1 = 0;
+            int num1 = 7;
+            string sTxt = "";
+            int num2;
+            int iLong = num2 = 0;
+            int iHei = num2;
+            int iWid = num2;
+            if (kPnt <= 0)
+                return;
+            SolidBrush iColor = new SolidBrush(Color.Black);
+            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            new Pen(Color.Black).Width = 1f;
+            switch (iParam)
+            {
+                case -2:
+                    break;
+                case -1:
+                    for (int index = 0; index <= kPnt; ++index)
+                    {
+                        DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                        if (xWin1 != 0 || yWin1 != 0)
+                        {
+                            graphics.FillRectangle((Brush)iColor, xWin1 - 1, yWin1 - 1, 2, 2);
+                            int nCodePnt = 0;
+                            if (nCode1[index] > 0)
+                                nCodePnt = nCode1[index];
+                            if (nCodePnt > 0)
+                            {
+                                int kPix;
+                                int mClr;
+                                SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
+                                int ixh = xWin1 - iWid / 2;
+                                int iyh = yWin1 - iHei / 2;
+                                if (iLong == 0)
+                                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brColor);
+                                if (iLong > 0)
+                                    DllClass1.DrawText(e, sTxt, iHei, ixh, iyh, mClr, brColor);
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    for (int index = 0; index <= kPnt; ++index)
+                    {
+                        DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                        if (xWin1 != 0 || yWin1 != 0)
+                        {
+                            graphics.FillRectangle((Brush)iColor, xWin1 - 2, yWin1 - 2, 3, 3);
+                            int nCodePnt = 0;
+                            if (nCode1[index] > 0)
+                                nCodePnt = nCode1[index];
+                            if (nCodePnt > 0)
+                            {
+                                int kPix;
+                                int mClr;
+                                SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
+                                int ixh = xWin1 - iWid / 2;
+                                int iyh = yWin1 - iHei / 2;
+                                if (iLong == 0)
+                                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brColor);
+                                if (iLong > 0)
+                                    DllClass1.DrawText(e, sTxt, iHei, ixh, iyh, mClr, brColor);
+                            }
+                            if (iParam == 0)
+                            {
+                                DllClass1.XYtoWIN(xPntInscr[index], yPntInscr[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                                if (xWin1 != 0 || yWin1 != 0)
+                                {
+                                    if (nCodePnt > 0)
+                                    {
+                                        if (iHorVerPnt[index] == 0 && iLong == 0)
+                                            graphics.DrawString(namePnt[index], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + iWid / 2), (float)(yWin1 - iHei / 2));
+                                        if (iHorVerPnt[index] > 0 || iLong > 0)
+                                            DllClass1.RotText(e, namePnt[index], xWin1, yWin1 - 3, num1, 270, iColor, 0);
+                                    }
+                                    if (nCodePnt == 0)
+                                    {
+                                        if (iHorVerPnt[index] == 0)
+                                            graphics.DrawString(namePnt[index], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + num1 / 2), (float)(yWin1 - num1 + 2));
+                                        if (iHorVerPnt[index] > 0)
+                                            DllClass1.RotText(e, namePnt[index], xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
+                                    }
+                                }
+                                else
+                                    continue;
+                            }
+                            if (iParam > 0)
+                            {
+                                DllClass1.XYtoWIN(xPntInscr[index], yPntInscr[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                                if (xWin1 != 0 || yWin1 != 0)
+                                {
+                                    string str = string.Format("{0:F2}", (object)zPnt[index]);
+                                    if (nCodePnt > 0 && zPnt[index] != 0.0)
+                                    {
+                                        if (iHorVerPnt[index] == 0 && iLong == 0)
+                                            graphics.DrawString(str, new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + iWid / 2), (float)(yWin1 - num1 + 2));
+                                        if (iHorVerPnt[index] > 0 || iLong > 0)
+                                            DllClass1.RotText(e, str, xWin1, yWin1 - 3, num1, 270, iColor, 0);
+                                    }
+                                    if (nCodePnt == 0 && zPnt[index] != 0.0)
+                                    {
+                                        if (iHorVerPnt[index] == 0)
+                                            graphics.DrawString(str, new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + num1 / 2), (float)(yWin1 - num1 + 2));
+                                        if (iHorVerPnt[index] > 0)
+                                            DllClass1.RotText(e, str, xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+
+        public void SelSymbPnt(
+          string fsymbPnt,
+          int nCodePnt,
+          int kSymbPnt,
+          int[] numRec,
+          int[] numUser,
+          out int iLong,
+          out int iWid,
+          out int iHei,
+          out string sDscr,
+          out int kPix,
+          int[] ixSqu,
+          int[] iySqu,
+          int[] nColor,
+          out string sTxt,
+          out int mClr)
+        {
+            sDscr = "";
+            int num1 = 0;
+            iLong = 0;
+            iWid = 0;
+            iHei = 0;
+            kPix = 0;
+            mClr = 0;
+            sTxt = "";
+            if (nCodePnt == 0)
+                return;
+            if (kSymbPnt > 0)
+            {
+                for (int index = 1; index <= kSymbPnt; ++index)
+                {
+                    if (numUser[index] == nCodePnt)
+                    {
+                        num1 = index;
+                        break;
+                    }
+                }
+            }
+            if (num1 == 0 || !File.Exists(fsymbPnt))
+                return;
+            FileStream input = new FileStream(fsymbPnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                for (int index1 = 1; index1 <= kSymbPnt; ++index1)
+                {
+                    int int32 = Convert.ToInt32(binaryReader.ReadString());
+                    iLong = binaryReader.ReadInt32();
+                    if (iLong == 0)
+                    {
+                        binaryReader.ReadInt32();
+                        sDscr = binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        iWid = binaryReader.ReadInt32();
+                        iHei = binaryReader.ReadInt32();
+                        int num2 = binaryReader.ReadInt32();
+                        if (num2 > 0)
+                        {
+                            for (int index2 = 1; index2 <= num2; ++index2)
+                            {
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadDouble();
+                                binaryReader.ReadInt32();
+                            }
+                        }
+                        kPix = binaryReader.ReadInt32();
+                        if (kPix > 0)
+                        {
+                            for (int index3 = 1; index3 <= kPix; ++index3)
+                            {
+                                ixSqu[index3] = binaryReader.ReadInt32();
+                                iySqu[index3] = binaryReader.ReadInt32();
+                                nColor[index3] = binaryReader.ReadInt32();
+                            }
+                        }
+                    }
+                    if (iLong > 0)
+                    {
+                        binaryReader.ReadInt32();
+                        mClr = binaryReader.ReadInt32();
+                        sTxt = binaryReader.ReadString();
+                        binaryReader.ReadInt32();
+                        sDscr = binaryReader.ReadString();
+                        binaryReader.ReadDouble();
+                        binaryReader.ReadDouble();
+                        iWid = binaryReader.ReadInt32();
+                        iHei = binaryReader.ReadInt32();
+                    }
+                    if (num1 == int32)
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            binaryReader.Close();
+            input.Close();
+        }
+
+        public void DrawBorder(
+          PaintEventArgs e,
+          int kSel,
+          ref double[] xLin,
+          ref double[] yLin,
+          double scaleWin,
+          double xBeg,
+          double yBeg,
+          int xWin,
+          int yWin)
+        {
+            Graphics graphics = e.Graphics;
+            int yWin1;
+            int xWin1 = yWin1 = 0;
+            if (kSel < 1)
+                return;
+            int kArray = 999999;
+            DllClass1.doubleArray(xLin, ref kArray);
+            DllClass1.doubleArray(yLin, ref kArray);
+            if (kSel > kArray)
+            {
+                int num = (int)MessageBox.Show("Index array DrawSelLine");
+            }
+            else
+            {
+                Point[] points = new Point[kSel + 1];
+                for (int index = 0; index <= kSel; ++index)
+                {
+                    DllClass1.XYtoWIN(xLin[index], yLin[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                    if (xWin1 != 0 || yWin1 != 0)
+                    {
+                        points[index].X = xWin1;
+                        points[index].Y = yWin1;
+                    }
+                }
+                graphics.DrawLines(new Pen(Color.Red, 1f), points);
+            }
+        }
+
+        public void DrawPointGrid(
+          PaintEventArgs e,
+          int kPnt,
+          double[] xPnt,
+          double[] yPnt,
+          double[] zPnt,
+          double scaleToWin,
+          double xBegX,
+          double yBegY,
+          int xBegWin,
+          int yBegWin)
+        {
+            Graphics graphics = e.Graphics;
+            int xWin = 0;
+            int yWin = 0;
+            if (kPnt < 1)
+                return;
+            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            for (int index = 0; index <= kPnt; ++index)
+            {
+                DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+                if (xWin != 0 || yWin != 0)
+                {
+                    string s = string.Format("{0:F2}", (object)zPnt[index]);
+                    graphics.FillRectangle((Brush)solidBrush, xWin - 1, yWin - 1, 3, 3);
+                    graphics.DrawString(s, new Font("Bold", 7f), (Brush)solidBrush, (float)xWin, (float)(yWin - 4));
+                }
+            }
+        }
+
+        public void SplitFile(
+          int iParam,
+          double xSplit,
+          double ySplit,
+          ref int kSplit,
+          ref double[] xSpl,
+          ref double[] ySpl)
+        {
+            if (iParam == 1)
+            {
+                kSplit = 0;
+                if (File.Exists(fileSplit))
+                {
+                    FileStream input = new FileStream(fileSplit, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    kSplit = binaryReader.ReadInt32();
+                    if (kSplit > 0)
+                    {
+                        for (int index = 1; index <= kSplit; ++index)
+                        {
+                            xSpl[index] = binaryReader.ReadDouble();
+                            ySpl[index] = binaryReader.ReadDouble();
+                        }
+                    }
+                    binaryReader.Close();
+                    input.Close();
+                }
+                if (xSplit != 0.0 && ySplit != 0.0)
+                {
+                    int num1 = 0;
+                    if (kSplit > 0)
+                    {
+                        for (int index = 1; index <= kSplit; ++index)
+                        {
+                            double num2 = xSpl[index] - xSplit;
+                            double num3 = ySpl[index] - ySplit;
+                            if (Math.Sqrt(num2 * num2 + num3 * num3) < 0.5)
+                            {
+                                ++num1;
+                                break;
+                            }
+                        }
+                    }
+                    if (num1 == 0)
+                    {
+                        ++kSplit;
+                        xSpl[kSplit] = xSplit;
+                        ySpl[kSplit] = ySplit;
+                    }
+                }
+                if (File.Exists(fileSplit))
+                    File.Delete(fileSplit);
+                FileStream output = new FileStream(fileSplit, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kSplit);
+                if (kSplit > 0)
+                {
+                    for (int index = 1; index <= kSplit; ++index)
+                    {
+                        binaryWriter.Write(xSpl[index]);
+                        binaryWriter.Write(ySpl[index]);
+                    }
+                    binaryWriter.Close();
+                    output.Close();
+                }
+            }
+            if (iParam == 2)
+            {
+                kSplit = 0;
+                if (File.Exists(fileSplit))
+                {
+                    FileStream input = new FileStream(fileSplit, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    kSplit = binaryReader.ReadInt32();
+                    if (kSplit > 0)
+                    {
+                        for (int index = 1; index <= kSplit; ++index)
+                        {
+                            xSpl[index] = binaryReader.ReadDouble();
+                            ySpl[index] = binaryReader.ReadDouble();
+                        }
+                    }
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (iParam != 3)
+                return;
+            if (File.Exists(fileSplit))
+                File.Delete(fileSplit);
+            FileStream output1 = new FileStream(fileSplit, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            binaryWriter1.Write(kSplit);
+            if (kSplit > 0)
+            {
+                for (int index = 1; index <= kSplit; ++index)
+                {
+                    binaryWriter1.Write(xSpl[index]);
+                    binaryWriter1.Write(ySpl[index]);
+                }
+            }
+            binaryWriter1.Close();
+            output1.Close();
+        }
+
+        public void DrawCross(
+          PaintEventArgs e,
+          double scaleWin,
+          double xBeg,
+          double yBeg,
+          int xWin,
+          int yWin)
+        {
+            Graphics graphics = e.Graphics;
+            int yWin1;
+            int xWin1 = yWin1 = 0;
+            if (kCrossSect < 1)
+                return;
+            int kArray = 999999;
+            DllClass1.doubleArray(xCrossBeg, ref kArray);
+            DllClass1.doubleArray(yCrossBeg, ref kArray);
+            if (kCrossSect > kArray)
+            {
+                int num = (int)MessageBox.Show("Index array draw cross-section");
+            }
+            else
+            {
+                Point[] points = new Point[2];
+                SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+                SolidBrush solidBrush2 = new SolidBrush(Color.Blue);
+                for (int index = 1; index <= kCrossSect; ++index)
+                {
+                    DllClass1.XYtoWIN(xCrossBeg[index], yCrossBeg[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                    string s = string.Format("{0}", (object)nCross[index]);
+                    graphics.FillRectangle((Brush)solidBrush2, xWin1 - 1, yWin1 - 1, 3, 3);
+                    graphics.DrawString(s, new Font("Bold", 6f), (Brush)solidBrush2, (float)xWin1, (float)yWin1);
+                    points[0].X = xWin1;
+                    points[0].Y = yWin1;
+                    DllClass1.XYtoWIN(xCrossEnd[index], yCrossEnd[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                    graphics.FillRectangle((Brush)solidBrush1, xWin1 - 1, yWin1 - 1, 3, 3);
+                    graphics.DrawString(s, new Font("Bold", 6f), (Brush)solidBrush1, (float)xWin1, (float)yWin1);
+                    points[1].X = xWin1;
+                    points[1].Y = yWin1;
+                    graphics.DrawLines(new Pen(Color.Green, 1f), points);
+                }
+            }
+        }
+
+        public void KeepTriang(string fCurTriang)
+        {
+            if (kTriang < 4)
+                return;
+            double num1 = 9999999.9;
+            double num2 = 9999999.9;
+            double num3 = -9999999.9;
+            double num4 = -9999999.9;
+            for (int index = 1; index <= kTriang; ++index)
+            {
+                if (xTre[index] < num1)
+                    num1 = xTre[index];
+                if (xTre[index] > num3)
+                    num3 = xTre[index];
+                if (yTre[index] < num2)
+                    num2 = yTre[index];
+                if (yTre[index] > num4)
+                    num4 = yTre[index];
+            }
+            if (File.Exists(fCurTriang))
+                File.Delete(fCurTriang);
+            FileStream output = new FileStream(fCurTriang, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(num1);
+            binaryWriter.Write(num2);
+            binaryWriter.Write(num3);
+            binaryWriter.Write(num4);
+            binaryWriter.Write(kTriang);
+            for (int index = 1; index <= kTriang; ++index)
+            {
+                binaryWriter.Write(nTre[index]);
+                binaryWriter.Write(xTre[index]);
+                binaryWriter.Write(yTre[index]);
+                binaryWriter.Write(zTre[index]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void PointHeight(string fCurHeig)
+        {
+            kHeight = 0;
+            if (!File.Exists(fCurHeig))
+                return;
+            FileStream input = new FileStream(fCurHeig, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kHeight = binaryReader.ReadInt32();
+                for (int index = 0; index <= kHeight; ++index)
+                {
+                    nameHeig[index] = binaryReader.ReadString();
+                    xHeig[index] = binaryReader.ReadDouble();
+                    yHeig[index] = binaryReader.ReadDouble();
+                    zHeig[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                input.Close();
+                binaryReader.Close();
+            }
+            for (int index = 0; index <= kHeight; ++index)
+                nHeig[index] = index + 1;
+        }
+
+        public void HeightSorting(string fCurHeig, StatusBarPanel panel)
+        {
+            kHeight = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            panel.Text = "Wait.........SORTING POINTS";
+            xmin = 9999999.9;
+            ymin = 9999999.9;
+            xmax = -9999999.9;
+            ymax = -9999999.9;
+            zmin = 9999999.9;
+            zmax = -9999999.9;
+            if (File.Exists(fCurHeig))
+            {
+                FileStream input = new FileStream(fCurHeig, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kHeight = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kHeight; ++index)
+                    {
+                        nameHeig[index] = binaryReader.ReadString();
+                        xHeig[index] = binaryReader.ReadDouble();
+                        yHeig[index] = binaryReader.ReadDouble();
+                        zHeig[index] = binaryReader.ReadDouble();
+                        if (xHeig[index] < xmin)
+                            xmin = xHeig[index];
+                        if (yHeig[index] < ymin)
+                            ymin = yHeig[index];
+                        if (zHeig[index] < zmin)
+                            zmin = zHeig[index];
+                        if (xHeig[index] > xmax)
+                            xmax = xHeig[index];
+                        if (yHeig[index] > ymax)
+                            ymax = yHeig[index];
+                        if (zHeig[index] > zmax)
+                            zmax = zHeig[index];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (kHeight > 2)
+            {
+                for (int index1 = 0; index1 < kHeight; ++index1)
+                {
+                    for (int index2 = index1 + 1; index2 <= kHeight; ++index2)
+                    {
+                        if (yHeig[index1] > yHeig[index2])
+                        {
+                            string str = nameHeig[index1];
+                            double num1 = xHeig[index1];
+                            double num2 = yHeig[index1];
+                            double num3 = zHeig[index1];
+                            nameHeig[index1] = nameHeig[index2];
+                            xHeig[index1] = xHeig[index2];
+                            yHeig[index1] = yHeig[index2];
+                            zHeig[index1] = zHeig[index2];
+                            nameHeig[index2] = str;
+                            xHeig[index2] = num1;
+                            yHeig[index2] = num2;
+                            zHeig[index2] = num3;
+                        }
+                    }
+                    panel.Text = "Wait...SORTING POINTS" + string.Format("{0}", (object)index1);
+                }
+                int index3 = 0;
+                for (int index4 = 1; index4 <= kHeight; ++index4)
+                {
+                    double num4 = xHeig[index3] - xHeig[index4];
+                    double num5 = yHeig[index3] - yHeig[index4];
+                    double num6 = Math.Sqrt(num4 * num4 + num5 * num5);
+                    double num7 = Math.Abs(zHeig[index3] - zHeig[index4]);
+                    if (num6 >= 0.05 || num7 >= 0.05)
+                    {
+                        ++index3;
+                        nameHeig[index3] = nameHeig[index4];
+                        xHeig[index3] = xHeig[index4];
+                        yHeig[index3] = yHeig[index4];
+                        zHeig[index3] = zHeig[index4];
+                    }
+                }
+                kHeight = index3;
+                if (File.Exists(fCurHeig))
+                    File.Delete(fCurHeig);
+                FileStream output = new FileStream(fCurHeig, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kHeight);
+                for (int index5 = 0; index5 <= kHeight; ++index5)
+                {
+                    binaryWriter.Write(nameHeig[index5]);
+                    binaryWriter.Write(xHeig[index5]);
+                    binaryWriter.Write(yHeig[index5]);
+                    binaryWriter.Write(zHeig[index5]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            for (int index = 0; index <= kHeight; ++index)
+                nHeig[index] = index + 1;
+        }
+
+        public void Contours_PrevPrint(
+          PrintPageEventArgs e,
+          string fileAdd,
+          string fileContour,
+          double sPixInch,
+          int iScaleMap,
+          double[] xCorner,
+          double[] yCorner,
+          double[] xtd,
+          double[] ytd,
+          double[] xta,
+          double[] yta,
+          int iColorPrint,
+          int ix,
+          int iy,
+          int ixPixel,
+          int iyPixel)
+        {
+            double[] x1 = new double[10];
+            double[] y1 = new double[10];
+            int kc = 0;
+            int hText = 10;
+            SolidBrush iColor1 = new SolidBrush(Color.Black);
+            Pen pen1 = new Pen(Color.Black);
+            pen1.Width = 1f;
+            SolidBrush iColor2 = new SolidBrush(Color.Sienna);
+            Pen pen2 = new Pen(Color.Sienna);
+            pen2.Width = 1f;
+            double num1 = 0.01 * (double)iScaleMap;
+            int k = -1;
+            for (int index = 1; index <= 5; ++index)
+            {
+                ++k;
+                x1[k] = xCorner[index];
+                y1[k] = yCorner[index];
+            }
+            int num2 = 0;
+            int num3;
+            int num4;
+            if (File.Exists(fileContour))
+            {
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                FileStream input = new FileStream(fileContour, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                hSect = binaryReader.ReadDouble();
+                int num5 = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= num5; ++index1)
+                {
+                    int num6 = binaryReader.ReadInt32();
+                    for (int index2 = 0; index2 <= num6; ++index2)
+                    {
+                        xtd[index2] = binaryReader.ReadDouble();
+                        ytd[index2] = binaryReader.ReadDouble();
+                    }
+                    double num7 = binaryReader.ReadDouble();
+                    double num8 = binaryReader.ReadDouble();
+                    double num9 = binaryReader.ReadDouble();
+                    double num10 = binaryReader.ReadDouble();
+                    num3 = binaryReader.ReadInt32();
+                    num4 = binaryReader.ReadInt32();
+                    int kt = binaryReader.ReadInt32();
+                    for (int index3 = 0; index3 <= kt; ++index3)
+                    {
+                        xta[index3] = binaryReader.ReadDouble();
+                        yta[index3] = binaryReader.ReadDouble();
+                    }
+                    DllClass1.ContourClip(k, x1, y1, kt, xta, yta, out kc, nWork, nWork1, nWork2, xWork1, yWork1);
+                    if (kc != 0)
+                    {
+                        num2 += kc;
+                        for (int index4 = 1; index4 <= kc; ++index4)
+                        {
+                            binaryWriter.Write(num6);
+                            for (int index5 = 0; index5 <= num6; ++index5)
+                            {
+                                binaryWriter.Write(xtd[index5]);
+                                binaryWriter.Write(ytd[index5]);
+                            }
+                            binaryWriter.Write(num7);
+                            binaryWriter.Write(num8);
+                            binaryWriter.Write(num9);
+                            binaryWriter.Write(num10);
+                            int num11 = nWork1[index4];
+                            int num12 = nWork2[index4];
+                            binaryWriter.Write(num11);
+                            binaryWriter.Write(num12);
+                            int index6 = -1;
+                            for (int index7 = num11; index7 <= num12; ++index7)
+                            {
+                                ++index6;
+                                xAdd[index6] = xWork1[index7];
+                                yAdd[index6] = yWork1[index7];
+                            }
+                            binaryWriter.Write(index6);
+                            for (int index8 = 0; index8 <= index6; ++index8)
+                            {
+                                binaryWriter.Write(xAdd[index8]);
+                                binaryWriter.Write(yAdd[index8]);
+                            }
+                        }
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+                binaryReader.Close();
+                input.Close();
+            }
+            if (num2 == 0)
+                return;
+            if (File.Exists(fileAdd))
+            {
+                if (File.Exists(ftmpPoly))
+                    File.Delete(ftmpPoly);
+                FileStream output = new FileStream(ftmpPoly, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(hSect);
+                binaryWriter.Write(num2);
+                FileStream input = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                for (int index9 = 1; index9 <= num2; ++index9)
+                {
+                    int num13 = binaryReader.ReadInt32();
+                    for (int index10 = 0; index10 <= num13; ++index10)
+                    {
+                        xtd[index10] = binaryReader.ReadDouble();
+                        ytd[index10] = binaryReader.ReadDouble();
+                    }
+                    double num14 = binaryReader.ReadDouble();
+                    double num15 = binaryReader.ReadDouble();
+                    double num16 = binaryReader.ReadDouble();
+                    double num17 = binaryReader.ReadDouble();
+                    int num18 = binaryReader.ReadInt32();
+                    int num19 = binaryReader.ReadInt32();
+                    int num20 = binaryReader.ReadInt32();
+                    for (int index11 = 0; index11 <= num20; ++index11)
+                    {
+                        xta[index11] = binaryReader.ReadDouble();
+                        yta[index11] = binaryReader.ReadDouble();
+                    }
+                    binaryWriter.Write(num13);
+                    for (int index12 = 0; index12 <= num13; ++index12)
+                    {
+                        binaryWriter.Write(xtd[index12]);
+                        binaryWriter.Write(ytd[index12]);
+                    }
+                    binaryWriter.Write(num14);
+                    binaryWriter.Write(num15);
+                    binaryWriter.Write(num16);
+                    binaryWriter.Write(num17);
+                    binaryWriter.Write(num18);
+                    binaryWriter.Write(num19);
+                    binaryWriter.Write(num20);
+                    for (int index13 = 0; index13 <= num20; ++index13)
+                    {
+                        binaryWriter.Write(xta[index13]);
+                        binaryWriter.Write(yta[index13]);
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+                binaryReader.Close();
+                input.Close();
+            }
+            sTmp = ftmpPoly;
+            NewInscript(sTmp, xWork1, yWork1, xWork2, yWork2);
+            FileStream input1 = new FileStream(sTmp, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            hSect = binaryReader1.ReadDouble();
+            int num21 = binaryReader1.ReadInt32();
+            for (int index14 = 1; index14 <= num21; ++index14)
+            {
+                int num22 = binaryReader1.ReadInt32();
+                for (int index15 = 0; index15 <= num22; ++index15)
+                {
+                    xtd[index15] = binaryReader1.ReadDouble();
+                    ytd[index15] = binaryReader1.ReadDouble();
+                }
+                double num23 = binaryReader1.ReadDouble();
+                double rdn = binaryReader1.ReadDouble();
+                double num24 = binaryReader1.ReadDouble();
+                double num25 = binaryReader1.ReadDouble();
+                num3 = binaryReader1.ReadInt32();
+                num4 = binaryReader1.ReadInt32();
+                int num26 = binaryReader1.ReadInt32();
+                for (int index16 = 0; index16 <= num26; ++index16)
+                {
+                    xta[index16] = binaryReader1.ReadDouble();
+                    yta[index16] = binaryReader1.ReadDouble();
+                }
+                for (int index17 = 1; index17 <= num26; ++index17)
+                {
+                    double num27 = xta[index17 - 1] - xCorner[2];
+                    double num28 = yta[index17 - 1] - yCorner[2];
+                    int int32_1 = Convert.ToInt32(10.0 * num27 / num1 / sPixInch);
+                    int int32_2 = Convert.ToInt32(10.0 * num28 / num1 / sPixInch);
+                    int x1_1 = ix + int32_1;
+                    int y1_1 = iy - int32_2;
+                    double num29 = xta[index17] - xCorner[2];
+                    double num30 = yta[index17] - yCorner[2];
+                    int int32_3 = Convert.ToInt32(10.0 * num29 / num1 / sPixInch);
+                    int int32_4 = Convert.ToInt32(10.0 * num30 / num1 / sPixInch);
+                    int x2 = ix + int32_3;
+                    int y2 = iy - int32_4;
+                    if (iColorPrint == 0)
+                        e.Graphics.DrawLine(pen1, x1_1, y1_1, x2, y2);
+                    if (iColorPrint > 0)
+                        e.Graphics.DrawLine(pen2, x1_1, y1_1, x2, y2);
+                }
+                if (num24 != 0.0 && num25 != 0.0)
+                {
+                    double num31 = num24 - xCorner[2];
+                    double num32 = num25 - yCorner[2];
+                    int int32_5 = Convert.ToInt32(10.0 * num31 / num1 / sPixInch);
+                    int int32_6 = Convert.ToInt32(10.0 * num32 / num1 / sPixInch);
+                    int x2 = ix + int32_5;
+                    int y2 = iy - int32_6;
+                    int angle = 360 - DllClass1.RadGrad(rdn);
+                    string tText = string.Format("{0}", (object)Convert.ToInt32(num23));
+                    if (iColorPrint == 0)
+                        DllClass1.ContTextPrevPrint(e, tText, x2, y2, hText, angle, iColor1, 1, 2);
+                    if (iColorPrint > 0)
+                        DllClass1.ContTextPrevPrint(e, tText, x2, y2, hText, angle, iColor2, 1, 2);
+                }
+            }
+            binaryReader1.Close();
+            input1.Close();
+        }
+
+        public void LinesMining(
+          int kPnt,
+          string[] namePnt,
+          double[] xPnt,
+          double[] yPnt,
+          double[] zPnt,
+          out int kLine,
+          int[] nLineCode,
+          int[] nLongRad,
+          double[] sWidLine,
+          double[] dstLine,
+          double[] rRadLine,
+          double[] xRadLine,
+          double[] yRadLine,
+          int[] k1,
+          int[] k2,
+          string[] nameLin,
+          double[] xLin,
+          double[] yLin,
+          double[] zLin,
+          out int iCond,
+          int[] kt,
+          string[] nameAdd,
+          double[] xAdd,
+          double[] yAdd,
+          double[] zAdd)
+        {
+            string str = "";
+            double num1 = 0.0;
+            int index1 = 0;
+            iCond = 0;
+            kLine = 0;
+            int index2;
+            int num2 = index2 = 0;
+            string text = "Points weren't found: ";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Lines' Data";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.FileName = str;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream stream;
+                if ((stream = openFileDialog.OpenFile()) != null)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                    int num3 = 0;
+                    index2 = 0;
+                    char[] seps = new char[2] { ' ', ',' };
+                    int k = 0;
+                    int kPart = 50;
+                    num1 = 0.0;
+                    index1 = 0;
+                    string sLine;
+                    while ((sLine = streamReader.ReadLine()) != null)
+                    {
+                        ++num3;
+                        string[] sPart;
+                        DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                        if (k != 0)
+                        {
+                            if (k == 1 && index1 == 0)
+                            {
+                                num1 = 0.0;
+                                if (sPart[1] == "2")
+                                    num1 = 1.0;
+                            }
+                            else
+                            {
+                                if (k == 1 && sPart[1] != "1" && sPart[1] != "2")
+                                {
+                                    int num4 = (int)MessageBox.Show(Convert.ToString(num3), "File's line - error line's type");
+                                    iCond = -99;
+                                    return;
+                                }
+                                if (k == 1 && index1 > 1)
+                                {
+                                    for (int index3 = 1; index3 <= index1; ++index3)
+                                    {
+                                        num3 = 0;
+                                        for (int index4 = 0; index4 <= kPnt; ++index4)
+                                        {
+                                            if (nameAdd[index3] == namePnt[index4])
+                                            {
+                                                ++num3;
+                                                xAdd[index3] = xPnt[index4];
+                                                yAdd[index3] = yPnt[index4];
+                                                zAdd[index3] = zPnt[index4];
+                                                break;
+                                            }
+                                        }
+                                        if (num3 == 0)
+                                        {
+                                            ++num2;
+                                            text = text + nameAdd[index3] + ";";
+                                            if (num2 > 10)
+                                            {
+                                                int num5 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                iCond = -99;
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    ++kLine;
+                                    kt[kLine] = index1;
+                                    nLineCode[kLine] = 1;
+                                    nLongRad[kLine] = 0;
+                                    sWidLine[kLine] = 0.0;
+                                    dstLine[kLine] = 0.0;
+                                    rRadLine[kLine] = num1;
+                                    xRadLine[kLine] = 0.0;
+                                    yRadLine[kLine] = 0.0;
+                                    for (int index5 = 1; index5 <= index1; ++index5)
+                                    {
+                                        ++index2;
+                                        nameLin[index2] = string.Format("{0}", (object)index2);
+                                        xLin[index2] = xAdd[index5];
+                                        yLin[index2] = yAdd[index5];
+                                        zLin[index2] = zAdd[index5];
+                                    }
+                                    index1 = 0;
+                                    num1 = 0.0;
+                                    if (sPart[1] == "2")
+                                        num1 = 1.0;
+                                }
+                                else
+                                {
+                                    for (int index6 = 1; index6 <= k; ++index6)
+                                    {
+                                        ++index1;
+                                        nameAdd[index1] = sPart[index6];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                stream.Close();
+                if (index1 > 1)
+                {
+                    for (int index7 = 1; index7 <= index1; ++index7)
+                    {
+                        int num6 = 0;
+                        for (int index8 = 0; index8 <= kPnt; ++index8)
+                        {
+                            if (nameAdd[index7] == namePnt[index8])
+                            {
+                                ++num6;
+                                xAdd[index7] = xPnt[index8];
+                                yAdd[index7] = yPnt[index8];
+                                zAdd[index7] = zPnt[index8];
+                                break;
+                            }
+                        }
+                        if (num6 == 0)
+                        {
+                            ++num2;
+                            text = text + nameAdd[index7] + ";";
+                            if (num2 > 10)
+                            {
+                                int num7 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                iCond = -99;
+                                return;
+                            }
+                        }
+                    }
+                    ++kLine;
+                    kt[kLine] = index1;
+                    nLineCode[kLine] = 1;
+                    nLongRad[kLine] = 0;
+                    sWidLine[kLine] = 0.0;
+                    dstLine[kLine] = 0.0;
+                    rRadLine[kLine] = num1;
+                    xRadLine[kLine] = 0.0;
+                    yRadLine[kLine] = 0.0;
+                    for (int index9 = 1; index9 <= index1; ++index9)
+                    {
+                        ++index2;
+                        nameLin[index2] = string.Format("{0}", (object)index2);
+                        xLin[index2] = xAdd[index9];
+                        yLin[index2] = yAdd[index9];
+                        zLin[index2] = zAdd[index9];
+                    }
+                }
+                k1[1] = 1;
+                k2[1] = kt[1];
+                if (kLine > 1)
+                {
+                    for (int index10 = 2; index10 <= kLine; ++index10)
+                    {
+                        k1[index10] = k2[index10 - 1] + 1;
+                        k2[index10] = k2[index10 - 1] + kt[index10];
+                    }
+                }
+                if (num2 <= 0)
+                    return;
+                int num8 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                iCond = -99;
+            }
+            else
+                iCond = -99;
+        }
+
+        public void ContNumber(int kTriang, double[] zTre, out double sSech)
+        {
+            sSech = 0.0;
+            double num1 = 0.0;
+            double num2 = 9999999.9;
+            double num3 = -9999999.9;
+            for (int index = 1; index <= kTriang; ++index)
+            {
+                if (zTre[index] < num2)
+                    num2 = zTre[index];
+                if (zTre[index] > num3)
+                    num3 = zTre[index];
+            }
+            int int32 = Convert.ToInt32(num2);
+            for (int index = 1; index <= 4; ++index)
+            {
+                int num4 = 0;
+                double num5 = Convert.ToDouble((double)int32 + 0.001);
+                if (index == 1)
+                    num1 = 1.0;
+                if (index == 2)
+                    num1 = 0.5;
+                if (index == 3)
+                    num1 = 0.2;
+                if (index == 4)
+                    num1 = 0.1;
+                do
+                {
+                    num5 += num1;
+                    if (num5 > num2)
+                        ++num4;
+                }
+                while (num5 <= num3);
+                if (num4 > 3)
+                {
+                    sSech = num1;
+                    break;
+                }
+            }
+        }
+
+        public void DrawPoint(
+          PaintEventArgs e,
+          int kPnt,
+          double[] xPnt,
+          double[] yPnt,
+          double scaleToWin,
+          double xBegX,
+          double yBegY,
+          int xBegWin,
+          int yBegWin)
+        {
+            Graphics graphics = e.Graphics;
+            int xWin = 0;
+            int yWin = 0;
+            if (kPnt < 0)
+                return;
+            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            for (int index = 0; index <= kPnt; ++index)
+            {
+                DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+                if (xWin != 0 || yWin != 0)
+                    graphics.FillRectangle((Brush)solidBrush, xWin - 1, yWin - 1, 2, 2);
+            }
+        }
+
+        public void MergeLines(int kBordOper, double[] xBordOper, double[] yBordOper)
+        {
+            kLine = 0;
+            int index1 = 0;
+            if (File.Exists(finitLine))
+            {
+                FileStream input = new FileStream(finitLine, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num1 = binaryReader.ReadInt32();
+                    for (int index2 = 1; index2 <= num1; ++index2)
+                    {
+                        int num2 = binaryReader.ReadInt32();
+                        int num3 = binaryReader.ReadInt32();
+                        double num4 = binaryReader.ReadDouble();
+                        double num5 = binaryReader.ReadDouble();
+                        double num6 = binaryReader.ReadDouble();
+                        double num7 = binaryReader.ReadDouble();
+                        double num8 = binaryReader.ReadDouble();
+                        int num9 = binaryReader.ReadInt32();
+                        int num10 = binaryReader.ReadInt32();
+                        int k = 0;
+                        for (int index3 = num9; index3 <= num10; ++index3)
+                        {
+                            string str = binaryReader.ReadString();
+                            double num11 = binaryReader.ReadDouble();
+                            double num12 = binaryReader.ReadDouble();
+                            double num13 = binaryReader.ReadDouble();
+                            ++k;
+                            nameAdd[k] = str;
+                            xAdd[k] = num11;
+                            yAdd[k] = num12;
+                            zAdd[k] = num13;
+                        }
+                        int kin = 0;
+                        int kout = 0;
+                        DllClass1.LineInOut(kBordOper, xBordOper, yBordOper, k, xAdd, yAdd, out kin, nDop, nDop1, nDop2, xWork1, yWork1, out kout, nDop3, nWork1, nWork2, xWork2, yWork2, nWork, xWork, yWork, xDop, yDop);
+                        if (kout > 0)
+                        {
+                            for (int index4 = 1; index4 <= kout; ++index4)
+                            {
+                                int num14 = nWork1[index4];
+                                int num15 = nWork2[index4];
+                                int num16 = 0;
+                                for (int index5 = num14; index5 <= num15; ++index5)
+                                {
+                                    ++num16;
+                                    ++index1;
+                                    nameLin[index1] = "v";
+                                    xLin[index1] = xWork2[index5];
+                                    yLin[index1] = yWork2[index5];
+                                    zLin[index1] = 0.0;
+                                    for (int index6 = 1; index6 <= k; ++index6)
+                                    {
+                                        double num17 = xAdd[index6] - xLin[index1];
+                                        double num18 = yAdd[index6] - yLin[index1];
+                                        if (Math.Sqrt(num17 * num17 + num18 * num18) < 0.003)
+                                        {
+                                            nameLin[index1] = nameAdd[index6];
+                                            zLin[index1] = zAdd[index6];
+                                        }
+                                    }
+                                }
+                                ++kLine;
+                                nLineCode[kLine] = num2;
+                                nLongRad[kLine] = num3;
+                                sWidLine[kLine] = num4;
+                                dstLine[kLine] = num5;
+                                rRadLine[kLine] = num6;
+                                xRadLine[kLine] = num7;
+                                yRadLine[kLine] = num8;
+                                kt[kLine] = num16;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (File.Exists(foperLine))
+            {
+                FileStream input = new FileStream(foperLine, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    int num19 = binaryReader.ReadInt32();
+                    for (int index7 = 1; index7 <= num19; ++index7)
+                    {
+                        int num20 = binaryReader.ReadInt32();
+                        int num21 = binaryReader.ReadInt32();
+                        double num22 = binaryReader.ReadDouble();
+                        double num23 = binaryReader.ReadDouble();
+                        double num24 = binaryReader.ReadDouble();
+                        double num25 = binaryReader.ReadDouble();
+                        double num26 = binaryReader.ReadDouble();
+                        int num27 = binaryReader.ReadInt32();
+                        int num28 = binaryReader.ReadInt32();
+                        ++kLine;
+                        nLineCode[kLine] = num20;
+                        nLongRad[kLine] = num21;
+                        sWidLine[kLine] = num22;
+                        dstLine[kLine] = num23;
+                        rRadLine[kLine] = num24;
+                        xRadLine[kLine] = num25;
+                        yRadLine[kLine] = num26;
+                        int num29 = 0;
+                        for (int index8 = num27; index8 <= num28; ++index8)
+                        {
+                            ++num29;
+                            string str = binaryReader.ReadString();
+                            double num30 = binaryReader.ReadDouble();
+                            double num31 = binaryReader.ReadDouble();
+                            double num32 = binaryReader.ReadDouble();
+                            ++index1;
+                            nameLin[index1] = str;
+                            xLin[index1] = num30;
+                            yLin[index1] = num31;
+                            zLin[index1] = num32;
+                        }
+                        kt[kLine] = num29;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    binaryReader.Close();
+                    input.Close();
+                }
+            }
+            if (kLine == 0)
+                return;
+            k1[1] = 1;
+            k2[1] = kt[1];
+            if (kLine > 1)
+            {
+                for (int index9 = 2; index9 <= kLine; ++index9)
+                {
+                    k1[index9] = k2[index9 - 1] + 1;
+                    k2[index9] = k2[index9 - 1] + kt[index9];
+                }
+            }
+            if (File.Exists(fMergeLine))
+                File.Delete(fMergeLine);
+            FileStream output = new FileStream(fMergeLine, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kLine);
+            for (int index10 = 1; index10 <= kLine; ++index10)
+            {
+                binaryWriter.Write(nLineCode[index10]);
+                binaryWriter.Write(nLongRad[index10]);
+                binaryWriter.Write(sWidLine[index10]);
+                binaryWriter.Write(dstLine[index10]);
+                binaryWriter.Write(rRadLine[index10]);
+                binaryWriter.Write(xRadLine[index10]);
+                binaryWriter.Write(yRadLine[index10]);
+                binaryWriter.Write(k1[index10]);
+                binaryWriter.Write(k2[index10]);
+                int num33 = k1[index10];
+                int num34 = k2[index10];
+                for (int index11 = num33; index11 <= num34; ++index11)
+                {
+                    binaryWriter.Write(nameLin[index11]);
+                    binaryWriter.Write(xLin[index11]);
+                    binaryWriter.Write(yLin[index11]);
+                    binaryWriter.Write(zLin[index11]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void ObjectRemove(int kArchive, out int numLoad)
+        {
+            numLoad = 0;
+            if (File.Exists(fileAdd))
+                File.Delete(fileAdd);
+            FileStream output1 = new FileStream(fileAdd, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            if (File.Exists(fstoreMining))
+            {
+                FileStream input = new FileStream(fstoreMining, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                for (int index1 = 1; index1 < kArchive; ++index1)
+                {
+                    ++numLoad;
+                    sNameArch = binaryReader.ReadString();
+                    shagGrid = binaryReader.ReadDouble();
+                    sRel = binaryReader.ReadDouble();
+                    sSech = binaryReader.ReadDouble();
+                    kBorder = binaryReader.ReadInt32();
+                    if (kBorder > 0)
+                    {
+                        for (int index2 = 0; index2 <= kBorder; ++index2)
+                        {
+                            xBorder[index2] = binaryReader.ReadDouble();
+                            yBorder[index2] = binaryReader.ReadDouble();
+                        }
+                    }
+                    kBordOper = binaryReader.ReadInt32();
+                    if (kBordOper > 0)
+                    {
+                        for (int index3 = 0; index3 <= kBordOper; ++index3)
+                        {
+                            xBordOper[index3] = binaryReader.ReadDouble();
+                            yBordOper[index3] = binaryReader.ReadDouble();
+                        }
+                    }
+                    kPntGrid = binaryReader.ReadInt32();
+                    binaryWriter1.Write(sNameArch);
+                    binaryWriter1.Write(shagGrid);
+                    binaryWriter1.Write(sRel);
+                    binaryWriter1.Write(sSech);
+                    binaryWriter1.Write(kBorder);
+                    if (kBorder > 0)
+                    {
+                        for (int index4 = 0; index4 <= kBorder; ++index4)
+                        {
+                            binaryWriter1.Write(xBorder[index4]);
+                            binaryWriter1.Write(yBorder[index4]);
+                        }
+                    }
+                    binaryWriter1.Write(kBordOper);
+                    if (kBordOper > 0)
+                    {
+                        for (int index5 = 0; index5 <= kBordOper; ++index5)
+                        {
+                            binaryWriter1.Write(xBordOper[index5]);
+                            binaryWriter1.Write(yBordOper[index5]);
+                        }
+                    }
+                    binaryWriter1.Write(kPntGrid);
+                    if (kPntGrid > 0)
+                    {
+                        for (int index6 = 0; index6 <= kPntGrid; ++index6)
+                        {
+                            nameGrid[index6] = binaryReader.ReadString();
+                            xPntGrid[index6] = binaryReader.ReadDouble();
+                            yPntGrid[index6] = binaryReader.ReadDouble();
+                            dzGrid[index6] = binaryReader.ReadDouble();
+                            nGrid[index6] = binaryReader.ReadInt32();
+                        }
+                        for (int index7 = 0; index7 <= kPntGrid; ++index7)
+                        {
+                            binaryWriter1.Write(nameGrid[index7]);
+                            binaryWriter1.Write(xPntGrid[index7]);
+                            binaryWriter1.Write(yPntGrid[index7]);
+                            binaryWriter1.Write(dzGrid[index7]);
+                            binaryWriter1.Write(nGrid[index7]);
+                        }
+                    }
+                    kTinGrid = binaryReader.ReadInt32();
+                    binaryWriter1.Write(kTinGrid);
+                    if (kTinGrid > 0)
+                    {
+                        for (int index8 = 1; index8 <= kTinGrid; ++index8)
+                        {
+                            xTinGrid[index8] = binaryReader.ReadDouble();
+                            yTinGrid[index8] = binaryReader.ReadDouble();
+                            zTinGrid[index8] = binaryReader.ReadDouble();
+                        }
+                        for (int index9 = 1; index9 <= kTinGrid; ++index9)
+                        {
+                            binaryWriter1.Write(xTinGrid[index9]);
+                            binaryWriter1.Write(yTinGrid[index9]);
+                            binaryWriter1.Write(zTinGrid[index9]);
+                        }
+                    }
+                    kPntMerge = binaryReader.ReadInt32();
+                    binaryWriter1.Write(kPntMerge);
+                    if (kPntMerge > 0)
+                    {
+                        for (int index10 = 0; index10 <= kPntMerge; ++index10)
+                        {
+                            nameMerge[index10] = binaryReader.ReadString();
+                            xPntMerge[index10] = binaryReader.ReadDouble();
+                            yPntMerge[index10] = binaryReader.ReadDouble();
+                            zPntMerge[index10] = binaryReader.ReadDouble();
+                            nMerge[index10] = binaryReader.ReadInt32();
+                        }
+                        for (int index11 = 0; index11 <= kPntMerge; ++index11)
+                        {
+                            binaryWriter1.Write(nameMerge[index11]);
+                            binaryWriter1.Write(xPntMerge[index11]);
+                            binaryWriter1.Write(yPntMerge[index11]);
+                            binaryWriter1.Write(zPntMerge[index11]);
+                            binaryWriter1.Write(nMerge[index11]);
+                        }
+                    }
+                    kTinMerge = binaryReader.ReadInt32();
+                    binaryWriter1.Write(kTinMerge);
+                    if (kTinMerge > 0)
+                    {
+                        for (int index12 = 1; index12 <= kTinMerge; ++index12)
+                        {
+                            xTinMerge[index12] = binaryReader.ReadDouble();
+                            yTinMerge[index12] = binaryReader.ReadDouble();
+                            zTinMerge[index12] = binaryReader.ReadDouble();
+                        }
+                        for (int index13 = 1; index13 <= kTinMerge; ++index13)
+                        {
+                            binaryWriter1.Write(xTinMerge[index13]);
+                            binaryWriter1.Write(yTinMerge[index13]);
+                            binaryWriter1.Write(zTinMerge[index13]);
+                        }
+                    }
+                    kLine = binaryReader.ReadInt32();
+                    binaryWriter1.Write(kLine);
+                    if (kLine > 0)
+                    {
+                        for (int index14 = 1; index14 <= kLine; ++index14)
+                        {
+                            nLineCode[index14] = binaryReader.ReadInt32();
+                            nLongRad[index14] = binaryReader.ReadInt32();
+                            sWidLine[index14] = binaryReader.ReadDouble();
+                            dstLine[index14] = binaryReader.ReadDouble();
+                            rRadLine[index14] = binaryReader.ReadDouble();
+                            xRadLine[index14] = binaryReader.ReadDouble();
+                            yRadLine[index14] = binaryReader.ReadDouble();
+                            k1[index14] = binaryReader.ReadInt32();
+                            k2[index14] = binaryReader.ReadInt32();
+                            binaryWriter1.Write(nLineCode[index14]);
+                            binaryWriter1.Write(nLongRad[index14]);
+                            binaryWriter1.Write(sWidLine[index14]);
+                            binaryWriter1.Write(dstLine[index14]);
+                            binaryWriter1.Write(rRadLine[index14]);
+                            binaryWriter1.Write(xRadLine[index14]);
+                            binaryWriter1.Write(yRadLine[index14]);
+                            binaryWriter1.Write(k1[index14]);
+                            binaryWriter1.Write(k2[index14]);
+                            int num1 = k1[index14];
+                            int num2 = k2[index14];
+                            for (int index15 = num1; index15 <= num2; ++index15)
+                            {
+                                nameLin[index15] = binaryReader.ReadString();
+                                xLin[index15] = binaryReader.ReadDouble();
+                                yLin[index15] = binaryReader.ReadDouble();
+                                zLin[index15] = binaryReader.ReadDouble();
+                            }
+                            for (int index16 = num1; index16 <= num2; ++index16)
+                            {
+                                binaryWriter1.Write(nameLin[index16]);
+                                binaryWriter1.Write(xLin[index16]);
+                                binaryWriter1.Write(yLin[index16]);
+                                binaryWriter1.Write(zLin[index16]);
+                            }
+                        }
+                    }
+                    hSect = binaryReader.ReadDouble();
+                    int num3 = binaryReader.ReadInt32();
+                    binaryWriter1.Write(hSect);
+                    binaryWriter1.Write(num3);
+                    if (num3 > 0)
+                    {
+                        for (int index17 = 1; index17 <= num3; ++index17)
+                        {
+                            int num4 = binaryReader.ReadInt32();
+                            for (int index18 = 0; index18 <= num4; ++index18)
+                            {
+                                xDop[index18] = binaryReader.ReadDouble();
+                                yDop[index18] = binaryReader.ReadDouble();
+                            }
+                            binaryWriter1.Write(num4);
+                            for (int index19 = 0; index19 <= num4; ++index19)
+                            {
+                                binaryWriter1.Write(xDop[index19]);
+                                binaryWriter1.Write(yDop[index19]);
+                            }
+                            double num5 = binaryReader.ReadDouble();
+                            double num6 = binaryReader.ReadDouble();
+                            double num7 = binaryReader.ReadDouble();
+                            double num8 = binaryReader.ReadDouble();
+                            int num9 = binaryReader.ReadInt32();
+                            int num10 = binaryReader.ReadInt32();
+                            binaryWriter1.Write(num5);
+                            binaryWriter1.Write(num6);
+                            binaryWriter1.Write(num7);
+                            binaryWriter1.Write(num8);
+                            binaryWriter1.Write(num9);
+                            binaryWriter1.Write(num10);
+                            int num11 = binaryReader.ReadInt32();
+                            for (int index20 = 0; index20 <= num11; ++index20)
+                            {
+                                xOut[index20] = binaryReader.ReadDouble();
+                                yOut[index20] = binaryReader.ReadDouble();
+                            }
+                            binaryWriter1.Write(num11);
+                            for (int index21 = 0; index21 <= num11; ++index21)
+                            {
+                                binaryWriter1.Write(xOut[index21]);
+                                binaryWriter1.Write(yOut[index21]);
+                            }
+                        }
+                    }
+                    hSect = binaryReader.ReadDouble();
+                    int num12 = binaryReader.ReadInt32();
+                    binaryWriter1.Write(hSect);
+                    binaryWriter1.Write(num12);
+                    if (num12 > 0)
+                    {
+                        for (int index22 = 1; index22 <= num12; ++index22)
+                        {
+                            int num13 = binaryReader.ReadInt32();
+                            for (int index23 = 0; index23 <= num13; ++index23)
+                            {
+                                xDop[index23] = binaryReader.ReadDouble();
+                                yDop[index23] = binaryReader.ReadDouble();
+                            }
+                            binaryWriter1.Write(num13);
+                            for (int index24 = 0; index24 <= num13; ++index24)
+                            {
+                                binaryWriter1.Write(xDop[index24]);
+                                binaryWriter1.Write(yDop[index24]);
+                            }
+                            double num14 = binaryReader.ReadDouble();
+                            double num15 = binaryReader.ReadDouble();
+                            double num16 = binaryReader.ReadDouble();
+                            double num17 = binaryReader.ReadDouble();
+                            int num18 = binaryReader.ReadInt32();
+                            int num19 = binaryReader.ReadInt32();
+                            binaryWriter1.Write(num14);
+                            binaryWriter1.Write(num15);
+                            binaryWriter1.Write(num16);
+                            binaryWriter1.Write(num17);
+                            binaryWriter1.Write(num18);
+                            binaryWriter1.Write(num19);
+                            int num20 = binaryReader.ReadInt32();
+                            for (int index25 = 0; index25 <= num20; ++index25)
+                            {
+                                xOut[index25] = binaryReader.ReadDouble();
+                                yOut[index25] = binaryReader.ReadDouble();
+                            }
+                            binaryWriter1.Write(num20);
+                            for (int index26 = 0; index26 <= num20; ++index26)
+                            {
+                                binaryWriter1.Write(xOut[index26]);
+                                binaryWriter1.Write(yOut[index26]);
+                            }
+                        }
+                    }
+                }
+                binaryReader.Close();
+                input.Close();
+            }
+            binaryWriter1.Close();
+            output1.Close();
+            if (File.Exists(fstoreMining))
+                File.Delete(fstoreMining);
+            FileStream output2 = new FileStream(fstoreMining, FileMode.CreateNew);
+            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+            if (File.Exists(fileAdd))
+            {
+                FileStream input = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                for (int index27 = 1; index27 <= numLoad; ++index27)
+                {
+                    sNameArch = binaryReader.ReadString();
+                    shagGrid = binaryReader.ReadDouble();
+                    sRel = binaryReader.ReadDouble();
+                    sSech = binaryReader.ReadDouble();
+                    kBorder = binaryReader.ReadInt32();
+                    if (kBorder > 0)
+                    {
+                        for (int index28 = 0; index28 <= kBorder; ++index28)
+                        {
+                            xBorder[index28] = binaryReader.ReadDouble();
+                            yBorder[index28] = binaryReader.ReadDouble();
+                        }
+                    }
+                    kBordOper = binaryReader.ReadInt32();
+                    if (kBordOper > 0)
+                    {
+                        for (int index29 = 0; index29 <= kBordOper; ++index29)
+                        {
+                            xBordOper[index29] = binaryReader.ReadDouble();
+                            yBordOper[index29] = binaryReader.ReadDouble();
+                        }
+                    }
+                    kPntGrid = binaryReader.ReadInt32();
+                    binaryWriter2.Write(sNameArch);
+                    binaryWriter2.Write(shagGrid);
+                    binaryWriter2.Write(sRel);
+                    binaryWriter2.Write(sSech);
+                    binaryWriter2.Write(kBorder);
+                    if (kBorder > 0)
+                    {
+                        for (int index30 = 0; index30 <= kBorder; ++index30)
+                        {
+                            binaryWriter2.Write(xBorder[index30]);
+                            binaryWriter2.Write(yBorder[index30]);
+                        }
+                    }
+                    binaryWriter2.Write(kBordOper);
+                    if (kBordOper > 0)
+                    {
+                        for (int index31 = 0; index31 <= kBordOper; ++index31)
+                        {
+                            binaryWriter2.Write(xBordOper[index31]);
+                            binaryWriter2.Write(yBordOper[index31]);
+                        }
+                    }
+                    binaryWriter2.Write(kPntGrid);
+                    if (kPntGrid > 0)
+                    {
+                        for (int index32 = 0; index32 <= kPntGrid; ++index32)
+                        {
+                            nameGrid[index32] = binaryReader.ReadString();
+                            xPntGrid[index32] = binaryReader.ReadDouble();
+                            yPntGrid[index32] = binaryReader.ReadDouble();
+                            dzGrid[index32] = binaryReader.ReadDouble();
+                            nGrid[index32] = binaryReader.ReadInt32();
+                        }
+                        for (int index33 = 0; index33 <= kPntGrid; ++index33)
+                        {
+                            binaryWriter2.Write(nameGrid[index33]);
+                            binaryWriter2.Write(xPntGrid[index33]);
+                            binaryWriter2.Write(yPntGrid[index33]);
+                            binaryWriter2.Write(dzGrid[index33]);
+                            binaryWriter2.Write(nGrid[index33]);
+                        }
+                    }
+                    kTinGrid = binaryReader.ReadInt32();
+                    binaryWriter2.Write(kTinGrid);
+                    if (kTinGrid > 0)
+                    {
+                        for (int index34 = 1; index34 <= kTinGrid; ++index34)
+                        {
+                            xTinGrid[index34] = binaryReader.ReadDouble();
+                            yTinGrid[index34] = binaryReader.ReadDouble();
+                            zTinGrid[index34] = binaryReader.ReadDouble();
+                        }
+                        for (int index35 = 1; index35 <= kTinGrid; ++index35)
+                        {
+                            binaryWriter2.Write(xTinGrid[index35]);
+                            binaryWriter2.Write(yTinGrid[index35]);
+                            binaryWriter2.Write(zTinGrid[index35]);
+                        }
+                    }
+                    kPntMerge = binaryReader.ReadInt32();
+                    binaryWriter2.Write(kPntMerge);
+                    if (kPntMerge > 0)
+                    {
+                        for (int index36 = 0; index36 <= kPntMerge; ++index36)
+                        {
+                            nameMerge[index36] = binaryReader.ReadString();
+                            xPntMerge[index36] = binaryReader.ReadDouble();
+                            yPntMerge[index36] = binaryReader.ReadDouble();
+                            zPntMerge[index36] = binaryReader.ReadDouble();
+                            nMerge[index36] = binaryReader.ReadInt32();
+                        }
+                        for (int index37 = 0; index37 <= kPntMerge; ++index37)
+                        {
+                            binaryWriter2.Write(nameMerge[index37]);
+                            binaryWriter2.Write(xPntMerge[index37]);
+                            binaryWriter2.Write(yPntMerge[index37]);
+                            binaryWriter2.Write(zPntMerge[index37]);
+                            binaryWriter2.Write(nMerge[index37]);
+                        }
+                    }
+                    kTinMerge = binaryReader.ReadInt32();
+                    binaryWriter2.Write(kTinMerge);
+                    if (kTinMerge > 0)
+                    {
+                        for (int index38 = 1; index38 <= kTinMerge; ++index38)
+                        {
+                            xTinMerge[index38] = binaryReader.ReadDouble();
+                            yTinMerge[index38] = binaryReader.ReadDouble();
+                            zTinMerge[index38] = binaryReader.ReadDouble();
+                        }
+                        for (int index39 = 1; index39 <= kTinMerge; ++index39)
+                        {
+                            binaryWriter2.Write(xTinMerge[index39]);
+                            binaryWriter2.Write(yTinMerge[index39]);
+                            binaryWriter2.Write(zTinMerge[index39]);
+                        }
+                    }
+                    kLine = binaryReader.ReadInt32();
+                    binaryWriter2.Write(kLine);
+                    if (kLine > 0)
+                    {
+                        for (int index40 = 1; index40 <= kLine; ++index40)
+                        {
+                            nLineCode[index40] = binaryReader.ReadInt32();
+                            nLongRad[index40] = binaryReader.ReadInt32();
+                            sWidLine[index40] = binaryReader.ReadDouble();
+                            dstLine[index40] = binaryReader.ReadDouble();
+                            rRadLine[index40] = binaryReader.ReadDouble();
+                            xRadLine[index40] = binaryReader.ReadDouble();
+                            yRadLine[index40] = binaryReader.ReadDouble();
+                            k1[index40] = binaryReader.ReadInt32();
+                            k2[index40] = binaryReader.ReadInt32();
+                            binaryWriter2.Write(nLineCode[index40]);
+                            binaryWriter2.Write(nLongRad[index40]);
+                            binaryWriter2.Write(sWidLine[index40]);
+                            binaryWriter2.Write(dstLine[index40]);
+                            binaryWriter2.Write(rRadLine[index40]);
+                            binaryWriter2.Write(xRadLine[index40]);
+                            binaryWriter2.Write(yRadLine[index40]);
+                            binaryWriter2.Write(k1[index40]);
+                            binaryWriter2.Write(k2[index40]);
+                            int num21 = k1[index40];
+                            int num22 = k2[index40];
+                            for (int index41 = num21; index41 <= num22; ++index41)
+                            {
+                                nameLin[index41] = binaryReader.ReadString();
+                                xLin[index41] = binaryReader.ReadDouble();
+                                yLin[index41] = binaryReader.ReadDouble();
+                                zLin[index41] = binaryReader.ReadDouble();
+                            }
+                            for (int index42 = num21; index42 <= num22; ++index42)
+                            {
+                                binaryWriter2.Write(nameLin[index42]);
+                                binaryWriter2.Write(xLin[index42]);
+                                binaryWriter2.Write(yLin[index42]);
+                                binaryWriter2.Write(zLin[index42]);
+                            }
+                        }
+                    }
+                    hSect = binaryReader.ReadDouble();
+                    int num23 = binaryReader.ReadInt32();
+                    binaryWriter2.Write(hSect);
+                    binaryWriter2.Write(num23);
+                    for (int index43 = 1; index43 <= num23; ++index43)
+                    {
+                        int num24 = binaryReader.ReadInt32();
+                        for (int index44 = 0; index44 <= num24; ++index44)
+                        {
+                            xDop[index44] = binaryReader.ReadDouble();
+                            yDop[index44] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter2.Write(num24);
+                        for (int index45 = 0; index45 <= num24; ++index45)
+                        {
+                            binaryWriter2.Write(xDop[index45]);
+                            binaryWriter2.Write(yDop[index45]);
+                        }
+                        double num25 = binaryReader.ReadDouble();
+                        double num26 = binaryReader.ReadDouble();
+                        double num27 = binaryReader.ReadDouble();
+                        double num28 = binaryReader.ReadDouble();
+                        int num29 = binaryReader.ReadInt32();
+                        int num30 = binaryReader.ReadInt32();
+                        binaryWriter2.Write(num25);
+                        binaryWriter2.Write(num26);
+                        binaryWriter2.Write(num27);
+                        binaryWriter2.Write(num28);
+                        binaryWriter2.Write(num29);
+                        binaryWriter2.Write(num30);
+                        int num31 = binaryReader.ReadInt32();
+                        for (int index46 = 0; index46 <= num31; ++index46)
+                        {
+                            xOut[index46] = binaryReader.ReadDouble();
+                            yOut[index46] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter2.Write(num31);
+                        for (int index47 = 0; index47 <= num31; ++index47)
+                        {
+                            binaryWriter2.Write(xOut[index47]);
+                            binaryWriter2.Write(yOut[index47]);
+                        }
+                    }
+                    hSect = binaryReader.ReadDouble();
+                    int num32 = binaryReader.ReadInt32();
+                    binaryWriter2.Write(hSect);
+                    binaryWriter2.Write(num32);
+                    for (int index48 = 1; index48 <= num32; ++index48)
+                    {
+                        int num33 = binaryReader.ReadInt32();
+                        for (int index49 = 0; index49 <= num33; ++index49)
+                        {
+                            xDop[index49] = binaryReader.ReadDouble();
+                            yDop[index49] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter2.Write(num33);
+                        for (int index50 = 0; index50 <= num33; ++index50)
+                        {
+                            binaryWriter2.Write(xDop[index50]);
+                            binaryWriter2.Write(yDop[index50]);
+                        }
+                        double num34 = binaryReader.ReadDouble();
+                        double num35 = binaryReader.ReadDouble();
+                        double num36 = binaryReader.ReadDouble();
+                        double num37 = binaryReader.ReadDouble();
+                        int num38 = binaryReader.ReadInt32();
+                        int num39 = binaryReader.ReadInt32();
+                        binaryWriter2.Write(num34);
+                        binaryWriter2.Write(num35);
+                        binaryWriter2.Write(num36);
+                        binaryWriter2.Write(num37);
+                        binaryWriter2.Write(num38);
+                        binaryWriter2.Write(num39);
+                        int num40 = binaryReader.ReadInt32();
+                        for (int index51 = 0; index51 <= num40; ++index51)
+                        {
+                            xOut[index51] = binaryReader.ReadDouble();
+                            yOut[index51] = binaryReader.ReadDouble();
+                        }
+                        binaryWriter2.Write(num40);
+                        for (int index52 = 0; index52 <= num40; ++index52)
+                        {
+                            binaryWriter2.Write(xOut[index52]);
+                            binaryWriter2.Write(yOut[index52]);
+                        }
+                    }
+                }
+                binaryReader.Close();
+                input.Close();
+            }
+            binaryWriter2.Close();
+            output2.Close();
+        }
+
+        public void NewInscript(
+          string fileCont,
+          double[] xtd,
+          double[] ytd,
+          double[] xta,
+          double[] yta)
+        {
+            double num1 = 0.0;
+            int num2 = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            double angle;
+            if (File.Exists(fileCont))
+            {
+                FileStream input = new FileStream(fileCont, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                num1 = binaryReader.ReadDouble();
+                num2 = binaryReader.ReadInt32();
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(num1);
+                binaryWriter.Write(num2);
+                double num3 = 0.0;
+                if (num1 == 0.1)
+                    num3 = 10.0 * num1;
+                if (num1 == 0.2 || num1 == 1.0 || num1 == 2.0 || num1 == 10.0 || num1 == 20.0)
+                    num3 = 5.0 * num1;
+                if (num1 == 0.25 || num1 == 0.5 || num1 == 5.0 || num1 == 25.0)
+                    num3 = 4.0 * num1;
+                for (int index1 = 1; index1 <= num2; ++index1)
+                {
+                    int num4 = binaryReader.ReadInt32();
+                    for (int index2 = 0; index2 <= num4; ++index2)
+                    {
+                        xtd[index2] = binaryReader.ReadDouble();
+                        ytd[index2] = binaryReader.ReadDouble();
+                    }
+                    double num5 = binaryReader.ReadDouble();
+                    angle = binaryReader.ReadDouble();
+                    double num6 = binaryReader.ReadDouble();
+                    double num7 = binaryReader.ReadDouble();
+                    int num8 = binaryReader.ReadInt32();
+                    int num9 = binaryReader.ReadInt32();
+                    int ks = binaryReader.ReadInt32();
+                    for (int index3 = 0; index3 <= ks; ++index3)
+                    {
+                        xta[index3] = binaryReader.ReadDouble();
+                        yta[index3] = binaryReader.ReadDouble();
+                    }
+                    int int32 = Convert.ToInt32(num5 / num3 + 1E-05);
+                    if (Math.Abs(num5 - (double)int32 * num3) < 0.01)
+                    {
+                        double xins;
+                        double yins;
+                        DllClass1.CoordInscr(ks, xta, yta, out xins, out yins, out angle, out int _, out int _);
+                        num6 = xins;
+                        num7 = yins;
+                    }
+                    binaryWriter.Write(num4);
+                    for (int index4 = 0; index4 <= num4; ++index4)
+                    {
+                        binaryWriter.Write(xtd[index4]);
+                        binaryWriter.Write(ytd[index4]);
+                    }
+                    binaryWriter.Write(num5);
+                    binaryWriter.Write(angle);
+                    binaryWriter.Write(num6);
+                    binaryWriter.Write(num7);
+                    binaryWriter.Write(num8);
+                    binaryWriter.Write(num9);
+                    binaryWriter.Write(ks);
+                    for (int index5 = 0; index5 <= ks; ++index5)
+                    {
+                        binaryWriter.Write(xta[index5]);
+                        binaryWriter.Write(yta[index5]);
+                    }
+                }
+                binaryReader.Close();
+                input.Close();
+                binaryWriter.Close();
+                output.Close();
+            }
+            if (!File.Exists(fileAdd))
+                return;
+            if (File.Exists(fileCont))
+                File.Delete(fileCont);
+            FileStream output1 = new FileStream(fileCont, FileMode.CreateNew);
+            BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+            binaryWriter1.Write(num1);
+            binaryWriter1.Write(num2);
+            FileStream input1 = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            binaryReader1.ReadDouble();
+            int num10 = binaryReader1.ReadInt32();
+            for (int index6 = 1; index6 <= num10; ++index6)
+            {
+                int num11 = binaryReader1.ReadInt32();
+                for (int index7 = 0; index7 <= num11; ++index7)
+                {
+                    xtd[index7] = binaryReader1.ReadDouble();
+                    ytd[index7] = binaryReader1.ReadDouble();
+                }
+                double num12 = binaryReader1.ReadDouble();
+                angle = binaryReader1.ReadDouble();
+                double num13 = binaryReader1.ReadDouble();
+                double num14 = binaryReader1.ReadDouble();
+                int num15 = binaryReader1.ReadInt32();
+                int num16 = binaryReader1.ReadInt32();
+                int num17 = binaryReader1.ReadInt32();
+                for (int index8 = 0; index8 <= num17; ++index8)
+                {
+                    xta[index8] = binaryReader1.ReadDouble();
+                    yta[index8] = binaryReader1.ReadDouble();
+                }
+                binaryWriter1.Write(num11);
+                for (int index9 = 0; index9 <= num11; ++index9)
+                {
+                    binaryWriter1.Write(xtd[index9]);
+                    binaryWriter1.Write(ytd[index9]);
+                }
+                binaryWriter1.Write(num12);
+                binaryWriter1.Write(angle);
+                binaryWriter1.Write(num13);
+                binaryWriter1.Write(num14);
+                binaryWriter1.Write(num15);
+                binaryWriter1.Write(num16);
+                binaryWriter1.Write(num17);
+                for (int index10 = 0; index10 <= num17; ++index10)
+                {
+                    binaryWriter1.Write(xta[index10]);
+                    binaryWriter1.Write(yta[index10]);
+                }
+            }
+            binaryReader1.Close();
+            input1.Close();
+            binaryWriter1.Close();
+            output1.Close();
+        }
+
+        public void LineDraw(
+          PaintEventArgs e,
+          int kLine,
+          int[] k1,
+          int[] k2,
+          double[] xLin,
+          double[] yLin,
+          double scaleWin,
+          double xBeg,
+          double yBeg,
+          int xWin,
+          int yWin,
+          int iPar)
+        {
+            Graphics graphics = e.Graphics;
+            int num1;
+            int yWin1 = num1 = 0;
+            int xWin1 = num1;
+            int yWin2 = num1;
+            int xWin2 = num1;
+            Pen pen = pnColor[iPar];
+            pen.Width = 1f;
+            if (kLine <= 0)
+                return;
+            for (int index1 = 1; index1 <= kLine; ++index1)
+            {
+                int num2 = k1[index1];
+                int num3 = k2[index1];
+                for (int index2 = num2 + 1; index2 <= num3; ++index2)
+                {
+                    DllClass1.XYtoWIN(xLin[index2 - 1], yLin[index2 - 1], scaleWin, xBeg, yBeg, xWin, yWin, out xWin2, out yWin2);
+                    if (xWin2 != 0 || yWin2 != 0)
+                    {
+                        DllClass1.XYtoWIN(xLin[index2], yLin[index2], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                        if (xWin1 != 0 || yWin1 != 0)
+                        {
+                            Point pt1 = new Point(xWin2, yWin2);
+                            Point pt2 = new Point(xWin1, yWin1);
+                            pen.DashStyle = DashStyle.Solid;
+                            graphics.DrawLine(pen, pt1, pt2);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void RectCoord(
+          int pixWid,
+          int pixHei,
+          int kSymbPnt,
+          int[] hSymb,
+          out int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          out int idx,
+          out int idy)
+        {
+            kRect = 0;
+            idx = idy = 0;
+            int num1 = 5;
+            idx = 120;
+            int num2 = 0;
+            for (int index = 1; index <= kSymbPnt; ++index)
+            {
+                if (hSymb[index] > num2)
+                    num2 = hSymb[index];
+            }
+            idy = num2 + num2 / 5;
+            if (idy < 30)
+                idy = 30;
+            int num3 = 525 / idx;
+            int num4 = 0;
+            int num5 = -idy / 2;
+            do
+            {
+                num5 += idy;
+                int num6 = -idx + num1;
+                for (int index = 1; index <= num3; ++index)
+                {
+                    ++num4;
+                    num6 += idx;
+                    ++kRect;
+                    nRect[kRect] = num4;
+                    xRect[kRect] = (double)num6;
+                    yRect[kRect] = (double)num5;
+                    if (num4 == kSymbPnt)
+                        break;
+                }
+            }
+            while (num4 != kSymbPnt && num4 < kSymbPnt);
+        }
+
+        public void RectLineSign(
+          int pixWid,
+          int pixHei,
+          int kSymbLine,
+          int hSymbLine,
+          out int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          out int idx,
+          out int idy)
+        {
+            kRect = 0;
+            idx = idy = 0;
+            int num1 = 5;
+            idx = 150;
+            idy = 2 * hSymbLine;
+            int num2 = 500 / idx;
+            int num3 = 0;
+            int num4 = -idy / 2;
+            do
+            {
+                num4 += idy;
+                int num5 = -idx + num1;
+                for (int index = 1; index <= num2; ++index)
+                {
+                    ++num3;
+                    num5 += idx;
+                    ++kRect;
+                    nRect[kRect] = num3;
+                    xRect[kRect] = (double)num5;
+                    yRect[kRect] = (double)num4;
+                    if (num3 == kSymbLine)
+                        break;
+                }
+            }
+            while (num3 != kSymbLine && num3 < kSymbLine);
+        }
+
+        public void RectPolySign(
+          int pixWid,
+          int pixHei,
+          int kSymbLine,
+          int hSymbLine,
+          out int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          out int idx,
+          out int idy)
+        {
+            kRect = 0;
+            idx = idy = 0;
+            int num1 = 5;
+            idx = 90;
+            idy = 2 * hSymbLine;
+            int num2 = 450 / idx;
+            int num3 = 0;
+            int num4 = -idy / 2;
+            do
+            {
+                num4 += idy;
+                int num5 = -idx + num1;
+                for (int index = 1; index <= num2; ++index)
+                {
+                    ++num3;
+                    num5 += idx;
+                    ++kRect;
+                    nRect[kRect] = num3;
+                    xRect[kRect] = (double)num5;
+                    yRect[kRect] = (double)num4;
+                    if (num3 == kSymbLine)
+                        break;
+                }
+            }
+            while (num3 != kSymbLine && num3 < kSymbLine);
+        }
+
+        public void RectProfSign(
+          int pixWid,
+          int pixHei,
+          int kSymbLine,
+          int hSymbLine,
+          out int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          out int idx,
+          out int idy)
+        {
+            kRect = 0;
+            idx = idy = 0;
+            int num1 = 5;
+            idx = 90;
+            idy = 2 * hSymbLine;
+            int num2 = 450 / idx;
+            int num3 = 0;
+            int num4 = -idy / 2;
+            do
+            {
+                num4 += idy;
+                int num5 = -idx + num1;
+                for (int index = 1; index <= num2; ++index)
+                {
+                    ++num3;
+                    num5 += idx;
+                    ++kRect;
+                    nRect[kRect] = num3;
+                    xRect[kRect] = (double)num5;
+                    yRect[kRect] = (double)num4;
+                    if (num3 == kSymbLine)
+                        break;
+                }
+            }
+            while (num3 != kSymbLine && num3 < kSymbLine);
+        }
+
+        public void SymbProfDraw(
+          PaintEventArgs e,
+          string fitemProf,
+          int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          int idx,
+          int idy,
+          int kProfSymb,
+          int[] npSign2,
+          int[] nBackCol,
+          int[] nItem,
+          double[] kOneSymb,
+          int[] ixp,
+          int[] iyp,
+          int[] nColItem,
+          SolidBrush[] brColor,
+          Pen[] pnCol)
+            {
+            //int hSymbProf;
+            //int hSymbProf = 30;
+            Graphics graphics = e.Graphics;
+            string sTxt = "";
+            int hSymbProf = this.hSymbProf;
+            int emSize = 8;
+            int width = 25;
+            Font font = new Font("Arial", (float)emSize);
+            SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+            Pen pen1 = new Pen(Color.Gray, 1f);
+            for (int index1 = 1; index1 <= kRect; ++index1)
+            {
+                int index2 = nRect[index1];
+                int num1 = npSign2[index2];
+                int nSelect = nItem[index2];
+                int int32_1 = Convert.ToInt32(xRect[index2]);
+                int int32_2 = Convert.ToInt32(yRect[index2]);
+                string s = string.Format("{0}", (object)index2) + "-" + string.Format("{0}", (object)num1);
+                graphics.DrawString(s, font, (Brush)solidBrush1, (float)int32_1, (float)int32_2);
+                graphics.DrawRectangle(pen1, int32_1 - 1, int32_2 - emSize, idx, idy);
+                int index3 = nBackCol[index2];
+                int x = int32_1 + 40;
+                if (index3 == 10)
+                {
+                    SolidBrush solidBrush2 = new SolidBrush(Color.White);
+                    graphics.FillRectangle((Brush)solidBrush2, x, int32_2, width, hSymbProf);
+                }
+                if (index3 < 10)
+                {
+                    SolidBrush solidBrush3 = brColor[index3];
+                    graphics.FillRectangle((Brush)solidBrush3, x, int32_2, width, hSymbProf);
+                }
+                Pen pen2 = new Pen(Color.Gray, 1f);
+                if (nSelect != 0)
+                {
+                    int iLong;
+                    int iWid;
+                    int iHei;
+                    int kPix;
+                    int mClr;
+                    DllClass1.SelItemProf(fitemProf, nSelect, out iLong, out iWid, out iHei, out kPix, ixp, iyp, nColItem, out sTxt, out mClr);
+                    if (iLong == 0)
+                    {
+                        int num2 = 1;
+                        int num3 = (width - num2 * iWid) / (num2 + 1);
+                        int num4 = x;
+                        for (int index4 = 1; index4 <= num2; ++index4)
+                        {
+                            int num5 = num4 + num3;
+                            for (int index5 = 1; index5 <= kPix; ++index5)
+                            {
+                                int num6 = num5 + ixp[index5];
+                                int num7 = int32_2 + iyp[index5];
+                                mClr = nColItem[index5];
+                                SolidBrush solidBrush4 = brColor[mClr];
+                                int num8 = (width - iWid) / 2;
+                                int num9 = (hSymbProf - iHei) / 2;
+                                int num10 = 0;
+                                graphics.FillRectangle((Brush)solidBrush4, num6 + num10, num7 + num9, 1, 1);
+                            }
+                            num4 = num5 + iWid;
+                        }
+                    }
+                }
+            }
+        }
+
+        public void SymbPntDraw(
+          PaintEventArgs e,
+          string fsymbPnt,
+          int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          int idx,
+          int idy,
+          int kSymbPnt,
+          int[] nRec,
+          int[] nUser,
+          int[] ixp,
+          int[] iyp,
+          int[] nClr,
+          SolidBrush[] brColor)
+        {
+            Graphics graphics = e.Graphics;
+            string sDscr = "";
+            int emSize = 8;
+            Font font = new Font("Arial", (float)emSize);
+            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            Pen pen = new Pen(Color.Gray, 1f);
+            for (int index1 = 1; index1 <= kRect; ++index1)
+            {
+                int index2 = nRect[index1];
+                int nCodePnt = nUser[index2];
+                int int32_1 = Convert.ToInt32(xRect[index2]);
+                int int32_2 = Convert.ToInt32(yRect[index2]);
+                string s = string.Format("{0}", (object)index2) + "-" + string.Format("{0}", (object)nCodePnt);
+                graphics.DrawString(s, font, (Brush)solidBrush, (float)int32_1, (float)int32_2);
+                int iLong;
+                int iHei;
+                int kPix;
+                DllClass1.SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, nRec, nUser, out iLong, out int _, out iHei, out sDscr, out kPix, ixp, iyp, nClr, out sText, out mColor);
+                int ixh = int32_1 + idx / 2;
+                int iyh = int32_2 + (idy - iHei) / 2 - 3;
+                if (iLong == 0)
+                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixp, iyp, nClr, brColor);
+                if (iLong > 0)
+                    DllClass1.DrawText(e, sText, iHei, ixh, int32_2, mColor, brColor);
+                graphics.DrawRectangle(pen, int32_1 - 1, int32_2 - emSize / 2, idx, idy);
+            }
+        }
+
+        public void SymbLineDraw(
+          PaintEventArgs e,
+          string fitemLine,
+          int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          int idx,
+          int idy,
+          int kSymbLine,
+          int[] n2Sign,
+          int[] nBaseSymb,
+          int[] nColLine,
+          int[] iWidth1,
+          int[] iWidth2,
+          int[] iStyle1,
+          int[] iStyle2,
+          int[] nItem,
+          int[] itemLoc,
+          int[] iDensity,
+          int[] nColorItm,
+          int[] ixp,
+          int[] iyp,
+          SolidBrush[] brColor,
+          Pen[] pnCol)
+        {
+            Graphics graphics = e.Graphics;
+            string sTxt = "";
+            int num1 = 1;
+            double[] x = new double[5];
+            double[] y = new double[5];
+            double[] xAng = new double[5];
+            double[] yAng = new double[5];
+            double[] xit = new double[20];
+            double[] yit = new double[20];
+            int emSize = 8;
+            Font font = new Font("Arial", (float)emSize);
+            SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+            Pen pen = new Pen(Color.Gray, 1f);
+            for (int index1 = 1; index1 <= kRect; ++index1)
+            {
+                int index2 = nRect[index1];
+                int num2 = n2Sign[index2];
+                int int32_1 = Convert.ToInt32(xRect[index2]);
+                int int32_2 = Convert.ToInt32(yRect[index2]);
+                string s = string.Format("{0}", (object)index2) + "-" + string.Format("{0}", (object)num2);
+                graphics.DrawString(s, font, (Brush)solidBrush1, (float)int32_1, (float)int32_2);
+                int num3 = int32_1 + 35;
+                x[0] = 1.0 * (double)num3;
+                x[1] = 1.0 * (double)(num3 + 80);
+                y[0] = 1.0 * (double)(int32_2 + idy / 2);
+                y[1] = 1.0 * (double)(int32_2 + idy / 2);
+                int nBase = nBaseSymb[index2];
+                int index3 = nColLine[index2];
+                int iWid1 = iWidth1[index2];
+                int iWid2 = iWidth2[index2];
+                int iStyle3 = iStyle1[index2];
+                int iStyle4 = iStyle2[index2];
+                int nSelect = nItem[index2];
+                int num4 = itemLoc[index2];
+                int nDensity = iDensity[index2];
+                SolidBrush solidBrush2 = brColor[index3];
+                Pen jColor = pnCol[index3];
+                if (nSelect > 0)
+                {
+                    int iLong;
+                    int iWid3;
+                    int iHei;
+                    int kPix;
+                    DllClass1.SelItemLine(fitemLine, nSelect, out iLong, out iWid3, out iHei, out kPix, ixp, iyp, nColorItm, out sTxt, out int _);
+                    int kit;
+                    if (nDensity == 1)
+                    {
+                        for (int index4 = 0; index4 <= num1; ++index4)
+                        {
+                            xAng[index4] = x[index4];
+                            yAng[index4] = y[index4];
+                        }
+                        DllClass1.CoordLineItem(nDensity, num1, xAng, yAng, nBase, out kit, xit, yit);
+                        if (iLong == 0)
+                        {
+                            for (int index5 = 1; index5 <= kit; ++index5)
+                            {
+                                int int32_3 = Convert.ToInt32(xit[index5]);
+                                int int32_4 = Convert.ToInt32(yit[index5]);
+                                if (nBase < 8)
+                                {
+                                    int32_3 -= iWid3 / 2;
+                                    int32_4 -= iHei / 2;
+                                    if (num4 == 1)
+                                        int32_4 -= iHei / 2;
+                                    if (num4 == 3)
+                                        int32_4 += iHei / 2;
+                                }
+                                if (nBase == 8)
+                                {
+                                    int32_3 -= iWid3 / 2;
+                                    int32_4 -= iHei / 2;
+                                    if (num4 == 1)
+                                        int32_4 -= iHei;
+                                    if (num4 == 3)
+                                        int32_4 += iHei;
+                                }
+                                DllClass1.SignDraw(e, int32_3, int32_4, kPix, ixp, iyp, nColorItm, brColor);
+                            }
+                        }
+                    }
+                    if (nDensity > 1)
+                    {
+                        int num5 = 0;
+                        if (iLong == 0)
+                        {
+                            int int32_5 = Convert.ToInt32(x[0]);
+                            int int32_6 = Convert.ToInt32(x[1]);
+                            int int32_7 = Convert.ToInt32(y[0]);
+                            if (nDensity == 1)
+                                num5 = 5 * iWid3;
+                            if (nDensity == 2)
+                                num5 = 4 * iWid3;
+                            if (nDensity == 3)
+                                num5 = 3 * iWid3;
+                            if (nDensity == 4)
+                                num5 = 2 * iWid3;
+                            if (nDensity == 5)
+                                num5 = iWid3;
+                            if (num5 > 0)
+                            {
+                                kit = (int32_6 - int32_5) / num5 + 1;
+                                int ixh = int32_5 - num5;
+                                for (int index6 = 1; index6 <= kit; ++index6)
+                                {
+                                    ixh += num5;
+                                    int iyh = int32_7;
+                                    if (nBase < 8)
+                                    {
+                                        iyh -= iHei / 2;
+                                        if (num4 == 1)
+                                            iyh -= iHei / 2;
+                                        if (num4 == 3)
+                                            iyh += iHei / 2;
+                                    }
+                                    if (nBase == 8)
+                                    {
+                                        iyh -= iHei / 2;
+                                        if (num4 == 1)
+                                            iyh -= iHei;
+                                        if (num4 == 3)
+                                            iyh += iHei;
+                                    }
+                                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixp, iyp, nColorItm, brColor);
+                                }
+                            }
+                        }
+                    }
+                }
+                if (nBase == 1 || nBase == 2)
+                {
+                    jColor.Width = (float)iWid1;
+                    DllClass1.LineSymbolStyle(e, jColor, iStyle3, num1, x, y, iWid1);
+                }
+                if (nBase > 2 && nBase < 8)
+                {
+                    jColor.Width = (float)iWid1;
+                    DllClass1.LineSymbolStyle(e, jColor, iStyle3, num1, x, y, iWid1);
+                }
+                if (nBase == 8)
+                {
+                    int num6 = int32_2 - 3 + idy / 2;
+                    jColor.Width = (float)iWid1;
+                    if (iStyle3 == 1 || iStyle3 == 2)
+                    {
+                        y[0] = (double)num6;
+                        y[1] = (double)num6;
+                        DllClass1.LineSymbolStyle(e, jColor, iStyle3, num1, x, y, iWid1);
+                    }
+                    if (iStyle3 > 2 && iStyle3 < 8)
+                    {
+                        y[0] = (double)num6;
+                        y[1] = (double)num6;
+                        DllClass1.LineSymbolStyle(e, jColor, iStyle3, num1, x, y, iWid1);
+                    }
+                    jColor.Width = (float)iWid2;
+                    int num7 = int32_2 + 3 + idy / 2;
+                    if (iStyle4 == 1 || iStyle4 == 2)
+                    {
+                        y[0] = (double)num7;
+                        y[1] = (double)num7;
+                        DllClass1.LineSymbolStyle(e, jColor, iStyle4, num1, x, y, iWid2);
+                    }
+                    if (iStyle4 > 2 && iStyle4 < 8)
+                    {
+                        y[0] = (double)num7;
+                        y[1] = (double)num7;
+                        DllClass1.LineSymbolStyle(e, jColor, iStyle4, num1, x, y, iWid2);
+                    }
+                }
+                graphics.DrawRectangle(pen, int32_1 - 1, int32_2 - emSize / 2, idx, idy);
+            }
+        }
+
+        public void SymbPolyDraw(
+          PaintEventArgs e,
+          string fitemPoly,
+          int kRect,
+          int[] nRect,
+          double[] xRect,
+          double[] yRect,
+          int idx,
+          int idy,
+          int kPolySymb,
+          int[] npSign2,
+          int[] nBackCol,
+          int[] nItem,
+          int[] nOneSymb,
+          int[] ixp,
+          int[] iyp,
+          int[] nColItem,
+          SolidBrush[] brColor,
+          Pen[] pnCol)
+        {
+            Graphics graphics = e.Graphics;
+            string sTxt = "";
+            int hSymbPoly = this.hSymbPoly;
+            int emSize = 8;
+            int width = 25;
+            Font font = new Font("Arial", (float)emSize);
+            SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+            Pen pen1 = new Pen(Color.Gray, 1f);
+            for (int index1 = 1; index1 <= kRect; ++index1)
+            {
+                int index2 = nRect[index1];
+                int num1 = npSign2[index2];
+                int nSelect = nItem[index2];
+                int int32_1 = Convert.ToInt32(xRect[index2]);
+                int int32_2 = Convert.ToInt32(yRect[index2]);
+                string s = string.Format("{0}", (object)index2) + "-" + string.Format("{0}", (object)num1);
+                graphics.DrawString(s, font, (Brush)solidBrush1, (float)int32_1, (float)int32_2);
+                graphics.DrawRectangle(pen1, int32_1 - 1, int32_2 - emSize, idx, idy);
+                int index3 = nBackCol[index2];
+                int x = int32_1 + 40;
+                if (index3 == 10)
+                {
+                    SolidBrush solidBrush2 = new SolidBrush(Color.White);
+                    graphics.FillRectangle((Brush)solidBrush2, x, int32_2, width, hSymbPoly);
+                }
+                if (index3 < 10)
+                {
+                    SolidBrush solidBrush3 = brColor[index3];
+                    graphics.FillRectangle((Brush)solidBrush3, x, int32_2, width, hSymbPoly);
+                }
+                Pen pen2 = new Pen(Color.Gray, 1f);
+                if (nSelect != 0)
+                {
+                    int iLong;
+                    int iWid;
+                    int iHei;
+                    int kPix;
+                    int mClr;
+                    DllClass1.SelItemPoly(fitemPoly, nSelect, out iLong, out iWid, out iHei, out kPix, ixp, iyp, nColItem, out sTxt, out mClr);
+                    if (iLong == 0)
+                    {
+                        int num2 = 1;
+                        int num3 = (width - num2 * iWid) / (num2 + 1);
+                        int num4 = x;
+                        for (int index4 = 1; index4 <= num2; ++index4)
+                        {
+                            int num5 = num4 + num3;
+                            for (int index5 = 1; index5 <= kPix; ++index5)
+                            {
+                                int num6 = num5 + ixp[index5];
+                                int num7 = int32_2 + iyp[index5];
+                                mClr = nColItem[index5];
+                                SolidBrush solidBrush4 = brColor[mClr];
+                                int num8 = (width - iWid) / 2;
+                                int num9 = (hSymbPoly - iHei) / 2;
+                                int num10 = 0;
+                                graphics.FillRectangle((Brush)solidBrush4, num6 + num10, num7 + num9, 1, 1);
+                            }
+                            num4 = num5 + iWid;
+                        }
+                    }
+                }
             }
         }
 
@@ -545,6 +20469,9 @@ namespace IIT_Diplom_Geo1
         }
         internal void PointsLoad()
         {
+            Cursor.Current = Cursors.WaitCursor;
+            kPntPlus = 0;
+            kPntInput = 0;
             kPoints = 0;
             if (File.Exists(filePoint))
             {
@@ -566,6 +20493,8 @@ namespace IIT_Diplom_Geo1
                         xPnt[i] = faa.ReadDouble();
                         yPnt[i] = faa.ReadDouble();
                         zPnt[i] = faa.ReadDouble();
+                        nCode1[i] = faa.ReadInt32();
+                        nCode2[i] = faa.ReadInt32();
                     }
                 }
                 catch (Exception)
@@ -583,6 +20512,24 @@ namespace IIT_Diplom_Geo1
             }
 
         }
+
+        //private void NewPointDraw(PaintEventArgs e, string sNew, double xNew, double yNew)
+        //{
+        //    Graphics graphics = e.Graphics;
+        //    int xWin = 0;
+        //    int yWin = 0;
+        //    int emSize = 6;
+        //    SolidBrush solidBrush1 = new SolidBrush(Color.Black);
+        //    Pen pen1 = new Pen(Color.Black);
+        //    SolidBrush solidBrush2 = new SolidBrush(Color.Black);
+        //    Pen pen2 = new Pen(Color.Black);
+        //    DllClass1.XYtoWIN(xNew, yNew, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+        //    if (xWin == 0 && yWin == 0)
+        //        return;
+        //    graphics.FillRectangle((Brush)solidBrush1, xWin - 1, yWin - 1, 3, 3);
+        //    graphics.DrawString(sNew, new Font("Bold", (float)emSize), (Brush)solidBrush1, (float)(xWin + emSize / 2), (float)(yWin - emSize + 2));
+        //}
+
     }
 }
 
