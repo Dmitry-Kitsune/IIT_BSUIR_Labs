@@ -93,6 +93,7 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Composition.AttributedModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
@@ -181,11 +182,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPnt.Designer.cs">
+      <DependentUpon>AddPnt.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPoints.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPoints.Designer.cs">
       <DependentUpon>AddPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadasral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadasral.Designer.cs">
+      <DependentUpon>Cadasral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlPoints.Designer.cs">
+      <DependentUpon>ControlPoints.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateNewProj.cs">
       <SubType>Form</SubType>
@@ -193,11 +212,53 @@
     <Compile Include="CreateNewProj.Designer.cs">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doubtful.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doubtful.Designer.cs">
+      <DependentUpon>Doubtful.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoCalc.Designer.cs">
+      <DependentUpon>GeoCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LineSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LineSign.Designer.cs">
+      <DependentUpon>LineSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListLineSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListLineSign.Designer.cs">
+      <DependentUpon>ListLineSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainGeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainGeo.Designer.cs">
+      <DependentUpon>MainGeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPntSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPntSign.Designer.cs">
+      <DependentUpon>ListPntSign.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListPolySign.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListPolySign.Designer.cs">
       <DependentUpon>ListPolySign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapScale.Designer.cs">
+      <DependentUpon>MapScale.cs</DependentUpon>
     </Compile>
     <Compile Include="MyGeodesy.cs" />
     <Compile Include="FormProj.cs">
@@ -212,6 +273,24 @@
     <Compile Include="GeoDemo.Designer.cs">
       <DependentUpon>GeoDemo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PointSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointSign.Designer.cs">
+      <DependentUpon>PointSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointsList.Designer.cs">
+      <DependentUpon>PointsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolygonSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolygonSign.Designer.cs">
+      <DependentUpon>PolygonSign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectDrive.cs">
@@ -223,23 +302,43 @@
     <Compile Include="SelectProj.Designer.cs">
       <DependentUpon>SelectProj.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddPnt.resx">
+      <DependentUpon>AddPnt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPoints.resx">
       <DependentUpon>AddPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadasral.resx">
+      <DependentUpon>Cadasral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPoints.resx">
+      <DependentUpon>ControlPoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProj.resx">
       <DependentUpon>FormProj.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProj.ru-RU.resx">
       <DependentUpon>FormProj.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GeoDemo.resx">
       <DependentUpon>GeoDemo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListPntSign.resx">
+      <DependentUpon>ListPntSign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListPolySign.resx">
       <DependentUpon>ListPolySign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapScale.resx">
+      <DependentUpon>MapScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointsList.resx">
+      <DependentUpon>PointsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +384,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ZoomOutIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectBoX1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveIcon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />

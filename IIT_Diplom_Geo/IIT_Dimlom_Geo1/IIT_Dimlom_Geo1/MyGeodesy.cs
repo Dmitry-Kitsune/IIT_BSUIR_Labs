@@ -47,6 +47,7 @@ namespace IIT_Diplom_Geo1
         public string curDirect = "";
         public string comPath = "";
         public string fileProj = "";
+        //public string fileProj = "Temp"; // Заменить на пустое значение
         public string comDirect = "";
         public string fileAdd = "";
         public string fsymbPnt = "";
@@ -954,11 +955,15 @@ namespace IIT_Diplom_Geo1
         public string fileControl = "";
         public string fArchive = "";
         public string fArchLayer = "";
+
+        /// <summary>
+        //public string fAllProj = "";
+        //public string filePnt = "";
         // Переменные для метода отрисовки panel1_Paint в class GeoDemo : Form
 
         private int kPartMaX = 20; // максимальное возможное кол-во слов в водимой строке
-        //char[] seps = { ' ', ',', '\t' }; // массив символов - пробел, запятая, табуляция
-    
+                                   //char[] seps = { ' ', ',', '\t' }; // массив символов - пробел, запятая, табуляция
+
         // Граница вводимых данных в виде минимальных и максимальных значений координат точек
         // public double xmin, ymin, xmax, ymax, zmin, zmax;
 
@@ -1034,7 +1039,7 @@ namespace IIT_Diplom_Geo1
             tmpSymb = "";
             for (int index = 1; index <= kDrive; ++index)
             {
-                tmpSymb = sDrive[index] + "BrwSymbol\\brwDrive.drv";
+                tmpSymb = sDrive[index] + "BrSymbol\\brwDrive.drv";
                 if (File.Exists(tmpSymb))
                 {
                     FileStream input = new FileStream(tmpSymb, FileMode.Open, FileAccess.Read);
@@ -1052,13 +1057,13 @@ namespace IIT_Diplom_Geo1
                         binaryReader.Close();
                         input.Close();
                     }
-                    fsymbPnt = pathSymbol + "brwSymb.pnt";
-                    fsymbLine = pathSymbol + "brwSymb.lin";
-                    fsymbPoly = pathSymbol + "brwSymb.pol";
-                    fitemLine = pathSymbol + "brwItem.lin";
-                    fitemPoly = pathSymbol + "brwItem.pol";
-                    fsymbProf = pathSymbol + "brwSymb.crs";
-                    fitemProf = pathSymbol + "brwItem.crs";
+                    fsymbPnt = pathSymbol + "brSymb.pnt";
+                    fsymbLine = pathSymbol + "brSymb.lin";
+                    fsymbPoly = pathSymbol + "brSymb.pol";
+                    fitemLine = pathSymbol + "brItem.lin";
+                    fitemPoly = pathSymbol + "brItem.pol";
+                    fsymbProf = pathSymbol + "brSymb.crs";
+                    fitemProf = pathSymbol + "brItem.crs";
                     break;
                 }
             }
@@ -1086,30 +1091,30 @@ namespace IIT_Diplom_Geo1
                 binaryReader1.Close();
                 input1.Close();
             }
-            fileAllProj = comPath + "brwAll.dat";
-            fileProj = comPath + "brwProj.dat";
-            fileAdd = comPath + "brwAdd.dat";
+            fileAllProj = comPath + "brAll.dat";
+            fileProj = comPath + "brProj.dat";
+            fileAdd = comPath + "brAdd.dat";
             fileProcess = comPath + "fileProc.pro";
             filePixel = comPath + "filePixel.dat";
             ftmpPoly = comPath + "ftmp.pol";
             fPntLine = comPath + "fpntLine.dat";
-            fstoreMining = comPath + "brwMining.dat";
-            fileCross = comPath + "brwCross.dat";
+            fstoreMining = comPath + "brMining.dat";
+            fileCross = comPath + "brCross.dat";
             fmainProc = comPath + "filemain.pro";
-            fProblem = comPath + "brwProblem";
-            fPointPixel = comPath + "brwPix.pnt";
-            fPolyPixel = comPath + "brwPix.pol";
-            fLinePixel = comPath + "brwPix.lin";
-            fstoreCam = comPath + "brwCamera.dat";
-            fbaseOrient = comPath + "brwOrient.dat";
-            fbaseDtm = comPath + "brwDtm.dat";
-            fstoreGeo = comPath + "brwGeo.dat";
+            fProblem = comPath + "brProblem";
+            fPointPixel = comPath + "brPix.pnt";
+            fPolyPixel = comPath + "brPix.pol";
+            fLinePixel = comPath + "brPix.lin";
+            fstoreCam = comPath + "brCamera.dat";
+            fbaseOrient = comPath + "brOrient.dat";
+            fbaseDtm = comPath + "brDtm.dat";
+            fstoreGeo = comPath + "brGeo.dat";
             filePixel = comPath + "filePixel.dat";
-            fProblem = comPath + "brwProblem";
+            fProblem = comPath + "brProblem";
             fPntLine = comPath + "fpntline.dat";
             fileControl = comPath + "fileContr.pro";
-            fArchive = comPath + "brwArchive.arh";
-            fArchLayer = comPath + "brwArchlay.arh";
+            fArchive = comPath + "brArchive.arh";
+            fArchLayer = comPath + "brArchlay.arh";
             aeroBlock = comPath + "block.geo";
             int num = 0;
             if (File.Exists(fileProj))
@@ -1811,7 +1816,7 @@ namespace IIT_Diplom_Geo1
             DllClass1.intArray(yprSymbol, ref kArray);
             if (kProfSymb > kArray)
             {
-                int num2 = (int)MessageBox.Show("Index array PolySymbCoord");
+                int num2 = (int)MessageBox.Show("Индекс массива PolySymbCoord");
             }
             else
             {
@@ -1995,14 +2000,14 @@ namespace IIT_Diplom_Geo1
         public void LineDescription(out int kSymbLine, string[] symbLine)
         {
             kSymbLine = 0;
-            symbLine[1] = "User description";
-            symbLine[2] = "User description";
-            symbLine[3] = "User description";
-            symbLine[4] = "User description";
-            symbLine[5] = "User description";
-            symbLine[6] = "User description";
-            symbLine[7] = "User description";
-            symbLine[8] = "User description";
+            symbLine[1] = "Пользовательские описания";
+            symbLine[2] = "Пользовательские описания";
+            symbLine[3] = "Пользовательские описания";
+            symbLine[4] = "Пользовательские описания";
+            symbLine[5] = "Пользовательские описания";
+            symbLine[6] = "Пользовательские описания";
+            symbLine[7] = "Пользовательские описания";
+            symbLine[8] = "Пользовательские описания";
             kSymbLine = 8;
         }
 
@@ -2184,7 +2189,7 @@ namespace IIT_Diplom_Geo1
             kAdd = 0;
             iCond = 0;
             int num1 = 0;
-            string text = "Name Points with problem of coordinates' calculation: ";
+            string text = "Название Точки с проблемой вычисления координат: ";
             if (File.Exists(fgeoPoly))
             {
                 FileStream input = new FileStream(fgeoPoly, FileMode.Open, FileAccess.Read);
@@ -3173,23 +3178,23 @@ namespace IIT_Diplom_Geo1
 
         public void KeepPointProj()
         {
-            if (File.Exists(this.fpointProj))
-                File.Delete(this.fpointProj);
-            FileStream output = new FileStream(this.fpointProj, FileMode.CreateNew);
+            if (File.Exists(fpointProj))
+                File.Delete(fpointProj);
+            FileStream output = new FileStream(fpointProj, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-            binaryWriter.Write(this.kPntProj);
-            if (this.kPntProj > -1)
+            binaryWriter.Write(kPntProj);
+            if (kPntProj > -1)
             {
-                for (int index = 0; index <= this.kPntProj; ++index)
+                for (int index = 0; index <= kPntProj; ++index)
                 {
-                    binaryWriter.Write(this.nameProj[index]);
-                    binaryWriter.Write(this.xProj[index]);
-                    binaryWriter.Write(this.yProj[index]);
-                    binaryWriter.Write(this.zProj[index]);
-                    binaryWriter.Write(this.nProj1[index]);
-                    binaryWriter.Write(this.nProj2[index]);
+                    binaryWriter.Write(nameProj[index]);
+                    binaryWriter.Write(xProj[index]);
+                    binaryWriter.Write(yProj[index]);
+                    binaryWriter.Write(zProj[index]);
+                    binaryWriter.Write(nProj1[index]);
+                    binaryWriter.Write(nProj2[index]);
                 }
-                binaryWriter.Write(this.kProjInput);
+                binaryWriter.Write(kProjInput);
             }
             binaryWriter.Close();
             output.Close();
@@ -3222,7 +3227,7 @@ namespace IIT_Diplom_Geo1
                 {
                     if (double.IsNaN(xPnt1[index1]) || double.IsNaN(yPnt1[index1]))
                     {
-                        int num = (int)MessageBox.Show("Check Data");
+                        int num = (int)MessageBox.Show("Проверка данных");
                         break;
                     }
                     int xWin1;
@@ -3232,7 +3237,7 @@ namespace IIT_Diplom_Geo1
                     {
                         if (double.IsNaN(xPnt2[index1]) || double.IsNaN(yPnt2[index1]))
                         {
-                            int num = (int)MessageBox.Show("Check Data");
+                            int num = (int)MessageBox.Show("Проверка данных");
                             break;
                         }
                         int xWin2;
@@ -3275,8 +3280,8 @@ namespace IIT_Diplom_Geo1
             if (File.Exists(fileAdd))
                 File.Delete(fileAdd);
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Source Data";
-            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.Title = "Источник данных";
+            openFileDialog.Filter = "Все файлы (*.*)|*.*";
             string str = "";
             openFileDialog.FileName = str;
             openFileDialog.FilterIndex = 2;
@@ -3318,7 +3323,7 @@ namespace IIT_Diplom_Geo1
                     kGeo = indTwo[1] - 1;
                     if (kGeo < 2)
                     {
-                        int num7 = (int)MessageBox.Show("Basic Points < 2", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num7 = (int)MessageBox.Show("Базовые пункты < 2", "Исходные данные Ввод файла", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         iCond = -99;
                         return;
                     }
@@ -3460,7 +3465,7 @@ namespace IIT_Diplom_Geo1
                 {
                     sDiag += "\n                                  ";
                     sDiag += "\nREPAIR DATA !";
-                    int num10 = (int)MessageBox.Show(sDiag, "Lines with doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num10 = (int)MessageBox.Show(sDiag, "Строки с сомнительными данными", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (File.Exists(fileLine))
                     File.Delete(fileLine);
@@ -3583,13 +3588,13 @@ namespace IIT_Diplom_Geo1
                         {
                             ++index11;
                             statDel[index11] = nameStat[index12];
-                            int num17 = (int)MessageBox.Show("Station " + nameStat[index12] + " Deleted from Data-Impossible to define coordinates", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num17 = (int)MessageBox.Show("Станция " + nameStat[index12] + " Удалено из данных — невозможно определить координаты", "Ввод исходного файла данных", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                     }
                 }
                 if (num11 == 0)
                 {
-                    int num18 = (int)MessageBox.Show("At least two points with known coordinates which are the ends of one line, have to be present at the initial information", "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num18 = (int)MessageBox.Show("В исходной информации должны присутствовать не менее двух точек с известными координатами, являющихся концами одной линии", "Ввод исходного файла данных.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -99;
                 }
                 else
@@ -3794,8 +3799,8 @@ namespace IIT_Diplom_Geo1
                     int num5 = num4 / 2;
                     if (num4 - 2 * num5 != 0)
                     {
-                        sDiag = "Station " + statName + "--The rule of measurements is broken";
-                        int num6 = (int)MessageBox.Show(sDiag, "Source Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        sDiag = "Станция " + statName + "--Нарушено правило измерений";
+                        int num6 = (int)MessageBox.Show(sDiag, "Исходные данные", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
@@ -3804,8 +3809,8 @@ namespace IIT_Diplom_Geo1
                         {
                             if (namePnt[index4 - 1] != namePnt[index4])
                             {
-                                sDiag = "Station " + statName + "--The rule of measurements is broken";
-                                int num7 = (int)MessageBox.Show(sDiag, "Source Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                sDiag = "Станция " + statName + "--Нарушено правило измерений";
+                                int num7 = (int)MessageBox.Show(sDiag, "Исходные данные", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             }
                             if (namePnt[index4 - 1] == namePnt[index4])
@@ -3952,8 +3957,8 @@ namespace IIT_Diplom_Geo1
                     }
                 }
                 sTemp += "\n                                  ";
-                sTemp += "\nDo you want to continue this process ?";
-                if (num9 > 0 && MessageBox.Show(sTemp, "Check vertical data-doubtful differences of average values", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                sTemp += "\nВы хотите продолжить этот процесс?";
+                if (num9 > 0 && MessageBox.Show(sTemp, "Проверте данные по высоте-расхождение средних значений измерений", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     iCond = -99;
                 }
@@ -4338,7 +4343,7 @@ namespace IIT_Diplom_Geo1
                                 sTmp = "";
                                 for (int index33 = 1; index33 <= kName; ++index33)
                                     sTmp = sTmp + "\n" + nameZero[index33];
-                                int num21 = (int)MessageBox.Show(sTmp, "Problem of points calculation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num21 = (int)MessageBox.Show(sTmp, "Проблемы с расчетом точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             }
                             ++nZero;
@@ -7165,12 +7170,12 @@ namespace IIT_Diplom_Geo1
             kAdd = -1;
             iCond = 0;
             int num9 = 0;
-            sDiag = "Lines Number with error: ";
+            sDiag = "Номер строки с ошибкой: ";
             if (File.Exists(fileAdd))
                 File.Delete(fileAdd);
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Source Data";
-            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.Title = "Исходные Данные";
+            openFileDialog.Filter = "Все файлы (*.*)|*.*";
             string str = "";
             openFileDialog.FileName = str;
             openFileDialog.FilterIndex = 2;
@@ -7233,13 +7238,13 @@ namespace IIT_Diplom_Geo1
                             }
                             if (num14 == 0)
                             {
-                                int num17 = (int)MessageBox.Show("Didn't find Basic Point", statName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num17 = (int)MessageBox.Show("Не найдена базовая точка", statName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 iCond = -99;
                                 return;
                             }
                             if (num15 == 0)
                             {
-                                int num18 = (int)MessageBox.Show("Didn't find Basic Point", caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num18 = (int)MessageBox.Show("Не найдена базовая точка", caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 iCond = -99;
                                 return;
                             }
@@ -7287,7 +7292,7 @@ namespace IIT_Diplom_Geo1
                 stream.Close();
                 if (num9 <= 0)
                     return;
-                int num20 = (int)MessageBox.Show(sDiag, "Source Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num20 = (int)MessageBox.Show(sDiag, "Исходные данные File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -99;
             }
             else
@@ -8366,13 +8371,13 @@ namespace IIT_Diplom_Geo1
                                     case -99:
                                         return;
                                     case -3:
-                                        int num10 = (int)MessageBox.Show("Fiducials - Different coordinates system", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        int num10 = (int)MessageBox.Show("Реперные точки - Другая система координат", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         return;
                                     case -2:
-                                        int num11 = (int)MessageBox.Show("Fiducials number != 4 and != 8", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        int num11 = (int)MessageBox.Show("Реперные числа != 4 и != 8", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         return;
                                     case -1:
-                                        int num12 = (int)MessageBox.Show("Fiducials number < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        int num12 = (int)MessageBox.Show("Реперные точки < 4", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         return;
                                     default:
                                         DllClass1.PhotoCorrect(km, nMark, xMark, yMark, xo, yo, kMet, k, ref xRight, ref yRight, out iCond1);
@@ -8380,17 +8385,17 @@ namespace IIT_Diplom_Geo1
                                             return;
                                         if (iCond1 == -1)
                                         {
-                                            int num13 = (int)MessageBox.Show("Fiducials number < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            int num13 = (int)MessageBox.Show("Реперные точки < 4", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             return;
                                         }
                                         if (iCond1 == -2)
                                         {
-                                            int num14 = (int)MessageBox.Show("Fiducials number != 4 and != 8", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            int num14 = (int)MessageBox.Show("Реперные числа != 4 и != 8", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             return;
                                         }
                                         if (iCond1 == -3)
                                         {
-                                            int num15 = (int)MessageBox.Show("Fiducials - Different coordinates system", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                            int num15 = (int)MessageBox.Show("Реперные точки - Другая система координат", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             return;
                                         }
                                         if (num2 > 0)
@@ -8706,7 +8711,7 @@ namespace IIT_Diplom_Geo1
                                             ++num2;
                                             string str1 = Convert.ToString(num11);
                                             string str2 = Convert.ToString(num16);
-                                            text = text + "Models " + str1 + "-" + str2 + "-Pass points are absent;";
+                                            text = text + "Models " + str1 + "-" + str2 + "-Пропускные пункты отсутствуют;";
                                             iCond = -1;
                                             break;
                                         }
@@ -9002,7 +9007,7 @@ namespace IIT_Diplom_Geo1
             int kGeo = 0;
             if (!File.Exists(fileGeo))
             {
-                int num2 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Входные контрольные точки", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else
@@ -9038,12 +9043,12 @@ namespace IIT_Diplom_Geo1
                 }
                 if (num3 < 3)
                 {
-                    int num5 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num5 = (int)MessageBox.Show("Горизонтальные контрольные точки < 3", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else if (num4 < 4)
                 {
-                    int num6 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num6 = (int)MessageBox.Show("Вертикальные контрольные точки < 4", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else
@@ -9137,13 +9142,13 @@ namespace IIT_Diplom_Geo1
                         }
                         if (num11 < 3)
                         {
-                            int num13 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num13 = (int)MessageBox.Show("Горизонтальные контрольные точки < 3", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             iCond = -1;
                             return;
                         }
                         if (num12 < 4)
                         {
-                            int num14 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num14 = (int)MessageBox.Show("Вертикальные контрольные точки < 4", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             iCond = -1;
                             return;
                         }
@@ -9727,7 +9732,7 @@ namespace IIT_Diplom_Geo1
             int num2 = 0;
             if (!File.Exists(fileGeo))
             {
-                int num3 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Входные контрольные точки", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else
@@ -9763,12 +9768,12 @@ namespace IIT_Diplom_Geo1
                 }
                 if (num4 < 3)
                 {
-                    int num6 = (int)MessageBox.Show("Horizontal Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num6 = (int)MessageBox.Show("Горизонтальные контрольные точки < 3", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else if (num5 < 4)
                 {
-                    int num7 = (int)MessageBox.Show("Vertical Control Points < 4", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num7 = (int)MessageBox.Show("Вертикальные контрольные точки < 4", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else
@@ -9911,13 +9916,13 @@ namespace IIT_Diplom_Geo1
                         {
                             if (num16 < 2)
                             {
-                                int num18 = (int)MessageBox.Show("Horizontal Control Points < 2", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num18 = (int)MessageBox.Show("Горизонтальные контрольные точки < 2", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 iCond = -1;
                                 return;
                             }
                             if (num17 < 3)
                             {
-                                int num19 = (int)MessageBox.Show("Vertical Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num19 = (int)MessageBox.Show("Вертикальные контрольные точки < 3", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 iCond = -1;
                                 return;
                             }
@@ -9928,13 +9933,13 @@ namespace IIT_Diplom_Geo1
                             {
                                 if (num16 < 2)
                                 {
-                                    int num20 = (int)MessageBox.Show("In the First Strip Horizontal Control Points < 2", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    int num20 = (int)MessageBox.Show("На первой полосе горизонтальные контрольные точки < 2", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     iCond = -1;
                                     return;
                                 }
                                 if (num17 < 3)
                                 {
-                                    int num21 = (int)MessageBox.Show("In the First Strip Vertical Control Points < 3", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    int num21 = (int)MessageBox.Show("На первой полосе контрольные точки вертикали < 3", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     iCond = -1;
                                     return;
                                 }
@@ -10376,7 +10381,7 @@ namespace IIT_Diplom_Geo1
             double num5 = num2;
             if (!File.Exists(aeroStrip))
             {
-                int num6 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num6 = (int)MessageBox.Show("Попробуйте еще раз с начала", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else
@@ -10403,7 +10408,7 @@ namespace IIT_Diplom_Geo1
                 }
                 if (!File.Exists(fileAero))
                 {
-                    int num7 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num7 = (int)MessageBox.Show("Попробуйте еще раз с начала", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else
@@ -10482,7 +10487,7 @@ namespace IIT_Diplom_Geo1
                     int index11 = 0;
                     if (!File.Exists(fileAdd))
                     {
-                        int num14 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num14 = (int)MessageBox.Show("Попробуйте еще раз с начала", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         iCond = -1;
                     }
                     else
@@ -10491,7 +10496,7 @@ namespace IIT_Diplom_Geo1
                         BinaryReader binaryReader3 = new BinaryReader((Stream)input3);
                         if (!File.Exists(fstoreCam))
                         {
-                            int num15 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num15 = (int)MessageBox.Show("Попробуйте еще раз с начала", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             iCond = -1;
                         }
                         else
@@ -10881,12 +10886,12 @@ namespace IIT_Diplom_Geo1
             }
             if (kGeo == 0)
             {
-                int num26 = (int)MessageBox.Show("Input Control Points", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num26 = (int)MessageBox.Show("Входные контрольные точки", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else if (!File.Exists(aeroBlock))
             {
-                int num27 = (int)MessageBox.Show("Beginning values of coordinates points are absent", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num27 = (int)MessageBox.Show("Начальные значения координат точек отсутствуют", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else
@@ -10921,7 +10926,7 @@ namespace IIT_Diplom_Geo1
                 }
                 if (!File.Exists(aerialPhoto))
                 {
-                    int num28 = (int)MessageBox.Show("Aerial photos file isn't created", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num28 = (int)MessageBox.Show("Не создается файл аэрофотосъемки", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else
@@ -13501,10 +13506,10 @@ namespace IIT_Diplom_Geo1
             DllClass1.doubleArray(xTar, ref minArray);
             DllClass1.doubleArray(yTar, ref minArray);
             DllClass1.doubleArray(zTar, ref minArray);
-            string text = "Lines Number with error: ";
+            string text = "Номер строки с ошибкой: ";
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Control Points File";
-            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.Title = "Файл контрольных точек";
+            openFileDialog.Filter = "Все файлы (*.*)|*.*";
             string str1 = "";
             openFileDialog.FileName = str1;
             openFileDialog.FilterIndex = 2;
@@ -13536,7 +13541,7 @@ namespace IIT_Diplom_Geo1
                     {
                         ++num2;
                         string str2 = Convert.ToString(num1);
-                        text = text + str2 + "-Inadmissible symbol(maybe 'Tab'),";
+                        text = text + str2 + "-Недопустимый символ(возможно 'Tab'),";
                         if (num2 > 1)
                         {
                             iCond = -99;
@@ -13590,11 +13595,11 @@ namespace IIT_Diplom_Geo1
                 stream.Close();
                 if (index1 == 0)
                 {
-                    int num8 = (int)MessageBox.Show("File is Empty", "Fill up Control Points Store", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num8 = (int)MessageBox.Show("Файл пуст", "Заполните хранилище контрольных точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (num2 > 0)
                 {
-                    int num9 = (int)MessageBox.Show(text, "Fill up Control Points Store", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num9 = (int)MessageBox.Show(text, "Заполните магазин хранилище контрольных точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -13679,7 +13684,7 @@ namespace IIT_Diplom_Geo1
                                 ++index1;
                                 if (index1 > minArray)
                                 {
-                                    int num11 = (int)MessageBox.Show("Index array ControlInput");
+                                    int num11 = (int)MessageBox.Show("Индекс массива ControlInput");
                                     return;
                                 }
                                 tarName[index1] = nameGeo[index3];
@@ -13961,7 +13966,7 @@ namespace IIT_Diplom_Geo1
             }
             if (index6 >= 4 || index9 >= 4)
                 return;
-            int num22 = (int)MessageBox.Show("Contol points isn't enough.Add to Store or Input for Current Project", "Control Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            int num22 = (int)MessageBox.Show("Контрольных точек недостаточно. Добавьите в хранилище или введите для текущего проекта", "Контрольные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             iCond = -1;
         }
 
@@ -13975,10 +13980,10 @@ namespace IIT_Diplom_Geo1
             DllClass1.doubleArray(xRight, ref minArray);
             DllClass1.doubleArray(yRight, ref minArray);
             FilePath();
-            string text = "Lines Number with error: ";
+            string text = "Номер строки с ошибкой: ";
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Stereoscopic Data";
-            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.Title = "Стереоскопические данные";
+            openFileDialog.Filter = "Все файлы (*.*)|*.*";
             string str1 = "";
             openFileDialog.FileName = str1;
             openFileDialog.FilterIndex = 2;
@@ -14099,7 +14104,7 @@ namespace IIT_Diplom_Geo1
                                 ++index2;
                                 if (index2 > minArray)
                                 {
-                                    int num21 = (int)MessageBox.Show("Index array StereoInput");
+                                    int num21 = (int)MessageBox.Show("Индекс массива StereoInput");
                                     break;
                                 }
                                 pntName[index2] = str2;
@@ -14146,7 +14151,7 @@ namespace IIT_Diplom_Geo1
                             if (num8 != 0 && num8 != 4 && num8 != 8)
                             {
                                 ++num2;
-                                text = text + "Model " + Convert.ToString(num14) + "-Possible mistake: Point, which follows after fiducials, has not relevant name." + ",";
+                                text = text + "Model " + Convert.ToString(num14) + "-Возможная ошибка: Точка, следующая за реперными знаками, не имеет релевантного названия.." + ",";
                                 if (num2 > 10)
                                 {
                                     iCond = -99;
@@ -14156,7 +14161,7 @@ namespace IIT_Diplom_Geo1
                             else if (index2 - num8 < 6)
                             {
                                 ++num2;
-                                text = text + "Model " + Convert.ToString(num14) + "-Possible mistake: Point, which follows after fiducials, has not relevant name." + ",";
+                                text = text + "Model " + Convert.ToString(num14) + "-Возможная ошибка: Точка, следующая за реперными знаками, не имеет релевантного названия.." + ",";
                                 if (num2 > 10)
                                 {
                                     iCond = -99;
@@ -17827,7 +17832,7 @@ namespace IIT_Diplom_Geo1
             DllClass1.doubleArray(yLin, ref kArray);
             if (kSel > kArray)
             {
-                int num = (int)MessageBox.Show("Index array DrawSelLine");
+                int num = (int)MessageBox.Show("Индекс массива DrawSelLine");
             }
             else
             {
@@ -17998,7 +18003,7 @@ namespace IIT_Diplom_Geo1
             DllClass1.doubleArray(yCrossBeg, ref kArray);
             if (kCrossSect > kArray)
             {
-                int num = (int)MessageBox.Show("Index array draw cross-section");
+                int num = (int)MessageBox.Show("Массив индексов рисует поперечное сечение");
             }
             else
             {
@@ -18097,7 +18102,7 @@ namespace IIT_Diplom_Geo1
         {
             kHeight = 0;
             Cursor.Current = Cursors.WaitCursor;
-            panel.Text = "Wait.........SORTING POINTS";
+            panel.Text = "Подождите... Сортировка точек!";
             xmin = 9999999.9;
             ymin = 9999999.9;
             xmax = -9999999.9;
@@ -18163,7 +18168,7 @@ namespace IIT_Diplom_Geo1
                             zHeig[index2] = num3;
                         }
                     }
-                    panel.Text = "Wait...SORTING POINTS" + string.Format("{0}", (object)index1);
+                    panel.Text = "Подождите... Сортировка точек!" + string.Format("{0}", (object)index1);
                 }
                 int index3 = 0;
                 for (int index4 = 1; index4 <= kHeight; ++index4)
@@ -19794,7 +19799,7 @@ namespace IIT_Diplom_Geo1
           int[] nColItem,
           SolidBrush[] brColor,
           Pen[] pnCol)
-            {
+        {
             //int hSymbProf;
             //int hSymbProf = 30;
             Graphics graphics = e.Graphics;
@@ -20343,24 +20348,24 @@ namespace IIT_Diplom_Geo1
 
         public void PointsInput(out int iCond, out int kAdd
 
-            //int kGeoFin,
-            //string[] nameFin,
-            //double[] xFin,
-            //double[] yFin,
-            //double[] zFin,
-            //double zeroSpot,
+        //int kGeoFin,
+        //string[] nameFin,
+        //double[] xFin,
+        //double[] yFin,
+        //double[] zFin,
+        //double zeroSpot,
 
-            //string[] nameAdd,
-            //double[] xAdd,
-            //double[] yAdd,
-            //double[] zAdd,
-            //int[] nUniq
+        //string[] nameAdd,
+        //double[] xAdd,
+        //double[] yAdd,
+        //double[] zAdd,
+        //int[] nUniq
         )
         {
             kAdd = -1;
             iCond = 0;
             string sTmp = "";
-            
+
             int k = 0;
             int kPart = 50;
             double num1 = 0.0;
@@ -20425,7 +20430,7 @@ namespace IIT_Diplom_Geo1
             xt = x2 - x1; // изменить
             yt = y2 - y1; // изменить
         }
-     
+
         //Написать функцию вычисления способом перпендикуляров
         void LinearResect(int iParam, double x1, double y1, double x2, double y2,
             double dist1, double dist2, out double xt, out double yt)
@@ -20512,6 +20517,1398 @@ namespace IIT_Diplom_Geo1
             }
 
         }
+        public void KeepPolyFin()
+        {
+            if (kPolyFinal < 1)
+                return;
+            if (File.Exists(fpolyFinal))
+                File.Delete(fpolyFinal);
+            FileStream output = new FileStream(fpolyFinal, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPolyFinal);
+            for (int index1 = 1; index1 <= kPolyFinal; ++index1)
+            {
+                binaryWriter.Write(namePolyFin[index1]);
+                binaryWriter.Write(xLabFin[index1]);
+                binaryWriter.Write(yLabFin[index1]);
+                binaryWriter.Write(arCalcFin[index1]);
+                binaryWriter.Write(arLegFin[index1]);
+                binaryWriter.Write(nSymbFin[index1]);
+                binaryWriter.Write(iHorVer[index1]);
+                binaryWriter.Write(kt1Fin[index1]);
+                binaryWriter.Write(kt2Fin[index1]);
+                int num1 = kt1Fin[index1];
+                int num2 = kt2Fin[index1];
+                for (int index2 = num1; index2 <= num2; ++index2)
+                {
+                    binaryWriter.Write(xPolFin[index2]);
+                    binaryWriter.Write(yPolFin[index2]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void Contours_PrevPrint(
+     PrintPageEventArgs e,
+     double sPixInch,
+     int iScaleMap,
+     double[] xCorner,
+     double[] yCorner,
+     double[] xtd,
+     double[] ytd,
+     double[] xta,
+     double[] yta,
+     int iColorPrint,
+     int ix,
+     int iy,
+     int ixPixel,
+     int iyPixel)
+        {
+            double[] x1 = new double[10];
+            double[] y1 = new double[10];
+            int kc = 0;
+            int hText = 10;
+            SolidBrush iColor1 = new SolidBrush(Color.Black);
+            Pen pen1 = new Pen(Color.Black);
+            pen1.Width = 1f;
+            SolidBrush iColor2 = new SolidBrush(Color.Sienna);
+            Pen pen2 = new Pen(Color.Sienna);
+            pen2.Width = 1f;
+            double num1 = 0.01 * (double)iScaleMap;
+            int k = -1;
+            for (int index = 1; index <= 5; ++index)
+            {
+                ++k;
+                x1[k] = xCorner[index];
+                y1[k] = yCorner[index];
+            }
+            int num2 = 0;
+            int num3;
+            int num4;
+            if (File.Exists(fileContour))
+            {
+                if (File.Exists(fileAdd))
+                    File.Delete(fileAdd);
+                FileStream output = new FileStream(fileAdd, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                FileStream input = new FileStream(fileContour, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                hSect = binaryReader.ReadDouble();
+                int num5 = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= num5; ++index1)
+                {
+                    int num6 = binaryReader.ReadInt32();
+                    for (int index2 = 0; index2 <= num6; ++index2)
+                    {
+                        xtd[index2] = binaryReader.ReadDouble();
+                        ytd[index2] = binaryReader.ReadDouble();
+                    }
+                    double num7 = binaryReader.ReadDouble();
+                    double num8 = binaryReader.ReadDouble();
+                    double num9 = binaryReader.ReadDouble();
+                    double num10 = binaryReader.ReadDouble();
+                    num3 = binaryReader.ReadInt32();
+                    num4 = binaryReader.ReadInt32();
+                    int kt = binaryReader.ReadInt32();
+                    for (int index3 = 0; index3 <= kt; ++index3)
+                    {
+                        xta[index3] = binaryReader.ReadDouble();
+                        yta[index3] = binaryReader.ReadDouble();
+                    }
+                    DllClass1.ContourClip(k, x1, y1, kt, xta, yta, out kc, nWork, nWork1, nWork2, xWork1, yWork1);
+                    if (kc != 0)
+                    {
+                        num2 += kc;
+                        for (int index4 = 1; index4 <= kc; ++index4)
+                        {
+                            binaryWriter.Write(num6);
+                            for (int index5 = 0; index5 <= num6; ++index5)
+                            {
+                                binaryWriter.Write(xtd[index5]);
+                                binaryWriter.Write(ytd[index5]);
+                            }
+                            binaryWriter.Write(num7);
+                            binaryWriter.Write(num8);
+                            binaryWriter.Write(num9);
+                            binaryWriter.Write(num10);
+                            int num11 = nWork1[index4];
+                            int num12 = nWork2[index4];
+                            binaryWriter.Write(num11);
+                            binaryWriter.Write(num12);
+                            int index6 = -1;
+                            for (int index7 = num11; index7 <= num12; ++index7)
+                            {
+                                ++index6;
+                                xAdd[index6] = xWork1[index7];
+                                yAdd[index6] = yWork1[index7];
+                            }
+                            binaryWriter.Write(index6);
+                            for (int index8 = 0; index8 <= index6; ++index8)
+                            {
+                                binaryWriter.Write(xAdd[index8]);
+                                binaryWriter.Write(yAdd[index8]);
+                            }
+                        }
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+                binaryReader.Close();
+                input.Close();
+            }
+            if (num2 == 0)
+                return;
+            if (File.Exists(fileAdd))
+            {
+                if (File.Exists(ftmpPoly))
+                    File.Delete(ftmpPoly);
+                FileStream output = new FileStream(ftmpPoly, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(hSect);
+                binaryWriter.Write(num2);
+                FileStream input = new FileStream(fileAdd, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                for (int index9 = 1; index9 <= num2; ++index9)
+                {
+                    int num13 = binaryReader.ReadInt32();
+                    for (int index10 = 0; index10 <= num13; ++index10)
+                    {
+                        xtd[index10] = binaryReader.ReadDouble();
+                        ytd[index10] = binaryReader.ReadDouble();
+                    }
+                    double num14 = binaryReader.ReadDouble();
+                    double num15 = binaryReader.ReadDouble();
+                    double num16 = binaryReader.ReadDouble();
+                    double num17 = binaryReader.ReadDouble();
+                    int num18 = binaryReader.ReadInt32();
+                    int num19 = binaryReader.ReadInt32();
+                    int num20 = binaryReader.ReadInt32();
+                    for (int index11 = 0; index11 <= num20; ++index11)
+                    {
+                        xta[index11] = binaryReader.ReadDouble();
+                        yta[index11] = binaryReader.ReadDouble();
+                    }
+                    binaryWriter.Write(num13);
+                    for (int index12 = 0; index12 <= num13; ++index12)
+                    {
+                        binaryWriter.Write(xtd[index12]);
+                        binaryWriter.Write(ytd[index12]);
+                    }
+                    binaryWriter.Write(num14);
+                    binaryWriter.Write(num15);
+                    binaryWriter.Write(num16);
+                    binaryWriter.Write(num17);
+                    binaryWriter.Write(num18);
+                    binaryWriter.Write(num19);
+                    binaryWriter.Write(num20);
+                    for (int index13 = 0; index13 <= num20; ++index13)
+                    {
+                        binaryWriter.Write(xta[index13]);
+                        binaryWriter.Write(yta[index13]);
+                    }
+                }
+                binaryWriter.Close();
+                output.Close();
+                binaryReader.Close();
+                input.Close();
+            }
+            sTmp = ftmpPoly;
+            NewInscript(sTmp, xWork1, yWork1, xWork2, yWork2);
+            FileStream input1 = new FileStream(sTmp, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
+            hSect = binaryReader1.ReadDouble();
+            int num21 = binaryReader1.ReadInt32();
+            for (int index14 = 1; index14 <= num21; ++index14)
+            {
+                int num22 = binaryReader1.ReadInt32();
+                for (int index15 = 0; index15 <= num22; ++index15)
+                {
+                    xtd[index15] = binaryReader1.ReadDouble();
+                    ytd[index15] = binaryReader1.ReadDouble();
+                }
+                double num23 = binaryReader1.ReadDouble();
+                double rdn = binaryReader1.ReadDouble();
+                double num24 = binaryReader1.ReadDouble();
+                double num25 = binaryReader1.ReadDouble();
+                num3 = binaryReader1.ReadInt32();
+                num4 = binaryReader1.ReadInt32();
+                int num26 = binaryReader1.ReadInt32();
+                for (int index16 = 0; index16 <= num26; ++index16)
+                {
+                    xta[index16] = binaryReader1.ReadDouble();
+                    yta[index16] = binaryReader1.ReadDouble();
+                }
+                for (int index17 = 1; index17 <= num26; ++index17)
+                {
+                    double num27 = xta[index17 - 1] - xCorner[2];
+                    double num28 = yta[index17 - 1] - yCorner[2];
+                    int int32_1 = Convert.ToInt32(10.0 * num27 / num1 / sPixInch);
+                    int int32_2 = Convert.ToInt32(10.0 * num28 / num1 / sPixInch);
+                    int x1_1 = ix + int32_1;
+                    int y1_1 = iy - int32_2;
+                    double num29 = xta[index17] - xCorner[2];
+                    double num30 = yta[index17] - yCorner[2];
+                    int int32_3 = Convert.ToInt32(10.0 * num29 / num1 / sPixInch);
+                    int int32_4 = Convert.ToInt32(10.0 * num30 / num1 / sPixInch);
+                    int x2 = ix + int32_3;
+                    int y2 = iy - int32_4;
+                    if (iColorPrint == 0)
+                        e.Graphics.DrawLine(pen1, x1_1, y1_1, x2, y2);
+                    if (iColorPrint > 0)
+                        e.Graphics.DrawLine(pen2, x1_1, y1_1, x2, y2);
+                }
+                if (num24 != 0.0 && num25 != 0.0)
+                {
+                    double num31 = num24 - xCorner[2];
+                    double num32 = num25 - yCorner[2];
+                    int int32_5 = Convert.ToInt32(10.0 * num31 / num1 / sPixInch);
+                    int int32_6 = Convert.ToInt32(10.0 * num32 / num1 / sPixInch);
+                    int x2 = ix + int32_5;
+                    int y2 = iy - int32_6;
+                    int angle = 360 - DllClass1.RadGrad(rdn);
+                    string tText = string.Format("{0}", (object)Convert.ToInt32(num23));
+                    if (iColorPrint == 0)
+                        DllClass1.ContTextPrevPrint(e, tText, x2, y2, hText, angle, iColor1, 1, 2);
+                    if (iColorPrint > 0)
+                        DllClass1.ContTextPrevPrint(e, tText, x2, y2, hText, angle, iColor2, 1, 2);
+                }
+            }
+            binaryReader1.Close();
+            input1.Close();
+        }
+
+
+        public void CancPolyFinLoad()
+        {
+            kPolyCancel = 0;
+            if (!File.Exists(fCancPoly))
+                return;
+            FileStream input = new FileStream(fCancPoly, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPolyCancel = binaryReader.ReadInt32();
+                if (kPolyCancel <= 0)
+                    return;
+                for (int index = 1; index <= kPolyCancel; ++index)
+                {
+                    nameCanc[index] = binaryReader.ReadString();
+                    xLabCanc[index] = binaryReader.ReadDouble();
+                    yLabCanc[index] = binaryReader.ReadDouble();
+                    aCalcCanc[index] = binaryReader.ReadDouble();
+                    aLegCanc[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void CancPolyFin(int nAction)
+        {
+            int num = nAction;
+            int index1 = 0;
+            kPolyCancel = 0;
+            if (num > 0)
+            {
+                for (int index2 = 1; index2 <= num; ++index2)
+                {
+                    string path = fpolyCancel + "." + string.Format("{0}", (object)index2);
+                    if (File.Exists(path))
+                    {
+                        FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader((Stream)input);
+                        try
+                        {
+                            kPolyCancel = binaryReader.ReadInt32();
+                            if (kPolyCancel > 0)
+                            {
+                                for (int index3 = 1; index3 <= kPolyCancel; ++index3)
+                                {
+                                    nameCanc[index3] = binaryReader.ReadString();
+                                    xLabCanc[index3] = binaryReader.ReadDouble();
+                                    yLabCanc[index3] = binaryReader.ReadDouble();
+                                    aCalcCanc[index3] = binaryReader.ReadDouble();
+                                    aLegCanc[index3] = binaryReader.ReadDouble();
+                                    ++index1;
+                                    nameDop[index1] = nameCanc[index3];
+                                    xDop[index1] = xLabCanc[index3];
+                                    yDop[index1] = yLabCanc[index3];
+                                    xOut[index1] = aCalcCanc[index3];
+                                    yOut[index1] = aLegCanc[index3];
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            binaryReader.Close();
+                            input.Close();
+                        }
+                    }
+                }
+            }
+            if (index1 <= 0)
+                return;
+            if (File.Exists(fCancPoly))
+                File.Delete(fCancPoly);
+            FileStream output = new FileStream(fCancPoly, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(index1);
+            for (int index4 = 1; index4 <= index1; ++index4)
+            {
+                binaryWriter.Write(nameDop[index4]);
+                binaryWriter.Write(xDop[index4]);
+                binaryWriter.Write(yDop[index4]);
+                binaryWriter.Write(xOut[index4]);
+                binaryWriter.Write(yOut[index4]);
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void PolyLoadFin()
+        {
+            kPolyFinal = 0;
+            if (!File.Exists(fpolyFinal))
+                return;
+            FileStream input = new FileStream(fpolyFinal, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPolyFinal = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kPolyFinal; ++index1)
+                {
+                    namePolyFin[index1] = binaryReader.ReadString();
+                    xLabFin[index1] = binaryReader.ReadDouble();
+                    yLabFin[index1] = binaryReader.ReadDouble();
+                    arCalcFin[index1] = binaryReader.ReadDouble();
+                    arLegFin[index1] = binaryReader.ReadDouble();
+                    nSymbFin[index1] = binaryReader.ReadInt32();
+                    iHorVer[index1] = binaryReader.ReadInt32();
+                    kt1Fin[index1] = binaryReader.ReadInt32();
+                    kt2Fin[index1] = binaryReader.ReadInt32();
+                    int num1 = kt1Fin[index1];
+                    int num2 = kt2Fin[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xPolFin[index2] = binaryReader.ReadDouble();
+                        yPolFin[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineLoadFin()
+        {
+            kLineFinal = 0;
+            if (!File.Exists(flineFinal))
+                return;
+            FileStream input = new FileStream(flineFinal, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineFinal = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= kLineFinal; ++index1)
+                {
+                    nCodeFin[index1] = binaryReader.ReadInt32();
+                    nLongFin[index1] = binaryReader.ReadInt32();
+                    sWidFin[index1] = binaryReader.ReadDouble();
+                    distFin[index1] = binaryReader.ReadDouble();
+                    rRadFin[index1] = binaryReader.ReadDouble();
+                    xRadFin[index1] = binaryReader.ReadDouble();
+                    yRadFin[index1] = binaryReader.ReadDouble();
+                    k1Fin[index1] = binaryReader.ReadInt32();
+                    k2Fin[index1] = binaryReader.ReadInt32();
+                    int num1 = k1Fin[index1];
+                    int num2 = k2Fin[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xFin[index2] = binaryReader.ReadDouble();
+                        yFin[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void AddInscrLoad()
+        {
+            kAddInscript = 0;
+            if (!File.Exists(fAddInscr))
+                return;
+            FileStream input = new FileStream(fAddInscr, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kAddInscript = binaryReader.ReadInt32();
+                for (int index = 1; index <= kAddInscript; ++index)
+                {
+                    sAddInscr[index] = binaryReader.ReadString();
+                    xAddInscr[index] = binaryReader.ReadDouble();
+                    yAddInscr[index] = binaryReader.ReadDouble();
+                    nHorVer[index] = binaryReader.ReadInt32();
+                    nInsCol[index] = binaryReader.ReadInt32();
+                }
+                kProjInput = binaryReader.ReadInt32();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void CancLineFinLoad()
+        {
+            kLineCancel = 0;
+            if (!File.Exists(fCancLine))
+                return;
+            FileStream input = new FileStream(fCancLine, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineCancel = binaryReader.ReadInt32();
+                if (kLineCancel <= 0)
+                    return;
+                for (int index1 = 1; index1 <= kLineCancel; ++index1)
+                {
+                    kLinCanc1[index1] = binaryReader.ReadInt32();
+                    kLinCanc2[index1] = binaryReader.ReadInt32();
+                    RadCanc[index1] = binaryReader.ReadDouble();
+                    int num1 = kLinCanc1[index1];
+                    int num2 = kLinCanc2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xLinCanc[index2] = binaryReader.ReadDouble();
+                        yLinCanc[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void CancLineFin(int nAction)
+        {
+            int num1 = nAction;
+            int index1 = 0;
+            int index2 = 0;
+            kLineCancel = 0;
+            if (num1 > 0)
+            {
+                for (int index3 = 1; index3 <= num1; ++index3)
+                {
+                    string path = flineCancel + "." + string.Format("{0}", (object)index3);
+                    if (File.Exists(path))
+                    {
+                        FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader((Stream)input);
+                        try
+                        {
+                            kLineCancel = binaryReader.ReadInt32();
+                            if (kLineCancel > 0)
+                            {
+                                for (int index4 = 1; index4 <= kLineCancel; ++index4)
+                                {
+                                    kLinCanc1[index4] = binaryReader.ReadInt32();
+                                    kLinCanc2[index4] = binaryReader.ReadInt32();
+                                    RadCanc[index4] = binaryReader.ReadDouble();
+                                    int num2 = kLinCanc1[index4];
+                                    int num3 = kLinCanc2[index4];
+                                    int num4 = 0;
+                                    for (int index5 = num2; index5 <= num3; ++index5)
+                                    {
+                                        xLinCanc[index5] = binaryReader.ReadDouble();
+                                        yLinCanc[index5] = binaryReader.ReadDouble();
+                                        ++num4;
+                                        ++index2;
+                                        xDop[index2] = xLinCanc[index5];
+                                        yDop[index2] = yLinCanc[index5];
+                                    }
+                                    ++index1;
+                                    zDop[index1] = RadCanc[index4];
+                                    nDop3[index1] = num4;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("The Read operation failed as expected.");
+                        }
+                        finally
+                        {
+                            binaryReader.Close();
+                            input.Close();
+                        }
+                    }
+                }
+            }
+            if (index1 == 0)
+                return;
+            nDop1[1] = 1;
+            nDop2[1] = nDop3[1];
+            if (index1 > 1)
+            {
+                for (int index6 = 2; index6 <= index1; ++index6)
+                {
+                    nDop1[index6] = nDop2[index6 - 1] + 1;
+                    nDop2[index6] = nDop2[index6 - 1] + nDop3[index6];
+                }
+            }
+            if (File.Exists(fCancLine))
+                File.Delete(fCancLine);
+            FileStream output = new FileStream(fCancLine, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(index1);
+            for (int index7 = 1; index7 <= index1; ++index7)
+            {
+                binaryWriter.Write(nDop1[index7]);
+                binaryWriter.Write(nDop2[index7]);
+                binaryWriter.Write(zDop[index7]);
+                int num5 = nDop1[index7];
+                int num6 = nDop2[index7];
+                for (int index8 = num5; index8 <= num6; ++index8)
+                {
+                    binaryWriter.Write(xDop[index8]);
+                    binaryWriter.Write(yDop[index8]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void ExterLoad()
+        {
+            if (!File.Exists(fileExter))
+                return;
+            FileStream input = new FileStream(fileExter, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                sArea = binaryReader.ReadDouble();
+                arExter = binaryReader.ReadDouble();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineNewLoad(int nAction)
+        {
+            string path = flineNew + "." + string.Format("{0}", (object)nAction);
+            kLineNew = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineNew = binaryReader.ReadInt32();
+                if (kLineNew <= 0)
+                    return;
+                for (int index1 = 1; index1 <= kLineNew; ++index1)
+                {
+                    kLinNew1[index1] = binaryReader.ReadInt32();
+                    kLinNew2[index1] = binaryReader.ReadInt32();
+                    RadNew[index1] = binaryReader.ReadDouble();
+                    int num1 = kLinNew1[index1];
+                    int num2 = kLinNew2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xLinNew[index2] = binaryReader.ReadDouble();
+                        yLinNew[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void LoadPntSour()
+        {
+            kPntSource = 0;
+            if (!File.Exists(fsourcePnt))
+                return;
+            FileStream input = new FileStream(fsourcePnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPntSource = binaryReader.ReadInt32();
+                for (int index = 0; index <= kPntSource; ++index)
+                {
+                    nameSour[index] = binaryReader.ReadString();
+                    xSour[index] = binaryReader.ReadDouble();
+                    ySour[index] = binaryReader.ReadDouble();
+                    zSour[index] = binaryReader.ReadDouble();
+                    nSour1[index] = binaryReader.ReadInt32();
+                    nSour2[index] = binaryReader.ReadInt32();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void KeepActionZero()
+        {
+            int num1;
+            int index1 = num1 = 0;
+            kLineAct = 0;
+            if (kLineTopo > 0)
+            {
+                kLineAct = kLineTopo;
+                for (int index2 = 1; index2 <= kLineTopo; ++index2)
+                {
+                    radAct[index2] = radLine[index2];
+                    kActLine1[index2] = kl1[index2];
+                    kActLine2[index2] = kl2[index2];
+                    int num2 = kl1[index2];
+                    int num3 = kl2[index2];
+                    for (int index3 = num2; index3 <= num3; ++index3)
+                    {
+                        ++index1;
+                        xLineAct[index1] = zLin[index3];
+                        yLineAct[index1] = zPik[index3];
+                    }
+                }
+                KeepTopoAct(nAction);
+            }
+            kPolyAct = 0;
+            if (kPoly > 0)
+            {
+                kPolyAct = kPoly;
+                for (int index4 = 1; index4 <= kPolyAct; ++index4)
+                {
+                    nameAct[index4] = namePoly[index4];
+                    xAct[index4] = xLab[index4];
+                    yAct[index4] = yLab[index4];
+                    aActCalc[index4] = areaPol[index4];
+                    aActLeg[index4] = areaLeg[index4];
+                    kActPoly1[index4] = kt1[index4];
+                    kActPoly2[index4] = kt2[index4];
+                    int num4 = kt1[index4];
+                    int num5 = kt2[index4];
+                    for (int index5 = num4; index5 <= num5; ++index5)
+                    {
+                        xPolyAct[index5] = xPol[index5];
+                        yPolyAct[index5] = yPol[index5];
+                    }
+                }
+                kIntAct = 0;
+                for (int index6 = 1; index6 <= kPolyAct; ++index6)
+                {
+                    int k = -1;
+                    int num6 = kActPoly1[index6];
+                    int num7 = kActPoly2[index6];
+                    for (int index7 = num6; index7 <= num7; ++index7)
+                    {
+                        ++k;
+                        xOut[k] = xPolyAct[index7];
+                        yOut[k] = yPolyAct[index7];
+                    }
+                    kPolyActInt[index6] = 0;
+                    for (int index8 = 1; index8 <= kPolyAct; ++index8)
+                    {
+                        if (index6 != index8 && aActCalc[index8] < aActCalc[index6] && DllClass1.in_out(k, ref xOut, ref yOut, xAct[index8], yAct[index8]) > 0)
+                        {
+                            kPolyActInt[index6] = kPolyActInt[index6] + 1;
+                            ++kIntAct;
+                            kIndexAct1[kIntAct] = index6;
+                            kIndexAct2[kIntAct] = index8;
+                        }
+                    }
+                }
+                KeepPolyAct(nAction);
+            }
+            kNodeAct = 0;
+            if (kNodeTopo > 0)
+            {
+                kNodeAct = kNodeTopo;
+                for (int index9 = 1; index9 <= kNodeAct; ++index9)
+                {
+                    nameNodeAct[index9] = nameNode[index9];
+                    xNodeAct[index9] = xNode[index9];
+                    yNodeAct[index9] = yNode[index9];
+                }
+            }
+            KeepNodeAct(nAction);
+        }
+        public void PolyCancelLoad(int nAction)
+        {
+            string path = fpolyCancel + "." + string.Format("{0}", (object)nAction);
+            kPolyCancel = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kPolyCancel = binaryReader.ReadInt32();
+                if (kPolyCancel <= 0)
+                    return;
+                for (int index = 1; index <= kPolyCancel; ++index)
+                {
+                    nameCanc[index] = binaryReader.ReadString();
+                    xLabCanc[index] = binaryReader.ReadDouble();
+                    yLabCanc[index] = binaryReader.ReadDouble();
+                    aCalcCanc[index] = binaryReader.ReadDouble();
+                    aLegCanc[index] = binaryReader.ReadDouble();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void LineCancelLoad(int nAction)
+        {
+            string path = flineCancel + "." + string.Format("{0}", (object)nAction);
+            kLineCancel = 0;
+            if (!File.Exists(path))
+                return;
+            FileStream input = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                kLineCancel = binaryReader.ReadInt32();
+                if (kLineCancel <= 0)
+                    return;
+                for (int index1 = 1; index1 <= kLineCancel; ++index1)
+                {
+                    kLinCanc1[index1] = binaryReader.ReadInt32();
+                    kLinCanc2[index1] = binaryReader.ReadInt32();
+                    RadCanc[index1] = binaryReader.ReadDouble();
+                    int num1 = kLinCanc1[index1];
+                    int num2 = kLinCanc2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        xLinCanc[index2] = binaryReader.ReadDouble();
+                        yLinCanc[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+
+        public void AllActionRemove()
+        {
+            if (File.Exists(fileAction))
+                File.Delete(fileAction);
+            for (int index = 0; index <= 100; ++index)
+            {
+                int num = 0;
+                string path1 = factNode + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path1))
+                {
+                    ++num;
+                    File.Delete(path1);
+                }
+                string path2 = factLine + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path2))
+                {
+                    ++num;
+                    File.Delete(path2);
+                }
+                string path3 = factPoly + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path3))
+                {
+                    ++num;
+                    File.Delete(path3);
+                }
+                string path4 = factLin + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path4))
+                {
+                    ++num;
+                    File.Delete(path4);
+                }
+                string path5 = factPol + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path5))
+                {
+                    ++num;
+                    File.Delete(path5);
+                }
+                string path6 = flineCancel + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path6))
+                {
+                    ++num;
+                    File.Delete(path6);
+                }
+                string path7 = fpolyCancel + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path7))
+                {
+                    ++num;
+                    File.Delete(path7);
+                }
+                string path8 = flineNew + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path8))
+                {
+                    ++num;
+                    File.Delete(path8);
+                }
+                string path9 = fpolyNew + "." + string.Format("{0}", (object)index);
+                if (File.Exists(path9))
+                {
+                    ++num;
+                    File.Delete(path9);
+                }
+                if (num == 0)
+                    break;
+            }
+        }
+
+        public void HeightSorting()
+        {
+            int num1;
+            int num2 = num1 = 0;
+            kHeight = 0;
+            Cursor.Current = Cursors.WaitCursor;
+            xmin = 9999999.9;
+            ymin = 9999999.9;
+            xmax = -9999999.9;
+            ymax = -9999999.9;
+            zmin = 9999999.9;
+            zmax = -9999999.9;
+            if (File.Exists(fileHeight))
+            {
+                FileStream input = new FileStream(fileHeight, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader = new BinaryReader((Stream)input);
+                try
+                {
+                    kHeight = binaryReader.ReadInt32();
+                    for (int index = 0; index <= kHeight; ++index)
+                    {
+                        nameHeig[index] = binaryReader.ReadString();
+                        xHeig[index] = binaryReader.ReadDouble();
+                        yHeig[index] = binaryReader.ReadDouble();
+                        zHeig[index] = binaryReader.ReadDouble();
+                        if (xHeig[index] < xmin)
+                            xmin = xHeig[index];
+                        if (yHeig[index] < ymin)
+                            ymin = yHeig[index];
+                        if (zHeig[index] < zmin)
+                            zmin = zHeig[index];
+                        if (xHeig[index] > xmax)
+                            xmax = xHeig[index];
+                        if (yHeig[index] > ymax)
+                            ymax = yHeig[index];
+                        if (zHeig[index] > zmax)
+                            zmax = zHeig[index];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("The Read operation failed as expected.");
+                }
+                finally
+                {
+                    input.Close();
+                    binaryReader.Close();
+                }
+            }
+            if (kHeight > 2)
+            {
+                for (int index1 = 0; index1 < kHeight; ++index1)
+                {
+                    for (int index2 = index1 + 1; index2 <= kHeight; ++index2)
+                    {
+                        if (yHeig[index1] > yHeig[index2])
+                        {
+                            string str = nameHeig[index1];
+                            double num3 = xHeig[index1];
+                            double num4 = yHeig[index1];
+                            double num5 = zHeig[index1];
+                            nameHeig[index1] = nameHeig[index2];
+                            xHeig[index1] = xHeig[index2];
+                            yHeig[index1] = yHeig[index2];
+                            zHeig[index1] = zHeig[index2];
+                            nameHeig[index2] = str;
+                            xHeig[index2] = num3;
+                            yHeig[index2] = num4;
+                            zHeig[index2] = num5;
+                        }
+                    }
+                    if (kHeight > 5000)
+                    {
+                        int num6 = index1 / 100;
+                        int num7 = index1 - num6 * 100;
+                    }
+                }
+                int index3 = 0;
+                for (int index4 = 1; index4 <= kHeight; ++index4)
+                {
+                    double num8 = xHeig[index3] - xHeig[index4];
+                    double num9 = yHeig[index3] - yHeig[index4];
+                    double num10 = Math.Sqrt(num8 * num8 + num9 * num9);
+                    double num11 = Math.Abs(zHeig[index3] - zHeig[index4]);
+                    if (num10 >= 0.05 || num11 >= 0.05)
+                    {
+                        ++index3;
+                        nameHeig[index3] = nameHeig[index4];
+                        xHeig[index3] = xHeig[index4];
+                        yHeig[index3] = yHeig[index4];
+                        zHeig[index3] = zHeig[index4];
+                    }
+                }
+                kHeight = index3;
+                if (File.Exists(fileHeight))
+                    File.Delete(fileHeight);
+                FileStream output = new FileStream(fileHeight, FileMode.CreateNew);
+                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                binaryWriter.Write(kHeight);
+                for (int index5 = 0; index5 <= kHeight; ++index5)
+                {
+                    binaryWriter.Write(nameHeig[index5]);
+                    binaryWriter.Write(xHeig[index5]);
+                    binaryWriter.Write(yHeig[index5]);
+                    binaryWriter.Write(zHeig[index5]);
+                }
+                binaryWriter.Close();
+                output.Close();
+            }
+            for (int index = 0; index <= kHeight; ++index)
+                nHeig[index] = index + 1;
+        }
+
+        public void LoadKeepSource(int iParam)
+        {
+            if (iParam == 1)
+            {
+                kPolySource = 0;
+                if (File.Exists(fsourcePoly))
+                {
+                    FileStream input = new FileStream(fsourcePoly, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    try
+                    {
+                        kPolySource = binaryReader.ReadInt32();
+                        for (int index1 = 1; index1 <= kPolySource; ++index1)
+                        {
+                            nameSource[index1] = binaryReader.ReadString();
+                            xLabSource[index1] = binaryReader.ReadDouble();
+                            yLabSource[index1] = binaryReader.ReadDouble();
+                            arCalcSource[index1] = binaryReader.ReadDouble();
+                            arLegSource[index1] = binaryReader.ReadDouble();
+                            k1Source[index1] = binaryReader.ReadInt32();
+                            k2Source[index1] = binaryReader.ReadInt32();
+                            int num1 = k1Source[index1];
+                            int num2 = k2Source[index1];
+                            for (int index2 = num1; index2 <= num2; ++index2)
+                            {
+                                xSource[index2] = binaryReader.ReadDouble();
+                                ySource[index2] = binaryReader.ReadDouble();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        binaryReader.Close();
+                        input.Close();
+                    }
+                }
+            }
+            if (iParam != 2 || kPolySource < 1)
+                return;
+            if (File.Exists(fsourcePoly))
+                File.Delete(fsourcePoly);
+            FileStream output = new FileStream(fsourcePoly, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(kPolySource);
+            for (int index3 = 1; index3 <= kPolySource; ++index3)
+            {
+                binaryWriter.Write(nameSource[index3]);
+                binaryWriter.Write(xLabSource[index3]);
+                binaryWriter.Write(yLabSource[index3]);
+                binaryWriter.Write(arCalcSource[index3]);
+                binaryWriter.Write(arLegSource[index3]);
+                binaryWriter.Write(k1Source[index3]);
+                binaryWriter.Write(k2Source[index3]);
+                int num3 = k1Source[index3];
+                int num4 = k2Source[index3];
+                for (int index4 = num3; index4 <= num4; ++index4)
+                {
+                    binaryWriter.Write(xSource[index4]);
+                    binaryWriter.Write(ySource[index4]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+
+        public void PointsDesign(out int iCond)
+        {
+            iCond = 0;
+            FilePath();
+            int kArray = 999999;
+            DllClass1.stringArray(nameProj, ref kArray);
+            DllClass1.intArray(nProj1, ref kArray);
+            DllClass1.intArray(nProj2, ref kArray);
+            DllClass1.doubleArray(xProj, ref kArray);
+            DllClass1.doubleArray(yProj, ref kArray);
+            DllClass1.doubleArray(zProj, ref kArray);
+            string text = "Lines Number with error: ";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Input Points File";
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            string str1 = "";
+            openFileDialog.FileName = str1;
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (openFileDialog.OpenFile() == null)
+                    return;
+                Cursor.Current = Cursors.WaitCursor;
+                StreamReader streamReader = new StreamReader(openFileDialog.FileName);
+                int num1;
+                int num2 = num1 = 0;
+                int index1 = -1;
+                string str2 = " ";
+                int num3 = 0;
+                double num4;
+                double num5 = num4 = 0.0;
+                int k = 0;
+                int kPart = 50;
+                string sLine;
+                while ((sLine = streamReader.ReadLine()) != null)
+                {
+                    ++num2;
+                    string[] sPart;
+                    DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
+                    if (k < 2 || k > 6)
+                    {
+                        ++num3;
+                        string str3 = Convert.ToString(num2);
+                        text = text + str3 + ",";
+                        if (num3 > 10)
+                        {
+                            iCond = -99;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        double num6;
+                        double num7 = num6 = 0.0;
+                        double num8 = num6;
+                        double num9 = num6;
+                        int num10;
+                        int num11 = num10 = 0;
+                        int num12 = 0;
+                        if (sPart[1].IndexOf('.') > -1)
+                        {
+                            num12 = 99;
+                            num9 = Convert.ToDouble(sPart[1]);
+                        }
+                        else
+                            str2 = sPart[1];
+                        if (num12 == 0)
+                        {
+                            if (sPart[2].IndexOf('.') > -1)
+                            {
+                                num9 = Convert.ToDouble(sPart[2]);
+                                if (sPart[3].IndexOf('.') > -1)
+                                {
+                                    num8 = Convert.ToDouble(sPart[3]);
+                                    if (k > 3)
+                                    {
+                                        if (sPart[4].IndexOf('.') > -1)
+                                            num7 = Convert.ToDouble(sPart[4]);
+                                        else
+                                            num11 = Convert.ToInt32(sPart[4]);
+                                    }
+                                    if (k > 4)
+                                    {
+                                        if (sPart[5].IndexOf('.') > -1)
+                                        {
+                                            ++num3;
+                                            string str4 = Convert.ToString(num2);
+                                            text = text + str4 + ",";
+                                            if (num3 > 10)
+                                            {
+                                                iCond = -99;
+                                                break;
+                                            }
+                                            continue;
+                                        }
+                                        num11 = Convert.ToInt32(sPart[5]);
+                                    }
+                                    if (k > 5)
+                                    {
+                                        if (sPart[6].IndexOf('.') > -1)
+                                        {
+                                            ++num3;
+                                            string str5 = Convert.ToString(num2);
+                                            text = text + str5 + ",";
+                                            if (num3 > 10)
+                                            {
+                                                iCond = -99;
+                                                break;
+                                            }
+                                            continue;
+                                        }
+                                        num11 = Convert.ToInt32(sPart[5]);
+                                        num10 = Convert.ToInt32(sPart[6]);
+                                    }
+                                }
+                                else
+                                {
+                                    ++num3;
+                                    string str6 = Convert.ToString(num2);
+                                    text = text + str6 + ",";
+                                    if (num3 > 10)
+                                    {
+                                        iCond = -99;
+                                        break;
+                                    }
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                ++num3;
+                                string str7 = Convert.ToString(num2);
+                                text = text + str7 + ",";
+                                if (num3 > 10)
+                                {
+                                    iCond = -99;
+                                    break;
+                                }
+                                continue;
+                            }
+                        }
+                        if (num12 > 0)
+                        {
+                            str2 = Convert.ToString(num2);
+                            if (sPart[1].IndexOf('.') > -1)
+                            {
+                                num9 = Convert.ToDouble(sPart[1]);
+                                if (sPart[2].IndexOf('.') > -1)
+                                {
+                                    num8 = Convert.ToDouble(sPart[2]);
+                                    if (k > 2)
+                                    {
+                                        if (sPart[3].IndexOf('.') > -1)
+                                            num7 = Convert.ToDouble(sPart[3]);
+                                        else
+                                            num11 = Convert.ToInt32(sPart[3]);
+                                    }
+                                    if (k > 3)
+                                    {
+                                        if (sPart[4].IndexOf('.') > -1)
+                                        {
+                                            ++num3;
+                                            string str8 = Convert.ToString(num2);
+                                            text = text + str8 + ",";
+                                            if (num3 > 10)
+                                            {
+                                                iCond = -99;
+                                                break;
+                                            }
+                                            continue;
+                                        }
+                                        num11 = Convert.ToInt32(sPart[4]);
+                                    }
+                                    if (k > 4)
+                                    {
+                                        if (sPart[5].IndexOf('.') > -1)
+                                        {
+                                            ++num3;
+                                            string str9 = Convert.ToString(num2);
+                                            text = text + str9 + ",";
+                                            if (num3 > 10)
+                                            {
+                                                iCond = -99;
+                                                break;
+                                            }
+                                            continue;
+                                        }
+                                        num11 = Convert.ToInt32(sPart[4]);
+                                        num10 = Convert.ToInt32(sPart[5]);
+                                    }
+                                }
+                                else
+                                {
+                                    ++num3;
+                                    string str10 = Convert.ToString(num2);
+                                    text = text + str10 + ",";
+                                    if (num3 > 10)
+                                    {
+                                        iCond = -99;
+                                        break;
+                                    }
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                ++num3;
+                                string str11 = Convert.ToString(num2);
+                                text = text + str11 + ",";
+                                if (num3 > 10)
+                                {
+                                    iCond = -99;
+                                    break;
+                                }
+                                continue;
+                            }
+                        }
+                        ++index1;
+                        if (index1 > kArray)
+                        {
+                            int num13 = (int)MessageBox.Show("Index array PointsDesign");
+                            return;
+                        }
+                        nameProj[index1] = str2;
+                        xProj[index1] = num9;
+                        yProj[index1] = num8;
+                        zProj[index1] = num7;
+                        nProj1[index1] = num11;
+                        nProj2[index1] = num10;
+                    }
+                }
+                if (num3 > 0)
+                {
+                    int num14 = (int)MessageBox.Show(text, "Points File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    iCond = -1;
+                }
+                else
+                {
+                    int index2 = 0;
+                    double num15;
+                    double num16 = num15 = 0.0;
+                    for (int index3 = 1; index3 <= index1; ++index3)
+                    {
+                        double num17 = xProj[index2] - xProj[index3];
+                        double num18 = yProj[index2] - yProj[index3];
+                        double num19 = Math.Sqrt(num17 * num17 + num18 * num18);
+                        double num20 = Math.Abs(zProj[index2] - zProj[index3]);
+                        if (num19 >= 0.003 || num20 >= 0.003)
+                        {
+                            ++index2;
+                            if (index2 > kArray)
+                            {
+                                int num21 = (int)MessageBox.Show("Index array PointsDesign");
+                                return;
+                            }
+                            nameProj[index2] = nameProj[index3];
+                            xProj[index2] = xProj[index3];
+                            yProj[index2] = yProj[index3];
+                            zProj[index2] = zProj[index3];
+                            nProj1[index2] = nProj1[index3];
+                            nProj2[index2] = nProj2[index3];
+                        }
+                    }
+                    int num22 = index2;
+                    int num23 = 0;
+                    for (int index4 = 0; index4 <= num22; ++index4)
+                    {
+                        if (zProj[index4] != 0.0)
+                            ++num23;
+                    }
+                    if (File.Exists(flineProj))
+                        File.Delete(flineProj);
+                    if (File.Exists(ftopoProj))
+                        File.Delete(ftopoProj);
+                    if (File.Exists(fpolyProj))
+                        File.Delete(fpolyProj);
+                    if (File.Exists(fnodeProj))
+                        File.Delete(fnodeProj);
+                    AllActionRemove();
+                    if (File.Exists(fpointProj))
+                        File.Delete(fpointProj);
+                    FileStream output = new FileStream(fpointProj, FileMode.CreateNew);
+                    BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+                    binaryWriter.Write(num22);
+                    for (int index5 = 0; index5 <= num22; ++index5)
+                    {
+                        binaryWriter.Write(nameProj[index5]);
+                        binaryWriter.Write(xProj[index5]);
+                        binaryWriter.Write(yProj[index5]);
+                        binaryWriter.Write(zProj[index5]);
+                        binaryWriter.Write(nProj1[index5]);
+                        binaryWriter.Write(nProj2[index5]);
+                    }
+                    binaryWriter.Write(num22);
+                    binaryWriter.Close();
+                    output.Close();
+                }
+            }
+            else
+                iCond = -99;
+        }
+
 
         //private void NewPointDraw(PaintEventArgs e, string sNew, double xNew, double yNew)
         //{

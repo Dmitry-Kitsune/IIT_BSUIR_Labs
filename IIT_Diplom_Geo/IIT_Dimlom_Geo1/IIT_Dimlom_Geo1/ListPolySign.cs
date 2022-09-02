@@ -38,16 +38,16 @@ namespace IIT_Dimlom_Geo1
 
         public ListPolySign()
         {
-            this.InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
-            this.pixWid = this.panel1.Bounds.Width;
-            this.pixHei = this.panel1.Bounds.Height;
-            if (this.pixWid <= this.pixHei)
-                this.iWidth = this.iHeight = this.pixWid;
-            if (this.pixWid > this.pixHei)
-                this.iWidth = this.iHeight = this.pixHei;
-            this.myPol.FilePath();
-            this.FormLoad();
+            InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+            pixWid = panel1.Bounds.Width;
+            pixHei = panel1.Bounds.Height;
+            if (pixWid <= pixHei)
+                iWidth = iHeight = pixWid;
+            if (pixWid > pixHei)
+                iWidth = iHeight = pixHei;
+            myPol.FilePath();
+            FormLoad();
         }
 
         public void PolyListDraw(
@@ -163,27 +163,27 @@ namespace IIT_Dimlom_Geo1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            this.PolyListDraw(e, this.myPol.fitemPoly, this.hSymbPoly, this.kPolySymb, this.myPol.sPolySymb, this.myPol.npSign1, this.myPol.xpSign1, this.myPol.ypSign1, this.myPol.xpSymb, this.myPol.ypSymb, this.myPol.npItem, this.myPol.xpItem, this.myPol.ypItem, this.myPol.xpDescr, this.myPol.ypDescr, this.myPol.npSign2, this.myPol.xpSign2, this.myPol.ypSign2, this.myPol.nBackCol, this.myPol.npTxtCol, this.myPol.hpFont, this.myPol.spInscr, this.myPol.nOneSymb, this.myPol.iWidth1, this.myPol.iWidth2, this.myPol.nColorItm, this.myPol.brColor, this.myPol.pnColor);
+            PolyListDraw(e, myPol.fitemPoly, hSymbPoly, kPolySymb, myPol.sPolySymb, myPol.npSign1, myPol.xpSign1, myPol.ypSign1, myPol.xpSymb, myPol.ypSymb, myPol.npItem, myPol.xpItem, myPol.ypItem, myPol.xpDescr, myPol.ypDescr, myPol.npSign2, myPol.xpSign2, myPol.ypSign2, myPol.nBackCol, myPol.npTxtCol, myPol.hpFont, myPol.spInscr, myPol.nOneSymb, myPol.iWidth1, myPol.iWidth2, myPol.nColorItm, myPol.brColor, myPol.pnColor);
         }
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index1 = 0;
-            for (int index2 = 2; index2 <= this.kPolySymb; ++index2)
+            for (int index2 = 2; index2 <= kPolySymb; ++index2)
             {
-                if (this.myPol.ypSign1[index2 - 1] < e.Y && this.myPol.ypSign1[index2] > e.Y)
+                if (myPol.ypSign1[index2 - 1] < e.Y && myPol.ypSign1[index2] > e.Y)
                 {
-                    index1 = this.myPol.npSign1[index2] - 1;
+                    index1 = myPol.npSign1[index2] - 1;
                     break;
                 }
             }
             if (index1 == 0)
-                index1 = this.kPolySymb;
-            if (File.Exists(this.myPol.fileAdd))
-                File.Delete(this.myPol.fileAdd);
-            FileStream output = new FileStream(this.myPol.fileAdd, FileMode.CreateNew);
+                index1 = kPolySymb;
+            if (File.Exists(myPol.fileAdd))
+                File.Delete(myPol.fileAdd);
+            FileStream output = new FileStream(myPol.fileAdd, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-            binaryWriter.Write(this.myPol.npSign1[index1]);
+            binaryWriter.Write(myPol.npSign1[index1]);
             binaryWriter.Close();
             output.Close();
             Form.ActiveForm.Close();
@@ -192,9 +192,9 @@ namespace IIT_Dimlom_Geo1
         private void Quit_Click(object sender, EventArgs e)
         {
             int num = 0;
-            if (File.Exists(this.myPol.fileAdd))
-                File.Delete(this.myPol.fileAdd);
-            FileStream output = new FileStream(this.myPol.fileAdd, FileMode.CreateNew);
+            if (File.Exists(myPol.fileAdd))
+                File.Delete(myPol.fileAdd);
+            FileStream output = new FileStream(myPol.fileAdd, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
             binaryWriter.Write(num);
             binaryWriter.Close();
@@ -203,27 +203,27 @@ namespace IIT_Dimlom_Geo1
         }
         private void Up_Click(object sender, EventArgs e)
         {
-            this.yTolMax = this.myPol.ypSign1[this.kPolySymb] + this.hSymbPoly;
-            if (this.yTolMax < this.pixHei)
+            yTolMax = myPol.ypSign1[kPolySymb] + hSymbPoly;
+            if (yTolMax < pixHei)
                 return;
-            for (int index = 1; index <= this.kPolySymb; ++index)
-                this.myPol.ypSign1[index] = this.myPol.ypSign1[index] - this.hSymbPoly;
-            this.panel1.Invalidate();
+            for (int index = 1; index <= kPolySymb; ++index)
+                myPol.ypSign1[index] = myPol.ypSign1[index] - hSymbPoly;
+            panel1.Invalidate();
         }
 
         private void Down_Click(object sender, EventArgs e)
         {
-            if (this.myPol.ypSign1[1] > this.yTolMin)
+            if (myPol.ypSign1[1] > yTolMin)
                 return;
-            for (int index = 1; index <= this.kPolySymb; ++index)
-                this.myPol.ypSign1[index] = this.myPol.ypSign1[index] + this.hSymbPoly;
-            this.panel1.Invalidate();
+            for (int index = 1; index <= kPolySymb; ++index)
+                myPol.ypSign1[index] = myPol.ypSign1[index] + hSymbPoly;
+            panel1.Invalidate();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && this.components != null)
-                this.components.Dispose();
+            if (disposing && components != null)
+                components.Dispose();
             base.Dispose(disposing);
         }
     }

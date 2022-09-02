@@ -1,4 +1,8 @@
-﻿namespace IIT_Diplom_Geo1
+﻿using DiplomGeoDLL;
+
+
+namespace IIT_Diplom_Geo1
+
 {
     partial class ProjectMenu
     {
@@ -28,105 +32,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectMenu));
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.Confirm = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ChangeDrive = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.statusStrip1.SuspendLayout();
-            this.SuspendLayout();
+            listBox1 = new System.Windows.Forms.ListBox();
+            Confirm = new System.Windows.Forms.Button();
+            Cancel = new System.Windows.Forms.Button();
+            label2 = new System.Windows.Forms.Label();
+            ChangeDrive = new System.Windows.Forms.Button();
+            label3 = new System.Windows.Forms.Label();
+            statusStrip1 = new System.Windows.Forms.StatusStrip();
+            toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(components);
+            richTextBox1 = new System.Windows.Forms.RichTextBox();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.Name = "listBox1";
+            listBox1.FormattingEnabled = true;
+            resources.ApplyResources(listBox1, "listBox1");
+            listBox1.Name = "listBox1";
             // 
             // Confirm
             // 
-            resources.ApplyResources(this.Confirm, "Confirm");
-            this.Confirm.Name = "Confirm";
-            this.Confirm.UseVisualStyleBackColor = true;
-            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
+            resources.ApplyResources(Confirm, "Confirm");
+            Confirm.Name = "Confirm";
+            Confirm.UseVisualStyleBackColor = true;
+            Confirm.Click += new System.EventHandler(Confirm_Click);
             // 
             // Cancel
             // 
-            resources.ApplyResources(this.Cancel, "Cancel");
-            this.Cancel.Name = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            resources.ApplyResources(Cancel, "Cancel");
+            Cancel.Name = "Cancel";
+            Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += new System.EventHandler(Cancel_Click);
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Name = "label2";
+            resources.ApplyResources(label2, "label2");
+            label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            label2.Name = "label2";
             // 
             // ChangeDrive
             // 
-            resources.ApplyResources(this.ChangeDrive, "ChangeDrive");
-            this.ChangeDrive.Name = "ChangeDrive";
-            this.ChangeDrive.UseVisualStyleBackColor = true;
-            this.ChangeDrive.Click += new System.EventHandler(this.ChangeDrive_Click);
+            resources.ApplyResources(ChangeDrive, "ChangeDrive");
+            ChangeDrive.Name = "ChangeDrive";
+            ChangeDrive.UseVisualStyleBackColor = true;
+            ChangeDrive.Click += new System.EventHandler(ChangeDrive_Click);
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Name = "label3";
+            resources.ApplyResources(label3, "label3");
+            label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            label3.Name = "label3";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
+            statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            toolStripStatusLabel1});
+            resources.ApplyResources(statusStrip1, "statusStrip1");
+            statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(contextMenuStrip1, "contextMenuStrip1");
             // 
             // richTextBox1
             // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
+            resources.ApplyResources(richTextBox1, "richTextBox1");
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
             // 
             // ProjectMenu
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ChangeDrive);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.Confirm);
-            this.Controls.Add(this.listBox1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ProjectMenu";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Control;
+            Controls.Add(richTextBox1);
+            Controls.Add(statusStrip1);
+            Controls.Add(label3);
+            Controls.Add(ChangeDrive);
+            Controls.Add(label2);
+            Controls.Add(Cancel);
+            Controls.Add(Confirm);
+            Controls.Add(listBox1);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ProjectMenu";
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

@@ -24,7 +24,7 @@ namespace IIT_Diplom_Geo1
         private string nameDirectory = "";
         private int nMax = 0; //0
         private int nProject = 0;//0
-
+        
         public CreateNewProj()
         {
             InitializeComponent();
@@ -144,7 +144,7 @@ namespace IIT_Diplom_Geo1
             finally { }
 
             //Запись информации в файл
-
+            myProj.fileProj = "tempFileProj"; // убрать значение
             FileStream fc = new FileStream(myProj.fileProj, FileMode.CreateNew);
             BinaryWriter fcc = new BinaryWriter(fc);
             fcc.Write(sTmp);
@@ -152,17 +152,20 @@ namespace IIT_Diplom_Geo1
             fcc.Write(nameDirectory);
             fcc.Close();
             fc.Close();
+            File.Delete("tempFileProj"); // Временная строка
 
             //Создание файла с перечислением всех проектов, если он не был создан
             if (!File.Exists(myProj.fileAllProj))
             {
+                myProj.fileAllProj = "tempAllProj"; // убрать значение
                 FileStream fd = new FileStream(myProj.fileAllProj, FileMode.CreateNew);
                 BinaryWriter fdd = new BinaryWriter(fd);
                 Console.WriteLine($"Запись информации о проектах при создании - {myProj.fileAllProj}");
                 fd.Close();
                 fdd.Close();
+                File.Delete("tempAllProj"); // Временная строка
 
-                
+
             }
 
             // Добавление в файл информации о новом проекте
