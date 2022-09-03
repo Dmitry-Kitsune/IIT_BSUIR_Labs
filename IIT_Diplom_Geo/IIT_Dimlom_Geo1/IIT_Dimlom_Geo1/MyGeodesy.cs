@@ -13,6 +13,10 @@ using System.Reflection;
 using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
 
+
+// Доработать класс Aero
+
+
 namespace IIT_Diplom_Geo1
 {
     //public class Form : System.Windows.Forms.ContainerControl
@@ -21908,7 +21912,150 @@ namespace IIT_Diplom_Geo1
             else
                 iCond = -99;
         }
-
+        public void DangleLoad()
+        {
+            this.kDangle = 0;
+            if (!File.Exists(this.fileDangle))
+                return;
+            FileStream input = new FileStream(this.fileDangle, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
+            {
+                this.kDangle = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= this.kDangle; ++index1)
+                {
+                    this.zParc[index1] = binaryReader.ReadDouble();
+                    this.ki1[index1] = binaryReader.ReadInt32();
+                    this.ki2[index1] = binaryReader.ReadInt32();
+                    int num1 = this.ki1[index1];
+                    int num2 = this.ki2[index1];
+                    for (int index2 = num1; index2 <= num2; ++index2)
+                    {
+                        this.xInt[index2] = binaryReader.ReadDouble();
+                        this.yInt[index2] = binaryReader.ReadDouble();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The Read operation failed as expected.");
+            }
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
+        }
+        public void KeepLineTopo()
+        {
+            if (this.kLineTopo == 0)
+                return;
+            if (File.Exists(this.flineTopo))
+                File.Delete(this.flineTopo);
+            FileStream output = new FileStream(this.flineTopo, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(this.kLineTopo);
+            for (int index1 = 1; index1 <= this.kLineTopo; ++index1)
+            {
+                binaryWriter.Write(this.radLine[index1]);
+                binaryWriter.Write(this.kl1[index1]);
+                binaryWriter.Write(this.kl2[index1]);
+                int num1 = this.kl1[index1];
+                int num2 = this.kl2[index1];
+                int index2 = 0;
+                for (int index3 = num1; index3 <= num2; ++index3)
+                {
+                    ++index2;
+                    this.xDop[index2] = this.zLin[index3];
+                    this.yDop[index2] = this.zPik[index3];
+                }
+                binaryWriter.Write(index2);
+                for (int index4 = 1; index4 <= index2; ++index4)
+                {
+                    binaryWriter.Write(this.xDop[index4]);
+                    binaryWriter.Write(this.yDop[index4]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void KeepExter()
+        {
+            if (File.Exists(this.fileExter))
+                File.Delete(this.fileExter);
+            FileStream output = new FileStream(this.fileExter, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(this.sArea);
+            binaryWriter.Write(this.arExter);
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void KeepPoly()
+        {
+            if (this.kPoly < 1)
+                return;
+            if (File.Exists(this.filePoly))
+                File.Delete(this.filePoly);
+            FileStream output = new FileStream(this.filePoly, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(this.kPoly);
+            for (int index1 = 1; index1 <= this.kPoly; ++index1)
+            {
+                binaryWriter.Write(this.namePoly[index1]);
+                binaryWriter.Write(this.xLab[index1]);
+                binaryWriter.Write(this.yLab[index1]);
+                binaryWriter.Write(this.areaPol[index1]);
+                binaryWriter.Write(this.areaLeg[index1]);
+                binaryWriter.Write(this.nSymbPoly[index1]);
+                binaryWriter.Write(this.kt1[index1]);
+                binaryWriter.Write(this.kt2[index1]);
+                int num1 = this.kt1[index1];
+                int num2 = this.kt2[index1];
+                for (int index2 = num1; index2 <= num2; ++index2)
+                {
+                    binaryWriter.Write(this.xPol[index2]);
+                    binaryWriter.Write(this.yPol[index2]);
+                }
+                binaryWriter.Write(this.kInter);
+                if (this.kInter > 0)
+                {
+                    for (int index3 = 1; index3 <= this.kInter; ++index3)
+                    {
+                        binaryWriter.Write(this.sInter[index3]);
+                        binaryWriter.Write(this.kn1[index1]);
+                        binaryWriter.Write(this.kn2[index1]);
+                        int num3 = this.kn1[index1];
+                        int num4 = this.kn2[index1];
+                        for (int index4 = num3; index4 <= num4; ++index4)
+                        {
+                            binaryWriter.Write(this.xInter[index4]);
+                            binaryWriter.Write(this.yInter[index4]);
+                        }
+                    }
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
+        public void KeepNode()
+        {
+            if (File.Exists(this.fileNode))
+                File.Delete(this.fileNode);
+            FileStream output = new FileStream(this.fileNode, FileMode.CreateNew);
+            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
+            binaryWriter.Write(this.kNodeTopo);
+            if (this.kNodeTopo > 0)
+            {
+                for (int index = 1; index <= this.kNodeTopo; ++index)
+                {
+                    binaryWriter.Write(this.nameNode[index]);
+                    binaryWriter.Write(this.xNode[index]);
+                    binaryWriter.Write(this.yNode[index]);
+                }
+            }
+            binaryWriter.Close();
+            output.Close();
+        }
 
         //private void NewPointDraw(PaintEventArgs e, string sNew, double xNew, double yNew)
         //{

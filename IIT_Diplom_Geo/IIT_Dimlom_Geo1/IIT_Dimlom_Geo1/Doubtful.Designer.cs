@@ -14,7 +14,7 @@ namespace IIT_Dimlom_Geo1
         ///     private ListBox listBox1;
         private ListBox listBox1;
         private Button button1;
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -37,33 +37,43 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
-            button1 = new Button();
-            SuspendLayout();
-            listBox1.BackColor = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 192);
-            listBox1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)204);
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(10, 8);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(719, 173);
-            listBox1.TabIndex = 0;
-            button1.BackColor = Color.FromArgb(192, (int)byte.MaxValue, (int)byte.MaxValue);
-            button1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)204);
-            button1.Location = new Point(329, 189);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new EventHandler(Cancel_Click);
-            AutoScaleDimensions = new SizeF(6f, 13f);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(741, 220);
-            Controls.Add((Control)button1);
-            Controls.Add((Control)listBox1);
-            Name = "Doubtful";
-            Text = "Doubtful Measurements Lines";
-            ResumeLayout(false);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(10, 8);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(719, 173);
+            this.listBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(329, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Зкрыть";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // Doubtful
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(741, 220);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
+            this.Name = "Doubtful";
+            this.Text = "Ошибки в измерений линий";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

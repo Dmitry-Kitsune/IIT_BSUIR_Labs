@@ -183,43 +183,44 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             FormLoad();
         }
-        private void button1_MouseHover(object sender, EventArgs e) => label3.Text = "Close Dialog";
+        private void button1_MouseHover(object sender, EventArgs e) => label3.Text = "Закрыть окно";
 
         private void button1_MouseLeave(object sender, EventArgs e) => label3.Text = "";
 
-        private void button7_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update points' topographic symbologies";
+        private void button7_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление точек еопографических знаков/символов";
 
-        private void button8_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update lines' topographic symbologies";
+        private void button8_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление линейных топографических обозначений/знаков";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update polygons' topographic symbologies";
+        private void button9_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление полигональных топографических знаков";
 
-        private void button10_MouseHover(object sender, EventArgs e) => label3.Text = "File points input-initial data";
+        private void button10_MouseHover(object sender, EventArgs e) => label3.Text = "Ввод точек из файла - исходные данные";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label3.Text = "Additional points input, defind in others ways";
+        private void button11_MouseHover(object sender, EventArgs e) => label3.Text = "Ввод дополнительныех точек, определяется другими способами";
 
-        private void button19_MouseHover(object sender, EventArgs e) => label3.Text = "Forming linear structures";
+        private void button19_MouseHover(object sender, EventArgs e) => label3.Text = "Формирование линейных структур";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label3.Text = "Linear and polygonal topologies creation";
+        private void button20_MouseHover(object sender, EventArgs e) 
+            => label3.Text = "Создание линейных и полигональных топологий";
 
-        private void button24_MouseHover(object sender, EventArgs e) => label3.Text = "Model of relief and contour lines forming and correction";
+        private void button24_MouseHover(object sender, EventArgs e) => label3.Text = "Модель формирования и коррекции рельефа и горизонталей";
 
-        private void button25_MouseHover(object sender, EventArgs e) => label3.Text = "Contour lines removing";
+        private void button25_MouseHover(object sender, EventArgs e) => label3.Text = "Удаление контурных линий";
 
-        private void button21_MouseHover(object sender, EventArgs e) => label3.Text = "File points input-data for design of actions with parcels";
+        private void button21_MouseHover(object sender, EventArgs e) => label3.Text = "Ввод точек из файла - данные для создания/моделирования участков ";
 
-        private void button22_MouseHover(object sender, EventArgs e) => label3.Text = "Design's additional points input, defind in others ways";
+        private void button22_MouseHover(object sender, EventArgs e) => label3.Text = "Определяет ввод дополнительных точек, заданных другими способами";
 
-        private void button23_MouseHover(object sender, EventArgs e) => label3.Text = "Forming design's linear structures";
+        private void button23_MouseHover(object sender, EventArgs e) => label3.Text = "Формирование линейных структур(объектов) дизайна";
 
-        private void button30_MouseHover(object sender, EventArgs e) => label3.Text = "All design's data removing";
+        private void button30_MouseHover(object sender, EventArgs e) => label3.Text = "Удаление всех данных проектирования/моделирования";
 
-        private void button26_MouseHover(object sender, EventArgs e) => label3.Text = "Areas division and unification, using design's data and without this data";
+        private void button26_MouseHover(object sender, EventArgs e) => label3.Text = "Разделение и объединение площадей с использованием проектных данных и без них";
 
-        private void button29_MouseHover(object sender, EventArgs e) => label3.Text = "All actions removing";
+        private void button29_MouseHover(object sender, EventArgs e) => label3.Text = "Удаление всех действий";
 
-        private void button27_MouseHover(object sender, EventArgs e) => label3.Text = "Final correct topographic symbologies of points, lines, polygons";
+        private void button27_MouseHover(object sender, EventArgs e) => label3.Text = "Окончательные правильные топографические символы точек, линий, полигонов";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label3.Text = "Printing map and tables using format A4";
+        private void button28_MouseHover(object sender, EventArgs e) => label3.Text = "Печать карты и таблиц в формате листа A4";
 
         private void FormLoad()
         {
@@ -279,11 +280,11 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (num1 == 0)
                 {
-                    int num2 = (int)MessageBox.Show("Open New Project", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Открыть новый проект", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (num1 > 0)
                 {
-                    int num3 = (int)MessageBox.Show("Use Project Selet or Open New Project", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Используйте 'Выбрать проект' или 'Открыть новый проект'", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             mySub.FilePath();
@@ -294,7 +295,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.ShareString(mySub.comPath, kPart, seps, out k, out sPart);
             if (!File.Exists(mySub.fileProj))
             {
-                label2.Text = sPart[1] + "\\--Project isn't defined";
+                label2.Text = sPart[1] + "\\--Проект не выбран";
             }
             else
             {
@@ -304,7 +305,7 @@ namespace IIT_Dimlom_Geo1
                 label2.Text = sPart[1] + "\\+" + mySub.curProject;
                 if (!File.Exists(mySub.tmpStr) && nProcess == 910)
                 {
-                    int num = (int)MessageBox.Show("Drive wasn't defined. Use 'Drive Change'", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Диск не выбран. Используйте 'Сменить диск'", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 LoadData();
                 panel7.Invalidate();
@@ -665,7 +666,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (double.IsNaN(mySub.xProj[index]) || double.IsNaN(mySub.yProj[index]))
                 {
-                    int num = (int)MessageBox.Show("Check Data");
+                    int num = (int)MessageBox.Show("Проверить данные");
                     iGraphic = 1;
                     break;
                 }
@@ -682,7 +683,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -696,7 +697,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -710,7 +711,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -722,7 +723,7 @@ namespace IIT_Dimlom_Geo1
 
         private void FilePoints_Click(object sender, EventArgs e)
         {
-            string text = "Points: ";
+            string text = "Точки: ";
             mySub.FilePath();
             nProcess = 910;
             if (File.Exists(mySub.fileProcess))
@@ -734,7 +735,7 @@ namespace IIT_Dimlom_Geo1
             output1.Close();
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Загрузка данных из файла", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -766,7 +767,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (num2 > 0)
                 {
-                    int num3 = (int)MessageBox.Show(text, "Code's error of points' symbols", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show(text, "Ошибка кода символов точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 mySub.FilesRemove();
                 mySub.AllActionRemove();
@@ -780,10 +781,10 @@ namespace IIT_Dimlom_Geo1
                 {
                     kPntPlus = mySub.kPntPlus;
                     mySub.FilePath();
-                    panel1.Text = "******POINTS SORTING*******";
+                    panel1.Text = "******СОРТИРОВКА ТОЧЕК*******";
                     mySub.HeightSorting();
                     kHeight = mySub.kHeight;
-                    panel1.Text = "Ready......";
+                    panel1.Text = "Готово......";
                     kPntSource = kPntPlus;
                     for (int index = 0; index <= kPntSource; ++index)
                     {
@@ -815,11 +816,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Points Addition", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Добавление точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Points Addition", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Добавление точек из файла", "Добавление точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -850,11 +851,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -867,11 +868,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Добавление точек из файла", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -884,15 +885,15 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Добавление точек из файла", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(mySub.fileContour))
             {
-                int num3 = (int)MessageBox.Show("No data", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Нет данных", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -905,11 +906,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kLineInput < 1)
             {
-                int num2 = (int)MessageBox.Show("No data", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Нет данных", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -922,15 +923,15 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Input Initial data", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Ввод исходных данных", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntProj < 0 && kLineProj < 1)
             {
-                int num3 = (int)MessageBox.Show("No data", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Нет данных", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -943,11 +944,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Просомтр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Input Initial data", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Ввод исходных данных", "Просмотр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -958,7 +959,7 @@ namespace IIT_Dimlom_Geo1
                 kPolyCancel = mySub.kPolyCancel;
                 if (kPolyCancel < 1)
                 {
-                    int num3 = (int)MessageBox.Show("No data", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Нет данных", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -975,11 +976,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Добавление точек из файла", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1011,7 +1012,7 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             if (!File.Exists(mySub.fileLine))
             {
-                int num1 = (int)MessageBox.Show("Return to 'From Points to Lines'", "Topologies Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Вернуться к 'От точек к линиям'", "Построение топологий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1041,7 +1042,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPntPlus < 1)
             {
-                int num1 = (int)MessageBox.Show("Points' File Input", "Design's Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Добавление точек из файла", "Точки проектирования", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1056,7 +1057,7 @@ namespace IIT_Dimlom_Geo1
                 output1.Close();
                 if (!File.Exists(mySub.fileProj))
                 {
-                    int num2 = (int)MessageBox.Show("Project wasn't defined", "Design's File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Проект не выбранd", "Ввод файла проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1082,11 +1083,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Design's Additional Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Дополнительные точки дизайна/проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Design's Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Точки проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1117,15 +1118,15 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Design's Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Тотчки проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPoly == 0)
             {
-                int num3 = (int)MessageBox.Show("Polygonal topology wasn't created", "Design Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Полигональная топология не создана", "Линии проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1149,15 +1150,15 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPoly == 0)
             {
-                int num3 = (int)MessageBox.Show("Polygonal topology wasn't created", "Parcels' action", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Полигональная топология не создана", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1172,7 +1173,7 @@ namespace IIT_Dimlom_Geo1
                 output1.Close();
                 sTmp = mySub.factPol;
                 sTmp = sTmp + "." + string.Format("{0}", (object)1);
-                if (File.Exists(sTmp) && MessageBox.Show("Final Results were created. Do you want to Continue Process of Actions with Parcels ?", "Parcel's Action", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (File.Exists(sTmp) && MessageBox.Show("Окончательные результаты были созданы.Хотите продолжить процесс действий с участками? ?", "Действия с участками", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     panel7.Invalidate();
                 }
@@ -1199,20 +1200,20 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не определен", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(mySub.fileHeight))
             {
-                int num2 = (int)MessageBox.Show("Altitude Points isn't enough", "Add Contour Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Точек высоты недостаточно:", "Добавить контурные линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                panel1.Text = "**********************PLEASE.......WAIT*************************";
+                panel1.Text = "**********************Пожалуйста.... Подождите*************************";
                 mySub.HeightSorting();
                 kHeight = mySub.kHeight;
                 if (kHeight < 4)
                 {
-                    int num3 = (int)MessageBox.Show("Altitude Points isn't enough", "Add Contour Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Точек высоты не достаточно", "Добавьте контурные линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1240,11 +1241,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (File.Exists(mySub.fileContour) && MessageBox.Show("Do you really want to Remove Contour Lines ?", "Contour Lines Removing", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (File.Exists(mySub.fileContour) && MessageBox.Show("Вы действительно хотите удалить контурные линии?", "Удаление контурных линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 if (File.Exists(mySub.fileContour))
                     File.Delete(mySub.fileContour);
@@ -1257,11 +1258,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "From Points to Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kPntPlus < 1)
             {
-                int num2 = (int)MessageBox.Show("Points' File Input", "Correct and Print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Исправление и печать", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1284,7 +1285,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.flineFinal))
             {
-                int num1 = (int)MessageBox.Show("Check final result", "Click 'Correction final result'", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проверить конечный результат", "Щелкните 'Окончательный результат коррекции'", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1296,11 +1297,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (nAction == 0)
             {
-                int num1 = (int)MessageBox.Show("All changes were removed", "Parcel's Actions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Все изменения удалены", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (MessageBox.Show("Do you really want to Remove All changes ?", "Parcel's Action", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить все изменения ?", "Действия с участками", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 mySub.AllActionRemove();
                 nAction = 0;
@@ -1393,13 +1394,13 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPntProj < 0 && kLineProj == 0)
             {
-                int num = (int)MessageBox.Show("All Design's data were removed", "Design's data Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все данные проектирования были удалены", "Формирование проектных данных", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 nProcess = 0;
                 panel7.Invalidate();
             }
             else
             {
-                if ((File.Exists(mySub.fpointProj) || File.Exists(mySub.flineProj)) && MessageBox.Show("Do you really want to Delete all Design's data?", "Design's Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if ((File.Exists(mySub.fpointProj) || File.Exists(mySub.flineProj)) && MessageBox.Show("Вы действительно хотите удалить все данные проектирования?", "Формирование проектных линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 if (File.Exists(mySub.fpointProj))
                     File.Delete(mySub.fpointProj);
@@ -1432,7 +1433,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Project wasn't defined", "Transfer File", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран", "Передача файла", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1441,13 +1442,14 @@ namespace IIT_Dimlom_Geo1
                 sTmp = "";
                 for (int index = 1; index <= kDrive; ++index)
                 {
-                    sTmp = sDrive[index] + "BrGeodesy\\brdrv.dat";
+                    sTmp = sDrive[index] + "Diplom_Geo\\brdrive.dat";
+                    //sTmp = sDrive[index] + "Diplom_Geo\\brdriv.dat";
                     if (File.Exists(sTmp))
                         break;
                 }
                 if (!File.Exists(sTmp))
                 {
-                    int num2 = (int)MessageBox.Show("Field Projects aren't created", "Transfer Field Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Поля проектов не созданы", "Передача Данных полей", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1480,7 +1482,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (num3 == 0)
                     {
-                        int num5 = (int)MessageBox.Show("No Geodesy Projects", "Transfer Field Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num5 = (int)MessageBox.Show("Нет геодезических проектов", "Передача данных полей", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
@@ -1529,7 +1531,7 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             if (!File.Exists(mySub.fbaseDtm))
             {
-                int num = (int)MessageBox.Show("Data of Aerotriangulation is absent", "DTM Archive", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные аэротриангуляции отсутствуют", "Архив DTM", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

@@ -9,7 +9,7 @@ namespace IIT_Diplom_Geo1
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components;
 
         /// <summary>
         /// Clean up any resources being used.

@@ -194,6 +194,12 @@
     <Compile Include="AddPoints.Designer.cs">
       <DependentUpon>AddPoints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aero.Designer.cs">
+      <DependentUpon>Aero.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadasral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,12 @@
     </Compile>
     <Compile Include="GeoCalc.Designer.cs">
       <DependentUpon>GeoCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinesForm.Designer.cs">
+      <DependentUpon>LinesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LineSign.cs">
       <SubType>Form</SubType>
@@ -260,12 +272,18 @@
     <Compile Include="MapScale.Designer.cs">
       <DependentUpon>MapScale.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyGeodesy.cs" />
-    <Compile Include="FormProj.cs">
+    <Compile Include="MyCadastre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProj.Designer.cs">
-      <DependentUpon>FormProj.cs</DependentUpon>
+    <Compile Include="MyCadastre.Designer.cs">
+      <DependentUpon>MyCadastre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyGeodesy.cs" />
+    <Compile Include="DriveProjectMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DriveProjectMenu.Designer.cs">
+      <DependentUpon>DriveProjectMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GeoDemo.cs">
       <SubType>Form</SubType>
@@ -291,10 +309,19 @@
     <Compile Include="PolygonSign.Designer.cs">
       <DependentUpon>PolygonSign.cs</DependentUpon>
     </Compile>
+    <Compile Include="PolyTopo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolyTopo.Designer.cs">
+      <DependentUpon>PolyTopo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectDrive.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDrive.Designer.cs">
+      <DependentUpon>SelectDrive.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectProj.cs">
       <SubType>Form</SubType>
@@ -308,6 +335,9 @@
     <EmbeddedResource Include="AddPoints.resx">
       <DependentUpon>AddPoints.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Aero.resx">
+      <DependentUpon>Aero.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadasral.resx">
       <DependentUpon>Cadasral.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,16 +347,22 @@
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProj.resx">
-      <DependentUpon>FormProj.cs</DependentUpon>
+    <EmbeddedResource Include="Doubtful.resx">
+      <DependentUpon>Doubtful.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriveProjectMenu.resx">
+      <DependentUpon>DriveProjectMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProj.ru-RU.resx">
-      <DependentUpon>FormProj.cs</DependentUpon>
+    <EmbeddedResource Include="DriveProjectMenu.ru-RU.resx">
+      <DependentUpon>DriveProjectMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GeoDemo.resx">
       <DependentUpon>GeoDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinesForm.resx">
+      <DependentUpon>LinesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListPntSign.resx">
       <DependentUpon>ListPntSign.cs</DependentUpon>
@@ -337,8 +373,17 @@
     <EmbeddedResource Include="MapScale.resx">
       <DependentUpon>MapScale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyCadastre.resx">
+      <DependentUpon>MyCadastre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PointsList.resx">
       <DependentUpon>PointsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolygonSign.resx">
+      <DependentUpon>PolygonSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolyTopo.resx">
+      <DependentUpon>PolyTopo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -350,6 +395,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SelectDrive.resx">
+      <DependentUpon>SelectDrive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectProj.resx">
       <DependentUpon>SelectProj.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +438,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MoveIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineLeng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinePnt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blind1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tangent2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tangent11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fillet5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arc_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arc_lng2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arc_sh2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circ_rad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\br_line.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />

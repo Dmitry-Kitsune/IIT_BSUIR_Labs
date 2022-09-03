@@ -11,12 +11,7 @@ using System.IO;
 using System.Security;
 using DiplomGeoDLL;
 using IIT_Diplom_Geo1;
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
-using System.Windows.Forms;
+
 
 namespace IIT_Dimlom_Geo1
 {
@@ -902,7 +897,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", 
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", 
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -917,7 +912,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", 
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", 
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -932,7 +927,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", 
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", 
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -947,7 +942,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", 
+                int num1 = (int)MessageBox.Show("Диск не выбран", "Создание проекта", 
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -1031,7 +1026,7 @@ namespace IIT_Dimlom_Geo1
                     mySub.nOneSymb, mySub.nWork1, mySub.nWork2, mySub.nColorItm, mySub.brColor, mySub.pnColor);
             if (nProblem == 11)
             {
-                label4.Text = "Last process: Result of 'Measurement data file input(Control points)'";
+                label4.Text = "Последний процесс: Результат  'Загрузка данных измерений из файла' (Контрольные точки)'";
                 if (kGeo > 0 && kLineDop > 0)
                 {
                     mySub.GeoLineDraw(e, kLineDop, mySub.sGeoDop1, mySub.xGeoDop1, mySub.yGeoDop1, mySub.sGeoDop2, mySub.xGeoDop2, mySub.yGeoDop2, kGeo, mySub.nameGeo, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
@@ -1040,13 +1035,13 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 12)
             {
-                label4.Text = "Last process: Result of 'Measurement of DTM points file input'";
+                label4.Text = "Последний процесс: Результат 'Ввод данных измерений DTM из файла'";
                 if (kTaheo > 0)
                     DllClass1.PointsDraw(e, mySub.fsymbPnt, 0, kTaheo, mySub.nameTah, mySub.xTah, mySub.yTah, mySub.zTah, mySub.xTahInscr, mySub.yTahInscr, mySub.iHorVerTah, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nTah1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.numCol, mySub.brColor, mySub.pnColor);
             }
             if (nProblem == 21 || nProblem == 25)
             {
-                label4.Text = "Verification of Aerotriangulation processes";
+                label4.Text = "Верификация процессов аэротриангуляции";
                 ik = iHeight - 30;
                 if (kBlock > 0)
                 {
@@ -1063,7 +1058,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     graphics.DrawRectangle(new Pen(Color.Brown), 130, ik, 6, 6);
                     graphics.FillRectangle((Brush)new SolidBrush(Color.Brown), 132, ik + 3, 2, 2);
-                    graphics.DrawString(" - Aerial Photography Center", new Font("Bold", (float)ih), (Brush)new SolidBrush(Color.Brown), 133f, (float)(ik - ih / 2));
+                    graphics.DrawString(" - Центр аэрофотосъемки", new Font("Bold", (float)ih), (Brush)new SolidBrush(Color.Brown), 133f, (float)(ik - ih / 2));
                 }
                 if (kTar > 0)
                 {
@@ -1093,14 +1088,14 @@ namespace IIT_Dimlom_Geo1
             {
                 sTmp = "Аэротриангуляция-последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Verification of Control points' Archive";
+                sTmp = "Проверка архива контрольных точек";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 24)
             {
                 sTmp = "Аэротриангуляция-последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Verification of DTM points' Archive";
+                sTmp = "Проверка архива точек DTM";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 25)
@@ -1110,7 +1105,7 @@ namespace IIT_Dimlom_Geo1
                 label4.Text = "Управление процессами аэротриангуляции";
                 sTmp = "Аэротриангуляция-последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Control of Aerotriangulation's processes";
+                sTmp = "Управление процессами аэротриангуляции";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 31 || nProblem == 32)

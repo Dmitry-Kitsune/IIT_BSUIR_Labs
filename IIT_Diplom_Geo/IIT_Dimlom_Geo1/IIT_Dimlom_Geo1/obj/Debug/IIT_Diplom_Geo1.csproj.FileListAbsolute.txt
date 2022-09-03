@@ -15,3 +15,8 @@ C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Di
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Diplom_Geo1.csproj.GenerateResource.cache
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Diplom_Geo1.csproj.CoreCompileInputs.cache
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.PointsList.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.Cadasral.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.Doubtful.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.MyCadastre.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.LinesForm.resources
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Diplom_Geo1.SelectDrive.resources
