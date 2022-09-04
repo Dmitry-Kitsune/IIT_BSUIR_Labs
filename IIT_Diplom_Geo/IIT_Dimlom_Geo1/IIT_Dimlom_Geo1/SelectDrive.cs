@@ -21,12 +21,18 @@ namespace IIT_Diplom_Geo1
         private int kDrive;
         private string tmpStr = "";
         private string tmpSymb = "";
-        private string comDirect = "BrCadastre\\";
-        private string symbDirect = "BrSymbol\\";
+        private string comDirect = "Diplom_Geo\\";
+        private string symbDirect = "Diplom_Geo\\BrSymbol\\";
+        //string dirKey = "Diplom_Geo\\";
         private MyGeodesy gen = new MyGeodesy();
 
 
-
+        public SelectDrive()
+        {
+            this.InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.FormLoad();
+        }
         private void FormLoad()
         {
             this.gen.FilePath();
@@ -81,7 +87,7 @@ namespace IIT_Diplom_Geo1
             for (int index = 1; index <= this.kDrive; ++index)
             {
                 this.tmpSymb = this.sDrive[index] + this.symbDirect;
-                this.fileSymbol = this.tmpSymb + "brDrive.drv";
+                this.fileSymbol = this.tmpSymb + "brdrive.drv";
                 if (Directory.Exists(this.tmpSymb))
                 {
                     try
@@ -133,11 +139,17 @@ namespace IIT_Diplom_Geo1
                     output.Close();
                 }
             }
-            Form.ActiveForm.Close();
+            SelectDrive.ActiveForm.Hide();
+
         }
 
         private void Cancel_Click(object sender, EventArgs e) => Form.ActiveForm.Close();
-
+        //private void Cancel_Click(object sender, EventArgs e)
+        //{
+        //    if (File.Exists(this.gen.fileAdd))
+        //        File.Delete(this.gen.fileAdd);
+        //    Form.ActiveForm.Close();
+        //}
 
     }
 }

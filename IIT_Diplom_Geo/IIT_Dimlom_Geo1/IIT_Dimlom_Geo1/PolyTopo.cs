@@ -182,13 +182,13 @@ namespace IIT_Dimlom_Geo1
 
         private void button4_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button for Rebuilding of Polygonal Topology after corection of Linear Topology";
 
-        private void button5_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click Button. Down left button of mouse and move mouse. After selecting area release button. Click right button for original";
+        private void button5_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
 
-        private void button6_MouseHover(object sender, EventArgs e) => this.label11.Text = "After clicking this button down and release left button of mouse near the selection point. Click right button for original";
+        private void button6_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button7_MouseHover(object sender, EventArgs e) => this.label11.Text = "After clicking this button down and release left button of mouse near the selection point.Click right button for original";
+        private void button7_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button8_MouseHover(object sender, EventArgs e) => this.label11.Text = "After clicking this button down left button of mouse and move mouse along the screen. Click right button for original";
+        private void button8_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
         private void button14_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button. By left button of mouse choose parcel";
 

@@ -170,7 +170,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num = (int)new ProjectMenu().ShowDialog((IWin32Window)this);
+                int num = (int)new SelectDrive().ShowDialog((IWin32Window)this);
                 //int num = (int)new ChangeDrive().ShowDialog((IWin32Window)this);
                 nProcess = 910;
                 mySub.FilePath();
@@ -701,7 +701,7 @@ namespace IIT_Dimlom_Geo1
                         binaryReader.Close();
                         input.Close();
                         mySub.FilePath();
-                        label2.Text = sPart[1] + "\\+" + mySub.curProject;
+                        label2.Text = sPart[1] + "\\+" + this.mySub.curProject;
                         mySub.FilesRemove();
                         FormLoad();
                         int num5 = (int)MessageBox.Show("Используйте 'Файловы ввод точек'", "Геодезия", 
@@ -813,7 +813,7 @@ namespace IIT_Dimlom_Geo1
             string fsymbPoly1 = mySub.fsymbPoly;
             string fitemPoly1 = mySub.fitemPoly;
             string fstoreCam1 = mySub.fstoreCam;
-            int num1 = (int)new SelectProj().ShowDialog((IWin32Window)this);
+            int num1 = (int)new SelectDrive().ShowDialog((IWin32Window)this);
             mySub.FilePath();
             string fsymbPnt2 = mySub.fsymbPnt;
             string fsymbLine2 = mySub.fsymbLine;

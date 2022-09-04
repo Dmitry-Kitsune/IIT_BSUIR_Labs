@@ -147,7 +147,7 @@ namespace IIT_Dimlom_Geo1
             FormLoad();
         }
 
-        private void button1_MouseHover(object sender, EventArgs e) => label3.Text = "Close Dialog";
+        private void button1_MouseHover(object sender, EventArgs e) => label3.Text = "Закрыть окно";
 
         private void button1_MouseLeave(object sender, EventArgs e) => label3.Text = "";
 

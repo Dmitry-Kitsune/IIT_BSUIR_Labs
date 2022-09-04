@@ -168,31 +168,31 @@ namespace DiplomGeoDLL
 
         // Доработать методы
         public static void FormLineStyle(
-     int nColor,
-     int iStyle,
-     int iWid,
-     int kr,
-     double[] xr,
-     double[] yr,
-     double[] x,
-     double[] y,
-     double scaleWin,
-     double xBegX,
-     double yBegY,
-     int xBegWin,
-     int yBegWin,
-     ref int kLinePart,
-     double[] xPart1,
-     double[] yPart1,
-     double[] xPart2,
-     double[] yPart2,
-     int[] iLineWid,
-     int[] nPenPart,
-     ref int kPntPart,
-     double[] xPntPart,
-     double[] yPntPart,
-     int[] nBruPnt,
-     double scaleToGeo)
+         int nColor,
+         int iStyle,
+         int iWid,
+         int kr,
+         double[] xr,
+         double[] yr,
+         double[] x,
+         double[] y,
+         double scaleWin,
+         double xBegX,
+         double yBegY,
+         int xBegWin,
+         int yBegWin,
+         ref int kLinePart,
+         double[] xPart1,
+         double[] yPart1,
+         double[] xPart2,
+         double[] yPart2,
+         int[] iLineWid,
+         int[] nPenPart,
+         ref int kPntPart,
+         double[] xPntPart,
+         double[] yPntPart,
+         int[] nBruPnt,
+         double scaleToGeo)
         {
             double num1 = 3.1415926;
             double num2;
@@ -40371,6 +40371,260 @@ namespace DiplomGeoDLL
             }
             binaryReader.Close();
             input.Close();
+        }
+        public static void LineOpenMerge(
+     double tol,
+     int kLin1,
+     ref int[] k1,
+     ref int[] k2,
+     ref double[] x1,
+     ref double[] y1,
+     out int kLin2,
+     ref int[] kd1,
+     ref int[] kd2,
+     ref int[] kdd,
+     ref double[] x2,
+     ref double[] y2,
+     ref int[] ni,
+     ref double[] xp,
+     ref double[] yp)
+        {
+            kLin2 = 0;
+            int num1;
+            int num2 = num1 = 0;
+            int index1;
+            int num3 = index1 = 0;
+            double num4;
+            double num5 = num4 = 0.0;
+            if (tol < 0.003)
+                tol = 0.003;
+            int kArray1 = 999999;
+            DllClass1.intArray(k1, ref kArray1);
+            DllClass1.intArray(k2, ref kArray1);
+            DllClass1.intArray(kd1, ref kArray1);
+            DllClass1.intArray(kd2, ref kArray1);
+            DllClass1.intArray(kdd, ref kArray1);
+            if (kLin1 > kArray1)
+            {
+                int num6 = (int)MessageBox.Show("Index array LineOpenMerge");
+            }
+            else
+            {
+                int num7 = k2[kLin1];
+                int kArray2 = 999999;
+                DllClass1.intArray(ni, ref kArray2);
+                DllClass1.doubleArray(x1, ref kArray2);
+                DllClass1.doubleArray(y1, ref kArray2);
+                DllClass1.doubleArray(x2, ref kArray2);
+                DllClass1.doubleArray(y2, ref kArray2);
+                DllClass1.doubleArray(xp, ref kArray2);
+                DllClass1.doubleArray(yp, ref kArray2);
+                if (num7 > kArray2)
+                {
+                    int num8 = (int)MessageBox.Show("Index array LineOpenMerge");
+                }
+                else
+                {
+                    num3 = 0;
+                    for (int index2 = 1; index2 <= kLin1; ++index2)
+                    {
+                        int index3 = k1[index2];
+                        int index4 = k2[index2];
+                        int index5 = index1 + 1;
+                        xp[index5] = x1[index3];
+                        yp[index5] = y1[index3];
+                        index1 = index5 + 1;
+                        xp[index1] = x1[index4];
+                        yp[index1] = y1[index4];
+                    }
+                    if (index1 == 0)
+                        return;
+                    for (int index6 = 1; index6 < index1; ++index6)
+                    {
+                        int num9 = 0;
+                        for (int index7 = index6 + 1; index7 <= index1; ++index7)
+                        {
+                            if (xp[index7] != 0.0 || yp[index7] != 0.0)
+                            {
+                                double num10 = xp[index6] - xp[index7];
+                                double num11 = yp[index6] - yp[index7];
+                                if (Math.Sqrt(num10 * num10 + num11 * num11) < tol)
+                                {
+                                    ++num9;
+                                    xp[index7] = 0.0;
+                                    yp[index7] = 0.0;
+                                }
+                            }
+                        }
+                        if (num9 > 0)
+                        {
+                            xp[index6] = 0.0;
+                            yp[index6] = 0.0;
+                        }
+                    }
+                    int index8 = 0;
+                    for (int index9 = 1; index9 <= index1; ++index9)
+                    {
+                        if (xp[index9] != 0.0 || yp[index9] != 0.0)
+                        {
+                            ++index8;
+                            xp[index8] = xp[index9];
+                            yp[index8] = yp[index9];
+                        }
+                    }
+                    int num12 = index8;
+                    int index10 = 0;
+                    int index11 = 0;
+                    for (int index12 = 1; index12 < num12; ++index12)
+                    {
+                        int num13 = 0;
+                        if (index10 > 0)
+                        {
+                            double num14 = x2[index10] - xp[index12];
+                            double num15 = y2[index10] - yp[index12];
+                            if (Math.Sqrt(num14 * num14 + num15 * num15) < tol)
+                                ++num13;
+                        }
+                        if (num13 <= 0)
+                        {
+                            int num16 = 0;
+                            for (int index13 = 1; index13 <= kLin1; ++index13)
+                            {
+                                int num17 = 0;
+                                for (int index14 = 1; index14 <= kLin1; ++index14)
+                                {
+                                    int num18 = 0;
+                                    if (index11 > 0)
+                                    {
+                                        for (int index15 = 1; index15 <= index11; ++index15)
+                                        {
+                                            if (ni[index15] == index14)
+                                            {
+                                                ++num18;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (num18 <= 0)
+                                    {
+                                        int index16 = k1[index14];
+                                        int index17 = k2[index14];
+                                        int num19 = 0;
+                                        int num20 = 0;
+                                        if (num16 > 0)
+                                        {
+                                            double num21 = x1[index16] - x2[index10];
+                                            double num22 = y1[index16] - y2[index10];
+                                            if (Math.Sqrt(num21 * num21 + num22 * num22) < tol)
+                                                ++num19;
+                                        }
+                                        if (num16 == 0)
+                                        {
+                                            double num23 = x1[index16] - xp[index12];
+                                            double num24 = y1[index16] - yp[index12];
+                                            if (Math.Sqrt(num23 * num23 + num24 * num24) < tol)
+                                                ++num20;
+                                        }
+                                        if (num19 > 0)
+                                        {
+                                            ++num17;
+                                            ++index11;
+                                            ni[index11] = index14;
+                                            for (int index18 = index16 + 1; index18 <= index17; ++index18)
+                                            {
+                                                ++num16;
+                                                ++index10;
+                                                x2[index10] = x1[index18];
+                                                y2[index10] = y1[index18];
+                                            }
+                                        }
+                                        else if (num20 > 0)
+                                        {
+                                            ++num17;
+                                            ++index11;
+                                            ni[index11] = index14;
+                                            for (int index19 = index16; index19 <= index17; ++index19)
+                                            {
+                                                ++num16;
+                                                ++index10;
+                                                x2[index10] = x1[index19];
+                                                y2[index10] = y1[index19];
+                                            }
+                                        }
+                                        else
+                                        {
+                                            int num25 = 0;
+                                            int num26 = 0;
+                                            if (num16 > 0)
+                                            {
+                                                double num27 = x1[index17] - x2[index10];
+                                                double num28 = y1[index17] - y2[index10];
+                                                if (Math.Sqrt(num27 * num27 + num28 * num28) < tol)
+                                                    ++num25;
+                                            }
+                                            if (num16 == 0)
+                                            {
+                                                double num29 = x1[index17] - xp[index12];
+                                                double num30 = y1[index17] - yp[index12];
+                                                if (Math.Sqrt(num29 * num29 + num30 * num30) < tol)
+                                                    ++num26;
+                                            }
+                                            if (num25 > 0)
+                                            {
+                                                ++num17;
+                                                ++index11;
+                                                ni[index11] = index14;
+                                                int index20 = index17;
+                                                for (int index21 = index16; index21 < index17; ++index21)
+                                                {
+                                                    ++num16;
+                                                    ++index10;
+                                                    --index20;
+                                                    x2[index10] = x1[index20];
+                                                    y2[index10] = y1[index20];
+                                                }
+                                            }
+                                            else if (num26 > 0)
+                                            {
+                                                ++num17;
+                                                ++index11;
+                                                ni[index11] = index14;
+                                                int index22 = index17 + 1;
+                                                for (int index23 = index16; index23 <= index17; ++index23)
+                                                {
+                                                    ++num16;
+                                                    ++index10;
+                                                    --index22;
+                                                    x2[index10] = x1[index22];
+                                                    y2[index10] = y1[index22];
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                if (num17 == 0)
+                                    break;
+                            }
+                            if (num16 > 1)
+                            {
+                                ++kLin2;
+                                kdd[kLin2] = num16;
+                            }
+                        }
+                    }
+                    if (kLin2 == 0)
+                        return;
+                    kd1[1] = 1;
+                    kd2[1] = kdd[1];
+                    if (kLin2 <= 1)
+                        return;
+                    for (int index24 = 2; index24 <= kLin2; ++index24)
+                    {
+                        kd1[index24] = kd2[index24 - 1] + 1;
+                        kd2[index24] = kd2[index24 - 1] + kdd[index24];
+                    }
+                }
+            }
         }
 
 

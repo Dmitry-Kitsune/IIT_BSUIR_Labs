@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using IIT_Dimlom_Geo1;
 //using Microsoft.Graph;
 
 namespace IIT_Diplom_Geo1
@@ -17,7 +18,8 @@ namespace IIT_Diplom_Geo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GeoDemo());
+            Application.Run(new MainGeo());
+            //Application.Run(new GeoDemo());
         }
     }
 

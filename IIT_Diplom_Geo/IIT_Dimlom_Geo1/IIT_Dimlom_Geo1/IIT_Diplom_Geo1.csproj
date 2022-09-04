@@ -206,6 +206,18 @@
     <Compile Include="Cadasral.Designer.cs">
       <DependentUpon>Cadasral.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadContours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadContours.Designer.cs">
+      <DependentUpon>CadContours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadInterval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadInterval.Designer.cs">
+      <DependentUpon>CadInterval.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlPoints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,17 +230,47 @@
     <Compile Include="CreateNewProj.Designer.cs">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignLine.Designer.cs">
+      <DependentUpon>DesignLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doubtful.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Doubtful.Designer.cs">
       <DependentUpon>Doubtful.cs</DependentUpon>
     </Compile>
+    <Compile Include="FieldProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FieldProject.Designer.cs">
+      <DependentUpon>FieldProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinalCorrect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinalCorrect.Designer.cs">
+      <DependentUpon>FinalCorrect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinalResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinalResult.Designer.cs">
+      <DependentUpon>FinalResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeoCalc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeoCalc.Designer.cs">
       <DependentUpon>GeoCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LegalArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LegalArea.Designer.cs">
+      <DependentUpon>LegalArea.cs</DependentUpon>
     </Compile>
     <Compile Include="LinesForm.cs">
       <SubType>Form</SubType>
@@ -248,11 +290,11 @@
     <Compile Include="ListLineSign.Designer.cs">
       <DependentUpon>ListLineSign.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainGeo.cs">
+    <Compile Include="ListPolyItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainGeo.Designer.cs">
-      <DependentUpon>MainGeo.cs</DependentUpon>
+    <Compile Include="ListPolyItems.Designer.cs">
+      <DependentUpon>ListPolyItems.cs</DependentUpon>
     </Compile>
     <Compile Include="ListPntSign.cs">
       <SubType>Form</SubType>
@@ -265,6 +307,12 @@
     </Compile>
     <Compile Include="ListPolySign.Designer.cs">
       <DependentUpon>ListPolySign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainGeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainGeo.Designer.cs">
+      <DependentUpon>MainGeo.cs</DependentUpon>
     </Compile>
     <Compile Include="MapScale.cs">
       <SubType>Form</SubType>
@@ -290,6 +338,18 @@
     </Compile>
     <Compile Include="GeoDemo.Designer.cs">
       <DependentUpon>GeoDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NodeList.Designer.cs">
+      <DependentUpon>NodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParcelAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParcelAction.Designer.cs">
+      <DependentUpon>ParcelAction.cs</DependentUpon>
     </Compile>
     <Compile Include="PointSign.cs">
       <SubType>Form</SubType>
@@ -347,6 +407,9 @@
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DesignLine.resx">
+      <DependentUpon>DesignLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doubtful.resx">
       <DependentUpon>Doubtful.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,8 +421,14 @@
       <DependentUpon>DriveProjectMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinalCorrect.resx">
+      <DependentUpon>FinalCorrect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeoDemo.resx">
       <DependentUpon>GeoDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LegalArea.resx">
+      <DependentUpon>LegalArea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LinesForm.resx">
       <DependentUpon>LinesForm.cs</DependentUpon>
@@ -375,6 +444,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCadastre.resx">
       <DependentUpon>MyCadastre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeList.resx">
+      <DependentUpon>NodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParcelAction.resx">
+      <DependentUpon>ParcelAction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PointsList.resx">
       <DependentUpon>PointsList.cs</DependentUpon>

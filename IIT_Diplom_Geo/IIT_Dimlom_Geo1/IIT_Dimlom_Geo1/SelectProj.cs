@@ -22,73 +22,159 @@ namespace IIT_Diplom_Geo1
         private string nameProject = "";
         private string nameDirectory = "";
         private int nProcess = 0;
+
         
+        private string curDir = "";
+        private string[] nameFiles = new string[100];
+        private string nameProj = "";
+        private string curProj = "";
+        private int nProject;
+        
+        private int k;
+
+        //public SelectProj()
+        //{
+        //    InitializeComponent();
+        //    CheckSelect();
+
+        //}
+
+        //// Должен быть в FormProj
+        //private void CheckSelect()
+        //{
+        //    // Восстановление переменных
+        //    mySel.FilePath();
+        //    listBox1.Items.Clear();
+        //    // Заполнение окна ListBox именами проектов
+        //    if (File.Exists(mySel.fileAllProj))
+        //    {
+        //        FileStream fb = new FileStream(mySel.fileAllProj, FileMode.Open, FileAccess.Read);
+        //        BinaryReader fbb = new BinaryReader(fb);
+        //        try
+        //        {
+        //            while ((sTmp = fbb.ReadString()) != null)
+        //            {
+        //                nameProject = fbb.ReadString();
+        //                nameDirectory = fbb.ReadString();
+        //                listBox1.Items.Add(nameProject);
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            Console.WriteLine($"SelectProj [DEBUG] Не удалось выполнить операцию чтения....sTmp= {sTmp}");
+        //        }
+        //        finally
+        //        {
+        //            fb.Close();
+        //            fbb.Close();
+        //            if (File.Exists(mySel.fileProcess))
+        //            {
+        //                FileStream fe = new FileStream(mySel.fileProcess, FileMode.Open, FileAccess.Read);
+        //                BinaryReader fee = new BinaryReader(fe);
+        //                try
+        //                {
+        //                    nProcess = fee.ReadInt32(); // Код процесса
+        //                }
+        //                catch (Exception)
+        //                {
+        //                    Console.WriteLine($"Не удалось выполнить операцию чтения....SelectProj = {mySel.fileProcess}");
+        //                }
+        //                finally
+        //                {
+        //                    fe.Close();
+        //                    fee.Close();
+        //                    //Проверка текущего проекта
+        //                    //DllClass1.CheckOpenProj();
+        //                    //mySel.CheckOpenProj();
+        //                    DllClass1.CheckOpenProj(mySel.fileProj, out mySel.curProject, out mySel.curDirectory);
+        //                    //кнопка Удалить не активна
+        //                    if (nProcess == 1)
+        //                        btDelete.Enabled = false;
+        //                    // Кнопка подтвердить не Активна
+        //                    if (nProcess == 2)
+        //                        Confirm.Enabled = false;
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //}
+
         public SelectProj()
         {
-            InitializeComponent();
-            CheckSelect();
-        }
-
-        // Должен быть в FormProj
-        private void CheckSelect()
-        {
-            // Восстановление переменных
-            mySel.FilePath();
-            listBox1.Items.Clear();
-            // Заполнение окна ListBox именами проектов
-            if (File.Exists(mySel.fileAllProj))
+            this.InitializeComponent();
+            this.mySel.FilePath();
+            if (!File.Exists(this.mySel.tmpStr))
             {
-                FileStream fb = new FileStream(mySel.fileAllProj, FileMode.Open, FileAccess.Read);
-                BinaryReader fbb = new BinaryReader(fb);
+                int num = (int)MessageBox.Show("Drive and Projects weren't defined", "Project selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Form.ActiveForm.Close();
+            }
+            else
+            {
+                if (File.Exists(this.mySel.fileProj))
+                {
+                    FileStream input = new FileStream(this.mySel.fileProj, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader((Stream)input);
+                    this.sTmp = binaryReader.ReadString();
+                    this.mySel.curProject = binaryReader.ReadString();
+                    input.Close();
+                    binaryReader.Close();
+                    this.nameProj = this.sTmp;
+                    this.mySel.curDirect = "BrProj" + this.sTmp;
+                }
+                this.k = 0;
+                FileStream input1 = new FileStream(this.mySel.fileAllProj, FileMode.Open, FileAccess.Read);
+                BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
                 try
                 {
-                    while ((sTmp = fbb.ReadString()) != null)
+                    while ((this.sTmp = binaryReader1.ReadString()) != null)
                     {
-                        nameProject = fbb.ReadString();
-                        nameDirectory = fbb.ReadString();
-                        listBox1.Items.Add(nameProject);
+                        ++this.k;
+                        this.nProject = Convert.ToInt32(this.sTmp);
+                        this.mySel.curProject = binaryReader1.ReadString();
+                        this.mySel.curDirect = binaryReader1.ReadString();
+                        this.listBox1.Items.Add((object)this.mySel.curProject);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"SelectProj [DEBUG] Не удалось выполнить операцию чтения....sTmp= {sTmp}");
+                    Console.WriteLine("The Read operation failed as expected.");
                 }
                 finally
                 {
-                    fb.Close();
-                    fbb.Close();
-                    if (File.Exists(mySel.fileProcess))
+                    input1.Close();
+                    binaryReader1.Close();
+                }
+                if (File.Exists(this.mySel.fileProcess))
+                {
+                    FileStream input2 = new FileStream(this.mySel.fileProcess, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
+                    try
                     {
-                        FileStream fe = new FileStream(mySel.fileProcess, FileMode.Open, FileAccess.Read);
-                        BinaryReader fee = new BinaryReader(fe);
-                        try
-                        {
-                            nProcess = fee.ReadInt32(); // Код процесса
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine($"Не удалось выполнить операцию чтения....SelectProj = {mySel.fileProcess}");
-                        }
-                        finally
-                        {
-                            fe.Close();
-                            fee.Close();
-                            //Проверка текущего проекта
-                            //DllClass1.CheckOpenProj();
-                            //mySel.CheckOpenProj();
-                            DllClass1.CheckOpenProj(mySel.fileProj, out mySel.curProject, out mySel.curDirectory);
-                            //кнопка Удалить не активна
-                            if (nProcess == 1)
-                                btDelete.Enabled = false;
-                            // Кнопка подтвердить не Активна
-                            if (nProcess == 2)
-                                Confirm.Enabled = false;
-                        }
-
+                        this.nProcess = binaryReader2.ReadInt32();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("The Read operation failed as expected.");
+                    }
+                    finally
+                    {
+                        input2.Close();
+                        binaryReader2.Close();
                     }
                 }
+                if (this.nProcess == 20)
+                {
+                    this.btDelete.Enabled = false;
+                    this.btDelete.Text = "";
+                }
+                if (this.nProcess != 30)
+                    return;
+                this.btDelete.Enabled = false;
+                this.btDelete.Text = "";
             }
         }
+
 
         private void Confirm_Click(object sender, EventArgs e)
         {
@@ -115,6 +201,7 @@ namespace IIT_Diplom_Geo1
                         sTmp = faa.ReadString();
                         nameProject = faa.ReadString();
                         nameDirectory = faa.ReadString();
+                        
                     }
                 }
                 catch (Exception)
@@ -187,6 +274,7 @@ namespace IIT_Diplom_Geo1
                         sTmp = faa.ReadString();
                         nameProject = faa.ReadString();
                         nameDirectory = faa.ReadString();
+                        
                     }
                 }
                 catch (Exception)
@@ -231,7 +319,9 @@ namespace IIT_Diplom_Geo1
                         File.Delete(mySel.fileProj);
                 }
             }
-            CheckSelect();
+            //CheckSelect();
+            mySel.FilePath();
         }
+
     }
 }

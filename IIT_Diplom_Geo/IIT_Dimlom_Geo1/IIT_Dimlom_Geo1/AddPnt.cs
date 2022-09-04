@@ -226,7 +226,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.ShareString(myPnt.comPath, kPart, seps, out k, out sPart);
             DllClass1.SetColour(myPnt.brColor, myPnt.pnColor);
             myPnt.pathSymbol = sPart[1] + "\\BrSymbol\\";
-            myPnt.fsymbPnt = myPnt.pathSymbol + "brsymb.pnt";
+            myPnt.fsymbPnt = myPnt.pathSymbol + "\\brsymb.pnt";
             DllClass1.PointSymbLoad(myPnt.fsymbPnt, out kSymbPnt, 
                 myPnt.numRec, myPnt.numbUser, myPnt.heiSymb);
             myPnt.kSymbPnt = kSymbPnt;

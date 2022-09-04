@@ -794,7 +794,7 @@ namespace IIT_Dimlom_Geo1
                 button10.Name = "button10";
                 button10.Size = new Size(94, 23);
                 button10.TabIndex = 2;
-                button10.Text = "Close dialog";
+                button10.Text = "Закрыть окно";
                 button10.UseVisualStyleBackColor = false;
                 button10.Click += new EventHandler(Exit_Click);
                 label9.AutoSize = true;
