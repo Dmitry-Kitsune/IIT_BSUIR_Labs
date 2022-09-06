@@ -199,7 +199,7 @@ namespace IIT_Dimlom_Geo1
 
         private void button19_MouseHover(object sender, EventArgs e) => label3.Text = "Формирование линейных структур";
 
-        private void button20_MouseHover(object sender, EventArgs e) 
+        private void button20_MouseHover(object sender, EventArgs e)
             => label3.Text = "Создание линейных и полигональных топологий";
 
         private void button24_MouseHover(object sender, EventArgs e) => label3.Text = "Модель формирования и коррекции рельефа и горизонталей";
@@ -226,7 +226,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num = (int)new ProjectMenu().ShowDialog((IWin32Window)this);
+                int num = (int)new SelectDrive().ShowDialog((IWin32Window)this);
                 //int num = (int)new ChangeDrive().ShowDialog((IWin32Window)this);
                 nProcess = 910;
                 mySub.FilePath();
@@ -316,35 +316,35 @@ namespace IIT_Dimlom_Geo1
 
         public void LoadData()
         {
-            xmin = 9999999.9;
-            ymin = 9999999.9;
-            xmax = -9999999.9;
-            ymax = -9999999.9;
+            this.xmin = 9999999.9;
+            this.ymin = 9999999.9;
+            this.xmax = -9999999.9;
+            this.ymax = -9999999.9;
             Cursor.Current = Cursors.WaitCursor;
-            DllClass1.SetColour(mySub.brColor, mySub.pnColor);
-            DllClass1.PointSymbLoad(mySub.fsymbPnt, out kSymbPnt, mySub.numRec, mySub.numbUser, mySub.heiSymb);
-            mySub.kSymbPnt = kSymbPnt;
-            DllClass1.LineSymbolLoad(mySub.fsymbLine, out kSymbLine, out hSymbLine, mySub.sSymbLine, mySub.x1Line, mySub.y1Line, mySub.x2Line, mySub.y2Line, mySub.xDescr, mySub.yDescr, mySub.x1Dens, mySub.y1Dens, mySub.x1Sign, mySub.y1Sign, mySub.x2Sign, mySub.y2Sign, mySub.n1Sign, mySub.n2Sign, mySub.iStyle1, mySub.iStyle2, mySub.iWidth1, mySub.iWidth2, mySub.nColLine, mySub.nItem, mySub.itemLoc, mySub.nBaseSymb, mySub.sInscr, mySub.hInscr, mySub.iColInscr, mySub.iDensity);
-            mySub.PolySymbolLoad(mySub.fsymbPoly, out kPolySymb, out hSymbPoly);
+            DllClass1.SetColour(this.mySub.brColor, this.mySub.pnColor);
+            DllClass1.PointSymbLoad(this.mySub.fsymbPnt, out this.kSymbPnt, this.mySub.numRec, this.mySub.numbUser, this.mySub.heiSymb);
+            this.mySub.kSymbPnt = this.kSymbPnt;
+            DllClass1.LineSymbolLoad(this.mySub.fsymbLine, out this.kSymbLine, out this.hSymbLine, this.mySub.sSymbLine, this.mySub.x1Line, this.mySub.y1Line, this.mySub.x2Line, this.mySub.y2Line, this.mySub.xDescr, this.mySub.yDescr, this.mySub.x1Dens, this.mySub.y1Dens, this.mySub.x1Sign, this.mySub.y1Sign, this.mySub.x2Sign, this.mySub.y2Sign, this.mySub.n1Sign, this.mySub.n2Sign, this.mySub.iStyle1, this.mySub.iStyle2, this.mySub.iWidth1, this.mySub.iWidth2, this.mySub.nColLine, this.mySub.nItem, this.mySub.itemLoc, this.mySub.nBaseSymb, this.mySub.sInscr, this.mySub.hInscr, this.mySub.iColInscr, this.mySub.iDensity);
+            this.mySub.PolySymbolLoad(this.mySub.fsymbPoly, out this.kPolySymb, out this.hSymbPoly);
             Cursor.Current = Cursors.WaitCursor;
-            kInstall = 0;
-            if (File.Exists(mySub.fPolyItem))
+            this.kInstall = 0;
+            if (File.Exists(this.mySub.fPolyItem))
             {
-                FileStream input = new FileStream(mySub.fPolyItem, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(this.mySub.fPolyItem, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
-                    kInstall = binaryReader.ReadInt32();
-                    for (int index = 1; index <= kInstall; ++index)
+                    this.kInstall = binaryReader.ReadInt32();
+                    for (int index = 1; index <= this.kInstall; ++index)
                     {
-                        mySub.nCent[index] = binaryReader.ReadInt32();
-                        mySub.xLinParc[index] = binaryReader.ReadDouble();
-                        mySub.yLinParc[index] = binaryReader.ReadDouble();
+                        this.mySub.nCent[index] = binaryReader.ReadInt32();
+                        this.mySub.xLinParc[index] = binaryReader.ReadDouble();
+                        this.mySub.yLinParc[index] = binaryReader.ReadDouble();
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+                    Console.WriteLine("The Read operation failed as expected.");
                 }
                 finally
                 {
@@ -352,224 +352,194 @@ namespace IIT_Dimlom_Geo1
                     input.Close();
                 }
             }
-            mySub.PointLoad(fCurPnt, fCurHeig);
-            kPntPlus = mySub.kPntPlus;
-            kPntInput = mySub.kPntInput;
-            mySub.LoadNode();
-            kNode = mySub.kNodeTopo;
-            if (kPntPlus < 2)
+            this.mySub.PointLoad();
+            this.kPntPlus = this.mySub.kPntPlus;
+            this.kPntInput = this.mySub.kPntInput;
+            this.mySub.LoadNode();
+            this.kNode = this.mySub.kNodeTopo;
+            if (this.kPntPlus < 2)
                 return;
-            xmin = mySub.xmin;
-            ymin = mySub.ymin;
-            xmax = mySub.xmax;
-            ymax = mySub.ymax;
-            zmin = mySub.zmin;
-            zmax = mySub.zmax;
-            mySub.LoadPntSour();
-            kPntSource = mySub.kPntSource;
-            kPntFin = 0;
-            mySub.PointLoadFin();
-            kPntFin = mySub.kPntFin;
+            this.xmin = this.mySub.xmin;
+            this.ymin = this.mySub.ymin;
+            this.xmax = this.mySub.xmax;
+            this.ymax = this.mySub.ymax;
+            this.zmin = this.mySub.zmin;
+            this.zmax = this.mySub.zmax;
+            this.mySub.LoadPntSour();
+            this.kPntSource = this.mySub.kPntSource;
+            this.kPntFin = 0;
+            this.mySub.PointLoadFin();
+            this.kPntFin = this.mySub.kPntFin;
             Cursor.Current = Cursors.WaitCursor;
-            if (File.Exists(mySub.fpointInscr))
-                File.Delete(mySub.fpointInscr);
-            FileStream output1 = new FileStream(mySub.fpointInscr, FileMode.CreateNew);
+            if (File.Exists(this.mySub.fpointInscr))
+                File.Delete(this.mySub.fpointInscr);
+            FileStream output1 = new FileStream(this.mySub.fpointInscr, FileMode.CreateNew);
             BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
-            binaryWriter1.Write(kPntPlus);
-            for (int index = 0; index <= kPntPlus; ++index)
+            binaryWriter1.Write(this.kPntPlus);
+            for (int index = 0; index <= this.kPntPlus; ++index)
             {
-                mySub.xPntInscr[index] = mySub.xPnt[index];
-                mySub.yPntInscr[index] = mySub.yPnt[index];
-                mySub.iHorVerPnt[index] = 0;
-                binaryWriter1.Write(mySub.xPnt[index]);
-                binaryWriter1.Write(mySub.yPnt[index]);
-                binaryWriter1.Write(mySub.iHorVerPnt[index]);
+                this.mySub.xPntInscr[index] = this.mySub.xPnt[index];
+                this.mySub.yPntInscr[index] = this.mySub.yPnt[index];
+                this.mySub.iHorVerPnt[index] = 0;
+                binaryWriter1.Write(this.mySub.xPnt[index]);
+                binaryWriter1.Write(this.mySub.yPnt[index]);
+                binaryWriter1.Write(this.mySub.iHorVerPnt[index]);
             }
             binaryWriter1.Close();
             output1.Close();
-            mySub.LoadKeepInscr(2);
+            this.mySub.LoadKeepInscr(2);
             Cursor.Current = Cursors.WaitCursor;
-            if (kPntFin > 0)
-                mySub.InscriptionFin(1);
-            kPntProj = -1;
-            mySub.PointProjLoad();
-            kPntProj = mySub.kPntProj;
-            kProjInput = mySub.kProjInput;
-            kLineProj = 0;
-            mySub.LineProjLoad();
-            kLineProj = mySub.kLineProj;
+            if (this.kPntFin > 0)
+                this.mySub.InscriptionFin(1);
+            this.kPntProj = -1;
+            this.mySub.PointProjLoad();
+            this.kPntProj = this.mySub.kPntProj;
+            this.kProjInput = this.mySub.kProjInput;
+            this.kLineProj = 0;
+            this.mySub.LineProjLoad();
+            this.kLineProj = this.mySub.kLineProj;
             Cursor.Current = Cursors.WaitCursor;
-            kItemCoord = 0;
-            mySub.ItemLoadKeep(1);
-            kItemCoord = mySub.kItemCoord;
+            this.kItemCoord = 0;
+            this.mySub.ItemLoadKeep(1);
+            this.kItemCoord = this.mySub.kItemCoord;
             Cursor.Current = Cursors.WaitCursor;
-            kPolyFinal = 0;
-            mySub.PolyLoadFin();
-            kPolyFinal = mySub.kPolyFinal;
-            iPolyFinal = kPolyFinal;
+            this.kPolyFinal = 0;
+            this.mySub.PolyLoadFin();
+            this.kPolyFinal = this.mySub.kPolyFinal;
+            this.iPolyFinal = this.kPolyFinal;
             Cursor.Current = Cursors.WaitCursor;
-            kLineFinal = 0;
-            mySub.LineLoadFin();
-            kLineFinal = mySub.kLineFinal;
-            iLineFinal = kLineFinal;
+            this.kLineFinal = 0;
+            this.mySub.LineLoadFin();
+            this.kLineFinal = this.mySub.kLineFinal;
+            this.iLineFinal = this.kLineFinal;
             Cursor.Current = Cursors.WaitCursor;
-            kLineInput = 0;
-            mySub.LineLoad(fCurLine);
-            kLineInput = mySub.kLineInput;
-            if (kLineInput == 0)
+            this.kLineInput = 0;
+            this.mySub.LineLoad();
+            this.kLineInput = this.mySub.kLineInput;
+            if (this.kLineInput == 0)
             {
-                kLineTopo = 0;
-                if (File.Exists(mySub.flineTopo))
-                    File.Delete(mySub.flineTopo);
-                kLineFinal = 0;
-                iLineFinal = 0;
-                if (File.Exists(mySub.flineFinal))
-                    File.Delete(mySub.flineFinal);
+                this.kLineTopo = 0;
+                if (File.Exists(this.mySub.flineTopo))
+                    File.Delete(this.mySub.flineTopo);
+                this.kLineFinal = 0;
+                this.iLineFinal = 0;
+                if (File.Exists(this.mySub.flineFinal))
+                    File.Delete(this.mySub.flineFinal);
             }
             Cursor.Current = Cursors.WaitCursor;
-            mySub.KeepLoadAction(1);
-            nAction = mySub.nAction;
-            if (nAction == 0)
+            this.mySub.KeepLoadAction(1);
+            this.nAction = this.mySub.nAction;
+            if (this.nAction == 0)
             {
-                mySub.kNodeTopo = kNode;
-                mySub.KeepActionZero();
+                this.mySub.kNodeTopo = this.kNode;
+                this.mySub.KeepActionZero();
             }
-            if (kLineInput > 0)
+            if (this.kLineInput > 0)
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(mySub.xLin, ref kArray);
-                DllClass1.doubleArray(mySub.yLin, ref kArray);
-                int num = mySub.k2[kLineInput];
+                DllClass1.doubleArray(this.mySub.xLin, ref kArray);
+                DllClass1.doubleArray(this.mySub.yLin, ref kArray);
+                int num = this.mySub.k2[this.kLineInput];
                 if (num < 2 || num > kArray)
                 {
-                    kLineInput = 0;
-                    if (File.Exists(mySub.fileLine))
-                        File.Delete(mySub.fileLine);
+                    this.kLineInput = 0;
+                    if (File.Exists(this.mySub.fileLine))
+                        File.Delete(this.mySub.fileLine);
                 }
             }
-            if (nAction > 0 && kPolyFinal == 0)
+            if (this.nAction > 0 && this.kPolyFinal == 0)
             {
-                mySub.NodeActLoad(nAction);
-                kNodeAct = mySub.kNodeAct;
-                mySub.TopoActLoad(nAction);
-                kLineAct = mySub.kLineAct;
-                mySub.PolyActLoad(nAction);
-                kPolyAct = mySub.kPolyAct;
-                mySub.PolyCancelLoad(nAction);
-                kPolyCancel = mySub.kPolyCancel;
-                mySub.LineCancelLoad(nAction);
-                kLineCancel = mySub.kLineCancel;
-                mySub.LineNewLoad(nAction);
-                kLineNew = mySub.kLineNew;
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad,
-                    mySub.sWidLine, mySub.dstLine, mySub.rRadLine, mySub.xRadLine, 
-                    mySub.yRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineAct, 
-                    mySub.radAct, mySub.kActLine1, mySub.kActLine2, mySub.xLineAct, mySub.yLineAct, 
-                    out kLineFinal, mySub.nCodeFin, mySub.nLongFin, mySub.sWidFin, mySub.distFin, 
-                    mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin,
-                    mySub.yFin, mySub.nWork1, mySub.xWork1, mySub.yWork1, tolerance);
-                DllClass1.PolyFinal(kPolyAct, mySub.nameAct, mySub.xAct, mySub.yAct, 
-                    mySub.aActCalc, mySub.aActLeg, mySub.kActPoly1, mySub.kActPoly2, 
-                    mySub.xPolyAct, mySub.yPolyAct, out kPolyFinal, mySub.namePolyFin, mySub.xLabFin, 
-                    mySub.yLabFin, mySub.arCalcFin, mySub.arLegFin, mySub.nSymbFin, mySub.kt1Fin,
-                    mySub.kt2Fin, mySub.xPolFin, mySub.yPolFin);
+                this.mySub.NodeActLoad(this.nAction);
+                this.kNodeAct = this.mySub.kNodeAct;
+                this.mySub.TopoActLoad(this.nAction);
+                this.kLineAct = this.mySub.kLineAct;
+                this.mySub.PolyActLoad(this.nAction);
+                this.kPolyAct = this.mySub.kPolyAct;
+                this.mySub.PolyCancelLoad(this.nAction);
+                this.kPolyCancel = this.mySub.kPolyCancel;
+                this.mySub.LineCancelLoad(this.nAction);
+                this.kLineCancel = this.mySub.kLineCancel;
+                this.mySub.LineNewLoad(this.nAction);
+                this.kLineNew = this.mySub.kLineNew;
+                DllClass1.LineFinal(this.kLineInput, this.mySub.nLineCode, this.mySub.nLongRad, this.mySub.sWidLine, this.mySub.dstLine, this.mySub.rRadLine, this.mySub.xRadLine, this.mySub.yRadLine, this.mySub.k1, this.mySub.k2, this.mySub.xLin, this.mySub.yLin, this.kLineAct, this.mySub.radAct, this.mySub.kActLine1, this.mySub.kActLine2, this.mySub.xLineAct, this.mySub.yLineAct, out this.kLineFinal, this.mySub.nCodeFin, this.mySub.nLongFin, this.mySub.sWidFin, this.mySub.distFin, this.mySub.rRadFin, this.mySub.xRadFin, this.mySub.yRadFin, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.nWork1, this.mySub.xWork1, this.mySub.yWork1, this.tolerance);
+                DllClass1.PolyFinal(this.kPolyAct, this.mySub.nameAct, this.mySub.xAct, this.mySub.yAct, this.mySub.aActCalc, this.mySub.aActLeg, this.mySub.kActPoly1, this.mySub.kActPoly2, this.mySub.xPolyAct, this.mySub.yPolyAct, out this.kPolyFinal, this.mySub.namePolyFin, this.mySub.xLabFin, this.mySub.yLabFin, this.mySub.arCalcFin, this.mySub.arLegFin, this.mySub.nSymbFin, this.mySub.kt1Fin, this.mySub.kt2Fin, this.mySub.xPolFin, this.mySub.yPolFin);
             }
-            kLineTopo = 0;
-            mySub.LineTopoLoad();
-            kLineTopo = mySub.kLineTopo;
-            DllClass1.SymbolTrans(kLineInput, mySub.nLineCode, mySub.rRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.nTopoCode, mySub.radLine, mySub.kl1, mySub.kl2, mySub.zLin, mySub.zPik, tolerance);
-            kPoly = 0;
-            mySub.PolygonLoad(ref mySub.kPolyInside);
-            kPoly = mySub.kPoly;
-            if (kPolyFinal == 0 && kPoly > 0)
+            this.kLineTopo = 0;
+            this.mySub.LineTopoLoad();
+            this.kLineTopo = this.mySub.kLineTopo;
+            DllClass1.SymbolTrans(this.kLineInput, this.mySub.nLineCode, this.mySub.rRadLine, this.mySub.k1, this.mySub.k2, this.mySub.xLin, this.mySub.yLin, this.kLineTopo, this.mySub.nTopoCode, this.mySub.radLine, this.mySub.kl1, this.mySub.kl2, this.mySub.zLin, this.mySub.zPik, this.tolerance);
+            this.kPoly = 0;
+            this.mySub.PolygonLoad(ref this.mySub.kPolyInside);
+            this.kPoly = this.mySub.kPoly;
+            if (this.kPolyFinal == 0 && this.kPoly > 0)
             {
-                kPolyFinal = kPoly;
-                for (int index = 1; index <= kPoly; ++index)
+                this.kPolyFinal = this.kPoly;
+                for (int index = 1; index <= this.kPoly; ++index)
                 {
-                    mySub.namePolyFin[index] = mySub.namePoly[index];
-                    mySub.xLabFin[index] = mySub.xLab[index];
-                    mySub.yLabFin[index] = mySub.yLab[index];
-                    mySub.nSymbFin[index] = mySub.nSymbPoly[index];
+                    this.mySub.namePolyFin[index] = this.mySub.namePoly[index];
+                    this.mySub.xLabFin[index] = this.mySub.xLab[index];
+                    this.mySub.yLabFin[index] = this.mySub.yLab[index];
+                    this.mySub.nSymbFin[index] = this.mySub.nSymbPoly[index];
                 }
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine,
-                    mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1,
-                    mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1,
-                    mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin,
-                    mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin,
-                    mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork,
-                    mySub.xWork, mySub.yWork, tolerance);
+                DllClass1.LineFinal(this.kLineInput, this.mySub.nLineCode, this.mySub.nLongRad, this.mySub.sWidLine, this.mySub.dstLine, this.mySub.rRadLine, this.mySub.xRadLine, this.mySub.yRadLine, this.mySub.k1, this.mySub.k2, this.mySub.xLin, this.mySub.yLin, this.kLineTopo, this.mySub.radLine, this.mySub.kl1, this.mySub.kl2, this.mySub.zLin, this.mySub.zPik, out this.kLineFinal, this.mySub.nCodeFin, this.mySub.nLongFin, this.mySub.sWidFin, this.mySub.distFin, this.mySub.rRadFin, this.mySub.xRadFin, this.mySub.yRadFin, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.nWork, this.mySub.xWork, this.mySub.yWork, this.tolerance);
             }
-            if (kLineFinal == 0 && kLineTopo > 0)
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine,
-                    mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1,
-                    mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1, 
-                    mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin, 
-                    mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin,
-                    mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork,
-                    mySub.xWork, mySub.yWork, tolerance);
-            if (kLineFinal == 0 && kLineTopo == 0)
+            if (this.kLineFinal == 0 && this.kLineTopo > 0)
+                DllClass1.LineFinal(this.kLineInput, this.mySub.nLineCode, this.mySub.nLongRad, this.mySub.sWidLine, this.mySub.dstLine, this.mySub.rRadLine, this.mySub.xRadLine, this.mySub.yRadLine, this.mySub.k1, this.mySub.k2, this.mySub.xLin, this.mySub.yLin, this.kLineTopo, this.mySub.radLine, this.mySub.kl1, this.mySub.kl2, this.mySub.zLin, this.mySub.zPik, out this.kLineFinal, this.mySub.nCodeFin, this.mySub.nLongFin, this.mySub.sWidFin, this.mySub.distFin, this.mySub.rRadFin, this.mySub.xRadFin, this.mySub.yRadFin, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.nWork, this.mySub.xWork, this.mySub.yWork, this.tolerance);
+            if (this.kLineFinal == 0 && this.kLineTopo == 0)
             {
-                kLineFinal = kLineInput;
-                for (int index1 = 1; index1 <= kLineInput; ++index1)
+                this.kLineFinal = this.kLineInput;
+                for (int index1 = 1; index1 <= this.kLineInput; ++index1)
                 {
-                    mySub.nCodeFin[index1] = mySub.nLineCode[index1];
-                    mySub.nLongFin[index1] = mySub.nLongRad[index1];
-                    mySub.sWidFin[index1] = mySub.sWidLine[index1];
-                    mySub.distFin[index1] = mySub.dstLine[index1];
-                    mySub.rRadFin[index1] = mySub.rRadLine[index1];
-                    mySub.xRadFin[index1] = mySub.xRadLine[index1];
-                    mySub.yRadFin[index1] = mySub.yRadLine[index1];
-                    mySub.k1Fin[index1] = mySub.k1[index1];
-                    mySub.k2Fin[index1] = mySub.k2[index1];
-                    int num1 = mySub.k1[index1];
-                    int num2 = mySub.k2[index1];
+                    this.mySub.nCodeFin[index1] = this.mySub.nLineCode[index1];
+                    this.mySub.nLongFin[index1] = this.mySub.nLongRad[index1];
+                    this.mySub.sWidFin[index1] = this.mySub.sWidLine[index1];
+                    this.mySub.distFin[index1] = this.mySub.dstLine[index1];
+                    this.mySub.rRadFin[index1] = this.mySub.rRadLine[index1];
+                    this.mySub.xRadFin[index1] = this.mySub.xRadLine[index1];
+                    this.mySub.yRadFin[index1] = this.mySub.yRadLine[index1];
+                    this.mySub.k1Fin[index1] = this.mySub.k1[index1];
+                    this.mySub.k2Fin[index1] = this.mySub.k2[index1];
+                    int num1 = this.mySub.k1[index1];
+                    int num2 = this.mySub.k2[index1];
                     for (int index2 = num1; index2 <= num2; ++index2)
                     {
-                        mySub.xFin[index2] = mySub.xLin[index2];
-                        mySub.yFin[index2] = mySub.yLin[index2];
+                        this.mySub.xFin[index2] = this.mySub.xLin[index2];
+                        this.mySub.yFin[index2] = this.mySub.yLin[index2];
                     }
                 }
-                mySub.ItemLoadKeep(1);
-                kItemCoord = mySub.kItemCoord;
+                this.mySub.ItemLoadKeep(1);
+                this.kItemCoord = this.mySub.kItemCoord;
             }
-            mySub.AddInscrLoad();
-            kAddInscript = mySub.kAddInscript;
-            xminCur = xmin;
-            yminCur = ymin;
-            xmaxCur = xmax;
-            ymaxCur = ymax;
-            DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, 
-                out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, 
-                out yBegWin, out xEndWin, out yEndWin, out iCond);
-            if (iCond < 0)
-                iGraphic = 1;
-            if (kSymbLine > 0)
+            this.mySub.AddInscrLoad();
+            this.kAddInscript = this.mySub.kAddInscript;
+            this.xminCur = this.xmin;
+            this.yminCur = this.ymin;
+            this.xmaxCur = this.xmax;
+            this.ymaxCur = this.ymax;
+            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            if (this.iCond < 0)
+                this.iGraphic = 1;
+            if (this.kSymbLine > 0)
             {
-                DllClass1.LineItemCoor(mySub.fitemLine, mySub.nColorItm, mySub.ixSqu, 
-                    mySub.iySqu, kLineFinal, mySub.rRadFin, mySub.k1Fin, mySub.k2Fin,
-                    mySub.xFin, mySub.yFin, mySub.nCodeFin, kSymbLine, mySub.nItem, 
-                    mySub.n1Sign, mySub.n2Sign, mySub.iDensity, out kItemCoord,
-                    mySub.numSign, mySub.numItem, mySub.xItem, mySub.yItem, 
-                    mySub.azItem, mySub.xAdd, mySub.yAdd, mySub.xDop, mySub.yDop,
-                    scaleToWin, xBegX, yBegY, xBegWin, yBegWin, scaleToGeo);
-                if (kItemCoord > 0)
+                DllClass1.LineItemCoor(this.mySub.fitemLine, this.mySub.nColorItm, this.mySub.ixSqu, this.mySub.iySqu, this.kLineFinal, this.mySub.rRadFin, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.nCodeFin, this.kSymbLine, this.mySub.nItem, this.mySub.n1Sign, this.mySub.n2Sign, this.mySub.iDensity, out this.kItemCoord, this.mySub.numSign, this.mySub.numItem, this.mySub.xItem, this.mySub.yItem, this.mySub.azItem, this.mySub.xAdd, this.mySub.yAdd, this.mySub.xDop, this.mySub.yDop, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
+                if (this.kItemCoord > 0)
                 {
-                    mySub.kItemCoord = kItemCoord;
-                    mySub.ItemLoadKeep(2);
+                    this.mySub.kItemCoord = this.kItemCoord;
+                    this.mySub.ItemLoadKeep(2);
                 }
             }
-            nProblem = 0;
-            if (File.Exists(mySub.fProblem) && File.Exists(mySub.fProblem))
+            this.nProblem = 0;
+            if (File.Exists(this.mySub.fProblem) && File.Exists(this.mySub.fProblem))
             {
-                FileStream input = new FileStream(mySub.fProblem, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(this.mySub.fProblem, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
-                    nProblem = binaryReader.ReadInt32();
+                    this.nProblem = binaryReader.ReadInt32();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+                    Console.WriteLine("The Read operation failed as expected.");
                 }
                 finally
                 {
@@ -577,119 +547,110 @@ namespace IIT_Dimlom_Geo1
                     input.Close();
                 }
             }
-            if (nProblem >= 30)
+            if (this.nProblem >= 30)
                 return;
-            nProblem = 40;
-            if (File.Exists(mySub.fProblem))
-                File.Delete(mySub.fProblem);
-            FileStream output2 = new FileStream(mySub.fProblem, FileMode.CreateNew);
+            this.nProblem = 40;
+            if (File.Exists(this.mySub.fProblem))
+                File.Delete(this.mySub.fProblem);
+            FileStream output2 = new FileStream(this.mySub.fProblem, FileMode.CreateNew);
             BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
-            binaryWriter2.Write(nProblem);
+            binaryWriter2.Write(this.nProblem);
             binaryWriter2.Close();
             output2.Close();
         }
-
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
+            Console.WriteLine($"panel7_Paint[DEBUG]: sender = {sender} PaintEventArgs = {e}");
             Graphics graphics = e.Graphics;
-            if (iGraphic > 0)
+            if (this.iGraphic > 0)
                 return;
             Cursor.Current = Cursors.WaitCursor;
-            if (kBorder > 2)
-                DllClass1.DrawSelLine(e, kBorder, ref mySub.xBorder, ref mySub.yBorder, scaleToWin, 
-                    xBegX, yBegY, xBegWin, yBegWin);
-            if (kPntPlus > 0 && kPntFin == 0 && iPointOnOff > 0)
-                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntPlus, mySub.namePnt, 
-                    mySub.xPnt, mySub.yPnt, mySub.zPnt,
-                    mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, 
-                    yBegY, xBegWin, yBegWin, mySub.nCode1,
-                    mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, 
-                    mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
-            if (kPntFin > 0 && iPointOnOff > 0)
-                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntFin, mySub.namePntFin,
-                    mySub.xPntFin, mySub.yPntFin, mySub.zPntFin,
-                    mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY,
-                    xBegWin, yBegWin, mySub.nCode1Fin,
-                    mySub.nCode2Fin, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, 
-                    mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
-            if (kPolyFinal > 0 && iSymbols > 0)
-                DllClass1.DrawPoly(e, mySub.fitemPoly, kPolyFinal, mySub.namePolyFin, mySub.kt1Fin,
-                    mySub.kt2Fin, mySub.xLabFin, 
-                    mySub.yLabFin, mySub.arCalcFin, mySub.nSymbFin, mySub.iHorVer, mySub.xPolFin,
-                    mySub.yPolFin, mySub.ki1, mySub.ki2,
-                    mySub.xAdd, mySub.yAdd, kPolySymb, mySub.npSign1, mySub.npSign2, mySub.npItem,
-                    mySub.nBackCol, mySub.nOneSymb,
-                    mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, 
-                    yBegWin, mySub.xDop, mySub.yDop,
-                    mySub.xWork, mySub.yWork, mySub.xWork1, mySub.yWork1, mySub.brColor, mySub.pnColor);
-            if (kAddInscript > 0 && iSymbols > 0)
-                DllClass1.AddInscrDraw(e, kAddInscript, mySub.sAddInscr, mySub.xAddInscr, mySub.yAddInscr, 
-                    mySub.nHorVer,
-                    mySub.nInsCol, mySub.brColor, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
-            if (kLineFinal > 0 && iSymbols > 0)
+            if (this.kBorder > 2)
+                DllClass1.DrawSelLine(e, this.kBorder, ref this.mySub.xBorder,
+                    ref this.mySub.yBorder, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+            if (this.kPntPlus > 0 && this.kPntFin == 0 && this.iPointOnOff > 0)
+                DllClass1.PointsDraw(e, this.mySub.fsymbPnt, this.iHeightShow,
+                    this.kPntPlus, this.mySub.namePnt, this.mySub.xPnt, this.mySub.yPnt, this.mySub.zPnt, 
+                    this.mySub.xPntInscr, this.mySub.yPntInscr, this.mySub.iHorVerPnt, this.scaleToWin,
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.nCode1, this.mySub.nCode2, 
+                    this.kSymbPnt, this.mySub.numRec, this.mySub.numbUser, this.mySub.ixSqu, this.mySub.iySqu,
+                    this.mySub.nColor, this.mySub.brColor, this.mySub.pnColor);
+            if (this.kPntFin > 0 && this.iPointOnOff > 0)
+                DllClass1.PointsDraw(e, this.mySub.fsymbPnt, this.iHeightShow,
+                    this.kPntFin, this.mySub.namePntFin, this.mySub.xPntFin,
+                    this.mySub.yPntFin, this.mySub.zPntFin, this.mySub.xPntInscr,
+                    this.mySub.yPntInscr, this.mySub.iHorVerPnt, this.scaleToWin,
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.nCode1Fin,
+                    this.mySub.nCode2Fin, this.kSymbPnt, this.mySub.numRec, this.mySub.numbUser, 
+                    this.mySub.ixSqu, this.mySub.iySqu, this.mySub.nColor, this.mySub.brColor, 
+                    this.mySub.pnColor);
+            if (this.kPolyFinal > 0 && this.iSymbols > 0)
+                DllClass1.DrawPoly(e, this.mySub.fitemPoly, this.kPolyFinal,
+                    this.mySub.namePolyFin, this.mySub.kt1Fin, this.mySub.kt2Fin,
+                    this.mySub.xLabFin, this.mySub.yLabFin, this.mySub.arCalcFin, 
+                    this.mySub.nSymbFin, this.mySub.iHorVer, this.mySub.xPolFin, 
+                    this.mySub.yPolFin, this.mySub.ki1, this.mySub.ki2, this.mySub.xAdd,
+                    this.mySub.yAdd, this.kPolySymb, this.mySub.npSign1, this.mySub.npSign2,
+                    this.mySub.npItem, this.mySub.nBackCol, this.mySub.nOneSymb, this.mySub.ixSqu,
+                    this.mySub.iySqu, this.mySub.nColorItm, this.scaleToWin, this.xBegX, this.yBegY, 
+                    this.xBegWin, this.yBegWin, this.mySub.xDop, this.mySub.yDop, this.mySub.xWork, 
+                    this.mySub.yWork, this.mySub.xWork1, this.mySub.yWork1, this.mySub.brColor, 
+                    this.mySub.pnColor);
+            if (this.kAddInscript > 0 && this.iSymbols > 0)
+                DllClass1.AddInscrDraw(e, this.kAddInscript, this.mySub.sAddInscr, this.mySub.xAddInscr, this.mySub.yAddInscr, this.mySub.nHorVer, this.mySub.nInsCol, this.mySub.brColor, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+            if (this.kLineFinal > 0 && this.iSymbols > 0)
             {
-                DllClass1.DrawInputLine(e, kLineFinal, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin,
-                    mySub.nCodeFin,
-                    mySub.sWidFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, scaleToWin, xBegX, yBegY,
-                    xBegWin, yBegWin,
-                    mySub.nColLine, mySub.iWidth1, mySub.iWidth2, mySub.iStyle1, mySub.iStyle2, mySub.nBaseSymb,
-                    mySub.xAdd,
-                    mySub.yAdd, mySub.xDop, mySub.yDop, mySub.xWork2, mySub.yWork2, kSymbLine, mySub.n1Sign,
-                    mySub.n2Sign, 
-                    mySub.brColor, mySub.pnColor, 0);
-                if (kItemCoord > 0)
-                    DllClass1.InputItemDraw(e, mySub.fitemLine, kItemCoord, mySub.numSign, mySub.numItem, mySub.xItem, 
-                        mySub.yItem, mySub.azItem, mySub.itemLoc, mySub.nBaseSymb, mySub.sInscr, mySub.hInscr, mySub.iColInscr, 
-                        kSymbLine, mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nDop1, mySub.nDop2, mySub.brColor);
+                DllClass1.DrawInputLine(e, this.kLineFinal, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.nCodeFin, this.mySub.sWidFin, this.mySub.rRadFin, this.mySub.xRadFin, this.mySub.yRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.nColLine, this.mySub.iWidth1, this.mySub.iWidth2, this.mySub.iStyle1, this.mySub.iStyle2, this.mySub.nBaseSymb, this.mySub.xAdd, this.mySub.yAdd, this.mySub.xDop, this.mySub.yDop, this.mySub.xWork2, this.mySub.yWork2, this.kSymbLine, this.mySub.n1Sign, this.mySub.n2Sign, this.mySub.brColor, this.mySub.pnColor, 0);
+                if (this.kItemCoord > 0)
+                    DllClass1.InputItemDraw(e, this.mySub.fitemLine, this.kItemCoord, this.mySub.numSign, this.mySub.numItem, this.mySub.xItem, this.mySub.yItem, this.mySub.azItem, this.mySub.itemLoc, this.mySub.nBaseSymb, this.mySub.sInscr, this.mySub.hInscr, this.mySub.iColInscr, this.kSymbLine, this.mySub.ixSqu, this.mySub.iySqu, this.mySub.nColorItm, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.nDop1, this.mySub.nDop2, this.mySub.brColor);
             }
-            if (kLineFinal > 0 && iSymbols == 0)
+            if (this.kLineFinal > 0 && this.iSymbols == 0)
             {
                 int iPar = 1;
-                DllClass1.LineDraw(e, kLineFinal, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.rRadFin, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.pnColor, iPar);
+                DllClass1.LineDraw(e, this.kLineFinal, this.mySub.k1Fin, this.mySub.k2Fin, this.mySub.xFin, this.mySub.yFin, this.mySub.rRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.pnColor, iPar);
             }
-            if (kPolyFinal > 0 && iSymbols == 0)
+            if (this.kPolyFinal > 0 && this.iSymbols == 0)
             {
                 int iParam = 8;
-                DllClass1.LabelDraw(e, kPolyFinal, mySub.namePolyFin, mySub.xLabFin, mySub.yLabFin, mySub.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.brColor, iParam);
+                DllClass1.LabelDraw(e, this.kPolyFinal, this.mySub.namePolyFin, this.mySub.xLabFin, this.mySub.yLabFin, this.mySub.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.brColor, iParam);
             }
-            if (kPntProj > -1 && iProjData > 0)
-                DrawPntProj(e);
-            if (kLineProj > 0 && iProjData > 0)
+            if (this.kPntProj > -1 && this.iProjData > 0)
+                this.DrawPntProj(e);
+            if (this.kLineProj > 0 && this.iProjData > 0)
             {
                 int iPar = 2;
-                DllClass1.LineDraw(e, kLineProj, mySub.kPr1, mySub.kPr2, mySub.xLinProj, mySub.yLinProj, mySub.RadProj, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.pnColor, iPar);
+                DllClass1.LineDraw(e, this.kLineProj, this.mySub.kPr1, this.mySub.kPr2, this.mySub.xLinProj, this.mySub.yLinProj, this.mySub.RadProj, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.pnColor, iPar);
             }
-            if (kPolyCancel > 0 && iCancelPoly > 0)
+            if (this.kPolyCancel > 0 && this.iCancelPoly > 0)
             {
                 int iParam = 3;
-                DllClass1.LabelDraw(e, kPolyCancel, mySub.nameCanc, mySub.xLabCanc, mySub.yLabCanc, mySub.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.brColor, iParam);
-                if (kLineCancel > 0)
+                DllClass1.LabelDraw(e, this.kPolyCancel, this.mySub.nameCanc, this.mySub.xLabCanc, this.mySub.yLabCanc, this.mySub.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.brColor, iParam);
+                if (this.kLineCancel > 0)
                 {
                     int iPar = 3;
-                    DllClass1.LineDraw(e, kLineCancel, mySub.kLinCanc1, mySub.kLinCanc2, mySub.xLinCanc, mySub.yLinCanc, mySub.RadCanc, scaleToWin,
-                        xBegX, yBegY, xBegWin, yBegWin, mySub.pnColor, iPar);
+                    DllClass1.LineDraw(e, this.kLineCancel, this.mySub.kLinCanc1, this.mySub.kLinCanc2, this.mySub.xLinCanc, this.mySub.yLinCanc, this.mySub.RadCanc, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.mySub.pnColor, iPar);
                 }
             }
-            if (File.Exists(mySub.fileContour) && iContourShow > 0)
-                DllClass1.ContourDraw(e, mySub.fileContour, mySub.xDop, mySub.yDop, mySub.xOut, mySub.yOut, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
-            if (kInstall > 0 && iSymbols > 0)
+            if (File.Exists(this.mySub.fileContour) && this.iContourShow > 0)
+                DllClass1.ContourDraw(e, this.mySub.fileContour, this.mySub.xDop, this.mySub.yDop, this.mySub.xOut, this.mySub.yOut, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+            if (this.kInstall > 0 && this.iSymbols > 0)
             {
                 string sTxt = "";
-                for (int index1 = 1; index1 <= kInstall; ++index1)
+                for (int index1 = 1; index1 <= this.kInstall; ++index1)
                 {
-                    int nSelect = mySub.nCent[index1];
+                    int nSelect = this.mySub.nCent[index1];
                     int xWin;
                     int yWin;
-                    DllClass1.XYtoWIN(mySub.xLinParc[index1], mySub.yLinParc[index1], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+                    DllClass1.XYtoWIN(this.mySub.xLinParc[index1], this.mySub.yLinParc[index1], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
                     int kPix;
                     int mClr;
-                    DllClass1.SelItemPoly(mySub.fitemPoly, nSelect, out int _, out int _, out int _, out kPix, mySub.ixSqu, mySub.iySqu, mySub.nColorItm, out sTxt, out mClr);
+                    DllClass1.SelItemPoly(this.mySub.fitemPoly, nSelect, out int _, out int _, out int _, out kPix, this.mySub.ixSqu, this.mySub.iySqu, this.mySub.nColorItm, out sTxt, out mClr);
                     for (int index2 = 1; index2 <= kPix; ++index2)
                     {
-                        int x = xWin + mySub.ixSqu[index2];
-                        int y = yWin + mySub.iySqu[index2];
-                        mClr = mySub.nColorItm[index2];
-                        SolidBrush solidBrush = mySub.brColor[mClr];
+                        int x = xWin + this.mySub.ixSqu[index2];
+                        int y = yWin + this.mySub.iySqu[index2];
+                        mClr = this.mySub.nColorItm[index2];
+                        SolidBrush solidBrush = this.mySub.brColor[mClr];
                         graphics.FillRectangle((Brush)solidBrush, x, y, 1, 1);
                     }
                 }
@@ -785,98 +746,188 @@ namespace IIT_Dimlom_Geo1
             }
         }
 
+        //private void FilePoints_Click(object sender, EventArgs e)
+        //{
+        //    string text = "Точки: ";
+        //    mySub.FilePath();
+        //    nProcess = 910;
+        //    if (File.Exists(mySub.fileProcess))
+        //        File.Delete(mySub.fileProcess);
+        //    FileStream output1 = new FileStream(mySub.fileProcess, FileMode.CreateNew);
+        //    BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
+        //    binaryWriter1.Write(nProcess);
+        //    binaryWriter1.Close();
+        //    output1.Close();
+        //    if (!File.Exists(mySub.fileProj))
+        //    {
+        //        int num1 = (int)MessageBox.Show("Проект не выбран", "Загрузка данных из файла", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //    }
+        //    else
+        //    {
+        //        DllClass1.PointsInput(out mySub.kPntPlus, out mySub.kPntInput, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2,
+        //            out mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig, out mySub.xmin, out mySub.ymin, out mySub.xmax, out mySub.ymax,
+        //            out mySub.zmin, out mySub.zmax, out iCond);
+        //        if (iCond < 0)
+        //            return;
+        //        kPntPlus = mySub.kPntPlus;
+        //        kPntInput = mySub.kPntInput;
+        //        kHeight = mySub.kHeight;
+        //        xmin = mySub.xmin;
+        //        ymin = mySub.ymin;
+        //        xmax = mySub.xmax;
+        //        ymax = mySub.ymax;
+        //        zmin = mySub.zmin;
+        //        zmax = mySub.zmax;
+        //        int num2 = 0;
+        //        for (int index = 1; index <= kPntPlus; ++index)
+        //        {
+        //            if (mySub.nCode1[index] > 0)
+        //            {
+        //                int kPix;
+        //                DllClass1.SelSymbPnt(mySub.fsymbPnt, mySub.nCode1[index], kSymbPnt, mySub.numRec, mySub.numbUser,
+        //                    out int _, out int _, out int _, out string _, out kPix, mySub.ixSqu, mySub.iySqu, mySub.nColor, out string _, out int _);
+        //                if (kPix == 0)
+        //                {
+        //                    ++num2;
+        //                    text = text + mySub.namePnt[index] + ", ";
+        //                }
+        //            }
+        //        }
+        //        if (num2 > 0)
+        //        {
+        //            int num3 = (int)MessageBox.Show(text, "Ошибка кода символов точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //        }
+        //        mySub.FilesRemove();
+        //        mySub.AllActionRemove();
+        //        DllClass1.KeepPntHeig(mySub.filePoint, mySub.fileHeight, ref mySub.xmin, ref mySub.ymin, ref mySub.xmax,
+        //            ref mySub.ymax, ref mySub.zmin, ref mySub.zmax, mySub.kPntPlus, mySub.kPntInput, mySub.namePnt, mySub.xPnt,
+        //            mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2, ref mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig);
+        //        kHeight = mySub.kHeight;
+        //        if (iCond < 0)
+        //        {
+        //            iGraphic = 1;
+        //        }
+        //        else
+        //        {
+        //            kPntPlus = mySub.kPntPlus;
+        //            mySub.FilePath();
+        //            panel1.Text = "******СОРТИРОВКА ТОЧЕК*******";
+        //            mySub.HeightSorting();
+        //            kHeight = mySub.kHeight;
+        //            panel1.Text = "Готово......";
+        //            kPntSource = kPntPlus;
+        //            for (int index = 0; index <= kPntSource; ++index)
+        //            {
+        //                mySub.nameSour[index] = mySub.namePnt[index];
+        //                mySub.xSour[index] = mySub.xPnt[index];
+        //                mySub.ySour[index] = mySub.yPnt[index];
+        //                mySub.zSour[index] = mySub.zPnt[index];
+        //                mySub.nSour1[index] = mySub.nCode1[index];
+        //                mySub.nSour2[index] = mySub.nCode2[index];
+        //            }
+        //            mySub.kPntSource = kPntSource;
+        //            mySub.KeepPntSour();
+        //            LoadData();
+        //            iPointOnOff = 1;
+        //            nProblem = 31;
+        //            if (File.Exists(mySub.fProblem))
+        //                File.Delete(mySub.fProblem);
+        //            FileStream output2 = new FileStream(mySub.fProblem, FileMode.CreateNew);
+        //            BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
+        //            binaryWriter2.Write(nProblem);
+        //            binaryWriter2.Close();
+        //            output2.Close();
+        //            panel7.Invalidate();
+        //        }
+        //    }
+        //}
         private void FilePoints_Click(object sender, EventArgs e)
         {
-            string text = "Точки: ";
-            mySub.FilePath();
-            nProcess = 910;
-            if (File.Exists(mySub.fileProcess))
-                File.Delete(mySub.fileProcess);
-            FileStream output1 = new FileStream(mySub.fileProcess, FileMode.CreateNew);
+            string text = "Points: ";
+            this.mySub.FilePath();
+            this.nProcess = 910;
+            if (File.Exists(this.mySub.fileProcess))
+                File.Delete(this.mySub.fileProcess);
+            FileStream output1 = new FileStream(this.mySub.fileProcess, FileMode.CreateNew);
             BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
-            binaryWriter1.Write(nProcess);
+            binaryWriter1.Write(this.nProcess);
             binaryWriter1.Close();
             output1.Close();
-            if (!File.Exists(mySub.fileProj))
+            if (!File.Exists(this.mySub.fileProj))
             {
-                int num1 = (int)MessageBox.Show("Проект не выбран", "Загрузка данных из файла", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Project wasn't defined", "Data File Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                DllClass1.PointsInput(out mySub.kPntPlus, out mySub.kPntInput, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2,
-                    out mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig, out mySub.xmin, out mySub.ymin, out mySub.xmax, out mySub.ymax, 
-                    out mySub.zmin, out mySub.zmax, out iCond);
-                if (iCond < 0)
+                DllClass1.PointsInput(out this.mySub.kPntPlus, out this.mySub.kPntInput, this.mySub.namePnt, this.mySub.xPnt, this.mySub.yPnt, this.mySub.zPnt, this.mySub.nCode1, this.mySub.nCode2, out this.mySub.kHeight, this.mySub.nameHeig, this.mySub.xHeig, this.mySub.yHeig, this.mySub.zHeig, out this.mySub.xmin, out this.mySub.ymin, out this.mySub.xmax, out this.mySub.ymax, out this.mySub.zmin, out this.mySub.zmax, out this.iCond);
+                if (this.iCond < 0)
                     return;
-                kPntPlus = mySub.kPntPlus;
-                kPntInput = mySub.kPntInput;
-                kHeight = mySub.kHeight;
-                xmin = mySub.xmin;
-                ymin = mySub.ymin;
-                xmax = mySub.xmax;
-                ymax = mySub.ymax;
-                zmin = mySub.zmin;
-                zmax = mySub.zmax;
+                this.kPntPlus = this.mySub.kPntPlus;
+                this.kPntInput = this.mySub.kPntInput;
+                this.kHeight = this.mySub.kHeight;
+                this.xmin = this.mySub.xmin;
+                this.ymin = this.mySub.ymin;
+                this.xmax = this.mySub.xmax;
+                this.ymax = this.mySub.ymax;
+                this.zmin = this.mySub.zmin;
+                this.zmax = this.mySub.zmax;
                 int num2 = 0;
-                for (int index = 1; index <= kPntPlus; ++index)
+                for (int index = 1; index <= this.kPntPlus; ++index)
                 {
-                    if (mySub.nCode1[index] > 0)
+                    if (this.mySub.nCode1[index] > 0)
                     {
                         int kPix;
-                        DllClass1.SelSymbPnt(mySub.fsymbPnt, mySub.nCode1[index], kSymbPnt, mySub.numRec, mySub.numbUser, 
-                            out int _, out int _, out int _, out string _, out kPix, mySub.ixSqu, mySub.iySqu, mySub.nColor, out string _, out int _);
+                        DllClass1.SelSymbPnt(this.mySub.fsymbPnt, this.mySub.nCode1[index], this.kSymbPnt, this.mySub.numRec, this.mySub.numbUser, out int _, out int _, out int _, out string _, out kPix, this.mySub.ixSqu, this.mySub.iySqu, this.mySub.nColor, out string _, out int _);
                         if (kPix == 0)
                         {
                             ++num2;
-                            text = text + mySub.namePnt[index] + ", ";
+                            text = text + this.mySub.namePnt[index] + ", ";
                         }
                     }
                 }
                 if (num2 > 0)
                 {
-                    int num3 = (int)MessageBox.Show(text, "Ошибка кода символов точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show(text, "Code's error of points' symbols", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                mySub.FilesRemove();
-                mySub.AllActionRemove();
-                DllClass1.KeepPntHeig(mySub.filePoint, mySub.fileHeight, ref mySub.xmin, ref mySub.ymin, ref mySub.xmax,
-                    ref mySub.ymax, ref mySub.zmin, ref mySub.zmax, mySub.kPntPlus, mySub.kPntInput, mySub.namePnt, mySub.xPnt, 
-                    mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2, ref mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig);
-                kHeight = mySub.kHeight;
-                if (iCond < 0)
+                this.mySub.FilesRemove();
+                this.mySub.AllActionRemove();
+                DllClass1.KeepPntHeig(this.mySub.filePnt, this.mySub.fileHeight, ref this.mySub.xmin, ref this.mySub.ymin, ref this.mySub.xmax, ref this.mySub.ymax, ref this.mySub.zmin, ref this.mySub.zmax, this.mySub.kPntPlus, this.mySub.kPntInput, this.mySub.namePnt, this.mySub.xPnt, this.mySub.yPnt, this.mySub.zPnt, this.mySub.nCode1, this.mySub.nCode2, ref this.mySub.kHeight, this.mySub.nameHeig, this.mySub.xHeig, this.mySub.yHeig, this.mySub.zHeig);
+                this.kHeight = this.mySub.kHeight;
+                if (this.iCond < 0)
                 {
-                    iGraphic = 1;
+                    this.iGraphic = 1;
                 }
                 else
                 {
-                    kPntPlus = mySub.kPntPlus;
-                    mySub.FilePath();
-                    panel1.Text = "******СОРТИРОВКА ТОЧЕК*******";
-                    mySub.HeightSorting();
-                    kHeight = mySub.kHeight;
-                    panel1.Text = "Готово......";
-                    kPntSource = kPntPlus;
-                    for (int index = 0; index <= kPntSource; ++index)
+                    this.kPntPlus = this.mySub.kPntPlus;
+                    this.mySub.FilePath();
+                    this.panel1.Text = "******POINTS SORTING*******";
+                    this.mySub.HeightSorting();
+                    this.kHeight = this.mySub.kHeight;
+                    this.panel1.Text = "Ready......";
+                    this.kPntSource = this.kPntPlus;
+                    for (int index = 0; index <= this.kPntSource; ++index)
                     {
-                        mySub.nameSour[index] = mySub.namePnt[index];
-                        mySub.xSour[index] = mySub.xPnt[index];
-                        mySub.ySour[index] = mySub.yPnt[index];
-                        mySub.zSour[index] = mySub.zPnt[index];
-                        mySub.nSour1[index] = mySub.nCode1[index];
-                        mySub.nSour2[index] = mySub.nCode2[index];
+                        this.mySub.nameSour[index] = this.mySub.namePnt[index];
+                        this.mySub.xSour[index] = this.mySub.xPnt[index];
+                        this.mySub.ySour[index] = this.mySub.yPnt[index];
+                        this.mySub.zSour[index] = this.mySub.zPnt[index];
+                        this.mySub.nSour1[index] = this.mySub.nCode1[index];
+                        this.mySub.nSour2[index] = this.mySub.nCode2[index];
                     }
-                    mySub.kPntSource = kPntSource;
-                    mySub.KeepPntSour();
-                    LoadData();
-                    iPointOnOff = 1;
-                    nProblem = 31;
-                    if (File.Exists(mySub.fProblem))
-                        File.Delete(mySub.fProblem);
-                    FileStream output2 = new FileStream(mySub.fProblem, FileMode.CreateNew);
+                    this.mySub.kPntSource = this.kPntSource;
+                    this.mySub.KeepPntSour();
+                    this.LoadData();
+                    this.iPointOnOff = 1;
+                    this.nProblem = 31;
+                    if (File.Exists(this.mySub.fProblem))
+                        File.Delete(this.mySub.fProblem);
+                    FileStream output2 = new FileStream(this.mySub.fProblem, FileMode.CreateNew);
                     BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
-                    binaryWriter2.Write(nProblem);
+                    binaryWriter2.Write(this.nProblem);
                     binaryWriter2.Close();
                     output2.Close();
-                    panel7.Invalidate();
+                    this.panel7.Invalidate();
                 }
             }
         }
@@ -1557,7 +1608,7 @@ namespace IIT_Dimlom_Geo1
                     {
                         int num6 = (int)new FieldProject().ShowDialog((IWin32Window)this);
                         mySub.FilePath();
-                        mySub.PointLoad(fCurPnt, fCurHeig);
+                        mySub.PointLoad();
                         kPntPlus = mySub.kPntPlus;
                         kPntSource = kPntPlus;
                         for (int index = 0; index <= kPntSource; ++index)

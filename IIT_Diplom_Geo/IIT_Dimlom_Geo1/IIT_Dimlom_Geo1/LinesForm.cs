@@ -311,7 +311,8 @@ namespace IIT_Dimlom_Geo1
                 myLin.iWidth2, myLin.nColLine, myLin.nItem, myLin.itemLoc, 
                 myLin.nBaseSymb, myLin.sInscr, myLin.hInscr, myLin.iColInscr, myLin.iDensity);
             myLin.PolySymbolLoad(myLin.fsymbPoly, out kPolySymb, out hSymbPoly);
-            myLin.PointLoad(fCurPnt, fCurHeig);
+            //myLin.PointLoad(fCurPnt, fCurHeig);
+            myLin.PointLoad();
             kPntPlus = myLin.kPntPlus;
             kPntInput = myLin.kPntInput;
             xmin = myLin.xmin;
@@ -348,7 +349,7 @@ namespace IIT_Dimlom_Geo1
             if (kPntFin > 0)
                 myLin.InscriptionFin(1);
             kLineInput = 0;
-            myLin.LineLoad(fCurLine);
+            myLin.LineLoad();
             kLineInput = myLin.kLineInput;
             xmin = myLin.xmin;
             ymin = myLin.ymin;
@@ -3078,7 +3079,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (File.Exists(myLin.flineTopo))
                 {
-                    myLin.LineLoad(fCurLine);
+                    myLin.LineLoad();
                     kLineInput = myLin.kLineInput;
                 }
                 if (kSel > 0)
@@ -3370,7 +3371,7 @@ namespace IIT_Dimlom_Geo1
             listBox1.Items.Clear();
             textBox1.Text = "";
             textBox4.Text = "";
-            myLin.PointLoad(fCurPnt, fCurHeig);
+            myLin.PointLoad();
             kPntPlus = myLin.kPntPlus;
             kPntInput = myLin.kPntInput;
             panel7.Invalidate();

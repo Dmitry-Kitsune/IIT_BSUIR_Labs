@@ -563,7 +563,8 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 31 || nProblem == 32 || nProblem == 33 || nProblem == 34 || nProblem == 41 || nProblem == 42 || nProblem == 51 || nProblem == 61 || nProblem == 62 || nProblem == 63)
             {
-                mySub.PointLoad(fCurPnt, fCurHeig);
+               // mySub.PointLoad(fCurPnt, fCurHeig);
+                mySub.PointLoad();
                 kPntPlus = mySub.kPntPlus;
                 kPntInput = mySub.kPntInput;
                 if (kPntPlus < 2)
@@ -604,7 +605,8 @@ namespace IIT_Dimlom_Geo1
             {
                 label4.Text = "Последний процесс: Кадастр - От точек к линиям";
                 kLineInput = 0;
-                mySub.LineLoad(fCurLine);
+               // mySub.LineLoad(fCurLine);
+                mySub.LineLoad();
                 kLineInput = mySub.kLineInput;
             }
             if (nProblem == 42)
@@ -623,7 +625,8 @@ namespace IIT_Dimlom_Geo1
             {
                 label4.Text = "Последний процесс: Кадастр - Модель рельефа и формирование горизонталей";
                 kLineInput = 0;
-                mySub.LineLoad(fCurLine);
+                mySub.LineLoad();
+                //mySub.LineLoad(fCurLine);
                 kLineInput = mySub.kLineInput;
             }
             if (nProblem == 61 || nProblem == 62)
@@ -633,7 +636,7 @@ namespace IIT_Dimlom_Geo1
                 kPntProj = mySub.kPntProj;
                 kProjInput = mySub.kProjInput;
                 kLineInput = 0;
-                mySub.LineLoad(fCurLine);
+                mySub.LineLoad();
                 kLineInput = mySub.kLineInput;
             }
             if (nProblem == 63)
@@ -646,7 +649,7 @@ namespace IIT_Dimlom_Geo1
                 mySub.LineProjLoad();
                 kLineProj = mySub.kLineProj;
                 kLineInput = 0;
-                mySub.LineLoad(fCurLine);
+                mySub.LineLoad();
                 kLineInput = mySub.kLineInput;
             }
             if (nProblem != 71)

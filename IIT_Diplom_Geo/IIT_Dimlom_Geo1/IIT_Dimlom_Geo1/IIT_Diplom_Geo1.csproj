@@ -463,6 +463,12 @@
     <EmbeddedResource Include="FinalCorrect.resx">
       <DependentUpon>FinalCorrect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FinalResult.resx">
+      <DependentUpon>FinalResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoCalc.resx">
+      <DependentUpon>GeoCalc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeoDemo.resx">
       <DependentUpon>GeoDemo.cs</DependentUpon>
     </EmbeddedResource>

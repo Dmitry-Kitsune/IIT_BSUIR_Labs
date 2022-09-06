@@ -214,7 +214,8 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolySymbolLoad(this.myPol.fsymbPoly, out this.kSymbPoly, out this.hSymbPoly);
             this.iPointDraw = 1;
             this.kPntPlus = 0;
-            this.myPol.PointLoad(fCurPnt, fCurHeig);
+            //this.myPol.PointLoad(fCurPnt, fCurHeig);
+            this.myPol.PointLoad();
             this.kPntPlus = this.myPol.kPntPlus;
             this.kPntInput = this.myPol.kPntInput;
             if (this.kPntPlus > 0)
@@ -241,7 +242,7 @@ namespace IIT_Dimlom_Geo1
             this.iParam = 1;
             this.iLineDraw = 1;
             this.kLineInput = 0;
-            this.myPol.LineLoad(fCurLine);
+            this.myPol.LineLoad();
             this.kLineInput = this.myPol.kLineInput;
             this.xmin = this.myPol.xmin;
             this.ymin = this.myPol.ymin;
@@ -1337,7 +1338,7 @@ namespace IIT_Dimlom_Geo1
             this.kSel = -1;
             this.kRcPnt = 0;
             this.nControl = 0;
-            this.myPol.LineLoad(fCurLine);
+            this.myPol.LineLoad();
             this.kLineInput = this.myPol.kLineInput;
             this.xmin = this.myPol.xmin;
             this.ymin = this.myPol.ymin;

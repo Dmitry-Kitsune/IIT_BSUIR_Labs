@@ -267,7 +267,7 @@ namespace IIT_Dimlom_Geo1
             this.myFin.PolySymbolLoad(this.myFin.fsymbPoly, out this.kSymbPoly, out this.hSymbPoly);
             this.myFin.LoadKeepSource(1);
             this.kPolySource = this.myFin.kPolySource;
-            this.myFin.PointLoad(fCurPnt,fCurHeig);
+            this.myFin.PointLoad();
             this.kPntPlus = this.myFin.kPntPlus;
             this.kPntInput = this.myFin.kPntInput;
             this.xmin = this.myFin.xmin;
@@ -317,7 +317,8 @@ namespace IIT_Dimlom_Geo1
                 }
                 this.myFin.InscriptionFin(1);
             }
-            this.myFin.LineLoad(fCurLine);
+            //this.myFin.LineLoad(fCurLine);
+            this.myFin.LineLoad();
             this.kLineInput = this.myFin.kLineInput;
             this.xmin = this.myFin.xmin;
             this.ymin = this.myFin.ymin;
@@ -1470,7 +1471,8 @@ namespace IIT_Dimlom_Geo1
                                         this.myFin.kItemCoord = this.kItemCoord;
                                         this.myFin.ItemLoadKeep(2);
                                     }
-                                    this.myFin.LineLoad(fCurLine);
+                                   //this.myFin.LineLoad(fCurLine);
+                                    this.myFin.LineLoad();
                                     this.kLineInput = this.myFin.kLineInput;
                                     DllClass1.FinalInput(this.kLineInput, this.myFin.nLineCode, this.myFin.rRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin, this.kLineFinal, this.myFin.nCodeFin, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.tolerance);
                                     this.myFin.KeepLine(fCurLine);

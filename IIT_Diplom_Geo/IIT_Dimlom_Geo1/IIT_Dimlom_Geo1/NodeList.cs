@@ -67,7 +67,7 @@ namespace IIT_Dimlom_Geo1
                     binaryReader.Close();
                 }
             }
-            myNod.PointLoad(fCurPnt,fCurHeig);
+            myNod.PointLoad();
             kPnt = myNod.kPntPlus;
             if (nProcess == 1001)
             {

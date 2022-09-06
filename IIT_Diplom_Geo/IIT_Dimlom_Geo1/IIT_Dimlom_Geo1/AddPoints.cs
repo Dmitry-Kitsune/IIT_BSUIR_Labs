@@ -270,13 +270,15 @@ namespace IIT_Dimlom_Geo1
             kPoly = myPoint.kPoly;
             myPoint.LineTopoLoad();
             kLineTopo = myPoint.kLineTopo;
-            myPoint.LineLoad(fCurLine);
+            myPoint.LineLoad();
+            //myPoint.LineLoad(fCurLine);
             kLineInput = myPoint.kLineInput;
             xmin = myPoint.xmin;
             ymin = myPoint.ymin;
             xmax = myPoint.xmax;
             ymax = myPoint.ymax;
-            myPoint.PointLoad(fCurPnt, fCurHeig);
+            myPoint.PointLoad();
+            //myPoint.PointLoad(fCurPnt, fCurHeig);
             kPntPlus = myPoint.kPntPlus;
             kPntInput = myPoint.kPntInput;
             xmin = myPoint.xmin;

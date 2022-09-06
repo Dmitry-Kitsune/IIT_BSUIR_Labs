@@ -276,7 +276,8 @@ namespace IIT_Dimlom_Geo1
             this.myAct.PolySymbolLoad(this.myAct.fsymbPoly, out this.kPolySymb, out this.hSymbPoly);
             this.myAct.LoadKeepSource(1);
             this.kPolySource = this.myAct.kPolySource;
-            this.myAct.PointLoad(fCurPnt, fCurHeig);
+            this.myAct.PointLoad();
+            //this.myAct.PointLoad(fCurPnt, fCurHeig);
             this.kPntPlus = this.myAct.kPntPlus;
             this.kPntInput = this.myAct.kPntInput;
             if (this.kPntPlus > 0)
@@ -304,7 +305,8 @@ namespace IIT_Dimlom_Geo1
                 this.ymax = this.myAct.ymax;
                 this.myAct.LoadKeepInscr(1);
             }
-            this.myAct.LineLoad(fCurLine);
+            this.myAct.LineLoad();
+            //this.myAct.LineLoad(fCurLine);
             this.kLineInput = this.myAct.kLineInput;
             this.xmin = this.myAct.xmin;
             this.ymin = this.myAct.ymin;

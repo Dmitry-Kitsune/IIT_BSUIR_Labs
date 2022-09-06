@@ -1,16 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace IIT_Dimlom_Geo1
 {
-    partial class Cadasral
+     public partial class Cadasral
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components;
         private GroupBox groupBox1;
         private Button button1;
         private Label label2;
@@ -1011,7 +1012,7 @@ namespace IIT_Dimlom_Geo1
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Cadasral";
+            this.Name = "Кадастр";
             this.Text = "Кадастр и топография (построение планов)";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

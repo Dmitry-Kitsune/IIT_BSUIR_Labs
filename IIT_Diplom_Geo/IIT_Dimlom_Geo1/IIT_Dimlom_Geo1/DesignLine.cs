@@ -318,7 +318,8 @@ namespace IIT_Dimlom_Geo1
             kPoly = myLin.kPoly;
             myLin.LineTopoLoad();
             kLineTopo = myLin.kLineTopo;
-            myLin.PointLoad(fCurPnt, fCurHeig);
+            myLin.PointLoad();
+            //  myLin.PointLoad(fCurPnt, fCurHeig);
             kPntPlus = myLin.kPntPlus;
             kPntInput = myLin.kPntInput;
             xmin = myLin.xmin;
@@ -348,7 +349,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 myLin.LoadKeepInscr(1);
             }
-            myLin.LineLoad(fCurLine);
+            myLin.LineLoad();
             kLineInput = myLin.kLineInput;
             xmin = myLin.xmin;
             ymin = myLin.ymin;
@@ -3445,7 +3446,7 @@ namespace IIT_Dimlom_Geo1
             myLin.PointProjLoad();
             kPntProj = myLin.kPntProj;
             kProjInput = myLin.kProjInput;
-            myLin.PointLoad(fCurPnt, fCurHeig);
+            myLin.PointLoad();
             panel7.Invalidate();
         }
 

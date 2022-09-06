@@ -120,721 +120,931 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-                panel7 = new Panel();
-                groupBox1 = new GroupBox();
-                groupBox6 = new GroupBox();
-                button35 = new Button();
-                button17 = new Button();
-                groupBox9 = new GroupBox();
-                button27 = new Button();
-                button26 = new Button();
-                button25 = new Button();
-                button24 = new Button();
-                button23 = new Button();
-                label8 = new Label();
-                listBox1 = new ListBox();
-                groupBox10 = new GroupBox();
-                label7 = new Label();
-                button28 = new Button();
-                radioButton15 = new RadioButton();
-                radioButton14 = new RadioButton();
-                radioButton8 = new RadioButton();
-                radioButton7 = new RadioButton();
-                radioButton1 = new RadioButton();
-                button22 = new Button();
-                radioButton13 = new RadioButton();
-                radioButton12 = new RadioButton();
-                radioButton11 = new RadioButton();
-                radioButton10 = new RadioButton();
-                radioButton9 = new RadioButton();
-                groupBox5 = new GroupBox();
-                textBox4 = new TextBox();
-                button34 = new Button();
-                button33 = new Button();
-                button20 = new Button();
-                button32 = new Button();
-                button31 = new Button();
-                button12 = new Button();
-                button11 = new Button();
-                groupBox4 = new GroupBox();
-                button30 = new Button();
-                button19 = new Button();
-                button29 = new Button();
-                textBox3 = new TextBox();
-                button18 = new Button();
-                button21 = new Button();
-                groupBox8 = new GroupBox();
-                radioButton5 = new RadioButton();
-                radioButton6 = new RadioButton();
-                radioButton2 = new RadioButton();
-                radioButton3 = new RadioButton();
-                radioButton4 = new RadioButton();
-                textBox2 = new TextBox();
-                textBox1 = new TextBox();
-                label6 = new Label();
-                label5 = new Label();
-                label4 = new Label();
-                button4 = new Button();
-                button3 = new Button();
-                button2 = new Button();
-                label3 = new Label();
-                button1 = new Button();
-                groupBox3 = new GroupBox();
-                button16 = new Button();
-                button15 = new Button();
-                button14 = new Button();
-                button13 = new Button();
-                groupBox2 = new GroupBox();
-                label2 = new Label();
-                label1 = new Label();
-                button10 = new Button();
-                label9 = new Label();
-                groupBox1.SuspendLayout();
-                groupBox6.SuspendLayout();
-                groupBox9.SuspendLayout();
-                groupBox10.SuspendLayout();
-                groupBox5.SuspendLayout();
-                groupBox4.SuspendLayout();
-                groupBox8.SuspendLayout();
-                groupBox3.SuspendLayout();
-                groupBox2.SuspendLayout();
-                SuspendLayout();
-                panel7.BackColor = Color.White;
-                panel7.BorderStyle = BorderStyle.Fixed3D;
-                panel7.Location = new Point(14, 12);
-                panel7.Name = "panel7";
-                panel7.Size = new Size(611, 645);
-                panel7.TabIndex = 0;
-                panel7.Paint += new PaintEventHandler(panel7_Paint);
-                panel7.MouseDown += new MouseEventHandler(panel7_MouseDown);
-                panel7.MouseMove += new MouseEventHandler(panel7_MouseMove);
-                panel7.MouseUp += new MouseEventHandler(panel7_MouseUp);
-                groupBox1.BackColor = Color.LightGray;
-                groupBox1.Controls.Add((Control)groupBox6);
-                groupBox1.Controls.Add((Control)groupBox9);
-                groupBox1.Controls.Add((Control)groupBox5);
-                groupBox1.Controls.Add((Control)groupBox4);
-                groupBox1.Controls.Add((Control)groupBox3);
-                groupBox1.Controls.Add((Control)groupBox2);
-                groupBox1.ForeColor = Color.Black;
-                groupBox1.Location = new Point(631, 2);
-                groupBox1.Name = "groupBox1";
-                groupBox1.Size = new Size(384, 621);
-                groupBox1.TabIndex = 1;
-                groupBox1.TabStop = false;
-                groupBox6.BackColor = Color.DimGray;
-                groupBox6.Controls.Add((Control)button35);
-                groupBox6.Controls.Add((Control)button17);
-                groupBox6.ForeColor = Color.Black;
-                groupBox6.Location = new Point(6, 368);
-                groupBox6.Name = "groupBox6";
-                groupBox6.Size = new Size(369, 35);
-                groupBox6.TabIndex = 7;
-                groupBox6.TabStop = false;
-                groupBox6.Text = "Просмотр(показать)";
-                button35.BackColor = Color.White;
-                button35.Location = new Point(221, 8);
-                button35.Name = "button35";
-                button35.Size = new Size(86, 23);
-                button35.TabIndex = 1;
-                button35.Text = "DTM points";
-                button35.UseVisualStyleBackColor = false;
-                button35.Click += new EventHandler(DTMPoints_Click);
-                button17.BackColor = Color.White;
-                button17.Location = new Point(64, 8);
-                button17.Name = "button17";
-                button17.Size = new Size(91, 23);
-                button17.TabIndex = 0;
-                button17.Text = "Basic points";
-                button17.UseVisualStyleBackColor = false;
-                button17.Click += new EventHandler(BasicPoints_Click);
-                groupBox9.BackColor = Color.DimGray;
-                groupBox9.Controls.Add((Control)button27);
-                groupBox9.Controls.Add((Control)button26);
-                groupBox9.Controls.Add((Control)button25);
-                groupBox9.Controls.Add((Control)button24);
-                groupBox9.Controls.Add((Control)button23);
-                groupBox9.Controls.Add((Control)label8);
-                groupBox9.Controls.Add((Control)listBox1);
-                groupBox9.Controls.Add((Control)groupBox10);
-                groupBox9.ForeColor = Color.Black;
-                groupBox9.Location = new Point(6, 408);
-                groupBox9.Name = "groupBox9";
-                groupBox9.Size = new Size(372, 203);
-                groupBox9.TabIndex = 6;
-                groupBox9.TabStop = false;
-                groupBox9.Text = "Options of printing";
-                button27.BackColor = Color.White;
-                button27.Location = new Point(7, 176);
-                button27.Name = "button27";
-                button27.Size = new Size(180, 20);
-                button27.TabIndex = 7;
-                button27.Text = "Return to main panel";
-                button27.UseVisualStyleBackColor = false;
-                button27.Click += new EventHandler(MainPanel_Click);
-                button26.BackColor = Color.White;
-                button26.Location = new Point(207, 176);
-                button26.Name = "button26";
-                button26.Size = new Size(162, 20);
-                button26.TabIndex = 6;
-                button26.Text = "Print selected page";
-                button26.UseVisualStyleBackColor = false;
-                button26.Click += new EventHandler(PrintSelection_Click);
-                button25.BackColor = Color.White;
-                button25.Location = new Point(320, 137);
-                button25.Name = "button25";
-                button25.Size = new Size(47, 35);
-                button25.TabIndex = 5;
-                button25.Text = "Zoom Out";
-                button25.UseVisualStyleBackColor = false;
-                button25.Click += new EventHandler(PreviewOut_Click);
-                button24.BackColor = Color.White;
-                button24.Location = new Point(273, 136);
-                button24.Name = "button24";
-                button24.Size = new Size(47, 36);
-                button24.TabIndex = 4;
-                button24.Text = "Zoom In";
-                button24.UseVisualStyleBackColor = false;
-                button24.Click += new EventHandler(PreviewIn_Click);
-                button23.BackColor = Color.White;
-                button23.Location = new Point(273, 98);
-                button23.Name = "button23";
-                button23.Size = new Size(94, 34);
-                button23.TabIndex = 3;
-                button23.Text = "Confirm page selection";
-                button23.UseVisualStyleBackColor = false;
-                button23.Click += new EventHandler(PreviewSelection_Click);
-                label8.AutoSize = true;
-                label8.BackColor = Color.Black;
-                label8.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                label8.ForeColor = Color.White;
-                label8.Location = new Point(5, 88);
-                label8.Name = "label8";
-                label8.Size = new Size(268, 13);
-                label8.TabIndex = 2;
-                label8.Text = "Page   xmin     ymin     xmax      ymax    points";
-                listBox1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-                listBox1.FormattingEnabled = true;
-                listBox1.Location = new Point(5, 102);
-                listBox1.Name = "listBox1";
-                listBox1.Size = new Size(267, 69);
-                listBox1.TabIndex = 1;
-                groupBox10.BackColor = Color.FromArgb(64, 64, 64);
-                groupBox10.Controls.Add((Control)label7);
-                groupBox10.Controls.Add((Control)button28);
-                groupBox10.Controls.Add((Control)radioButton15);
-                groupBox10.Controls.Add((Control)radioButton14);
-                groupBox10.Controls.Add((Control)radioButton8);
-                groupBox10.Controls.Add((Control)radioButton7);
-                groupBox10.Controls.Add((Control)radioButton1);
-                groupBox10.Controls.Add((Control)button22);
-                groupBox10.Controls.Add((Control)radioButton13);
-                groupBox10.Controls.Add((Control)radioButton12);
-                groupBox10.Controls.Add((Control)radioButton11);
-                groupBox10.Controls.Add((Control)radioButton10);
-                groupBox10.Controls.Add((Control)radioButton9);
-                groupBox10.Location = new Point(5, 14);
-                groupBox10.Name = "groupBox10";
-                groupBox10.Size = new Size(364, 73);
-                groupBox10.TabIndex = 0;
-                groupBox10.TabStop = false;
-                label7.AutoSize = true;
-                label7.BackColor = Color.Black;
-                label7.ForeColor = Color.White;
-                label7.Location = new Point(10, 52);
-                label7.Name = "label7";
-                label7.Size = new Size(133, 13);
-                label7.TabIndex = 13;
-                label7.Text = "Select scale and click";
-                button28.BackColor = Color.White;
-                button28.ForeColor = Color.Black;
-                button28.Location = new Point(288, 47);
-                button28.Name = "button28";
-                button28.Size = new Size(73, 21);
-                button28.TabIndex = 3;
-                button28.Text = "DTM print";
-                button28.UseVisualStyleBackColor = false;
-                button28.Click += new EventHandler(PrintDTM_Click);
-                radioButton15.AutoSize = true;
-                radioButton15.BackColor = Color.White;
-                radioButton15.Location = new Point(292, 28);
-                radioButton15.Name = "radioButton15";
-                radioButton15.Size = new Size(58, 17);
-                radioButton15.TabIndex = 12;
-                radioButton15.Text = "1:6250";
-                radioButton15.UseVisualStyleBackColor = false;
-                radioButton14.AutoSize = true;
-                radioButton14.BackColor = Color.White;
-                radioButton14.Location = new Point(217, 28);
-                radioButton14.Name = "radioButton14";
-                radioButton14.Size = new Size(58, 17);
-                radioButton14.TabIndex = 11;
-                radioButton14.Text = "1:2500";
-                radioButton14.UseVisualStyleBackColor = false;
-                radioButton8.AutoSize = true;
-                radioButton8.BackColor = Color.White;
-                radioButton8.Location = new Point(142, 28);
-                radioButton8.Name = "radioButton8";
-                radioButton8.Size = new Size(58, 17);
-                radioButton8.TabIndex = 10;
-                radioButton8.Text = "1:1250";
-                radioButton8.UseVisualStyleBackColor = false;
-                radioButton7.AutoSize = true;
-                radioButton7.BackColor = Color.White;
-                radioButton7.Location = new Point(74, 28);
-                radioButton7.Name = "radioButton7";
-                radioButton7.Size = new Size(52, 17);
-                radioButton7.TabIndex = 9;
-                radioButton7.Text = "1:625";
-                radioButton7.UseVisualStyleBackColor = false;
-                radioButton1.AutoSize = true;
-                radioButton1.BackColor = Color.White;
-                radioButton1.Location = new Point(6, 28);
-                radioButton1.Name = "radioButton1";
-                radioButton1.Size = new Size(52, 17);
-                radioButton1.TabIndex = 8;
-                radioButton1.Text = "1:250";
-                radioButton1.UseVisualStyleBackColor = false;
-                button22.BackColor = Color.White;
-                button22.Location = new Point(152, 47);
-                button22.Name = "button22";
-                button22.Size = new Size(132, 20);
-                button22.TabIndex = 7;
-                button22.Text = "Geo foundation print";
-                button22.UseVisualStyleBackColor = false;
-                button22.Click += new EventHandler(GeoFoundationPrint_Click);
-                radioButton13.AutoSize = true;
-                radioButton13.BackColor = Color.White;
-                radioButton13.Location = new Point(291, 8);
-                radioButton13.Name = "radioButton13";
-                radioButton13.Size = new Size(58, 17);
-                radioButton13.TabIndex = 4;
-                radioButton13.TabStop = true;
-                radioButton13.Text = "1:5000";
-                radioButton13.UseVisualStyleBackColor = false;
-                radioButton12.AutoSize = true;
-                radioButton12.BackColor = Color.White;
-                radioButton12.Location = new Point(216, 8);
-                radioButton12.Name = "radioButton12";
-                radioButton12.Size = new Size(58, 17);
-                radioButton12.TabIndex = 3;
-                radioButton12.Text = "1:2000";
-                radioButton12.UseVisualStyleBackColor = false;
-                radioButton11.AutoSize = true;
-                radioButton11.BackColor = Color.White;
-                radioButton11.Checked = true;
-                radioButton11.Location = new Point(142, 8);
-                radioButton11.Name = "radioButton11";
-                radioButton11.Size = new Size(58, 17);
-                radioButton11.TabIndex = 2;
-                radioButton11.TabStop = true;
-                radioButton11.Text = "1:1000";
-                radioButton11.UseVisualStyleBackColor = false;
-                radioButton10.AutoSize = true;
-                radioButton10.BackColor = Color.White;
-                radioButton10.Location = new Point(74, 8);
-                radioButton10.Name = "radioButton10";
-                radioButton10.Size = new Size(52, 17);
-                radioButton10.TabIndex = 1;
-                radioButton10.Text = "1:500";
-                radioButton10.UseVisualStyleBackColor = false;
-                radioButton9.AutoSize = true;
-                radioButton9.BackColor = Color.White;
-                radioButton9.Location = new Point(6, 8);
-                radioButton9.Name = "radioButton9";
-                radioButton9.Size = new Size(52, 17);
-                radioButton9.TabIndex = 0;
-                radioButton9.Text = "1:200";
-                radioButton9.UseVisualStyleBackColor = false;
-                groupBox5.BackColor = Color.DimGray;
-                groupBox5.Controls.Add((Control)textBox4);
-                groupBox5.Controls.Add((Control)button34);
-                groupBox5.Controls.Add((Control)button33);
-                groupBox5.Controls.Add((Control)button20);
-                groupBox5.Controls.Add((Control)button32);
-                groupBox5.Controls.Add((Control)button31);
-                groupBox5.Controls.Add((Control)button12);
-                groupBox5.Controls.Add((Control)button11);
-                groupBox5.ForeColor = Color.Black;
-                groupBox5.Location = new Point(6, 276);
-                groupBox5.Name = "groupBox5";
-                groupBox5.Size = new Size(372, 89);
-                groupBox5.TabIndex = 3;
-                groupBox5.TabStop = false;
-                groupBox5.Text = "DTM points";
-                textBox4.Location = new Point(118, 38);
-                textBox4.Name = "textBox4";
-                textBox4.Size = new Size(44, 20);
-                textBox4.TabIndex = 7;
-                button34.BackColor = Color.White;
-                button34.Location = new Point(267, 37);
-                button34.Name = "button34";
-                button34.Size = new Size(100, 22);
-                button34.TabIndex = 6;
-                button34.Text = "Help selection";
-                button34.UseVisualStyleBackColor = false;
-                button34.Click += new EventHandler(DTMhelp_Click);
-                button33.BackColor = Color.White;
-                button33.Location = new Point(167, 37);
-                button33.Name = "button33";
-                button33.Size = new Size(97, 22);
-                button33.TabIndex = 5;
-                button33.Text = "Save symbol";
-                button33.UseVisualStyleBackColor = false;
-                button33.Click += new EventHandler(DTMsymbolSave_Click);
-                button20.BackColor = Color.White;
-                button20.Location = new Point(6, 37);
-                button20.Name = "button20";
-                button20.Size = new Size(107, 22);
-                button20.TabIndex = 4;
-                button20.Text = "Change symbol";
-                button20.UseVisualStyleBackColor = false;
-                button20.Click += new EventHandler(DTMsymbol_Click);
-                button32.BackColor = Color.White;
-                button32.Location = new Point(169, 61);
-                button32.Name = "button32";
-                button32.Size = new Size(197, 23);
-                button32.TabIndex = 3;
-                button32.Text = "Inscription horizontal/vertical";
-                button32.UseVisualStyleBackColor = false;
-                button32.Click += new EventHandler(DTMinscription_Click);
-                button31.BackColor = Color.White;
-                button31.Location = new Point(6, 61);
-                button31.Name = "button31";
-                button31.Size = new Size(159, 23);
-                button31.TabIndex = 2;
-                button31.Text = "Move inscription";
-                button31.UseVisualStyleBackColor = false;
-                button31.Click += new EventHandler(DTMmove_Click);
-                button12.BackColor = Color.White;
-                button12.Location = new Point(235, 13);
-                button12.Name = "button12";
-                button12.Size = new Size(130, 22);
-                button12.TabIndex = 1;
-                button12.Text = "Other measurements";
-                button12.UseVisualStyleBackColor = false;
-                button12.Click += new EventHandler(AddPoints_Click);
-                button11.BackColor = Color.White;
-                button11.Location = new Point(7, 13);
-                button11.Name = "button11";
-                button11.Size = new Size(225, 23);
-                button11.TabIndex = 0;
-                button11.Text = "MEASUREMENT DTM FILE INPUT";
-                button11.UseVisualStyleBackColor = false;
-                button11.Click += new EventHandler(InputAllPoints_Click);
-                groupBox4.BackColor = Color.DimGray;
-                groupBox4.Controls.Add((Control)button30);
-                groupBox4.Controls.Add((Control)button19);
-                groupBox4.Controls.Add((Control)button29);
-                groupBox4.Controls.Add((Control)textBox3);
-                groupBox4.Controls.Add((Control)button18);
-                groupBox4.Controls.Add((Control)button21);
-                groupBox4.Controls.Add((Control)groupBox8);
-                groupBox4.Controls.Add((Control)textBox2);
-                groupBox4.Controls.Add((Control)textBox1);
-                groupBox4.Controls.Add((Control)label6);
-                groupBox4.Controls.Add((Control)label5);
-                groupBox4.Controls.Add((Control)label4);
-                groupBox4.Controls.Add((Control)button4);
-                groupBox4.Controls.Add((Control)button3);
-                groupBox4.Controls.Add((Control)button2);
-                groupBox4.Controls.Add((Control)label3);
-                groupBox4.Controls.Add((Control)button1);
-                groupBox4.ForeColor = Color.Black;
-                groupBox4.Location = new Point(6, 105);
-                groupBox4.Name = "groupBox4";
-                groupBox4.Size = new Size(372, 166);
-                groupBox4.TabIndex = 2;
-                groupBox4.TabStop = false;
-                groupBox4.Text = "Creation of Geodetic foundation";
-                button30.BackColor = Color.White;
-                button30.Location = new Point((int)byte.MaxValue, 118);
-                button30.Name = "button30";
-                button30.Size = new Size(111, 21);
-                button30.TabIndex = 22;
-                button30.Text = "Help selection";
-                button30.UseVisualStyleBackColor = false;
-                button30.Click += new EventHandler(HelpSelection_Click);
-                button19.BackColor = Color.White;
-                button19.Location = new Point(162, 140);
-                button19.Name = "button19";
-                button19.Size = new Size(203, 20);
-                button19.TabIndex = 1;
-                button19.Text = "Inscription horizontal/vertical";
-                button19.UseVisualStyleBackColor = false;
-                button19.Click += new EventHandler(InscrHorVert_Click);
-                button29.BackColor = Color.White;
-                button29.Location = new Point(162, 119);
-                button29.Name = "button29";
-                button29.Size = new Size(89, 20);
-                button29.TabIndex = 21;
-                button29.Text = "Save symbol";
-                button29.UseVisualStyleBackColor = false;
-                button29.Click += new EventHandler(SymbolSave_Click);
-                textBox3.Location = new Point(114, 118);
-                textBox3.Name = "textBox3";
-                textBox3.Size = new Size(43, 20);
-                textBox3.TabIndex = 20;
-                button18.BackColor = Color.White;
-                button18.Location = new Point(8, 141);
-                button18.Name = "button18";
-                button18.Size = new Size(149, 20);
-                button18.TabIndex = 0;
-                button18.Text = "Inscription move";
-                button18.UseVisualStyleBackColor = false;
-                button18.Click += new EventHandler(InscriptionMove_Click);
-                button21.BackColor = Color.White;
-                button21.Location = new Point(7, 118);
-                button21.Name = "button21";
-                button21.Size = new Size(103, 21);
-                button21.TabIndex = 19;
-                button21.Text = "Change symbol";
-                button21.UseVisualStyleBackColor = false;
-                button21.Click += new EventHandler(ChangeSymbol_Click);
-                groupBox8.BackColor = Color.FromArgb(64, 64, 64);
-                groupBox8.Controls.Add((Control)radioButton5);
-                groupBox8.Controls.Add((Control)radioButton6);
-                groupBox8.Controls.Add((Control)radioButton2);
-                groupBox8.Controls.Add((Control)radioButton3);
-                groupBox8.Controls.Add((Control)radioButton4);
-                groupBox8.ForeColor = Color.Black;
-                groupBox8.Location = new Point(8, 45);
-                groupBox8.Name = "groupBox8";
-                groupBox8.Size = new Size(356, 32);
-                groupBox8.TabIndex = 18;
-                groupBox8.TabStop = false;
-                radioButton5.AutoSize = true;
-                radioButton5.BackColor = Color.FromArgb(224, 224, 224);
-                radioButton5.Location = new Point(215, 10);
-                radioButton5.Name = "radioButton5";
-                radioButton5.Size = new Size(58, 17);
-                radioButton5.TabIndex = 6;
-                radioButton5.Text = "1:3000";
-                radioButton5.UseVisualStyleBackColor = false;
-                radioButton6.AutoSize = true;
-                radioButton6.BackColor = Color.FromArgb(224, 224, 224);
-                radioButton6.Location = new Point(285, 10);
-                radioButton6.Name = "radioButton6";
-                radioButton6.Size = new Size(58, 17);
-                radioButton6.TabIndex = 7;
-                radioButton6.Text = "1:5000";
-                radioButton6.UseVisualStyleBackColor = false;
-                radioButton2.AutoSize = true;
-                radioButton2.BackColor = Color.FromArgb(224, 224, 224);
-                radioButton2.Checked = true;
-                radioButton2.Location = new Point(9, 10);
-                radioButton2.Name = "radioButton2";
-                radioButton2.Size = new Size(52, 17);
-                radioButton2.TabIndex = 3;
-                radioButton2.TabStop = true;
-                radioButton2.Text = "1:500";
-                radioButton2.UseVisualStyleBackColor = false;
-                radioButton3.AutoSize = true;
-                radioButton3.BackColor = Color.FromArgb(224, 224, 224);
-                radioButton3.Location = new Point(73, 10);
-                radioButton3.Name = "radioButton3";
-                radioButton3.Size = new Size(58, 17);
-                radioButton3.TabIndex = 4;
-                radioButton3.Text = "1:1000";
-                radioButton3.UseVisualStyleBackColor = false;
-                radioButton4.AutoSize = true;
-                radioButton4.BackColor = Color.FromArgb(224, 224, 224);
-                radioButton4.Location = new Point(144, 10);
-                radioButton4.Name = "radioButton4";
-                radioButton4.Size = new Size(58, 17);
-                radioButton4.TabIndex = 5;
-                radioButton4.Text = "1:2000";
-                radioButton4.UseVisualStyleBackColor = false;
-                textBox2.Location = new Point(312, 98);
-                textBox2.Name = "textBox2";
-                textBox2.ReadOnly = true;
-                textBox2.Size = new Size(56, 20);
-                textBox2.TabIndex = 17;
-                textBox1.Location = new Point(184, 98);
-                textBox1.Name = "textBox1";
-                textBox1.ReadOnly = true;
-                textBox1.Size = new Size(55, 20);
-                textBox1.TabIndex = 16;
-                label6.AutoSize = true;
-                label6.BackColor = Color.FromArgb(64, 64, 64);
-                label6.ForeColor = Color.White;
-                label6.Location = new Point(241, 102);
-                label6.Name = "label6";
-                label6.Size = new Size(69, 13);
-                label6.TabIndex = 15;
-                label6.Text = "Maximum =";
-                label5.AutoSize = true;
-                label5.BackColor = Color.FromArgb(64, 64, 64);
-                label5.ForeColor = Color.White;
-                label5.Location = new Point(117, 103);
-                label5.Name = "label5";
-                label5.Size = new Size(65, 13);
-                label5.TabIndex = 14;
-                label5.Text = "Average =";
-                label4.AutoSize = true;
-                label4.BackColor = Color.FromArgb(64, 64, 64);
-                label4.ForeColor = Color.White;
-                label4.Location = new Point(6, 103);
-                label4.Name = "label4";
-                label4.Size = new Size(107, 13);
-                label4.TabIndex = 13;
-                label4.Text = "Calculated errors:";
-                button4.BackColor = Color.White;
-                button4.Location = new Point(291, 76);
-                button4.Name = "button4";
-                button4.Size = new Size(75, 23);
-                button4.TabIndex = 12;
-                button4.Text = "Список точек";
-                button4.UseVisualStyleBackColor = false;
-                button4.Click += new EventHandler(PointsList_Click);
-                button3.BackColor = Color.White;
-                button3.Location = new Point(159, 76);
-                button3.Name = "button3";
-                button3.Size = new Size(128, 23);
-                button3.TabIndex = 11;
-                button3.Text = "List doubtful lines";
-                button3.UseVisualStyleBackColor = false;
-                button3.Click += new EventHandler(ListLines_Click);
-                button2.BackColor = Color.White;
-                button2.Location = new Point(9, 76);
-                button2.Name = "button2";
-                button2.Size = new Size(147, 23);
-                button2.TabIndex = 10;
-                button2.Text = "Doubtful measurements";
-                button2.UseVisualStyleBackColor = false;
-                button2.Click += new EventHandler(Doubtful_Click);
-                label3.AutoSize = true;
-                label3.BackColor = Color.FromArgb(64, 64, 64);
-                label3.ForeColor = Color.White;
-                label3.Location = new Point(12, 32);
-                label3.Name = "label3";
-                label3.Size = new Size(349, 13);
-                label3.TabIndex = 1;
-                label3.Text = "Select a tolerance and click button 'Doubtful measurements'";
-                button1.BackColor = Color.White;
-                button1.Location = new Point(6, 12);
-                button1.Name = "button1";
-                button1.Size = new Size(361, 20);
-                button1.TabIndex = 0;
-                button1.Text = "MEASUREMENT DATA FILE INPUT(Control points)";
-                button1.UseVisualStyleBackColor = false;
-                button1.Click += new EventHandler(GeoInput_Click);
-                groupBox3.BackColor = Color.DimGray;
-                groupBox3.Controls.Add((Control)button16);
-                groupBox3.Controls.Add((Control)button15);
-                groupBox3.Controls.Add((Control)button14);
-                groupBox3.Controls.Add((Control)button13);
-                groupBox3.ForeColor = Color.Black;
-                groupBox3.Location = new Point(6, 62);
-                groupBox3.Name = "groupBox3";
-                groupBox3.Size = new Size(372, 39);
-                groupBox3.TabIndex = 1;
-                groupBox3.TabStop = false;
-                groupBox3.Text = "Zoom and Move";
-                button16.BackColor = Color.White;
-                button16.Location = new Point(291, 13);
-                button16.Name = "button16";
-                button16.Size = new Size(75, 21);
-                button16.TabIndex = 3;
-                button16.Text = "Move";
-                button16.UseVisualStyleBackColor = false;
-                button16.Click += new EventHandler(Move_Click);
-                button15.BackColor = Color.White;
-                button15.Location = new Point(191, 13);
-                button15.Name = "button15";
-                button15.Size = new Size(97, 21);
-                button15.TabIndex = 2;
-                button15.Text = "Zoom Out";
-                button15.UseVisualStyleBackColor = false;
-                button15.Click += new EventHandler(ZoomOut_Click);
-                button14.BackColor = Color.White;
-                button14.Location = new Point(99, 13);
-                button14.Name = "button14";
-                button14.Size = new Size(88, 21);
-                button14.TabIndex = 1;
-                button14.Text = "Zoom In";
-                button14.UseVisualStyleBackColor = false;
-                button14.Click += new EventHandler(ZoomIn_Click);
-                button13.BackColor = Color.White;
-                button13.Location = new Point(7, 13);
-                button13.Name = "button13";
-                button13.Size = new Size(90, 21);
-                button13.TabIndex = 0;
-                button13.Text = "Select Box";
-                button13.UseVisualStyleBackColor = false;
-                button13.Click += new EventHandler(SelectBox_Click);
-                groupBox2.BackColor = Color.DimGray;
-                groupBox2.Controls.Add((Control)label2);
-                groupBox2.Controls.Add((Control)label1);
-                groupBox2.ForeColor = Color.Black;
-                groupBox2.Location = new Point(6, 7);
-                groupBox2.Name = "groupBox2";
-                groupBox2.Size = new Size(372, 51);
-                groupBox2.TabIndex = 0;
-                groupBox2.TabStop = false;
-                groupBox2.Text = "Projects support";
-                label2.AutoSize = true;
-                label2.BackColor = Color.White;
-                label2.Location = new Point(6, 29);
-                label2.Name = "label2";
-                label2.Size = new Size(359, 13);
-                label2.TabIndex = 1;
-                label2.Text = "                                                                                        ";
-                label1.AutoSize = true;
-                label1.BackColor = Color.Gainsboro;
-                label1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, (byte)0);
-                label1.Location = new Point(141, 11);
-                label1.Name = "label1";
-                label1.Size = new Size(91, 13);
-                label1.TabIndex = 0;
-                label1.Text = "Current project";
-                button10.BackColor = Color.Black;
-                button10.ForeColor = Color.White;
-                button10.Location = new Point(784, 634);
-                button10.Name = "button10";
-                button10.Size = new Size(94, 23);
-                button10.TabIndex = 2;
-                button10.Text = "Закрыть окно";
-                button10.UseVisualStyleBackColor = false;
-                button10.Click += new EventHandler(Exit_Click);
-                label9.AutoSize = true;
-                label9.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                label9.ForeColor = Color.Maroon;
-                label9.Location = new Point(12, 660);
-                label9.Name = "label9";
-                label9.Size = new Size(18, 18);
-                label9.TabIndex = 3;
-                label9.Text = "  ";
-                AutoScaleDimensions = new SizeF(7f, 13f);
-                AutoScaleMode = AutoScaleMode.Font;
-                BackColor = Color.Gray;
-                ClientSize = new Size(1015, 703);
-                Controls.Add((Control)label9);
-                Controls.Add((Control)button10);
-                Controls.Add((Control)groupBox1);
-                Controls.Add((Control)panel7);
-                Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                MaximizeBox = false;
-                MinimizeBox = false;
-                Name = "GeoCalc";
-                Text = "GeoCalc";
-                groupBox1.ResumeLayout(false);
-                groupBox6.ResumeLayout(false);
-                groupBox9.ResumeLayout(false);
-                groupBox9.PerformLayout();
-                groupBox10.ResumeLayout(false);
-                groupBox10.PerformLayout();
-                groupBox5.ResumeLayout(false);
-                groupBox5.PerformLayout();
-                groupBox4.ResumeLayout(false);
-                groupBox4.PerformLayout();
-                groupBox8.ResumeLayout(false);
-                groupBox8.PerformLayout();
-                groupBox3.ResumeLayout(false);
-                groupBox2.ResumeLayout(false);
-                groupBox2.PerformLayout();
-                ResumeLayout(false);
-                PerformLayout();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button28 = new System.Windows.Forms.Button();
+            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button22 = new System.Windows.Forms.Button();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Location = new System.Drawing.Point(14, 77);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(611, 601);
+            this.panel7.TabIndex = 0;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            this.panel7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightGray;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.groupBox9);
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(631, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(384, 621);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox6.Controls.Add(this.button35);
+            this.groupBox6.Controls.Add(this.button17);
+            this.groupBox6.ForeColor = System.Drawing.Color.Black;
+            this.groupBox6.Location = new System.Drawing.Point(6, 368);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(369, 35);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Просмотр(показать)";
+            // 
+            // button35
+            // 
+            this.button35.BackColor = System.Drawing.Color.White;
+            this.button35.Location = new System.Drawing.Point(221, 8);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(86, 23);
+            this.button35.TabIndex = 1;
+            this.button35.Text = "DTM points";
+            this.button35.UseVisualStyleBackColor = false;
+            this.button35.Click += new System.EventHandler(this.DTMPoints_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.White;
+            this.button17.Location = new System.Drawing.Point(64, 8);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(91, 23);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "Basic points";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.BasicPoints_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox9.Controls.Add(this.button27);
+            this.groupBox9.Controls.Add(this.button26);
+            this.groupBox9.Controls.Add(this.button25);
+            this.groupBox9.Controls.Add(this.button24);
+            this.groupBox9.Controls.Add(this.button23);
+            this.groupBox9.Controls.Add(this.label8);
+            this.groupBox9.Controls.Add(this.listBox1);
+            this.groupBox9.Controls.Add(this.groupBox10);
+            this.groupBox9.ForeColor = System.Drawing.Color.Black;
+            this.groupBox9.Location = new System.Drawing.Point(6, 408);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(372, 203);
+            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Options of printing";
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.White;
+            this.button27.Location = new System.Drawing.Point(7, 176);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(180, 20);
+            this.button27.TabIndex = 7;
+            this.button27.Text = "Return to main panel";
+            this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.MainPanel_Click);
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.White;
+            this.button26.Location = new System.Drawing.Point(207, 176);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(162, 20);
+            this.button26.TabIndex = 6;
+            this.button26.Text = "Print selected page";
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.PrintSelection_Click);
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.White;
+            this.button25.Location = new System.Drawing.Point(320, 137);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(47, 35);
+            this.button25.TabIndex = 5;
+            this.button25.Text = "Zoom Out";
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.PreviewOut_Click);
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.White;
+            this.button24.Location = new System.Drawing.Point(273, 136);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(47, 36);
+            this.button24.TabIndex = 4;
+            this.button24.Text = "Zoom In";
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.PreviewIn_Click);
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.White;
+            this.button23.Location = new System.Drawing.Point(273, 98);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(94, 34);
+            this.button23.TabIndex = 3;
+            this.button23.Text = "Confirm page selection";
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.PreviewSelection_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(5, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(268, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Page   xmin     ymin     xmax      ymax    points";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(5, 102);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(267, 69);
+            this.listBox1.TabIndex = 1;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox10.Controls.Add(this.label7);
+            this.groupBox10.Controls.Add(this.button28);
+            this.groupBox10.Controls.Add(this.radioButton15);
+            this.groupBox10.Controls.Add(this.radioButton14);
+            this.groupBox10.Controls.Add(this.radioButton8);
+            this.groupBox10.Controls.Add(this.radioButton7);
+            this.groupBox10.Controls.Add(this.radioButton1);
+            this.groupBox10.Controls.Add(this.button22);
+            this.groupBox10.Controls.Add(this.radioButton13);
+            this.groupBox10.Controls.Add(this.radioButton12);
+            this.groupBox10.Controls.Add(this.radioButton11);
+            this.groupBox10.Controls.Add(this.radioButton10);
+            this.groupBox10.Controls.Add(this.radioButton9);
+            this.groupBox10.Location = new System.Drawing.Point(5, 14);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(364, 73);
+            this.groupBox10.TabIndex = 0;
+            this.groupBox10.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(10, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Select scale and click";
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.White;
+            this.button28.ForeColor = System.Drawing.Color.Black;
+            this.button28.Location = new System.Drawing.Point(288, 47);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(73, 21);
+            this.button28.TabIndex = 3;
+            this.button28.Text = "DTM print";
+            this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.PrintDTM_Click);
+            // 
+            // radioButton15
+            // 
+            this.radioButton15.AutoSize = true;
+            this.radioButton15.BackColor = System.Drawing.Color.White;
+            this.radioButton15.Location = new System.Drawing.Point(292, 28);
+            this.radioButton15.Name = "radioButton15";
+            this.radioButton15.Size = new System.Drawing.Size(64, 17);
+            this.radioButton15.TabIndex = 12;
+            this.radioButton15.Text = "1:6250";
+            this.radioButton15.UseVisualStyleBackColor = false;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.BackColor = System.Drawing.Color.White;
+            this.radioButton14.Location = new System.Drawing.Point(217, 28);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(64, 17);
+            this.radioButton14.TabIndex = 11;
+            this.radioButton14.Text = "1:2500";
+            this.radioButton14.UseVisualStyleBackColor = false;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.BackColor = System.Drawing.Color.White;
+            this.radioButton8.Location = new System.Drawing.Point(142, 28);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(64, 17);
+            this.radioButton8.TabIndex = 10;
+            this.radioButton8.Text = "1:1250";
+            this.radioButton8.UseVisualStyleBackColor = false;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.BackColor = System.Drawing.Color.White;
+            this.radioButton7.Location = new System.Drawing.Point(74, 28);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(57, 17);
+            this.radioButton7.TabIndex = 9;
+            this.radioButton7.Text = "1:625";
+            this.radioButton7.UseVisualStyleBackColor = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(6, 28);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(57, 17);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.Text = "1:250";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.White;
+            this.button22.Location = new System.Drawing.Point(152, 47);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(132, 20);
+            this.button22.TabIndex = 7;
+            this.button22.Text = "Geo foundation print";
+            this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.GeoFoundationPrint_Click);
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.BackColor = System.Drawing.Color.White;
+            this.radioButton13.Location = new System.Drawing.Point(291, 8);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(64, 17);
+            this.radioButton13.TabIndex = 4;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "1:5000";
+            this.radioButton13.UseVisualStyleBackColor = false;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.BackColor = System.Drawing.Color.White;
+            this.radioButton12.Location = new System.Drawing.Point(216, 8);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(64, 17);
+            this.radioButton12.TabIndex = 3;
+            this.radioButton12.Text = "1:2000";
+            this.radioButton12.UseVisualStyleBackColor = false;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.BackColor = System.Drawing.Color.White;
+            this.radioButton11.Checked = true;
+            this.radioButton11.Location = new System.Drawing.Point(142, 8);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(64, 17);
+            this.radioButton11.TabIndex = 2;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "1:1000";
+            this.radioButton11.UseVisualStyleBackColor = false;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.BackColor = System.Drawing.Color.White;
+            this.radioButton10.Location = new System.Drawing.Point(74, 8);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(57, 17);
+            this.radioButton10.TabIndex = 1;
+            this.radioButton10.Text = "1:500";
+            this.radioButton10.UseVisualStyleBackColor = false;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.BackColor = System.Drawing.Color.White;
+            this.radioButton9.Location = new System.Drawing.Point(6, 8);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(57, 17);
+            this.radioButton9.TabIndex = 0;
+            this.radioButton9.Text = "1:200";
+            this.radioButton9.UseVisualStyleBackColor = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.button34);
+            this.groupBox5.Controls.Add(this.button33);
+            this.groupBox5.Controls.Add(this.button20);
+            this.groupBox5.Controls.Add(this.button32);
+            this.groupBox5.Controls.Add(this.button31);
+            this.groupBox5.Controls.Add(this.button12);
+            this.groupBox5.Controls.Add(this.button11);
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(6, 276);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(372, 89);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "DTM points";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(118, 38);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(44, 20);
+            this.textBox4.TabIndex = 7;
+            // 
+            // button34
+            // 
+            this.button34.BackColor = System.Drawing.Color.White;
+            this.button34.Location = new System.Drawing.Point(267, 37);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(100, 22);
+            this.button34.TabIndex = 6;
+            this.button34.Text = "Help selection";
+            this.button34.UseVisualStyleBackColor = false;
+            this.button34.Click += new System.EventHandler(this.DTMhelp_Click);
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.White;
+            this.button33.Location = new System.Drawing.Point(167, 37);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(97, 22);
+            this.button33.TabIndex = 5;
+            this.button33.Text = "Save symbol";
+            this.button33.UseVisualStyleBackColor = false;
+            this.button33.Click += new System.EventHandler(this.DTMsymbolSave_Click);
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.White;
+            this.button20.Location = new System.Drawing.Point(6, 37);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(107, 22);
+            this.button20.TabIndex = 4;
+            this.button20.Text = "Change symbol";
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.DTMsymbol_Click);
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.White;
+            this.button32.Location = new System.Drawing.Point(169, 61);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(197, 23);
+            this.button32.TabIndex = 3;
+            this.button32.Text = "Inscription horizontal/vertical";
+            this.button32.UseVisualStyleBackColor = false;
+            this.button32.Click += new System.EventHandler(this.DTMinscription_Click);
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.White;
+            this.button31.Location = new System.Drawing.Point(6, 61);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(159, 23);
+            this.button31.TabIndex = 2;
+            this.button31.Text = "Move inscription";
+            this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.DTMmove_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(235, 13);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(130, 22);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "Other measurements";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.AddPoints_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(7, 13);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(225, 23);
+            this.button11.TabIndex = 0;
+            this.button11.Text = "MEASUREMENT DTM FILE INPUT";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.InputAllPoints_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox4.Controls.Add(this.button30);
+            this.groupBox4.Controls.Add(this.button19);
+            this.groupBox4.Controls.Add(this.button29);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.button18);
+            this.groupBox4.Controls.Add(this.button21);
+            this.groupBox4.Controls.Add(this.groupBox8);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(6, 105);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(372, 166);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Creation of Geodetic foundation";
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.White;
+            this.button30.Location = new System.Drawing.Point(255, 118);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(111, 21);
+            this.button30.TabIndex = 22;
+            this.button30.Text = "Help selection";
+            this.button30.UseVisualStyleBackColor = false;
+            this.button30.Click += new System.EventHandler(this.HelpSelection_Click);
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.White;
+            this.button19.Location = new System.Drawing.Point(162, 140);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(203, 20);
+            this.button19.TabIndex = 1;
+            this.button19.Text = "Inscription horizontal/vertical";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.InscrHorVert_Click);
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.White;
+            this.button29.Location = new System.Drawing.Point(162, 119);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(89, 20);
+            this.button29.TabIndex = 21;
+            this.button29.Text = "Save symbol";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.SymbolSave_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(114, 118);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(43, 20);
+            this.textBox3.TabIndex = 20;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.White;
+            this.button18.Location = new System.Drawing.Point(8, 141);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(149, 20);
+            this.button18.TabIndex = 0;
+            this.button18.Text = "Inscription move";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.InscriptionMove_Click);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.White;
+            this.button21.Location = new System.Drawing.Point(7, 118);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(103, 21);
+            this.button21.TabIndex = 19;
+            this.button21.Text = "Change symbol";
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.ChangeSymbol_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox8.Controls.Add(this.radioButton5);
+            this.groupBox8.Controls.Add(this.radioButton6);
+            this.groupBox8.Controls.Add(this.radioButton2);
+            this.groupBox8.Controls.Add(this.radioButton3);
+            this.groupBox8.Controls.Add(this.radioButton4);
+            this.groupBox8.ForeColor = System.Drawing.Color.Black;
+            this.groupBox8.Location = new System.Drawing.Point(8, 45);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(356, 32);
+            this.groupBox8.TabIndex = 18;
+            this.groupBox8.TabStop = false;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton5.Location = new System.Drawing.Point(215, 10);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(64, 17);
+            this.radioButton5.TabIndex = 6;
+            this.radioButton5.Text = "1:3000";
+            this.radioButton5.UseVisualStyleBackColor = false;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton6.Location = new System.Drawing.Point(285, 10);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(64, 17);
+            this.radioButton6.TabIndex = 7;
+            this.radioButton6.Text = "1:5000";
+            this.radioButton6.UseVisualStyleBackColor = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(9, 10);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(57, 17);
+            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "1:500";
+            this.radioButton2.UseVisualStyleBackColor = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton3.Location = new System.Drawing.Point(73, 10);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(64, 17);
+            this.radioButton3.TabIndex = 4;
+            this.radioButton3.Text = "1:1000";
+            this.radioButton3.UseVisualStyleBackColor = false;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton4.Location = new System.Drawing.Point(144, 10);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(64, 17);
+            this.radioButton4.TabIndex = 5;
+            this.radioButton4.Text = "1:2000";
+            this.radioButton4.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(312, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(56, 20);
+            this.textBox2.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(184, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(55, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(241, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Maximum =";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(117, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Average =";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Calculated errors:";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(291, 76);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Список точек";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.PointsList_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(159, 76);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "List doubtful lines";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.ListLines_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(9, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(147, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Doubtful measurements";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Doubtful_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(349, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Select a tolerance and click button \'Doubtful measurements\'";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(6, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(361, 20);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "MEASUREMENT DATA FILE INPUT(Control points)";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.GeoInput_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox3.Controls.Add(this.button16);
+            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(12, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(372, 69);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Zoom and Move";
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(291, 13);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 21);
+            this.button16.TabIndex = 3;
+            this.button16.Text = "Move";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.Move_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(191, 13);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(97, 21);
+            this.button15.TabIndex = 2;
+            this.button15.Text = "Zoom Out";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.ZoomOut_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(99, 13);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(88, 21);
+            this.button14.TabIndex = 1;
+            this.button14.Text = "Zoom In";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.ZoomIn_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(7, 13);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(90, 36);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Select Box";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.SelectBox_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(6, 48);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(372, 51);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Projects support";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(359, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "                                                                                 " +
+    "       ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gainsboro;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(524, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Current project";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Black;
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(784, 634);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(94, 23);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "Закрыть окно";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(12, 660);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(18, 18);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "  ";
+            // 
+            // GeoCalc
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1015, 713);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.groupBox3);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "GeoCalc";
+            this.Text = "GeoCalc";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }            
         #endregion
     }

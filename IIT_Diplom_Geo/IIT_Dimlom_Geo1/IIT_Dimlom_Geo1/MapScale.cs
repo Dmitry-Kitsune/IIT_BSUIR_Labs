@@ -174,7 +174,8 @@ namespace IIT_Dimlom_Geo1
                 myMap.sInscr, myMap.hInscr, myMap.iColInscr, 
                 myMap.iDensity);
             myMap.PolySymbolLoad(myMap.fsymbPoly, out kSymbPoly, out hSymbPoly);
-            myMap.PointLoad(fCurPnt, fCurHeig);
+            //myMap.PointLoad(fCurPnt, fCurHeig);
+            myMap.PointLoad();
             kPntPlus = myMap.kPntPlus;
             myMap.PointLoadFin();
             kPntFin = myMap.kPntFin;

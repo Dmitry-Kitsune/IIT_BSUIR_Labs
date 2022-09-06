@@ -286,7 +286,7 @@ namespace IIT_Dimlom_Geo1
            DllClass1.SetColour(myTop.brColor, myTop.pnColor);
            DllClass1.PointSymbLoad(myTop.fsymbPnt, out kSymbPnt, myTop.numRec, myTop.numbUser, myTop.heiSymb);
            DllClass1.LineSymbolLoad(myTop.fsymbLine, out kSymbLine, out hSymbLine, myTop.sSymbLine, myTop.x1Line, myTop.y1Line, myTop.x2Line, myTop.y2Line, myTop.xDescr, myTop.yDescr, myTop.x1Dens, myTop.y1Dens, myTop.x1Sign, myTop.y1Sign, myTop.x2Sign, myTop.y2Sign, myTop.n1Sign, myTop.n2Sign, myTop.iStyle1, myTop.iStyle2, myTop.iWidth1, myTop.iWidth2, myTop.nColLine, myTop.nItem, myTop.itemLoc, myTop.nBaseSymb, myTop.sInscr, myTop.hInscr, myTop.iColInscr, myTop.iDensity);
-            myTop.PointLoad(fCurPnt, fCurHeig);
+            myTop.PointLoad();
             kPntPlus = myTop.kPntPlus;
             kPntInput = myTop.kPntInput;
             if (kPntPlus < 2)
@@ -311,7 +311,7 @@ namespace IIT_Dimlom_Geo1
             kLineTopo = myTop.kLineTopo;
             iParam = 1;
             kLineInput = 0;
-            myTop.LineLoad(fCurLine);
+            myTop.LineLoad();
             kLineInput = myTop.kLineInput;
             xmin = myTop.xmin;
             ymin = myTop.ymin;

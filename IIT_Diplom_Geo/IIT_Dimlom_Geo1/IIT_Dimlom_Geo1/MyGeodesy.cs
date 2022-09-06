@@ -28,19 +28,10 @@ namespace IIT_Diplom_Geo1
         public readonly string dirKey = "Diplom_Geo";
         public string projectKey = "Diplom_Projs";
         public string pathKey = "";
-        //public string comPath = "";
-        
-        //public string curProject = "";
         public string curDirectory = "";
-
-        //public string fileProj = "";
         public string driveKey;
         public string[] nameDrive;
-        //public int kDisk;
         public string filePoint = ""; // Получение переменной для filePoint (путь к файлу) 
-
-        //public string fileProcess = "";
-        //public string fileAdd = "Temp"; // Директория для удаления
         public int kMaxTre = 299800;
         public string sTmp = "";
         public string cadPath = "";
@@ -51,13 +42,11 @@ namespace IIT_Diplom_Geo1
         public string curDirect = "";
         public string comPath = "";
         public string fileProj = "";
-        //public string fileProj = "Temp"; // Заменить на пустое значение
         public string comDirect = "";
         public string fileAdd = "";
         public string fsymbPnt = "";
         public string fsymbLine = "";
         public string fsymbPoly = "";
-        //public string filePoint = "";
         public string filePnt = "";
         public string fileLine = "";
         public string flineTopo = "";
@@ -961,84 +950,20 @@ namespace IIT_Diplom_Geo1
         public string fArchive = "";
         public string fArchLayer = "";
 
-        /// <summary>
-        //public string fAllProj = "";
-        //public string filePnt = "";
+   
         // Переменные для метода отрисовки panel1_Paint в class GeoDemo : Form
 
         private int kPartMaX = 20; // максимальное возможное кол-во слов в водимой строке
                                    //char[] seps = { ' ', ',', '\t' }; // массив символов - пробел, запятая, табуляция
 
-        // Граница вводимых данных в виде минимальных и максимальных значений координат точек
-        // public double xmin, ymin, xmax, ymax, zmin, zmax;
 
-        // Кол-во введенных точек
         public int kPoints = 0;
-        // Массив имен, координат и высот точек
-        // public string[] namePnt = new string[1000];
+
         public double[] xPntGeo = new double[1000];
         public double[] yPntGeo = new double[1000];
         public double[] zPntGeo = new double[1000];
 
-        // Получение значений переменных для отрисовки в графической области области 
-        //public double xmin { get; internal set; }
-        //public double ymin { get; internal set; }
-        //public double zmin { get; private set; }
-        //public double xmax { get; internal set; }
-        //public double ymax { get; internal set; }
-        //public double zmax { get; private set; }
-
-        // Переменные для  PointsLoad
-        // public double[] xPnt;
-        // public double[] yPnt;
-        // public double[] zPnt;
-
-        //internal void FilePath()
-        //{
-        //    string sTmp = "";
-        //    //Проверка выбора диска на случай непредвиденного удаления директории, определяющей выбор диска
-        //    DllClass1.CheckDrive(dirKey, out driveKey);
-        //    tmpSymb = "";
-        //    sTmp = driveKey + dirKey + "\\brdrive.dat";
-        //    Console.WriteLine($"[DEBUG] MyGeodesy.FilePath: '{sTmp}'");
-        //    if (!File.Exists(sTmp))
-        //    {
-        //        DialogResult result;
-        //        result = MessageBox.Show("Проблемы с выбранным Диском",
-        //            "Projects",
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    //Открытие и чтение файла brdrive.dat
-        //    FileStream fa = new FileStream(sTmp, FileMode.Open, FileAccess.Read);
-        //    BinaryReader faa = new BinaryReader(fa);
-        //    try
-        //    {
-        //        comPath = faa.ReadString();
-        //    }
-        //    catch (Exception)
-
-        //    {
-        //        Console.WriteLine("Ошибка операции чтения");
-        //    }
-        //    finally
-        //    {
-        //        fa.Close();
-        //        faa.Close();
-        //    }
-
-        //    // Формирование пути для файлов brProj.dat b brAllProj.dat в зависимости от выбранного диска
-        //    fileProj = comPath + "\\brProj.dat";
-        //    fileAllProj = comPath + "\\brAllProj.dat";
-
-        //    fileProcess = comPath + "\\brProc.dat";
-        //    // Формирование пути для файла fpoint.pnt (p.54)
-        //    DllClass1.CheckOpenProj(fileProj, out curProject, out curDirectory);
-        //    filePoint = curDirectory + "\\fpoint.pnt";
-        //}
-        public void FilePath()
+         public void FilePath()
         {
             DllClass1.DriveList(out kDrive, out sDrive);
             tmpSymb = "";
@@ -15910,34 +15835,34 @@ namespace IIT_Diplom_Geo1
             input1.Close();
         }
 
-        public void PointLoad(string fCurPnt, string fCurHeig)
+        public void PointLoad()
         {
             Cursor.Current = Cursors.WaitCursor;
-            kPntPlus = 0;
-            kPntInput = 0;
-            if (!File.Exists(fCurPnt))
+            this.kPntPlus = 0;
+            this.kPntInput = 0;
+            if (!File.Exists(this.filePnt))
                 return;
-            FileStream input = new FileStream(fCurPnt, FileMode.Open, FileAccess.Read);
+            FileStream input = new FileStream(this.filePnt, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
             try
             {
-                kPntPlus = binaryReader.ReadInt32();
-                xmin = binaryReader.ReadDouble();
-                ymin = binaryReader.ReadDouble();
-                zmin = binaryReader.ReadDouble();
-                xmax = binaryReader.ReadDouble();
-                ymax = binaryReader.ReadDouble();
-                zmax = binaryReader.ReadDouble();
-                for (int index = 0; index <= kPntPlus; ++index)
+                this.kPntPlus = binaryReader.ReadInt32();
+                this.xmin = binaryReader.ReadDouble();
+                this.ymin = binaryReader.ReadDouble();
+                this.zmin = binaryReader.ReadDouble();
+                this.xmax = binaryReader.ReadDouble();
+                this.ymax = binaryReader.ReadDouble();
+                this.zmax = binaryReader.ReadDouble();
+                for (int index = 0; index <= this.kPntPlus; ++index)
                 {
-                    namePnt[index] = binaryReader.ReadString();
-                    xPnt[index] = binaryReader.ReadDouble();
-                    yPnt[index] = binaryReader.ReadDouble();
-                    zPnt[index] = binaryReader.ReadDouble();
-                    nCode1[index] = binaryReader.ReadInt32();
-                    nCode2[index] = binaryReader.ReadInt32();
+                    this.namePnt[index] = binaryReader.ReadString();
+                    this.xPnt[index] = binaryReader.ReadDouble();
+                    this.yPnt[index] = binaryReader.ReadDouble();
+                    this.zPnt[index] = binaryReader.ReadDouble();
+                    this.nCode1[index] = binaryReader.ReadInt32();
+                    this.nCode2[index] = binaryReader.ReadInt32();
                 }
-                kPntInput = binaryReader.ReadInt32();
+                this.kPntInput = binaryReader.ReadInt32();
             }
             catch (Exception ex)
             {
@@ -15948,34 +15873,38 @@ namespace IIT_Diplom_Geo1
                 binaryReader.Close();
                 input.Close();
             }
-            kHeight = -1;
-            for (int index = 0; index <= kPntPlus; ++index)
+        }
+
+      
+        public void LoadPntSour()
+        {
+            this.kPntSource = 0;
+            if (!File.Exists(this.fsourcePnt))
+                return;
+            FileStream input = new FileStream(this.fsourcePnt, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
             {
-                if (zPnt[index] != 0.0)
+                this.kPntSource = binaryReader.ReadInt32();
+                for (int index = 0; index <= this.kPntSource; ++index)
                 {
-                    ++kHeight;
-                    nameHeig[kHeight] = namePnt[index];
-                    xHeig[kHeight] = xPnt[index];
-                    yHeig[kHeight] = yPnt[index];
-                    zHeig[kHeight] = zPnt[index];
+                    this.nameSour[index] = binaryReader.ReadString();
+                    this.xSour[index] = binaryReader.ReadDouble();
+                    this.ySour[index] = binaryReader.ReadDouble();
+                    this.zSour[index] = binaryReader.ReadDouble();
+                    this.nSour1[index] = binaryReader.ReadInt32();
+                    this.nSour2[index] = binaryReader.ReadInt32();
                 }
             }
-            if (File.Exists(fCurHeig))
-                File.Delete(fCurHeig);
-            if (kHeight <= 3)
-                return;
-            FileStream output = new FileStream(fCurHeig, FileMode.CreateNew);
-            BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-            binaryWriter.Write(kHeight);
-            for (int index = 0; index <= kHeight; ++index)
+            catch (Exception ex)
             {
-                binaryWriter.Write(nameHeig[index]);
-                binaryWriter.Write(xHeig[index]);
-                binaryWriter.Write(yHeig[index]);
-                binaryWriter.Write(zHeig[index]);
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
-            binaryWriter.Close();
-            output.Close();
+            finally
+            {
+                binaryReader.Close();
+                input.Close();
+            }
         }
         public void PointLoadFin()
         {
@@ -16015,43 +15944,47 @@ namespace IIT_Diplom_Geo1
             }
         }
 
-        public void LineLoad(string fCurLine)
+        public void LineLoad()
         {
-            kLine = 0;
-            if (!File.Exists(fCurLine))
+            this.kLineInput = 0;
+            if (!File.Exists(this.fileLine))
                 return;
-            FileStream input = new FileStream(fCurLine, FileMode.Open, FileAccess.Read);
+            FileStream input = new FileStream(this.fileLine, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
             try
             {
-                kLine = binaryReader.ReadInt32();
-                if (kLine <= 0)
-                    return;
-                for (int index1 = 1; index1 <= kLine; ++index1)
+                this.kLineInput = binaryReader.ReadInt32();
+                for (int index1 = 1; index1 <= this.kLineInput; ++index1)
                 {
-                    nLineCode[index1] = binaryReader.ReadInt32();
-                    nLongRad[index1] = binaryReader.ReadInt32();
-                    sWidLine[index1] = binaryReader.ReadDouble();
-                    dstLine[index1] = binaryReader.ReadDouble();
-                    rRadLine[index1] = binaryReader.ReadDouble();
-                    xRadLine[index1] = binaryReader.ReadDouble();
-                    yRadLine[index1] = binaryReader.ReadDouble();
-                    k1[index1] = binaryReader.ReadInt32();
-                    k2[index1] = binaryReader.ReadInt32();
-                    int num1 = k1[index1];
-                    int num2 = k2[index1];
+                    this.nLineCode[index1] = binaryReader.ReadInt32();
+                    this.nLongRad[index1] = binaryReader.ReadInt32();
+                    this.sWidLine[index1] = binaryReader.ReadDouble();
+                    this.dstLine[index1] = binaryReader.ReadDouble();
+                    this.rRadLine[index1] = binaryReader.ReadDouble();
+                    this.xRadLine[index1] = binaryReader.ReadDouble();
+                    this.yRadLine[index1] = binaryReader.ReadDouble();
+                    this.k1[index1] = binaryReader.ReadInt32();
+                    this.k2[index1] = binaryReader.ReadInt32();
+                    int num1 = this.k1[index1];
+                    int num2 = this.k2[index1];
                     for (int index2 = num1; index2 <= num2; ++index2)
                     {
-                        nameLin[index2] = binaryReader.ReadString();
-                        xLin[index2] = binaryReader.ReadDouble();
-                        yLin[index2] = binaryReader.ReadDouble();
-                        zLin[index2] = binaryReader.ReadDouble();
+                        this.xLin[index2] = binaryReader.ReadDouble();
+                        this.yLin[index2] = binaryReader.ReadDouble();
+                        if (this.xLin[index2] < this.xmin)
+                            this.xmin = this.xLin[index2];
+                        if (this.xLin[index2] > this.xmax)
+                            this.xmax = this.xLin[index2];
+                        if (this.yLin[index2] < this.ymin)
+                            this.ymin = this.yLin[index2];
+                        if (this.yLin[index2] > this.ymax)
+                            this.ymax = this.yLin[index2];
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+                Console.WriteLine("The Read operation failed as expected.");
             }
             finally
             {
@@ -16059,6 +15992,7 @@ namespace IIT_Diplom_Geo1
                 input.Close();
             }
         }
+
         public void PolygonLoad(ref int[] kPolInside)
         {
             kPoly = 0;
@@ -20456,7 +20390,8 @@ namespace IIT_Diplom_Geo1
                 int iLong;
                 int iHei;
                 int kPix;
-                DllClass1.SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, nRec, nUser, out iLong, out int _, out iHei, out sDscr, out kPix, ixp, iyp, nClr, out sText, out mColor);
+                DllClass1.SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, nRec, nUser, out iLong, out int _, out iHei, 
+                    out sDscr, out kPix, ixp, iyp, nClr, out sText, out mColor);
                 int ixh = int32_1 + idx / 2;
                 int iyh = int32_2 + (idy - iHei) / 2 - 3;
                 if (iLong == 0)
@@ -20901,82 +20836,6 @@ namespace IIT_Diplom_Geo1
             }
         }
 
-        //public void PointsInput(out int iCond, out int kAdd
-
-        ////int kGeoFin,
-        ////string[] nameFin,
-        ////double[] xFin,
-        ////double[] yFin,
-        ////double[] zFin,
-        ////double zeroSpot,
-
-        ////string[] nameAdd,
-        ////double[] xAdd,
-        ////double[] yAdd,
-        ////double[] zAdd,
-        ////int[] nUniq
-        //)
-        //{
-        //    kAdd = -1;
-        //    iCond = 0;
-        //    string sTmp = "";
-
-        //    int k = 0;
-        //    int kPart = 50;
-        //    double num1 = 0.0;
-        //    int index1 = 0;
-        //    double num2 = 3.1415926;
-        //    double num3;
-        //    double num4 = num3 = 0.0;
-        //    double num5 = num3;
-        //    double num6 = num3;
-        //    double num7;
-        //    double num8 = num7 = 0.0;
-        //    int num9 = 0;
-        //    int num14 = 0;
-        //    int num15 = 0;
-        //    // statName = sPart[1];
-        //    int sPart = 0; // template
-        //    int statName = sPart;
-        //    //for (int index2 = 0; index2 <= kGeoFin; ++index2)
-        //    //{
-        //    //    if (nameFin[index2] == "statName") // Template
-        //    //    {
-        //    //        ++num14;
-        //    //        num6 = xFin[index2];
-        //    //        num5 = yFin[index2];
-        //    //        num4 = zFin[index2];
-        //    //        break;
-        //    //    }
-        //    //}
-        //    if (File.Exists(filePoint))
-        //    {
-        //        FileStream fp = new FileStream(filePoint, FileMode.Open, FileAccess.Read);
-        //        BinaryReader fpp = new BinaryReader(fp);
-        //        try
-        //        {
-        //            filePoint = fpp.ReadString();
-        //            //namePnt = fpp.ReadDouble();
-        //            //xPntGeo = fpp.ReadDouble();
-        //            //yPntGeo = fpp.ReadDouble();
-        //            //yPntGeo = fpp.ReadDouble();
-        //            //zPntGeo = fpp.ReadDouble();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            Console.WriteLine($"Ошибка операции чтения PointsInput {sTmp}");
-        //        }
-        //        finally
-        //        {
-        //            fp.Close();
-        //            fpp.Close();
-        //        }
-        //    }
-
-        //    if (!File.Exists(filePoint))
-        //        filePoint = "";
-        //}
-        // Написать функцию вычисления координат точек
         private double xt;
         private double yt;
         void Perpendjcular(int iParam, double x1, double y1, double x2,
@@ -21727,37 +21586,6 @@ namespace IIT_Diplom_Geo1
                 input.Close();
             }
         }
-        public void LoadPntSour()
-        {
-            kPntSource = 0;
-            if (!File.Exists(fsourcePnt))
-                return;
-            FileStream input = new FileStream(fsourcePnt, FileMode.Open, FileAccess.Read);
-            BinaryReader binaryReader = new BinaryReader((Stream)input);
-            try
-            {
-                kPntSource = binaryReader.ReadInt32();
-                for (int index = 0; index <= kPntSource; ++index)
-                {
-                    nameSour[index] = binaryReader.ReadString();
-                    xSour[index] = binaryReader.ReadDouble();
-                    ySour[index] = binaryReader.ReadDouble();
-                    zSour[index] = binaryReader.ReadDouble();
-                    nSour1[index] = binaryReader.ReadInt32();
-                    nSour2[index] = binaryReader.ReadInt32();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
-            }
-            finally
-            {
-                binaryReader.Close();
-                input.Close();
-            }
-        }
-
         public void KeepActionZero()
         {
             int num1;

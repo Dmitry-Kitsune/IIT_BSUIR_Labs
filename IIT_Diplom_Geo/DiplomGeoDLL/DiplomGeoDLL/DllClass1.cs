@@ -27806,26 +27806,26 @@ namespace DiplomGeoDLL
         }
         // загрузка точек в проект
         public static void PointsInput(
-          out int kPntPlus,
-          out int kPntInput,
-          string[] namePnt,
-          double[] xPnt,
-          double[] yPnt,
-          double[] zPnt,
-          int[] nCode1,
-          int[] nCode2,
-          out int kHeight,
-          string[] nameHeig,
-          double[] xHeig,
-          double[] yHeig,
-          double[] zHeig,
-          out double xmin,
-          out double ymin,
-          out double xmax,
-          out double ymax,
-          out double zmin,
-          out double zmax,
-          out int iCond)
+       out int kPntPlus,
+       out int kPntInput,
+       string[] namePnt,
+       double[] xPnt,
+       double[] yPnt,
+       double[] zPnt,
+       int[] nCode1,
+       int[] nCode2,
+       out int kHeight,
+       string[] nameHeig,
+       double[] xHeig,
+       double[] yHeig,
+       double[] zHeig,
+       out double xmin,
+       out double ymin,
+       out double xmax,
+       out double ymax,
+       out double zmin,
+       out double zmax,
+       out int iCond)
         {
             char[] seps = new char[3] { ' ', ',', '\t' };
             iCond = 0;
@@ -27839,21 +27839,21 @@ namespace DiplomGeoDLL
             ymax = -9999999.9;
             zmax = -9999999.9;
             int kArray = 999999;
-            stringArray(namePnt, ref kArray);
-            stringArray(nameHeig, ref kArray);
-            intArray(nCode1, ref kArray);
-            intArray(nCode2, ref kArray);
-            doubleArray(xPnt, ref kArray);
-            doubleArray(yPnt, ref kArray);
-            doubleArray(zPnt, ref kArray);
-            doubleArray(xHeig, ref kArray);
-            doubleArray(yHeig, ref kArray);
-            doubleArray(zHeig, ref kArray);
+            DllClass1.stringArray(namePnt, ref kArray);
+            DllClass1.stringArray(nameHeig, ref kArray);
+            DllClass1.intArray(nCode1, ref kArray);
+            DllClass1.intArray(nCode2, ref kArray);
+            DllClass1.doubleArray(xPnt, ref kArray);
+            DllClass1.doubleArray(yPnt, ref kArray);
+            DllClass1.doubleArray(zPnt, ref kArray);
+            DllClass1.doubleArray(xHeig, ref kArray);
+            DllClass1.doubleArray(yHeig, ref kArray);
+            DllClass1.doubleArray(zHeig, ref kArray);
             int num1 = kArray - 999;
-            string text = "Номер строки с ошибкой: ";
+            string text = "Lines Number with error: ";
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Входной файл точек";
-            openFileDialog.Filter = "Все файлы (*.*)|*.*";
+            openFileDialog.Title = "Input Points File";
+            openFileDialog.Filter = "All files (*.*)|*.*";
             string str1 = "";
             openFileDialog.FileName = str1;
             openFileDialog.FilterIndex = 2;
@@ -27866,7 +27866,7 @@ namespace DiplomGeoDLL
                 StreamReader streamReader = new StreamReader(openFileDialog.FileName);
                 int num2;
                 int num3 = num2 = 0;
-                int i1 = -1;
+                int index1 = -1;
                 kHeight = -1;
                 string str2 = " ";
                 int num4 = 0;
@@ -27879,7 +27879,7 @@ namespace DiplomGeoDLL
                 {
                     ++num3;
                     string[] sPart;
-                    ShareString(sLine, kPart, seps, out k, out sPart);
+                    DllClass1.ShareString(sLine, kPart, seps, out k, out sPart);
                     if (k < 2)
                     {
                         ++num4;
@@ -28150,19 +28150,19 @@ namespace DiplomGeoDLL
                                 continue;
                             }
                         }
-                        ++i1;
-                        if (i1 > num1)
+                        ++index1;
+                        if (index1 > num1)
                         {
-                            int num14 = (int)MessageBox.Show("Индекс массива > 10000");
+                            int num14 = (int)MessageBox.Show("Index array > 10000");
                             iCond = -1;
                             return;
                         }
-                        namePnt[i1] = str2;
-                        xPnt[i1] = num10;
-                        yPnt[i1] = num9;
-                        zPnt[i1] = num8;
-                        nCode1[i1] = num12;
-                        nCode2[i1] = num11;
+                        namePnt[index1] = str2;
+                        xPnt[index1] = num10;
+                        yPnt[index1] = num9;
+                        zPnt[index1] = num8;
+                        nCode1[index1] = num12;
+                        nCode2[index1] = num11;
                     }
                 }
                 if (num4 > 0)
@@ -28174,60 +28174,60 @@ namespace DiplomGeoDLL
                 {
                     double num16;
                     double num17 = num16 = 0.0;
-                    for (int i2 = 0; i2 < i1; ++i2)
+                    for (int index2 = 0; index2 < index1; ++index2)
                     {
-                        if (xPnt[i2] != 0.0 || yPnt[i2] != 0.0)
+                        if (xPnt[index2] != 0.0 || yPnt[index2] != 0.0)
                         {
-                            for (int i3 = i2 + 1; i3 <= i1; ++i3)
+                            for (int index3 = index2 + 1; index3 <= index1; ++index3)
                             {
-                                if (xPnt[i3] != 0.0 || yPnt[i3] != 0.0)
+                                if (xPnt[index3] != 0.0 || yPnt[index3] != 0.0)
                                 {
-                                    double num18 = xPnt[i3] - xPnt[i2];
-                                    double num19 = yPnt[i3] - yPnt[i2];
+                                    double num18 = xPnt[index3] - xPnt[index2];
+                                    double num19 = yPnt[index3] - yPnt[index2];
                                     if (Math.Sqrt(num18 * num18 + num19 * num19) < 0.1)
                                     {
-                                        xPnt[i3] = 0.0;
-                                        yPnt[i3] = 0.0;
+                                        xPnt[index3] = 0.0;
+                                        yPnt[index3] = 0.0;
                                     }
                                 }
                             }
                         }
                     }
-                    int i4 = -1;
-                    for (int i5 = 0; i5 <= i1; ++i5)
+                    int index4 = -1;
+                    for (int index5 = 0; index5 <= index1; ++index5)
                     {
-                        if (xPnt[i5] != 0.0 || yPnt[i5] != 0.0)
+                        if (xPnt[index5] != 0.0 || yPnt[index5] != 0.0)
                         {
-                            ++i4;
-                            namePnt[i4] = namePnt[i5];
-                            xPnt[i4] = xPnt[i5];
-                            yPnt[i4] = yPnt[i5];
-                            zPnt[i4] = zPnt[i5];
-                            nCode1[i4] = nCode1[i5];
-                            nCode2[i4] = nCode2[i5];
+                            ++index4;
+                            namePnt[index4] = namePnt[index5];
+                            xPnt[index4] = xPnt[index5];
+                            yPnt[index4] = yPnt[index5];
+                            zPnt[index4] = zPnt[index5];
+                            nCode1[index4] = nCode1[index5];
+                            nCode2[index4] = nCode2[index5];
                         }
                     }
-                    int num20 = i4;
+                    int num20 = index4;
                     int num21 = 0;
-                    for (int i6 = 0; i6 <= num20; ++i6)
+                    for (int index6 = 0; index6 <= num20; ++index6)
                     {
-                        if (zPnt[i6] != 0.0)
+                        if (zPnt[index6] != 0.0)
                             ++num21;
                     }
-                    for (int i7 = 0; i7 <= num20; ++i7)
+                    for (int index7 = 0; index7 <= num20; ++index7)
                     {
-                        if (xPnt[i7] < xmin)
-                            xmin = xPnt[i7];
-                        if (yPnt[i7] < ymin)
-                            ymin = yPnt[i7];
-                        if (num21 > 0 && zPnt[i7] != 0.0 && zPnt[i7] < zmin)
-                            zmin = zPnt[i7];
-                        if (xPnt[i7] > xmax)
-                            xmax = xPnt[i7];
-                        if (yPnt[i7] > ymax)
-                            ymax = yPnt[i7];
-                        if (num21 > 0 && zPnt[i7] != 0.0 && zPnt[i7] > zmax)
-                            zmax = zPnt[i7];
+                        if (xPnt[index7] < xmin)
+                            xmin = xPnt[index7];
+                        if (yPnt[index7] < ymin)
+                            ymin = yPnt[index7];
+                        if (num21 > 0 && zPnt[index7] != 0.0 && zPnt[index7] < zmin)
+                            zmin = zPnt[index7];
+                        if (xPnt[index7] > xmax)
+                            xmax = xPnt[index7];
+                        if (yPnt[index7] > ymax)
+                            ymax = yPnt[index7];
+                        if (num21 > 0 && zPnt[index7] != 0.0 && zPnt[index7] > zmax)
+                            zmax = zPnt[index7];
                     }
                     if (num21 == 0)
                     {
@@ -28237,21 +28237,21 @@ namespace DiplomGeoDLL
                     kPntPlus = num20;
                     kPntInput = num20;
                     kHeight = -1;
-                    for (int i8 = 0; i8 <= num20; ++i8)
+                    for (int index8 = 0; index8 <= num20; ++index8)
                     {
-                        if (zPnt[i8] != 0.0)
+                        if (zPnt[index8] != 0.0)
                         {
                             ++kHeight;
                             if (kHeight > num1)
                             {
-                                int num22 = (int)MessageBox.Show("Индекс массива > 10000");
+                                int num22 = (int)MessageBox.Show("Index array > 10000");
                                 iCond = -1;
                                 break;
                             }
-                            nameHeig[kHeight] = namePnt[i8];
-                            xHeig[kHeight] = xPnt[i8];
-                            yHeig[kHeight] = yPnt[i8];
-                            zHeig[kHeight] = zPnt[i8];
+                            nameHeig[kHeight] = namePnt[index8];
+                            xHeig[kHeight] = xPnt[index8];
+                            yHeig[kHeight] = yPnt[index8];
+                            zHeig[kHeight] = zPnt[index8];
                         }
                     }
                 }
@@ -28269,8 +28269,8 @@ namespace DiplomGeoDLL
         {
             nSymb = -1;
             int kArray = 999999;
-            intArray(nSign1, ref kArray);
-            intArray(nSign2, ref kArray);
+            DllClass1.intArray(nSign1, ref kArray);
+            DllClass1.intArray(nSign2, ref kArray);
             if (kSymbPnt > kArray)
             {
                 int num = (int)MessageBox.Show("Индекс массива SelPntCode");
@@ -28281,27 +28281,26 @@ namespace DiplomGeoDLL
             }
             else
             {
-                for (int i = 0; i <= kSymbPnt; ++i)
+                for (int index = 0; index <= kSymbPnt; ++index)
                 {
-                    if (nSign2[i] > 0 && nSign2[i] == nCode)
+                    if (nSign2[index] > 0 && nSign2[index] == nCode)
                     {
-                        nSymb = i;
+                        nSymb = index;
                         return;
                     }
                 }
                 if (nSymb >= 0)
                     return;
-                for (int i = 0; i <= kSymbPnt; ++i)
+                for (int index = 0; index <= kSymbPnt; ++index)
                 {
-                    if (nSign1[i] == nCode)
+                    if (nSign1[index] == nCode)
                     {
-                        nSymb = i;
+                        nSymb = index;
                         break;
                     }
                 }
             }
         }
-
         public static void DrawVertical(
           PaintEventArgs e,
           string tText,
@@ -29854,32 +29853,32 @@ namespace DiplomGeoDLL
         }
 
         public static void PointsDraw(
-          PaintEventArgs e,
-          string fsymbPnt,
-          int iParam,
-          int kPnt,
-          string[] namePnt,
-          double[] xPnt,
-          double[] yPnt,
-          double[] zPnt,
-          double[] xPntInscr,
-          double[] yPntInscr,
-          int[] iHorVerPnt,
-          double scaleWin,
-          double xBeg,
-          double yBeg,
-          int xWin,
-          int yWin,
-          int[] nCode1,
-          int[] nCode2,
-          int kSymbPnt,
-          int[] numRec,
-          int[] numbUser,
-          int[] ixSqu,
-          int[] iySqu,
-          int[] nColor,
-          SolidBrush[] brCol,
-          Pen[] pnCol)
+     PaintEventArgs e,
+     string fsymbPnt,
+     int iParam,
+     int kPnt,
+     string[] namePnt,
+     double[] xPnt,
+     double[] yPnt,
+     double[] zPnt,
+     double[] xPntInscr,
+     double[] yPntInscr,
+     int[] iHorVerPnt,
+     double scaleWin,
+     double xBeg,
+     double yBeg,
+     int xWin,
+     int yWin,
+     int[] nCode1,
+     int[] nCode2,
+     int kSymbPnt,
+     int[] numRec,
+     int[] numbUser,
+     int[] ixSqu,
+     int[] iySqu,
+     int[] nColor,
+     SolidBrush[] brCol,
+     Pen[] pnCol)
         {
             Graphics graphics = e.Graphics;
             string sDscr = "";
@@ -29901,70 +29900,70 @@ namespace DiplomGeoDLL
                 case -2:
                     break;
                 case -1:
-                    for (int i = 0; i <= kPnt; ++i)
+                    for (int index = 0; index <= kPnt; ++index)
                     {
-                        XYtoWIN(xPnt[i], yPnt[i], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                        DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
                         if (xWin1 != 0 || yWin1 != 0)
                         {
                             graphics.FillRectangle((Brush)iColor, xWin1 - 1, yWin1 - 1, 2, 2);
                             int nCodePnt = 0;
-                            if (nCode1[i] > 0)
-                                nCodePnt = nCode1[i];
+                            if (nCode1[index] > 0)
+                                nCodePnt = nCode1[index];
                             if (nCodePnt > 0)
                             {
                                 int kPix;
                                 int mClr;
-                                SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
+                                DllClass1.SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
                                 int ixh = xWin1 - iWid / 2;
                                 int iyh = yWin1 - iHei / 2;
                                 if (iLong == 0)
-                                    SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brCol);
+                                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brCol);
                                 if (iLong > 0)
-                                    DrawText(e, sTxt, iHei, ixh, iyh, mClr, brCol);
+                                    DllClass1.DrawText(e, sTxt, iHei, ixh, iyh, mClr, brCol);
                             }
                         }
                     }
                     break;
                 default:
-                    for (int i = 0; i <= kPnt; ++i)
+                    for (int index = 0; index <= kPnt; ++index)
                     {
-                        XYtoWIN(xPnt[i], yPnt[i], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                        DllClass1.XYtoWIN(xPnt[index], yPnt[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
                         if (xWin1 != 0 || yWin1 != 0)
                         {
                             graphics.FillRectangle((Brush)iColor, xWin1 - 2, yWin1 - 2, 3, 3);
                             int nCodePnt = 0;
-                            if (nCode1[i] > 0)
-                                nCodePnt = nCode1[i];
+                            if (nCode1[index] > 0)
+                                nCodePnt = nCode1[index];
                             if (nCodePnt > 0)
                             {
                                 int kPix;
                                 int mClr;
-                                SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
+                                DllClass1.SelSymbPnt(fsymbPnt, nCodePnt, kSymbPnt, numRec, numbUser, out iLong, out iWid, out iHei, out sDscr, out kPix, ixSqu, iySqu, nColor, out sTxt, out mClr);
                                 int ixh = xWin1 - iWid / 2;
                                 int iyh = yWin1 - iHei / 2;
                                 if (iLong == 0)
-                                    SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brCol);
+                                    DllClass1.SignDraw(e, ixh, iyh, kPix, ixSqu, iySqu, nColor, brCol);
                                 if (iLong > 0)
-                                    DrawText(e, sTxt, iHei, ixh, iyh, mClr, brCol);
+                                    DllClass1.DrawText(e, sTxt, iHei, ixh, iyh, mClr, brCol);
                             }
                             if (iParam == 0)
                             {
-                                XYtoWIN(xPntInscr[i], yPntInscr[i], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                                DllClass1.XYtoWIN(xPntInscr[index], yPntInscr[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
                                 if (xWin1 != 0 || yWin1 != 0)
                                 {
                                     if (nCodePnt > 0)
                                     {
-                                        if (iHorVerPnt[i] == 0 && iLong == 0)
-                                            graphics.DrawString(namePnt[i], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + iWid / 2), (float)(yWin1 - iHei / 2));
-                                        if (iHorVerPnt[i] > 0 || iLong > 0)
-                                            RotText(e, namePnt[i], xWin1, yWin1 - 3, num1, 270, iColor, 0);
+                                        if (iHorVerPnt[index] == 0 && iLong == 0)
+                                            graphics.DrawString(namePnt[index], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + iWid / 2), (float)(yWin1 - iHei / 2));
+                                        if (iHorVerPnt[index] > 0 || iLong > 0)
+                                            DllClass1.RotText(e, namePnt[index], xWin1, yWin1 - 3, num1, 270, iColor, 0);
                                     }
                                     if (nCodePnt == 0)
                                     {
-                                        if (iHorVerPnt[i] == 0)
-                                            graphics.DrawString(namePnt[i], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + num1 / 2), (float)(yWin1 - num1 + 2));
-                                        if (iHorVerPnt[i] > 0)
-                                            RotText(e, namePnt[i], xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
+                                        if (iHorVerPnt[index] == 0)
+                                            graphics.DrawString(namePnt[index], new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + num1 / 2), (float)(yWin1 - num1 + 2));
+                                        if (iHorVerPnt[index] > 0)
+                                            DllClass1.RotText(e, namePnt[index], xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
                                     }
                                 }
                                 else
@@ -29972,23 +29971,23 @@ namespace DiplomGeoDLL
                             }
                             if (iParam > 0)
                             {
-                                XYtoWIN(xPntInscr[i], yPntInscr[i], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
+                                DllClass1.XYtoWIN(xPntInscr[index], yPntInscr[index], scaleWin, xBeg, yBeg, xWin, yWin, out xWin1, out yWin1);
                                 if (xWin1 != 0 || yWin1 != 0)
                                 {
-                                    string str = string.Format("{0:F2}", (object)zPnt[i]);
-                                    if (nCodePnt > 0 && zPnt[i] != 0.0)
+                                    string str = string.Format("{0:F2}", (object)zPnt[index]);
+                                    if (nCodePnt > 0 && zPnt[index] != 0.0)
                                     {
-                                        if (iHorVerPnt[i] == 0 && iLong == 0)
+                                        if (iHorVerPnt[index] == 0 && iLong == 0)
                                             graphics.DrawString(str, new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + iWid / 2), (float)(yWin1 - num1 + 2));
-                                        if (iHorVerPnt[i] > 0 || iLong > 0)
-                                            RotText(e, str, xWin1, yWin1 - 3, num1, 270, iColor, 0);
+                                        if (iHorVerPnt[index] > 0 || iLong > 0)
+                                            DllClass1.RotText(e, str, xWin1, yWin1 - 3, num1, 270, iColor, 0);
                                     }
-                                    if (nCodePnt == 0 && zPnt[i] != 0.0)
+                                    if (nCodePnt == 0 && zPnt[index] != 0.0)
                                     {
-                                        if (iHorVerPnt[i] == 0)
+                                        if (iHorVerPnt[index] == 0)
                                             graphics.DrawString(str, new Font("Bold", (float)num1), (Brush)iColor, (float)(xWin1 + num1 / 2), (float)(yWin1 - num1 + 2));
-                                        if (iHorVerPnt[i] > 0)
-                                            RotText(e, str, xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
+                                        if (iHorVerPnt[index] > 0)
+                                            DllClass1.RotText(e, str, xWin1, yWin1 - num1 / 2, num1, 270, iColor, 0);
                                     }
                                 }
                             }
