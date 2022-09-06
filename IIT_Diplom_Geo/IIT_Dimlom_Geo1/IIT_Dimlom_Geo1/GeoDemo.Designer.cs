@@ -177,7 +177,7 @@ namespace IIT_Diplom_Geo1
             PointsInput.TabIndex = 1;
             PointsInput.Text = "Загрузить точки";
             PointsInput.UseVisualStyleBackColor = true;
-            PointsInput.Click += new System.EventHandler(PointsInput_Click);
+            //PointsInput.Click += new System.EventHandler(PointsInput_Click);
             // 
             // btExit1
             // 
@@ -335,14 +335,14 @@ namespace IIT_Diplom_Geo1
             DeleteProjManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             DeleteProjToolStripMenuItem,
             DelAllProjToolStripMenuItem});
-            DeleteProjManagerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DeleteProjManagerToolStripMenuItem.Image")));
-            DeleteProjManagerToolStripMenuItem.Name = "DeleteProjManagerToolStripMenuItem";
+            DeleteProjManagerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("УдалитьProjManagerToolStripMenuItem.Image")));
+            DeleteProjManagerToolStripMenuItem.Name = "УдалитьProjManagerToolStripMenuItem";
             DeleteProjManagerToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             DeleteProjManagerToolStripMenuItem.Text = "Удаление проектов";
             // 
             // DeleteProjToolStripMenuItem
             // 
-            DeleteProjToolStripMenuItem.Name = "DeleteProjToolStripMenuItem";
+            DeleteProjToolStripMenuItem.Name = "УдалитьProjToolStripMenuItem";
             DeleteProjToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             DeleteProjToolStripMenuItem.Text = "Удалить проект";
             DeleteProjToolStripMenuItem.Click += new System.EventHandler(DeleteProjToolStripMenuItem_Click);

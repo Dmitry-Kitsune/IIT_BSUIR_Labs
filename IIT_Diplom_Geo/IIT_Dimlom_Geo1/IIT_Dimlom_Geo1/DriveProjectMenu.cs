@@ -72,12 +72,12 @@ namespace IIT_Diplom_Geo1
         }
         private void ChangeDrive_MouseLeave(object sender, System.EventArgs e)
         {
-            //toolStripStatusLabel1.Text = "Ready...";
+            //toolStripStatusLabel1.Text = "Готов...";
             toolStripStatusLabel1.Text = "Готов...";
         }
         private void Free_MouseLeave(object sender, System.EventArgs e)
         {
-            //toolStripStatusLabel1.Text = "Ready...";
+            //toolStripStatusLabel1.Text = "Готов...";
             toolStripStatusLabel1.Text = "Готов...";
         }
 
@@ -88,7 +88,7 @@ namespace IIT_Diplom_Geo1
         }
         private void Confirm_MouseLeave(object sender, System.EventArgs e)
         {
-            //toolStripStatusLabel1.Text = "Ready...";
+            //toolStripStatusLabel1.Text = "Готов...";
             toolStripStatusLabel1.Text = "Готов...";
         }
         private void Cancel_MouseHover(object sender, System.EventArgs e)

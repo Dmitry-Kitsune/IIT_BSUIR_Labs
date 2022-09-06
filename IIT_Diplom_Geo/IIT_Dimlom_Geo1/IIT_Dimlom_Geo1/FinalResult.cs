@@ -137,7 +137,7 @@ namespace IIT_Dimlom_Geo1
             this.panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            this.panel1.Text = "Ready...";
+            this.panel1.Text = "Готов...";
             this.panel3.Text = "**";
             this.panel5.Text = "**";
             this.panel6.Text = DateTime.Now.ToShortDateString();
@@ -219,35 +219,35 @@ namespace IIT_Dimlom_Geo1
 
         private void button5_MouseHover(object sender, EventArgs e) => this.label3.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Line. By dialog set up value of the Items and click 'Confirm' or 'Delay'";
+        private void button6_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Line. By dialog set up value of the Items и нажмите 'Подтвердить' или 'Delay'";
 
-        private void button7_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Line.";
+        private void button7_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Line.";
 
-        private void button10_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By dialog set up value of the Items";
+        private void button10_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By dialog set up value of the Items";
 
-        private void button11_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Parcel(label). By dialog set up value of the Items";
+        private void button11_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Parcel(label). By dialog set up value of the Items";
 
-        private void button19_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Label and by mouse(click) show new spot";
+        private void button19_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Label and by mouse(click) show new spot";
 
-        private void button20_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Label for changing inscription(Horizontal/Vertical)";
+        private void button20_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Label for changing inscription(Horizontal/Vertical)";
 
-        private void button29_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Point for moving of its Name(not point). Show new spot";
+        private void button29_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Point for moving of its Name(not point). Show new spot";
 
-        private void button30_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select Point(name) for changing inscription";
+        private void button30_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Point(name) for changing inscription";
 
-        private void button21_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. Type inscription, set up properties. By left button of mouse show spot for inscription";
+        private void button21_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Type inscription, set up properties. By left button of mouse show spot for inscription";
 
-        private void button22_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. Select additional inscription for moving to new spot. Show new spot by mouse";
+        private void button22_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Select additional inscription for moving to new spot. Show new spot by mouse";
 
-        private void button23_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select additional inscription for removing";
+        private void button23_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select additional inscription for removing";
 
         private void button27_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button for openning of Dialog for Printing final Results";
 
-        private void button17_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. By left button of mouse select point for removing";
+        private void button17_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select point for removing";
 
         private void button25_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button and select point. Use 'Help' and select point's code. Click 'Confirm changing'";
 
-        private void button15_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button. Select symbol and istall it by mouse in appropriate spots. Possible more than one";
+        private void button15_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Select symbol and istall it by mouse in appropriate spots. Possible more than one";
 
 
         private void FormLoad()
@@ -345,7 +345,7 @@ namespace IIT_Dimlom_Geo1
                 this.kPolyCancel = this.myFin.kPolyCancel;
                 if (this.kPolyCancel < 1)
                 {
-                    int num = (int)MessageBox.Show("Data is absent", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Данные отсутствуют", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.myFin.CancLineFin(this.nAction);
@@ -541,7 +541,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -576,7 +576,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -676,7 +676,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -858,7 +858,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -886,7 +886,7 @@ namespace IIT_Dimlom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -1406,7 +1406,7 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (this.textBox1.Text == "")
             {
-                int num1 = (int)MessageBox.Show("Wrong number. Check Your Codes", "Lines' Symbols");
+                int num1 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Lines' Symbols");
             }
             else
             {
@@ -1414,7 +1414,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox1.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num2 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1441,21 +1441,21 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (num3 == 0)
                     {
-                        int num4 = (int)MessageBox.Show("Wrong number. Check Your Codes", "Lines' Symbols");
+                        int num4 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Lines' Symbols");
                     }
                     else
                     {
                         DllClass1.CheckText(this.textBox1.Text, out tText, out this.iCond);
                         if (this.iCond < 0)
                         {
-                            int num5 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num5 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
                             DllClass1.CheckText(this.textBox2.Text, out this.myFin.distFin[this.indLine], out this.iCond);
                             if (this.iCond < 0)
                             {
-                                int num6 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num6 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             }
                             else
                             {
@@ -1528,7 +1528,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1560,7 +1560,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1592,7 +1592,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox6.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 int int32 = Convert.ToInt32(this.textBox6.Text);
@@ -1620,7 +1620,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox6.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num3 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.myFin.nSymbFin[this.indLine] = Convert.ToInt32(this.textBox6.Text);
@@ -1673,7 +1673,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1703,7 +1703,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1832,7 +1832,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(this.textBox8.Text, out tText, out this.iCond);
                     if (this.iCond < 0)
                     {
-                        int num4 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num4 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
@@ -2002,7 +2002,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2030,7 +2030,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2061,7 +2061,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2130,7 +2130,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2156,7 +2156,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2190,7 +2190,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {

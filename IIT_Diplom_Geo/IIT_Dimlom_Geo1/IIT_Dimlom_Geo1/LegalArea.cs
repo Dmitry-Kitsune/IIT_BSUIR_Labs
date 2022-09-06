@@ -54,7 +54,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -447,7 +447,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox3.Text, out ar.areaLeg[i1], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1] = textBox1.Text;
@@ -457,7 +457,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox6.Text, out ar.areaLeg[i1 + 1], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 1] = textBox4.Text;
@@ -467,7 +467,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox9.Text, out ar.areaLeg[i1 + 2], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 2] = textBox7.Text;
@@ -477,7 +477,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox12.Text, out ar.areaLeg[i1 + 3], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 3] = textBox10.Text;
@@ -487,7 +487,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox15.Text, out ar.areaLeg[i1 + 4], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 4] = textBox13.Text;
@@ -497,7 +497,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox18.Text, out ar.areaLeg[i1 + 5], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 5] = textBox16.Text;
@@ -507,7 +507,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox21.Text, out ar.areaLeg[i1 + 6], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 6] = textBox19.Text;
@@ -517,7 +517,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox24.Text, out ar.areaLeg[i1 + 7], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 7] = textBox22.Text;
@@ -527,7 +527,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox27.Text, out ar.areaLeg[i1 + 8], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ar.namePoly[i1 + 8] = textBox25.Text;
@@ -537,7 +537,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.CheckText(textBox30.Text, out ar.areaLeg[i1 + 9], out iCond);
             if (iCond < 0)
             {
-                int num1 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 ar.namePoly[i1 + 9] = textBox28.Text;
@@ -682,7 +682,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.textBox61.Text != "F" && this.textBox61.Text != "T")
             {
-                int num = (int)MessageBox.Show("Not is letter 'F' or 'T' ", "Names of Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Введите символ'F' или 'T' ", "Имена участков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

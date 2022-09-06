@@ -56,9 +56,9 @@ namespace IIT_Diplom_Geo1
                         //nameProject = fbb.ReadString();
                         //nameDirectory = fbb.ReadString();
                         this.nProject = Convert.ToInt32(this.sTmp);
-                        this.myProj.curProject = fbb.ReadString();
                         this.myProj.curDirect = fbb.ReadString();
-                        this.listBox1.Items.Add((object)this.myProj.curProject);
+                        this.myProj.curProject = fbb.ReadString();
+                        this.listBox1.Items.Add((object)this.myProj.curProject + " " + myProj.curDirect);
                         ++num1;
                         //Поиск максимального порядкового номера
                         if (nProject > nMax)
@@ -89,7 +89,7 @@ namespace IIT_Diplom_Geo1
             this.myProj.FilePath();
             if (!File.Exists(this.myProj.tmpStr))
             {
-                int num = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             int num1 = 0;
@@ -102,15 +102,16 @@ namespace IIT_Diplom_Geo1
                     while ((this.sTmp = binaryReader.ReadString()) != null)
                     {
                         this.nProject = Convert.ToInt32(this.sTmp);
-                        this.myProj.curProject = binaryReader.ReadString();
+                        //binaryReader.ReadString();//вставить переменную  дата
                         this.myProj.curDirect = binaryReader.ReadString();
-                        this.listBox1.Items.Add((object)this.myProj.curProject);
+                        this.myProj.curProject = binaryReader.ReadString();
+                        this.listBox1.Items.Add((object)this.myProj.curProject + " " + myProj.curDirect);
                         ++num1;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -127,7 +128,7 @@ namespace IIT_Diplom_Geo1
         {
             if (this.textBox1.Text == "")
             {
-                int num1 = (int)MessageBox.Show("Project name wasn't defined", "New Project", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Имя проекта не определено", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -141,15 +142,15 @@ namespace IIT_Diplom_Geo1
                         while ((this.sTmp = binaryReader.ReadString()) != null)
                         {
                             this.nProject = Convert.ToInt32(this.sTmp);
-                            this.myProj.curProject = binaryReader.ReadString();
                             this.myProj.curDirect = binaryReader.ReadString();
+                            this.myProj.curProject = binaryReader.ReadString();
                             if (this.nProject > this.nMax)
                                 this.nMax = this.nProject;
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -157,13 +158,14 @@ namespace IIT_Diplom_Geo1
                         binaryReader.Close();
                     }
                 }
+                //myProj.comPath = myProj.driveKey + ":\\" + myProj.dirKey;
                 FileStream output1 = new FileStream(this.myProj.fileAllProj, FileMode.Append, FileAccess.Write);
                 BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
                 DateTime now1 = DateTime.Now;
                 DateTime now2 = DateTime.Now;
                 this.nProject = this.nMax + 1;
                 this.sTmp = Convert.ToString(this.nProject);
-                this.myProj.curProject = this.textBox1.Text + " " + (object)now2;
+                this.myProj.curProject = this.textBoxNewProjName.Text + " " + (object)now2;
                 this.myProj.curDirect = this.myProj.comPath + "brProj" + this.sTmp;
                 try
                 {
@@ -172,18 +174,19 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The delete operation failed as expected.");
+                    Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                 }
                 try
                 {
-                    this.myProj.curDirect = "brProj" + this.sTmp;
+                    //this.myProj.curDirect = "brProj" + this.sTmp;
                     binaryWriter1.Write(this.sTmp);
                     binaryWriter1.Write(this.myProj.curProject);
                     binaryWriter1.Write(this.myProj.curDirect);
+                    //binaryWriter1.Write(this.nProject);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 output1.Close();
                 binaryWriter1.Close();
@@ -194,7 +197,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Delete operation failed as expected.");
+                    Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                 }
                 FileStream output2 = new FileStream(this.myProj.fileProj, FileMode.CreateNew);
                 BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
@@ -218,7 +221,7 @@ namespace IIT_Diplom_Geo1
         //    //Проверка окна TextBox
         //    if (textBoxNewProjName.Text == "")
         //    {
-        //        MessageBox.Show("Имя проекта не определено...", "New Project", MessageBoxButtons.OK,
+        //        MessageBox.Show("Имя проекта не определено...", "Новый проект", MessageBoxButtons.OK,
         //            MessageBoxIcon.Warning);
         //        return;
         //    }

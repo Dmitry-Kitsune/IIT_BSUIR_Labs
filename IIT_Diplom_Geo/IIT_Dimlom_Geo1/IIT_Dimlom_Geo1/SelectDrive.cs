@@ -53,7 +53,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Delete operation failed as expected.");
+                            Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -82,7 +82,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Delete operation failed as expected.");
+                Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
             }
             for (int index = 1; index <= this.kDrive; ++index)
             {
@@ -97,7 +97,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Delete operation failed as expected.");
+                        Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                     }
                     FileStream output = new FileStream(this.fileSymbol, FileMode.CreateNew);
                     BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
@@ -114,7 +114,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Delete operation failed as expected.");
+                Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
             }
             for (int index = 1; index <= this.kDrive; ++index)
             {
@@ -130,7 +130,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Delete operation failed as expected.");
+                        Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                     }
                     FileStream output = new FileStream(this.filePath, FileMode.CreateNew);
                     BinaryWriter binaryWriter = new BinaryWriter((Stream)output);

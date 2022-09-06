@@ -58,6 +58,7 @@ namespace IIT_Diplom_Geo1
         public string fsymbLine = "";
         public string fsymbPoly = "";
         //public string filePoint = "";
+        public string filePnt = "";
         public string fileLine = "";
         public string flineTopo = "";
         public string filePoly = "";
@@ -1057,7 +1058,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -1093,38 +1094,38 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
                 binaryReader1.Close();
                 input1.Close();
             }
-            fileAllProj = comPath + "\\brAllProj.dat";
-            fileProj = comPath + "\\brProj.dat";
-            fileAdd = comPath + "\\brAdd.dat";
-            fileProcess = comPath + "\\fileProc.pro";
-            filePixel = comPath + "\\filePixel.dat";
-            ftmpPoly = comPath + "\\ftmp.pol";
-            fPntLine = comPath + "\\fpntLine.dat";
-            fstoreMining = comPath + "\\brMining.dat";
-            fileCross = comPath + "\\brCross.dat";
-            fmainProc = comPath + "\\filemain.pro";
-            fProblem = comPath + "\\brProblem";
-            fPointPixel = comPath + "\\brPix.pnt";
-            fPolyPixel = comPath + "\\brPix.pol";
-            fLinePixel = comPath + "\\brPix.lin";
-            fstoreCam = comPath + "\\brCamera.dat";
-            fbaseOrient = comPath + "\\brOrient.dat";
-            fbaseDtm = comPath + "\\brDtm.dat";
-            fstoreGeo = comPath + "\\brGeo.dat";
-            filePixel = comPath + "\\filePixel.dat";
-            fProblem = comPath + "\\brProblem";
-            fPntLine = comPath + "\\fpntline.dat";
-            fileControl = comPath + "\\fileContr.pro";
-            fArchive = comPath + "\\brArchive.arh";
-            fArchLayer = comPath + "\\brArchlay.arh";
-            aeroBlock = comPath + "\\block.geo";
+            fileAllProj = comPath + "brAllProj.dat";
+            fileProj = comPath + "brProj.dat";
+            fileAdd = comPath + "brAdd.dat";
+            fileProcess = comPath + "fileProc.pro";
+            filePixel = comPath + "filePixel.dat";
+            ftmpPoly = comPath + "ftmp.pol";
+            fPntLine = comPath + "fpntLine.dat";
+            fstoreMining = comPath + "brMining.dat";
+            fileCross = comPath + "brCross.dat";
+            fmainProc = comPath + "filemain.pro";
+            fProblem = comPath + "brProblem";
+            fPointPixel = comPath + "brPix.pnt";
+            fPolyPixel = comPath + "brPix.pol";
+            fLinePixel = comPath + "brPix.lin";
+            fstoreCam = comPath + "brCamera.dat";
+            fbaseOrient = comPath + "brOrient.dat";
+            fbaseDtm = comPath + "brDtm.dat";
+            fstoreGeo = comPath + "brGeo.dat";
+            filePixel = comPath + "filePixel.dat";
+            fProblem = comPath + "brProblem";
+            fPntLine = comPath + "fpntline.dat";
+            fileControl = comPath + "fileContr.pro";
+            fArchive = comPath + "brArchive.arh";
+            fArchLayer = comPath + "brArchlay.arh";
+            aeroBlock = comPath + "block.geo";
             int num = 0;
             if (File.Exists(fileProj))
             {
@@ -1133,6 +1134,7 @@ namespace IIT_Diplom_Geo1
                 try
                 {
                     sTmp = binaryReader2.ReadString();
+                    //binaryReader2.ReadString();
                     curProject = binaryReader2.ReadString();
                     input2.Close();
                     binaryReader2.Close();
@@ -1141,7 +1143,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1151,9 +1153,10 @@ namespace IIT_Diplom_Geo1
             }
             if (num == 0)
                 return;
-            this.curDirect = "\\BrProj" + this.sTmp;
+            curDirect = "\\brProj" + this.sTmp;
             //curDirect = "\\Diplom_Projs" + sTmp;
             minPath = comPath + curDirect;
+            cadPath = comPath + curDirect;
             try
             {
                 if (!Directory.Exists(minPath))
@@ -1161,7 +1164,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The delete operation failed as expected.");
+                Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
             }
             fpointInscr = minPath + "\\fpntInscr.pnt";
             finitPnt = minPath + "\\fInitPnt.pnt";
@@ -1201,6 +1204,8 @@ namespace IIT_Diplom_Geo1
             fgeoGeo = minPath + "\\fgeoGeo.xyz";
             fGeoAll = minPath + "\\fgeoall.pnt";
             filePoints = minPath + "\\fpoint.pnt";
+            fileHeight = minPath + "\\fheight.pnt";
+            filePoint = minPath + "\\fpoint.pnt";
             flineLine = minPath + "\\fline.pnt";
             fcalcPoint = minPath + "\\fcalc.pnt";
             fileInscr = minPath + "\\finscr.pnt";
@@ -1246,6 +1251,58 @@ namespace IIT_Diplom_Geo1
             fgeoPoly = minPath + "\\fgeoPoly.pol";
             fgeoLine = minPath + "\\geodtm.lin";
             fgeoNode = minPath + "\\fgeonode.nod";
+            // point files for cad
+            fsourcePnt = cadPath + "\\fsourcePnt.pnt";
+            filePnt = this.cadPath + "\\dtm.pnt";
+            filePoly = cadPath + "\\fpoly.pol";
+            fileDangle = cadPath + "\\fdang.dan";
+            fpointFinal = cadPath + "\\fpoint.fin";
+            fInscrFin = cadPath + "\\finscr.fin";
+            fpointInscr = cadPath + "\\finscr.pnt";
+            fpointProj = cadPath + "\\fproj.pnt";
+            flineProj = cadPath + "\\fproj.lin";
+            ftopoProj = cadPath + "\\fproj.top";
+            fileItems = cadPath + "\\fitem.itm";
+            fpolyFinal = cadPath + "\\fpoly.fin";
+            filePnt = cadPath + "\\dtm.pnt";
+            flineFinal = cadPath + "\\fline.fin";
+            fileAction = cadPath + "\\faction.act";
+            factLine = cadPath + "\\fact.lin";
+            factPoly = cadPath + "\\fact.pol";
+            factNode = cadPath + "\\fact.nod";
+            fpolyCancel = cadPath + "\\fcanc.pol";
+            flineCancel = cadPath + "\\fcanc.lin";
+            flineNew = cadPath + "\\fnewline.lin";
+            fAddInscr = cadPath + "\\finscr.add";
+            fileContour = cadPath + "\\fcontrs.lin";
+            fpolyNew = cadPath + "\\fnewpoly";
+            fCancLine = cadPath + "\\fcancfin.lin";
+            fCancPoly = cadPath + "\\fcancfin.pol";
+            fileExter = cadPath + "\\fexter.ext";
+            fblockPoly = cadPath + "\\fblock.pol";
+            fpolyInter = cadPath + "\\finter.pol";
+            fileInterval = cadPath + "\\finterv.met";
+            faddPoly = cadPath + "\\fadd.pol";
+            fileZminzmax = cadPath + "\\fzmizma.dat";
+            flistAction = cadPath + "\\flist.act";
+            fsourcePoly = cadPath + "\\fsource.pol";
+            ftopoParc = cadPath + "\\ftopo.par";
+            fnodeParc = cadPath + "\\fnode.par";
+            fpolyParc = cadPath + "\\fpoly.par";
+            ftmpPoly = cadPath + "\\ftmp.pol";
+            fileTrian = cadPath + "\\ftriang.tin";
+            fnodeProj = cadPath + "\\fproj.nod";
+            fpolyProj = cadPath + "\\fproj.pol";
+            factLin = cadPath + "\\factln";
+            factPol = cadPath + "\\factpl";
+            ftrianTemp = cadPath + "\\ftrian.add";
+            fVertex = cadPath + "\\fvertex.pnt";
+            fPolyItem = cadPath + "\\fpolyItem.itm";
+            fVertLine = cadPath + "\\fVertLine.lin";
+            fGeoInscr = cadPath + "\\finscr.geo";
+            flinePoly = cadPath + "\\fline.pol";
+
+
         }
 
         public void PolySymbolLoad(string fileSymbPoly, out int kPolySymb, out int hSymbPoly)
@@ -1282,7 +1339,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -1796,7 +1853,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -1931,7 +1988,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 binaryReader.Close();
                 input.Close();
@@ -2001,7 +2058,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             binaryReader.Close();
             input.Close();
@@ -2088,7 +2145,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             binaryReader.Close();
             input.Close();
@@ -2112,7 +2169,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2184,7 +2241,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2252,7 +2309,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2310,7 +2367,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -2379,7 +2436,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2427,7 +2484,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2479,7 +2536,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -2525,7 +2582,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2570,7 +2627,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2617,7 +2674,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2655,7 +2712,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2692,7 +2749,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2727,7 +2784,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -2778,7 +2835,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2818,7 +2875,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2859,7 +2916,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2880,7 +2937,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2920,7 +2977,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -2956,7 +3013,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -3007,7 +3064,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -3775,7 +3832,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8173,7 +8230,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8227,7 +8284,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8265,7 +8322,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8343,7 +8400,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -8492,7 +8549,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8548,7 +8605,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -8582,7 +8639,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8642,7 +8699,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -8741,7 +8798,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -8756,7 +8813,7 @@ namespace IIT_Diplom_Geo1
             }
             if (num2 <= 0)
                 return;
-            int num19 = (int)MessageBox.Show(text, "Interior Orientation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            int num19 = (int)MessageBox.Show(text, "Внутренняя ориентация", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             iCond = -1;
         }
 
@@ -8809,7 +8866,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -9044,7 +9101,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -9078,7 +9135,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -9119,7 +9176,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -9411,7 +9468,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -9460,7 +9517,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -9595,7 +9652,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -9769,7 +9826,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -9803,7 +9860,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -9847,7 +9904,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -10316,7 +10373,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -10409,7 +10466,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -10484,7 +10541,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -10572,7 +10629,7 @@ namespace IIT_Diplom_Geo1
                                     }
                                     catch (Exception ex)
                                     {
-                                        Console.WriteLine("The Read operation failed as expected.");
+                                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                     }
                                     finally
                                     {
@@ -10686,7 +10743,7 @@ namespace IIT_Diplom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -10727,7 +10784,7 @@ namespace IIT_Diplom_Geo1
                                 }
                                 catch (Exception ex)
                                 {
-                                    Console.WriteLine("The Read operation failed as expected.");
+                                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                 }
                                 finally
                                 {
@@ -10886,7 +10943,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -10927,7 +10984,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -10976,7 +11033,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -10985,7 +11042,7 @@ namespace IIT_Diplom_Geo1
                     }
                     if (!File.Exists(aeroStrip))
                     {
-                        int num31 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num31 = (int)MessageBox.Show("Try again from Beginning", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         iCond = -1;
                     }
                     else
@@ -11003,7 +11060,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -11012,7 +11069,7 @@ namespace IIT_Diplom_Geo1
                         }
                         if (!File.Exists(frelOrient))
                         {
-                            int num32 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num32 = (int)MessageBox.Show("Try again from Beginning", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             iCond = -1;
                         }
                         else
@@ -11067,7 +11124,7 @@ namespace IIT_Diplom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -11728,7 +11785,7 @@ namespace IIT_Diplom_Geo1
                                 }
                                 catch (Exception ex)
                                 {
-                                    Console.WriteLine("The Read operation failed as expected.");
+                                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                 }
                                 finally
                                 {
@@ -11899,7 +11956,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -11987,7 +12044,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12064,7 +12121,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12117,7 +12174,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -12160,7 +12217,7 @@ namespace IIT_Diplom_Geo1
             int num10 = 0;
             if (!File.Exists(curStrip))
             {
-                int num11 = (int)MessageBox.Show("Try again from Beginning", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num11 = (int)MessageBox.Show("Try again from Beginning", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -1;
             }
             else
@@ -12179,7 +12236,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12188,7 +12245,7 @@ namespace IIT_Diplom_Geo1
                 }
                 if (num10 > 1)
                 {
-                    int num12 = (int)MessageBox.Show("More than one model", "Aerotriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num12 = (int)MessageBox.Show("More than one model", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     iCond = -1;
                 }
                 else
@@ -12258,7 +12315,7 @@ namespace IIT_Diplom_Geo1
                                 }
                                 catch (Exception ex)
                                 {
-                                    Console.WriteLine("The Read operation failed as expected.");
+                                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                 }
                                 finally
                                 {
@@ -12285,7 +12342,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -12440,7 +12497,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -12537,7 +12594,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -12582,7 +12639,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12659,7 +12716,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -12730,7 +12787,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -12761,7 +12818,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12794,7 +12851,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -12879,7 +12936,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -12913,7 +12970,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13167,7 +13224,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13222,7 +13279,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -13260,7 +13317,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13285,7 +13342,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -13372,7 +13429,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -13426,7 +13483,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13498,7 +13555,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -13679,7 +13736,7 @@ namespace IIT_Diplom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -13711,7 +13768,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Delete operation failed as expected.");
+                        Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                     }
                     FileStream output = new FileStream(currentFile, FileMode.CreateNew);
                     BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
@@ -13757,7 +13814,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13800,7 +13857,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13853,7 +13910,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -13904,7 +13961,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14331,7 +14388,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -14402,7 +14459,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -14438,7 +14495,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14493,7 +14550,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14549,7 +14606,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -14592,7 +14649,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14650,7 +14707,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14700,7 +14757,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -14751,7 +14808,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -14792,7 +14849,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14827,7 +14884,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14861,7 +14918,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -14893,7 +14950,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -15103,7 +15160,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -15128,7 +15185,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -15167,7 +15224,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -15292,7 +15349,7 @@ namespace IIT_Diplom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -15440,7 +15497,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -15515,7 +15572,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -15583,7 +15640,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -15694,7 +15751,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -15778,7 +15835,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -15884,7 +15941,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -15949,7 +16006,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -15994,7 +16051,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -16051,7 +16108,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -16091,7 +16148,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -16126,7 +16183,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -16216,7 +16273,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -16367,7 +16424,7 @@ namespace IIT_Diplom_Geo1
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("The Read operation failed as expected.");
+        //            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
         //        }
         //        finally
         //        {
@@ -17305,7 +17362,7 @@ namespace IIT_Diplom_Geo1
         //    }
         //    catch (Exception ex)
         //    {
-        //        Console.WriteLine("The Read operation failed as expected.");
+        //        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
         //    }
         //    finally
         //    {
@@ -17350,7 +17407,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -17648,7 +17705,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -17711,7 +17768,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -17889,7 +17946,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -17948,7 +18005,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -17961,7 +18018,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -18055,7 +18112,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -18303,7 +18360,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             binaryReader.Close();
             input.Close();
@@ -18585,7 +18642,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -18636,7 +18693,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -19285,7 +19342,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -19338,7 +19395,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -20844,81 +20901,81 @@ namespace IIT_Diplom_Geo1
             }
         }
 
-        public void PointsInput(out int iCond, out int kAdd
+        //public void PointsInput(out int iCond, out int kAdd
 
-        //int kGeoFin,
-        //string[] nameFin,
-        //double[] xFin,
-        //double[] yFin,
-        //double[] zFin,
-        //double zeroSpot,
+        ////int kGeoFin,
+        ////string[] nameFin,
+        ////double[] xFin,
+        ////double[] yFin,
+        ////double[] zFin,
+        ////double zeroSpot,
 
-        //string[] nameAdd,
-        //double[] xAdd,
-        //double[] yAdd,
-        //double[] zAdd,
-        //int[] nUniq
-        )
-        {
-            kAdd = -1;
-            iCond = 0;
-            string sTmp = "";
+        ////string[] nameAdd,
+        ////double[] xAdd,
+        ////double[] yAdd,
+        ////double[] zAdd,
+        ////int[] nUniq
+        //)
+        //{
+        //    kAdd = -1;
+        //    iCond = 0;
+        //    string sTmp = "";
 
-            int k = 0;
-            int kPart = 50;
-            double num1 = 0.0;
-            int index1 = 0;
-            double num2 = 3.1415926;
-            double num3;
-            double num4 = num3 = 0.0;
-            double num5 = num3;
-            double num6 = num3;
-            double num7;
-            double num8 = num7 = 0.0;
-            int num9 = 0;
-            int num14 = 0;
-            int num15 = 0;
-            // statName = sPart[1];
-            int sPart = 0; // template
-            int statName = sPart;
-            //for (int index2 = 0; index2 <= kGeoFin; ++index2)
-            //{
-            //    if (nameFin[index2] == "statName") // Template
-            //    {
-            //        ++num14;
-            //        num6 = xFin[index2];
-            //        num5 = yFin[index2];
-            //        num4 = zFin[index2];
-            //        break;
-            //    }
-            //}
-            if (File.Exists(filePoint))
-            {
-                FileStream fp = new FileStream(filePoint, FileMode.Open, FileAccess.Read);
-                BinaryReader fpp = new BinaryReader(fp);
-                try
-                {
-                    filePoint = fpp.ReadString();
-                    //namePnt = fpp.ReadDouble();
-                    //xPntGeo = fpp.ReadDouble();
-                    //yPntGeo = fpp.ReadDouble();
-                    //yPntGeo = fpp.ReadDouble();
-                    //zPntGeo = fpp.ReadDouble();
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine($"Ошибка операции чтения PointsInput {sTmp}");
-                }
-                finally
-                {
-                    fp.Close();
-                    fpp.Close();
-                }
-            }
+        //    int k = 0;
+        //    int kPart = 50;
+        //    double num1 = 0.0;
+        //    int index1 = 0;
+        //    double num2 = 3.1415926;
+        //    double num3;
+        //    double num4 = num3 = 0.0;
+        //    double num5 = num3;
+        //    double num6 = num3;
+        //    double num7;
+        //    double num8 = num7 = 0.0;
+        //    int num9 = 0;
+        //    int num14 = 0;
+        //    int num15 = 0;
+        //    // statName = sPart[1];
+        //    int sPart = 0; // template
+        //    int statName = sPart;
+        //    //for (int index2 = 0; index2 <= kGeoFin; ++index2)
+        //    //{
+        //    //    if (nameFin[index2] == "statName") // Template
+        //    //    {
+        //    //        ++num14;
+        //    //        num6 = xFin[index2];
+        //    //        num5 = yFin[index2];
+        //    //        num4 = zFin[index2];
+        //    //        break;
+        //    //    }
+        //    //}
+        //    if (File.Exists(filePoint))
+        //    {
+        //        FileStream fp = new FileStream(filePoint, FileMode.Open, FileAccess.Read);
+        //        BinaryReader fpp = new BinaryReader(fp);
+        //        try
+        //        {
+        //            filePoint = fpp.ReadString();
+        //            //namePnt = fpp.ReadDouble();
+        //            //xPntGeo = fpp.ReadDouble();
+        //            //yPntGeo = fpp.ReadDouble();
+        //            //yPntGeo = fpp.ReadDouble();
+        //            //zPntGeo = fpp.ReadDouble();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            Console.WriteLine($"Ошибка операции чтения PointsInput {sTmp}");
+        //        }
+        //        finally
+        //        {
+        //            fp.Close();
+        //            fpp.Close();
+        //        }
+        //    }
 
-            if (!File.Exists(filePoint))
-                filePoint = "";
-        }
+        //    if (!File.Exists(filePoint))
+        //        filePoint = "";
+        //}
         // Написать функцию вычисления координат точек
         private double xt;
         private double yt;
@@ -21300,7 +21357,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21346,7 +21403,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -21406,7 +21463,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21447,7 +21504,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21477,7 +21534,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21513,7 +21570,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21567,7 +21624,7 @@ namespace IIT_Diplom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -21624,7 +21681,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21662,7 +21719,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21692,7 +21749,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21809,7 +21866,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21847,7 +21904,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -21963,7 +22020,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -22067,7 +22124,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -22432,7 +22489,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -22721,7 +22778,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -22757,7 +22814,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -22894,7 +22951,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -22954,7 +23011,7 @@ namespace IIT_Diplom_Geo1
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("The Read operation failed as expected.");
+                                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                             }
                             finally
                             {
@@ -23053,7 +23110,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23134,7 +23191,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23214,7 +23271,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23281,7 +23338,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23395,7 +23452,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23462,7 +23519,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -23874,7 +23931,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -24172,7 +24229,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -24208,7 +24265,7 @@ namespace IIT_Diplom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {

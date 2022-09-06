@@ -304,7 +304,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -326,7 +326,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -360,7 +360,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -533,7 +533,7 @@ namespace IIT_Dimlom_Geo1
                 iPrintShow[10] = 1;
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -547,7 +547,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -802,7 +802,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -815,7 +815,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -977,7 +977,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -987,7 +987,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (k < 2)
             {
-                int num2 = (int)MessageBox.Show("No Actions", "Print of Tables", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Нет действий", "Печать таблиц", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1022,7 +1022,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("No Data", "Print of Tables", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Печать таблиц", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1057,7 +1057,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox2.SelectedIndex < 0)
             {
-                int num1 = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1078,7 +1078,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (numPage <= 0)
             {
-                int num1 = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

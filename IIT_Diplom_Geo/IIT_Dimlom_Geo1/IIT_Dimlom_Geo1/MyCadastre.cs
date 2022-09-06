@@ -151,15 +151,15 @@ namespace IIT_Dimlom_Geo1
 
         private void button1_MouseLeave(object sender, EventArgs e) => label3.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => label3.Text = "Open new project";
+        private void button2_MouseHover(object sender, EventArgs e) => label3.Text = "Открыть новый проект";
 
-        private void button3_MouseHover(object sender, EventArgs e) => label3.Text = "Select and open formerly created project";
+        private void button3_MouseHover(object sender, EventArgs e) => label3.Text = "Выбрать и открыть ранее созданный проект";
 
-        private void button4_MouseHover(object sender, EventArgs e) => label3.Text = "Select and delete formerly created project";
+        private void button4_MouseHover(object sender, EventArgs e) => label3.Text = "Выберите и удалите ранее созданный проект";
 
-        private void button5_MouseHover(object sender, EventArgs e) => label3.Text = "All projects delete from current drive";
+        private void button5_MouseHover(object sender, EventArgs e) => label3.Text = "Удаление ВСЕХ проектов с данного(текущего) диска";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label3.Text = "Change drive for open new or select formerly created project";
+        private void button6_MouseHover(object sender, EventArgs e) => label3.Text = "Изменить диск для выбора старого проекта или создания нового";
 
         private void button7_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update points' topographic symbologies";
 
@@ -190,7 +190,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -215,7 +215,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -225,7 +225,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (num1 == 0)
                 {
-                    int num2 = (int)MessageBox.Show("Open New Project", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Открыть новый проект", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (num1 > 0)
                 {
@@ -240,7 +240,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.ShareString(mySub.comPath, kPart, seps, out k, out sPart);
             if (!File.Exists(mySub.fileProj))
             {
-                label2.Text = sPart[1] + "\\--Project isn't defined";
+                label2.Text = sPart[1] + "\\--Проект не выбран";
             }
             else
             {
@@ -276,7 +276,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -339,7 +339,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -383,7 +383,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -451,7 +451,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -484,7 +484,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -523,7 +523,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -718,8 +718,8 @@ namespace IIT_Dimlom_Geo1
                     return;
                 if (!File.Exists(mySub.fileProj))
                 {
-                    label2.Text = sPart[1] + "\\--Project isn't defined";
-                    int num3 = (int)MessageBox.Show("Projects wasn't defined.", "New Project", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    label2.Text = sPart[1] + "\\--Проект не выбран";
+                    int num3 = (int)MessageBox.Show("Projects wasn't defined.", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -818,8 +818,8 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (!File.Exists(mySub.fileProj))
             {
-                label2.Text = sPart[1] + "\\--Project isn't defined";
-                int num2 = (int)MessageBox.Show("Projects weren't defined. Use 'New Project'", "New Project", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                label2.Text = sPart[1] + "\\--Проект не выбран";
+                int num2 = (int)MessageBox.Show("Projects weren't defined. Используйте 'Новый проект'", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 FormLoad();
                 panel7.Invalidate();
             }
@@ -840,7 +840,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -854,7 +854,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -868,7 +868,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -882,7 +882,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -896,7 +896,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -910,7 +910,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Drive wasn't defined", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -958,7 +958,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (double.IsNaN(mySub.xProj[i]) || double.IsNaN(mySub.yProj[i]))
                 {
-                    int num = (int)MessageBox.Show("Check Data");
+                    int num = (int)MessageBox.Show("Проверьте данные");
                     iGraphic = 1;
                     break;
                 }
@@ -1016,7 +1016,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     graphics.DrawRectangle(new Pen(Color.Brown), 130, ik, 6, 6);
                     graphics.FillRectangle((Brush)new SolidBrush(Color.Brown), 132, ik + 3, 2, 2);
-                    graphics.DrawString(" - Aerial Photography Center", new Font("Bold", (float)ih), (Brush)new SolidBrush(Color.Brown), 133f, (float)(ik - ih / 2));
+                    graphics.DrawString(" - Центр аэрофотосъемки", new Font("Bold", (float)ih), (Brush)new SolidBrush(Color.Brown), 133f, (float)(ik - ih / 2));
                 }
                 if (kTar > 0)
                 {
@@ -1037,21 +1037,21 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 22)
             {
-                sTmp = "Aerotriangulation-Last process:";
+                sTmp = "Аэротриангуляция-Last process:";
                 DllClass1.DrawText(e, sTmp, 20, 60, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Verification of Cameras' Archive";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 23)
             {
-                sTmp = "Aerotriangulation-Last process:";
+                sTmp = "Аэротриангуляция-Last process:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Verification of Control points' Archive";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 24)
             {
-                sTmp = "Aerotriangulation-Last process:";
+                sTmp = "Аэротриангуляция-Last process:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Verification of DTM points' Archive";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
@@ -1061,7 +1061,7 @@ namespace IIT_Dimlom_Geo1
             if (nProblem == 26)
             {
                 label4.Text = "Control of Aerotriangulation's processes";
-                sTmp = "Aerotriangulation-Last process:";
+                sTmp = "Аэротриангуляция-Last process:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Control of Aerotriangulation's processes";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);

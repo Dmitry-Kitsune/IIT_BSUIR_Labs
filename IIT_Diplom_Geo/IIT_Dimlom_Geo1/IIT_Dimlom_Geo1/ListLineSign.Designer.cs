@@ -41,113 +41,147 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button4 = new Button();
-            label5 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            SuspendLayout();
-            panel1.AutoScroll = true;
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Location = new Point(12, 31);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(356, 584);
-            panel1.TabIndex = 0;
-            panel1.Paint += new PaintEventHandler(panel1_Paint);
-            panel1.MouseDoubleClick += new MouseEventHandler(panel1_MouseDoubleClick);
-            button1.BackColor = Color.White;
-            button1.Location = new Point(12, 645);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Up one";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new EventHandler(UpLine_Click);
-            button2.BackColor = Color.White;
-            button2.Location = new Point(154, 645);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Down one";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += new EventHandler(DownLine_Click);
-            button4.BackColor = Color.White;
-            button4.Location = new Point(325, 645);
-            button4.Name = "button4";
-            button4.Size = new Size(43, 23);
-            button4.TabIndex = 4;
-            button4.Text = "Quit";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += new EventHandler(Quit_Click);
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(224, 224, 224);
-            label5.Location = new Point(87, 629);
-            label5.Name = "label5";
-            label5.Size = new Size(185, 13);
-            label5.TabIndex = 5;
-            label5.Text = "DoubleClick appropriate symbol";
-            label7.AutoSize = true;
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(14, 2);
-            label7.Name = "label7";
-            label7.Size = new Size(48, 26);
-            label7.TabIndex = 6;
-            label7.Text = " Serial\r\nnumber";
-            label8.AutoSize = true;
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(79, 6);
-            label8.Name = "label8";
-            label8.Size = new Size(47, 13);
-            label8.TabIndex = 7;
-            label8.Text = "Symbol";
-            label9.AutoSize = true;
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(142, 2);
-            label9.Name = "label9";
-            label9.Size = new Size(39, 26);
-            label9.TabIndex = 8;
-            label9.Text = "Users\r\ncode";
-            label10.AutoSize = true;
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(180, 2);
-            label10.Name = "label10";
-            label10.Size = new Size(47, 26);
-            label10.TabIndex = 9;
-            label10.Text = "Items\r\ndensity";
-            label11.AutoSize = true;
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(252, 9);
-            label11.Name = "label11";
-            label11.Size = new Size(71, 13);
-            label11.TabIndex = 10;
-            label11.Text = "Description";
-            AutoScaleDimensions = new SizeF(7f, 13f);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            ClientSize = new Size(380, 675);
-            Controls.Add((Control)label11);
-            Controls.Add((Control)label10);
-            Controls.Add((Control)label9);
-            Controls.Add((Control)label8);
-            Controls.Add((Control)label7);
-            Controls.Add((Control)label5);
-            Controls.Add((Control)button4);
-            Controls.Add((Control)button2);
-            Controls.Add((Control)button1);
-            Controls.Add((Control)panel1);
-            Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)204);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ListLineSign";
-            Text = "Listing Lines' Signs";
-            ResumeLayout(false);
-            PerformLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(399, 584);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(28, 646);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Один вверх";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.UpLine_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(178, 646);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Один вниз";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.DownLine_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(334, 646);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Выход";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Quit_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label5.Location = new System.Drawing.Point(70, 618);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(301, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Дважды кликните на сооьветствующем символе";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(21, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 26);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "№\r\nп/п";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(70, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Символ\r\n";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(160, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Код";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(228, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 26);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Плотность \r\nпредметов";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(340, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Описание";
+            // 
+            // ListLineSign
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(423, 681);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ListLineSign";
+            this.Text = "Список знаков линий";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

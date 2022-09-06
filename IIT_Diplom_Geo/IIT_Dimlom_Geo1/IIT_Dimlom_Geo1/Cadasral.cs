@@ -245,7 +245,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -265,12 +265,13 @@ namespace IIT_Dimlom_Geo1
                             ++num1;
                             sTmp = binaryReader.ReadString();
                             mySub.curProject = binaryReader.ReadString();
-                            mySub.curDirect = binaryReader.ReadString();
+                            //mySub.curDirect = binaryReader.ReadString();
+                            mySub.curDirect = mySub.comPath;
                         }
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -302,7 +303,8 @@ namespace IIT_Dimlom_Geo1
                 sTmp = mySub.comPath + mySub.curDirect;
                 if (!Directory.Exists(sTmp))
                     Directory.CreateDirectory(sTmp);
-                label2.Text = sPart[1] + "\\+" + mySub.curProject;
+                label2.Text = mySub.comPath + "\\" + mySub.curProject;
+                //label2.Text = sPart[1] + "\\" + mySub.curProject;
                 if (!File.Exists(mySub.tmpStr) && nProcess == 910)
                 {
                     int num = (int)MessageBox.Show("Диск не выбран. Используйте 'Сменить диск'", "Кадастр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -342,7 +344,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -459,8 +461,18 @@ namespace IIT_Dimlom_Geo1
                 kLineCancel = mySub.kLineCancel;
                 mySub.LineNewLoad(nAction);
                 kLineNew = mySub.kLineNew;
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine, mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineAct, mySub.radAct, mySub.kActLine1, mySub.kActLine2, mySub.xLineAct, mySub.yLineAct, out kLineFinal, mySub.nCodeFin, mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork1, mySub.xWork1, mySub.yWork1, tolerance);
-                DllClass1.PolyFinal(kPolyAct, mySub.nameAct, mySub.xAct, mySub.yAct, mySub.aActCalc, mySub.aActLeg, mySub.kActPoly1, mySub.kActPoly2, mySub.xPolyAct, mySub.yPolyAct, out kPolyFinal, mySub.namePolyFin, mySub.xLabFin, mySub.yLabFin, mySub.arCalcFin, mySub.arLegFin, mySub.nSymbFin, mySub.kt1Fin, mySub.kt2Fin, mySub.xPolFin, mySub.yPolFin);
+                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad,
+                    mySub.sWidLine, mySub.dstLine, mySub.rRadLine, mySub.xRadLine, 
+                    mySub.yRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineAct, 
+                    mySub.radAct, mySub.kActLine1, mySub.kActLine2, mySub.xLineAct, mySub.yLineAct, 
+                    out kLineFinal, mySub.nCodeFin, mySub.nLongFin, mySub.sWidFin, mySub.distFin, 
+                    mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin,
+                    mySub.yFin, mySub.nWork1, mySub.xWork1, mySub.yWork1, tolerance);
+                DllClass1.PolyFinal(kPolyAct, mySub.nameAct, mySub.xAct, mySub.yAct, 
+                    mySub.aActCalc, mySub.aActLeg, mySub.kActPoly1, mySub.kActPoly2, 
+                    mySub.xPolyAct, mySub.yPolyAct, out kPolyFinal, mySub.namePolyFin, mySub.xLabFin, 
+                    mySub.yLabFin, mySub.arCalcFin, mySub.arLegFin, mySub.nSymbFin, mySub.kt1Fin,
+                    mySub.kt2Fin, mySub.xPolFin, mySub.yPolFin);
             }
             kLineTopo = 0;
             mySub.LineTopoLoad();
@@ -479,10 +491,22 @@ namespace IIT_Dimlom_Geo1
                     mySub.yLabFin[index] = mySub.yLab[index];
                     mySub.nSymbFin[index] = mySub.nSymbPoly[index];
                 }
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine, mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1, mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin, mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork, mySub.xWork, mySub.yWork, tolerance);
+                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine,
+                    mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1,
+                    mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1,
+                    mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin,
+                    mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin,
+                    mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork,
+                    mySub.xWork, mySub.yWork, tolerance);
             }
             if (kLineFinal == 0 && kLineTopo > 0)
-                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine, mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1, mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1, mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin, mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork, mySub.xWork, mySub.yWork, tolerance);
+                DllClass1.LineFinal(kLineInput, mySub.nLineCode, mySub.nLongRad, mySub.sWidLine,
+                    mySub.dstLine, mySub.rRadLine, mySub.xRadLine, mySub.yRadLine, mySub.k1,
+                    mySub.k2, mySub.xLin, mySub.yLin, kLineTopo, mySub.radLine, mySub.kl1, 
+                    mySub.kl2, mySub.zLin, mySub.zPik, out kLineFinal, mySub.nCodeFin, 
+                    mySub.nLongFin, mySub.sWidFin, mySub.distFin, mySub.rRadFin, mySub.xRadFin,
+                    mySub.yRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nWork,
+                    mySub.xWork, mySub.yWork, tolerance);
             if (kLineFinal == 0 && kLineTopo == 0)
             {
                 kLineFinal = kLineInput;
@@ -514,12 +538,20 @@ namespace IIT_Dimlom_Geo1
             yminCur = ymin;
             xmaxCur = xmax;
             ymaxCur = ymax;
-            DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+            DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, 
+                out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, 
+                out yBegWin, out xEndWin, out yEndWin, out iCond);
             if (iCond < 0)
                 iGraphic = 1;
             if (kSymbLine > 0)
             {
-                DllClass1.LineItemCoor(mySub.fitemLine, mySub.nColorItm, mySub.ixSqu, mySub.iySqu, kLineFinal, mySub.rRadFin, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nCodeFin, kSymbLine, mySub.nItem, mySub.n1Sign, mySub.n2Sign, mySub.iDensity, out kItemCoord, mySub.numSign, mySub.numItem, mySub.xItem, mySub.yItem, mySub.azItem, mySub.xAdd, mySub.yAdd, mySub.xDop, mySub.yDop, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, scaleToGeo);
+                DllClass1.LineItemCoor(mySub.fitemLine, mySub.nColorItm, mySub.ixSqu, 
+                    mySub.iySqu, kLineFinal, mySub.rRadFin, mySub.k1Fin, mySub.k2Fin,
+                    mySub.xFin, mySub.yFin, mySub.nCodeFin, kSymbLine, mySub.nItem, 
+                    mySub.n1Sign, mySub.n2Sign, mySub.iDensity, out kItemCoord,
+                    mySub.numSign, mySub.numItem, mySub.xItem, mySub.yItem, 
+                    mySub.azItem, mySub.xAdd, mySub.yAdd, mySub.xDop, mySub.yDop,
+                    scaleToWin, xBegX, yBegY, xBegWin, yBegWin, scaleToGeo);
                 if (kItemCoord > 0)
                 {
                     mySub.kItemCoord = kItemCoord;
@@ -537,7 +569,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -564,20 +596,51 @@ namespace IIT_Dimlom_Geo1
                 return;
             Cursor.Current = Cursors.WaitCursor;
             if (kBorder > 2)
-                DllClass1.DrawSelLine(e, kBorder, ref mySub.xBorder, ref mySub.yBorder, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
+                DllClass1.DrawSelLine(e, kBorder, ref mySub.xBorder, ref mySub.yBorder, scaleToWin, 
+                    xBegX, yBegY, xBegWin, yBegWin);
             if (kPntPlus > 0 && kPntFin == 0 && iPointOnOff > 0)
-                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntPlus, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nCode1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
+                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntPlus, mySub.namePnt, 
+                    mySub.xPnt, mySub.yPnt, mySub.zPnt,
+                    mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, 
+                    yBegY, xBegWin, yBegWin, mySub.nCode1,
+                    mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, 
+                    mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
             if (kPntFin > 0 && iPointOnOff > 0)
-                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntFin, mySub.namePntFin, mySub.xPntFin, mySub.yPntFin, mySub.zPntFin, mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nCode1Fin, mySub.nCode2Fin, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
+                DllClass1.PointsDraw(e, mySub.fsymbPnt, iHeightShow, kPntFin, mySub.namePntFin,
+                    mySub.xPntFin, mySub.yPntFin, mySub.zPntFin,
+                    mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY,
+                    xBegWin, yBegWin, mySub.nCode1Fin,
+                    mySub.nCode2Fin, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, 
+                    mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
             if (kPolyFinal > 0 && iSymbols > 0)
-                DllClass1.DrawPoly(e, mySub.fitemPoly, kPolyFinal, mySub.namePolyFin, mySub.kt1Fin, mySub.kt2Fin, mySub.xLabFin, mySub.yLabFin, mySub.arCalcFin, mySub.nSymbFin, mySub.iHorVer, mySub.xPolFin, mySub.yPolFin, mySub.ki1, mySub.ki2, mySub.xAdd, mySub.yAdd, kPolySymb, mySub.npSign1, mySub.npSign2, mySub.npItem, mySub.nBackCol, mySub.nOneSymb, mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.xDop, mySub.yDop, mySub.xWork, mySub.yWork, mySub.xWork1, mySub.yWork1, mySub.brColor, mySub.pnColor);
+                DllClass1.DrawPoly(e, mySub.fitemPoly, kPolyFinal, mySub.namePolyFin, mySub.kt1Fin,
+                    mySub.kt2Fin, mySub.xLabFin, 
+                    mySub.yLabFin, mySub.arCalcFin, mySub.nSymbFin, mySub.iHorVer, mySub.xPolFin,
+                    mySub.yPolFin, mySub.ki1, mySub.ki2,
+                    mySub.xAdd, mySub.yAdd, kPolySymb, mySub.npSign1, mySub.npSign2, mySub.npItem,
+                    mySub.nBackCol, mySub.nOneSymb,
+                    mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, 
+                    yBegWin, mySub.xDop, mySub.yDop,
+                    mySub.xWork, mySub.yWork, mySub.xWork1, mySub.yWork1, mySub.brColor, mySub.pnColor);
             if (kAddInscript > 0 && iSymbols > 0)
-                DllClass1.AddInscrDraw(e, kAddInscript, mySub.sAddInscr, mySub.xAddInscr, mySub.yAddInscr, mySub.nHorVer, mySub.nInsCol, mySub.brColor, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
+                DllClass1.AddInscrDraw(e, kAddInscript, mySub.sAddInscr, mySub.xAddInscr, mySub.yAddInscr, 
+                    mySub.nHorVer,
+                    mySub.nInsCol, mySub.brColor, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
             if (kLineFinal > 0 && iSymbols > 0)
             {
-                DllClass1.DrawInputLine(e, kLineFinal, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin, mySub.nCodeFin, mySub.sWidFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nColLine, mySub.iWidth1, mySub.iWidth2, mySub.iStyle1, mySub.iStyle2, mySub.nBaseSymb, mySub.xAdd, mySub.yAdd, mySub.xDop, mySub.yDop, mySub.xWork2, mySub.yWork2, kSymbLine, mySub.n1Sign, mySub.n2Sign, mySub.brColor, mySub.pnColor, 0);
+                DllClass1.DrawInputLine(e, kLineFinal, mySub.k1Fin, mySub.k2Fin, mySub.xFin, mySub.yFin,
+                    mySub.nCodeFin,
+                    mySub.sWidFin, mySub.rRadFin, mySub.xRadFin, mySub.yRadFin, scaleToWin, xBegX, yBegY,
+                    xBegWin, yBegWin,
+                    mySub.nColLine, mySub.iWidth1, mySub.iWidth2, mySub.iStyle1, mySub.iStyle2, mySub.nBaseSymb,
+                    mySub.xAdd,
+                    mySub.yAdd, mySub.xDop, mySub.yDop, mySub.xWork2, mySub.yWork2, kSymbLine, mySub.n1Sign,
+                    mySub.n2Sign, 
+                    mySub.brColor, mySub.pnColor, 0);
                 if (kItemCoord > 0)
-                    DllClass1.InputItemDraw(e, mySub.fitemLine, kItemCoord, mySub.numSign, mySub.numItem, mySub.xItem, mySub.yItem, mySub.azItem, mySub.itemLoc, mySub.nBaseSymb, mySub.sInscr, mySub.hInscr, mySub.iColInscr, kSymbLine, mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nDop1, mySub.nDop2, mySub.brColor);
+                    DllClass1.InputItemDraw(e, mySub.fitemLine, kItemCoord, mySub.numSign, mySub.numItem, mySub.xItem, 
+                        mySub.yItem, mySub.azItem, mySub.itemLoc, mySub.nBaseSymb, mySub.sInscr, mySub.hInscr, mySub.iColInscr, 
+                        kSymbLine, mySub.ixSqu, mySub.iySqu, mySub.nColorItm, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nDop1, mySub.nDop2, mySub.brColor);
             }
             if (kLineFinal > 0 && iSymbols == 0)
             {
@@ -603,7 +666,8 @@ namespace IIT_Dimlom_Geo1
                 if (kLineCancel > 0)
                 {
                     int iPar = 3;
-                    DllClass1.LineDraw(e, kLineCancel, mySub.kLinCanc1, mySub.kLinCanc2, mySub.xLinCanc, mySub.yLinCanc, mySub.RadCanc, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.pnColor, iPar);
+                    DllClass1.LineDraw(e, kLineCancel, mySub.kLinCanc1, mySub.kLinCanc2, mySub.xLinCanc, mySub.yLinCanc, mySub.RadCanc, scaleToWin,
+                        xBegX, yBegY, xBegWin, yBegWin, mySub.pnColor, iPar);
                 }
             }
             if (File.Exists(mySub.fileContour) && iContourShow > 0)
@@ -739,7 +803,9 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                DllClass1.PointsInput(out mySub.kPntPlus, out mySub.kPntInput, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2, out mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig, out mySub.xmin, out mySub.ymin, out mySub.xmax, out mySub.ymax, out mySub.zmin, out mySub.zmax, out iCond);
+                DllClass1.PointsInput(out mySub.kPntPlus, out mySub.kPntInput, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2,
+                    out mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig, out mySub.xmin, out mySub.ymin, out mySub.xmax, out mySub.ymax, 
+                    out mySub.zmin, out mySub.zmax, out iCond);
                 if (iCond < 0)
                     return;
                 kPntPlus = mySub.kPntPlus;
@@ -757,7 +823,8 @@ namespace IIT_Dimlom_Geo1
                     if (mySub.nCode1[index] > 0)
                     {
                         int kPix;
-                        DllClass1.SelSymbPnt(mySub.fsymbPnt, mySub.nCode1[index], kSymbPnt, mySub.numRec, mySub.numbUser, out int _, out int _, out int _, out string _, out kPix, mySub.ixSqu, mySub.iySqu, mySub.nColor, out string _, out int _);
+                        DllClass1.SelSymbPnt(mySub.fsymbPnt, mySub.nCode1[index], kSymbPnt, mySub.numRec, mySub.numbUser, 
+                            out int _, out int _, out int _, out string _, out kPix, mySub.ixSqu, mySub.iySqu, mySub.nColor, out string _, out int _);
                         if (kPix == 0)
                         {
                             ++num2;
@@ -771,7 +838,9 @@ namespace IIT_Dimlom_Geo1
                 }
                 mySub.FilesRemove();
                 mySub.AllActionRemove();
-                DllClass1.KeepPntHeig(mySub.filePoint, mySub.fileHeight, ref mySub.xmin, ref mySub.ymin, ref mySub.xmax, ref mySub.ymax, ref mySub.zmin, ref mySub.zmax, mySub.kPntPlus, mySub.kPntInput, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2, ref mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig);
+                DllClass1.KeepPntHeig(mySub.filePoint, mySub.fileHeight, ref mySub.xmin, ref mySub.ymin, ref mySub.xmax,
+                    ref mySub.ymax, ref mySub.zmin, ref mySub.zmax, mySub.kPntPlus, mySub.kPntInput, mySub.namePnt, mySub.xPnt, 
+                    mySub.yPnt, mySub.zPnt, mySub.nCode1, mySub.nCode2, ref mySub.kHeight, mySub.nameHeig, mySub.xHeig, mySub.yHeig, mySub.zHeig);
                 kHeight = mySub.kHeight;
                 if (iCond < 0)
                 {
@@ -1745,7 +1814,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1801,7 +1870,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {

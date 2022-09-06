@@ -92,7 +92,7 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             if (!File.Exists(mySub.tmpStr))
             {
-                int num = (int)MessageBox.Show("Drive wasn't defined", "Fill up Control Points Store", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Заполнить хранилище контрольных точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             if (!File.Exists(mySub.fstoreGeo))
@@ -124,7 +124,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -165,7 +165,7 @@ namespace IIT_Dimlom_Geo1
                     if (index5 < index1)
                         sTmp += ",";
                 }
-                int num = (int)MessageBox.Show(sTmp, "Duplicate Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show(sTmp, "Повторяющиеся точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -434,7 +434,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Point wasn't selected.", "Point's Correction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Точка не выбрана.", "Коррекция точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -464,19 +464,19 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox4.Text, out mySub.xTar[kTar], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out mySub.yTar[kTar], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox6.Text, out mySub.zTar[kTar], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 ++kTar;
@@ -507,19 +507,19 @@ namespace IIT_Dimlom_Geo1
                         DllClass1.CheckText(textBox4.Text, out mySub.xTar[index1], out iCond);
                         if (iCond < 0)
                         {
-                            int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         DllClass1.CheckText(textBox5.Text, out mySub.yTar[index1], out iCond);
                         if (iCond < 0)
                         {
-                            int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         DllClass1.CheckText(textBox6.Text, out mySub.zTar[index1], out iCond);
                         if (iCond < 0)
                         {
-                            int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         mySub.tarName[index1] = textBox3.Text;
@@ -533,7 +533,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Delete operation failed as expected.");
+                Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
             }
             FileStream output = new FileStream(mySub.fstoreGeo, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
@@ -581,7 +581,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num1 = (int)MessageBox.Show("Point wasn't selected.", "Point's Correction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Точка не выбрана.", "Коррекция точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -625,7 +625,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Delete operation failed as expected.");
+                    Console.WriteLine("Операция удаления завершилась неудачно, как и ожидалось.");
                 }
                 FileStream output = new FileStream(mySub.fstoreGeo, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);

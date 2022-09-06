@@ -151,7 +151,7 @@ namespace IIT_Dimlom_Geo1
             this.panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            this.panel1.Text = "Ready...";
+            this.panel1.Text = "Готов...";
             this.panel3.Text = "**";
             this.panel5.Text = "**";
             this.panel6.Text = DateTime.Now.ToShortDateString();
@@ -406,7 +406,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -1216,7 +1216,7 @@ namespace IIT_Dimlom_Geo1
                             --this.maxParcel;
                         }
                         this.ChangeAction();
-                        this.panel1.Text = "Ready...";
+                        this.panel1.Text = "Готов...";
                         this.kSel = -1;
                         this.kRcPnt = 0;
                         this.nProcess = 0;
@@ -1374,7 +1374,7 @@ namespace IIT_Dimlom_Geo1
                 this.label4.Visible = true;
                 this.label4.Text = "Area, sq.m";
                 if (this.nProcess == 220)
-                    this.label4.Text = "Distance,m";
+                    this.label4.Text = "Distance,м";
                 if (this.nProcess == 230 || this.nProcess == 260)
                     this.label4.Text = "Per cent,%";
                 if (this.nProcess == 250)
@@ -1956,7 +1956,7 @@ namespace IIT_Dimlom_Geo1
                     --this.maxParcel;
                 }
                 this.ChangeAction();
-                this.panel1.Text = "Ready...";
+                this.panel1.Text = "Готов...";
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;
@@ -2458,7 +2458,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Data is absent", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 this.panel7.Invalidate();
@@ -2484,7 +2484,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num7 = (int)MessageBox.Show("Data is absent", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num7 = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (this.kPolyProj > 0 || this.kTopoProj > 0)
             {
@@ -2642,7 +2642,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 this.myAct.aActLeg[1] = num1;
                 this.ChangeAction();
-                this.panel1.Text = "Ready...";
+                this.panel1.Text = "Готов...";
                 if (File.Exists(this.myAct.flineFinal))
                     File.Delete(this.myAct.flineFinal);
                 this.kLineFinal = 0;
@@ -3118,7 +3118,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox4.Text, out this.areaInput, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (this.areaInput <= 0.0)
@@ -3655,7 +3655,7 @@ namespace IIT_Dimlom_Geo1
                 this.myAct.LoadKeepSource(2);
             }
             this.ChangeAction();
-            this.panel1.Text = "Ready...";
+            this.panel1.Text = "Готов...";
             this.kSel = -1;
             this.kRcPnt = 0;
             this.areaInput = 0.0;
@@ -3712,7 +3712,7 @@ namespace IIT_Dimlom_Geo1
             this.kRcPnt = 0;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Data is absent", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3736,13 +3736,13 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.nAction == 0)
             {
-                int num1 = (int)MessageBox.Show("All changes removed", "Parcel's Actions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("All changes removed", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 this.nProcess = 400;
                 this.nControl = 0;
-                if (MessageBox.Show("Do you really want to Remove Last Action ?", "Parcel's Action", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Do you really want to Remove Last Action ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 this.ActionDelete();
                 this.myAct.KeepLoadAction(1);
@@ -3841,7 +3841,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Data is absent", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 this.panel7.Invalidate();
@@ -3851,11 +3851,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.nAction == 0)
             {
-                int num1 = (int)MessageBox.Show("All changes removed", "Parcel's Actions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("All changes removed", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (MessageBox.Show("Do you really want to Remove All changes ?", "Parcel's Action", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Do you really want to Remove All changes ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 this.myAct.AllActionRemove();
                 this.nAction = 0;
@@ -3988,7 +3988,7 @@ namespace IIT_Dimlom_Geo1
             this.kLineCancel = this.myAct.kLineCancel;
             if (this.kPolyCancel < 1 && this.kLineCancel < 1)
             {
-                int num = (int)MessageBox.Show("Data is absent", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

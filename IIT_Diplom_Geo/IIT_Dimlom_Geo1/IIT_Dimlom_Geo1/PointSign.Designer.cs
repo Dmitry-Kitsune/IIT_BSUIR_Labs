@@ -93,593 +93,768 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            groupBox1 = new GroupBox();
-            button30 = new Button();
-            button29 = new Button();
-            button15 = new Button();
-            button3 = new Button();
-            textBox9 = new TextBox();
-            label10 = new Label();
-            button32 = new Button();
-            button31 = new Button();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            label7 = new Label();
-            label6 = new Label();
-            button9 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            groupBox2 = new GroupBox();
-            groupBox4 = new GroupBox();
-            button28 = new Button();
-            button27 = new Button();
-            button26 = new Button();
-            button25 = new Button();
-            button24 = new Button();
-            button23 = new Button();
-            button22 = new Button();
-            button21 = new Button();
-            button20 = new Button();
-            button19 = new Button();
-            button18 = new Button();
-            button17 = new Button();
-            button16 = new Button();
-            button14 = new Button();
-            button13 = new Button();
-            button12 = new Button();
-            button11 = new Button();
-            button10 = new Button();
-            button4 = new Button();
-            button6 = new Button();
-            button8 = new Button();
-            button5 = new Button();
-            button7 = new Button();
-            groupBox3 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton9 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton8 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton7 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton6 = new RadioButton();
-            radioButton5 = new RadioButton();
-            label1 = new Label();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox3.SuspendLayout();
-            SuspendLayout();
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(732, 649);
-            panel1.TabIndex = 0;
-            panel1.Paint += new PaintEventHandler(panel1_Paint);
-            panel1.MouseMove += new MouseEventHandler(panel1_MouseMove);
-            panel1.MouseDown += new MouseEventHandler(panel1_MouseDown);
-            panel1.MouseUp += new MouseEventHandler(panel1_MouseUp);
-            groupBox1.BackColor = Color.Gray;
-            groupBox1.Controls.Add((Control)button30);
-            groupBox1.Controls.Add((Control)button29);
-            groupBox1.Controls.Add((Control)button15);
-            groupBox1.Controls.Add((Control)button3);
-            groupBox1.Controls.Add((Control)textBox9);
-            groupBox1.Controls.Add((Control)label10);
-            groupBox1.Controls.Add((Control)button32);
-            groupBox1.Controls.Add((Control)button31);
-            groupBox1.Controls.Add((Control)textBox6);
-            groupBox1.Controls.Add((Control)textBox5);
-            groupBox1.Controls.Add((Control)label7);
-            groupBox1.Controls.Add((Control)label6);
-            groupBox1.Controls.Add((Control)button9);
-            groupBox1.Controls.Add((Control)textBox2);
-            groupBox1.Controls.Add((Control)textBox1);
-            groupBox1.Controls.Add((Control)label3);
-            groupBox1.Controls.Add((Control)label2);
-            groupBox1.Controls.Add((Control)button1);
-            groupBox1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)204);
-            groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(759, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(252, 196);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Options";
-            button30.BackColor = Color.White;
-            button30.Location = new Point(103, 56);
-            button30.Name = "button30";
-            button30.Size = new Size(55, 35);
-            button30.TabIndex = 47;
-            button30.Text = "More details";
-            button30.UseVisualStyleBackColor = false;
-            button30.Click += new EventHandler(MoreDetail_Click);
-            button29.BackColor = Color.White;
-            button29.Location = new Point(51, 56);
-            button29.Name = "button29";
-            button29.Size = new Size(51, 35);
-            button29.TabIndex = 46;
-            button29.Text = "Down signs";
-            button29.UseVisualStyleBackColor = false;
-            button29.Click += new EventHandler(Down_Click);
-            button15.BackColor = Color.White;
-            button15.Location = new Point(159, 56);
-            button15.Name = "button15";
-            button15.Size = new Size(90, 35);
-            button15.TabIndex = 35;
-            button15.Text = "Signs' listing On/Off";
-            button15.UseVisualStyleBackColor = false;
-            button15.Click += new EventHandler(ListOnOff_Click);
-            button3.BackColor = Color.White;
-            button3.Location = new Point(6, 56);
-            button3.Name = "button3";
-            button3.Size = new Size(45, 35);
-            button3.TabIndex = 45;
-            button3.Text = "Up signs";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += new EventHandler(Up_Click);
-            textBox9.Location = new Point(105, 121);
-            textBox9.Name = "textBox9";
-            textBox9.ReadOnly = true;
-            textBox9.Size = new Size(34, 20);
-            textBox9.TabIndex = 15;
-            label10.AutoSize = true;
-            label10.BackColor = Color.Silver;
-            label10.Location = new Point(6, 124);
-            label10.Name = "label10";
-            label10.Size = new Size(96, 13);
-            label10.TabIndex = 14;
-            label10.Text = "Code by default";
-            button32.BackColor = Color.White;
-            button32.Location = new Point(159, 19);
-            button32.Name = "button32";
-            button32.Size = new Size(89, 34);
-            button32.TabIndex = 13;
-            button32.Text = "Last symbol delete";
-            button32.UseVisualStyleBackColor = false;
-            button32.Click += new EventHandler(SymbolDelete_Click);
-            button31.BackColor = Color.White;
-            button31.Location = new Point(78, 19);
-            button31.Name = "button31";
-            button31.Size = new Size(78, 34);
-            button31.TabIndex = 12;
-            button31.Text = "Symbol update";
-            button31.UseVisualStyleBackColor = false;
-            button31.Click += new EventHandler(SymbolUpdate_Click);
-            textBox6.Location = new Point(8, 164);
-            textBox6.MaxLength = 12;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 20);
-            textBox6.TabIndex = 11;
-            textBox5.Location = new Point(213, 121);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(33, 20);
-            textBox5.TabIndex = 10;
-            label7.AutoSize = true;
-            label7.BackColor = Color.Silver;
-            label7.Location = new Point(29, 147);
-            label7.Name = "label7";
-            label7.Size = new Size(71, 13);
-            label7.TabIndex = 9;
-            label7.Text = "Description";
-            label6.AutoSize = true;
-            label6.BackColor = Color.Silver;
-            label6.Location = new Point(142, 124);
-            label6.Name = "label6";
-            label6.Size = new Size(65, 13);
-            label6.TabIndex = 8;
-            label6.Text = "User code";
-            button9.BackColor = Color.White;
-            button9.Location = new Point(139, 146);
-            button9.Name = "button9";
-            button9.Size = new Size(109, 40);
-            button9.TabIndex = 7;
-            button9.Text = "Confirm symbol's parameters";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += new EventHandler(ConfirmSymbol_Click);
-            textBox2.Location = new Point(208, 97);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(38, 20);
-            textBox2.TabIndex = 6;
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            textBox1.Location = new Point(79, 97);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(43, 20);
-            textBox1.TabIndex = 5;
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            label3.AutoSize = true;
-            label3.BackColor = Color.Silver;
-            label3.Location = new Point(128, 100);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 13);
-            label3.TabIndex = 4;
-            label3.Text = "Height,mm";
-            label2.AutoSize = true;
-            label2.BackColor = Color.Silver;
-            label2.Location = new Point(12, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(62, 13);
-            label2.TabIndex = 3;
-            label2.Text = "Width,mm";
-            button1.BackColor = Color.White;
-            button1.Location = new Point(5, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(69, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Symbol creation";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new EventHandler(SignCreation_Click);
-            button2.BackColor = Color.Black;
-            button2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)204);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(824, 630);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Close dialogue";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += new EventHandler(Close_Click);
-            groupBox2.BackColor = Color.Gray;
-            groupBox2.Controls.Add((Control)groupBox4);
-            groupBox2.Controls.Add((Control)groupBox3);
-            groupBox2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)204);
-            groupBox2.ForeColor = Color.Black;
-            groupBox2.Location = new Point(757, 214);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(252, 409);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
-            groupBox4.BackColor = Color.FromArgb(64, 64, 64);
-            groupBox4.Controls.Add((Control)button28);
-            groupBox4.Controls.Add((Control)button27);
-            groupBox4.Controls.Add((Control)button26);
-            groupBox4.Controls.Add((Control)button25);
-            groupBox4.Controls.Add((Control)button24);
-            groupBox4.Controls.Add((Control)button23);
-            groupBox4.Controls.Add((Control)button22);
-            groupBox4.Controls.Add((Control)button21);
-            groupBox4.Controls.Add((Control)button20);
-            groupBox4.Controls.Add((Control)button19);
-            groupBox4.Controls.Add((Control)button18);
-            groupBox4.Controls.Add((Control)button17);
-            groupBox4.Controls.Add((Control)button16);
-            groupBox4.Controls.Add((Control)button14);
-            groupBox4.Controls.Add((Control)button13);
-            groupBox4.Controls.Add((Control)button12);
-            groupBox4.Controls.Add((Control)button11);
-            groupBox4.Controls.Add((Control)button10);
-            groupBox4.Controls.Add((Control)button4);
-            groupBox4.Controls.Add((Control)button6);
-            groupBox4.Controls.Add((Control)button8);
-            groupBox4.Controls.Add((Control)button5);
-            groupBox4.Controls.Add((Control)button7);
-            groupBox4.ForeColor = Color.Black;
-            groupBox4.Location = new Point(7, 75);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(239, 324);
-            groupBox4.TabIndex = 16;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Items";
-            button28.BackColor = Color.White;
-            button28.Location = new Point(8, 262);
-            button28.Name = "button28";
-            button28.Size = new Size(109, 23);
-            button28.TabIndex = 34;
-            button28.Text = "Circle in triangle";
-            button28.UseVisualStyleBackColor = false;
-            button28.Click += new EventHandler(CircleTriangle_Click);
-            button27.BackColor = Color.White;
-            button27.Location = new Point(116, 236);
-            button27.Name = "button27";
-            button27.Size = new Size(116, 23);
-            button27.TabIndex = 33;
-            button27.Text = "FillHexagon";
-            button27.UseVisualStyleBackColor = false;
-            button27.Click += new EventHandler(FillHexagon_Click);
-            button26.BackColor = Color.White;
-            button26.Location = new Point(8, 236);
-            button26.Name = "button26";
-            button26.Size = new Size(109, 23);
-            button26.TabIndex = 32;
-            button26.Text = "Hexagon";
-            button26.UseVisualStyleBackColor = false;
-            button26.Click += new EventHandler(Hexagon_Click);
-            button25.BackColor = Color.White;
-            button25.Location = new Point(113, 210);
-            button25.Name = "button25";
-            button25.Size = new Size(119, 23);
-            button25.TabIndex = 31;
-            button25.Text = "FillTriangle bottom";
-            button25.UseVisualStyleBackColor = false;
-            button25.Click += new EventHandler(FillTriangleBottom_Click);
-            button24.BackColor = Color.White;
-            button24.Location = new Point(9, 210);
-            button24.Name = "button24";
-            button24.Size = new Size(104, 23);
-            button24.TabIndex = 30;
-            button24.Text = "Triangle bottom";
-            button24.UseVisualStyleBackColor = false;
-            button24.Click += new EventHandler(TriangleBottom_Click);
-            button23.BackColor = Color.White;
-            button23.Location = new Point(115, 184);
-            button23.Name = "button23";
-            button23.Size = new Size(117, 23);
-            button23.TabIndex = 29;
-            button23.Text = "FillTriangle top";
-            button23.UseVisualStyleBackColor = false;
-            button23.Click += new EventHandler(FillTriangleTop_Click);
-            button22.BackColor = Color.White;
-            button22.Location = new Point(10, 184);
-            button22.Name = "button22";
-            button22.Size = new Size(104, 23);
-            button22.TabIndex = 28;
-            button22.Text = "Triangle top";
-            button22.UseVisualStyleBackColor = false;
-            button22.Click += new EventHandler(TriangleTop_Click);
-            button21.BackColor = Color.White;
-            button21.Location = new Point(113, 158);
-            button21.Name = "button21";
-            button21.Size = new Size(118, 23);
-            button21.TabIndex = 27;
-            button21.Text = "FillTriangle right";
-            button21.UseVisualStyleBackColor = false;
-            button21.Click += new EventHandler(FillTriangleRight_Click);
-            button20.BackColor = Color.White;
-            button20.Location = new Point(9, 158);
-            button20.Name = "button20";
-            button20.Size = new Size(104, 23);
-            button20.TabIndex = 26;
-            button20.Text = "Triangle right";
-            button20.UseVisualStyleBackColor = false;
-            button20.Click += new EventHandler(TriangleRight_Click);
-            button19.BackColor = Color.White;
-            button19.Location = new Point(113, 132);
-            button19.Name = "button19";
-            button19.Size = new Size(117, 23);
-            button19.TabIndex = 25;
-            button19.Text = "FillTriangle left";
-            button19.UseVisualStyleBackColor = false;
-            button19.Click += new EventHandler(FillTriangleLeft_Click);
-            button18.BackColor = Color.White;
-            button18.Location = new Point(8, 132);
-            button18.Name = "button18";
-            button18.Size = new Size(104, 23);
-            button18.TabIndex = 24;
-            button18.Text = "Triangle left";
-            button18.UseVisualStyleBackColor = false;
-            button18.Click += new EventHandler(TriangleLeft_Click);
-            button17.BackColor = Color.Black;
-            button17.ForeColor = Color.White;
-            button17.Location = new Point(74, 291);
-            button17.Name = "button17";
-            button17.Size = new Size(91, 23);
-            button17.TabIndex = 23;
-            button17.Text = "Keep symbol";
-            button17.UseVisualStyleBackColor = false;
-            button17.Click += new EventHandler(KeepSymbol_Click);
-            button16.BackColor = Color.White;
-            button16.Location = new Point(116, 262);
-            button16.Name = "button16";
-            button16.Size = new Size(117, 23);
-            button16.TabIndex = 21;
-            button16.Text = "Concentric circles";
-            button16.UseVisualStyleBackColor = false;
-            button16.Click += new EventHandler(Concentric_Click);
-            button14.BackColor = Color.White;
-            button14.Location = new Point(163, 94);
-            button14.Name = "button14";
-            button14.Size = new Size(68, 35);
-            button14.TabIndex = 19;
-            button14.Text = "Arc bottom";
-            button14.UseVisualStyleBackColor = false;
-            button14.Click += new EventHandler(ArcBottom_Click);
-            button13.BackColor = Color.White;
-            button13.Location = new Point(114, 94);
-            button13.Name = "button13";
-            button13.Size = new Size(47, 35);
-            button13.TabIndex = 18;
-            button13.Text = "Arc top";
-            button13.UseVisualStyleBackColor = false;
-            button13.Click += new EventHandler(ArcTop_Click);
-            button12.BackColor = Color.White;
-            button12.Location = new Point(60, 94);
-            button12.Name = "button12";
-            button12.Size = new Size(51, 35);
-            button12.TabIndex = 17;
-            button12.Text = "Arc right";
-            button12.UseVisualStyleBackColor = false;
-            button12.Click += new EventHandler(ArcRight_Click);
-            button11.BackColor = Color.White;
-            button11.Location = new Point(8, 94);
-            button11.Name = "button11";
-            button11.Size = new Size(50, 35);
-            button11.TabIndex = 16;
-            button11.Text = "Arc left";
-            button11.UseVisualStyleBackColor = false;
-            button11.Click += new EventHandler(ArcLeft_Click);
-            button10.BackColor = Color.White;
-            button10.Location = new Point(115, 44);
-            button10.Name = "button10";
-            button10.Size = new Size(117, 23);
-            button10.TabIndex = 15;
-            button10.Text = "FillRectangle";
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += new EventHandler(FillRectangle_Click);
-            button4.BackColor = Color.White;
-            button4.Location = new Point(7, 19);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 23);
-            button4.TabIndex = 0;
-            button4.Text = "Pixel plus/minus";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += new EventHandler(Handwork_Click);
-            button6.BackColor = Color.White;
-            button6.Location = new Point(8, 44);
-            button6.Name = "button6";
-            button6.Size = new Size(104, 23);
-            button6.TabIndex = 2;
-            button6.Text = "Rectangle";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += new EventHandler(Rectangle_Click);
-            button8.BackColor = Color.White;
-            button8.Location = new Point(116, 69);
-            button8.Name = "button8";
-            button8.Size = new Size(115, 23);
-            button8.TabIndex = 4;
-            button8.Text = "FillEllipse";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += new EventHandler(FillEllipse_Click);
-            button5.BackColor = Color.White;
-            button5.Location = new Point(123, 19);
-            button5.Name = "button5";
-            button5.Size = new Size(108, 23);
-            button5.TabIndex = 1;
-            button5.Text = "Pixels line";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += new EventHandler(Line_Click);
-            button7.BackColor = Color.White;
-            button7.Location = new Point(8, 69);
-            button7.Name = "button7";
-            button7.Size = new Size(105, 23);
-            button7.TabIndex = 3;
-            button7.Text = "Ellipse";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += new EventHandler(Ellipse_Click);
-            groupBox3.BackColor = Color.FromArgb(64, 64, 64);
-            groupBox3.Controls.Add((Control)radioButton1);
-            groupBox3.Controls.Add((Control)radioButton9);
-            groupBox3.Controls.Add((Control)radioButton2);
-            groupBox3.Controls.Add((Control)radioButton8);
-            groupBox3.Controls.Add((Control)radioButton3);
-            groupBox3.Controls.Add((Control)radioButton7);
-            groupBox3.Controls.Add((Control)radioButton4);
-            groupBox3.Controls.Add((Control)radioButton6);
-            groupBox3.Controls.Add((Control)radioButton5);
-            groupBox3.ForeColor = Color.Black;
-            groupBox3.Location = new Point(6, 6);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(240, 64);
-            groupBox3.TabIndex = 14;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Select colour";
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = Color.FromArgb(64, 64, 64);
-            radioButton1.ForeColor = Color.White;
-            radioButton1.Location = new Point(8, 13);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(57, 17);
-            radioButton1.TabIndex = 5;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Black";
-            radioButton1.UseVisualStyleBackColor = false;
-            radioButton9.AutoSize = true;
-            radioButton9.ForeColor = Color.White;
-            radioButton9.Location = new Point(164, 43);
-            radioButton9.Name = "radioButton9";
-            radioButton9.Size = new Size(51, 17);
-            radioButton9.TabIndex = 13;
-            radioButton9.TabStop = true;
-            radioButton9.Text = "Gray";
-            radioButton9.UseVisualStyleBackColor = true;
-            radioButton2.AutoSize = true;
-            radioButton2.ForeColor = Color.White;
-            radioButton2.Location = new Point(82, 13);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(48, 17);
-            radioButton2.TabIndex = 6;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Red";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton8.AutoSize = true;
-            radioButton8.ForeColor = Color.White;
-            radioButton8.Location = new Point(82, 43);
-            radioButton8.Name = "radioButton8";
-            radioButton8.Size = new Size(60, 17);
-            radioButton8.TabIndex = 12;
-            radioButton8.TabStop = true;
-            radioButton8.Text = "Brown";
-            radioButton8.UseVisualStyleBackColor = true;
-            radioButton3.AutoSize = true;
-            radioButton3.ForeColor = Color.White;
-            radioButton3.Location = new Point(164, 13);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(59, 17);
-            radioButton3.TabIndex = 7;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Green";
-            radioButton3.UseVisualStyleBackColor = true;
-            radioButton7.AutoSize = true;
-            radioButton7.ForeColor = Color.White;
-            radioButton7.Location = new Point(8, 43);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(62, 17);
-            radioButton7.TabIndex = 11;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "Yellow";
-            radioButton7.UseVisualStyleBackColor = true;
-            radioButton4.AutoSize = true;
-            radioButton4.ForeColor = Color.White;
-            radioButton4.Location = new Point(8, 28);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(50, 17);
-            radioButton4.TabIndex = 8;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Blue";
-            radioButton4.UseVisualStyleBackColor = true;
-            radioButton6.AutoSize = true;
-            radioButton6.ForeColor = Color.White;
-            radioButton6.Location = new Point(164, 28);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(53, 17);
-            radioButton6.TabIndex = 10;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "Cyan";
-            radioButton6.UseVisualStyleBackColor = true;
-            radioButton5.AutoSize = true;
-            radioButton5.ForeColor = Color.White;
-            radioButton5.Location = new Point(82, 28);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(74, 17);
-            radioButton5.TabIndex = 9;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Magenta";
-            radioButton5.UseVisualStyleBackColor = true;
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.Font = new Font("Microsoft Sans Serif", 10f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            label1.ForeColor = Color.FromArgb(64, 0, 0);
-            label1.Location = new Point(12, 662);
-            label1.Name = "label1";
-            label1.Size = new Size(14, 17);
-            label1.TabIndex = 4;
-            label1.Text = "-";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            AutoScaleDimensions = new SizeF(6f, 13f);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1012, 701);
-            Controls.Add((Control)label1);
-            Controls.Add((Control)groupBox2);
-            Controls.Add((Control)button2);
-            Controls.Add((Control)groupBox1);
-            Controls.Add((Control)panel1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "PointSign";
-            Text = "Points' Symbolgy";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(732, 649);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Gray;
+            this.groupBox1.Controls.Add(this.button30);
+            this.groupBox1.Controls.Add(this.button29);
+            this.groupBox1.Controls.Add(this.button15);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.button32);
+            this.groupBox1.Controls.Add(this.button31);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(759, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(252, 196);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Options";
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.White;
+            this.button30.Location = new System.Drawing.Point(103, 56);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(55, 35);
+            this.button30.TabIndex = 47;
+            this.button30.Text = "More details";
+            this.button30.UseVisualStyleBackColor = false;
+            this.button30.Click += new System.EventHandler(this.MoreDetail_Click);
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.White;
+            this.button29.Location = new System.Drawing.Point(51, 56);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(51, 35);
+            this.button29.TabIndex = 46;
+            this.button29.Text = "Down signs";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.Down_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(159, 56);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(90, 35);
+            this.button15.TabIndex = 35;
+            this.button15.Text = "Signs\' listing On/Off";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.ListOnOff_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(6, 56);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 35);
+            this.button3.TabIndex = 45;
+            this.button3.Text = "Up signs";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Up_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(105, 121);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(34, 20);
+            this.textBox9.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(6, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Code by default";
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.White;
+            this.button32.Location = new System.Drawing.Point(159, 19);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(89, 34);
+            this.button32.TabIndex = 13;
+            this.button32.Text = "Last symbol delete";
+            this.button32.UseVisualStyleBackColor = false;
+            this.button32.Click += new System.EventHandler(this.SymbolDelete_Click);
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.White;
+            this.button31.Location = new System.Drawing.Point(78, 19);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(78, 34);
+            this.button31.TabIndex = 12;
+            this.button31.Text = "Symbol update";
+            this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.SymbolUpdate_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(8, 164);
+            this.textBox6.MaxLength = 12;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(125, 20);
+            this.textBox6.TabIndex = 11;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(213, 121);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(33, 20);
+            this.textBox5.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(29, 147);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Description";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(142, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "User code";
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(139, 146);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(109, 40);
+            this.button9.TabIndex = 7;
+            this.button9.Text = "Confirm symbol\'s parameters";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.ConfirmSymbol_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(208, 97);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(38, 20);
+            this.textBox2.TabIndex = 6;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(79, 97);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(43, 20);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(128, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Height,mm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(12, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Width,mm";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(5, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 34);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Symbol creation";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.SignCreation_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(824, 630);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Close dialogue";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Close_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(757, 214);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(252, 409);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox4.Controls.Add(this.button28);
+            this.groupBox4.Controls.Add(this.button27);
+            this.groupBox4.Controls.Add(this.button26);
+            this.groupBox4.Controls.Add(this.button25);
+            this.groupBox4.Controls.Add(this.button24);
+            this.groupBox4.Controls.Add(this.button23);
+            this.groupBox4.Controls.Add(this.button22);
+            this.groupBox4.Controls.Add(this.button21);
+            this.groupBox4.Controls.Add(this.button20);
+            this.groupBox4.Controls.Add(this.button19);
+            this.groupBox4.Controls.Add(this.button18);
+            this.groupBox4.Controls.Add(this.button17);
+            this.groupBox4.Controls.Add(this.button16);
+            this.groupBox4.Controls.Add(this.button14);
+            this.groupBox4.Controls.Add(this.button13);
+            this.groupBox4.Controls.Add(this.button12);
+            this.groupBox4.Controls.Add(this.button11);
+            this.groupBox4.Controls.Add(this.button10);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(7, 75);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(239, 324);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Items";
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.White;
+            this.button28.Location = new System.Drawing.Point(8, 262);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(109, 23);
+            this.button28.TabIndex = 34;
+            this.button28.Text = "Circle in triangle";
+            this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.CircleTriangle_Click);
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.White;
+            this.button27.Location = new System.Drawing.Point(116, 236);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(116, 23);
+            this.button27.TabIndex = 33;
+            this.button27.Text = "FillHexagon";
+            this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.FillHexagon_Click);
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.White;
+            this.button26.Location = new System.Drawing.Point(8, 236);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(109, 23);
+            this.button26.TabIndex = 32;
+            this.button26.Text = "Hexagon";
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.Hexagon_Click);
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.White;
+            this.button25.Location = new System.Drawing.Point(113, 210);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(119, 23);
+            this.button25.TabIndex = 31;
+            this.button25.Text = "FillTriangle bottom";
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.FillTriangleBottom_Click);
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.White;
+            this.button24.Location = new System.Drawing.Point(9, 210);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(104, 23);
+            this.button24.TabIndex = 30;
+            this.button24.Text = "Triangle bottom";
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.TriangleBottom_Click);
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.White;
+            this.button23.Location = new System.Drawing.Point(115, 184);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(117, 23);
+            this.button23.TabIndex = 29;
+            this.button23.Text = "FillTriangle top";
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.FillTriangleTop_Click);
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.White;
+            this.button22.Location = new System.Drawing.Point(10, 184);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(104, 23);
+            this.button22.TabIndex = 28;
+            this.button22.Text = "Triangle top";
+            this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.TriangleTop_Click);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.White;
+            this.button21.Location = new System.Drawing.Point(113, 158);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(118, 23);
+            this.button21.TabIndex = 27;
+            this.button21.Text = "FillTriangle right";
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.FillTriangleRight_Click);
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.White;
+            this.button20.Location = new System.Drawing.Point(9, 158);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(104, 23);
+            this.button20.TabIndex = 26;
+            this.button20.Text = "Triangle right";
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.TriangleRight_Click);
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.White;
+            this.button19.Location = new System.Drawing.Point(113, 132);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(117, 23);
+            this.button19.TabIndex = 25;
+            this.button19.Text = "FillTriangle left";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.FillTriangleLeft_Click);
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.White;
+            this.button18.Location = new System.Drawing.Point(8, 132);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(104, 23);
+            this.button18.TabIndex = 24;
+            this.button18.Text = "Triangle left";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.TriangleLeft_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Black;
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Location = new System.Drawing.Point(74, 291);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(91, 23);
+            this.button17.TabIndex = 23;
+            this.button17.Text = "Keep symbol";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.KeepSymbol_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(116, 262);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(117, 23);
+            this.button16.TabIndex = 21;
+            this.button16.Text = "Concentric circles";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.Concentric_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(163, 94);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(68, 35);
+            this.button14.TabIndex = 19;
+            this.button14.Text = "Arc bottom";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.ArcBottom_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(114, 94);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(47, 35);
+            this.button13.TabIndex = 18;
+            this.button13.Text = "Arc top";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.ArcTop_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(60, 94);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(51, 35);
+            this.button12.TabIndex = 17;
+            this.button12.Text = "Arc right";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.ArcRight_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(8, 94);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(50, 35);
+            this.button11.TabIndex = 16;
+            this.button11.Text = "Arc left";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.ArcLeft_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(115, 44);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(117, 23);
+            this.button10.TabIndex = 15;
+            this.button10.Text = "FillRectangle";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.FillRectangle_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(7, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(113, 23);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Pixel plus/minus";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.Handwork_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(8, 44);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(104, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Rectangle";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Rectangle_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(116, 69);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(115, 23);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "FillEllipse";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.FillEllipse_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(123, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 23);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Pixels line";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Line_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(8, 69);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(105, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Ellipse";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Ellipse_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButton9);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton8);
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.radioButton7);
+            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Controls.Add(this.radioButton6);
+            this.groupBox3.Controls.Add(this.radioButton5);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(240, 64);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Select colour";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(8, 13);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(57, 17);
+            this.radioButton1.TabIndex = 5;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Black";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.ForeColor = System.Drawing.Color.White;
+            this.radioButton9.Location = new System.Drawing.Point(164, 43);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(51, 17);
+            this.radioButton9.TabIndex = 13;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Gray";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(82, 13);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 17);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Red";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.ForeColor = System.Drawing.Color.White;
+            this.radioButton8.Location = new System.Drawing.Point(82, 43);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(60, 17);
+            this.radioButton8.TabIndex = 12;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Brown";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.ForeColor = System.Drawing.Color.White;
+            this.radioButton3.Location = new System.Drawing.Point(164, 13);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(59, 17);
+            this.radioButton3.TabIndex = 7;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Green";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.ForeColor = System.Drawing.Color.White;
+            this.radioButton7.Location = new System.Drawing.Point(8, 43);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(62, 17);
+            this.radioButton7.TabIndex = 11;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Yellow";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.White;
+            this.radioButton4.Location = new System.Drawing.Point(8, 28);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(50, 17);
+            this.radioButton4.TabIndex = 8;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Blue";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.ForeColor = System.Drawing.Color.White;
+            this.radioButton6.Location = new System.Drawing.Point(164, 28);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(53, 17);
+            this.radioButton6.TabIndex = 10;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Cyan";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.ForeColor = System.Drawing.Color.White;
+            this.radioButton5.Location = new System.Drawing.Point(82, 28);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(74, 17);
+            this.radioButton5.TabIndex = 9;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Magenta";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(12, 662);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "-";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PointSign
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1012, 701);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PointSign";
+            this.Text = "Символы точек";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

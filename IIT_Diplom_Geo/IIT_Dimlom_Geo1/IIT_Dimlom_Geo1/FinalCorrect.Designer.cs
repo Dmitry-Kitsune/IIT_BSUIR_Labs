@@ -1108,7 +1108,7 @@ namespace IIT_Dimlom_Geo1
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FinalCorrect";
+            this.Name = "ФинальныйCorrect";
             this.Text = "Исправление Имен участков и символов";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

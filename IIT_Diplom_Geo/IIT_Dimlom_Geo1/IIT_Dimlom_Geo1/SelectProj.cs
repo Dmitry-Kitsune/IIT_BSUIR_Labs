@@ -23,82 +23,14 @@ namespace IIT_Diplom_Geo1
         private string nameDirectory = "";
         private int nProcess = 0;
 
-        
+
         private string curDir = "";
         private string[] nameFiles = new string[100];
         private string nameProj = "";
         private string curProj = "";
         private int nProject;
-        
+
         private int k;
-
-        //public SelectProj()
-        //{
-        //    InitializeComponent();
-        //    CheckSelect();
-
-        //}
-
-        //// Должен быть в FormProj
-        //private void CheckSelect()
-        //{
-        //    // Восстановление переменных
-        //    mySel.FilePath();
-        //    listBox1.Items.Clear();
-        //    // Заполнение окна ListBox именами проектов
-        //    if (File.Exists(mySel.fileAllProj))
-        //    {
-        //        FileStream fb = new FileStream(mySel.fileAllProj, FileMode.Open, FileAccess.Read);
-        //        BinaryReader fbb = new BinaryReader(fb);
-        //        try
-        //        {
-        //            while ((sTmp = fbb.ReadString()) != null)
-        //            {
-        //                nameProject = fbb.ReadString();
-        //                nameDirectory = fbb.ReadString();
-        //                listBox1.Items.Add(nameProject);
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-        //            Console.WriteLine($"SelectProj [DEBUG] Не удалось выполнить операцию чтения....sTmp= {sTmp}");
-        //        }
-        //        finally
-        //        {
-        //            fb.Close();
-        //            fbb.Close();
-        //            if (File.Exists(mySel.fileProcess))
-        //            {
-        //                FileStream fe = new FileStream(mySel.fileProcess, FileMode.Open, FileAccess.Read);
-        //                BinaryReader fee = new BinaryReader(fe);
-        //                try
-        //                {
-        //                    nProcess = fee.ReadInt32(); // Код процесса
-        //                }
-        //                catch (Exception)
-        //                {
-        //                    Console.WriteLine($"Не удалось выполнить операцию чтения....SelectProj = {mySel.fileProcess}");
-        //                }
-        //                finally
-        //                {
-        //                    fe.Close();
-        //                    fee.Close();
-        //                    //Проверка текущего проекта
-        //                    //DllClass1.CheckOpenProj();
-        //                    //mySel.CheckOpenProj();
-        //                    DllClass1.CheckOpenProj(mySel.fileProj, out mySel.curProject, out mySel.curDirectory);
-        //                    //кнопка Удалить не активна
-        //                    if (nProcess == 1)
-        //                        btDelete.Enabled = false;
-        //                    // Кнопка подтвердить не Активна
-        //                    if (nProcess == 2)
-        //                        Confirm.Enabled = false;
-        //                }
-
-        //            }
-        //        }
-        //    }
-        //}
 
         public SelectProj()
         {
@@ -120,7 +52,7 @@ namespace IIT_Diplom_Geo1
                     input.Close();
                     binaryReader.Close();
                     this.nameProj = this.sTmp;
-                    this.mySel.curDirect = "BrProj" + this.sTmp;
+                    this.mySel.curDirect = "brProj" + this.sTmp;
                 }
                 this.k = 0;
                 FileStream input1 = new FileStream(this.mySel.fileAllProj, FileMode.Open, FileAccess.Read);
@@ -131,14 +63,14 @@ namespace IIT_Diplom_Geo1
                     {
                         ++this.k;
                         this.nProject = Convert.ToInt32(this.sTmp);
-                        this.mySel.curProject = binaryReader1.ReadString();
                         this.mySel.curDirect = binaryReader1.ReadString();
-                        this.listBox1.Items.Add((object)this.mySel.curProject);
+                        this.mySel.curProject = binaryReader1.ReadString();
+                        this.listBox1.Items.Add((object)this.mySel.curProject +" "+ mySel.curDirect);
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -155,7 +87,7 @@ namespace IIT_Diplom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -198,10 +130,13 @@ namespace IIT_Diplom_Geo1
                     //Цикл до появления помеченного проекта который становится текущим
                     for (int i = 0; i <= listBox1.SelectedIndex; i++)
                     {
-                        sTmp = faa.ReadString();
-                        nameProject = faa.ReadString();
-                        nameDirectory = faa.ReadString();
-                        
+                        //sTmp = faa.ReadString();
+                        //nameProject = faa.ReadString();
+                        //nameDirectory = faa.ReadString();
+                        this.nProject = Convert.ToInt32(this.sTmp);
+                        this.mySel.curProject = faa.ReadString();
+                        this.mySel.curDirect = faa.ReadString();
+
                     }
                 }
                 catch (Exception)
@@ -271,10 +206,14 @@ namespace IIT_Diplom_Geo1
                     //Цикл до появления помеченного проекта который становится текущим
                     for (int i = 0; i <= listBox1.SelectedIndex; i++)
                     {
-                        sTmp = faa.ReadString();
-                        nameProject = faa.ReadString();
-                        nameDirectory = faa.ReadString();
-                        
+                        //sTmp = faa.ReadString();
+                        //nameProject = faa.ReadString();
+                        //nameDirectory = faa.ReadString();
+                        this.nProject = Convert.ToInt32(this.sTmp);
+                        this.mySel.curProject = faa.ReadString();
+                        this.mySel.curDirect = faa.ReadString();
+
+
                     }
                 }
                 catch (Exception)
@@ -311,7 +250,7 @@ namespace IIT_Diplom_Geo1
                     return;
 
                 //Удаление директории
-                mySel.ProjectDelete(nameDirectory);   
+                mySel.ProjectDelete(nameDirectory);
                 //Если директория была текущей, то удаляет так же файл fileProj
                 if (mySel.curDirectory == nameDirectory)   //Выбрасывает исключение!
                 {

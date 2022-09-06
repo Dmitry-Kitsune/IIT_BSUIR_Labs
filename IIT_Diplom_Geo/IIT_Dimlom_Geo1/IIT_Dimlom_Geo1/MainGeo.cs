@@ -123,31 +123,31 @@ namespace IIT_Dimlom_Geo1
             statusBar1.Panels.Add(panel5);
             statusBar1.Panels.Add(panel6);
             Controls.Add((Control)statusBar1);
-            button1.MouseHover += new EventHandler(button1_MouseHover);
-            button1.MouseLeave += new EventHandler(button1_MouseLeave);
+            ExitToolStripMenuItem.MouseHover += new EventHandler(ExitToolStripMenuItem_MouseHover);
+            ExitToolStripMenuItem.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button2.MouseHover += new EventHandler(button2_MouseHover);
-            button2.MouseLeave += new EventHandler(button1_MouseLeave);
+            button2.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button3.MouseHover += new EventHandler(button3_MouseHover);
-            button3.MouseLeave += new EventHandler(button1_MouseLeave);
+            button3.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button4.MouseHover += new EventHandler(button4_MouseHover);
-            button4.MouseLeave += new EventHandler(button1_MouseLeave);
+            button4.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button5.MouseHover += new EventHandler(button5_MouseHover);
-            button5.MouseLeave += new EventHandler(button1_MouseLeave);
+            button5.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button6.MouseHover += new EventHandler(button6_MouseHover);
-            button6.MouseLeave += new EventHandler(button1_MouseLeave);
+            button6.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button7.MouseHover += new EventHandler(button7_MouseHover);
-            button7.MouseLeave += new EventHandler(button1_MouseLeave);
+            button7.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button8.MouseHover += new EventHandler(button8_MouseHover);
-            button8.MouseLeave += new EventHandler(button1_MouseLeave);
+            button8.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             button9.MouseHover += new EventHandler(button9_MouseHover);
-            button9.MouseLeave += new EventHandler(button1_MouseLeave);
+            button9.MouseLeave += new EventHandler(ExitToolStripMenuItem_MouseLeave);
             mySub.FilePath();
             FormLoad();
         }
 
-            private void button1_MouseHover(object sender, EventArgs e) => label3.Text = "Закрыть окно";
+            private void ExitToolStripMenuItem_MouseHover(object sender, EventArgs e) => label3.Text = "Закрыть окно";
 
-            private void button1_MouseLeave(object sender, EventArgs e) => label3.Text = "";
+            private void ExitToolStripMenuItem_MouseLeave(object sender, EventArgs e) => label3.Text = "";
 
             private void button2_MouseHover(object sender, EventArgs e) => label3.Text = "Открыть новый проект";
 
@@ -189,7 +189,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -208,13 +208,17 @@ namespace IIT_Dimlom_Geo1
                         {
                             ++num1;
                             sTmp = binaryReader.ReadString();
+                            binaryReader.ReadString();
                             mySub.curProject = binaryReader.ReadString();
-                            mySub.curDirect = binaryReader.ReadString();
+                            string Drive1;
+                            
+                            mySub.curDirect = mySub.driveKey + "\\" + mySub.dirKey;
                         }
+                        
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -234,7 +238,8 @@ namespace IIT_Dimlom_Geo1
                 }
             }
             mySub.FilePath();
-            int kPart = 50;
+           // mySub.curDirect = mySub.comPath;
+           int kPart = 50;
             char[] seps = new char[1] { '\\' };
             string[] sPart = new string[50];
             int k = 0;
@@ -248,7 +253,8 @@ namespace IIT_Dimlom_Geo1
                 sTmp = mySub.comPath + mySub.curDirect;
                 if (!Directory.Exists(sTmp))
                     Directory.CreateDirectory(sTmp);
-                label2.Text = sPart[1] + "\\+" + mySub.curProject;
+                label2.Text = mySub.comPath + "\\" + mySub.curProject;
+                //label2.Text = sPart[1] + "\\" + mySub.curProject;
                 if (!File.Exists(mySub.tmpStr) && nProcess == 910)
                 {
                     int num = (int)MessageBox.Show("Диск не был определен. Используйте 'Сменить диск'", "Геодезия или Кадастр", 
@@ -287,7 +293,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -353,7 +359,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -398,7 +404,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -467,7 +473,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -500,7 +506,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -539,7 +545,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -701,7 +707,7 @@ namespace IIT_Dimlom_Geo1
                         binaryReader.Close();
                         input.Close();
                         mySub.FilePath();
-                        label2.Text = sPart[1] + "\\+" + this.mySub.curProject;
+                        label2.Text = sPart[1] + "\\" + this.mySub.curProject;
                         mySub.FilesRemove();
                         FormLoad();
                         int num5 = (int)MessageBox.Show("Используйте 'Файловы ввод точек'", "Геодезия", 
@@ -992,7 +998,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (double.IsNaN(mySub.xProj[index]) || double.IsNaN(mySub.yProj[index]))
                 {
-                    int num = (int)MessageBox.Show("Check Data");
+                    int num = (int)MessageBox.Show("Проверьте данные");
                     iGraphic = 1;
                     break;
                 }

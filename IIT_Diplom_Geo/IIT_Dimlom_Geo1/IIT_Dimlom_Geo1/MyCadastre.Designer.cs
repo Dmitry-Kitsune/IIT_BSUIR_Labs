@@ -66,6 +66,7 @@ namespace IIT_Dimlom_Geo1
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@ namespace IIT_Dimlom_Geo1
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -128,7 +128,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox5.Size = new System.Drawing.Size(315, 63);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Cadastral";
+            this.groupBox5.Text = "Кадастр и топография";
             // 
             // groupBox4
             // 
@@ -141,7 +141,18 @@ namespace IIT_Dimlom_Geo1
             this.groupBox4.Size = new System.Drawing.Size(315, 68);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Information support";
+            this.groupBox4.Text = "Загрузка данных";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(9, 40);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(300, 23);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Аэротриангуляция";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.Aero_Click);
             // 
             // button10
             // 
@@ -150,7 +161,7 @@ namespace IIT_Dimlom_Geo1
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(300, 23);
             this.button10.TabIndex = 0;
-            this.button10.Text = "Geodetic calculation";
+            this.button10.Text = "Геодезические выычисления";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.Geodesy_Click);
             // 
@@ -166,7 +177,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox3.Size = new System.Drawing.Size(314, 44);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Topographic symbology";
+            this.groupBox3.Text = "Топографические символы";
             // 
             // button9
             // 
@@ -175,7 +186,7 @@ namespace IIT_Dimlom_Geo1
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 2;
-            this.button9.Text = "Polygons";
+            this.button9.Text = "Полигоны";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.PolygonsSymb_Click);
             // 
@@ -186,7 +197,7 @@ namespace IIT_Dimlom_Geo1
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 1;
-            this.button8.Text = "Lines";
+            this.button8.Text = "Линии";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.LinesSymb_Click);
             // 
@@ -197,7 +208,7 @@ namespace IIT_Dimlom_Geo1
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 0;
-            this.button7.Text = "Points";
+            this.button7.Text = "Точки";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.PointsSymb_Click);
             // 
@@ -217,7 +228,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox2.Size = new System.Drawing.Size(314, 89);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Projects support";
+            this.groupBox2.Text = "Выбор проекта";
             // 
             // label2
             // 
@@ -236,9 +247,9 @@ namespace IIT_Dimlom_Geo1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(108, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Current project";
+            this.label1.Text = "Текущий проект";
             // 
             // button6
             // 
@@ -247,7 +258,7 @@ namespace IIT_Dimlom_Geo1
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 35);
             this.button6.TabIndex = 4;
-            this.button6.Text = "Drive change";
+            this.button6.Text = "Изменить диск";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.DiskChange_Click);
             // 
@@ -258,7 +269,7 @@ namespace IIT_Dimlom_Geo1
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 35);
             this.button5.TabIndex = 3;
-            this.button5.Text = "Projects delete";
+            this.button5.Text = "Удалить все проекты";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.ProjectsDelete_Click);
             // 
@@ -269,7 +280,7 @@ namespace IIT_Dimlom_Geo1
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(60, 35);
             this.button4.TabIndex = 2;
-            this.button4.Text = "Project delete";
+            this.button4.Text = "Удалить проект";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.ProjectDelete_Click);
             // 
@@ -280,7 +291,7 @@ namespace IIT_Dimlom_Geo1
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 35);
             this.button3.TabIndex = 1;
-            this.button3.Text = "Project select";
+            this.button3.Text = "Выбратиь проект";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.ProjectSelect_Click);
             // 
@@ -289,9 +300,9 @@ namespace IIT_Dimlom_Geo1
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(7, 13);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 34);
+            this.button2.Size = new System.Drawing.Size(58, 53);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Project open";
+            this.button2.Text = "Проект открыт";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ProjectOpen_Click);
             // 
@@ -302,9 +313,9 @@ namespace IIT_Dimlom_Geo1
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(810, 652);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Exit";
+            this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Exit_Click);
             // 
@@ -343,20 +354,9 @@ namespace IIT_Dimlom_Geo1
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(300, 42);
             this.button12.TabIndex = 0;
-            this.button12.Text = "Cadastral processes";
+            this.button12.Text = "Кадастр и топография";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.Cadastre_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(9, 40);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(300, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Aerotriangulation";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.Aero_Click);
             // 
             // MyCadastre
             // 
@@ -372,7 +372,7 @@ namespace IIT_Dimlom_Geo1
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MyCadastre";
-            this.Text = "Cadastral problems";
+            this.Text = "Главное окно";
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

@@ -33,7 +33,7 @@ namespace IIT_Dimlom_Geo1
             myError.FilePath();
             if (!File.Exists(myError.tmpStr))
             {
-                int num = (int)MessageBox.Show("Drive wasn't defined", "Points' Listing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Points' Listing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             if (!File.Exists(myError.fileProj))
@@ -44,7 +44,7 @@ namespace IIT_Dimlom_Geo1
             myError.curProject = binaryReader1.ReadString();
             input1.Close();
             binaryReader1.Close();
-            myError.curDirect = "BrProj" + sTmp;
+            myError.curDirect = "brProj" + sTmp;
             FileStream input2 = new FileStream(myError.fDoubtful, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
             ks = binaryReader2.ReadInt32();

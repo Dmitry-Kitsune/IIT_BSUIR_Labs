@@ -142,7 +142,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Ready...";
+            panel1.Text = "Готов...";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -198,35 +198,35 @@ namespace IIT_Dimlom_Geo1
 
         private void button1_MouseLeave(object sender, EventArgs e) => label12.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Down left button of mouse and move it for selecting area and release button. Click right button for original";
+        private void button2_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Зажмите левую кнопку мыши и переместите ее для выбора области, затем отпустите кнопку. Щелкните правой кнопкой мыши для возвращения в исходное положение";
 
-        private void button3_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Down and release left button of mouse near the selection point. Click right button for original";
+        private void button3_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Нажмите и отпустите левую кнопку мыши рядом с точкой выделения. Щелкните правой кнопкой мыши для возвращения в исходное положение";
 
-        private void button4_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Down and release left button of mouse near the selection point. Click right button for original";
+        private void button4_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Нажмите и отпустите левую кнопку мыши рядом с точкой выделения. Щелкните правой кнопкой мыши для возвращения в исходное положение";
 
-        private void button5_MouseHover(object sender, EventArgs e) => label12.Text = "Click button. Down left button of mouse and it mouse along the screen. Click right button for original";
+        private void button5_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Зажмите левую кнопку мыши и ведите вдоль экрана. Щелкните правой кнопкой мыши для возвращения в исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select by mouse 2 points az basiz for addition point by Perpendicular method";
+        private void button6_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Выберите мышью 2 точки как базисные для добавления точки методом перпендикуляров";
 
-        private void button7_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select by mouse 2 points az basiz for addition point by Angular Resection method";
+        private void button7_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Выберите мышью 2 точки как базисные для добавления точки методом угловой засечки";
 
-        private void button8_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select by mouse 2 points az basiz for addition point by Linear Resection method";
+        private void button8_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку.  Выберите мышью 2 точки как базисные для добавления точки методом  линейной засечки";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select by mouse 3 points az basiz for addition point by Inverse Angular Resection method";
+        private void button9_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку.  Выберите мышью 3 точки как базисные для добавления точки методом обратной линейной засечки";
 
-        private void button10_MouseHover(object sender, EventArgs e) => label12.Text = "Addition point by Typing point's Data with helping Dialog";
+        private void button10_MouseHover(object sender, EventArgs e) => label12.Text = "Добавление точки путем ввода данных точки с помощью диалогового окна";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select point by mouse for checking and correction data";
+        private void button11_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Выберите точку мышью для проверки и исправления данных";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Select point by mouse and Click button 'Delete'";
+        private void button12_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Выделите точку мышью и нажмите кнопку 'Удалить'.";
 
-        private void button13_MouseHover(object sender, EventArgs e) => label12.Text = "Click this button after selecting of method and basiz points";
+        private void button13_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите эту кнопку после выбора метода и базисных точек";
 
-        private void button14_MouseHover(object sender, EventArgs e) => label12.Text = "Save results";
+        private void button14_MouseHover(object sender, EventArgs e) => label12.Text = "Сохранить результаты";
 
-        private void button15_MouseHover(object sender, EventArgs e) => label12.Text = "This button hase 2 purposes depending from process";
+        private void button15_MouseHover(object sender, EventArgs e) => label12.Text = "Эта кнопка имеет 2 назначения в зависимости от процесса(действия)";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label12.Text = "Click Button. Using coordinates data of statusBar1 move mouse cursor to given coordnates and down left button of mouse";
+        private void button20_MouseHover(object sender, EventArgs e) => label12.Text = "Нажмите кнопку. Используя данные координат statusBar1, переместите курсор мыши на заданные координаты и нажмите левую кнопку мыши.";
 
         private void FormLoad()
         {
@@ -246,7 +246,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -542,7 +542,8 @@ namespace IIT_Dimlom_Geo1
             yaCur = yminCur - num2;
             xbCur = xmaxCur - num1;
             ybCur = ymaxCur - num2;
-            DllClass1.CoorWin(xaCur, yaCur, xbCur, ybCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+            DllClass1.CoorWin(xaCur, yaCur, xbCur, ybCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
+                out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
             if (iCond < 0)
                 iGraphic = 1;
             panel7.Invalidate();
@@ -582,7 +583,8 @@ namespace IIT_Dimlom_Geo1
                 yminCur = y1;
                 xmaxCur = x2;
                 ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, 
+                    out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
                 if (iCond < 0)
                     iGraphic = 1;
                 panel7.Invalidate();
@@ -602,7 +604,8 @@ namespace IIT_Dimlom_Geo1
                 yminCur = y1;
                 xmaxCur = x2;
                 ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, 
+                    out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
                 if (iCond < 0)
                     iGraphic = 1;
                 panel7.Invalidate();
@@ -617,13 +620,15 @@ namespace IIT_Dimlom_Geo1
                 dy = ymax - ymin;
                 if (dx < 0.05 || dy < 0.05)
                     return;
-                DllClass1.CoorWin(xminCur, yminCur, xmaxCur, ymaxCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                DllClass1.CoorWin(xminCur, yminCur, xmaxCur, ymaxCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
+                    out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
                 if (iCond < 0)
                     iGraphic = 1;
                 kDat = 0;
                 panel7.Invalidate();
             }
-            if (e.Button != MouseButtons.Left || nProcess != 510 && nProcess != 520 && nProcess != 530 && nProcess != 540 && nProcess != 560 && nProcess != 570 && nProcess != 580 && nProcess != 600 && nProcess != 610)
+            if (e.Button != MouseButtons.Left || nProcess != 510 && nProcess != 520 && nProcess != 530 && nProcess != 540 && nProcess 
+                != 560 && nProcess != 570 && nProcess != 580 && nProcess != 600 && nProcess != 610)
                 return;
             ++kDat;
             xDat[kDat] = e.X;
@@ -662,7 +667,8 @@ namespace IIT_Dimlom_Geo1
                     yminCur = yCurMin;
                     xmaxCur = xCurMax;
                     ymaxCur = yCurMax;
-                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
+                        out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
                     if (iCond < 0)
                     {
                         iGraphic = 1;
@@ -813,7 +819,8 @@ namespace IIT_Dimlom_Geo1
                         num3 = num6;
                     }
                 }
-                if (MessageBox.Show("Do you really want to Delete this Point ?", "Point number " + myPoint.nameProj[index1], MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить эту точку?", "Номер точки " + myPoint.nameProj[index1],
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     kDat = 0;
                     kRcPnt = 0;
@@ -912,7 +919,7 @@ namespace IIT_Dimlom_Geo1
             textBox6.Visible = false;
             label1.Visible = true;
             label2.Visible = true;
-            label2.Text = "Distance from 1,m";
+            label2.Text = "Расстояние от 1,м";
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = false;
@@ -953,11 +960,11 @@ namespace IIT_Dimlom_Geo1
             textBox6.Visible = false;
             label1.Visible = true;
             label2.Visible = true;
-            label2.Text = "Angle from 1,dmmss";
+            label2.Text = "Угол от 1,г°мм'сс";
             label3.Visible = true;
             label4.Visible = true;
             label6.Visible = true;
-            label6.Text = "Angle from 2,dmmss";
+            label6.Text = "Угол от 2,г°мм'сс";
             label5.Visible = false;
             button13.Visible = true;
             textBox7.Text = "";
@@ -995,12 +1002,12 @@ namespace IIT_Dimlom_Geo1
             textBox6.Visible = false;
             label1.Visible = true;
             label2.Visible = true;
-            label2.Text = "Distance from 1,m";
+            label2.Text = "Расстояние от 1,м";
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = false;
             label6.Visible = true;
-            label6.Text = "Distance from 2,m";
+            label6.Text = "Расстояние от 2,м";
             button13.Visible = true;
             textBox7.Text = "";
             textBox8.Text = "";
@@ -1039,7 +1046,7 @@ namespace IIT_Dimlom_Geo1
             textBox6.Text = "";
             label1.Visible = true;
             label2.Visible = true;
-            label2.Text = "Directions,dmmss";
+            label2.Text = "Направления,г°мм'сс";
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
@@ -1164,7 +1171,7 @@ namespace IIT_Dimlom_Geo1
             label5.Visible = false;
             label6.Visible = false;
             button13.Visible = false;
-            button15.Text = "Delete";
+            button15.Text = "Удалить";
             textBox7.Text = "";
             textBox8.Text = "";
             textBox9.Text = "";
@@ -1213,19 +1220,19 @@ namespace IIT_Dimlom_Geo1
                     iParam = 2;
                 if (textBox4.Text == "" || textBox5.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Distances error-blanks", "Perpendicular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Ошибка расстояний - пробелы(пустоты)", "Перпендикуляр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox4.Text, out tText1, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Perpendicular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Перпендикуляр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out tText2, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Perpendicular", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Перпендикуляр", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 xNew = 0.0;
@@ -1243,21 +1250,21 @@ namespace IIT_Dimlom_Geo1
                     iParam = 2;
                 if (textBox4.Text == "" || textBox5.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Anges error-blanks", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Угловая ошибка - разрывы(пустоты)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 double tText3;
                 DllClass1.CheckText(textBox4.Text, out tText3, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 double tText4;
                 DllClass1.CheckText(textBox5.Text, out tText4, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 xNew = 0.0;
@@ -1275,19 +1282,19 @@ namespace IIT_Dimlom_Geo1
                     iParam = 2;
                 if (textBox4.Text == "" || textBox5.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Distances error-blanks", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Ошибка расстояний - пробелы(пустоты)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox4.Text, out tText1, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out tText2, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 xNew = 0.0;
@@ -1295,7 +1302,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.LinearResect(iParam, xSel[0], ySel[0], xSel[1], ySel[1], tText1, tText2, out xNew, out yNew);
                 if (xNew == 0.0 && yNew == 0.0)
                 {
-                    int num = (int)MessageBox.Show("Distances error-short", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Ошибка расстояний - короткая", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -1303,25 +1310,25 @@ namespace IIT_Dimlom_Geo1
             {
                 if (textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Directions error-blank", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Направления ошибка - пустоты(разрывы)", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox4.Text, out aDir[0], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out aDir[1], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox6.Text, out aDir[2], out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 xNew = 0.0;
@@ -1352,7 +1359,7 @@ namespace IIT_Dimlom_Geo1
                     if (Math.Sqrt(num8 * num8 + num9 * num9) > 2.0 * num7)
                     {
                         xNew = yNew = 0.0;
-                        int num10 = (int)MessageBox.Show("Check data", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num10 = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -1376,11 +1383,11 @@ namespace IIT_Dimlom_Geo1
             {
                 if (textBox7.Text == "")
                 {
-                    int num1 = (int)MessageBox.Show("Point's name-blank", "Design's Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num1 = (int)MessageBox.Show("Название точки - пусто", "Проектные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (textBox8.Text == "" || textBox9.Text == "")
                 {
-                    int num2 = (int)MessageBox.Show("Point's coordinate error-blank", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Ошибка в координатах точки - пустоты(разрывы)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1389,14 +1396,14 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox8.Text, out myPoint.xProj[kPntProj], out iCond);
                     if (iCond < 0)
                     {
-                        int num3 = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num3 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
                         DllClass1.CheckText(textBox9.Text, out myPoint.yProj[kPntProj], out iCond);
                         if (iCond < 0)
                         {
-                            int num4 = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num4 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -1405,7 +1412,7 @@ namespace IIT_Dimlom_Geo1
                                 DllClass1.CheckText(textBox10.Text, out myPoint.zProj[kPntProj], out iCond);
                                 if (iCond < 0)
                                 {
-                                    int num5 = (int)MessageBox.Show("Check data", "Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    int num5 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     return;
                                 }
                             }
@@ -1415,7 +1422,7 @@ namespace IIT_Dimlom_Geo1
                                 DllClass1.CheckText(textBox11.Text, out tText, out iCond);
                                 if (iCond < 0)
                                 {
-                                    int num6 = (int)MessageBox.Show("Check data", "Inverse Resection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    int num6 = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     return;
                                 }
                                 myPoint.nProj1[kPntProj] = Convert.ToInt32(textBox11.Text);
@@ -1438,11 +1445,11 @@ namespace IIT_Dimlom_Geo1
             }
             else if (nProcess == 570)
             {
-                int num7 = (int)MessageBox.Show("Use button 'Delete'", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num7 = (int)MessageBox.Show("Использовать кнопку 'Удалить'", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (nProcess != 560 && textBox7.Text == "")
             {
-                int num8 = (int)MessageBox.Show("Point's name-blank", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num8 = (int)MessageBox.Show("Название точки - пусто", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1451,19 +1458,19 @@ namespace IIT_Dimlom_Geo1
                 {
                     if (textBox8.Text == "" || textBox9.Text == "")
                     {
-                        int num9 = (int)MessageBox.Show("Point's coordinate error-blank", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num9 = (int)MessageBox.Show("Ошибка в координатах точки - пустоты(разрывы)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     DllClass1.CheckText(textBox8.Text, out xNew, out iCond);
                     if (iCond < 0)
                     {
-                        int num10 = (int)MessageBox.Show("Check data", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num10 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     DllClass1.CheckText(textBox9.Text, out yNew, out iCond);
                     if (iCond < 0)
                     {
-                        int num11 = (int)MessageBox.Show("Check data", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num11 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -1472,7 +1479,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox10.Text, out zNew, out iCond);
                     if (iCond < 0)
                     {
-                        int num12 = (int)MessageBox.Show("Check data", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num12 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -1482,7 +1489,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox11.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num13 = (int)MessageBox.Show("Check data", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num13 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     int int32 = Convert.ToInt32(textBox11.Text);
@@ -1499,7 +1506,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         if (num14 == 0)
                         {
-                            int num15 = (int)MessageBox.Show("Check code", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num15 = (int)MessageBox.Show("Проверьте код", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             textBox7.Text = "";
                             textBox8.Text = "";
                             textBox9.Text = "";
@@ -1517,14 +1524,14 @@ namespace IIT_Dimlom_Geo1
                     {
                         if (myPoint.namePnt[index] == sNew)
                         {
-                            int num16 = (int)MessageBox.Show("Points' names-duplicate", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num16 = (int)MessageBox.Show("Дубликат имени точки (потор)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         double num17 = myPoint.xPnt[index] - xNew;
                         double num18 = myPoint.yPnt[index] - yNew;
                         if (Math.Sqrt(num17 * num17 + num18 * num18) < 0.003)
                         {
-                            int num19 = (int)MessageBox.Show("Points' coordinates-duplicate", "Point's data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num19 = (int)MessageBox.Show("Повтор координат точки(дубликат)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                     }
@@ -1548,7 +1555,7 @@ namespace IIT_Dimlom_Geo1
                 if (nCode < 0)
                     return;
                 kMess = 0;
-                sDialog = "Points' Codes Errors: ";
+                sDialog = "Ошибка кода точки: ";
                 if (nCode < 0)
                 {
                     ++kMess;
@@ -1556,7 +1563,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (kMess > 0)
                 {
-                    int num20 = (int)MessageBox.Show(sDialog, "Points' Symbols", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num20 = (int)MessageBox.Show(sDialog, "Символы точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     FormLoad();
                     panel7.Invalidate();
                 }
@@ -1763,7 +1770,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1832,7 +1839,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPntProj < 0)
             {
-                int num = (int)MessageBox.Show("No Project Points", "Project point Delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет проектных точек", "Удаление точек проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1900,7 +1907,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPntProj < 0)
             {
-                int num = (int)MessageBox.Show("All Design's points were removed", "Design's Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все точки проекта были удалены", "Построение проектных линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kRcPnt = 0;
                 nProcess = 0;
                 nControl = 0;
@@ -1908,7 +1915,7 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                if (File.Exists(myPoint.fpointProj) && MessageBox.Show("Do you really want to Delete all Design's points ?", "Design's Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (File.Exists(myPoint.fpointProj) && MessageBox.Show("Вы действительно хотите Удалить все точки Проекта ?", "Построение проектных линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 if (File.Exists(myPoint.fpointProj))
                     File.Delete(myPoint.fpointProj);

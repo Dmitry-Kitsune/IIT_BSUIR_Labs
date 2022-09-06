@@ -102,7 +102,7 @@ namespace IIT_Diplom_Geo1
 
         private void btExit_MouseLeave(object sender, System.EventArgs e)
         {
-            //toolStripStatusLabel1.Text = "Ready...";
+            //toolStripStatusLabel1.Text = "Готов...";
             toolStripStatusLabel1.Text = "Готов...";
         }
 
@@ -597,54 +597,54 @@ namespace IIT_Diplom_Geo1
             }
         }
 
-        private void PointsInput_Click(object sender, EventArgs e)
-        {
-            myGeo.FilePath();
-            //Проверка открытия проекта
-            DllClass1.CheckOpenProj(myGeo.fileProj, out myGeo.curProject,
-                out myGeo.curDirectory);
-            myGeo.curProject = "CadastrDemo.txt"; // Временная затычка
-            try
-            {
-                if (myGeo.curProject == "")
-                {
-                    Console.WriteLine($"PointsInput_Click[DEBUG] myGeo.fileProj = {myGeo.fileProj}\n" +
-                                      $"PointsInput_Click[DEBUG] myGeo.curProject = {myGeo.curProject}");
+        //private void PointsInput_Click(object sender, EventArgs e)
+        //{
+        //    myGeo.FilePath();
+        //    //Проверка открытия проекта
+        //    DllClass1.CheckOpenProj(myGeo.fileProj, out myGeo.curProject,
+        //        out myGeo.curDirectory);
+        //    myGeo.curProject = "CadastrDemo.txt"; // Временная затычка
+        //    try
+        //    {
+        //        if (myGeo.curProject == "")
+        //        {
+        //            Console.WriteLine($"PointsInput_Click[DEBUG] myGeo.fileProj = {myGeo.fileProj}\n" +
+        //                              $"PointsInput_Click[DEBUG] myGeo.curProject = {myGeo.curProject}");
 
-                    MessageBox.Show("Проект не определен", "Выберите существующий проект",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            MessageBox.Show("Проект не определен", "Выберите существующий проект",
+        //                MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                }// return;
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"{0}Ошибка операции (PointsInput_Click){exception}");
-            }
-            finally
-            {
-            }
-            //int iCond = 0;
-            // Программа (функция) ввода файла, формирования массивов и бинарного файла
-            //myGeo.PointsInput(out iCond);
-            myGeo.PointsInput(out int iCond, out int kAdd);
-            //Индикатор наличия ошибок при вводе файла точек
-            if (iCond < 0)
-                return;
-            if (myGeo.kPoints < 2)
-                return;
-            // Сохранение текущих координат границы области данных
-            xminCur = myGeo.xmin;
-            yminCur = myGeo.ymin;
-            xmaxCur = myGeo.xmax;
-            ymaxCur = myGeo.ymax;
-            // Вычисление параметров преобразования координат
-            myGeo.CoorWin(myGeo.xmin, myGeo.ymin, myGeo.xmax, myGeo.ymax,
-                pixWidth, pixHeight, out scaleToWin, out scaleToGeo,
-                out xBegGeo, out yBegGeo, out xEndGeo, out yEndGeo,
-                out xBegWin, out yBegWin);
-            //Перерисовка графической панели
-            panel1.Invalidate();
-        }
+        //        }// return;
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        Console.WriteLine($"{0}Ошибка операции (PointsInput_Click){exception}");
+        //    }
+        //    finally
+        //    {
+        //    }
+        //    //int iCond = 0;
+        //    // Программа (функция) ввода файла, формирования массивов и бинарного файла
+        //    //myGeo.PointsInput(out iCond);
+        //    DllClass1.PointsInput(out int iCond, out int kAdd);
+        //    //Индикатор наличия ошибок при вводе файла точек
+        //    if (iCond < 0)
+        //        return;
+        //    if (myGeo.kPoints < 2)
+        //        return;
+        //    // Сохранение текущих координат границы области данных
+        //    xminCur = myGeo.xmin;
+        //    yminCur = myGeo.ymin;
+        //    xmaxCur = myGeo.xmax;
+        //    ymaxCur = myGeo.ymax;
+        //    // Вычисление параметров преобразования координат
+        //    myGeo.CoorWin(myGeo.xmin, myGeo.ymin, myGeo.xmax, myGeo.ymax,
+        //        pixWidth, pixHeight, out scaleToWin, out scaleToGeo,
+        //        out xBegGeo, out yBegGeo, out xEndGeo, out yEndGeo,
+        //        out xBegWin, out yBegWin);
+        //    //Перерисовка графической панели
+        //    panel1.Invalidate();
+        //}
 
 
         // Загрузка данных

@@ -139,7 +139,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Ready...";
+            panel1.Text = "Готов...";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -202,53 +202,77 @@ namespace IIT_Dimlom_Geo1
             myTop.FilePath();
             FormLoad();
         }
-        private void button22_MouseHover(object sender, EventArgs e) => label1.Text = "Закрыть окно";
+        private void button22_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Закрыть окно";
 
-        private void button1_MouseHover(object sender, EventArgs e) => label1.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
+        private void button1_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
 
-        private void button1_MouseLeave(object sender, EventArgs e) => label1.Text = "";
+        private void button1_MouseLeave(object sender, EventArgs e) 
+            => label1.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => label1.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button2_MouseHover(object sender, EventArgs e)
+            => label1.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button3_MouseHover(object sender, EventArgs e) => label1.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button3_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button4_MouseHover(object sender, EventArgs e) => label1.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
+        private void button4_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button5_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By dialog select interval(section of relief) and click 'Confirm'";
+        private void button5_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. В диалоговом окне выберите интервал(участок рельефа) и нажмите 'Подтвердить'";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select common side of two triangles";
+        private void button6_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выделите общую сторону двух треугольников";
 
-        private void button7_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select triangle(centre) for removing";
+        private void button7_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выделить треугольник(Центр) for removing";
 
-        private void button8_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By dialog select interval(section of relief) and click 'Confirm'";
+        private void button8_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. В диалоговом окне выберите интервал(участок рельефа) и нажмите 'Подтвердить'";
 
-        private void button14_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button for changing smoothness if necessary(intersection lines)";
+        private void button14_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку для изменения плавности при необходимости(линии пересечения)";
 
-        private void button15_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button for changing smoothness of contour lines";
+        private void button15_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку для изменения плавности горизонталей";
 
-        private void button16_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select line in spot for dividing line";
+        private void button16_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выделите линию в точке для разделения линии";
 
-        private void button17_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select part of line for removing";
+        private void button17_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выделить часть линии для удаления";
 
-        private void button18_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button for restore of last removed line";
+        private void button18_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку для восстановления последней удаленной линии";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select one or more polygons(labels) and click right button";
+        private void button12_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выберите один или несколько полигонов(Знаков) и нажмите правую кнопку";
 
-        private void button23_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select line for changing Smoothness";
+        private void button23_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выберите линию для изменения плавности";
 
-        private void button24_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse select line for changing Smoothness";
+        private void button24_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выберите линию для изменения плавности";
 
-        private void button26_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. By left button of the mouse choose any three points";
+        private void button26_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Левой кнопкой мыши выберите любые три точки";
 
-        private void button29_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. Automatic addition vertexes for all lines";
+        private void button29_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Автоматическое добавление вершин для всех линий";
 
-        private void button32_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. Select lines for addition vertexes. After selecting click right button of mouse";
+        private void button32_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Выберите линии для добавления вершин. После выбора щелкните правой кнопкой мыши";
 
-        private void button30_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button for removing all vertexes";
+        private void button30_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку for removing all vertexes";
 
-        private void button27_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button. Automatic model of relief correction by updating connection between triangles";
+        private void button27_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку. Автоматическая модель коррекции рельефа путем обновления связи между треугольниками";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label1.Text = "Click this button for returning condition before model correction";
+        private void button28_MouseHover(object sender, EventArgs e) 
+            => label1.Text = "Нажмите эту кнопку для возвращаемого в состояние до коррекции модели";
 
         private void FormLoad()
         {
@@ -883,7 +907,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 myTop.NewInscript(myTop.fileContour, myTop.xWork1, myTop.yWork1, myTop.xWork2, myTop.yWork2);
                 label1.Text = "";
-                panel1.Text = "Ready...";
+                panel1.Text = "Готов...";
                 Cursor.Current = Cursors.Default;
                 kDat = 0;
                 panel7.Invalidate();
@@ -948,16 +972,16 @@ namespace IIT_Dimlom_Geo1
                     kCenTri = 0;
                    DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);
                 }
-                label1.Text = "************PLEASE.......WAIT****************";
+                label1.Text = "************Пожалуйста......Подождите****************";
                DllClass1.NewDiagonal(xSelect, ySelect, ref kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre);
                 label1.Text = "";
                 kCavei = 0;
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+                label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nSpot, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                 label1.Text = "";
                 if (kCavei > 0)
                 {
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                    label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                     label1.Text = "";
                 }
@@ -981,18 +1005,18 @@ namespace IIT_Dimlom_Geo1
                     kCenTri = 0;
                    DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);
                 }
-                label1.Text = "************PLEASE.......WAIT****************";
+                label1.Text = "************Пожалуйста......Подождите****************";
                DllClass1.TreDelete(xSelect, ySelect, ref kTriang, ref myTop.nTre, ref myTop.xTre, ref myTop.yTre, ref myTop.zTre);
                 label1.Text = "";
                 kCavei = 0;
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+                label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nSpot, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zSpot, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                 label1.Text = "";
                 if (kCavei == 0)
                     return;
                 if (kCavei > 0)
                 {
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                    label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                     label1.Text = "";
                 }
@@ -1052,18 +1076,18 @@ namespace IIT_Dimlom_Geo1
                 kCenTri = 0;
                DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);
             }
-            label1.Text = "************PLEASE.......WAIT****************";
+            label1.Text = "************Пожалуйста......Подождите****************";
            DllClass1.AddTriangle(ref newTriangle, ref xSelPnt, ref ySelPnt, kHeight, myTop.xHeig, myTop.yHeig, myTop.zHeig, ref kTriang, ref myTop.nTre, ref myTop.xTre, ref myTop.yTre, ref myTop.zTre);
             label1.Text = "";
             kCavei = 0;
-            label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+            label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
            DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nSpot, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zSpot, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
             label1.Text = "";
             if (kCavei == 0)
                 return;
             if (kCavei > 0)
             {
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                 label1.Text = "";
             }
@@ -1133,7 +1157,9 @@ namespace IIT_Dimlom_Geo1
             double num1 = 0.0;
             myTop.FilePath();
             FormLoad();
-            if (kTriang > 3 && MessageBox.Show("Model of Relief is exist. Use button 'Change Interval'. Do you want to create new model ?", "Parcel's Action", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (kTriang > 3 && MessageBox.Show("Модель рельефа существует. Используйте кнопку 'Изменить интервал'." +
+                " Вы хотите создать новую модель ?", "Действия с участком", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             {
                 panel7.Invalidate();
             }
@@ -1148,7 +1174,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1203,20 +1229,20 @@ namespace IIT_Dimlom_Geo1
                     kCavei = 0;
                     kCycle = 0;
                    DllClass1.TinCreate(myTop.fileAdd, kBorder, myTop.xBorder, myTop.yBorder, kHeight, myTop.nHeig, myTop.xHeig, myTop.yHeig, myTop.zHeig, out kSqu, myTop.xWork1, myTop.yWork1, myTop.xWork2, myTop.yWork2, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.nPik, myTop.xPik, myTop.yPik, myTop.zSel, out kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nWork1, myTop.xAdd, myTop.yAdd, myTop.zAdd, myTop.nSour1, myTop.nSour2, myTop.nSpot, myTop.xSpot, myTop.ySpot, myTop.zSpot, myTop.xOut, myTop.yOut, myTop.nWork, myTop.nCode1Fin, myTop.nCode2Fin, myTop.xDop, myTop.yDop, myTop.zDop, myTop.nCent, myTop.xCent, myTop.yCent, myTop.zCent, myTop.xPol, myTop.yPol, myTop.nWork, myTop.xWork, myTop.yWork, myTop.zWork, myTop.nParc, myTop.xParc, myTop.yParc, myTop.zParc, myTop.pWork, myTop.rWork, myTop.xSel, myTop.ySel, myTop.kMaxTre, panel1);
-                    label1.Text = "Wait.....Triangles archive";
+                    label1.Text = "Подожди.....Архив треугольников";
                    DllClass1.KeepTriang(myTop.fileTrian, xmin, ymin, xmax, ymax, kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre);
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+                    label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nTre, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                     label1.Text = "";
-                    panel1.Text = "Ready....";
+                    panel1.Text = "Готов....";
                     if (kCavei == 0)
                         return;
                     if (kCavei > 0)
                     {
-                        label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                        label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                        DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                         label1.Text = "";
-                        panel1.Text = "Ready..";
+                        panel1.Text = "Готов..";
                     }
                     kCenTri = 0;
                    DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);
@@ -1267,7 +1293,7 @@ namespace IIT_Dimlom_Geo1
             sRel = 0.0;
             if (kTriang < 4)
             {
-                int num1 = (int)MessageBox.Show("Model of Relief wasn't created", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Модель рельефа не создана", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1280,7 +1306,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1295,17 +1321,17 @@ namespace IIT_Dimlom_Geo1
                 if (File.Exists(myTop.ftmpPoly))
                     File.Delete(myTop.ftmpPoly);
                 kCavei = 0;
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+                label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nTre, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                 label1.Text = "";
                 if (kCavei == 0)
                     return;
                 if (kCavei > 0)
                 {
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                    label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                     label1.Text = "";
-                    panel1.Text = "Ready..";
+                    panel1.Text = "Готов..";
                 }
                 iContourShow = 1;
                 panel7.Invalidate();
@@ -1331,7 +1357,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kTriang < 5)
             {
-                int num = (int)MessageBox.Show("Model of Relief wasn't created", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Модель рельефа не создана", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1344,7 +1370,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kCavei == 0)
             {
-                int num = (int)MessageBox.Show("Contour Lines weren't formed", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Горизонтали не построены", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1357,7 +1383,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Toplogy wasn't Created", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Полигональная топология не была создана", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1370,11 +1396,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileContour))
             {
-                int num1 = (int)MessageBox.Show("Contour lines wasn't formed", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Горизонтали не построены", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(myTop.filePoly))
             {
-                int num2 = (int)MessageBox.Show("Polygonal Topology wasn't created", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Топология полигонов не была создана", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1393,7 +1419,7 @@ namespace IIT_Dimlom_Geo1
                 myTop.NewInscript(fileTmps, myTop.xWork1, myTop.yWork1, myTop.xWork2, myTop.yWork2);
                 kCavei = myTop.kCavei;
                 iContourShow = 1;
-                panel1.Text = "Ready...";
+                panel1.Text = "Готов...";
                 panel7.Invalidate();
             }
         }
@@ -1402,11 +1428,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileContour))
             {
-                int num1 = (int)MessageBox.Show("Contour lines wasn't formed", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Горизонтали не построены", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(myTop.filePoly))
             {
-                int num2 = (int)MessageBox.Show("Polygonal Topology wasn't created", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Топология полигонов не была создана", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1434,7 +1460,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 fileTmps = myTop.fileContour;
                 myTop.NewInscript(fileTmps, myTop.xWork1, myTop.yWork1, myTop.xWork2, myTop.yWork2);
-                panel1.Text = "Ready...";
+                panel1.Text = "Готов...";
                 panel7.Invalidate();
             }
         }
@@ -1443,11 +1469,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileContour))
             {
-                int num1 = (int)MessageBox.Show("Contour lines wasn't formed", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Горизонтали не построены", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(myTop.filePoly))
             {
-                int num2 = (int)MessageBox.Show("Polygonal Topology wasn't created", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Топология полигонов не была создана", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1485,7 +1511,7 @@ namespace IIT_Dimlom_Geo1
                 myTop.NewInscript(fileTemp, myTop.xWork1, myTop.yWork1, myTop.xWork2, myTop.yWork2);
                 kCavei = myTop.kCavei;
                 iContourShow = 1;
-                panel1.Text = "Ready...";
+                panel1.Text = "Готов...";
                 panel7.Invalidate();
             }
         }
@@ -1494,11 +1520,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileContour))
             {
-                int num1 = (int)MessageBox.Show("Contour lines wasn't formed", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Горизонтали не построены", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!File.Exists(myTop.filePoly))
             {
-                int num2 = (int)MessageBox.Show("Polygonal Topology wasn't created", "Blocking polygons", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Топология полигонов не была создана", "Блокировка полигонов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1510,17 +1536,17 @@ namespace IIT_Dimlom_Geo1
 
         private void Abolish_Click(object sender, EventArgs e)
         {
-            label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+            label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
            DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nTre, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
             label1.Text = "";
-            panel1.Text = "Ready.......";
+            panel1.Text = "Готов.......";
             if (kCavei == 0)
                 return;
             if (kCavei > 0)
             {
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
-                panel1.Text = "Ready.......";
+                panel1.Text = "Готов.......";
             }
             label1.Text = "";
             kCenTri = 0;
@@ -1534,19 +1560,19 @@ namespace IIT_Dimlom_Geo1
 
         private void SmoothDown_Click(object sender, EventArgs e)
         {
-            label1.Text = "************PLEASE.......WAIT****************";
+            label1.Text = "************Пожалуйста......Подождите****************";
            DllClass1.SmoothChange(myTop.fileAdd, myTop.fileContour, 1, myTop.xAdd, myTop.yAdd, myTop.xDop, myTop.yDop, myTop.xWork, myTop.yWork, panel1, nVertex);
             label1.Text = "";
-            panel1.Text = "Ready..";
+            panel1.Text = "Готов..";
             panel7.Invalidate();
         }
 
         private void SmoothUp_Click(object sender, EventArgs e)
         {
-            label1.Text = "************PLEASE.......WAIT****************";
+            label1.Text = "************Пожалуйста......Подождите****************";
            DllClass1.SmoothChange(myTop.fileAdd, myTop.fileContour, 2, myTop.xAdd, myTop.yAdd, myTop.xDop, myTop.yDop, myTop.xWork, myTop.yWork, panel1, nVertex);
             label1.Text = "";
-            panel1.Text = "Ready..";
+            panel1.Text = "Готов..";
             panel7.Invalidate();
         }
 
@@ -1589,14 +1615,14 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.ftmpPoly))
                 return;
-            label1.Text = "************PLEASE.......WAIT****************";
+            label1.Text = "************Пожалуйста......Подождите****************";
             nProcess = 270;
             nControl = 0;
             myTop.SplitContour(3, this.xSelect, this.ySelect, out xSplit, out ySplit, this.xSplPnt, this.ySplPnt,
                 this.myTop.xAdd, this.myTop.yAdd, this.myTop.xDop, this.myTop.yDop,
                  this.myTop.xOut, this.myTop.yOut, ref myTop.kSplit, ref myTop.xSpl, ref myTop.ySpl);
             label1.Text = "";
-            panel1.Text = "Ready........";
+            panel1.Text = "Готов........";
             panel7.Invalidate();
         }
 
@@ -1604,7 +1630,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kTriang < 5)
             {
-                int num = (int)MessageBox.Show("Model of Relief wasn't created", "Model correction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Модель рельефа не создана", "Исправление модели", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1612,22 +1638,22 @@ namespace IIT_Dimlom_Geo1
                     File.Delete(myTop.ftrianTemp);
                DllClass1.KeepTriang(myTop.ftrianTemp, xmin, ymin, xmax, ymax, kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre);
                 int iParam = 1;
-                label1.Text = "Wait.....Model correction";
+                label1.Text = "Wait.....Исправление модели";
                DllClass1.TinCorrect(iParam, sRel, ref kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre, myTop.xWork, myTop.yWork, myTop.zWork, myTop.pWork, out kChange);
-                label1.Text = "Wait.....Triangles archive";
+                label1.Text = "Подожди.....Архив треугольников";
                DllClass1.KeepTriang(myTop.fileTrian, xmin, ymin, xmax, ymax, kTriang, myTop.nTre, myTop.xTre, myTop.yTre, myTop.zTre);
-                label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES FORMING";
+                label1.Text = "*****Пожалуйста......Подождите*****ФОРМИРОВАНИЕ ГОРИЗОНТАЛЕЙ";
                DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nTre, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                 label1.Text = "";
-                panel1.Text = "Ready..";
+                panel1.Text = "Готов..";
                 if (kCavei == 0)
                     return;
                 if (kCavei > 0)
                 {
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                    label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                     label1.Text = "";
-                    panel1.Text = "Ready..";
+                    panel1.Text = "Готов..";
                 }
                 kCenTri = 0;
                DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);
@@ -1639,7 +1665,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileLine))
             {
-                int num = (int)MessageBox.Show("No Lines", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1652,7 +1678,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileLine))
             {
-                int num1 = (int)MessageBox.Show("No Lines", "Vertex addition", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Нет линий", "Добавление вершин", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1702,7 +1728,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fileLine))
             {
-                int num = (int)MessageBox.Show("No Lines", "Vertex addition", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Добавление вершин", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1718,7 +1744,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.fVertex) && !File.Exists(myTop.fVertLine))
             {
-                int num = (int)MessageBox.Show("Vertexes removed", "Vertex addition", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Удаление вершин", "Добавление вершин", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1742,7 +1768,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myTop.ftrianTemp))
             {
-                int num = (int)MessageBox.Show("No data", "Model correction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Исправление модели", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1751,13 +1777,13 @@ namespace IIT_Dimlom_Geo1
                DllClass1.ContSquare(sRel, kTriang, myTop.xTre, myTop.yTre, myTop.zTre, myTop.nTre, myTop.xOut, myTop.yOut, myTop.xSel, myTop.ySel, myTop.xSpot, myTop.ySpot, myTop.zAdd, myTop.xAdd, myTop.yAdd, myTop.zDop, out kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.nDop3, myTop.xCont, myTop.yCont, panel1);
                 if (kCavei == 0)
                     return;
-                panel1.Text = "Ready..";
+                panel1.Text = "Готов..";
                 if (kCavei > 0)
                 {
-                    label1.Text = "*****PLEASE.......WAIT*****CONTOUR LINES SMOOTHING";
+                    label1.Text = "*****Пожалуйста......Подождите*****СГЛАЖИВАНИЕ ГОРИЗОНТАЛЕЙ";
                    DllClass1.ContToDraw(myTop.fileAdd, myTop.fileContour, sRel, kCavei, myTop.zCont, myTop.nDop1, myTop.nDop2, myTop.xCont, myTop.yCont, myTop.nDop3, myTop.xDop, myTop.yDop, myTop.xWork1, myTop.yWork1, myTop.xAdd, myTop.yAdd, myTop.xSel, myTop.ySel, panel1, nVertex);
                     label1.Text = "";
-                    panel1.Text = "Ready..";
+                    panel1.Text = "Готов..";
                 }
                 kCenTri = 0;
                DllClass1.CenterTre(kTriang, myTop.xTre, myTop.yTre, out kCenTri, myTop.xCent, myTop.yCent);

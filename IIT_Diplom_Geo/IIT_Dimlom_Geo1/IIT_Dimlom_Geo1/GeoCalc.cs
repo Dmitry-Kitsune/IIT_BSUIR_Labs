@@ -154,7 +154,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Ready...";
+            panel1.Text = "Готов...";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -245,7 +245,7 @@ namespace IIT_Dimlom_Geo1
             myGeoCalc.fsymbPnt = myGeoCalc.pathSymbol + "brsymb.pnt";
             if (!File.Exists(myGeoCalc.fileProj))
             {
-                label2.Text = sPart[1] + "\\--Project isn't defined";
+                label2.Text = sPart[1] + "\\--Проект не выбран";
                 if (File.Exists(myGeoCalc.fileAllProj))
                     return;
                 int num2 = (int)MessageBox.Show("Click 'New project' for opening project");
@@ -303,7 +303,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -351,7 +351,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -426,7 +426,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -529,7 +529,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -573,7 +573,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -682,7 +682,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -755,7 +755,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -817,7 +817,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -1354,7 +1354,7 @@ namespace IIT_Dimlom_Geo1
                 kGeoFin = myGeoCalc.kGeoFin;
                 if (!File.Exists(myGeoCalc.flineFile))
                 {
-                    int num4 = (int)MessageBox.Show("Data is absent", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num4 = (int)MessageBox.Show("Данные отсутствуют", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1427,7 +1427,7 @@ namespace IIT_Dimlom_Geo1
                                 }
                                 catch (Exception ex)
                                 {
-                                    Console.WriteLine("The Read operation failed as expected.");
+                                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                 }
                                 finally
                                 {
@@ -1453,7 +1453,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -1597,7 +1597,7 @@ namespace IIT_Dimlom_Geo1
                                 }
                                 catch (Exception ex)
                                 {
-                                    Console.WriteLine("The Read operation failed as expected.");
+                                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                                 }
                                 finally
                                 {
@@ -1608,7 +1608,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -1632,7 +1632,7 @@ namespace IIT_Dimlom_Geo1
             nControl = 0;
             if (!File.Exists(myGeoCalc.fDoubtful))
             {
-                int num1 = (int)MessageBox.Show("Data is absent", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1977,7 +1977,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Data is absent", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2105,7 +2105,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Data is absent", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2199,7 +2199,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2213,7 +2213,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2226,7 +2226,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2239,7 +2239,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Page wasn't selected.", "Page Printing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Страница не выбрана.", "Печать страницы", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2295,7 +2295,7 @@ namespace IIT_Dimlom_Geo1
             kRcPnt = 0;
             if (!File.Exists(myGeoCalc.fgeoGeo))
             {
-                int num = (int)MessageBox.Show("No data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 panel7.Invalidate();
@@ -2305,7 +2305,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (indexGeo == 0)
             {
-                int num1 = (int)MessageBox.Show("Point wasn't selected", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Точка не выбрана", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2315,7 +2315,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox3.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num2 = (int)MessageBox.Show("Check data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num2 = (int)MessageBox.Show("Проверьте данные", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     myGeoCalc.nGeoCode[indexGeo] = Convert.ToInt32(textBox3.Text);
@@ -2341,7 +2341,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2362,7 +2362,7 @@ namespace IIT_Dimlom_Geo1
             indPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("No data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2380,7 +2380,7 @@ namespace IIT_Dimlom_Geo1
             indPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("No data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2398,7 +2398,7 @@ namespace IIT_Dimlom_Geo1
             kRcPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("No data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2413,7 +2413,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (indexDTM < 0)
             {
-                int num1 = (int)MessageBox.Show("Point wasn't selected", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Точка не выбрана", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2423,7 +2423,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox4.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num2 = (int)MessageBox.Show("Check data", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num2 = (int)MessageBox.Show("Проверьте данные", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     myGeoCalc.nTah1[indexDTM] = Convert.ToInt32(textBox4.Text);
@@ -2450,7 +2450,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -2467,11 +2467,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fgeoGeo))
             {
-                int num1 = (int)MessageBox.Show("Data is absent", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kGeo < 1)
             {
-                int num2 = (int)MessageBox.Show("Data is absent", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2492,7 +2492,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Data is absent", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2501,7 +2501,7 @@ namespace IIT_Dimlom_Geo1
                 kTaheo = myGeoCalc.kTaheo;
                 if (kTaheo < 1)
                 {
-                    int num2 = (int)MessageBox.Show("Data is absent", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {

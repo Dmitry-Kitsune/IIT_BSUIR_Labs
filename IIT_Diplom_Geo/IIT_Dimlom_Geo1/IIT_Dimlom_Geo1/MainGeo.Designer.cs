@@ -15,28 +15,10 @@ namespace IIT_Dimlom_Geo1
         private StatusBarPanel panel4 = new StatusBarPanel();
         private StatusBarPanel panel5 = new StatusBarPanel();
         private StatusBarPanel panel6 = new StatusBarPanel();
-           
-        private GroupBox groupBox1;
-        private Button button1;
-        private GroupBox groupBox2;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
         private Panel panel7;
         private Label label2;
         private Label label1;
         private Label label3;
-        private GroupBox groupBox3;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private GroupBox groupBox4;
-        private Button button10;
-        private Button button11;
-        private GroupBox groupBox5;
-        private Button button12;
         private Label label4;
 
         /// <summary>
@@ -65,257 +47,286 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-                groupBox1 = new GroupBox();
-                label4 = new Label();
-                groupBox5 = new GroupBox();
-                button12 = new Button();
-                groupBox4 = new GroupBox();
-                button11 = new Button();
-                button10 = new Button();
-                groupBox3 = new GroupBox();
-                button9 = new Button();
-                button8 = new Button();
-                button7 = new Button();
-                groupBox2 = new GroupBox();
-                label2 = new Label();
-                label1 = new Label();
-                button6 = new Button();
-                button5 = new Button();
-                button4 = new Button();
-                button3 = new Button();
-                button2 = new Button();
-                button1 = new Button();
-                panel7 = new Panel();
-                label3 = new Label();
-                groupBox1.SuspendLayout();
-                groupBox5.SuspendLayout();
-                groupBox4.SuspendLayout();
-                groupBox3.SuspendLayout();
-                groupBox2.SuspendLayout();
-                SuspendLayout();
-                groupBox1.BackColor = Color.FromArgb(64, 64, 64);
-                groupBox1.Controls.Add((Control)label4);
-                groupBox1.Controls.Add((Control)groupBox5);
-                groupBox1.Controls.Add((Control)groupBox4);
-                groupBox1.Controls.Add((Control)groupBox3);
-                groupBox1.Controls.Add((Control)groupBox2);
-                groupBox1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                groupBox1.ForeColor = Color.White;
-                groupBox1.Location = new Point(691, 12);
-                groupBox1.Name = "groupBox1";
-                groupBox1.Size = new Size(328, 426);
-                groupBox1.TabIndex = 0;
-                groupBox1.TabStop = false;
-                groupBox1.Text = "Main options";
-                label4.BackColor = Color.FromArgb(64, 64, 64);
-                label4.Font = new Font("Microsoft Sans Serif", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                label4.Location = new Point(13, 320);
-                label4.Name = "label4";
-                label4.Size = new Size(303, 90);
-                label4.TabIndex = 4;
-                label4.Text = "                ";
-                groupBox5.BackColor = Color.White;
-                groupBox5.Controls.Add((Control)button12);
-                groupBox5.ForeColor = Color.Black;
-                groupBox5.Location = new Point(7, 237);
-                groupBox5.Name = "groupBox5";
-                groupBox5.Size = new Size(315, 63);
-                groupBox5.TabIndex = 3;
-                groupBox5.TabStop = false;
-                groupBox5.Text = "Cadastral";
-                button12.BackColor = Color.Black;
-                button12.Font = new Font("Microsoft Sans Serif", 15f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                button12.ForeColor = Color.White;
-                button12.Location = new Point(9, 15);
-                button12.Name = "button12";
-                button12.Size = new Size(300, 42);
-                button12.TabIndex = 0;
-                button12.Text = "Cadastral processes";
-                button12.UseVisualStyleBackColor = false;
-                button12.Click += new EventHandler(Cadastre_Click);
-                groupBox4.BackColor = Color.DarkGray;
-                groupBox4.Controls.Add((Control)button11);
-                groupBox4.Controls.Add((Control)button10);
-                groupBox4.ForeColor = Color.Black;
-                groupBox4.Location = new Point(7, 163);
-                groupBox4.Name = "groupBox4";
-                groupBox4.Size = new Size(315, 68);
-                groupBox4.TabIndex = 2;
-                groupBox4.TabStop = false;
-                groupBox4.Text = "Information support";
-                button11.BackColor = Color.White;
-                button11.Location = new Point(9, 40);
-                button11.Name = "button11";
-                button11.Size = new Size(300, 23);
-                button11.TabIndex = 1;
-                button11.Text = "Aerotriangulation";
-                button11.UseVisualStyleBackColor = false;
-                button11.Click += new EventHandler(Aero_Click);
-                button10.BackColor = Color.White;
-                button10.Location = new Point(9, 15);
-                button10.Name = "button10";
-                button10.Size = new Size(300, 23);
-                button10.TabIndex = 0;
-                button10.Text = "Geodetic calculation";
-                button10.UseVisualStyleBackColor = false;
-                button10.Click += new EventHandler(Geodesy_Click);
-                groupBox3.BackColor = Color.Silver;
-                groupBox3.Controls.Add((Control)button9);
-                groupBox3.Controls.Add((Control)button8);
-                groupBox3.Controls.Add((Control)button7);
-                groupBox3.ForeColor = Color.Black;
-                groupBox3.Location = new Point(7, 109);
-                groupBox3.Name = "groupBox3";
-                groupBox3.Size = new Size(314, 44);
-                groupBox3.TabIndex = 1;
-                groupBox3.TabStop = false;
-                groupBox3.Text = "Topographic symbology";
-                button9.BackColor = Color.White;
-                button9.Location = new Point(233, 17);
-                button9.Name = "button9";
-                button9.Size = new Size(75, 23);
-                button9.TabIndex = 2;
-                button9.Text = "Polygons";
-                button9.UseVisualStyleBackColor = false;
-                button9.Click += new EventHandler(PolygonsSymb_Click);
-                button8.BackColor = Color.White;
-                button8.Location = new Point(124, 17);
-                button8.Name = "button8";
-                button8.Size = new Size(75, 23);
-                button8.TabIndex = 1;
-                button8.Text = "Lines";
-                button8.UseVisualStyleBackColor = false;
-                button8.Click += new EventHandler(LinesSymb_Click);
-                button7.BackColor = Color.White;
-                button7.Location = new Point(9, 17);
-                button7.Name = "button7";
-                button7.Size = new Size(75, 23);
-                button7.TabIndex = 0;
-                button7.Text = "Points";
-                button7.UseVisualStyleBackColor = false;
-                button7.Click += new EventHandler(PointsSymb_Click);
-                groupBox2.BackColor = Color.Gray;
-                groupBox2.Controls.Add((Control)label2);
-                groupBox2.Controls.Add((Control)label1);
-                groupBox2.Controls.Add((Control)button6);
-                groupBox2.Controls.Add((Control)button5);
-                groupBox2.Controls.Add((Control)button4);
-                groupBox2.Controls.Add((Control)button3);
-                groupBox2.Controls.Add((Control)button2);
-                groupBox2.ForeColor = Color.Black;
-                groupBox2.Location = new Point(7, 14);
-                groupBox2.Name = "groupBox2";
-                groupBox2.Size = new Size(314, 89);
-                groupBox2.TabIndex = 0;
-                groupBox2.TabStop = false;
-                groupBox2.Text = "Projects support";
-                label2.AutoSize = true;
-                label2.BackColor = Color.White;
-                label2.Location = new Point(6, 69);
-                label2.Name = "label2";
-                label2.Size = new Size(303, 13);
-                label2.TabIndex = 6;
-                label2.Text = "                                                                          ";
-                label1.AutoSize = true;
-                label1.BackColor = Color.Silver;
-                label1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, (byte)0);
-                label1.Location = new Point(108, 55);
-                label1.Name = "label1";
-                label1.Size = new Size(91, 13);
-                label1.TabIndex = 5;
-                label1.Text = "Current project";
-                button6.BackColor = Color.White;
-                button6.Location = new Point(248, 13);
-                button6.Name = "button6";
-                button6.Size = new Size(60, 35);
-                button6.TabIndex = 4;
-                button6.Text = "Drive change";
-                button6.UseVisualStyleBackColor = false;
-                button6.Click += new EventHandler(DiskChange_Click);
-                button5.BackColor = Color.White;
-                button5.Location = new Point(184, 13);
-                button5.Name = "button5";
-                button5.Size = new Size(64, 35);
-                button5.TabIndex = 3;
-                button5.Text = "Projects delete";
-                button5.UseVisualStyleBackColor = false;
-                button5.Click += new EventHandler(ProjectsDelete_Click);
-                button4.BackColor = Color.White;
-                button4.Location = new Point(124, 13);
-                button4.Name = "button4";
-                button4.Size = new Size(60, 35);
-                button4.TabIndex = 2;
-                button4.Text = "Project delete";
-                button4.UseVisualStyleBackColor = false;
-                button4.Click += new EventHandler(ProjectDelete_Click);
-                button3.BackColor = Color.White;
-                button3.Location = new Point(65, 13);
-                button3.Name = "button3";
-                button3.Size = new Size(59, 35);
-                button3.TabIndex = 1;
-                button3.Text = "Project select";
-                button3.UseVisualStyleBackColor = false;
-                button3.Click += new EventHandler(ProjectSelect_Click);
-                button2.BackColor = Color.White;
-                button2.Location = new Point(7, 13);
-                button2.Name = "button2";
-                button2.Size = new Size(58, 34);
-                button2.TabIndex = 0;
-                button2.Text = "Project open";
-                button2.UseVisualStyleBackColor = false;
-                button2.Click += new EventHandler(ProjectOpen_Click);
-                button1.BackColor = Color.Black;
-                button1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                button1.ForeColor = Color.White;
-                button1.Location = new Point(810, 652);
-                button1.Name = "button1";
-                button1.Size = new Size(87, 23);
-                button1.TabIndex = 2;
-                button1.Text = "Exit";
-                button1.UseVisualStyleBackColor = false;
-                button1.Click += new EventHandler(Exit_Click);
-                panel7.BackColor = Color.White;
-                panel7.BorderStyle = BorderStyle.FixedSingle;
-                panel7.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                panel7.Location = new Point(14, 12);
-                panel7.Name = "panel7";
-                panel7.Size = new Size(665, 643);
-                panel7.TabIndex = 3;
-                panel7.Paint += new PaintEventHandler(panel7_Paint);
-                panel7.MouseMove += new MouseEventHandler(panel7_MouseMove);
-                label3.AutoSize = true;
-                label3.BackColor = Color.Silver;
-                label3.Font = new Font("Microsoft Sans Serif", 10f, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, (byte)0);
-                label3.ForeColor = Color.Blue;
-                label3.Location = new Point(27, 658);
-                label3.Name = "label3";
-                label3.Size = new Size(523, 17);
-                label3.TabIndex = 4;
-                label3.Text = "                                                                                                       ";
-                AutoScaleDimensions = new SizeF(7f, 13f);
-                AutoScaleMode = AutoScaleMode.Font;
-                BackColor = Color.Silver;
-                ClientSize = new Size(1018, 702);
-                Controls.Add((Control)label3);
-                Controls.Add((Control)panel7);
-                Controls.Add((Control)button1);
-                Controls.Add((Control)groupBox1);
-                Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-                MaximizeBox = false;
-                MinimizeBox = false;
-                Name = "MainGeo";
-                Text = "Cadastral problems";
-                groupBox1.ResumeLayout(false);
-                groupBox5.ResumeLayout(false);
-                groupBox4.ResumeLayout(false);
-                groupBox3.ResumeLayout(false);
-                groupBox2.ResumeLayout(false);
-                groupBox2.PerformLayout();
-                ResumeLayout(false);
-                PerformLayout();
-            
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.топографическиеСимволыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузкаИОбработкаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.геодезическиеВычисленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.аеротриангуляцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button91 = new System.Windows.Forms.ToolStripMenuItem();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 702);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(849, 36);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "                ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(123, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "                                                                          ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Текущий проект";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(12, 66);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(849, 633);
+            this.panel7.TabIndex = 3;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(13, 738);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(523, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "                                                                                 " +
+    "                      ";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem,
+            this.топографическиеСимволыToolStripMenuItem,
+            this.загрузкаИОбработкаДанныхToolStripMenuItem,
+            this.помощьToolStripMenuItem,
+            this.ExitToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button6,
+            this.button2,
+            this.button3,
+            this.удалениеToolStripMenuItem,
+            this.exit});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.файлToolStripMenuItem.Text = "Меню проекта";
+            // 
+            // button6
+            // 
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(180, 22);
+            this.button6.Text = "Изменить диск";
+            this.button6.Click += new System.EventHandler(this.DiskChange_Click);
+            // 
+            // button2
+            // 
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(180, 22);
+            this.button2.Text = "Открыть проект";
+            this.button2.Click += new System.EventHandler(this.ProjectOpen_Click);
+            // 
+            // button3
+            // 
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 22);
+            this.button3.Text = "Выбрать проект";
+            this.button3.Click += new System.EventHandler(this.ProjectSelect_Click);
+            // 
+            // удалениеToolStripMenuItem
+            // 
+            this.удалениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button4,
+            this.button5});
+            this.удалениеToolStripMenuItem.Name = "удалениеToolStripMenuItem";
+            this.удалениеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалениеToolStripMenuItem.Text = "Удаление проектов";
+            // 
+            // button4
+            // 
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(207, 22);
+            this.button4.Text = "Удалить проект";
+            this.button4.Click += new System.EventHandler(this.ProjectDelete_Click);
+            // 
+            // button5
+            // 
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(207, 22);
+            this.button5.Text = "УДАЛИТЬ ВСЕ ПРОЕКТЫ";
+            this.button5.Click += new System.EventHandler(this.ProjectsDelete_Click);
+            // 
+            // exit
+            // 
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(180, 22);
+            this.exit.Text = "Выход";
+            this.exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // топографическиеСимволыToolStripMenuItem
+            // 
+            this.топографическиеСимволыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button7,
+            this.button8,
+            this.button9});
+            this.топографическиеСимволыToolStripMenuItem.Name = "топографическиеСимволыToolStripMenuItem";
+            this.топографическиеСимволыToolStripMenuItem.Size = new System.Drawing.Size(172, 20);
+            this.топографическиеСимволыToolStripMenuItem.Text = "Топографические символы";
+            // 
+            // button7
+            // 
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(132, 22);
+            this.button7.Text = "Точки";
+            this.button7.Click += new System.EventHandler(this.PointsSymb_Click);
+            // 
+            // button8
+            // 
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(132, 22);
+            this.button8.Text = "Линии";
+            this.button8.Click += new System.EventHandler(this.LinesSymb_Click);
+            // 
+            // button9
+            // 
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(132, 22);
+            this.button9.Text = "Полигоны";
+            this.button9.Click += new System.EventHandler(this.PolygonsSymb_Click);
+            // 
+            // загрузкаИОбработкаДанныхToolStripMenuItem
+            // 
+            this.загрузкаИОбработкаДанныхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.геодезическиеВычисленияToolStripMenuItem,
+            this.аеротриангуляцияToolStripMenuItem,
+            this.button91});
+            this.загрузкаИОбработкаДанныхToolStripMenuItem.Name = "загрузкаИОбработкаДанныхToolStripMenuItem";
+            this.загрузкаИОбработкаДанныхToolStripMenuItem.Size = new System.Drawing.Size(182, 20);
+            this.загрузкаИОбработкаДанныхToolStripMenuItem.Text = "Загрузка и обработка данных";
+            // 
+            // геодезическиеВычисленияToolStripMenuItem
+            // 
+            this.геодезическиеВычисленияToolStripMenuItem.Name = "геодезическиеВычисленияToolStripMenuItem";
+            this.геодезическиеВычисленияToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.геодезическиеВычисленияToolStripMenuItem.Text = "Геодезические вычисления";
+            this.геодезическиеВычисленияToolStripMenuItem.Click += new System.EventHandler(this.Geodesy_Click);
+            // 
+            // аеротриангуляцияToolStripMenuItem
+            // 
+            this.аеротриангуляцияToolStripMenuItem.Name = "аеротриангуляцияToolStripMenuItem";
+            this.аеротриангуляцияToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.аеротриангуляцияToolStripMenuItem.Text = "Аеротриангуляция";
+            this.аеротриангуляцияToolStripMenuItem.Click += new System.EventHandler(this.Aero_Click);
+            // 
+            // button91
+            // 
+            this.button91.Name = "button91";
+            this.button91.Size = new System.Drawing.Size(226, 22);
+            this.button91.Text = "Топография и кадастр";
+            this.button91.Click += new System.EventHandler(this.Cadastre_Click);
+            // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ExitToolStripMenuItem.Text = "Выход";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // MainGeo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(878, 784);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MainGeo";
+            this.Text = "Главное меню";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem файлToolStripMenuItem;
+        private ToolStripMenuItem button6;
+        private ToolStripMenuItem button2;
+        private ToolStripMenuItem button3;
+        private ToolStripMenuItem удалениеToolStripMenuItem;
+        private ToolStripMenuItem button4;
+        private ToolStripMenuItem button5;
+        private ToolStripMenuItem топографическиеСимволыToolStripMenuItem;
+        private ToolStripMenuItem button7;
+        private ToolStripMenuItem button8;
+        private ToolStripMenuItem button9;
+        private ToolStripMenuItem загрузкаИОбработкаДанныхToolStripMenuItem;
+        private ToolStripMenuItem геодезическиеВычисленияToolStripMenuItem;
+        private ToolStripMenuItem аеротриангуляцияToolStripMenuItem;
+        private ToolStripMenuItem button91;
+        private ToolStripMenuItem ExitToolStripMenuItem;
+        private ToolStripMenuItem exit;
+        private ToolStripMenuItem помощьToolStripMenuItem;
     }
 }

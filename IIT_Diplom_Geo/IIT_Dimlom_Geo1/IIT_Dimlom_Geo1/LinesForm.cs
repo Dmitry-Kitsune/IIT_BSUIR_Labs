@@ -152,7 +152,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Ready...";
+            panel1.Text = "Готов...";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -242,53 +242,53 @@ namespace IIT_Dimlom_Geo1
 
         private void button5_MouseHover(object sender, EventArgs e) => label5.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select points for forming line. Click right button after of selection's finish";
+        private void button6_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select points for forming line. Click right button after of selection's finish";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select 2 points according to anticlockwise and set up radius for forming short Arc.";
+        private void button9_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming short Arc.";
 
-        private void button10_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select 2 points according to anticlockwise and set up radius for forming long Arc.";
+        private void button10_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming long Arc.";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select 3 points for forming Arc.";
+        private void button11_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Arc.";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select 3 points for forming Circle.";
+        private void button12_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Circle.";
 
-        private void button13_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select 1 point-centre and set up radius for forming Circle.";
+        private void button13_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select 1 point-centre and set up radius for forming Circle.";
 
-        private void button14_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse select more than 2 points for forming curve. Click right button after of selection";
+        private void button14_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse select more than 2 points for forming curve. Click right button after of selection";
 
-        private void button15_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose a line and to set up distance between it and parallel to it";
+        private void button15_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose a line and to set up distance between it and parallel to it";
 
-        private void button16_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose line";
+        private void button16_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose line";
 
-        private void button18_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose a line and after that point";
+        private void button18_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose a line and after that point";
 
-        private void button19_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose a line closer to end which should be lengthened";
+        private void button19_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose a line closer to end which should be lengthened";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button20_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
 
-        private void button21_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button21_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
 
-        private void button22_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two lines closer to ends, where blind alley will be created";
+        private void button22_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two lines closer to ends, where blind alley will be created";
 
-        private void button23_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two lines for construction of Direct Short Arc";
+        private void button23_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Short Arc";
 
-        private void button24_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two lines for construction of Inverse Short Arc";
+        private void button24_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Short Arc";
 
-        private void button25_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two lines for construction of Direct Long Arc";
+        private void button25_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Long Arc";
 
-        private void button26_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose two lines for construction of Inverse Long Arc";
+        private void button26_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Long Arc";
 
-        private void button27_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose 2 lines and set up Radius for construction of Direct Arc to which line tangents";
+        private void button27_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Direct Arc to which line tangents";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose 2 lines and set up Radius for construction of Inverse Arc to which line tangents";
+        private void button28_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Inverse Arc to which line tangents";
 
-        private void button29_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose 2 lines and set up length of Bisect for construction of Arc to which line tangents";
+        private void button29_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up length of Bisect for construction of Arc to which line tangents";
 
-        private void button30_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose line";
+        private void button30_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose line";
 
-        private void button31_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. By left button of mouse choose line";
+        private void button31_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. By left button of mouse choose line";
 
-        private void button34_MouseHover(object sender, EventArgs e) => label5.Text = "Click button. In listing of symbols select appropriate and Click 'Save'";
+        private void button34_MouseHover(object sender, EventArgs e) => label5.Text = "Нажмите кнопку. In listing of symbols select appropriate and Click 'Save'";
 
         private void FormLoad()
         {
@@ -655,7 +655,7 @@ namespace IIT_Dimlom_Geo1
                             DllClass1.CheckText(textBox4.Text, out tText, out iCond);
                             if (iCond < 0)
                             {
-                                int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
                         }
@@ -2475,7 +2475,7 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2506,7 +2506,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Point Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Point Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2537,7 +2537,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Lengthen Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Lengthen Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2661,7 +2661,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.fileLine))
             {
-                int num = (int)MessageBox.Show("No Lines", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2692,7 +2692,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.fileLine))
             {
-                int num = (int)MessageBox.Show("No Lines", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2718,7 +2718,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Fillet Short Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Fillet Short Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2750,7 +2750,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Fillet Long Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Fillet Long Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2782,7 +2782,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Fillet Direct R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Fillet Direct R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2814,7 +2814,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Fillet Inverse R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Fillet Inverse R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2846,7 +2846,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("No Lines", "Fillet Short Inverse", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Fillet Short Inverse", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3087,7 +3087,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox1.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num2 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num2 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     iCodeLine = Convert.ToInt32(textBox1.Text);
@@ -3098,7 +3098,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox4.Text, out rRad, out iCond);
                     if (iCond < 0)
                     {
-                        int num3 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num3 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -3111,7 +3111,7 @@ namespace IIT_Dimlom_Geo1
                         DllClass1.CheckText(textBox1.Text, out tText, out iCond);
                         if (iCond < 0)
                         {
-                            int num5 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num5 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         num4 = Convert.ToInt32(textBox1.Text);
@@ -3137,7 +3137,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         if (num6 == 0)
                         {
-                            int num7 = (int)MessageBox.Show("Wrong number. Check Your Codes.", "Lines' Symbols");
+                            int num7 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды.", "Lines' Symbols");
                             return;
                         }
                     }
@@ -3149,7 +3149,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox4.Text, out myLin.rRadLine[indLine], out iCond);
                     if (iCond < 0)
                     {
-                        int num8 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num8 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
@@ -3386,7 +3386,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.fileLine))
             {
-                int num = (int)MessageBox.Show("No Lines", "Show", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Просмотр(показать)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3481,7 +3481,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {

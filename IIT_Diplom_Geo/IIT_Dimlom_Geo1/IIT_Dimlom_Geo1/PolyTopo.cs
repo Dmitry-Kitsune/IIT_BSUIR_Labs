@@ -128,7 +128,7 @@ namespace IIT_Dimlom_Geo1
             this.panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             this.panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            this.panel1.Text = "Ready...";
+            this.panel1.Text = "Готов...";
             this.panel3.Text = "**";
             this.panel5.Text = "**";
             this.panel6.Text = DateTime.Now.ToShortDateString();
@@ -178,7 +178,7 @@ namespace IIT_Dimlom_Geo1
 
         private void button2_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click Button for automatic Linear and Polygonal Topologies construction";
 
-        private void button3_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button. For update of Linear Topology select and remove line";
+        private void button3_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. For update of Linear Topology select and remove line";
 
         private void button4_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button for Rebuilding of Polygonal Topology after corection of Linear Topology";
 
@@ -190,13 +190,13 @@ namespace IIT_Dimlom_Geo1
 
         private void button8_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button14_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button. By left button of mouse choose parcel";
+        private void button14_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. By left button of mouse choose parcel";
 
         private void button15_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button if process of dividing and Legal Area is known";
 
-        private void button18_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button. Dialog for input Legal areas is opened";
+        private void button18_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Dialog for input Legal areas is opened";
 
-        private void button22_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button. Dialog is opened. Set up Formula for calculation tolerance of Calculated and Legal Areas";
+        private void button22_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Dialog is opened. Set up Formula for calculation tolerance of Calculated and Legal Areas";
 
         private void button23_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button for node and linear topologies building";
 
@@ -728,7 +728,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -998,7 +998,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 this.myPol.kPolySource = this.kPolySource;
                 this.myPol.LoadKeepSource(2);
-                this.panel1.Text = "Ready...";
+                this.panel1.Text = "Готов...";
                 this.iPolyDraw = 1;
                 this.iLineTopo = 1;
                 this.iLineDraw = 0;
@@ -1033,7 +1033,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1087,7 +1087,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -1153,7 +1153,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1196,7 +1196,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Polygonal Topology wasn't created", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1220,7 +1220,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -1238,7 +1238,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.CheckText(this.textBox2.Text, out this.sArea, out this.iCond);
             if (this.iCond < 0)
             {
-                int num3 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1247,7 +1247,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(this.textBox3.Text, out this.arExter, out this.iCond);
                     if (this.iCond < 0)
                     {
-                        int num4 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num4 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     if (this.arExter <= 0.0)
@@ -1257,7 +1257,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox3.Text, out this.arExter, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num5 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num5 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1487,7 +1487,7 @@ namespace IIT_Dimlom_Geo1
             this.iPointDraw = 1;
             this.iNodeDraw = 1;
             this.iLineDraw = 0;
-            this.panel1.Text = "Ready...";
+            this.panel1.Text = "Готов...";
             this.panel7.Invalidate();
         }
 

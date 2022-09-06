@@ -58,7 +58,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -283,7 +283,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox11.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1] = Convert.ToInt32(this.textBox11.Text);
@@ -293,7 +293,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox12.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 1] = Convert.ToInt32(this.textBox12.Text);
@@ -303,7 +303,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox13.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 2] = Convert.ToInt32(this.textBox13.Text);
@@ -313,7 +313,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox14.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 3] = Convert.ToInt32(this.textBox14.Text);
@@ -323,7 +323,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox15.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 4] = Convert.ToInt32(this.textBox15.Text);
@@ -333,7 +333,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox16.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 5] = Convert.ToInt32(this.textBox16.Text);
@@ -343,7 +343,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox17.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 6] = Convert.ToInt32(this.textBox17.Text);
@@ -353,7 +353,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox18.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 7] = Convert.ToInt32(this.textBox18.Text);
@@ -363,7 +363,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(this.textBox19.Text, out tText, out this.iCond);
                 if (this.iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.fin.nSymbFin[i1 + 8] = Convert.ToInt32(this.textBox19.Text);
@@ -373,7 +373,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.CheckText(this.textBox20.Text, out tText, out this.iCond);
             if (this.iCond < 0)
             {
-                int num1 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 this.fin.nSymbFin[i1 + 9] = Convert.ToInt32(this.textBox20.Text);
@@ -452,7 +452,7 @@ namespace IIT_Dimlom_Geo1
                 if (this.i1 == 0)
                 {
                     this.sTmp = string.Format("{0}", (object)this.fin.nSymbFin[index1]);
-                    int num = (int)MessageBox.Show(this.sTmp, "Parcels' Symbols wrong number");
+                    int num = (int)MessageBox.Show(this.sTmp, "Неправильный номер символ участка");
                 }
             }
             this.fin.kPolyFinal = this.kPolyFinal;
@@ -560,7 +560,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.textBox71.Text != "F" && this.textBox71.Text != "T")
             {
-                int num = (int)MessageBox.Show("Not is letter 'F' or 'T' ", "Names of Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Введите символ'F' или 'T' ", "Имена участков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -585,7 +585,7 @@ namespace IIT_Dimlom_Geo1
             DllClass1.CheckText(this.textBox72.Text, out tText, out this.iCond);
             if (this.iCond < 0)
             {
-                int num1 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -612,7 +612,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (this.i2 == 0)
                 {
-                    int num2 = (int)MessageBox.Show("Wrong number. Check Your Codes", "Parcels' Symbols");
+                    int num2 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Символы участка");
                 }
                 else
                 {
@@ -621,7 +621,7 @@ namespace IIT_Dimlom_Geo1
                         DllClass1.CheckText(this.textBox72.Text, out tText, out this.iCond);
                         if (this.iCond < 0)
                         {
-                            int num3 = (int)MessageBox.Show("Check data", "Final", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num3 = (int)MessageBox.Show("Проверьте данные", "Финальный", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
                         this.fin.nSymbFin[index] = Convert.ToInt32(this.textBox72.Text);

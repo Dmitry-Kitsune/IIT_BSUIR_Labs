@@ -229,7 +229,7 @@ namespace IIT_Dimlom_Geo1
             this.button15.Name = "button15";
             this.button15.Size = new Size(117, 34);
             this.button15.TabIndex = 0;
-            this.button15.Text = "Show listing and select symbol";
+            this.button15.Text = "Просмотр(показать) listing and select symbol";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new EventHandler(this.ListItems_Click);
             this.groupBox10.BackColor = Color.Silver;
@@ -707,7 +707,7 @@ namespace IIT_Dimlom_Geo1
             this.Controls.Add((Control)this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FinalResult";
+            this.Name = "ФинальныйResult";
             this.Text = "Preparation of Final Results";
             this.groupBox1.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);

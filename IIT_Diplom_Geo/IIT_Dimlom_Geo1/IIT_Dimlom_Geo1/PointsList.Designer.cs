@@ -35,44 +35,44 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new System.Windows.Forms.ListBox();
-            button1 = new System.Windows.Forms.Button();
-            SuspendLayout();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // listBox1
             // 
-            listBox1.BackColor = System.Drawing.SystemColors.Info;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new System.Drawing.Point(12, 2);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(325, 381);
-            listBox1.TabIndex = 0;
+            this.listBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(325, 381);
+            this.listBox1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            button1.Location = new System.Drawing.Point(129, 398);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(Cancel_Click);
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(139, 398);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Закрыть";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // PointsList
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.ButtonShadow;
-            ClientSize = new System.Drawing.Size(349, 433);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "PointsList";
-            Text = "Points\' List";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(349, 433);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PointsList";
+            this.Text = "Список точек";
+            this.ResumeLayout(false);
 
         }
 

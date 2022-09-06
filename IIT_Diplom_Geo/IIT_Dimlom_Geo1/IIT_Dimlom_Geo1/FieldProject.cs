@@ -89,7 +89,7 @@ namespace IIT_Dimlom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -252,7 +252,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("The Read operation failed as expected.");
+                        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                     }
                     finally
                     {
@@ -280,7 +280,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -329,7 +329,7 @@ namespace IIT_Dimlom_Geo1
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("The Read operation failed as expected.");
+                            Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                         }
                         finally
                         {
@@ -340,7 +340,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (this.kPnt < 3)
                 {
-                    int num7 = (int)MessageBox.Show("No Data");
+                    int num7 = (int)MessageBox.Show("Нет данных");
                 }
                 else
                 {

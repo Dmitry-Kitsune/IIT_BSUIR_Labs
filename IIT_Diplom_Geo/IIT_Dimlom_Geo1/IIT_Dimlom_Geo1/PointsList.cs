@@ -35,7 +35,7 @@ namespace IIT_Dimlom_Geo1
             myList.FilePath();
             if (!File.Exists(myList.tmpStr))
             {
-                int num = (int)MessageBox.Show("Drive wasn't defined", "Points' Listing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Points' Listing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             if (!File.Exists(myList.fileProj))
@@ -46,7 +46,7 @@ namespace IIT_Dimlom_Geo1
             myList.curProject = binaryReader1.ReadString();
             input1.Close();
             binaryReader1.Close();
-            myList.curDirect = "BrProj" + sTmp;
+            myList.curDirect = "brProj" + sTmp;
             kAdd = 0;
             if (File.Exists(myList.flinePoly))
             {
@@ -89,7 +89,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -114,7 +114,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {

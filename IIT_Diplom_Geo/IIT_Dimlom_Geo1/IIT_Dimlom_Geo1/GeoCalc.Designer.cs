@@ -231,7 +231,7 @@ namespace IIT_Dimlom_Geo1
                 groupBox6.Size = new Size(369, 35);
                 groupBox6.TabIndex = 7;
                 groupBox6.TabStop = false;
-                groupBox6.Text = "Show";
+                groupBox6.Text = "Просмотр(показать)";
                 button35.BackColor = Color.White;
                 button35.Location = new Point(221, 8);
                 button35.Name = "button35";
@@ -684,7 +684,7 @@ namespace IIT_Dimlom_Geo1
                 button4.Name = "button4";
                 button4.Size = new Size(75, 23);
                 button4.TabIndex = 12;
-                button4.Text = "Points' list";
+                button4.Text = "Список точек";
                 button4.UseVisualStyleBackColor = false;
                 button4.Click += new EventHandler(PointsList_Click);
                 button3.BackColor = Color.White;

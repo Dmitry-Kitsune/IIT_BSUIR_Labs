@@ -544,7 +544,7 @@ namespace IIT_Dimlom_Geo1
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(96, 34);
             this.button18.TabIndex = 11;
-            this.button18.Text = "Perpendicular Point-Line";
+            this.button18.Text = "Перпендикуляр Point-Line";
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.PointLine_Click);
             // 
@@ -661,7 +661,7 @@ namespace IIT_Dimlom_Geo1
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Radius,m";
+            this.label4.Text = "Radius,м";
             // 
             // label2
             // 

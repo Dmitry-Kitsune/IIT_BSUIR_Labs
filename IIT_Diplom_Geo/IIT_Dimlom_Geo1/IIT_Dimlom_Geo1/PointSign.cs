@@ -217,7 +217,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -305,13 +305,13 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox1.Text, out wSign, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox2.Text, out hSign, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (wSign < 0.5)
@@ -341,7 +341,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CheckText(textBox5.Text, out tText, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 numUser = Convert.ToInt32(tText);
@@ -362,13 +362,13 @@ namespace IIT_Dimlom_Geo1
             {
                 if (textBox9.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Check data", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out tText, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Check data", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 string text = textBox9.Text;
@@ -1407,7 +1407,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 binaryWriter.Close();
                 output.Close();

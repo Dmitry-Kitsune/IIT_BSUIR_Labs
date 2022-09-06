@@ -163,7 +163,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Ready...";
+            panel1.Text = "Готов...";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -253,51 +253,51 @@ namespace IIT_Dimlom_Geo1
 
         private void button5_MouseHover(object sender, EventArgs e) => label2.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select points for forming line. Click right button after of selection's finish";
+        private void button6_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select points for forming line. Click right button after of selection's finish";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select 2 points according to anticlockwise and set up radius for forming short Arc.";
+        private void button9_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming short Arc.";
 
-        private void button10_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select 2 points according to anticlockwise and set up radius for forming long Arc.";
+        private void button10_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming long Arc.";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select 3 points for forming Arc.";
+        private void button11_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Arc.";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select 3 points for forming Circle.";
+        private void button12_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Circle.";
 
-        private void button13_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select 1 point-centre and set up radius for forming Circle.";
+        private void button13_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 1 point-centre and set up radius for forming Circle.";
 
-        private void button14_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse select more than 2 points for forming curve. Click right button after of selection";
+        private void button14_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select more than 2 points for forming curve. Click right button after of selection";
 
-        private void button15_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose a line and to set up distance between it and parallel to it";
+        private void button15_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line and to set up distance between it and parallel to it";
 
-        private void button16_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose a line and after that point";
+        private void button16_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line and after that point";
 
-        private void button17_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose a line closer to end which should be lengthened";
+        private void button17_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line closer to end which should be lengthened";
 
-        private void button18_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button18_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
 
-        private void button19_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button19_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two lines closer to ends, where blind alley will be created";
+        private void button20_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines closer to ends, where blind alley will be created";
 
-        private void button21_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two lines for construction of Direct Short Arc";
+        private void button21_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Short Arc";
 
-        private void button22_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two lines for construction of Inverse Short Arc";
+        private void button22_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Short Arc";
 
-        private void button23_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two lines for construction of Direct Long Arc";
+        private void button23_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Long Arc";
 
-        private void button24_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose two lines for construction of Inverse Long Arc";
+        private void button24_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Long Arc";
 
-        private void button25_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose 2 lines and set up Radius for construction of Direct Arc to which line tangents";
+        private void button25_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Direct Arc to which line tangents";
 
-        private void button26_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose 2 lines and set up Radius for construction of Inverse Arc to which line tangents";
+        private void button26_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Inverse Arc to which line tangents";
 
-        private void button27_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose 2 lines and set up length of Bisect for construction of Arc to which line tangents";
+        private void button27_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up length of Bisect for construction of Arc to which line tangents";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. By left button of mouse choose line";
+        private void button28_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose line";
 
         private void button32_MouseHover(object sender, EventArgs e) => label2.Text = "Click button for update of Linear Topology by removing line";
 
-        private void button33_MouseHover(object sender, EventArgs e) => label2.Text = "Click button. Rebuild Linear Topology after removing line";
+        private void button33_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. Rebuild Linear Topology after removing line";
 
         private void button34_MouseHover(object sender, EventArgs e) => label2.Text = "Click button for construction of Linear Topology";
 
@@ -483,7 +483,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -728,7 +728,7 @@ namespace IIT_Dimlom_Geo1
                             DllClass1.CheckText(textBox4.Text, out tText, out iCond);
                             if (iCond < 0)
                             {
-                                int num = (int)MessageBox.Show("Check data", "AeroTriangulation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num = (int)MessageBox.Show("Проверьте данные", "Аэротриангуляция", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
                         }
@@ -3307,7 +3307,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kPntProj < 0)
             {
-                int num = (int)MessageBox.Show("All Design's points were removed", "Design's Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все точки проекта были удалены", "Построение проектных линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
                 kAdd = 0;
                 kRcPnt = 0;
@@ -3317,7 +3317,7 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                if (File.Exists(myLin.fpointProj) && MessageBox.Show("Do you really want to Delete all Design's points ?", "Design's Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (File.Exists(myLin.fpointProj) && MessageBox.Show("Вы действительно хотите Удалить все точки Проекта ?", "Построение проектных линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 if (File.Exists(myLin.fpointProj))
                     File.Delete(myLin.fpointProj);
@@ -3644,7 +3644,7 @@ namespace IIT_Dimlom_Geo1
                     File.Delete(myLin.fpolyFinal);
                 if (File.Exists(myLin.fileItems))
                     File.Delete(myLin.fileItems);
-                panel1.Text = "Ready...";
+                panel1.Text = "Готов...";
                 panel7.Invalidate();
             }
         }
@@ -3756,7 +3756,7 @@ namespace IIT_Dimlom_Geo1
                         File.Delete(myLin.fpolyFinal);
                     if (File.Exists(myLin.fileItems))
                         File.Delete(myLin.fileItems);
-                    panel1.Text = "Ready...";
+                    panel1.Text = "Готов...";
                     panel7.Invalidate();
                 }
             }

@@ -12189,7 +12189,7 @@ namespace DiplomGeoDLL
             {
                 panel1.Text = "Подождите......TIN сортировка - 1";
                 TinInBorder(kBorder, xBorder, yBorder, ref kTriang, nTre, xTre, yTre, zTre);
-                panel1.Text = "Ready..";
+                panel1.Text = "Готов..";
                 TreArea(fileAdd, kSqu, xWork1, yWork1, xWork2, yWork2, nDop1, nDop2, nDop3, nPik, xPik, yPik, zPik, ref kTriang, ref nTre, ref xTre, ref yTre, ref zTre, nWork1, xDop, yDop, zDop, nWork2, xAdd, yAdd, zAdd, nCent, xCent, yCent, zCent, xPol, yPol, nSpot, xSpot, ySpot, zSpot, nWork, xWork, yWork, zWork, xOut, yOut, nParc, xParc, yParc, zParc, pWork, rWork, xSel, ySel, kMaxTre, panel1);
                 if (kTriang > num1)
                 {
@@ -12202,7 +12202,7 @@ namespace DiplomGeoDLL
                     panel1.Text = "Готово..";
                     panel1.Text = "Подождите......TIN коррекция";
                     TriangleForm(ref kTriang, nTre, xTre, yTre, zTre, panel1);
-                    panel1.Text = "Ready..";
+                    panel1.Text = "Готов..";
                     for (int i1 = 1; i1 <= kTriang; ++i1)
                     {
                         for (int i2 = 0; i2 <= kPntVert; ++i2)
@@ -12446,7 +12446,7 @@ namespace DiplomGeoDLL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -23739,7 +23739,7 @@ namespace DiplomGeoDLL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             binaryReader.Close();
             input.Close();
@@ -30015,7 +30015,7 @@ namespace DiplomGeoDLL
             if (kSel < 1)
                 return;
             int kArray = 999999;
-            doubleArray(xLin, ref kArray);
+            DllClass1.doubleArray(xLin, ref kArray);
             doubleArray(yLin, ref kArray);
             if (kSel > kArray)
             {
@@ -40367,7 +40367,7 @@ namespace DiplomGeoDLL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             binaryReader.Close();
             input.Close();

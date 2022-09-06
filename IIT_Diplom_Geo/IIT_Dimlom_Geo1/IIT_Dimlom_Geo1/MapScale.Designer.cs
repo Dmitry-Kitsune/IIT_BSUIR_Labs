@@ -78,583 +78,583 @@ namespace IIT_Dimlom_Geo1
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            radioButton12 = new System.Windows.Forms.RadioButton();
-            radioButton7 = new System.Windows.Forms.RadioButton();
-            radioButton6 = new System.Windows.Forms.RadioButton();
-            button2 = new System.Windows.Forms.Button();
-            radioButton5 = new System.Windows.Forms.RadioButton();
-            radioButton4 = new System.Windows.Forms.RadioButton();
-            radioButton3 = new System.Windows.Forms.RadioButton();
-            radioButton2 = new System.Windows.Forms.RadioButton();
-            radioButton1 = new System.Windows.Forms.RadioButton();
-            groupBox2 = new System.Windows.Forms.GroupBox();
-            checkBox6 = new System.Windows.Forms.CheckBox();
-            checkBox4 = new System.Windows.Forms.CheckBox();
-            checkBox10 = new System.Windows.Forms.CheckBox();
-            checkBox9 = new System.Windows.Forms.CheckBox();
-            checkBox3 = new System.Windows.Forms.CheckBox();
-            checkBox2 = new System.Windows.Forms.CheckBox();
-            checkBox1 = new System.Windows.Forms.CheckBox();
-            checkBox5 = new System.Windows.Forms.CheckBox();
-            checkBox8 = new System.Windows.Forms.CheckBox();
-            checkBox7 = new System.Windows.Forms.CheckBox();
-            button1 = new System.Windows.Forms.Button();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            groupBox5 = new System.Windows.Forms.GroupBox();
-            label5 = new System.Windows.Forms.Label();
-            comboBox2 = new System.Windows.Forms.ComboBox();
-            label4 = new System.Windows.Forms.Label();
-            comboBox1 = new System.Windows.Forms.ComboBox();
-            button10 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
-            listBox2 = new System.Windows.Forms.ListBox();
-            button8 = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
-            groupBox4 = new System.Windows.Forms.GroupBox();
-            button6 = new System.Windows.Forms.Button();
-            button4 = new System.Windows.Forms.Button();
-            button7 = new System.Windows.Forms.Button();
-            listBox1 = new System.Windows.Forms.ListBox();
-            button3 = new System.Windows.Forms.Button();
-            label3 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            panel1 = new System.Windows.Forms.Panel();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox5.SuspendLayout();
-            groupBox4.SuspendLayout();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            groupBox1.Controls.Add(radioButton12);
-            groupBox1.Controls.Add(radioButton7);
-            groupBox1.Controls.Add(radioButton6);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(radioButton5);
-            groupBox1.Controls.Add(radioButton4);
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.ForeColor = System.Drawing.Color.Black;
-            groupBox1.Location = new System.Drawing.Point(-1, 686);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(745, 53);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Выбрать масштаб карты";
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.radioButton12);
+            this.groupBox1.Controls.Add(this.radioButton7);
+            this.groupBox1.Controls.Add(this.radioButton6);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(-1, 686);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(745, 53);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбрать масштаб карты";
             // 
             // radioButton12
             // 
-            radioButton12.AutoSize = true;
-            radioButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton12.Location = new System.Drawing.Point(406, 16);
-            radioButton12.Name = "radioButton12";
-            radioButton12.Size = new System.Drawing.Size(72, 17);
-            radioButton12.TabIndex = 11;
-            radioButton12.TabStop = true;
-            radioButton12.Text = "1 : 2500";
-            radioButton12.UseVisualStyleBackColor = false;
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton12.Location = new System.Drawing.Point(406, 16);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(72, 17);
+            this.radioButton12.TabIndex = 11;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "1 : 2500";
+            this.radioButton12.UseVisualStyleBackColor = false;
             // 
             // radioButton7
             // 
-            radioButton7.AutoSize = true;
-            radioButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton7.Location = new System.Drawing.Point(562, 16);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new System.Drawing.Size(79, 17);
-            radioButton7.TabIndex = 6;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "1 : 10000";
-            radioButton7.UseVisualStyleBackColor = false;
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton7.Location = new System.Drawing.Point(562, 16);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(79, 17);
+            this.radioButton7.TabIndex = 6;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "1 : 10000";
+            this.radioButton7.UseVisualStyleBackColor = false;
             // 
             // radioButton6
             // 
-            radioButton6.AutoSize = true;
-            radioButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton6.Location = new System.Drawing.Point(484, 16);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new System.Drawing.Size(72, 17);
-            radioButton6.TabIndex = 5;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "1 : 5000";
-            radioButton6.UseVisualStyleBackColor = false;
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton6.Location = new System.Drawing.Point(484, 16);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(72, 17);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "1 : 5000";
+            this.radioButton6.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            button2.BackColor = System.Drawing.Color.Red;
-            button2.ForeColor = System.Drawing.Color.White;
-            button2.Location = new System.Drawing.Point(649, 8);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(92, 39);
-            button2.TabIndex = 3;
-            button2.Text = "Закрыть окно";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += new System.EventHandler(Quit_Click);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(649, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 39);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Закрыть окно";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Quit_Click);
             // 
             // radioButton5
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton5.Location = new System.Drawing.Point(328, 16);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new System.Drawing.Size(72, 17);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "1 : 2000";
-            radioButton5.UseVisualStyleBackColor = false;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton5.Location = new System.Drawing.Point(328, 16);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(72, 17);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "1 : 2000";
+            this.radioButton5.UseVisualStyleBackColor = false;
             // 
             // radioButton4
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton4.Location = new System.Drawing.Point(250, 16);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new System.Drawing.Size(72, 17);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "1 : 1000";
-            radioButton4.UseVisualStyleBackColor = false;
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton4.Location = new System.Drawing.Point(250, 16);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(72, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "1 : 1000";
+            this.radioButton4.UseVisualStyleBackColor = false;
             // 
             // radioButton3
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton3.Location = new System.Drawing.Point(179, 16);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new System.Drawing.Size(65, 17);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "1 : 500";
-            radioButton3.UseVisualStyleBackColor = false;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton3.Location = new System.Drawing.Point(179, 16);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(65, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "1 : 500";
+            this.radioButton3.UseVisualStyleBackColor = false;
             // 
             // radioButton2
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton2.Location = new System.Drawing.Point(108, 16);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new System.Drawing.Size(65, 17);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "1 : 200";
-            radioButton2.UseVisualStyleBackColor = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton2.Location = new System.Drawing.Point(108, 16);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "1 : 200";
+            this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            radioButton1.Location = new System.Drawing.Point(37, 16);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new System.Drawing.Size(65, 17);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "1 : 100";
-            radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.radioButton1.Location = new System.Drawing.Point(37, 16);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1 : 100";
+            this.radioButton1.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            groupBox2.Controls.Add(checkBox6);
-            groupBox2.Controls.Add(checkBox4);
-            groupBox2.Controls.Add(checkBox10);
-            groupBox2.Controls.Add(checkBox9);
-            groupBox2.Controls.Add(checkBox3);
-            groupBox2.Controls.Add(checkBox2);
-            groupBox2.Controls.Add(checkBox1);
-            groupBox2.Controls.Add(checkBox5);
-            groupBox2.ForeColor = System.Drawing.Color.Black;
-            groupBox2.Location = new System.Drawing.Point(5, 11);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(254, 212);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Опции печати";
-            // 
-            // checkBox6
-            // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new System.Drawing.Point(-1, 89);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new System.Drawing.Size(129, 17);
-            checkBox6.TabIndex = 5;
-            checkBox6.Text = "Контурные линии";
-            checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new System.Drawing.Point(-1, 70);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new System.Drawing.Size(135, 17);
-            checkBox4.TabIndex = 3;
-            checkBox4.Text = "Линии в символах";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox10
-            // 
-            checkBox10.AutoSize = true;
-            checkBox10.Location = new System.Drawing.Point(0, 149);
-            checkBox10.Name = "checkBox10";
-            checkBox10.Size = new System.Drawing.Size(120, 17);
-            checkBox10.TabIndex = 9;
-            checkBox10.Text = "Цветная печать";
-            checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            checkBox9.AutoSize = true;
-            checkBox9.Location = new System.Drawing.Point(0, 129);
-            checkBox9.Name = "checkBox9";
-            checkBox9.Size = new System.Drawing.Size(77, 17);
-            checkBox9.TabIndex = 8;
-            checkBox9.Text = "Надписи";
-            checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new System.Drawing.Point(-1, 53);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new System.Drawing.Size(147, 17);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "Участки в символах";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new System.Drawing.Point(-1, 36);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(109, 17);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "Высоты точек";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new System.Drawing.Point(-2, 19);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new System.Drawing.Size(102, 17);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Имена точек";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new System.Drawing.Point(-1, 106);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new System.Drawing.Size(103, 17);
-            checkBox5.TabIndex = 4;
-            checkBox5.Text = "Длина линий";
-            checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            checkBox8.AutoSize = true;
-            checkBox8.Location = new System.Drawing.Point(6, 183);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new System.Drawing.Size(169, 17);
-            checkBox8.TabIndex = 7;
-            checkBox8.Text = "Завершенные полигоны";
-            checkBox8.UseVisualStyleBackColor = true;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox2.Controls.Add(this.checkBox7);
+            this.groupBox2.Controls.Add(this.checkBox6);
+            this.groupBox2.Controls.Add(this.checkBox8);
+            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.checkBox10);
+            this.groupBox2.Controls.Add(this.checkBox9);
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.checkBox5);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(5, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(254, 259);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Опции печати";
             // 
             // checkBox7
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new System.Drawing.Point(6, 206);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new System.Drawing.Size(144, 17);
-            checkBox7.TabIndex = 6;
-            checkBox7.Text = "Законченные линии";
-            checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(6, 206);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(144, 17);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Законченные линии";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(6, 100);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(129, 17);
+            this.checkBox6.TabIndex = 5;
+            this.checkBox6.Text = "Контурные линии";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(6, 183);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(169, 17);
+            this.checkBox8.TabIndex = 7;
+            this.checkBox8.Text = "Завершенные полигоны";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 81);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(135, 17);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Линии в символах";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.BackColor = System.Drawing.Color.LightGreen;
-            button1.Location = new System.Drawing.Point(14, 223);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(222, 36);
-            button1.TabIndex = 2;
-            button1.Text = "Подтвердить выбранные опции и масштаб печати";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(Confirm_Click);
+            this.button1.BackColor = System.Drawing.Color.LightGreen;
+            this.button1.Location = new System.Drawing.Point(9, 223);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Подтвердить выбранные опции и масштаб печати";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Confirm_Click);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(6, 160);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(120, 17);
+            this.checkBox10.TabIndex = 9;
+            this.checkBox10.Text = "Цветная печать";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(6, 140);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(77, 17);
+            this.checkBox9.TabIndex = 8;
+            this.checkBox9.Text = "Надписи";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(6, 58);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(147, 17);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Участки в символах";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 41);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(109, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Высоты точек";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(102, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Имена точек";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(6, 117);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(103, 17);
+            this.checkBox5.TabIndex = 4;
+            this.checkBox5.Text = "Длина линий";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            groupBox3.Controls.Add(groupBox5);
-            groupBox3.Controls.Add(groupBox4);
-            groupBox3.Controls.Add(label2);
-            groupBox3.ForeColor = System.Drawing.Color.Black;
-            groupBox3.Location = new System.Drawing.Point(740, 1);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(274, 738);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(740, 1);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(274, 738);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
             // 
             // groupBox5
             // 
-            groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            groupBox5.Controls.Add(label5);
-            groupBox5.Controls.Add(comboBox2);
-            groupBox5.Controls.Add(label4);
-            groupBox5.Controls.Add(comboBox1);
-            groupBox5.Controls.Add(button10);
-            groupBox5.Controls.Add(button9);
-            groupBox5.Controls.Add(label1);
-            groupBox5.Controls.Add(listBox2);
-            groupBox5.Controls.Add(button8);
-            groupBox5.Controls.Add(button5);
-            groupBox5.ForeColor = System.Drawing.Color.Black;
-            groupBox5.Location = new System.Drawing.Point(6, 513);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new System.Drawing.Size(262, 225);
-            groupBox5.TabIndex = 12;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Печать таблиц";
+            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.comboBox2);
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.button10);
+            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.listBox2);
+            this.groupBox5.Controls.Add(this.button8);
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(6, 513);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(262, 225);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Печать таблиц";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = System.Drawing.Color.Silver;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label5.Location = new System.Drawing.Point(8, 51);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(69, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Точность";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(8, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 15);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Точность";
             // 
             // comboBox2
             // 
-            comboBox2.BackColor = System.Drawing.Color.White;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new System.Drawing.Point(76, 46);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new System.Drawing.Size(74, 21);
-            comboBox2.TabIndex = 8;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(76, 46);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(74, 21);
+            this.comboBox2.TabIndex = 8;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = System.Drawing.Color.Silver;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label4.Location = new System.Drawing.Point(6, 22);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(66, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Единицы";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(6, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Единицы";
             // 
             // comboBox1
             // 
-            comboBox1.BackColor = System.Drawing.Color.White;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new System.Drawing.Point(76, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(72, 21);
-            comboBox1.TabIndex = 6;
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(76, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(72, 21);
+            this.comboBox1.TabIndex = 6;
             // 
             // button10
             // 
-            button10.BackColor = System.Drawing.Color.LightGreen;
-            button10.Location = new System.Drawing.Point(38, 167);
-            button10.Name = "button10";
-            button10.Size = new System.Drawing.Size(198, 47);
-            button10.TabIndex = 5;
-            button10.Text = "Распечатать выбранную страницу";
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += new System.EventHandler(PrintAction_Click);
+            this.button10.BackColor = System.Drawing.Color.LightGreen;
+            this.button10.Location = new System.Drawing.Point(38, 167);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(198, 47);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Распечатать выбранную страницу";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.PrintAction_Click);
             // 
             // button9
             // 
-            button9.BackColor = System.Drawing.Color.White;
-            button9.Location = new System.Drawing.Point(2, 121);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(149, 40);
-            button9.TabIndex = 4;
-            button9.Text = "Подтвердить выбор страницы";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += new System.EventHandler(PageAction_Click);
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(2, 121);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(149, 40);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Подтвердить выбор страницы";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.PageAction_Click);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.Silver;
-            label1.Location = new System.Drawing.Point(153, 76);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(106, 13);
-            label1.TabIndex = 3;
-            label1.Text = "Выбор страницы";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(153, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Выбор страницы";
             // 
             // listBox2
             // 
-            listBox2.BackColor = System.Drawing.Color.White;
-            listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            listBox2.ForeColor = System.Drawing.Color.Black;
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new System.Drawing.Point(171, 92);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new System.Drawing.Size(78, 69);
-            listBox2.TabIndex = 2;
+            this.listBox2.BackColor = System.Drawing.Color.White;
+            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox2.ForeColor = System.Drawing.Color.Black;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(171, 92);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(78, 69);
+            this.listBox2.TabIndex = 2;
             // 
             // button8
             // 
-            button8.BackColor = System.Drawing.Color.White;
-            button8.Location = new System.Drawing.Point(3, 73);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(148, 42);
-            button8.TabIndex = 1;
-            button8.Text = "Таблица площадей участков";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += new System.EventHandler(TableAreas_Click);
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(3, 73);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(148, 42);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Таблица площадей участков";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.TableAreas_Click);
             // 
             // button5
             // 
-            button5.BackColor = System.Drawing.Color.White;
-            button5.Location = new System.Drawing.Point(158, 19);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(95, 48);
-            button5.TabIndex = 0;
-            button5.Text = "Таблица действий";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += new System.EventHandler(TableAction_Click);
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(158, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(95, 48);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Таблица действий";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.TableAction_Click);
             // 
             // groupBox4
             // 
-            groupBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            groupBox4.Controls.Add(checkBox7);
-            groupBox4.Controls.Add(checkBox8);
-            groupBox4.Controls.Add(button6);
-            groupBox4.Controls.Add(button4);
-            groupBox4.Controls.Add(button7);
-            groupBox4.Controls.Add(groupBox2);
-            groupBox4.Controls.Add(button1);
-            groupBox4.Controls.Add(listBox1);
-            groupBox4.Controls.Add(button3);
-            groupBox4.Controls.Add(label3);
-            groupBox4.ForeColor = System.Drawing.Color.Black;
-            groupBox4.Location = new System.Drawing.Point(6, 0);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new System.Drawing.Size(262, 507);
-            groupBox4.TabIndex = 11;
-            groupBox4.TabStop = false;
+            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.groupBox2);
+            this.groupBox4.Controls.Add(this.listBox1);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(6, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(262, 518);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
             // 
             // button6
             // 
-            button6.BackColor = System.Drawing.Color.White;
-            button6.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.zoomIn;
-            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button6.Location = new System.Drawing.Point(14, 469);
-            button6.Name = "button6";
-            button6.Size = new System.Drawing.Size(44, 34);
-            button6.TabIndex = 9;
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += new System.EventHandler(ZoomIn_Click);
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.zoomIn;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Location = new System.Drawing.Point(14, 469);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(44, 34);
+            this.button6.TabIndex = 9;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.ZoomIn_Click);
             // 
             // button4
             // 
-            button4.BackColor = System.Drawing.Color.LightGreen;
-            button4.Location = new System.Drawing.Point(117, 469);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(132, 35);
-            button4.TabIndex = 5;
-            button4.Text = "Печать выбранной страницы";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += new System.EventHandler(PrintSelected_Click);
+            this.button4.BackColor = System.Drawing.Color.LightGreen;
+            this.button4.Location = new System.Drawing.Point(117, 469);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 35);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Печать выбранной страницы";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.PrintSelected_Click);
             // 
             // button7
             // 
-            button7.BackColor = System.Drawing.Color.White;
-            button7.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.ZoomOutIcon;
-            button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button7.Location = new System.Drawing.Point(64, 469);
-            button7.Name = "button7";
-            button7.Size = new System.Drawing.Size(49, 34);
-            button7.TabIndex = 10;
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += new System.EventHandler(ZoomOut_Click);
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.ZoomOutIcon;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(64, 469);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(49, 34);
+            this.button7.TabIndex = 10;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.ZoomOut_Click);
             // 
             // listBox1
             // 
-            listBox1.BackColor = System.Drawing.Color.White;
-            listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new System.Drawing.Point(7, 282);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(245, 134);
-            listBox1.TabIndex = 5;
+            this.listBox1.BackColor = System.Drawing.Color.White;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(7, 282);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(245, 134);
+            this.listBox1.TabIndex = 5;
             // 
             // button3
             // 
-            button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            button3.Location = new System.Drawing.Point(7, 422);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(245, 41);
-            button3.TabIndex = 4;
-            button3.Text = "Подтвердить выбор страницы для предварительного просмотра";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += new System.EventHandler(SelectPage_Click);
+            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button3.Location = new System.Drawing.Point(7, 422);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(245, 41);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Подтвердить выбор страницы для предварительного просмотра";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.SelectPage_Click);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            label3.Location = new System.Drawing.Point(2, 262);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(252, 13);
-            label3.TabIndex = 7;
-            label3.Text = "Страница xmin   ymin   xmax   ymax  Точки";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(2, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(252, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Страница xmin   ymin   xmax   ymax  Точки";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            label2.Location = new System.Drawing.Point(3, 586);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(0, 13);
-            label2.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(3, 586);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 6;
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.White;
-            panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            panel1.Location = new System.Drawing.Point(-1, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(209, 209);
-            panel1.TabIndex = 5;
-            panel1.Paint += new System.Windows.Forms.PaintEventHandler(panel1_Paint);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(-1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(209, 209);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // MapScale
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.Gray;
-            ClientSize = new System.Drawing.Size(1014, 736);
-            Controls.Add(groupBox1);
-            Controls.Add(panel1);
-            Controls.Add(groupBox3);
-            Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "MapScale";
-            Text = "Окно состояния печати";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(1014, 736);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox3);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MapScale";
+            this.Text = "Окно состояния печати";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 

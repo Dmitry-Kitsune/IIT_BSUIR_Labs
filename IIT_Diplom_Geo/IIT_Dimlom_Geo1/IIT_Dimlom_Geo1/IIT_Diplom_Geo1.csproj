@@ -218,6 +218,12 @@
     <Compile Include="CadInterval.Designer.cs">
       <DependentUpon>CadInterval.cs</DependentUpon>
     </Compile>
+    <Compile Include="CameraStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CameraStore.Designer.cs">
+      <DependentUpon>CameraStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlPoints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     </Compile>
     <Compile Include="Doubtful.Designer.cs">
       <DependentUpon>Doubtful.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoubtfulPnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoubtfulPnt.Designer.cs">
+      <DependentUpon>DoubtfulPnt.cs</DependentUpon>
     </Compile>
     <Compile Include="FieldProject.cs">
       <SubType>Form</SubType>
@@ -289,6 +301,12 @@
     </Compile>
     <Compile Include="ListLineSign.Designer.cs">
       <DependentUpon>ListLineSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPoints.Designer.cs">
+      <DependentUpon>ListPoints.cs</DependentUpon>
     </Compile>
     <Compile Include="ListPolyItems.cs">
       <SubType>Form</SubType>
@@ -389,6 +407,12 @@
     <Compile Include="SelectProj.Designer.cs">
       <DependentUpon>SelectProj.cs</DependentUpon>
     </Compile>
+    <Compile Include="StripCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StripCamera.Designer.cs">
+      <DependentUpon>StripCamera.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddPnt.resx">
       <DependentUpon>AddPnt.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +424,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadasral.resx">
       <DependentUpon>Cadasral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadContours.resx">
+      <DependentUpon>CadContours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadInterval.resx">
+      <DependentUpon>CadInterval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CameraStore.resx">
+      <DependentUpon>CameraStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlPoints.resx">
       <DependentUpon>ControlPoints.cs</DependentUpon>
@@ -413,6 +446,9 @@
     <EmbeddedResource Include="Doubtful.resx">
       <DependentUpon>Doubtful.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoubtfulPnt.resx">
+      <DependentUpon>DoubtfulPnt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DriveProjectMenu.resx">
       <DependentUpon>DriveProjectMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -420,6 +456,9 @@
     <EmbeddedResource Include="DriveProjectMenu.ru-RU.resx">
       <DependentUpon>DriveProjectMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldProject.resx">
+      <DependentUpon>FieldProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinalCorrect.resx">
       <DependentUpon>FinalCorrect.cs</DependentUpon>
@@ -433,11 +472,23 @@
     <EmbeddedResource Include="LinesForm.resx">
       <DependentUpon>LinesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListLineSign.resx">
+      <DependentUpon>ListLineSign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListPntSign.resx">
       <DependentUpon>ListPntSign.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListPoints.resx">
+      <DependentUpon>ListPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListPolyItems.resx">
+      <DependentUpon>ListPolyItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListPolySign.resx">
       <DependentUpon>ListPolySign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainGeo.resx">
+      <DependentUpon>MainGeo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapScale.resx">
       <DependentUpon>MapScale.cs</DependentUpon>
@@ -450,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParcelAction.resx">
       <DependentUpon>ParcelAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointSign.resx">
+      <DependentUpon>PointSign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PointsList.resx">
       <DependentUpon>PointsList.cs</DependentUpon>
@@ -475,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectProj.resx">
       <DependentUpon>SelectProj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StripCamera.resx">
+      <DependentUpon>StripCamera.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
