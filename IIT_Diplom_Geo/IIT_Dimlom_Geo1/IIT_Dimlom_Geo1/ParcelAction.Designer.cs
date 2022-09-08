@@ -99,6 +99,10 @@ namespace IIT_Dimlom_Geo1
         {
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button17 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
@@ -129,10 +133,6 @@ namespace IIT_Dimlom_Geo1
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -145,16 +145,16 @@ namespace IIT_Dimlom_Geo1
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -190,6 +190,53 @@ namespace IIT_Dimlom_Geo1
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Действия с участками";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox5.Controls.Add(this.button11);
+            this.groupBox5.Controls.Add(this.button10);
+            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(9, 152);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(360, 126);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Разделение участка с выбранной перпендикулярной линией";
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(7, 82);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(347, 37);
+            this.button11.TabIndex = 2;
+            this.button11.Text = "Процент от выбранного участка слева от перпендикуляра";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.PerpendicularPercent_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(186, 36);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(168, 40);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "Разделение пополам выбранной линии по перпендикуляру";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.PerpendicularLine_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(7, 36);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(173, 40);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "Площадь (кв.м) слева от перпендикуляра";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.PerpendicularMetre_Click);
             // 
             // groupBox9
             // 
@@ -534,53 +581,6 @@ namespace IIT_Dimlom_Geo1
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дествия с участками без использования моделирования (дизайна)";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox5.Controls.Add(this.button11);
-            this.groupBox5.Controls.Add(this.button10);
-            this.groupBox5.Controls.Add(this.button9);
-            this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(9, 152);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(360, 126);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Разделение участка с выбранной перпендикулярной линией";
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(7, 82);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(347, 37);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Процент от выбранного участка слева от перпендикуляра";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.PerpendicularPercent_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(186, 36);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(168, 40);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Разделение пополам выбранной линии по перпендикуляру";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.PerpendicularLine_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(7, 36);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(173, 40);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Площадь (кв.м) слева от перпендикуляра";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.PerpendicularMetre_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -634,10 +634,11 @@ namespace IIT_Dimlom_Geo1
             this.groupBox10.Controls.Add(this.button25);
             this.groupBox10.Controls.Add(this.button23);
             this.groupBox10.Controls.Add(this.button18);
+            this.groupBox10.Controls.Add(this.button1);
             this.groupBox10.ForeColor = System.Drawing.Color.Black;
             this.groupBox10.Location = new System.Drawing.Point(206, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(336, 65);
+            this.groupBox10.Size = new System.Drawing.Size(450, 65);
             this.groupBox10.TabIndex = 7;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Модель";
@@ -726,11 +727,23 @@ namespace IIT_Dimlom_Geo1
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.ZoomIn_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.SelectBoX1;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(5, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(46, 37);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.SelectBox_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.OrangeRed;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(548, 18);
+            this.button1.Location = new System.Drawing.Point(340, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 39);
             this.button1.TabIndex = 0;
@@ -749,18 +762,6 @@ namespace IIT_Dimlom_Geo1
             this.label6.TabIndex = 2;
             this.label6.Text = "-";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.SelectBoX1;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(5, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 37);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.SelectBox_Click);
-            // 
             // ParcelAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,7 +771,6 @@ namespace IIT_Dimlom_Geo1
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel7);
             this.MaximizeBox = false;
@@ -778,13 +778,13 @@ namespace IIT_Dimlom_Geo1
             this.Name = "ParcelAction";
             this.Text = "Действия с площадями";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

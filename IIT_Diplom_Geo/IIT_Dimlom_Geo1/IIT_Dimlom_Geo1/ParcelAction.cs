@@ -479,7 +479,7 @@ namespace IIT_Dimlom_Geo1
             --this.nAction;
             this.myAct.nAction = this.nAction;
             this.myAct.KeepLoadAction(2);
-            this.panel1.Text = "Ready ...";
+            this.panel1.Text = "Готов ...";
         }
 
         public void PolyOrder()
@@ -1039,7 +1039,7 @@ namespace IIT_Dimlom_Geo1
                             DllClass1.CommonDelete(ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kLineCancel, ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc, ref this.myAct.yLinCanc, ref this.myAct.nWork, this.tolerance);
                         this.kPolyAct = 0;
                         this.kIntAct = 0;
-                        this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                        this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                         DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
                         if (this.kPolyAct == 0)
                             return;
@@ -1047,7 +1047,7 @@ namespace IIT_Dimlom_Geo1
                         this.kPolyPrev = this.myAct.kPolyPrev;
                         DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
                         this.PolyOrder();
-                        this.panel1.Text = "Please, wait....Polygon Label Definition";
+                        this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
                         DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
                         int index25 = 0;
                         for (int index26 = 1; index26 <= this.kPolyAct; ++index26)
@@ -1159,7 +1159,7 @@ namespace IIT_Dimlom_Geo1
                         {
                             if (!File.Exists(this.myAct.flistAction))
                             {
-                                int num50 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num50 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
                             FileStream output = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -1378,7 +1378,7 @@ namespace IIT_Dimlom_Geo1
                 if (this.nProcess == 220)
                     this.label4.Text = "Distance,м";
                 if (this.nProcess == 230 || this.nProcess == 260)
-                    this.label4.Text = "Per cent,%";
+                    this.label4.Text = "Процент,%";
                 if (this.nProcess == 250)
                 {
                     this.label4.Visible = false;
@@ -1825,7 +1825,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.BoundDelete(ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, kBnd, ref this.myAct.zWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
                 this.kPolyAct = 0;
                 this.kIntAct = 0;
-                this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                 DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
                 if (this.kPolyAct == 0)
                     return;
@@ -1833,7 +1833,7 @@ namespace IIT_Dimlom_Geo1
                 this.kPolyPrev = this.myAct.kPolyPrev;
                 DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
                 this.PolyOrder();
-                this.panel1.Text = "Please, wait....Polygon Label Definition";
+                this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
                 DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
                 int num66 = this.myAct.kActPoly1[index31];
                 int num67 = this.myAct.kActPoly2[index31];
@@ -1911,7 +1911,7 @@ namespace IIT_Dimlom_Geo1
                 {
                     if (!File.Exists(this.myAct.flistAction))
                     {
-                        int num76 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num76 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     FileStream output = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -2151,7 +2151,7 @@ namespace IIT_Dimlom_Geo1
             double num3 = num2 = 0.0;
             if (this.kPolyProj == 0 && this.kTopoProj == 0)
             {
-                int num4 = (int)MessageBox.Show("Designing Process wasn't finished", "Parcels' Division with all Design's Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num4 = (int)MessageBox.Show("Процесс проектирования не был завершен", "Разделение участков со всеми проектными(графическими) линиями", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;
@@ -2251,11 +2251,11 @@ namespace IIT_Dimlom_Geo1
                     this.myAct.xLineAct[index9] = this.myAct.xWork1[index9];
                     this.myAct.yLineAct[index9] = this.myAct.yWork1[index9];
                 }
-                this.panel1.Text = "Please, wait....Node Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение топологии узла";
                 int knd = 0;
                 DllClass1.NodeTopology(this.tolerance, this.kPntPlus, ref this.myAct.xPnt, ref this.myAct.yPnt, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, ref this.myAct.nWork, ref this.myAct.xDop, ref this.myAct.yDop, out knd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.panel1);
                 DllClass1.NameActNode(this.kPntInput, this.myAct.namePnt, this.myAct.xPnt, this.myAct.yPnt, ref this.kNodeAct, ref this.myAct.nameNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct);
-                this.panel1.Text = "Please, wait....Linear Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение линейной топологии";
                 DllClass1.LineDivide(this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, knd, ref this.myAct.xAdd, ref this.myAct.yAdd, out kNew1, ref this.myAct.pWork, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, ref this.myAct.xDop, ref this.myAct.yDop, this.tolerance, this.panel1);
                 if (kNew1 == 0)
                     return;
@@ -2274,14 +2274,14 @@ namespace IIT_Dimlom_Geo1
                     this.myAct.xLineAct[index11] = this.myAct.xDop[index11];
                     this.myAct.yLineAct[index11] = this.myAct.yDop[index11];
                 }
-                this.panel1.Text = "Please, wait....Check up Double Lines";
+                this.panel1.Text = "Пожалуйста подождите....Проверка двойных линий";
                 DllClass1.RemoveDoubleLine(this.tolerance, ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kNew2, ref this.myAct.pWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.nWork, ref this.myAct.nDop1, ref this.myAct.nDop2, this.panel1);
                 double sArea = 0.0;
                 int kOut = 0;
                 DllClass1.ExteriorBox(this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, ref this.myAct.nExter, out kOut, ref this.myAct.xOut, ref this.myAct.yOut, out sArea, ref this.myAct.nWork);
                 if (this.kLineAct > 0)
                     DllClass1.CleanLineTopo(ref this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.radAct, ref this.myAct.xLineAct, ref this.myAct.yLineAct, ref this.myAct.nWork, ref this.myAct.xWork, ref this.myAct.yWork, this.tolerance);
-                this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                 DllClass1.PolyTopology(this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.nWork, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, this.tolerance, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.kn1, ref this.myAct.kn2, ref this.myAct.nExter, ref this.myAct.indInter, ref this.myAct.indPol, this.panel1);
                 if (this.kPolyAct == 0)
                     return;
@@ -2306,28 +2306,46 @@ namespace IIT_Dimlom_Geo1
                     for (int index14 = 1; index14 <= this.kPolyAct; ++index14)
                         this.myAct.nameAct[index14] = string.Format("{0}", (object)index14);
                     int kin = 0;
-                    DllClass1.PolyInterior(this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out kin, ref this.myAct.indPol, ref this.myAct.kn1, ref this.myAct.kn2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.rWork, ref this.myAct.pWork, ref this.myAct.zDop);
+                    DllClass1.PolyInterior(this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg,
+                        ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out kin, ref this.myAct.indPol, 
+                        ref this.myAct.kn1, ref this.myAct.kn2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1,
+                        ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.rWork, 
+                        ref this.myAct.pWork, ref this.myAct.zDop);
                     this.kIntAct = kin;
                 }
                 this.myAct.PolyActPrev(ref this.myAct.kPolyInside, this.nAction);
                 this.kPolyPrev = this.myAct.kPolyPrev;
-                DllClass1.FindPolyCancel(this.kPolyPrev, ref this.myAct.namePoly, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kPolyCancel, ref this.myAct.nameCanc, ref this.myAct.xLabCanc, ref this.myAct.yLabCanc, ref this.myAct.aCalcCanc, ref this.myAct.aLegCanc, ref this.myAct.xWork, ref this.myAct.yWork);
-                DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
-                this.panel1.Text = "Number polygons = " + Convert.ToString(this.kPolyAct);
+                DllClass1.FindPolyCancel(this.kPolyPrev, ref this.myAct.namePoly, ref this.myAct.xLab, ref this.myAct.yLab, 
+                    ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, 
+                    ref this.myAct.yPol, this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, 
+                    ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, 
+                    ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kPolyCancel, ref this.myAct.nameCanc, 
+                    ref this.myAct.xLabCanc, ref this.myAct.yLabCanc, ref this.myAct.aCalcCanc, ref this.myAct.aLegCanc, ref this.myAct.xWork, ref this.myAct.yWork);
+                DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, 
+                    ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, 
+                    this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, 
+                    ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
+                this.panel1.Text = "Число полигонов = " + Convert.ToString(this.kPolyAct);
                 this.PolyOrder();
-                this.panel1.Text = "Please, wait....Polygon Label Definition";
-                DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
+                this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
+                DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, 
+                    ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, 
+                    ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, 
+                    ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
                 if (this.maxParcel < 0)
                     this.maxParcel = 0;
                 int kNew3 = 0;
-                DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, this.myAct.xLabSource, this.myAct.yLabSource, this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource, this.kPolyAct, this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg, out kNew3, this.myAct.nameDop, this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork, this.myAct.xSpot, this.myAct.ySpot);
+                DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, this.myAct.xLabSource, this.myAct.yLabSource, 
+                    this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource,
+                    this.kPolyAct, this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg, out kNew3, this.myAct.nameDop, 
+                    this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork, this.myAct.xSpot, this.myAct.ySpot);
                 if (this.maxParcel < 0)
                     this.maxParcel = 0;
                 if (kNew3 > 1)
                 {
                     if (!File.Exists(this.myAct.flistAction))
                     {
-                        int num15 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num15 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     FileStream output = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -2403,7 +2421,7 @@ namespace IIT_Dimlom_Geo1
                 if (File.Exists(this.myAct.fpolyFinal))
                     File.Delete(this.myAct.fpolyFinal);
                 this.kPolyFinal = 0;
-                this.panel1.Text = "Ready ...";
+                this.panel1.Text = "Готов ...";
                 this.panel7.Invalidate();
             }
         }
@@ -2412,7 +2430,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.kPolyProj == 0 && this.kTopoProj == 0)
             {
-                int num = (int)MessageBox.Show("Designing Process wasn't finished", "Parcels' Division with all Design's Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Процесс проектирования не был завершен", "Разделение участков со всеми проектными(графическими) линиями", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;
@@ -2433,7 +2451,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myAct.fpolyProj))
             {
-                int num = (int)MessageBox.Show("Designing Process wasn't finished", "Parcels' Division with all Design's Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Процесс проектирования не был завершен", "Разделение участков со всеми проектными(графическими) линиями", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;
@@ -2460,7 +2478,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 this.panel7.Invalidate();
@@ -2486,11 +2504,11 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num7 = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num7 = (int)MessageBox.Show("Данные отсутствуют", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (this.kPolyProj > 0 || this.kTopoProj > 0)
             {
-                int num8 = (int)MessageBox.Show("Have to remove of all design data", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num8 = (int)MessageBox.Show("Have to remove of all design data", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2547,7 +2565,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CommonDelete(ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, kCom, ref this.myAct.zWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
                 this.kPolyAct = 0;
                 this.kIntAct = 0;
-                this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                 DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
                 if (this.kPolyAct == 0)
                     return;
@@ -2600,7 +2618,7 @@ namespace IIT_Dimlom_Geo1
                 {
                     this.kPolyAct = 0;
                     this.kIntAct = 0;
-                    this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                    this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                     DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
                 }
                 if (this.maxParcel < 0)
@@ -2613,7 +2631,7 @@ namespace IIT_Dimlom_Geo1
                 {
                     if (!File.Exists(this.myAct.flistAction))
                     {
-                        int num19 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num19 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     FileStream output = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -2665,7 +2683,7 @@ namespace IIT_Dimlom_Geo1
             double num2 = num1 = 0.0;
             if (this.kPolyProj == 0 && this.kTopoProj == 0)
             {
-                int num3 = (int)MessageBox.Show("Designing Process wasn't finished", "Parcels' Division with all Design's Lines", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num3 = (int)MessageBox.Show("Процесс проектирования не был завершен", "Разделение участков со всеми проектными(графическими) линиями", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;
@@ -2750,10 +2768,10 @@ namespace IIT_Dimlom_Geo1
                     this.myAct.kActLine1[this.kLineAct] = this.myAct.kActLine2[this.kLineAct - 1] + 1;
                     this.myAct.kActLine2[this.kLineAct] = this.myAct.kActLine2[this.kLineAct - 1] + ip;
                 }
-                this.panel1.Text = "Please, wait....Node Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение топологии узла";
                 int knd = 0;
                 DllClass1.NodeTopology(this.tolerance, this.kPntPlus, ref this.myAct.xPnt, ref this.myAct.yPnt, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, ref this.myAct.nWork, ref this.myAct.xDop, ref this.myAct.yDop, out knd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.panel1);
-                this.panel1.Text = "Please, wait....Linear Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение линейной топологии";
                 DllClass1.LineDivide(this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, knd, ref this.myAct.xAdd, ref this.myAct.yAdd, out kNew1, ref this.myAct.pWork, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, ref this.myAct.xDop, ref this.myAct.yDop, this.tolerance, this.panel1);
                 if (kNew1 == 0)
                     return;
@@ -2776,11 +2794,11 @@ namespace IIT_Dimlom_Geo1
                 double sArea = 0.0;
                 int kOut = 0;
                 DllClass1.ExteriorBox(this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, ref this.myAct.nExter, out kOut, ref this.myAct.xOut, ref this.myAct.yOut, out sArea, ref this.myAct.nWork);
-                this.panel1.Text = "Please, wait....Check up Double Lines";
+                this.panel1.Text = "Пожалуйста подождите....Проверка двойных линий";
                 DllClass1.RemoveDoubleLine(this.tolerance, ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kNew1, ref this.myAct.pWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.nWork, ref this.myAct.nDop1, ref this.myAct.nDop2, this.panel1);
                 if (this.kLineAct > 0)
                     DllClass1.CleanLineTopo(ref this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.radAct, ref this.myAct.xLineAct, ref this.myAct.yLineAct, ref this.myAct.nWork, ref this.myAct.xWork, ref this.myAct.yWork, this.tolerance);
-                this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                 DllClass1.PolyTopology(this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.nWork, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, this.tolerance, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.kn1, ref this.myAct.kn2, ref this.myAct.nExter, ref this.myAct.indInter, ref this.myAct.indPol, this.panel1);
                 if (this.kPolyAct == 0)
                     return;
@@ -2817,7 +2835,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
                 this.PolyOrder();
-                this.panel1.Text = "Please, wait....Polygon Label Definition";
+                this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
                 DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
                 int kPnt1 = -1;
                 for (int index = 1; index <= this.kPolySource; ++index)
@@ -2837,7 +2855,7 @@ namespace IIT_Dimlom_Geo1
                 {
                     if (!File.Exists(this.myAct.flistAction))
                     {
-                        int num10 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num10 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     FileStream output1 = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -2979,11 +2997,19 @@ namespace IIT_Dimlom_Geo1
                             }
                         }
                         this.kPolyCancel = 0;
-                        DllClass1.PolyInside(this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, ref this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kPolyCancel, ref this.myAct.nameCanc, ref this.myAct.xLabCanc, ref this.myAct.yLabCanc, ref this.myAct.aCalcCanc, ref this.myAct.aLegCanc, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork, ref this.myAct.nDop3);
+                        DllClass1.PolyInside(this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, ref this.kPolyAct, ref this.myAct.nameAct, 
+                            ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, 
+                            ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kPolyCancel, ref this.myAct.nameCanc,
+                            ref this.myAct.xLabCanc, ref this.myAct.yLabCanc, ref this.myAct.aCalcCanc, ref this.myAct.aLegCanc, ref this.myAct.nWork1, 
+                            ref this.myAct.nWork2, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork, ref this.myAct.nDop3);
                         this.kLineCancel = 0;
                         double sMove = 0.1;
                         int kBord = 0;
-                        DllClass1.ParallelBorder(sMove, this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, this.selRad, this.xSelRad, this.ySelRad, ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out this.kLineCancel, ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc, ref this.myAct.yLinCanc, out kBord, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork, ref this.myAct.nDop3, ref this.myAct.xWork2, ref this.myAct.yWork2);
+                        DllClass1.ParallelBorder(sMove, this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, this.selRad, this.xSelRad, this.ySelRad, 
+                            ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, 
+                            ref this.myAct.yLineAct, out this.kLineCancel, ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2,
+                            ref this.myAct.xLinCanc, ref this.myAct.yLinCanc, out kBord, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork, 
+                            ref this.myAct.nDop3, ref this.myAct.xWork2, ref this.myAct.yWork2);
                         int index20 = 0;
                         for (int index21 = 1; index21 <= this.kNodeAct; ++index21)
                         {
@@ -3021,14 +3047,17 @@ namespace IIT_Dimlom_Geo1
                         this.kNodeAct = index20;
                         if (this.maxParcel < 0)
                             this.maxParcel = 0;
-                        DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, this.myAct.xLabSource, this.myAct.yLabSource, this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource, this.kPolyAct, this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg, out kNew2, this.myAct.nameDop, this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork, this.myAct.xSpot, this.myAct.ySpot);
+                        DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, this.myAct.xLabSource, this.myAct.yLabSource, 
+                            this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource,
+                            this.kPolyAct, this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg, out kNew2, this.myAct.nameDop,
+                            this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork, this.myAct.xSpot, this.myAct.ySpot);
                         if (this.maxParcel <= 0)
                             this.maxParcel = 0;
                         if (kNew2 > 0)
                         {
                             if (!File.Exists(this.myAct.flistAction))
                             {
-                                int num25 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num25 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
                             FileStream output2 = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -3078,7 +3107,7 @@ namespace IIT_Dimlom_Geo1
                 this.ChangeAction();
                 this.myAct.PolygonLoad(ref this.myAct.kPolyInside);
                 this.kPoly = this.myAct.kPoly;
-                this.panel1.Text = "Ready";
+                this.panel1.Text = "Готов";
                 this.button21.Visible = false;
                 this.button30.Visible = false;
                 this.groupBox6.Visible = false;
@@ -3114,7 +3143,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (this.textBox4.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Type Data int the box at the left of button 'Confirm'", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Введите данные в поле слева от кнопки 'Подтвердить'", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(this.textBox4.Text, out this.areaInput, out this.iCond);
@@ -3125,21 +3154,21 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (this.areaInput <= 0.0)
                 {
-                    int num = (int)MessageBox.Show("Type Data int the box at the left of button 'Confirm'", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Введите данные в поле слева от кнопки 'Подтвердить'", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (this.nProcess == 230 || this.nProcess == 260)
                 {
                     if (this.areaInput >= 100.0)
                     {
-                        int num = (int)MessageBox.Show("Per Cent > 100", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num = (int)MessageBox.Show("Процент > 100", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     this.areaInput = 0.01 * this.areaInput * this.sCalc;
                 }
                 if ((this.nProcess == 210 || this.nProcess == 240) && this.areaInput >= this.sCalc)
                 {
-                    int num = (int)MessageBox.Show("Check up Input data", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверить вводимые данные", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -3201,7 +3230,8 @@ namespace IIT_Dimlom_Geo1
             this.kInside = 0;
             for (int index4 = 1; index4 <= this.kPolyAct; ++index4)
             {
-                if (index4 != this.indPoly && DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.myAct.xAct[index4], this.myAct.yAct[index4]) != 0 && this.myAct.aActCalc[index4] < this.myAct.aActCalc[this.indPoly])
+                if (index4 != this.indPoly && DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.myAct.xAct[index4], 
+                    this.myAct.yAct[index4]) != 0 && this.myAct.aActCalc[index4] < this.myAct.aActCalc[this.indPoly])
                 {
                     int num11 = this.myAct.kActPoly1[index4];
                     int num12 = this.myAct.kActPoly2[index4];
@@ -3231,7 +3261,10 @@ namespace IIT_Dimlom_Geo1
                 }
             }
             int kLin1 = 0;
-            DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.kInside, ref this.myAct.kPol1, ref this.myAct.kPol2, ref this.myAct.xPolProj, ref this.myAct.yPolProj, this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kLin1, ref this.myAct.radParc, ref this.myAct.nProj1, ref this.myAct.nProj2, ref this.myAct.xLinProj, ref this.myAct.yLinProj, ref this.myAct.nWork, this.tolerance);
+            DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.kInside, ref this.myAct.kPol1, ref this.myAct.kPol2,
+                ref this.myAct.xPolProj, ref this.myAct.yPolProj, this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2,
+                ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kLin1, ref this.myAct.radParc, ref this.myAct.nProj1, ref this.myAct.nProj2,
+                ref this.myAct.xLinProj, ref this.myAct.yLinProj, ref this.myAct.nWork, this.tolerance);
             this.xPoint = 0.0;
             this.yPoint = 0.0;
             num1 = kLin1;
@@ -3245,15 +3278,19 @@ namespace IIT_Dimlom_Geo1
                     iParam = 2;
                 if (this.nProcess == 230)
                     iParam = 3;
-                DllClass1.FirstParallel(iParam, this.areaInput, this.sCalc, this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, ref this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, this.selRad, this.xSelRad, this.ySelRad, out xMove, out yMove, out this.xPoint, out this.yPoint, out azHor, out azVer, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop);
+                DllClass1.FirstParallel(iParam, this.areaInput, this.sCalc, this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, ref this.kSel, ref this.myAct.xSel, 
+                    ref this.myAct.ySel, this.selRad, this.xSelRad, this.ySelRad, out xMove, out yMove, out this.xPoint, out this.yPoint, out azHor, out azVer, 
+                    ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop);
                 do
                 {
                     ++numVar;
-                    this.panel1.Text = "Please, wait....Number calculations = " + Convert.ToString(numVar);
-                    DllClass1.ParallelParcel(xMove, yMove, azHor, this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.kInside, ref this.myAct.kPol1, ref this.myAct.kPol2, ref this.myAct.xPolProj, ref this.myAct.yPolProj, this.selRad, this.xSelRad, this.ySelRad, out this.kParcDop, ref this.myAct.radDop, ref this.myAct.kParcDop1, ref this.myAct.kParcDop2, ref this.myAct.xParcDop, ref this.myAct.yParcDop, ref this.myAct.xOut, ref this.myAct.yOut, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop);
+                    this.panel1.Text = "Пожалуйста подождите....Вычисление чисел = " + Convert.ToString(numVar);
+                    DllClass1.ParallelParcel(xMove, yMove, azHor, this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.kInside, ref this.myAct.kPol1, ref this.myAct.kPol2, 
+                        ref this.myAct.xPolProj, ref this.myAct.yPolProj, this.selRad, this.xSelRad, this.ySelRad, out this.kParcDop, ref this.myAct.radDop, ref this.myAct.kParcDop1,
+                        ref this.myAct.kParcDop2, ref this.myAct.xParcDop, ref this.myAct.yParcDop, ref this.myAct.xOut, ref this.myAct.yOut, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop);
                     if (this.kParcDop == 0)
                     {
-                        int num14 = (int)MessageBox.Show("Check up typing data", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num14 = (int)MessageBox.Show("Проверьте вводимые данные", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     int kLin2 = kLin1;
@@ -3286,12 +3323,12 @@ namespace IIT_Dimlom_Geo1
                         this.myAct.nProj1[kLin2] = this.myAct.nProj2[kLin2 - 1] + 1;
                         this.myAct.nProj2[kLin2] = this.myAct.nProj2[kLin2 - 1] + this.myAct.nWork[index12];
                     }
-                    this.panel1.Text = "Please, wait....Linear Topology Building";
+                    this.panel1.Text = "Пожалуйста подождите....Построение линейной топологии";
                     this.kLineParc = 0;
                     DllClass1.LineDivide(kLin2, ref this.myAct.radParc, ref this.myAct.nProj1, ref this.myAct.nProj2, ref this.myAct.xLinProj, ref this.myAct.yLinProj, this.kNodeParc, ref this.myAct.xNodeParc, ref this.myAct.yNodeParc, out this.kLineParc, ref this.myAct.rWork, ref this.myAct.kParc1, ref this.myAct.kParc2, ref this.myAct.kParc, ref this.myAct.xLinParc, ref this.myAct.yLinParc, this.tolerance, this.panel1);
                     if (this.kLineParc == 0)
                         return;
-                    this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                    this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                     this.kPolyParc = 0;
                     this.kInParc = 0;
                     DllClass1.LinesToPoly(this.tolerance, this.kLineParc, ref this.myAct.kParc1, ref this.myAct.kParc2, ref this.myAct.xLinParc, ref this.myAct.yLinParc, this.kNodeParc, ref this.myAct.xNodeParc, ref this.myAct.yNodeParc, out this.kPolyParc, ref this.myAct.nameParc, ref this.myAct.xParc, ref this.myAct.yParc, ref this.myAct.aParcCalc, ref this.myAct.aParcLeg, ref this.myAct.nSymbPoly, ref this.myAct.kPolPar1, ref this.myAct.kPolPar2, ref this.myAct.xPolParc, ref this.myAct.yPolParc, out this.kInParc, ref this.myAct.indPol, ref this.myAct.kin1, ref this.myAct.kin2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
@@ -3354,7 +3391,7 @@ namespace IIT_Dimlom_Geo1
                 while (numVar < 150);
                 if (numVar > 140)
                 {
-                    int num27 = (int)MessageBox.Show("Check up data", "Parcel Division with Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num27 = (int)MessageBox.Show("Проверьте данные", "Разделение участков с помощью параллельной линии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -3369,11 +3406,11 @@ namespace IIT_Dimlom_Geo1
                 do
                 {
                     ++numVar;
-                    this.panel1.Text = "Number calculations = " + Convert.ToString(numVar);
+                    this.panel1.Text = "Вычисление чисел = " + Convert.ToString(numVar);
                     DllClass1.PerpendicularParcel(xMove, yMove, azVer, this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.kInside, ref this.myAct.kPol1, ref this.myAct.kPol2, ref this.myAct.xPolProj, ref this.myAct.yPolProj, this.selRad, this.xSelRad, this.ySelRad, out this.kParcDop, ref this.myAct.radDop, ref this.myAct.kParcDop1, ref this.myAct.kParcDop2, ref this.myAct.xParcDop, ref this.myAct.yParcDop, ref this.myAct.xOut, ref this.myAct.yOut, ref this.myAct.zWork, ref this.myAct.xInter, ref this.myAct.yInter, ref this.myAct.nWork, this.tolerance);
                     if (this.kParcDop == 0)
                     {
-                        int num28 = (int)MessageBox.Show("Check up typing data", "Parcel Division with Perpendicular Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num28 = (int)MessageBox.Show("Проверьте вводимые данные", "Разделение участков перпендикулярной линией", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     int kLin3 = kLin1;
@@ -3406,12 +3443,12 @@ namespace IIT_Dimlom_Geo1
                         this.myAct.nProj1[kLin3] = this.myAct.nProj2[kLin3 - 1] + 1;
                         this.myAct.nProj2[kLin3] = this.myAct.nProj2[kLin3 - 1] + this.myAct.nWork[index20];
                     }
-                    this.panel1.Text = "Please, wait....Linear Topology Building";
+                    this.panel1.Text = "Пожалуйста подождите....Построение линейной топологии";
                     this.kLineParc = 0;
                     DllClass1.LineDivide(kLin3, ref this.myAct.radParc, ref this.myAct.nProj1, ref this.myAct.nProj2, ref this.myAct.xLinProj, ref this.myAct.yLinProj, this.kNodeParc, ref this.myAct.xNodeParc, ref this.myAct.yNodeParc, out this.kLineParc, ref this.myAct.rWork, ref this.myAct.kParc1, ref this.myAct.kParc2, ref this.myAct.kParc, ref this.myAct.xLinParc, ref this.myAct.yLinParc, this.tolerance, this.panel1);
                     if (this.kLineParc == 0)
                         return;
-                    this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                    this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                     this.kPolyParc = 0;
                     this.kInParc = 0;
                     DllClass1.LinesToPoly(this.tolerance, this.kLineParc, ref this.myAct.kParc1, ref this.myAct.kParc2, ref this.myAct.xLinParc, ref this.myAct.yLinParc, this.kNodeParc, ref this.myAct.xNodeParc, ref this.myAct.yNodeParc, out this.kPolyParc, ref this.myAct.nameParc, ref this.myAct.xParc, ref this.myAct.yParc, ref this.myAct.aParcCalc, ref this.myAct.aParcLeg, ref this.myAct.nSymbPoly, ref this.myAct.kPolPar1, ref this.myAct.kPolPar2, ref this.myAct.xPolParc, ref this.myAct.yPolParc, out this.kInParc, ref this.myAct.indPol, ref this.myAct.kin1, ref this.myAct.kin2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
@@ -3468,7 +3505,7 @@ namespace IIT_Dimlom_Geo1
                             {
                                 if (iCond < 0)
                                 {
-                                    int num38 = (int)MessageBox.Show("Look for other solution", "Parcel Division with Perpendicular Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    int num38 = (int)MessageBox.Show("Ищите другое решение", "Разделение участков перпендикулярной линией", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     return;
                                 }
                             }
@@ -3482,7 +3519,7 @@ namespace IIT_Dimlom_Geo1
                 while (numVar < 150);
                 if (numVar > 145)
                 {
-                    int num39 = (int)MessageBox.Show("Look for other solution", "Parcel Division with Perpendicular Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num39 = (int)MessageBox.Show("Ищите другое решение", "Разделение участков перпендикулярной линией", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -3571,7 +3608,7 @@ namespace IIT_Dimlom_Geo1
             }
             this.kPolyAct = 0;
             this.kIntAct = 0;
-            this.panel1.Text = "Please, wait....Polygonal Topology Building";
+            this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
             DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
             if (this.kPolyAct == 0)
                 return;
@@ -3579,7 +3616,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyPrev = this.myAct.kPolyPrev;
             DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
             this.PolyOrder();
-            this.panel1.Text = "Please, wait....Polygon Label Definition";
+            this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
             DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
             if (this.maxParcel < 0)
                 this.maxParcel = 0;
@@ -3591,7 +3628,7 @@ namespace IIT_Dimlom_Geo1
             {
                 if (!File.Exists(this.myAct.flistAction))
                 {
-                    int num48 = (int)MessageBox.Show("Return to Polygonal Topology Building", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num48 = (int)MessageBox.Show("Вернуться к Построение полигональных топографических знаков", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 FileStream output = new FileStream(this.myAct.flistAction, FileMode.Append);
@@ -3714,7 +3751,7 @@ namespace IIT_Dimlom_Geo1
             this.kRcPnt = 0;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3738,7 +3775,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.nAction == 0)
             {
-                int num1 = (int)MessageBox.Show("All changes removed", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Все изменения удалены", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3843,7 +3880,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Visible = false;
             if (this.kPolyAct == 0)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Actions with Parcels", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 this.panel7.Invalidate();
@@ -3853,11 +3890,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.nAction == 0)
             {
-                int num1 = (int)MessageBox.Show("All changes removed", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Все изменения удалены", "Действия с участкомs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (MessageBox.Show("Do you really want to Remove All changes ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить все изменения ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 this.myAct.AllActionRemove();
                 this.nAction = 0;
@@ -3894,7 +3931,7 @@ namespace IIT_Dimlom_Geo1
                 if (File.Exists(this.myAct.fInscrFin))
                     File.Delete(this.myAct.fInscrFin);
                 this.iPolCancDraw = 0;
-                this.panel1.Text = "Ready ...";
+                this.panel1.Text = "Готов ...";
                 if (File.Exists(this.myAct.flistAction))
                     File.Delete(this.myAct.flistAction);
                 FileStream output = new FileStream(this.myAct.flistAction, FileMode.CreateNew);
@@ -3964,7 +4001,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myAct.fpolyProj) && !File.Exists(this.myAct.ftopoProj))
             {
-                int num = (int)MessageBox.Show("Linear Topology wasn't created", "Design's Lines Formation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы", "Графическое построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
             }
@@ -3990,7 +4027,7 @@ namespace IIT_Dimlom_Geo1
             this.kLineCancel = this.myAct.kLineCancel;
             if (this.kPolyCancel < 1 && this.kLineCancel < 1)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

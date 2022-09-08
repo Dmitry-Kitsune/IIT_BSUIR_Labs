@@ -1626,6 +1626,5 @@ namespace IIT_Dimlom_Geo1
             label1.Text = "";
             panel1.Invalidate();
         }
-
     }
 }

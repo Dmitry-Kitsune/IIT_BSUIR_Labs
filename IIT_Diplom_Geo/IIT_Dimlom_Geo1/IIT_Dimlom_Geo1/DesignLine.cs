@@ -245,61 +245,89 @@ namespace IIT_Dimlom_Geo1
 
         private void button1_MouseLeave(object sender, EventArgs e) => label2.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
+        private void button2_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
 
-        private void button3_MouseHover(object sender, EventArgs e) => label2.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button3_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button4_MouseHover(object sender, EventArgs e) => label2.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button4_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button5_MouseHover(object sender, EventArgs e) => label2.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
+        private void button5_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select points for forming line. Click right button after of selection's finish";
+        private void button6_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите точки с помощью левой кнопки мыши для построения линии. Нажмите правую кнопку после завершения выбора";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming short Arc.";
+        private void button9_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите 2 точки с помощью левой кнопки мыши для подтверждения и введите радиус для построения короткой окружности.";
 
-        private void button10_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 2 points according to anticlockwise and set up radius for forming long Arc.";
+        private void button10_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите 2 точки с помощью левой кнопки мыши для подтверждения и введите радиус для построения длинной окружности.";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Arc.";
+        private void button11_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите 3 точки с помощью левой кнопки мыши для построения окружности (дуги).";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 3 points for forming Circle.";
+        private void button12_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите 3 точки с помощью левой кнопки мыши для построения круга.";
 
-        private void button13_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select 1 point-centre and set up radius for forming Circle.";
+        private void button13_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите одну точку с помощью левой кнопки мыши как центральную и введите радиус для построения круга.";
 
-        private void button14_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse select more than 2 points for forming curve. Click right button after of selection";
+        private void button14_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Выделите больше 2х точек с помощью левой кнопки мыши для построения кривой. Нажмите правую кнопку после выбора";
 
-        private void button15_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line and to set up distance between it and parallel to it";
+        private void button15_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выбрать линию и установить расстояние между ней и параллелно ей";
 
-        private void button16_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line and after that point";
+        private void button16_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. С помощью левой кнопки мыши выберите линию и затем данную точку";
 
-        private void button17_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose a line closer to end which should be lengthened";
+        private void button17_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите линию ближе к концу, которую необходимо удлинить";
 
-        private void button18_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button18_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две окружности, или окружность и дугу, или две дуги";
 
-        private void button19_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two circles, or circle and arc, or two arcs";
+        private void button19_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две окружности, или окружность и дугу, или две дуги";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines closer to ends, where blind alley will be created";
+        private void button20_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две линии ближе к концам, где будет создаваться тупик";
 
-        private void button21_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Short Arc";
+        private void button21_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две линии для построения прямой короткой дуги.";
 
-        private void button22_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Short Arc";
+        private void button22_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две линии для построения обратной короткой дуги.";
 
-        private void button23_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Direct Long Arc";
+        private void button23_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две линии для построения прямой длинной дуги.";
 
-        private void button24_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose two lines for construction of Inverse Long Arc";
+        private void button24_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите две линии для построения обратной длинной дуги.";
 
-        private void button25_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Direct Arc to which line tangents";
+        private void button25_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите 2 линии и установите Радиус для построения Прямых окружностей, к которым эти линии касаются";
 
-        private void button26_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up Radius for construction of Inverse Arc to which line tangents";
+        private void button26_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите 2 линии и установите Радиус для построения Обратной Дуги, к которой линии касаются";
 
-        private void button27_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose 2 lines and set up length of Bisect for construction of Arc to which line tangents";
+        private void button27_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите 2 линии и задайте длину биссектрисы для построения дуги, к которой касаются линии";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. By left button of mouse choose line";
+        private void button28_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Левой кнопкой мыши выберите линию";
 
-        private void button32_MouseHover(object sender, EventArgs e) => label2.Text = "Click button for update of Linear Topology by removing line";
+        private void button32_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку для обновления линейной топологии путем удаления линии";
 
-        private void button33_MouseHover(object sender, EventArgs e) => label2.Text = "Нажмите кнопку. Rebuild Linear Topology after removing line";
+        private void button33_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку. Перестроить линейную топологию после удаления линии";
 
-        private void button34_MouseHover(object sender, EventArgs e) => label2.Text = "Click button for construction of Linear Topology";
+        private void button34_MouseHover(object sender, EventArgs e) 
+            => label2.Text = "Нажмите кнопку для построения линейной топологии";
 
         private void FormLoad()
         {
@@ -845,7 +873,7 @@ namespace IIT_Dimlom_Geo1
                 rr = 2.0 * rRad - ss;
                 if (rr < 0.1)
                 {
-                    int num = (int)MessageBox.Show("Increase Radius", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Увеличить радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     listBox1.Items.Clear();
                     return;
@@ -939,7 +967,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FormCreate(1, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                 if (rRad <= 0.0)
                 {
-                    int num = (int)MessageBox.Show("Increase Radius", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Увеличить радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     listBox1.Items.Clear();
                     nProcess = 0;
@@ -1148,7 +1176,7 @@ namespace IIT_Dimlom_Geo1
                 double rRad = this.rRad;
                 if (rRad <= 0.0)
                 {
-                    int num2 = (int)MessageBox.Show("Increase Distance", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Увеличить расстояние", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kAdd = 0;
                     listBox1.Items.Clear();
@@ -1309,7 +1337,9 @@ namespace IIT_Dimlom_Geo1
                 double yrd = num = 0.0;
                 double xrd = num;
                 double rd = num;
-                DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd, out xrd, out yrd, out kp, ref myLin.xPik, ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
+                DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj,
+                    ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd, out xrd,
+                    out yrd, out kp, ref myLin.xPik, ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
                 if (kp < 1)
                     return;
                 dField = 9999999.9;
@@ -1451,7 +1481,7 @@ namespace IIT_Dimlom_Geo1
                 if (kSel < 1)
                     return;
                 panel7.Invalidate();
-                if (MessageBox.Show("Do you really want to Delete this line ?", "Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить эту строку ?", "Построение линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     kSel = -1;
                     kAdd = 0;
@@ -1501,7 +1531,7 @@ namespace IIT_Dimlom_Geo1
                 if (kSel < 1)
                     return;
                 panel7.Invalidate();
-                if (nProcess == 600 && MessageBox.Show("Do you really want to Delete this line ?", "Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (nProcess == 600 && MessageBox.Show("Вы действительно хотите удалить эту строку ?", "Построение линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     kSel = -1;
                     kAdd = 0;
@@ -1583,7 +1613,9 @@ namespace IIT_Dimlom_Geo1
                     }
                 }
                 int kLin = 0;
-                DllClass1.LineDelete(indLine, ref kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.kPr, ref myLin.iProj1, ref myLin.iLongProj, ref myLin.sWidProj, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, ref myLin.zLinProj, out kLin, ref myLin.xPik, ref myLin.yPik, ref myLin.zDop);
+                DllClass1.LineDelete(indLine, ref kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.kPr, ref myLin.iProj1, 
+                    ref myLin.iLongProj, ref myLin.sWidProj, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, 
+                    ref myLin.xLinProj, ref myLin.yLinProj, ref myLin.zLinProj, out kLin, ref myLin.xPik, ref myLin.yPik, ref myLin.zDop);
                 myLin.kLineProj = kLineProj;
                 myLin.KeepProjLine();
                 if (File.Exists(myLin.fnodeProj))
@@ -1633,7 +1665,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.LengthenLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd, out xrd, out yrd, out kSel, ref myLin.xWork, ref myLin.yWork, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur);
                 if (kSel < 1)
                 {
-                    int num11 = (int)MessageBox.Show("Repeat process", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num11 = (int)MessageBox.Show("Повторить процесс", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kAdd = 0;
                     kRcPnt = 0;
@@ -1744,10 +1776,14 @@ namespace IIT_Dimlom_Geo1
                 double yrd2 = num13 = 0.0;
                 double xrd2 = num13;
                 double rd2 = num13;
-                DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd1, out xrd1, out yrd1, out kp, ref myLin.xPik, ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
+                DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj,
+                    ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd1, out xrd1, out yrd1, out kp, ref myLin.xPik, 
+                    ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
                 if (kp < 1)
                     return;
-                DllClass1.FindLine(xArc[1], yArc[1], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd2, out xrd2, out yrd2, out kp, ref myLin.xPik, ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
+                DllClass1.FindLine(xArc[1], yArc[1], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj,
+                    ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd2, out xrd2, out yrd2, out kp, ref myLin.xPik,
+                    ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az, out indLine);
                 if (kp < 1)
                     return;
                 sTmp1 = "";
@@ -1755,7 +1791,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FormCreate(1, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                 if (rRad == 0.0)
                 {
-                    int num14 = (int)MessageBox.Show("Radius incorrect", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num14 = (int)MessageBox.Show("Неверный радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     listBox1.Items.Clear();
@@ -1765,7 +1801,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.ArcTangent(1, rRad, rd1, xrd1, yrd1, rd2, xrd2, yrd2, out xRad, out yRad, out xh, out yh, out xk, out yk);
                 if (xh == 0.0 || yh == 0.0)
                 {
-                    int num15 = (int)MessageBox.Show("Increase Radius", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num15 = (int)MessageBox.Show("Увеличить радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     listBox1.Items.Clear();
@@ -1941,7 +1977,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FormCreate(1, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                 if (rRad == 0.0)
                 {
-                    int num18 = (int)MessageBox.Show("Radius incorrect", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num18 = (int)MessageBox.Show("Неверный радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     listBox1.Items.Clear();
@@ -1951,7 +1987,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.ArcTangent(2, rRad, rd3, xrd3, yrd3, rd4, xrd4, yrd4, out xRad, out yRad, out xh, out yh, out xk, out yk);
                 if (xh == 0.0 || yh == 0.0)
                 {
-                    int num19 = (int)MessageBox.Show("Increase Radius", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num19 = (int)MessageBox.Show("Увеличить радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     listBox1.Items.Clear();
@@ -2118,7 +2154,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.FindEndLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.xLinProj, ref myLin.yLinProj, out kp, ref myLin.xPik, ref myLin.yPik, out indLine, out ip);
                     if (ip > 0 && ip < kp)
                     {
-                        int num25 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                        int num25 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                         kSel = -1;
                         kRcPnt = 0;
                         kAdd = 0;
@@ -2147,7 +2183,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.FindEndLine(xArc[1], yArc[1], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.xLinProj, ref myLin.yLinProj, out kp, ref myLin.xPik, ref myLin.yPik, out indLine, out ip);
                     if (ip > 0 && ip < kp)
                     {
-                        int num26 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                        int num26 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                         kSel = -1;
                         kRcPnt = 0;
                         kAdd = 0;
@@ -2179,7 +2215,7 @@ namespace IIT_Dimlom_Geo1
                     sTmp1 = string.Format("{0:F1}", (object)ss);
                     if (ss < 0.001)
                     {
-                        int num27 = (int)MessageBox.Show("Wrong of Lines Selection", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num27 = (int)MessageBox.Show("Неправильный выбор линий", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         kSel = -1;
                         listBox1.Items.Clear();
                         nProcess = 0;
@@ -2190,7 +2226,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.FormCreate(3, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                     if (rRad <= 0.0 || pRad <= 0.0)
                     {
-                        int num28 = (int)MessageBox.Show("One Radius = 0", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num28 = (int)MessageBox.Show("One Radius = 0", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         kSel = -1;
                         listBox1.Items.Clear();
                         nProcess = 0;
@@ -2201,7 +2237,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.BlindAlley(xArc[0], yArc[0], xh, yh, xk, yk, x3, y3, x4, y4, rRad, pRad, out kt, ref xAll, ref yAll);
                     if (kt != 9)
                     {
-                        int num29 = (int)MessageBox.Show("Wrong of Lines Selection", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num29 = (int)MessageBox.Show("Неправильный выбор линий", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         kSel = -1;
                         listBox1.Items.Clear();
                         nProcess = 0;
@@ -2440,10 +2476,14 @@ namespace IIT_Dimlom_Geo1
             double yrd6 = num31 = 0.0;
             double xrd6 = num31;
             double rd6 = num31;
-            DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd5, out xrd5, out yrd5, out kp1, ref myLin.xPik, ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az1, out indLine);
+            DllClass1.FindLine(xArc[0], yArc[0], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, 
+                ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd5, out xrd5, out yrd5, out kp1, ref myLin.xPik, 
+                ref myLin.yPik, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az1, out indLine);
             if (kp1 < 1)
                 return;
-            DllClass1.FindLine(xArc[1], yArc[1], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj, ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd6, out xrd6, out yrd6, out kp2, ref myLin.xPol, ref myLin.yPol, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az1, out indSide);
+            DllClass1.FindLine(xArc[1], yArc[1], kLineProj, ref myLin.kPr1, ref myLin.kPr2, ref myLin.RadProj, ref myLin.xRadProj,
+                ref myLin.yRadProj, ref myLin.xLinProj, ref myLin.yLinProj, out rd6, out xrd6, out yrd6, out kp2, ref myLin.xPol, 
+                ref myLin.yPol, ref myLin.xDop, ref myLin.yDop, out xCur, out yCur, out az1, out indSide);
             if (kp2 < 1)
                 return;
             if (indLine == indSide)
@@ -2506,7 +2546,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (ip > 0 && ip < kp1)
                 {
-                    int num32 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                    int num32 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                     kSel = -1;
                     kRcPnt = 0;
                     kAdd = 0;
@@ -2551,7 +2591,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (ip > 0 && ip < kp2)
                 {
-                    int num33 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                    int num33 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                     kSel = -1;
                     kRcPnt = 0;
                     kAdd = 0;
@@ -2581,7 +2621,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FormCreate(1, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                 if (rRad == 0.0)
                 {
-                    int num34 = (int)MessageBox.Show("Radius incorrect", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num34 = (int)MessageBox.Show("Неверный радиус", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     listBox1.Items.Clear();
@@ -2599,7 +2639,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FormCreate(4, out iRadio, out rRad, out pRad, out sForm, out pForm, sTmp1, sTmp2);
                 if (rRad == 0.0)
                 {
-                    int num35 = (int)MessageBox.Show("Distance incorrect", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num35 = (int)MessageBox.Show("Неверное расстояние", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     kSel = -1;
                     kRcPnt = 0;
                     kAdd = 0;
@@ -2618,7 +2658,7 @@ namespace IIT_Dimlom_Geo1
                 int num36 = (int)MessageBox.Show(string.Format("nFillet = {0}", (object)nFillet) + "   " + string.Format("kSel = {0}", (object)kSel));
                 if (kSel < 3)
                 {
-                    int num37 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                    int num37 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                     kSel = -1;
                     kRcPnt = 0;
                     kAdd = 0;
@@ -2632,7 +2672,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.FilletBisect(xh, yh, xk, yk, x3, y3, x4, y4, rd6, out rRad, out xRad, out yRad, out kSel, ref myLin.xWork, ref myLin.yWork, ref myLin.xDop, ref myLin.yDop);
                 if (kSel < 3)
                 {
-                    int num38 = (int)MessageBox.Show("Repeat Lines selection", "Lines Forming");
+                    int num38 = (int)MessageBox.Show("Повторить выбор линий", "Построение линий");
                     kSel = -1;
                     kRcPnt = 0;
                     kAdd = 0;
@@ -3094,7 +3134,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 2)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3120,7 +3160,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3147,7 +3187,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3174,7 +3214,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3201,7 +3241,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3228,7 +3268,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3255,7 +3295,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3282,7 +3322,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj < 1)
             {
-                int num = (int)MessageBox.Show("Lines < 2", "Blind Alley", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Замкнутая линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3350,7 +3390,7 @@ namespace IIT_Dimlom_Geo1
             textBox4.ReadOnly = true;
             if (kLineProj != 0)
                 return;
-            int num = (int)MessageBox.Show("All lines were removed", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             nProcess = 0;
         }
 
@@ -3358,7 +3398,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj == 0)
             {
-                int num = (int)MessageBox.Show("All lines were removed", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
                 kAdd = 0;
                 kRcPnt = 0;
@@ -3368,7 +3408,7 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                if (File.Exists(myLin.flineProj) && MessageBox.Show("Do you really want to Delete all lines ?", "Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (File.Exists(myLin.flineProj) && MessageBox.Show("Вы действительно хотите удалить все строки ?", "Построение линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 myLin.kPntProj = kPntProj;
                 myLin.kProjInput = kProjInput;
@@ -3654,7 +3694,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.ftopoProj))
             {
-                int num = (int)MessageBox.Show("Check up Design's Lines Formation", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Проверьте графическую модель построения линии", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3673,7 +3713,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.flineProj))
             {
-                int num = (int)MessageBox.Show("Design's Lines weren,t Forming", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Графическая(проектная) линия не построена", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
             }
             else
@@ -3688,7 +3728,7 @@ namespace IIT_Dimlom_Geo1
                 kTopoProj = myLin.kTopoProj;
                 if (kTopoProj == 0)
                 {
-                    int num = (int)MessageBox.Show("Linear Topology wasn't created", "Linear Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы", "Построение линейной топологии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     nProcess = 0;
                 }
                 else
@@ -3697,10 +3737,10 @@ namespace IIT_Dimlom_Geo1
                     myLin.NodeProjLoad();
                     kNodeProj = myLin.kNodeProj;
                     int kNew = 0;
-                    panel1.Text = "Пожалуйста подождите....Check up Double Lines";
+                    panel1.Text = "Пожалуйста подождите....Проверка двойных линий";
                     DllClass1.RemoveDoubleLine(tolerance, ref kTopoProj, ref myLin.rWork, ref myLin.kPrt1, ref myLin.kPrt2, ref myLin.xLinTopo, ref myLin.yLinTopo, out kNew, ref myLin.pWork, ref myLin.nWork1, ref myLin.nWork2, ref myLin.xWork, ref myLin.yWork, ref myLin.xDop, ref myLin.yDop, ref myLin.nWork, ref myLin.nDop1, ref myLin.nDop2, panel1);
                     int kInter = 0;
-                    panel1.Text = "Пожалуйста подождите....Polygonal Topology Building";
+                    panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                     DllClass1.LinesToPoly(tolerance, kTopoProj, ref myLin.kPrt1, ref myLin.kPrt2, ref myLin.xLinTopo, ref myLin.yLinTopo, kNodeProj, ref myLin.xNodeProj, ref myLin.yNodeProj, out kPolyProj, ref myLin.namePoly, ref myLin.xLab, ref myLin.yLab, ref myLin.areaPol, ref myLin.areaLeg, ref myLin.nSymbPoly, ref myLin.kPol1, ref myLin.kPol2, ref myLin.xPolProj, ref myLin.yPolProj, out kInter, ref myLin.indPol, ref myLin.kn1, ref myLin.kn2, ref myLin.nWork, ref myLin.indInter, ref myLin.xWork1, ref myLin.yWork1, ref myLin.nWork1, ref myLin.nWork2, ref myLin.xWork, ref myLin.yWork, ref myLin.zWork, ref myLin.xWork2, ref myLin.yWork2, ref myLin.pWork, ref myLin.rWork, ref myLin.zDop, panel1);
                     if (kPolyProj < 1)
                         return;
@@ -3773,7 +3813,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.flineProj))
             {
-                int num = (int)MessageBox.Show("Design's Lines weren't Forming", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Проектируемые линии не построены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
             }
             else
@@ -3787,7 +3827,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.ftopoProj))
             {
-                int num = (int)MessageBox.Show("Design's Lines weren't Forming", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Проектируемые линии не построены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
             }
             else
@@ -3811,7 +3851,8 @@ namespace IIT_Dimlom_Geo1
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            if (File.Exists(myLin.flineProj) && !File.Exists(myLin.ftopoProj) && MessageBox.Show("Linear Topology wasn't created. Do you really want to leave program ?", "Lines Forming", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (File.Exists(myLin.flineProj) && !File.Exists(myLin.ftopoProj) && 
+                MessageBox.Show("Линейные топографические знаки не были созданы. Вы действительно хотите выйти из программы ?", "Построение линий", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 kSel = -1;
             else
                 Form.ActiveForm.Close();

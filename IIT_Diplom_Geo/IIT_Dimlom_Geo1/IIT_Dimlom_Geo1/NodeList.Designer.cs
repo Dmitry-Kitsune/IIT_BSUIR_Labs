@@ -68,7 +68,7 @@ namespace IIT_Dimlom_Geo1
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "NodeList";
+            this.Name = "Список узлов";
             this.Text = "Список узлов";
             this.ResumeLayout(false);
 

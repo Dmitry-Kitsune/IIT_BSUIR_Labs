@@ -129,11 +129,11 @@ namespace IIT_Dimlom_Geo1
                 sTmp1 = string.Format("{0:F3}", (object)myList.xAdd[index]);
                 sTmp2 = string.Format("{0:F3}", (object)myList.yAdd[index]);
                 sTmp3 = string.Format("{0:F3}", (object)myList.zAdd[index]);
-                pName = myList.nameAdd[index].PadRight(12);
+                this.pName = myList.nameAdd[index].PadRight(12);
                 sTmp1 = sTmp1.PadRight(18);
                 sTmp2 = sTmp2.PadRight(18);
                 sTmp3 = sTmp3.PadRight(18);
-                sTmp = pName + sTmp1 + sTmp2 + sTmp3;
+                sTmp = this.pName + sTmp1 + sTmp2 + sTmp3;
                 listBox1.Items.Add((object)sTmp);
             }
         }

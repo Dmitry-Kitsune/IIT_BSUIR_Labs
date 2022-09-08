@@ -904,7 +904,7 @@ namespace IIT_Dimlom_Geo1
                     this.panel1.Text = "******POINTS SORTING*******";
                     this.mySub.HeightSorting();
                     this.kHeight = this.mySub.kHeight;
-                    this.panel1.Text = "Ready......";
+                    this.panel1.Text = "Готов......";
                     this.kPntSource = this.kPntPlus;
                     for (int index = 0; index <= this.kPntSource; ++index)
                     {
@@ -1351,7 +1351,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     LoadData();
                     iContourShow = 1;
-                    panel1.Text = "Ready";
+                    panel1.Text = "Готов";
                     panel7.Invalidate();
                 }
             }
@@ -1453,7 +1453,7 @@ namespace IIT_Dimlom_Geo1
                     File.Delete(mySub.fCancPoly);
                 if (File.Exists(mySub.fInscrFin))
                     File.Delete(mySub.fInscrFin);
-                panel1.Text = "Ready ...";
+                panel1.Text = "Готов ...";
                 if (File.Exists(mySub.flistAction))
                     File.Delete(mySub.flistAction);
                 FileStream output = new FileStream(mySub.flistAction, FileMode.CreateNew);

@@ -1986,31 +1986,31 @@ namespace IIT_Dimlom_Geo1
 
         private void FillControl_Click(object sender, EventArgs e)
         {
-            mySub.FilePath();
-            mySub.ControlInput(out iCond, mySub.fstoreGeo);
-            if (iCond < 0)
-                iGraphic = 1;
-            else if (iCond < 0)
+            this.mySub.FilePath();
+            this.mySub.ControlInput(out this.iCond, this.mySub.fstoreGeo);
+            if (this.iCond < 0)
+                this.iGraphic = 1;
+            else if (this.iCond < 0)
             {
-                int num = (int)MessageBox.Show("Слишком много искажений (ошибок)", "Заполнить архив контрольных точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                iGraphic = 1;
+                int num = (int)MessageBox.Show("Слишком много ошибок", "Пополнить архив контрольных точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.iGraphic = 1;
             }
             else
             {
                 ControlPoints controlPoints = new ControlPoints();
                 controlPoints.Location = new Point(0, 0);
                 int num = (int)controlPoints.ShowDialog((IWin32Window)this);
-                mySub.FilePath();
-                LoadData();
-                nProblem = 23;
-                if (File.Exists(mySub.fProblem))
-                    File.Delete(mySub.fProblem);
-                FileStream output = new FileStream(mySub.fProblem, FileMode.CreateNew);
+                this.mySub.FilePath();
+                this.LoadData();
+                this.nProblem = 23;
+                if (File.Exists(this.mySub.fProblem))
+                    File.Delete(this.mySub.fProblem);
+                FileStream output = new FileStream(this.mySub.fProblem, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                binaryWriter.Write(nProblem);
+                binaryWriter.Write(this.nProblem);
                 binaryWriter.Close();
                 output.Close();
-                panel7.Invalidate();
+                this.panel7.Invalidate();
             }
         }
 

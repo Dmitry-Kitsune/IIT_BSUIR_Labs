@@ -478,6 +478,9 @@
     <EmbeddedResource Include="LinesForm.resx">
       <DependentUpon>LinesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LineSign.resx">
+      <DependentUpon>LineSign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListLineSign.resx">
       <DependentUpon>ListLineSign.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,6 +639,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\br_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elipse1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filledElipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEftArc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RightArc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TopArc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownArc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeftTriangle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledLeftTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RightTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledRightTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TopTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledTopTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TriangleBottompng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledBottomTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilledHexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CircleInTriangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConcentricCircles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />

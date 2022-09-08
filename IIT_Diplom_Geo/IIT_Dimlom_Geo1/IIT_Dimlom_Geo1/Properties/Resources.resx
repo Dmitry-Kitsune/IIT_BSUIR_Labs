@@ -118,76 +118,136 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="arc_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arc_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ZoomOutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ZoomOutIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TopArc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TopArc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LineHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LineHelp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ZoomOutIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ZoomOutIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circ_rad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circ_rad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LineLeng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LineLeng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circle_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\circle_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fillet3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillet3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fillet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fillet7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillet7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SelectBoX1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectBoX1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arc_lng2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arc_lng2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SelectBoX1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SelectBoX1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MoveIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoveIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tangent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tangent11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FilledRightTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilledRightTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LinePnt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LinePnt1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RightTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fillet6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fillet6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fillet4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillet4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LineLeng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LineLeng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TriangleBottompng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TriangleBottompng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LinePnt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LinePnt1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Blind" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blind1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="curve" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\curve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fillet3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fillet3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tangent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tangent2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="elipse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elipse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fillet5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillet5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MoveIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MoveIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arc_sh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arc_sh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FilledTopTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilledTopTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fillet2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fillet2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="circ_rad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circ_rad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TopTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TopTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="br_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\br_line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rectangle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rectangle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tangent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tangent2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LEftArc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LEftArc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filledElipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filledElipse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circle_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circle_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hexagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hexagon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fillet5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fillet5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightArc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filled-rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filled-rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownArc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DownArc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilledBottomTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilledBottomTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arc_sh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arc_sh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CircleInTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CircleInTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fillet4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fillet4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftTriangle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeftTriangle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="curve" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\curve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoomIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoomIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilledHexagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilledHexagon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fillet7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fillet7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arc_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arc_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fillet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fillet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tangent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tangent11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilledLeftTriangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FilledLeftTriangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConcentricCircles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConcentricCircles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

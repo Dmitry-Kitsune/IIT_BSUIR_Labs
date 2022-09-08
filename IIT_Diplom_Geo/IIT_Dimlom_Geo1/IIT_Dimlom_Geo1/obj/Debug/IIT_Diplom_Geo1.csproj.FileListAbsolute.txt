@@ -98,3 +98,4 @@ C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Di
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Diplom_Geo1.csproj.CopyComplete
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.exe
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.pdb
+C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\IIT_Diplom_Geo\IIT_Dimlom_Geo1\IIT_Dimlom_Geo1\obj\Debug\IIT_Dimlom_Geo1.LineSign.resources

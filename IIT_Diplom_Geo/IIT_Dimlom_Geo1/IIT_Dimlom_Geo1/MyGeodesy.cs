@@ -16148,47 +16148,44 @@ namespace IIT_Diplom_Geo1
             output.Close();
         }
 
-        public void KeepLine(string fCurLine)
+        public void KeepLine()
         {
-            if (File.Exists(fCurLine))
-                File.Delete(fCurLine);
-            FileStream output = new FileStream(fCurLine, FileMode.CreateNew);
+            if (File.Exists(this.fileLine))
+                File.Delete(this.fileLine);
+            FileStream output = new FileStream(this.fileLine, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-            binaryWriter.Write(kLine);
-            if (kLine > 0)
+            binaryWriter.Write(this.kLineInput);
+            for (int index1 = 1; index1 <= this.kLineInput; ++index1)
             {
-                for (int index1 = 1; index1 <= kLine; ++index1)
+                binaryWriter.Write(this.nLineCode[index1]);
+                binaryWriter.Write(this.nLongRad[index1]);
+                binaryWriter.Write(this.sWidLine[index1]);
+                binaryWriter.Write(this.dstLine[index1]);
+                binaryWriter.Write(this.rRadLine[index1]);
+                binaryWriter.Write(this.xRadLine[index1]);
+                binaryWriter.Write(this.yRadLine[index1]);
+                binaryWriter.Write(this.k1[index1]);
+                binaryWriter.Write(this.k2[index1]);
+                int num1 = this.k1[index1];
+                int num2 = this.k2[index1];
+                for (int index2 = num1; index2 <= num2; ++index2)
                 {
-                    binaryWriter.Write(nLineCode[index1]);
-                    binaryWriter.Write(nLongRad[index1]);
-                    binaryWriter.Write(sWidLine[index1]);
-                    binaryWriter.Write(dstLine[index1]);
-                    binaryWriter.Write(rRadLine[index1]);
-                    binaryWriter.Write(xRadLine[index1]);
-                    binaryWriter.Write(yRadLine[index1]);
-                    binaryWriter.Write(k1[index1]);
-                    binaryWriter.Write(k2[index1]);
-                    int num1 = k1[index1];
-                    int num2 = k2[index1];
-                    for (int index2 = num1; index2 <= num2; ++index2)
-                    {
-                        binaryWriter.Write(nameLin[index2]);
-                        binaryWriter.Write(xLin[index2]);
-                        binaryWriter.Write(yLin[index2]);
-                        binaryWriter.Write(zLin[index2]);
-                    }
+                    binaryWriter.Write(this.xLin[index2]);
+                    binaryWriter.Write(this.yLin[index2]);
                 }
             }
             binaryWriter.Close();
             output.Close();
         }
 
-        public void TriangInput(string fCurTriang)
+
+        public void TriangInput(string fileTrian)
         {
-            kTriang = 0;
-            if (!File.Exists(fCurTriang))
+            Cursor.Current = Cursors.WaitCursor;
+            this.kTriang = 0;
+            if (!File.Exists(fileTrian))
                 return;
-            FileStream input = new FileStream(fCurTriang, FileMode.Open, FileAccess.Read);
+            FileStream input = new FileStream(fileTrian, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
             try
             {
@@ -16196,18 +16193,18 @@ namespace IIT_Diplom_Geo1
                 binaryReader.ReadDouble();
                 binaryReader.ReadDouble();
                 binaryReader.ReadDouble();
-                kTriang = binaryReader.ReadInt32();
-                for (int index = 1; index <= kTriang; ++index)
+                this.kTriang = binaryReader.ReadInt32();
+                for (int index = 1; index <= this.kTriang; ++index)
                 {
-                    nTre[index] = binaryReader.ReadInt32();
-                    xTre[index] = binaryReader.ReadDouble();
-                    yTre[index] = binaryReader.ReadDouble();
-                    zTre[index] = binaryReader.ReadDouble();
+                    this.nTre[index] = binaryReader.ReadInt32();
+                    this.xTre[index] = binaryReader.ReadDouble();
+                    this.yTre[index] = binaryReader.ReadDouble();
+                    this.zTre[index] = binaryReader.ReadDouble();
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+                Console.WriteLine("The Read operation failed as expected.");
             }
             finally
             {
@@ -16215,6 +16212,38 @@ namespace IIT_Diplom_Geo1
                 binaryReader.Close();
             }
         }
+        //public void TriangInput(string fCurTriang)
+        //{
+        //    kTriang = 0;
+        //    if (!File.Exists(fCurTriang))
+        //        return;
+        //    FileStream input = new FileStream(fCurTriang, FileMode.Open, FileAccess.Read);
+        //    BinaryReader binaryReader = new BinaryReader((Stream)input);
+        //    try
+        //    {
+        //        binaryReader.ReadDouble();
+        //        binaryReader.ReadDouble();
+        //        binaryReader.ReadDouble();
+        //        binaryReader.ReadDouble();
+        //        kTriang = binaryReader.ReadInt32();
+        //        for (int index = 1; index <= kTriang; ++index)
+        //        {
+        //            nTre[index] = binaryReader.ReadInt32();
+        //            xTre[index] = binaryReader.ReadDouble();
+        //            yTre[index] = binaryReader.ReadDouble();
+        //            zTre[index] = binaryReader.ReadDouble();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+        //    }
+        //    finally
+        //    {
+        //        input.Close();
+        //        binaryReader.Close();
+        //    }
+        //}
 
         public void KeepLoadVertex(int iParam, string fCurVertex)
         {
@@ -18591,7 +18620,7 @@ namespace IIT_Diplom_Geo1
         {
             kHeight = 0;
             Cursor.Current = Cursors.WaitCursor;
-            panel.Text = "Подождите... Сортировка точек!";
+           // panel.Text = "Подождите... Сортировка точек!";
             xmin = 9999999.9;
             ymin = 9999999.9;
             xmax = -9999999.9;
@@ -18962,7 +18991,7 @@ namespace IIT_Diplom_Geo1
             int num2 = index2 = 0;
             string text = "Points weren't found: ";
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Lines' Data";
+            openFileDialog.Title = "Линии' Data";
             openFileDialog.Filter = "All files (*.*)|*.*";
             openFileDialog.FileName = str;
             openFileDialog.FilterIndex = 2;
@@ -19025,7 +19054,7 @@ namespace IIT_Diplom_Geo1
                                             text = text + nameAdd[index3] + ";";
                                             if (num2 > 10)
                                             {
-                                                int num5 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                                int num5 = (int)MessageBox.Show(text, "Линии' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                                 iCond = -99;
                                                 return;
                                             }
@@ -19088,7 +19117,7 @@ namespace IIT_Diplom_Geo1
                             text = text + nameAdd[index7] + ";";
                             if (num2 > 10)
                             {
-                                int num7 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                int num7 = (int)MessageBox.Show(text, "Линии' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 iCond = -99;
                                 return;
                             }
@@ -19124,7 +19153,7 @@ namespace IIT_Diplom_Geo1
                 }
                 if (num2 <= 0)
                     return;
-                int num8 = (int)MessageBox.Show(text, "Lines' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num8 = (int)MessageBox.Show(text, "Линии' Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iCond = -99;
             }
             else
@@ -22000,7 +22029,7 @@ namespace IIT_Diplom_Geo1
             DllClass1.doubleArray(xProj, ref kArray);
             DllClass1.doubleArray(yProj, ref kArray);
             DllClass1.doubleArray(zProj, ref kArray);
-            string text = "Lines Number with error: ";
+            string text = "Линии Number with error: ";
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Input Points File";
             openFileDialog.Filter = "All files (*.*)|*.*";

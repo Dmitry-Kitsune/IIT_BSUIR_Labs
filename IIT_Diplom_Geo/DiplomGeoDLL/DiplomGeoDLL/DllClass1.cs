@@ -27666,7 +27666,7 @@ namespace DiplomGeoDLL
             if (kPnt < 0)
                 return;
             int kArray = 999999;
-            stringArray(pntName, ref kArray);
+            DllClass1.stringArray(pntName, ref kArray);
             kArray -= 3;
             if (kPnt > kArray)
             {
@@ -27674,20 +27674,21 @@ namespace DiplomGeoDLL
             }
             else
             {
-                for (int i1 = 0; i1 <= kPnt; ++i1)
+                for (int index1 = 0; index1 <= kPnt; ++index1)
                 {
-                    if (!(pntName[i1] == ""))
+                    if (!(pntName[index1] == ""))
                     {
                         string str1 = "";
-                        string str2 = "aa" + pntName[i1];
+                        string str2 = "aa" + pntName[index1];
                         int length = str2.Length;
                         int num2 = -1;
-                        for (int i2 = 0; i2 < str2.Length; ++i2)
+                        for (int index2 = 0; index2 < str2.Length; ++index2)
                         {
-                            if (char.IsDigit(str2[i2]))
+                            if (char.IsDigit(str2[index2]))
                             {
                                 ++num2;
-                                str1 += (string)(object)str2[i2];
+                                str1 += (object)str2[index2];
+                                //str1 += (string)(object)str2[index2];
                             }
                         }
                         if (!(str1 == "") && num2 >= 0)

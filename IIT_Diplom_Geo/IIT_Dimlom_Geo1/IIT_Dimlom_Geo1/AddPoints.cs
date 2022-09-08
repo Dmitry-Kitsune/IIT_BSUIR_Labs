@@ -194,7 +194,7 @@ namespace IIT_Dimlom_Geo1
             groupBox4.Visible = false;
             panel7.Invalidate();
         }
-        private void button1_MouseHover(object sender, EventArgs e) => label12.Text = "Return to Main Menu";
+        private void button1_MouseHover(object sender, EventArgs e) => label12.Text = "Вернуться к Main Menu";
 
         private void button1_MouseLeave(object sender, EventArgs e) => label12.Text = "";
 
@@ -230,23 +230,23 @@ namespace IIT_Dimlom_Geo1
 
         private void FormLoad()
         {
-            xmin = 9999999.9;
-            ymin = 9999999.9;
-            zmin = 9999999.9;
-            xmax = -9999999.9;
-            ymax = -9999999.9;
-            zmax = -9999999.9;
-            if (File.Exists(myPoint.fileProcess))
+            this.xmin = 9999999.9;
+            this.ymin = 9999999.9;
+            this.zmin = 9999999.9;
+            this.xmax = -9999999.9;
+            this.ymax = -9999999.9;
+            this.zmax = -9999999.9;
+            if (File.Exists(this.myPoint.fileProcess))
             {
-                FileStream input = new FileStream(myPoint.fileProcess, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(this.myPoint.fileProcess, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
-                    nProcInput = binaryReader.ReadInt32();
+                    this.nProcInput = binaryReader.ReadInt32();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
+                    Console.WriteLine("The Read operation failed as expected.");
                 }
                 finally
                 {
@@ -254,94 +254,92 @@ namespace IIT_Dimlom_Geo1
                     input.Close();
                 }
             }
-            if (nProcInput == 970)
+            if (this.nProcInput == 970)
             {
-                groupBox3.Visible = false;
-                label11.Visible = false;
-                textBox11.Visible = false;
-                button21.Visible = false;
+                this.groupBox3.Visible = false;
+                this.label11.Visible = false;
+                this.textBox11.Visible = false;
+                this.button21.Visible = false;
             }
-            if (nProcInput == 920)
-                groupBox7.Visible = false;
-            DllClass1.SetColour(myPoint.brColor, myPoint.pnColor);
-            DllClass1.PointSymbLoad(myPoint.fsymbPnt, out kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.heiSymb);
-            myPoint.kSymbPnt = kSymbPnt;
-            myPoint.PolygonLoad(ref myPoint.kPolyInside);
-            kPoly = myPoint.kPoly;
-            myPoint.LineTopoLoad();
-            kLineTopo = myPoint.kLineTopo;
-            myPoint.LineLoad();
-            //myPoint.LineLoad(fCurLine);
-            kLineInput = myPoint.kLineInput;
-            xmin = myPoint.xmin;
-            ymin = myPoint.ymin;
-            xmax = myPoint.xmax;
-            ymax = myPoint.ymax;
-            myPoint.PointLoad();
-            //myPoint.PointLoad(fCurPnt, fCurHeig);
-            kPntPlus = myPoint.kPntPlus;
-            kPntInput = myPoint.kPntInput;
-            xmin = myPoint.xmin;
-            ymin = myPoint.ymin;
-            xmax = myPoint.xmax;
-            ymax = myPoint.ymax;
-            zmin = myPoint.zmin;
-            zmax = myPoint.zmax;
-            kPntFin = 0;
-            myPoint.PointLoadFin();
-            kPntFin = myPoint.kPntFin;
-            if (kPntPlus > 0 && !File.Exists(myPoint.fpointInscr))
+            if (this.nProcInput == 920)
+                this.groupBox7.Visible = false;
+            DllClass1.SetColour(this.myPoint.brColor, this.myPoint.pnColor);
+            DllClass1.PointSymbLoad(this.myPoint.fsymbPnt, out this.kSymbPnt, this.myPoint.numRec, this.myPoint.numbUser, this.myPoint.heiSymb);
+            this.myPoint.kSymbPnt = this.kSymbPnt;
+            this.myPoint.PolygonLoad(ref this.myPoint.kPolyInside);
+            this.kPoly = this.myPoint.kPoly;
+            this.myPoint.LineTopoLoad();
+            this.kLineTopo = this.myPoint.kLineTopo;
+            this.myPoint.LineLoad();
+            this.kLineInput = this.myPoint.kLineInput;
+            this.xmin = this.myPoint.xmin;
+            this.ymin = this.myPoint.ymin;
+            this.xmax = this.myPoint.xmax;
+            this.ymax = this.myPoint.ymax;
+            this.myPoint.PointLoad();
+            this.kPntPlus = this.myPoint.kPntPlus;
+            this.kPntInput = this.myPoint.kPntInput;
+            this.xmin = this.myPoint.xmin;
+            this.ymin = this.myPoint.ymin;
+            this.xmax = this.myPoint.xmax;
+            this.ymax = this.myPoint.ymax;
+            this.zmin = this.myPoint.zmin;
+            this.zmax = this.myPoint.zmax;
+            this.kPntFin = 0;
+            this.myPoint.PointLoadFin();
+            this.kPntFin = this.myPoint.kPntFin;
+            if (this.kPntPlus > 0 && !File.Exists(this.myPoint.fpointInscr))
             {
-                FileStream output = new FileStream(myPoint.fpointInscr, FileMode.CreateNew);
+                FileStream output = new FileStream(this.myPoint.fpointInscr, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                binaryWriter.Write(kPntPlus);
-                for (int index = 0; index <= kPntPlus; ++index)
+                binaryWriter.Write(this.kPntPlus);
+                for (int index = 0; index <= this.kPntPlus; ++index)
                 {
-                    myPoint.xPntInscr[index] = myPoint.xPnt[index];
-                    myPoint.yPntInscr[index] = myPoint.yPnt[index];
-                    myPoint.iHorVerPnt[index] = 0;
-                    binaryWriter.Write(myPoint.xPnt[index]);
-                    binaryWriter.Write(myPoint.yPnt[index]);
-                    binaryWriter.Write(myPoint.iHorVerPnt[index]);
+                    this.myPoint.xPntInscr[index] = this.myPoint.xPnt[index];
+                    this.myPoint.yPntInscr[index] = this.myPoint.yPnt[index];
+                    this.myPoint.iHorVerPnt[index] = 0;
+                    binaryWriter.Write(this.myPoint.xPnt[index]);
+                    binaryWriter.Write(this.myPoint.yPnt[index]);
+                    binaryWriter.Write(this.myPoint.iHorVerPnt[index]);
                 }
                 binaryWriter.Close();
                 output.Close();
             }
-            myPoint.LoadKeepInscr(1);
-            if (kPntFin > 0)
-                myPoint.InscriptionFin(1);
-            myPoint.PointProjLoad();
-            kPntProj = myPoint.kPntProj;
-            kProjInput = myPoint.kProjInput;
-            myPoint.LineProjLoad();
-            kLineProj = myPoint.kLineProj;
-            myPoint.TopoProjLoad();
-            kTopoProj = myPoint.kTopoProj;
-            myPoint.PolyProjLoad();
-            kPolyProj = myPoint.kPolyProj;
-            myPoint.LoadNode();
-            kNode = myPoint.kNodeTopo;
-            myPoint.KeepLoadAction(1);
-            nAction = myPoint.nAction;
-            if (nAction > 0)
+            this.myPoint.LoadKeepInscr(1);
+            if (this.kPntFin > 0)
+                this.myPoint.InscriptionFin(1);
+            this.myPoint.PointProjLoad();
+            this.kPntProj = this.myPoint.kPntProj;
+            this.kProjInput = this.myPoint.kProjInput;
+            this.myPoint.LineProjLoad();
+            this.kLineProj = this.myPoint.kLineProj;
+            this.myPoint.TopoProjLoad();
+            this.kTopoProj = this.myPoint.kTopoProj;
+            this.myPoint.PolyProjLoad();
+            this.kPolyProj = this.myPoint.kPolyProj;
+            this.myPoint.LoadNode();
+            this.kNode = this.myPoint.kNodeTopo;
+            this.myPoint.KeepLoadAction(1);
+            this.nAction = this.myPoint.nAction;
+            if (this.nAction > 0)
             {
-                myPoint.NodeActLoad(nAction);
-                kNodeAct = myPoint.kNodeAct;
-                myPoint.TopoActLoad(nAction);
-                kLineAct = myPoint.kLineAct;
-                myPoint.PolyActLoad(nAction);
-                kPolyAct = myPoint.kPolyAct;
+                this.myPoint.NodeActLoad(this.nAction);
+                this.kNodeAct = this.myPoint.kNodeAct;
+                this.myPoint.TopoActLoad(this.nAction);
+                this.kLineAct = this.myPoint.kLineAct;
+                this.myPoint.PolyActLoad(this.nAction);
+                this.kPolyAct = this.myPoint.kPolyAct;
             }
-            if (nAction == 0)
-                KeepActionZero();
-            xminCur = xmin;
-            yminCur = ymin;
-            xmaxCur = xmax;
-            ymaxCur = ymax;
-            DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-            if (iCond >= 0)
+            if (this.nAction == 0)
+                this.KeepActionZero();
+            this.xminCur = this.xmin;
+            this.yminCur = this.ymin;
+            this.xmaxCur = this.xmax;
+            this.ymaxCur = this.ymax;
+            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            if (this.iCond >= 0)
                 return;
-            iGraphic = 1;
+            this.iGraphic = 1;
         }
 
         private void NewPointDraw(PaintEventArgs e, string sNew, double xNew, double yNew)
@@ -1064,44 +1062,44 @@ namespace IIT_Dimlom_Geo1
 
         private void InputData_Click(object sender, EventArgs e)
         {
-            nProcess = 550;
-            nControl = 0;
-            kDat = 0;
-            kRcPnt = 0;
-            sNew = "";
-            xNew = 0.0;
-            yNew = 0.0;
-            zNew = 0.0;
-            iCode1 = 0;
-            iCode2 = 0;
-            groupBox7.Visible = false;
-            groupBox4.Visible = true;
-            groupBox6.Visible = false;
-            textBox1.Visible = false;
-            textBox2.Visible = false;
-            textBox3.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox6.Visible = false;
-            textBox8.ReadOnly = false;
-            textBox9.ReadOnly = false;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            button13.Visible = false;
+            this.nProcess = 550;
+            this.nControl = 0;
+            this.kDat = 0;
+            this.kRcPnt = 0;
+            this.sNew = "";
+            this.xNew = 0.0;
+            this.yNew = 0.0;
+            this.zNew = 0.0;
+            this.iCode1 = 0;
+            this.iCode2 = 0;
+            this.groupBox7.Visible = false;
+            this.groupBox4.Visible = true;
+            this.groupBox6.Visible = false;
+            this.textBox1.Visible = false;
+            this.textBox2.Visible = false;
+            this.textBox3.Visible = false;
+            this.textBox4.Visible = false;
+            this.textBox5.Visible = false;
+            this.textBox6.Visible = false;
+            this.textBox8.ReadOnly = false;
+            this.textBox9.ReadOnly = false;
+            this.label1.Visible = false;
+            this.label2.Visible = false;
+            this.label3.Visible = false;
+            this.label4.Visible = false;
+            this.label5.Visible = false;
+            this.label6.Visible = false;
+            this.button13.Visible = false;
             int nName = 0;
-            DllClass1.NewPointName(kPntPlus, myPoint.namePnt, out nName, out sNew);
+            DllClass1.NewPointName(this.kPntPlus, this.myPoint.namePnt, out nName, out this.sNew);
             if (nName < 0)
                 return;
-            textBox7.Text = sNew;
-            textBox8.Text = "";
-            textBox9.Text = "";
-            textBox10.Text = "0";
-            textBox11.Text = "0";
-            panel7.Invalidate();
+            this.textBox7.Text = this.sNew;
+            this.textBox8.Text = "";
+            this.textBox9.Text = "";
+            this.textBox10.Text = "0";
+            this.textBox11.Text = "0";
+            this.panel7.Invalidate();
         }
 
         private void PointInfo_Click(object sender, EventArgs e)

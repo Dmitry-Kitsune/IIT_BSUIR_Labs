@@ -207,47 +207,69 @@ namespace IIT_Dimlom_Geo1
         }
 
 
-        private void button1_MouseHover(object sender, EventArgs e) => this.label3.Text = "Закрыть окно";
+        private void button1_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Закрыть окно";
 
-        private void button1_MouseLeave(object sender, EventArgs e) => this.label3.Text = "";
+        private void button1_MouseLeave(object sender, EventArgs e) 
+            => this.label3.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
+        private void button2_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
 
-        private void button3_MouseHover(object sender, EventArgs e) => this.label3.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button3_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button4_MouseHover(object sender, EventArgs e) => this.label3.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button4_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
 
-        private void button5_MouseHover(object sender, EventArgs e) => this.label3.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
+        private void button5_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button6_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Line. By dialog set up value of the Items и нажмите 'Подтвердить' или 'Delay'";
+        private void button6_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Выберите линию с помощью мыши. В диалоговом окне установить значение элементов и нажмите 'Подтвердить' или 'Delay'";
 
-        private void button7_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Line.";
+        private void button7_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Выберите линию с помощью мыши.";
 
-        private void button10_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By dialog set up value of the Items";
+        private void button10_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. В диалоговом окне установить значение элементов";
 
-        private void button11_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Parcel(label). By dialog set up value of the Items";
+        private void button11_MouseHover(object sender, EventArgs e)
+            => this.label3.Text = "Нажмите кнопку. С помощью выделения левой кнопки мыши Parcel(label). В диалоговом окне установить значение элементов";
 
-        private void button19_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Label and by mouse(click) show new spot";
+        private void button19_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. С помощбю левой кнопки мыши выберите надпись (Нажатием) и укажите новое место";
 
-        private void button20_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Label for changing inscription(Horizontal/Vertical)";
+        private void button20_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Выделите надпись с помощью левой кнопки мыши для смещения надписи (Вертикально/Горизонтально)";
 
-        private void button29_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Point for moving of its Name(not point). Show new spot";
+        private void button29_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Выделите точку с помощбю левой кнопки мыши для перемещиния имени данной точки. и укажите новое место для надписи";
 
-        private void button30_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select Point(name) for changing inscription";
+        private void button30_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Выделите левой кнопкой миши имя точки для смены данного имени";
 
-        private void button21_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Type inscription, set up properties. By left button of mouse show spot for inscription";
+        private void button21_MouseHover(object sender, EventArgs e)
+            
+            => this.label3.Text = "Нажмите кнопку. Введите надпись, установите свойства. С помощбю левой кнопки мыши укажите место, чтобы установить надпись";
 
-        private void button22_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Select additional inscription for moving to new spot. Show new spot by mouse";
+        private void button22_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. Вделите дополнительную надпись для перемещения ее на новое место. и укажите новое место с помощью мыши";
 
-        private void button23_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select additional inscription for removing";
+        private void button23_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. С помощью выделения левой кнопки мыши additional inscription for removing";
 
-        private void button27_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button for openning of Dialog for Printing final Results";
+        private void button27_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку, чтобы открыть диалоговое окно для печати окончательных результатов.";
 
-        private void button17_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. By left button of mouse select point for removing";
+        private void button17_MouseHover(object sender, EventArgs e)
+            => this.label3.Text = "Нажмите кнопку. Выделите точку с помощью левой кнопки мыши для удаления.";
 
-        private void button25_MouseHover(object sender, EventArgs e) => this.label3.Text = "Click Button and select point. Use 'Help' and select point's code. Click 'Confirm changing'";
+        private void button25_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку и выделите точку. Используйте 'Помощь (Help) - в разработке' и выберите код точки. Нажмите 'Подтвердить изменения'";
 
-        private void button15_MouseHover(object sender, EventArgs e) => this.label3.Text = "Нажмите кнопку. Select symbol and istall it by mouse in appropriate spots. Possible more than one";
+        private void button15_MouseHover(object sender, EventArgs e) 
+            => this.label3.Text = "Нажмите кнопку. С помощбю мыши выберите символ и затем установить его в соответствующее место. Возможно выбрать больше одного";
 
 
         private void FormLoad()
@@ -346,7 +368,7 @@ namespace IIT_Dimlom_Geo1
                 this.kPolyCancel = this.myFin.kPolyCancel;
                 if (this.kPolyCancel < 1)
                 {
-                    int num = (int)MessageBox.Show("Данные отсутствуют", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Данные отсутствуют", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 this.myFin.CancLineFin(this.nAction);
@@ -1213,7 +1235,7 @@ namespace IIT_Dimlom_Geo1
                     {
                         this.kSel = -1;
                         this.kRcPnt = 0;
-                        int num16 = (int)MessageBox.Show("Type Inscription", "Additional Inscription");
+                        int num16 = (int)MessageBox.Show("Введите надпись", "Добавление надписей");
                         return;
                     }
                     if (this.radioButton1.Checked)
@@ -1407,7 +1429,7 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (this.textBox1.Text == "")
             {
-                int num1 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Lines' Symbols");
+                int num1 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Символы линий");
             }
             else
             {
@@ -1442,7 +1464,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (num3 == 0)
                     {
-                        int num4 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Lines' Symbols");
+                        int num4 = (int)MessageBox.Show("Неправильный номер. Проверьте свои коды", "Символы линий");
                     }
                     else
                     {
@@ -1475,7 +1497,7 @@ namespace IIT_Dimlom_Geo1
                                     this.myFin.LineLoad();
                                     this.kLineInput = this.myFin.kLineInput;
                                     DllClass1.FinalInput(this.kLineInput, this.myFin.nLineCode, this.myFin.rRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin, this.kLineFinal, this.myFin.nCodeFin, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.tolerance);
-                                    this.myFin.KeepLine(fCurLine);
+                                    this.myFin.KeepLine();
                                 }
                                 this.kSel = -1;
                                 this.kRcPnt = 0;
@@ -1530,7 +1552,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1562,7 +1584,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1675,7 +1697,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1705,7 +1727,7 @@ namespace IIT_Dimlom_Geo1
             this.kPolyFinal = this.myFin.kPolyFinal;
             if (this.kPolyFinal == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -2232,6 +2254,5 @@ namespace IIT_Dimlom_Geo1
             this.kInstall = 0;
             this.panel7.Invalidate();
         }
-
     }
 }

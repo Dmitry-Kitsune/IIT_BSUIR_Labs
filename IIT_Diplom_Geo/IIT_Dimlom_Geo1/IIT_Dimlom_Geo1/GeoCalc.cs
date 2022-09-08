@@ -195,33 +195,33 @@ namespace IIT_Dimlom_Geo1
             FormLoad();
         }
 
-        private void button10_MouseHover(object sender, EventArgs e) => label9.Text = "Close Dialogue";
+        private void button10_MouseHover(object sender, EventArgs e) => label9.Text = "Закрыть окно";
 
         private void button10_MouseLeave(object sender, EventArgs e) => label9.Text = "";
 
-        private void button1_MouseHover(object sender, EventArgs e) => label9.Text = "Open Standard Dialogue for Input data file of measurements of Geodetic foundation";
+        private void button1_MouseHover(object sender, EventArgs e) => label9.Text = "Открыть стандартное окно для загрузки данных с геодезическими измерениями из ФАЙЛА";
 
-        private void button17_MouseHover(object sender, EventArgs e) => label9.Text = "Open Dialogue for creation and update points' symbology";
+        private void button17_MouseHover(object sender, EventArgs e) => label9.Text = "Окно диалог для создания и обновления символов точек";
 
-        private void button11_MouseHover(object sender, EventArgs e) => label9.Text = "Open Standard Dialogue for Input data file of measurements of DTM points";
+        private void button11_MouseHover(object sender, EventArgs e) => label9.Text = "Открыть стандартное окно для загрузки данных измерений точек ЦММ из ФАЙЛА";
 
-        private void button12_MouseHover(object sender, EventArgs e) => label9.Text = "Open Dialogue for addition points, measured with other methods";
+        private void button12_MouseHover(object sender, EventArgs e) => label9.Text = "Открыть окно для добавления точек, измеренных другими методами";
 
-        private void button21_MouseHover(object sender, EventArgs e) => label9.Text = "Click button and select point. Change symbol or click button 'Help selection'. Click button 'Save symbol'";
+        private void button21_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопку и выберите точку. Измените символ или нажмите кнопку 'Помощь в выборе'. Нажмите кнопку 'Сохранить символ'";
 
-        private void button20_MouseHover(object sender, EventArgs e) => label9.Text = "Click button and select point. Change symbol or click button 'Help selection'. Click button 'Save symbol'";
+        private void button20_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопку и выберите точку. Измените символ или нажмите кнопку 'Помощь в выборе'. Нажмите кнопку 'Сохранить символ'";
 
-        private void button18_MouseHover(object sender, EventArgs e) => label9.Text = "Click button of mouse near description and after that on new spot for this description";
+        private void button18_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопкой мыши рядом с описанием, а затем щелкните на новом месте для перемещения описания в это место";
 
-        private void button31_MouseHover(object sender, EventArgs e) => label9.Text = "Click button of mouse near description and after that on new spot for this description";
+        private void button31_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопкой мыши рядом с описанием, а затем щелкните на новом месте для перемещения описания в это место";
 
-        private void button19_MouseHover(object sender, EventArgs e) => label9.Text = "Click button of mouse near description for changing it horizontal or vertical position";
+        private void button19_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопку мыши рядом с описанием, чтобы изменить его горизонтальное или вертикальное положение.";
 
-        private void button32_MouseHover(object sender, EventArgs e) => label9.Text = "Click button of mouse near description for changing it horizontal or vertical position";
+        private void button32_MouseHover(object sender, EventArgs e) => label9.Text = "Нажмите кнопку мыши рядом с описанием, чтобы изменить его горизонтальное или вертикальное положение.";
 
-        private void button22_MouseHover(object sender, EventArgs e) => label9.Text = "Before clicking button select scale";
+        private void button22_MouseHover(object sender, EventArgs e) => label9.Text = "Перед нажатием кнопки выберите масштаб";
 
-        private void button28_MouseHover(object sender, EventArgs e) => label9.Text = "Before clicking button select scale";
+        private void button28_MouseHover(object sender, EventArgs e) => label9.Text = "Перед нажатием кнопки выберите масштаб";
 
 
 
@@ -248,7 +248,7 @@ namespace IIT_Dimlom_Geo1
                 label2.Text = sPart[1] + "\\--Проект не выбран";
                 if (File.Exists(myGeoCalc.fileAllProj))
                     return;
-                int num2 = (int)MessageBox.Show("Click 'New project' for opening project");
+                int num2 = (int)MessageBox.Show("Нажмите 'Новый проект', чтобы открыть проект.");
             }
             else
             {
@@ -259,7 +259,7 @@ namespace IIT_Dimlom_Geo1
                 LoadData();
                 if (kGeo == 0)
                 {
-                    int num3 = (int)MessageBox.Show("Use 'Measurements data file input'", "GeoCalc", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Используйте 'Загрузить данные измерений из файла'", "Геодезические измерения", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 panel7.Invalidate();
             }
@@ -585,7 +585,7 @@ namespace IIT_Dimlom_Geo1
             myGeoCalc.PointCollect(0, kGeo, myGeoCalc.nameGeo, out iCond);
             if (iCond < 0)
             {
-                int num7 = (int)MessageBox.Show("Check and Correct Data");
+                int num7 = (int)MessageBox.Show("Проверьте и исправьте данные");
                 iGraphic = 1;
             }
             else
@@ -729,7 +729,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (kDif == 0)
                 {
-                    int num9 = (int)MessageBox.Show("Zenith angle isn't define");
+                    int num9 = (int)MessageBox.Show("Диррекционный угол не определен");
                 }
                 kCheck = 0;
                 if (File.Exists(myGeoCalc.fileCheck))
@@ -974,7 +974,10 @@ namespace IIT_Dimlom_Geo1
             if (nProcess != 830 && nProcess != 840 && nProcess != 850 && nProcess != 220)
                 return;
             if (kTaheo > 0)
-                DllClass1.PointsDraw(e, myGeoCalc.fsymbPnt, 0, kTaheo, myGeoCalc.nameTah, myGeoCalc.xTah, myGeoCalc.yTah, myGeoCalc.zTah, myGeoCalc.xTahInscr, myGeoCalc.yTahInscr, myGeoCalc.iHorVerTah, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myGeoCalc.nTah1, myGeoCalc.nCode2, kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, myGeoCalc.ixSqu, myGeoCalc.iySqu, myGeoCalc.numCol, myGeoCalc.brColor, myGeoCalc.pnColor);
+                DllClass1.PointsDraw(e, myGeoCalc.fsymbPnt, 0, kTaheo, myGeoCalc.nameTah, myGeoCalc.xTah, myGeoCalc.yTah, 
+                    myGeoCalc.zTah, myGeoCalc.xTahInscr, myGeoCalc.yTahInscr, myGeoCalc.iHorVerTah, scaleToWin, xBegX, yBegY, 
+                    xBegWin, yBegWin, myGeoCalc.nTah1, myGeoCalc.nCode2, kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, 
+                    myGeoCalc.ixSqu, myGeoCalc.iySqu, myGeoCalc.numCol, myGeoCalc.brColor, myGeoCalc.pnColor);
             if (kRcPnt <= 0)
                 return;
             for (int index = 1; index <= kRcPnt; ++index)
@@ -1304,7 +1307,7 @@ namespace IIT_Dimlom_Geo1
             int iCond = 0;
             if (!File.Exists(myGeoCalc.fileProj))
             {
-                int num = (int)MessageBox.Show("Project wasn't opened");
+                int num = (int)MessageBox.Show("Проект не открыт");
             }
             else
             {
@@ -1346,7 +1349,7 @@ namespace IIT_Dimlom_Geo1
             myGeoCalc.PointCollect(0, kGeo, myGeoCalc.nameGeo, out iCond);
             if (iCond < 0)
             {
-                int num3 = (int)MessageBox.Show("Check and Correct Data");
+                int num3 = (int)MessageBox.Show("Проверьте и исправьте данные");
                 iGraphic = 1;
             }
             else
@@ -1354,7 +1357,7 @@ namespace IIT_Dimlom_Geo1
                 kGeoFin = myGeoCalc.kGeoFin;
                 if (!File.Exists(myGeoCalc.flineFile))
                 {
-                    int num4 = (int)MessageBox.Show("Данные отсутствуют", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num4 = (int)MessageBox.Show("Данные отсутствуют", "Погрешности измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1539,7 +1542,7 @@ namespace IIT_Dimlom_Geo1
                     while (num21 == 0);
                     if (kDat < 1)
                     {
-                        int num26 = (int)MessageBox.Show("No doubtful data", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num26 = (int)MessageBox.Show("Нет Погрешности измерений", "Погрешности измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     if (kDat > 0)
                     {
@@ -1632,7 +1635,7 @@ namespace IIT_Dimlom_Geo1
             nControl = 0;
             if (!File.Exists(myGeoCalc.fDoubtful))
             {
-                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Doubtful data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Погрешности измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1658,7 +1661,7 @@ namespace IIT_Dimlom_Geo1
             myGeoCalc.PointCollect(0, kGeo, myGeoCalc.nameGeo, out iCond);
             if (iCond < 0)
             {
-                int num = (int)MessageBox.Show("Basic Points are absent", "Characteristic Points of District", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Базовые точки отсутствуют", "Точки характеристик района(местности)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 iGraphic = 1;
             }
             else
@@ -1667,7 +1670,7 @@ namespace IIT_Dimlom_Geo1
                 kGeoFin = myGeoCalc.kGeoFin;
                 if (kGeoFin < 1)
                 {
-                    int num1 = (int)MessageBox.Show("Basic Points are absent", "Characteristic Points of District", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num1 = (int)MessageBox.Show("Базовые точки отсутствуют", "Точки характеристик района(местности)", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -1811,7 +1814,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num1 = (int)MessageBox.Show("Distinctive Points of District are absent", "Distinctive Points of District", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Характерные точки местности отсутствуют", "Точки характеристик местности", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1920,13 +1923,18 @@ namespace IIT_Dimlom_Geo1
                 int iParam = 0;
                 DllClass1.Print_Points(e, myGeoCalc.fsymbPnt, sPixInch, iScaleMap, 
                     xa, ya, kGeoAll, myGeoCalc.nameGeo, myGeoCalc.xGeo, 
-                    myGeoCalc.yGeo, myGeoCalc.zGeo, iParam, myGeoCalc.xGeoInscr, myGeoCalc.yGeoInscr, myGeoCalc.iHorVerGeo, myGeoCalc.nGeoCode, myGeoCalc.nCode2, myGeoCalc.kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, myGeoCalc.ixSqu, myGeoCalc.iySqu, myGeoCalc.numCol, xPageBeg, yPageBeg, myGeoCalc.brColor, myGeoCalc.pnColor, iColorPrint);
+                    myGeoCalc.yGeo, myGeoCalc.zGeo, iParam, myGeoCalc.xGeoInscr, myGeoCalc.yGeoInscr, myGeoCalc.iHorVerGeo, 
+                    myGeoCalc.nGeoCode, myGeoCalc.nCode2, myGeoCalc.kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, myGeoCalc.ixSqu,
+                    myGeoCalc.iySqu, myGeoCalc.numCol, xPageBeg, yPageBeg, myGeoCalc.brColor, myGeoCalc.pnColor, iColorPrint);
             }
             if (nProcess == 240)
             {
                 int iParam = 0;
                 if (kTaheo > 0)
-                    DllClass1.Print_Points(e, myGeoCalc.fsymbPnt, sPixInch, iScaleMap, xa, ya, kGeoFin, myGeoCalc.nameFin, myGeoCalc.xFin, myGeoCalc.yFin, myGeoCalc.zFin, iParam, myGeoCalc.xPntInscr, myGeoCalc.yPntInscr, myGeoCalc.iHorVerPnt, myGeoCalc.nCode1, myGeoCalc.nCode2, myGeoCalc.kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, myGeoCalc.ixSqu, myGeoCalc.iySqu, myGeoCalc.numCol, xPageBeg, yPageBeg, myGeoCalc.brColor, myGeoCalc.pnColor, iColorPrint);
+                    DllClass1.Print_Points(e, myGeoCalc.fsymbPnt, sPixInch, iScaleMap, xa, ya, kGeoFin, myGeoCalc.nameFin, myGeoCalc.xFin,
+                        myGeoCalc.yFin, myGeoCalc.zFin, iParam, myGeoCalc.xPntInscr, myGeoCalc.yPntInscr, myGeoCalc.iHorVerPnt, myGeoCalc.nCode1,
+                        myGeoCalc.nCode2, myGeoCalc.kSymbPnt, myGeoCalc.numRec, myGeoCalc.numbUser, myGeoCalc.ixSqu, myGeoCalc.iySqu, myGeoCalc.numCol,
+                        xPageBeg, yPageBeg, myGeoCalc.brColor, myGeoCalc.pnColor, iColorPrint);
             }
             DllClass1.Page_PrevPrint(e, sPixInch, iScaleMap, xa, ya, xPageBeg, yPageBeg, ixPixel, iyPixel, nPage);
         }
@@ -1977,7 +1985,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Распечатать данных геодезических измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2060,7 +2068,7 @@ namespace IIT_Dimlom_Geo1
                     x2, y2, x3, y3, x4, y4);
                 if (kPage < 1)
                 {
-                    int num3 = (int)MessageBox.Show("Change Map Scale", "Printing Scheme", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Изменить масштаб карты", "Схема печати", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -2105,7 +2113,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Печать точек ЦММ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2155,7 +2163,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.BoundPage(iScaleMap, myGeoCalc.kGeoFin, myGeoCalc.xFin, myGeoCalc.yFin, dxPage, dyPage, out kPage, x1, y1, x2, y2, x3, y3, x4, y4);
                 if (kPage < 1)
                 {
-                    int num2 = (int)MessageBox.Show("Change Map Scale", "Printing Scheme", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Изменить масштаб карты", "Схема печати", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -2467,11 +2475,11 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fgeoGeo))
             {
-                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Распечатать данных геодезических измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (kGeo < 1)
             {
-                int num2 = (int)MessageBox.Show("Данные отсутствуют", "Geo foundation print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Данные отсутствуют", "Распечатать данных геодезических измерений", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2492,7 +2500,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myGeoCalc.fGeoAll))
             {
-                int num1 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Данные отсутствуют", "Печать точек ЦММ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2501,7 +2509,7 @@ namespace IIT_Dimlom_Geo1
                 kTaheo = myGeoCalc.kTaheo;
                 if (kTaheo < 1)
                 {
-                    int num2 = (int)MessageBox.Show("Данные отсутствуют", "DTM points print", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Данные отсутствуют", "Печать точек ЦММ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {

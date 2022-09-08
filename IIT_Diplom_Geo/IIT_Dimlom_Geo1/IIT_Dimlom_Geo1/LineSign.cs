@@ -800,7 +800,7 @@ namespace IIT_Dimlom_Geo1
                         }
                     }
                 }
-                if (MessageBox.Show("Do you really want to delete last item?", "Lines symbols creation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Do you really want to delete last item?", "Линии symbols creation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 DllClass1.LastLineItem(ref kItemLine, myLin.fitemLine, myLin.fLinePixel);
                 if (kItemLine == 0)
@@ -903,7 +903,7 @@ namespace IIT_Dimlom_Geo1
                         break;
                     }
                 }
-                if (MessageBox.Show("Do you really want to delete last symbol ?", "Lines symbols creation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Do you really want to delete last symbol ?", "Линии symbols creation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 --kSymbLine;
                 myLin.kSymbLine = kSymbLine;

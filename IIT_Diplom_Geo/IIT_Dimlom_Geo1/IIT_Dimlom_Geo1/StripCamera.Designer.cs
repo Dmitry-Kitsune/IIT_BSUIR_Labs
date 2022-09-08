@@ -154,7 +154,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Gray;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.textBox35);
             this.groupBox1.Controls.Add(this.textBox34);
             this.groupBox1.Controls.Add(this.textBox33);

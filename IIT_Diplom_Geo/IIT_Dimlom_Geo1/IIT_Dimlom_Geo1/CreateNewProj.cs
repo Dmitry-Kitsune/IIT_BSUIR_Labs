@@ -89,7 +89,7 @@ namespace IIT_Diplom_Geo1
             this.myProj.FilePath();
             if (!File.Exists(this.myProj.tmpStr))
             {
-                int num = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             int num1 = 0;

@@ -172,7 +172,7 @@ namespace IIT_Dimlom_Geo1
             this.FormLoad();
         }
 
-        private void button1_MouseHover(object sender, EventArgs e) => this.label11.Text = "Close of Dialog";
+        private void button1_MouseHover(object sender, EventArgs e) => this.label11.Text = "Закрыть окно";
 
         private void button1_MouseLeave(object sender, EventArgs e) => this.label11.Text = "";
 
@@ -203,7 +203,7 @@ namespace IIT_Dimlom_Geo1
 
         private void FormLoad()
         {
-            xmin = 9999999.9;
+            this.xmin = 9999999.9;
             this.ymin = 9999999.9;
             this.xmax = -9999999.9;
             this.ymax = -9999999.9;
@@ -214,7 +214,6 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolySymbolLoad(this.myPol.fsymbPoly, out this.kSymbPoly, out this.hSymbPoly);
             this.iPointDraw = 1;
             this.kPntPlus = 0;
-            //this.myPol.PointLoad(fCurPnt, fCurHeig);
             this.myPol.PointLoad();
             this.kPntPlus = this.myPol.kPntPlus;
             this.kPntInput = this.myPol.kPntInput;
@@ -505,7 +504,7 @@ namespace IIT_Dimlom_Geo1
                 double rd = num1;
                 DllClass1.FindLine(this.xArc[0], this.yArc[0], this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.radLine, ref this.myPol.xOut, ref this.myPol.yOut, ref this.myPol.zLin, ref this.myPol.zPik, out rd, out xrd, out yrd, out this.kSel, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop, out this.xCur, out this.yCur, out az, out this.indLine);
                 this.panel7.Invalidate();
-                if (MessageBox.Show("Do you really want to Delete this line ?", "Linear Topology Correction", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить эту строку ?", "Linear Topology Correction", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     this.kSel = -1;
                     this.kRcPnt = 0;
@@ -923,7 +922,7 @@ namespace IIT_Dimlom_Geo1
             this.kLineTopo = this.myPol.kLineTopo;
             if (this.kLineTopo == 0)
             {
-                int num = (int)MessageBox.Show("Linear Topology wasn't created", "Linear Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы", "Построение линейной топологии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -951,7 +950,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.CleanLineTopo(ref this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.radLine, ref this.myPol.zLin, ref this.myPol.zPik, ref this.myPol.nWork, ref this.myPol.xWork, ref this.myPol.yWork, this.tolerance);
             if (this.kLineTopo == 0)
             {
-                int num = (int)MessageBox.Show("Linear Topology wasn't created", "Linear Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы", "Построение линейной топологии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -959,13 +958,13 @@ namespace IIT_Dimlom_Geo1
                 this.myPol.LoadNode();
                 this.kNode = this.myPol.kNodeTopo;
                 int kNew = 0;
-                this.panel1.Text = "Please, wait....Check up Double Lines";
+                this.panel1.Text = "Пожалуйста подождите....Проверка двойных линий";
                 DllClass1.RemoveDoubleLine(this.tolerance, ref this.kLineTopo, ref this.myPol.rWork, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, out kNew, ref this.myPol.pWork, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.nWork, ref this.myPol.nDop1, ref this.myPol.nDop2, this.panel1);
-                this.panel1.Text = "Please, wait....Polygonal Topology Building";
+                this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
                 DllClass1.LinesToPoly(this.tolerance, this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, this.kNode, ref this.myPol.xNode, ref this.myPol.yNode, out this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, ref this.myPol.areaPol, ref this.myPol.areaLeg, ref this.myPol.nSymbPoly, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xPol, ref this.myPol.yPol, out this.kInter, ref this.myPol.indPol, ref this.myPol.kn1, ref this.myPol.kn2, ref this.myPol.nWork, ref this.myPol.indInter, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, ref this.myPol.xWork2, ref this.myPol.yWork2, ref this.myPol.pWork, ref this.myPol.rWork, ref this.myPol.zDop, this.panel1);
                 if (this.myPol.kPoly == 0)
                     return;
-                this.panel1.Text = "Number polygons = " + Convert.ToString(this.myPol.kPoly);
+                this.panel1.Text = "Число полигонов = " + Convert.ToString(this.myPol.kPoly);
                 this.sArea = 0.0;
                 for (int index = 1; index <= this.myPol.kPoly; ++index)
                 {
@@ -976,7 +975,7 @@ namespace IIT_Dimlom_Geo1
                 this.myPol.sArea = this.sArea;
                 this.myPol.arExter = this.arExter;
                 this.myPol.KeepExter();
-                this.panel1.Text = "Please, wait....Polygon Label Definition";
+                this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
                 DllClass1.KeepPolyLabel(this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xPol, ref this.myPol.yPol, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.xWork2, ref this.myPol.yWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.zDop, ref this.myPol.nDop1, ref this.myPol.nDop2, ref this.myPol.nDop3, this.panel1);
                 this.myPol.KeepPoly();
                 this.kPolySource = this.myPol.kPoly;
@@ -1034,7 +1033,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1154,7 +1153,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1197,7 +1196,7 @@ namespace IIT_Dimlom_Geo1
             this.myPol.PolygonLoad(ref this.myPol.kPolyInside);
             if (this.myPol.kPoly == 0)
             {
-                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Топология полигонов не была создана", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.nProcess = 0;
             }
             else
@@ -1234,7 +1233,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (num1 == 0)
             {
-                int num2 = (int)MessageBox.Show("Tolerance for Difference Calculated and Legal areas isn't defined", "Polygonal Topology Building", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Tolerance for Difference Calculated and Legal areas isn't defined", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             DllClass1.CheckText(this.textBox2.Text, out this.sArea, out this.iCond);
             if (this.iCond < 0)
@@ -1310,7 +1309,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myPol.flineTopo))
             {
-                int num = (int)MessageBox.Show("LINEAR TOPOLOGY wasn't created.", "Lines Forming", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы.", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;

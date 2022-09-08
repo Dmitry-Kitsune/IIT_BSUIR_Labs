@@ -225,11 +225,11 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (num1 == 0)
                 {
-                    int num2 = (int)MessageBox.Show("Открыть новый проект", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Открыть новый проект", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (num1 > 0)
                 {
-                    int num3 = (int)MessageBox.Show("Use Project Selet or Open New Project", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Используйте выбор проекта или создать новый проект", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             mySub.FilePath();
@@ -250,7 +250,7 @@ namespace IIT_Dimlom_Geo1
                 label2.Text = sPart[1] + "\\+" + mySub.curProject;
                 if (!File.Exists(mySub.tmpStr) && nProcess == 910)
                 {
-                    int num = (int)MessageBox.Show("Drive wasn't defined. Use 'Drive Change'", "Cadastral", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Диск не был определен. Используйте 'Cменить диск'", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 LoadData();
                 panel7.Invalidate();
@@ -288,24 +288,24 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (nProblem == 1)
             {
-                label4.Text = "Last process: Forming Points' symbology library";
+                label4.Text = "Последний процесс: Библиотека символов построения линий";
                 if (kSymbPnt > 0)
                     mySub.RectCoord(pixWid, pixHei, kSymbPnt, mySub.heiSymb, out kRect, mySub.nVert, mySub.xVert, mySub.yVert, out rWid, out rHei);
             }
             if (nProblem == 2)
             {
-                label4.Text = "Last process: Forming Lines' symbology library";
+                label4.Text = "Последний процесс: Библиотека символов построения линий";
                 if (kSymbLine > 0)
                     mySub.RectLineSign(pixWid, pixHei, kSymbLine, hSymbLine, out kRect, mySub.nVert, mySub.xVert, mySub.yVert, out rWid, out rHei);
             }
             if (nProblem == 3)
             {
-                label4.Text = "Last process: Forming Polygons' symbology library";
+                label4.Text = "Последний процесс: Библиотека символов построения полигонов";
                 if (kPolySymb > 0)
                     mySub.RectPolySign(pixWid, pixHei, kPolySymb, hSymbPoly, out kRectPoly, mySub.nVert, mySub.xVert, mySub.yVert, out rWidPoly, out rHeiPoly);
             }
             if (nProblem == 10)
-                label4.Text = "Verification of Geodesy process";
+                label4.Text = "Проверка процесса 'Геодезия'";
             if (nProblem == 11)
             {
                 xmin = 9999999.9;
@@ -696,7 +696,7 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             if (!File.Exists(mySub.fileAllProj))
             {
-                int num1 = (int)MessageBox.Show("Projects weren't defined. Use New Project", "Select Project", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран. Используйте 'Новый проект'", "Выбрать проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -720,7 +720,7 @@ namespace IIT_Dimlom_Geo1
                 if (!File.Exists(mySub.fileProj))
                 {
                     label2.Text = sPart[1] + "\\--Проект не выбран";
-                    int num3 = (int)MessageBox.Show("Projects wasn't defined.", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Проекты не выбраны.", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -742,7 +742,7 @@ namespace IIT_Dimlom_Geo1
             mySub.FilePath();
             if (!File.Exists(mySub.fileAllProj))
             {
-                int num1 = (int)MessageBox.Show("Projects weren't defined. Use New Project", "Select Project", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проект не выбран. Используйте 'Новый проект'", "Выбрать проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -767,7 +767,7 @@ namespace IIT_Dimlom_Geo1
         {
             mySub.FilePath();
             mySub.nameDir = Directory.GetDirectories(mySub.comPath);
-            if (mySub.nameDir.Length < 0 || mySub.nameDir.Length > -1 && MessageBox.Show("Do you really want to Remove all Projects ?", "All Projects Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (mySub.nameDir.Length < 0 || mySub.nameDir.Length > -1 && MessageBox.Show("Вы действительно хотите удалить все проекты ?", "Удаление всех проектов", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 return;
             for (int i = 0; i < mySub.nameDir.Length; ++i)
                 mySub.DeleteProject(mySub.nameDir[i]);
@@ -820,7 +820,7 @@ namespace IIT_Dimlom_Geo1
             if (!File.Exists(mySub.fileProj))
             {
                 label2.Text = sPart[1] + "\\--Проект не выбран";
-                int num2 = (int)MessageBox.Show("Projects weren't defined. Используйте 'Новый проект'", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Проекты не выбраны. Используйте 'Новый проект'", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 FormLoad();
                 panel7.Invalidate();
             }
@@ -841,7 +841,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -855,7 +855,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -869,7 +869,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -883,7 +883,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -897,7 +897,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -911,7 +911,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.tmpStr))
             {
-                int num1 = (int)MessageBox.Show("Диск не определен", "Project creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Диск не определен", "Создание проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -980,12 +980,14 @@ namespace IIT_Dimlom_Geo1
             if (nProblem == 1 && kSymbPnt > 0)
                 mySub.SymbPntDraw(e, mySub.fsymbPnt, kRect, mySub.nVert, mySub.xVert, mySub.yVert, rWid, rHei, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.nWork1, mySub.nWork2, mySub.nWork, mySub.brColor);
             if (nProblem == 2 && kSymbLine > 0)
-                mySub.SymbLineDraw(e, mySub.fitemLine, kRect, mySub.nVert, mySub.xVert, mySub.yVert, rWid, rHei, kSymbLine, mySub.n2Sign, mySub.nBaseSymb, mySub.nColLine, mySub.iWidth1, mySub.iWidth2, mySub.iStyle1, mySub.iStyle2, mySub.nItem, mySub.itemLoc, mySub.iDensity, mySub.nColorItm, mySub.nWork1, mySub.nWork2, mySub.brColor, mySub.pnColor);
+                mySub.SymbLineDraw(e, mySub.fitemLine, kRect, mySub.nVert, mySub.xVert, mySub.yVert, rWid, rHei, kSymbLine, mySub.n2Sign, mySub.nBaseSymb, mySub.nColLine, mySub.iWidth1, mySub.iWidth2,
+                    mySub.iStyle1, mySub.iStyle2, mySub.nItem, mySub.itemLoc, mySub.iDensity, mySub.nColorItm, mySub.nWork1, mySub.nWork2, mySub.brColor, mySub.pnColor);
             if (nProblem == 3 && kRectPoly > 0)
-                mySub.SymbPolyDraw(e, mySub.fitemPoly, kRectPoly, mySub.nVert, mySub.xVert, mySub.yVert, rWidPoly, rHeiPoly, kPolySymb, mySub.npSign2, mySub.nBackCol, mySub.npItem, mySub.nOneSymb, mySub.nWork1, mySub.nWork2, mySub.nColorItm, mySub.brColor, mySub.pnColor);
+                mySub.SymbPolyDraw(e, mySub.fitemPoly, kRectPoly, mySub.nVert, mySub.xVert, mySub.yVert, rWidPoly, rHeiPoly, kPolySymb, mySub.npSign2, mySub.nBackCol, mySub.npItem, mySub.nOneSymb,
+                    mySub.nWork1, mySub.nWork2, mySub.nColorItm, mySub.brColor, mySub.pnColor);
             if (nProblem == 11)
             {
-                label4.Text = "Last process: Result of 'Measurement data file input(Control points)'";
+                label4.Text = "Последний процесс: Результаты Загрузки измерений из файла (контрольные точки)";
                 if (kGeo > 0 && kLineDop > 0)
                 {
                     mySub.GeoLineDraw(e, kLineDop, mySub.sGeoDop1, mySub.xGeoDop1, mySub.yGeoDop1, mySub.sGeoDop2, mySub.xGeoDop2, mySub.yGeoDop2, kGeo, mySub.nameGeo, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
@@ -994,13 +996,13 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 12)
             {
-                label4.Text = "Last process: Result of 'Measurement of DTM points file input'";
+                label4.Text = "Последний процесс: Результат загрузки данных файла измерения точек DTM'";
                 if (kTaheo > 0)
                     DllClass1.PointsDraw(e, mySub.fsymbPnt, 0, kTaheo, mySub.nameTah, mySub.xTah, mySub.yTah, mySub.zTah, mySub.xTahInscr, mySub.yTahInscr, mySub.iHorVerTah, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nTah1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.numCol, mySub.brColor, mySub.pnColor);
             }
             if (nProblem == 21 || nProblem == 25)
             {
-                label4.Text = "Verification of Aerotriangulation processes";
+                label4.Text = "Проверка процессов аэротриангуляции.";
                 ik = iHeight - 30;
                 if (kBlock > 0)
                 {
@@ -1038,55 +1040,55 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 22)
             {
-                sTmp = "Аэротриангуляция-Last process:";
+                sTmp = "Аэротриангуляция-Последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 60, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Verification of Cameras' Archive";
+                sTmp = "Проверка архива камер";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 23)
             {
-                sTmp = "Аэротриангуляция-Last process:";
+                sTmp = "Аэротриангуляция-Последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Verification of Control points' Archive";
+                sTmp = "Проверка архива контрольных точек";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 24)
             {
-                sTmp = "Аэротриангуляция-Last process:";
+                sTmp = "Аэротриангуляция-Последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
-                sTmp = "Verification of DTM points' Archive";
+                sTmp = "Проверка архива точек DTM";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 25)
-                label4.Text = "Input stereo measurements and Aerotriangulation calculations";
+                label4.Text = "Ввод стерео измерений и расчеты аэротриангуляции";
             if (nProblem == 26)
             {
                 label4.Text = "Control of Aerotriangulation's processes";
-                sTmp = "Аэротриангуляция-Last process:";
+                sTmp = "Аэротриангуляция-Последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Control of Aerotriangulation's processes";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
             }
             if (nProblem == 31 || nProblem == 32)
             {
-                label4.Text = "Cadastral-Last process: File points input";
+                label4.Text = "Кадастр и топография-Последний процесс: File points input";
                 if (nProblem == 32)
-                    label4.Text = "Cadastral-Last process: Additional points";
+                    label4.Text = "Кадастр и топография-Последний процесс: Additional points";
                 if (kPntPlus > 0)
                     DllClass1.PointsDraw(e, mySub.fsymbPnt, 1, kPntPlus, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nCode1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
             }
             if (nProblem == 33 || nProblem == 34)
             {
-                label4.Text = "Cadastral-Last process: Geodey calculation data";
+                label4.Text = "Кадастр и топография-Последний процесс: Geodey calculation data";
                 if (nProblem == 34)
-                    label4.Text = "Cadastral-Last process: Aerotriangulation data";
+                    label4.Text = "Кадастр и топография-Последний процесс: Aerotriangulation data";
                 if (kPntPlus > 0)
                     DllClass1.PointsDraw(e, mySub.fsymbPnt, 1, kPntPlus, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nCode1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
             }
             if (nProblem == 40)
             {
                 label4.Text = "Control of Cadstral processes";
-                sTmp = "Cadastral-Last process:";
+                sTmp = "Кадастр и топография-Последний процесс:";
                 DllClass1.DrawText(e, sTmp, 20, 80, pixHei / 2 - 20, 4, mySub.brColor);
                 sTmp = "Verification of cadastral processes";
                 DllClass1.DrawText(e, sTmp, 20, 50, pixHei / 2 + 10, 4, mySub.brColor);
@@ -1129,9 +1131,9 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 61 || nProblem == 62 || nProblem == 63)
             {
-                label4.Text = "Cadastral-Last process: Design's points file input";
+                label4.Text = "Кадастр и топография-Последний процесс: Design's points file input";
                 if (nProblem == 62)
-                    label4.Text = "Cadastral-Last process: Design's additional points";
+                    label4.Text = "Кадастр и топография-Последний процесс: Design's additional points";
                 if (kPntPlus > 0)
                     DllClass1.PointsDraw(e, mySub.fsymbPnt, 1, kPntPlus, mySub.namePnt, mySub.xPnt, mySub.yPnt, mySub.zPnt, mySub.xPntInscr, mySub.yPntInscr, mySub.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, mySub.nCode1, mySub.nCode2, kSymbPnt, mySub.numRec, mySub.numbUser, mySub.ixSqu, mySub.iySqu, mySub.nColor, mySub.brColor, mySub.pnColor);
                 if (kPntProj > -1)
@@ -1144,7 +1146,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 63)
             {
-                label4.Text = "Cadastral-Last process: Design's lines forming";
+                label4.Text = "Кадастр и топография-Последний процесс: Design's lines forming";
                 if (kLineProj > 0)
                 {
                     int iPar = 2;
@@ -1158,7 +1160,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem != 71)
                 return;
-            label4.Text = "Cadastral-Last process: Parcels' actions";
+            label4.Text = "Кадастр и топография-Последний процесс: Parcels' actions";
             if (kLineAct > 0)
             {
                 int iPar = 1;

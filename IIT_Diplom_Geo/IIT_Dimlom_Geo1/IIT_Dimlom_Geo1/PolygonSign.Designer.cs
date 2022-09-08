@@ -120,14 +120,6 @@ namespace IIT_Dimlom_Geo1
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.radioButton25 = new System.Windows.Forms.RadioButton();
@@ -195,15 +187,23 @@ namespace IIT_Dimlom_Geo1
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -233,7 +233,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Gray;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -243,102 +243,9 @@ namespace IIT_Dimlom_Geo1
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.BackColor = System.Drawing.Color.Silver;
-            this.groupBox8.Controls.Add(this.button34);
-            this.groupBox8.Controls.Add(this.button33);
-            this.groupBox8.Controls.Add(this.button32);
-            this.groupBox8.Controls.Add(this.button31);
-            this.groupBox8.Controls.Add(this.button30);
-            this.groupBox8.Controls.Add(this.button29);
-            this.groupBox8.Controls.Add(this.button28);
-            this.groupBox8.Location = new System.Drawing.Point(15, 662);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(284, 75);
-            this.groupBox8.TabIndex = 4;
-            this.groupBox8.TabStop = false;
-            // 
-            // button34
-            // 
-            this.button34.BackColor = System.Drawing.Color.White;
-            this.button34.Location = new System.Drawing.Point(152, 45);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(128, 23);
-            this.button34.TabIndex = 6;
-            this.button34.Text = "Items listing On/Off";
-            this.button34.UseVisualStyleBackColor = false;
-            this.button34.Click += new System.EventHandler(this.ItemsOnOff_Click);
-            // 
-            // button33
-            // 
-            this.button33.BackColor = System.Drawing.Color.White;
-            this.button33.Location = new System.Drawing.Point(69, 45);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(83, 23);
-            this.button33.TabIndex = 5;
-            this.button33.Text = "Down items";
-            this.button33.UseVisualStyleBackColor = false;
-            this.button33.Click += new System.EventHandler(this.DownItem_Click);
-            // 
-            // button32
-            // 
-            this.button32.BackColor = System.Drawing.Color.White;
-            this.button32.Location = new System.Drawing.Point(4, 45);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(65, 23);
-            this.button32.TabIndex = 4;
-            this.button32.Text = "Up items";
-            this.button32.UseVisualStyleBackColor = false;
-            this.button32.Click += new System.EventHandler(this.UpItem_Click);
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.White;
-            this.button31.Location = new System.Drawing.Point(182, 5);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(100, 34);
-            this.button31.TabIndex = 3;
-            this.button31.Text = "Symbols listing On/Off";
-            this.button31.UseVisualStyleBackColor = false;
-            this.button31.Click += new System.EventHandler(this.SymbolsOnOff_Click);
-            // 
-            // button30
-            // 
-            this.button30.BackColor = System.Drawing.Color.White;
-            this.button30.Location = new System.Drawing.Point(128, 5);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(53, 34);
-            this.button30.TabIndex = 2;
-            this.button30.Text = "More details";
-            this.button30.UseVisualStyleBackColor = false;
-            this.button30.Click += new System.EventHandler(this.MoreDetails_Click);
-            // 
-            // button29
-            // 
-            this.button29.BackColor = System.Drawing.Color.White;
-            this.button29.Location = new System.Drawing.Point(66, 5);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(61, 34);
-            this.button29.TabIndex = 1;
-            this.button29.Text = "Down symbols";
-            this.button29.UseVisualStyleBackColor = false;
-            this.button29.Click += new System.EventHandler(this.DownSymbol_Click);
-            // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.White;
-            this.button28.Location = new System.Drawing.Point(4, 5);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(61, 34);
-            this.button28.TabIndex = 0;
-            this.button28.Text = "Up symbols";
-            this.button28.UseVisualStyleBackColor = false;
-            this.button28.Click += new System.EventHandler(this.UpSymbol_Click);
-            // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox5.Controls.Add(this.groupBox7);
             this.groupBox5.Controls.Add(this.button13);
             this.groupBox5.Controls.Add(this.button10);
@@ -355,11 +262,11 @@ namespace IIT_Dimlom_Geo1
             this.groupBox5.Size = new System.Drawing.Size(284, 218);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Create or update symbol";
+            this.groupBox5.Text = "Создать или обновить символ";
             // 
             // groupBox7
             // 
-            this.groupBox7.BackColor = System.Drawing.Color.Silver;
+            this.groupBox7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox7.Controls.Add(this.radioButton25);
             this.groupBox7.Controls.Add(this.radioButton24);
             this.groupBox7.Controls.Add(this.radioButton23);
@@ -372,7 +279,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox7.Size = new System.Drawing.Size(272, 37);
             this.groupBox7.TabIndex = 17;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Items density inside of polygon";
+            this.groupBox7.Text = "Плотность элементов внутри полигона";
             // 
             // radioButton25
             // 
@@ -443,7 +350,7 @@ namespace IIT_Dimlom_Geo1
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(109, 23);
             this.button13.TabIndex = 16;
-            this.button13.Text = "Confirm changes";
+            this.button13.Text = "Подтвердить изменения";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.ConfirmChanges_Click);
             // 
@@ -454,7 +361,7 @@ namespace IIT_Dimlom_Geo1
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(83, 23);
             this.button10.TabIndex = 10;
-            this.button10.Text = "Add symbol";
+            this.button10.Text = "Добавить символ";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.AddSymbol_Click);
             // 
@@ -485,36 +392,36 @@ namespace IIT_Dimlom_Geo1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Location = new System.Drawing.Point(20, 119);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Description";
+            this.label6.Text = "Описание";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Location = new System.Drawing.Point(143, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.Size = new System.Drawing.Size(129, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Item selected";
+            this.label5.Text = "Выбранный элемент";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Location = new System.Drawing.Point(17, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(116, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "User\'s code";
+            this.label4.Text = "Код пользователя";
             // 
             // groupBox6
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.Silver;
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox6.Controls.Add(this.radioButton19);
             this.groupBox6.Controls.Add(this.radioButton18);
             this.groupBox6.Controls.Add(this.radioButton17);
@@ -531,7 +438,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox6.Size = new System.Drawing.Size(272, 68);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Select backcolor";
+            this.groupBox6.Text = "Выбрать фоновый цвет";
             // 
             // radioButton19
             // 
@@ -539,10 +446,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton19.ForeColor = System.Drawing.Color.White;
             this.radioButton19.Location = new System.Drawing.Point(208, 45);
             this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(66, 17);
+            this.radioButton19.Size = new System.Drawing.Size(63, 17);
             this.radioButton19.TabIndex = 9;
             this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "WHITE";
+            this.radioButton19.Text = "Белый";
             this.radioButton19.UseVisualStyleBackColor = true;
             // 
             // radioButton18
@@ -550,10 +457,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton18.AutoSize = true;
             this.radioButton18.Location = new System.Drawing.Point(151, 47);
             this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(51, 17);
+            this.radioButton18.Size = new System.Drawing.Size(63, 17);
             this.radioButton18.TabIndex = 8;
             this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Gray";
+            this.radioButton18.Text = "Серый";
             this.radioButton18.UseVisualStyleBackColor = true;
             // 
             // radioButton17
@@ -561,10 +468,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton17.AutoSize = true;
             this.radioButton17.Location = new System.Drawing.Point(81, 47);
             this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(60, 17);
+            this.radioButton17.Size = new System.Drawing.Size(97, 17);
             this.radioButton17.TabIndex = 7;
             this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "Brown";
+            this.radioButton17.Text = "Коричневый";
             this.radioButton17.UseVisualStyleBackColor = true;
             // 
             // radioButton16
@@ -572,10 +479,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton16.AutoSize = true;
             this.radioButton16.Location = new System.Drawing.Point(7, 47);
             this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(62, 17);
+            this.radioButton16.Size = new System.Drawing.Size(73, 17);
             this.radioButton16.TabIndex = 6;
             this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "Yellow";
+            this.radioButton16.Text = "Желтый";
             this.radioButton16.UseVisualStyleBackColor = true;
             // 
             // radioButton15
@@ -583,10 +490,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton15.AutoSize = true;
             this.radioButton15.Location = new System.Drawing.Point(207, 31);
             this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(53, 17);
+            this.radioButton15.Size = new System.Drawing.Size(73, 17);
             this.radioButton15.TabIndex = 5;
             this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "Cyan";
+            this.radioButton15.Text = "Голубой";
             this.radioButton15.UseVisualStyleBackColor = true;
             // 
             // radioButton14
@@ -594,10 +501,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton14.AutoSize = true;
             this.radioButton14.Location = new System.Drawing.Point(111, 31);
             this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(74, 17);
+            this.radioButton14.Size = new System.Drawing.Size(90, 17);
             this.radioButton14.TabIndex = 4;
             this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Magenta";
+            this.radioButton14.Text = "Пурпурный";
             this.radioButton14.UseVisualStyleBackColor = true;
             // 
             // radioButton13
@@ -605,10 +512,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton13.AutoSize = true;
             this.radioButton13.Location = new System.Drawing.Point(7, 31);
             this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(50, 17);
+            this.radioButton13.Size = new System.Drawing.Size(61, 17);
             this.radioButton13.TabIndex = 3;
             this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Blue";
+            this.radioButton13.Text = "Синий";
             this.radioButton13.UseVisualStyleBackColor = true;
             // 
             // radioButton12
@@ -616,10 +523,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton12.AutoSize = true;
             this.radioButton12.Location = new System.Drawing.Point(207, 15);
             this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(59, 17);
+            this.radioButton12.Size = new System.Drawing.Size(77, 17);
             this.radioButton12.TabIndex = 2;
             this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Green";
+            this.radioButton12.Text = "Зеленый";
             this.radioButton12.UseVisualStyleBackColor = true;
             // 
             // radioButton11
@@ -627,10 +534,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton11.AutoSize = true;
             this.radioButton11.Location = new System.Drawing.Point(111, 15);
             this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(48, 17);
+            this.radioButton11.Size = new System.Drawing.Size(77, 17);
             this.radioButton11.TabIndex = 1;
             this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Red";
+            this.radioButton11.Text = "Красный";
             this.radioButton11.UseVisualStyleBackColor = true;
             // 
             // radioButton10
@@ -638,15 +545,15 @@ namespace IIT_Dimlom_Geo1
             this.radioButton10.AutoSize = true;
             this.radioButton10.Location = new System.Drawing.Point(7, 15);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(57, 17);
+            this.radioButton10.Size = new System.Drawing.Size(71, 17);
             this.radioButton10.TabIndex = 0;
             this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Black";
+            this.radioButton10.Text = "Черный";
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button9);
@@ -658,7 +565,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox4.Size = new System.Drawing.Size(284, 81);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Options";
+            this.groupBox4.Text = "Опции";
             // 
             // button12
             // 
@@ -667,7 +574,7 @@ namespace IIT_Dimlom_Geo1
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(81, 34);
             this.button12.TabIndex = 3;
-            this.button12.Text = "Last symbol delete";
+            this.button12.Text = "Удаление последнего символа";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.LastSymbDel_Click);
             // 
@@ -678,7 +585,7 @@ namespace IIT_Dimlom_Geo1
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(104, 34);
             this.button11.TabIndex = 2;
-            this.button11.Text = "Symbol features update";
+            this.button11.Text = "Обновление функций символа";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.SymbolUpdate_Click);
             // 
@@ -689,7 +596,7 @@ namespace IIT_Dimlom_Geo1
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 34);
             this.button9.TabIndex = 1;
-            this.button9.Text = "New symbol creation";
+            this.button9.Text = "Создание нового символа";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.NewSymbol_Click);
             // 
@@ -700,7 +607,7 @@ namespace IIT_Dimlom_Geo1
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 23);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Additional item creation";
+            this.button2.Text = "Создание дополнительного элемента";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ItemCreation_Click);
             // 
@@ -711,13 +618,13 @@ namespace IIT_Dimlom_Geo1
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(110, 24);
             this.button8.TabIndex = 11;
-            this.button8.Text = "Last item delete";
+            this.button8.Text = "Удалить последний элемент";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.LastDelete_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Silver;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.button27);
             this.groupBox2.Controls.Add(this.button26);
             this.groupBox2.Controls.Add(this.button25);
@@ -743,36 +650,44 @@ namespace IIT_Dimlom_Geo1
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(6, 181);
+            this.groupBox2.Location = new System.Drawing.Point(6, 90);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(284, 320);
+            this.groupBox2.Size = new System.Drawing.Size(284, 389);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "New item";
+            this.groupBox2.Text = "Новый элемент";
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(108, 246);
+            this.button27.BackColor = System.Drawing.Color.White;
+            this.button27.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.ConcentricCircles;
+            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button27.Location = new System.Drawing.Point(108, 288);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(100, 38);
             this.button27.TabIndex = 26;
             this.button27.Text = "Concentric circles";
-            this.button27.UseVisualStyleBackColor = true;
+            this.button27.UseVisualStyleBackColor = false;
             this.button27.Click += new System.EventHandler(this.Concentric_Click);
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(6, 246);
+            this.button26.BackColor = System.Drawing.Color.White;
+            this.button26.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.CircleInTriangle;
+            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button26.Location = new System.Drawing.Point(8, 288);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(96, 38);
             this.button26.TabIndex = 25;
             this.button26.Text = "Circle in triangle";
-            this.button26.UseVisualStyleBackColor = true;
+            this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.CircleTriangle_Click);
             // 
             // button25
             // 
             this.button25.BackColor = System.Drawing.Color.White;
+            this.button25.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.TriangleBottompng;
+            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button25.Location = new System.Drawing.Point(205, 210);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(75, 34);
@@ -784,7 +699,9 @@ namespace IIT_Dimlom_Geo1
             // button24
             // 
             this.button24.BackColor = System.Drawing.Color.White;
-            this.button24.Location = new System.Drawing.Point(138, 210);
+            this.button24.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.TopTriangle;
+            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button24.Location = new System.Drawing.Point(157, 250);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(61, 34);
             this.button24.TabIndex = 23;
@@ -795,7 +712,9 @@ namespace IIT_Dimlom_Geo1
             // button23
             // 
             this.button23.BackColor = System.Drawing.Color.White;
-            this.button23.Location = new System.Drawing.Point(71, 210);
+            this.button23.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.RightTriangle;
+            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button23.Location = new System.Drawing.Point(78, 246);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(62, 34);
             this.button23.TabIndex = 22;
@@ -806,7 +725,9 @@ namespace IIT_Dimlom_Geo1
             // button22
             // 
             this.button22.BackColor = System.Drawing.Color.White;
-            this.button22.Location = new System.Drawing.Point(6, 210);
+            this.button22.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.LeftTriangle1;
+            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button22.Location = new System.Drawing.Point(6, 246);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(61, 34);
             this.button22.TabIndex = 21;
@@ -817,6 +738,8 @@ namespace IIT_Dimlom_Geo1
             // button21
             // 
             this.button21.BackColor = System.Drawing.Color.White;
+            this.button21.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.DownArc;
+            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button21.Location = new System.Drawing.Point(199, 185);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(81, 23);
@@ -828,6 +751,8 @@ namespace IIT_Dimlom_Geo1
             // button20
             // 
             this.button20.BackColor = System.Drawing.Color.White;
+            this.button20.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.TopArc;
+            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button20.Location = new System.Drawing.Point(141, 185);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(56, 23);
@@ -839,6 +764,8 @@ namespace IIT_Dimlom_Geo1
             // button19
             // 
             this.button19.BackColor = System.Drawing.Color.White;
+            this.button19.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.RightArc;
+            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button19.Location = new System.Drawing.Point(71, 185);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(68, 23);
@@ -850,6 +777,8 @@ namespace IIT_Dimlom_Geo1
             // button18
             // 
             this.button18.BackColor = System.Drawing.Color.White;
+            this.button18.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.LEftArc;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button18.Location = new System.Drawing.Point(8, 186);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(61, 22);
@@ -861,6 +790,8 @@ namespace IIT_Dimlom_Geo1
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.White;
+            this.button17.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.Hexagon;
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button17.Location = new System.Drawing.Point(205, 138);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
@@ -872,6 +803,8 @@ namespace IIT_Dimlom_Geo1
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.White;
+            this.button16.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.filledElipse;
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button16.Location = new System.Drawing.Point(220, 161);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(62, 23);
@@ -883,6 +816,8 @@ namespace IIT_Dimlom_Geo1
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.White;
+            this.button15.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.elipse1;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button15.Location = new System.Drawing.Point(167, 161);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(53, 23);
@@ -894,6 +829,8 @@ namespace IIT_Dimlom_Geo1
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.filled_rectangle;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button14.Location = new System.Drawing.Point(75, 161);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(91, 23);
@@ -905,6 +842,8 @@ namespace IIT_Dimlom_Geo1
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.BackgroundImage = global::IIT_Dimlom_Geo1.Properties.Resources.rectangle1;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button6.Location = new System.Drawing.Point(2, 161);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 23);
@@ -915,13 +854,13 @@ namespace IIT_Dimlom_Geo1
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Black;
+            this.button7.BackColor = System.Drawing.Color.LimeGreen;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(213, 246);
+            this.button7.Location = new System.Drawing.Point(167, 345);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(67, 38);
+            this.button7.Size = new System.Drawing.Size(115, 38);
             this.button7.TabIndex = 10;
-            this.button7.Text = "Keep item";
+            this.button7.Text = "Сохранить элемент";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.KeepItem_Click);
             // 
@@ -932,7 +871,7 @@ namespace IIT_Dimlom_Geo1
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(81, 22);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Pixels line";
+            this.button5.Text = "Линия пикселей";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.Line_Click);
             // 
@@ -943,7 +882,7 @@ namespace IIT_Dimlom_Geo1
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 22);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Pixel plus/minus";
+            this.button4.Text = "Пиксель плюс/минус";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Pixel_Click);
             // 
@@ -975,7 +914,7 @@ namespace IIT_Dimlom_Geo1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Location = new System.Drawing.Point(149, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
@@ -985,7 +924,7 @@ namespace IIT_Dimlom_Geo1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Location = new System.Drawing.Point(19, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
@@ -994,7 +933,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Gray;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox3.Controls.Add(this.radioButton9);
             this.groupBox3.Controls.Add(this.radioButton8);
             this.groupBox3.Controls.Add(this.radioButton7);
@@ -1010,17 +949,17 @@ namespace IIT_Dimlom_Geo1
             this.groupBox3.Size = new System.Drawing.Size(272, 68);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Select colour";
+            this.groupBox3.Text = "Выбор цвета";
             // 
             // radioButton9
             // 
             this.radioButton9.AutoSize = true;
             this.radioButton9.Location = new System.Drawing.Point(207, 47);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(51, 17);
+            this.radioButton9.Size = new System.Drawing.Size(63, 17);
             this.radioButton9.TabIndex = 8;
             this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Gray";
+            this.radioButton9.Text = "Серый";
             this.radioButton9.UseVisualStyleBackColor = true;
             // 
             // radioButton8
@@ -1028,10 +967,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton8.AutoSize = true;
             this.radioButton8.Location = new System.Drawing.Point(111, 47);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(60, 17);
+            this.radioButton8.Size = new System.Drawing.Size(97, 17);
             this.radioButton8.TabIndex = 7;
             this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Brown";
+            this.radioButton8.Text = "Коричневый";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
             // radioButton7
@@ -1039,10 +978,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton7.AutoSize = true;
             this.radioButton7.Location = new System.Drawing.Point(7, 47);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(62, 17);
+            this.radioButton7.Size = new System.Drawing.Size(73, 17);
             this.radioButton7.TabIndex = 6;
             this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Yellow";
+            this.radioButton7.Text = "Желтый";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
             // radioButton6
@@ -1050,10 +989,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton6.AutoSize = true;
             this.radioButton6.Location = new System.Drawing.Point(207, 30);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(53, 17);
+            this.radioButton6.Size = new System.Drawing.Size(73, 17);
             this.radioButton6.TabIndex = 5;
             this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Cyan";
+            this.radioButton6.Text = "Голубой";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // radioButton5
@@ -1061,10 +1000,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(111, 30);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(74, 17);
+            this.radioButton5.Size = new System.Drawing.Size(90, 17);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Magenta";
+            this.radioButton5.Text = "Пурпурный";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton4
@@ -1072,10 +1011,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(7, 30);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(50, 17);
+            this.radioButton4.Size = new System.Drawing.Size(61, 17);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Blue";
+            this.radioButton4.Text = "Синий";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -1083,10 +1022,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(207, 13);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(59, 17);
+            this.radioButton3.Size = new System.Drawing.Size(77, 17);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Green";
+            this.radioButton3.Text = "Зеленый";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -1094,10 +1033,10 @@ namespace IIT_Dimlom_Geo1
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(111, 13);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(48, 17);
+            this.radioButton2.Size = new System.Drawing.Size(77, 17);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Red";
+            this.radioButton2.Text = "Красный";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -1105,11 +1044,104 @@ namespace IIT_Dimlom_Geo1
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(6, 13);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 17);
+            this.radioButton1.Size = new System.Drawing.Size(71, 17);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Black";
+            this.radioButton1.Text = "Черный";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.Color.Silver;
+            this.groupBox8.Controls.Add(this.button34);
+            this.groupBox8.Controls.Add(this.button33);
+            this.groupBox8.Controls.Add(this.button32);
+            this.groupBox8.Controls.Add(this.button31);
+            this.groupBox8.Controls.Add(this.button30);
+            this.groupBox8.Controls.Add(this.button29);
+            this.groupBox8.Controls.Add(this.button28);
+            this.groupBox8.Location = new System.Drawing.Point(15, 662);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(284, 75);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            // 
+            // button34
+            // 
+            this.button34.BackColor = System.Drawing.Color.White;
+            this.button34.Location = new System.Drawing.Point(152, 45);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(128, 23);
+            this.button34.TabIndex = 6;
+            this.button34.Text = "Список элементов Вкл./Выкл.";
+            this.button34.UseVisualStyleBackColor = false;
+            this.button34.Click += new System.EventHandler(this.ItemsOnOff_Click);
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.White;
+            this.button33.Location = new System.Drawing.Point(69, 45);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(83, 23);
+            this.button33.TabIndex = 5;
+            this.button33.Text = "Элементы вниз";
+            this.button33.UseVisualStyleBackColor = false;
+            this.button33.Click += new System.EventHandler(this.DownItem_Click);
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.White;
+            this.button32.Location = new System.Drawing.Point(4, 45);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(65, 23);
+            this.button32.TabIndex = 4;
+            this.button32.Text = "Элементы вверх";
+            this.button32.UseVisualStyleBackColor = false;
+            this.button32.Click += new System.EventHandler(this.UpItem_Click);
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.White;
+            this.button31.Location = new System.Drawing.Point(182, 5);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(100, 34);
+            this.button31.TabIndex = 3;
+            this.button31.Text = "Список символов Вкл./Выкл.";
+            this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.SymbolsOnOff_Click);
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.White;
+            this.button30.Location = new System.Drawing.Point(128, 5);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(53, 34);
+            this.button30.TabIndex = 2;
+            this.button30.Text = "Подробнее";
+            this.button30.UseVisualStyleBackColor = false;
+            this.button30.Click += new System.EventHandler(this.MoreDetails_Click);
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.White;
+            this.button29.Location = new System.Drawing.Point(66, 5);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(61, 34);
+            this.button29.TabIndex = 1;
+            this.button29.Text = "Вниз символы";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.DownSymbol_Click);
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.White;
+            this.button28.Location = new System.Drawing.Point(4, 5);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(61, 34);
+            this.button28.TabIndex = 0;
+            this.button28.Text = "Символы вверх";
+            this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.UpSymbol_Click);
             // 
             // label1
             // 
@@ -1137,9 +1169,8 @@ namespace IIT_Dimlom_Geo1
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PolygonSign";
-            this.Text = "Polygons\' Signs";
+            this.Text = "Знаки полигонов";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1151,6 +1182,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -93,7 +93,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -103,16 +103,16 @@ namespace IIT_Dimlom_Geo1
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(691, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 426);
+            this.groupBox1.Size = new System.Drawing.Size(328, 482);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Main options";
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 320);
+            this.label4.Location = new System.Drawing.Point(12, 377);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(303, 90);
             this.label4.TabIndex = 4;
@@ -123,7 +123,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.button12);
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(7, 237);
+            this.groupBox5.Location = new System.Drawing.Point(7, 311);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(315, 63);
             this.groupBox5.TabIndex = 3;
@@ -132,11 +132,11 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.DarkGray;
+            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(7, 163);
+            this.groupBox4.Location = new System.Drawing.Point(7, 237);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(315, 68);
             this.groupBox4.TabIndex = 2;
@@ -167,14 +167,14 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Silver;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(7, 109);
+            this.groupBox3.Location = new System.Drawing.Point(7, 184);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(314, 44);
+            this.groupBox3.Size = new System.Drawing.Size(314, 47);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Топографические символы";
@@ -214,7 +214,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.button6);
@@ -225,7 +225,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(7, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(314, 89);
+            this.groupBox2.Size = new System.Drawing.Size(314, 164);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Выбор проекта";
@@ -234,7 +234,7 @@ namespace IIT_Dimlom_Geo1
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 69);
+            this.label2.Location = new System.Drawing.Point(6, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(303, 13);
             this.label2.TabIndex = 6;
@@ -243,9 +243,9 @@ namespace IIT_Dimlom_Geo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Silver;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 55);
+            this.label1.Location = new System.Drawing.Point(3, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 5;
@@ -254,9 +254,9 @@ namespace IIT_Dimlom_Geo1
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(248, 13);
+            this.button6.Location = new System.Drawing.Point(210, 19);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 35);
+            this.button6.Size = new System.Drawing.Size(98, 35);
             this.button6.TabIndex = 4;
             this.button6.Text = "Изменить диск";
             this.button6.UseVisualStyleBackColor = false;
@@ -265,9 +265,9 @@ namespace IIT_Dimlom_Geo1
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(184, 13);
+            this.button5.Location = new System.Drawing.Point(171, 60);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 35);
+            this.button5.Size = new System.Drawing.Size(114, 35);
             this.button5.TabIndex = 3;
             this.button5.Text = "Удалить все проекты";
             this.button5.UseVisualStyleBackColor = false;
@@ -276,9 +276,9 @@ namespace IIT_Dimlom_Geo1
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(124, 13);
+            this.button4.Location = new System.Drawing.Point(41, 60);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 35);
+            this.button4.Size = new System.Drawing.Size(107, 35);
             this.button4.TabIndex = 2;
             this.button4.Text = "Удалить проект";
             this.button4.UseVisualStyleBackColor = false;
@@ -287,9 +287,9 @@ namespace IIT_Dimlom_Geo1
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(65, 13);
+            this.button3.Location = new System.Drawing.Point(105, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 35);
+            this.button3.Size = new System.Drawing.Size(99, 35);
             this.button3.TabIndex = 1;
             this.button3.Text = "Выбратиь проект";
             this.button3.UseVisualStyleBackColor = false;
@@ -298,9 +298,9 @@ namespace IIT_Dimlom_Geo1
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(7, 13);
+            this.button2.Location = new System.Drawing.Point(6, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 53);
+            this.button2.Size = new System.Drawing.Size(93, 35);
             this.button2.TabIndex = 0;
             this.button2.Text = "Проект открыт";
             this.button2.UseVisualStyleBackColor = false;
@@ -308,12 +308,12 @@ namespace IIT_Dimlom_Geo1
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(810, 652);
+            this.button1.Location = new System.Drawing.Point(803, 554);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(114, 29);
             this.button1.TabIndex = 2;
             this.button1.Text = "Выход";
             this.button1.UseVisualStyleBackColor = false;
@@ -324,9 +324,9 @@ namespace IIT_Dimlom_Geo1
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(14, 12);
+            this.panel7.Location = new System.Drawing.Point(12, 12);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(665, 643);
+            this.panel7.Size = new System.Drawing.Size(665, 616);
             this.panel7.TabIndex = 3;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseMove);
@@ -337,7 +337,7 @@ namespace IIT_Dimlom_Geo1
             this.label3.BackColor = System.Drawing.Color.Silver;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(27, 658);
+            this.label3.Location = new System.Drawing.Point(12, 631);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(523, 17);
             this.label3.TabIndex = 4;
@@ -362,8 +362,8 @@ namespace IIT_Dimlom_Geo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1018, 702);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1018, 681);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.button1);
