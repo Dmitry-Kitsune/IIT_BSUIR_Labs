@@ -456,7 +456,7 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (num12 <= 0)
                         return;
-                    graphics.DrawString("Голубой цвет -- Doubtful Value", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(num1 - emSize / 2));
+                    graphics.DrawString("Голубой цвет -- Значение погрешностей", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(num1 - emSize / 2));
                 }
             }
         }
@@ -795,7 +795,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 int num24 = ihh - 20;
                 int emSize2 = 8;
-                graphics.DrawString("Average :  ", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 20f, (float)(num24 - emSize2 / 2));
+                graphics.DrawString("Средний :  ", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 20f, (float)(num24 - emSize2 / 2));
                 string s4 = "DX = " + string.Format("{0:F3}", (object)num12);
                 graphics.DrawString(s4, new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 90f, (float)(num24 - emSize2 / 2));
                 string s5 = "DY = " + string.Format("{0:F3}", (object)num13);
@@ -804,7 +804,7 @@ namespace IIT_Dimlom_Geo1
                 graphics.DrawString(s6, new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 230f, (float)(num24 - emSize2 / 2));
                 if (num17 <= 0)
                     return;
-                graphics.DrawString("Red color -- Doubtful Value", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Red), 450f, (float)(num24 - emSize2 / 2));
+                graphics.DrawString("Красный цвет -- Значение погрешностей", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Red), 450f, (float)(num24 - emSize2 / 2));
             }
         }
 
@@ -1144,7 +1144,7 @@ namespace IIT_Dimlom_Geo1
             if (iParam == 1 && kContr == 0 || iParam == 2 && kCheck == 0)
                 return;
             int num21 = ihh - 20;
-            graphics.DrawString("Average :  ", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Black), 20f, (float)(num21 - emSize / 2));
+            graphics.DrawString("Средний :  ", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Black), 20f, (float)(num21 - emSize / 2));
             sTmp = string.Format("{0:F3}", (object)num6);
             sTmp = "DX = " + sTmp;
             graphics.DrawString(sTmp, new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Red), 90f, (float)(num21 - emSize / 2));
@@ -1156,7 +1156,7 @@ namespace IIT_Dimlom_Geo1
             graphics.DrawString(sTmp, new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Green), 230f, (float)(num21 - emSize / 2));
             if (num5 <= 0)
                 return;
-            graphics.DrawString("Голубой цвет -- Doubtful Value", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(num21 - emSize / 2));
+            graphics.DrawString("Голубой цвет -- Значение погрешностей", new Font("Bold", (float)emSize), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(num21 - emSize / 2));
         }
 
         private void SelectBox_Click(object sender, EventArgs e)
@@ -1324,7 +1324,7 @@ namespace IIT_Dimlom_Geo1
                 DrawModelStrip(out iCond, 1, e);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Данные отсутствуют", "Models Join", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Данные отсутствуют", "Соединение моделей", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     nProcess = 0;
                     LoadData();
                     return;
@@ -1555,7 +1555,7 @@ namespace IIT_Dimlom_Geo1
             nProcess = 180;
             if (iCond < 0)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Models Join", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Соединение моделей", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 nProcess = 0;
                 LoadData();
             }
@@ -1596,7 +1596,7 @@ namespace IIT_Dimlom_Geo1
             LoadControl();
             if (kCheck == 0)
             {
-                int num = (int)MessageBox.Show("Данные отсутствуют", "Check Points", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Данные отсутствуют", "Контрольные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 nProcess = 0;
                 LoadData();
             }

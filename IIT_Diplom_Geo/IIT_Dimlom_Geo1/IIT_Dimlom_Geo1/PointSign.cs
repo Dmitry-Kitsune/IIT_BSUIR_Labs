@@ -267,7 +267,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kMax == 2)
             {
-                int num = (int)MessageBox.Show("Finish", "Symbols' creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Готово", "Создание символов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -287,7 +287,7 @@ namespace IIT_Dimlom_Geo1
                 textBox6.Visible = true;
                 textBox9.Visible = true;
                 textBox5.Text = string.Format("{0}", (object)(numLast + 1));
-                textBox6.Text = "Undefined";
+                textBox6.Text = "Не определено";
                 textBox9.Text = string.Format("{0}", (object)(numLast + 1));
                 label1.Text = "";
             }
@@ -299,49 +299,49 @@ namespace IIT_Dimlom_Geo1
             {
                 if (textBox1.Text == "" || textBox2.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Check 'Width' and 'Height'", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте 'Ширину' и 'Высоту''", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox1.Text, out wSign, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Проверьте данные", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox2.Text, out hSign, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Проверьте данные", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (wSign < 0.5)
                 {
-                    int num = (int)MessageBox.Show("Width < 0.5 mm", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Ширина < 0.5 мм", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (wSign > 10.0)
                 {
-                    int num = (int)MessageBox.Show("Width > 10 mm", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Ширина > 10 мм", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (hSign < 0.5)
                 {
-                    int num = (int)MessageBox.Show("Height < 0.5 mm", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Высота < 0.5 мм", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (hSign > 10.0)
                 {
-                    int num = (int)MessageBox.Show("Height > 10 mm", "Grid creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Высота > 10 мм", "Создание сетки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (textBox5.Text == "")
                     textBox5.Text = "0";
                 if (textBox6.Text == "")
-                    textBox6.Text = "Undefined";
+                    textBox6.Text = "Не определено";
                 DllClass1.CheckText(textBox5.Text, out tText, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 numUser = Convert.ToInt32(tText);
@@ -362,13 +362,13 @@ namespace IIT_Dimlom_Geo1
             {
                 if (textBox9.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                 {
-                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Обновление символов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 DllClass1.CheckText(textBox5.Text, out tText, out iCond);
                 if (iCond < 0)
                 {
-                    int num = (int)MessageBox.Show("Проверьте данные", "Symbol update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Проверьте данные", "Обновление символов", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 string text = textBox9.Text;
@@ -386,7 +386,7 @@ namespace IIT_Dimlom_Geo1
                         }
                     }
                 }
-                if (num2 > 0 && MessageBox.Show("Duplicate user's code. Do you want to keep user's code ?", "Symbol update", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (num2 > 0 && MessageBox.Show("Дубликат кода пользователя. Вы хотите сохранить код пользователя ?", "Обновление символов", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     --numLast;
                     return;
@@ -616,7 +616,7 @@ namespace IIT_Dimlom_Geo1
                     ++kSqu;
                     if (kSqu > num1)
                     {
-                        int num2 = (int)MessageBox.Show("Index array FillRectangle");
+                        int num2 = (int)MessageBox.Show("Индекс массива FillRectangle");
                         return;
                     }
                     myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -646,7 +646,7 @@ namespace IIT_Dimlom_Geo1
                     ++kSqu;
                     if (kSqu > num1)
                     {
-                        int num2 = (int)MessageBox.Show("Index array FillRectangle");
+                        int num2 = (int)MessageBox.Show("Индекс массива FillRectangle");
                         return;
                     }
                     myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -667,7 +667,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -683,7 +683,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array Ellipse");
+                            int num2 = (int)MessageBox.Show("Индекс массива Ellipse");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -705,7 +705,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -721,7 +721,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillEllipse");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillEllipse");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -752,7 +752,7 @@ namespace IIT_Dimlom_Geo1
                     ++kSqu;
                     if (kSqu > num1)
                     {
-                        int num2 = (int)MessageBox.Show("Index array Concentric");
+                        int num2 = (int)MessageBox.Show("Индекс массива Concentric");
                         return;
                     }
                     myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -763,7 +763,7 @@ namespace IIT_Dimlom_Geo1
                 DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
                 if (iCond < 0)
                 {
-                    int num3 = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num3 = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             panel1.Invalidate();
@@ -777,7 +777,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -793,7 +793,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array ArcLeft");
+                            int num2 = (int)MessageBox.Show("Индекс массива ArcLeft");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -815,7 +815,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -831,7 +831,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array ArcRight");
+                            int num2 = (int)MessageBox.Show("Индекс массива ArcRight");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -853,7 +853,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -869,7 +869,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array ArcTop");
+                            int num2 = (int)MessageBox.Show("Индекс массива ArcTop");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -891,7 +891,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -907,7 +907,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array ArcBottom");
+                            int num2 = (int)MessageBox.Show("Индекс массива ArcBottom");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -929,7 +929,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -945,7 +945,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array TriangleLeft");
+                            int num2 = (int)MessageBox.Show("Индекс массива TriangleLeft");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -967,7 +967,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -983,7 +983,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillTriangleLeft");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillTriangleLeft");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1005,7 +1005,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1021,7 +1021,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array TriangleRight");
+                            int num2 = (int)MessageBox.Show("Индекс массива TriangleRight");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1043,7 +1043,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1059,7 +1059,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillTriangleRight");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillTriangleRight");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1081,7 +1081,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1097,7 +1097,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array TriangleTop");
+                            int num2 = (int)MessageBox.Show("Индекс массива TriangleTop");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1119,7 +1119,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1135,7 +1135,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillTriangleTop");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillTriangleTop");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1157,7 +1157,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1173,7 +1173,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array TriangleBottom");
+                            int num2 = (int)MessageBox.Show("Индекс массива TriangleBottom");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1195,7 +1195,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1211,7 +1211,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillTriangleBottom");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillTriangleBottom");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1233,7 +1233,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1249,7 +1249,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillHexagon");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1271,7 +1271,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1287,7 +1287,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillHexagon");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1309,7 +1309,7 @@ namespace IIT_Dimlom_Geo1
             if (iCond < 0)
             {
                 nControl = 0;
-                int num = (int)MessageBox.Show("Use option 'Handwork'", "Symbol creation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1325,7 +1325,7 @@ namespace IIT_Dimlom_Geo1
                         ++kSqu;
                         if (kSqu > num1)
                         {
-                            int num2 = (int)MessageBox.Show("Index array FillHexagon");
+                            int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
                         myPnt.xSqu[kSqu] = myPnt.xCell[index];
@@ -1361,7 +1361,7 @@ namespace IIT_Dimlom_Geo1
                     }
                 }
             }
-            if (num > 0 && MessageBox.Show("Duplicate user's code. Do you want to keep user's code ?", "Symbol update", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (num > 0 && MessageBox.Show("Дубликат кода пользователя. Вы хотите сохранить код пользователя ?", "Обновление символов", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             {
                 --numLast;
             }
@@ -1457,7 +1457,7 @@ namespace IIT_Dimlom_Geo1
             button9.Visible = false;
             groupBox2.Visible = false;
             nSel = 0;
-            label1.Text = "Select symbol by mouse";
+            label1.Text = "Выделить символ с помощью мыши";
             panel1.Invalidate();
         }
 
@@ -1472,7 +1472,7 @@ namespace IIT_Dimlom_Geo1
                     break;
                 }
             }
-            if (MessageBox.Show("Do you really want to delete last symbol ?", "Points symbols creation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (MessageBox.Show("Вы действительно хотите удалить последний символ ?", "Создание символов точек", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 return;
             DllClass1.LastDelete(myPnt.fsymbPnt, myPnt.fPointPixel, ref kSymbPnt);
             FormLoad();

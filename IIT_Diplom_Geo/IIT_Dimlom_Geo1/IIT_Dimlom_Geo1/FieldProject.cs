@@ -101,7 +101,7 @@ namespace IIT_Dimlom_Geo1
         private void Confirm_Click(object sender, EventArgs e)
         {
             this.myGeo.FilePath();
-            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Project wasn't selected. Do You want to leave Dialog ?", "Project selection", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Project не выбрано. Do You want to leave Dialog ?", "Выбор проекта", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 Form.ActiveForm.Close();
             }

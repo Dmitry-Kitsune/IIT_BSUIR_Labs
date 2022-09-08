@@ -283,7 +283,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox1.SelectedIndex < 0)
             {
-                int num1 = (int)MessageBox.Show("Полоса(направление) wasn't Selected", "Полоса(направление) and Camera", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Полоса(направление) не выбрано", "Полоса(направление)и камера", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -304,7 +304,7 @@ namespace IIT_Dimlom_Geo1
                     numSel = Convert.ToInt64(str2);
                 if (str2 == "" || numSel == 0L)
                 {
-                    int num2 = (int)MessageBox.Show("Selected Camera's Data is absent", "Полоса(направление) and Camera", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num2 = (int)MessageBox.Show("Данные выбранной камеры отсутствуют", "Полоса(направление)и камера", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -321,7 +321,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (listBox2.SelectedIndex < 0)
             {
-                int num = (int)MessageBox.Show("Полоса(направление) wasn't Selected", "Полоса(направление) and Camera", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Полоса(направление) не выбрано", "Полоса(направление)и камера", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -360,7 +360,7 @@ namespace IIT_Dimlom_Geo1
             myCam.numCamera[listBox1.SelectedIndex + 1] = numSel;
             if (myCam.numCamera[1] == 0L)
             {
-                int num = (int)MessageBox.Show("For first Strip Camera's Number not maybe = 0", "Полоса(направление) and Camera", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Номер для первой камеры направления не может быть = 0", "Полоса(направление)и камера", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

@@ -27,9 +27,6 @@ namespace IIT_Diplom_Geo1
 
         public ProjectMenu()
         {
-            //Font = SystemFonts.IconTitleFont;
-            //SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            //FormClosing += new FormClosingEventHandler(FormProj_FormClosing);
 
             InitializeComponent();
 
@@ -54,17 +51,7 @@ namespace IIT_Diplom_Geo1
             FormLoad();
             CheckForm();
         }
-        //void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
-        //{
-        //    if (e.Category == UserPreferenceCategory.Window)
-        //    {
-        //        Font = SystemFonts.IconTitleFont;
-        //    }
-        //}
-        //void FormProj_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    SystemEvents.UserPreferenceChanged -= new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-        //}
+      
         private void ChangeDrive_MouseHover(object sender, System.EventArgs e)
         {
             //toolStripStatusLabel1.Text = "Close all processes";
@@ -126,8 +113,7 @@ namespace IIT_Diplom_Geo1
         //}
         void FormLoad()
         {
-            //string sTmp1 = "";
-            //string sTmp2 = ""; 
+
 
             DllClass1.CheckDrive(myGeo.dirKey, out myGeo.driveKey);
             if (myGeo.driveKey == "")
@@ -176,10 +162,7 @@ namespace IIT_Diplom_Geo1
 
         private void CheckForm() ///////////////////////////////// не задействована
         {
-            //  string sTemp1;
-            //  string sTemp2;
 
-            //mySel.DriveList(out kDisk, out mySel.nameDrive);
             DllClass1.DriveList(out kDisk, out mySel.nameDrive);
             //Заполнение ListBox именами дисков
             for (int i = 1; i <= kDisk; i++)

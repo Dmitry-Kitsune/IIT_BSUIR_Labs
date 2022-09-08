@@ -784,7 +784,9 @@ namespace IIT_Dimlom_Geo1
                 this.yminCur = y1;
                 this.xmaxCur = x2;
                 this.ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin,
+                    out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY,
+                    out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
@@ -801,7 +803,10 @@ namespace IIT_Dimlom_Geo1
                     this.dy = this.ymax - this.ymin;
                     if (this.dx < 0.05 || this.dy < 0.05)
                         return;
-                    DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                    DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth,
+                        this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY,
+                        out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, 
+                        out this.yEndWin, out this.iCond);
                     if (this.iCond < 0)
                         this.iGraphic = 1;
                     this.panel7.Invalidate();
@@ -849,7 +854,9 @@ namespace IIT_Dimlom_Geo1
                         }
                         for (int index = 0; index <= this.kSel; ++index)
                         {
-                            DllClass1.ParcelSelect(this.xArc[index], this.yArc[index], this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
+                            DllClass1.ParcelSelect(this.xArc[index], this.yArc[index], this.kPolyAct, 
+                                ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, 
+                                ref this.myAct.aActLeg, out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
                             if (this.indPoly != 0)
                             {
                                 this.xArc[index] = this.myAct.xAct[this.indPoly];
@@ -882,7 +889,7 @@ namespace IIT_Dimlom_Geo1
                         this.kSel = index5;
                         if (this.kSel < 1)
                         {
-                            int num20 = (int)MessageBox.Show("Number selected neighbour parcels < 2", "Parcels' Division and Unification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num20 = (int)MessageBox.Show("Количество выбранных соседних участков < 2", "Разделение и объединение участков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             this.kSel = -1;
                             this.kRcPnt = 0;
                             this.panel7.Invalidate();
@@ -892,7 +899,9 @@ namespace IIT_Dimlom_Geo1
                         num10 = 0;
                         for (int index8 = 0; index8 <= this.kSel; ++index8)
                         {
-                            DllClass1.ParcelSelect(this.xArc[index8], this.yArc[index8], this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
+                            DllClass1.ParcelSelect(this.xArc[index8], this.yArc[index8], this.kPolyAct, ref this.myAct.nameAct, 
+                                ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, out this.sName,
+                                out this.sCalc, out this.sLeg, out this.indPoly);
                             if (this.indPoly != 0)
                             {
                                 int num21 = this.myAct.kActPoly1[this.indPoly];
@@ -958,7 +967,7 @@ namespace IIT_Dimlom_Geo1
                         this.kSel = index15;
                         if (this.kSel < 1)
                         {
-                            int num31 = (int)MessageBox.Show("Number selected neighbour parcels < 2", "Parcels' Division and Unification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num31 = (int)MessageBox.Show("Количество выбранных соседних участков < 2", "Разделение и объединение участков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             this.kSel = -1;
                             this.kRcPnt = 0;
                             this.panel7.Invalidate();
@@ -992,7 +1001,11 @@ namespace IIT_Dimlom_Geo1
                                 this.myAct.aParcLeg[index18] = this.sLeg;
                                 int kin = 0;
                                 int kLin = 0;
-                                DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, kin, ref this.myAct.kin1, ref this.myAct.kin2, ref this.myAct.xActInt, ref this.myAct.yActInt, this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kLin, ref this.myAct.rWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
+                                DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, kin, ref this.myAct.kin1,
+                                    ref this.myAct.kin2, ref this.myAct.xActInt, ref this.myAct.yActInt, this.kLineAct, ref this.myAct.radAct,
+                                    ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct,
+                                    out kLin, ref this.myAct.rWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, 
+                                    ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
                                 if (kLin > 0)
                                 {
                                     num8 = 0;
@@ -1034,21 +1047,45 @@ namespace IIT_Dimlom_Geo1
                             this.myAct.nDop1[index24] = this.myAct.nDop2[index24 - 1] + 1;
                             this.myAct.nDop2[index24] = this.myAct.nDop2[index24 - 1] + this.myAct.nDop3[index24];
                         }
-                        DllClass1.CommonLine(kLine, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.xDop, ref this.myAct.yDop, out this.kLineCancel, ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc, ref this.myAct.yLinCanc, ref this.myAct.nWork, this.tolerance);
+                        DllClass1.CommonLine(kLine, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, 
+                            ref this.myAct.xDop, ref this.myAct.yDop, out this.kLineCancel, ref this.myAct.RadCanc,
+                            ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc, ref this.myAct.yLinCanc,
+                            ref this.myAct.nWork, this.tolerance);
                         if (this.kLineCancel > 0)
-                            DllClass1.CommonDelete(ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kLineCancel, ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc, ref this.myAct.yLinCanc, ref this.myAct.nWork, this.tolerance);
+                            DllClass1.CommonDelete(ref this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, 
+                                ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kLineCancel,
+                                ref this.myAct.RadCanc, ref this.myAct.kLinCanc1, ref this.myAct.kLinCanc2, ref this.myAct.xLinCanc,
+                                ref this.myAct.yLinCanc, ref this.myAct.nWork, this.tolerance);
                         this.kPolyAct = 0;
                         this.kIntAct = 0;
                         this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
-                        DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
+                        DllClass1.LinesToPoly(this.tolerance, this.kLineAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2,
+                            ref this.myAct.xLineAct, ref this.myAct.yLineAct, this.kNodeAct, ref this.myAct.xNodeAct, 
+                            ref this.myAct.yNodeAct, out this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, 
+                            ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.nSymbPoly, 
+                            ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct,
+                            out this.kIntAct, ref this.myAct.kIndexAct, ref this.myAct.kIndexAct1, ref this.myAct.kIndexAct2, 
+                            ref this.myAct.nWork, ref this.myAct.indInter, ref this.myAct.xWork1, ref this.myAct.yWork1,
+                            ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork,
+                            ref this.myAct.zWork, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.pWork, 
+                            ref this.myAct.rWork, ref this.myAct.zDop, this.panel1);
                         if (this.kPolyAct == 0)
                             return;
                         this.myAct.PolyActPrev(ref this.myAct.kPolyInside, this.nAction);
                         this.kPolyPrev = this.myAct.kPolyPrev;
-                        DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol, ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol, this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork, ref this.myAct.yWork);
+                        DllClass1.ActionCompare(this.kPolyPrev, ref this.myAct.xLab, ref this.myAct.yLab, ref this.myAct.areaPol,
+                            ref this.myAct.areaLeg, ref this.myAct.kt1, ref this.myAct.kt2, ref this.myAct.xPol, ref this.myAct.yPol,
+                            this.kPolyAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg,
+                            ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct,
+                            ref this.myAct.xWork, ref this.myAct.yWork);
                         this.PolyOrder();
                         this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
-                        DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct, ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, ref this.myAct.nDop3, this.panel1);
+                        DllClass1.KeepPolyLabel(this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct,
+                            ref this.myAct.kActPoly1, ref this.myAct.kActPoly2, ref this.myAct.xPolyAct, ref this.myAct.yPolyAct,
+                            ref this.myAct.xWork1, ref this.myAct.yWork1, ref this.myAct.xWork2, ref this.myAct.yWork2, 
+                            ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.zWork, ref this.myAct.xDop, 
+                            ref this.myAct.yDop, ref this.myAct.zDop, ref this.myAct.nDop1, ref this.myAct.nDop2, 
+                            ref this.myAct.nDop3, this.panel1);
                         int index25 = 0;
                         for (int index26 = 1; index26 <= this.kPolyAct; ++index26)
                         {
@@ -1068,7 +1105,8 @@ namespace IIT_Dimlom_Geo1
                                 {
                                     for (int index28 = 1; index28 <= index18; ++index28)
                                     {
-                                        if (DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.myAct.xParc[index28], this.myAct.yParc[index28]) > 0)
+                                        if (DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd,
+                                            this.myAct.xParc[index28], this.myAct.yParc[index28]) > 0)
                                             ++num39;
                                     }
                                 }
@@ -1093,7 +1131,8 @@ namespace IIT_Dimlom_Geo1
                             }
                             for (int index30 = 1; index30 <= this.kNodeAct; ++index30)
                             {
-                                if (DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.myAct.xNodeAct[index30], this.myAct.yNodeAct[index30]) > 0)
+                                if (DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, 
+                                    this.myAct.xNodeAct[index30], this.myAct.yNodeAct[index30]) > 0)
                                 {
                                     int num42 = 0;
                                     for (int index31 = 1; index31 <= this.kLineAct; ++index31)
@@ -1152,7 +1191,12 @@ namespace IIT_Dimlom_Geo1
                         if (this.maxParcel < 0)
                             this.maxParcel = 0;
                         int kNew = 0;
-                        DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, this.myAct.xLabSource, this.myAct.yLabSource, this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource, this.kPolyAct, this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg, out kNew, this.myAct.nameDop, this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork, this.myAct.xSpot, this.myAct.ySpot);
+                        DllClass1.ParcNewName(this.maxParcel, this.kPolySource, this.myAct.nameSource, 
+                            this.myAct.xLabSource, this.myAct.yLabSource, this.myAct.arCalcSource, this.myAct.arLegSource,
+                            this.myAct.k1Source, this.myAct.k2Source, this.myAct.xSource, this.myAct.ySource, this.kPolyAct,
+                            this.myAct.nameAct, this.myAct.xAct, this.myAct.yAct, this.myAct.aActCalc, this.myAct.aActLeg,
+                            out kNew, this.myAct.nameDop, this.myAct.xDop, this.myAct.yDop, this.myAct.xWork, this.myAct.yWork,
+                            this.myAct.xSpot, this.myAct.ySpot);
                         if (this.maxParcel < 0)
                             this.maxParcel = 0;
                         if (kNew > 0)
@@ -1170,14 +1214,18 @@ namespace IIT_Dimlom_Geo1
                             binaryWriter.Write(this.sTmp);
                             for (int index37 = 1; index37 <= this.kPolyCancel; ++index37)
                             {
-                                this.sTmp = this.myAct.nameCanc[index37] + "  " + string.Format("{0:F4}", (object)this.myAct.aCalcCanc[index37]) + "  " + string.Format("{0:F4}", (object)this.myAct.aLegCanc[index37]);
+                                this.sTmp = this.myAct.nameCanc[index37] + "  " + string.Format("{0:F4}", 
+                                    (object)this.myAct.aCalcCanc[index37]) + "  " + string.Format("{0:F4}", 
+                                    (object)this.myAct.aLegCanc[index37]);
                                 binaryWriter.Write(this.sTmp);
                             }
                             this.sTmp = "0";
                             binaryWriter.Write(this.sTmp);
                             binaryWriter.Close();
                             output.Close();
-                            DllClass1.ParcelSelect(this.myAct.xDop[1], this.myAct.yDop[1], this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
+                            DllClass1.ParcelSelect(this.myAct.xDop[1], this.myAct.yDop[1], this.kPolyAct, ref this.myAct.nameAct,
+                                ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg,
+                                out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
                             if (this.indPoly == 0)
                                 return;
                             int num51 = this.myAct.kActPoly1[this.indPoly];
@@ -1239,7 +1287,7 @@ namespace IIT_Dimlom_Geo1
             ++this.kSel;
             if (this.kSel > this.minArray)
             {
-                int num = (int)MessageBox.Show("Too much selection");
+                int num = (int)MessageBox.Show("Выбрано слишком много");
             }
             else
             {
@@ -1280,7 +1328,10 @@ namespace IIT_Dimlom_Geo1
                     this.yminCur = this.yCurMin;
                     this.xmaxCur = this.xCurMax;
                     this.ymaxCur = this.yCurMax;
-                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, this.iWidth,
+                        this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY,
+                        out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, 
+                        out this.yEndWin, out this.iCond);
                     if (this.iCond < 0)
                     {
                         this.iGraphic = 1;
@@ -1298,7 +1349,8 @@ namespace IIT_Dimlom_Geo1
                 this.xmaxCur = this.xbCur;
                 this.ymaxCur = this.ybCur;
             }
-            if (this.nProcess == 210 || this.nProcess == 220 || this.nProcess == 230 || this.nProcess == 300 || this.nProcess == 240 || this.nProcess == 250 || this.nProcess == 260 || this.nProcess == 280 || this.nProcess == 290)
+            if (this.nProcess == 210 || this.nProcess == 220 || this.nProcess == 230 || this.nProcess == 300 ||
+                this.nProcess == 240 || this.nProcess == 250 || this.nProcess == 260 || this.nProcess == 280 || this.nProcess == 290)
             {
                 this.RcPnt[this.kRcPnt].Width = 4;
                 this.RcPnt[this.kRcPnt].Height = 4;
@@ -1310,15 +1362,20 @@ namespace IIT_Dimlom_Geo1
                 this.RcPnt[this.kRcPnt].Height = 5;
                 this.panel7.Invalidate(this.RcPnt[this.kRcPnt]);
             }
-            if ((this.nProcess == 210 || this.nProcess == 220 || this.nProcess == 230 || this.nProcess == 240 || this.nProcess == 250 || this.nProcess == 260) && this.kSel == 1)
+            if ((this.nProcess == 210 || this.nProcess == 220 || this.nProcess == 230 || this.nProcess == 240 ||
+                this.nProcess == 250 || this.nProcess == 260) && this.kSel == 1)
             {
                 this.sName = "";
                 this.sCalc = 0.0;
                 this.sLeg = 0.0;
-                DllClass1.ParcelSelect(this.xArc[0], this.yArc[0], this.kPolyAct, ref this.myAct.nameAct, ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg, out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
+                DllClass1.ParcelSelect(this.xArc[0], this.yArc[0], this.kPolyAct, ref this.myAct.nameAct,
+                    ref this.myAct.xAct, ref this.myAct.yAct, ref this.myAct.aActCalc, ref this.myAct.aActLeg,
+                    out this.sName, out this.sCalc, out this.sLeg, out this.indPoly);
                 if (this.indPoly == 0)
                     return;
-                DllClass1.SelectSource(this.kPolySource, this.myAct.xLabSource, this.myAct.yLabSource, this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.xAct[this.indPoly], this.myAct.yAct[this.indPoly], this.myAct.aActCalc[this.indPoly], this.myAct.aActLeg[this.indPoly], out this.indSource);
+                DllClass1.SelectSource(this.kPolySource, this.myAct.xLabSource, this.myAct.yLabSource,
+                    this.myAct.arCalcSource, this.myAct.arLegSource, this.myAct.xAct[this.indPoly],
+                    this.myAct.yAct[this.indPoly], this.myAct.aActCalc[this.indPoly], this.myAct.aActLeg[this.indPoly], out this.indSource);
                 int num1 = this.myAct.kActPoly1[this.indPoly];
                 int num2 = this.myAct.kActPoly2[this.indPoly];
                 this.kAdd = -1;
@@ -1336,7 +1393,8 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index1 = 1; index1 <= this.kPolyAct; ++index1)
                     {
-                        if (index1 != this.indPoly && DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, this.myAct.xAct[index1], this.myAct.yAct[index1]) != 0 && this.myAct.aActCalc[index1] < this.myAct.aActCalc[this.indPoly])
+                        if (index1 != this.indPoly && DllClass1.in_out(this.kAdd, ref this.myAct.xAdd, 
+                            ref this.myAct.yAdd, this.myAct.xAct[index1], this.myAct.yAct[index1]) != 0 && this.myAct.aActCalc[index1] < this.myAct.aActCalc[this.indPoly])
                         {
                             num3 += this.myAct.aActCalc[index1];
                             num4 += this.myAct.aActLeg[index1];
@@ -1368,15 +1426,22 @@ namespace IIT_Dimlom_Geo1
                         }
                     }
                 }
-                DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, kin, ref this.myAct.kin1, ref this.myAct.kin2, ref this.myAct.xActInt, ref this.myAct.yActInt, this.kLineAct, ref this.myAct.radAct, ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct, out kLin, ref this.myAct.rWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork, ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
-                DllClass1.SelectLine(this.xArc[1], this.yArc[1], this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, kLin, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.rWork, ref this.myAct.xWork, ref this.myAct.yWork, out this.selRad, out this.xSelRad, out this.ySelRad, out this.kSel, ref this.myAct.xSel, ref this.myAct.ySel, this.tolerance, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop);
+                DllClass1.ParcelLine(this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd, kin, ref this.myAct.kin1,
+                    ref this.myAct.kin2, ref this.myAct.xActInt, ref this.myAct.yActInt, this.kLineAct, ref this.myAct.radAct,
+                    ref this.myAct.kActLine1, ref this.myAct.kActLine2, ref this.myAct.xLineAct, ref this.myAct.yLineAct,
+                    out kLin, ref this.myAct.rWork, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.xWork,
+                    ref this.myAct.yWork, ref this.myAct.nWork, this.tolerance);
+                DllClass1.SelectLine(this.xArc[1], this.yArc[1], this.kAdd, ref this.myAct.xAdd, ref this.myAct.yAdd,
+                    kLin, ref this.myAct.nWork1, ref this.myAct.nWork2, ref this.myAct.rWork, ref this.myAct.xWork,
+                    ref this.myAct.yWork, out this.selRad, out this.xSelRad, out this.ySelRad, out this.kSel, 
+                    ref this.myAct.xSel, ref this.myAct.ySel, this.tolerance, ref this.myAct.xDop, ref this.myAct.yDop, ref this.myAct.zDop);
                 this.button19.Visible = true;
                 this.button29.Visible = true;
                 this.textBox4.Visible = true;
                 this.label4.Visible = true;
-                this.label4.Text = "Area, sq.m";
+                this.label4.Text = "Площадь, кв.м";
                 if (this.nProcess == 220)
-                    this.label4.Text = "Distance,м";
+                    this.label4.Text = "Расстояние,м";
                 if (this.nProcess == 230 || this.nProcess == 260)
                     this.label4.Text = "Процент,%";
                 if (this.nProcess == 250)
@@ -1603,7 +1668,7 @@ namespace IIT_Dimlom_Geo1
                     dist = Math.Sqrt(num32 * num32 + num33 * num33);
                     if (dist > this.tolerance)
                     {
-                        int num34 = (int)MessageBox.Show("Line isn't Closed", "Parcels' Division and Unification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num34 = (int)MessageBox.Show("Линия не замкнута", "Разделение и объединение участков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
@@ -1737,7 +1802,7 @@ namespace IIT_Dimlom_Geo1
             double num59 = this.myAct.aActLeg[index31];
             if (num55 == 0)
             {
-                int num60 = (int)MessageBox.Show("Parcel isn't Interior", "Inner Parcel delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num60 = (int)MessageBox.Show("Участок не внутри", "Удаление внутреннего участка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -1996,15 +2061,20 @@ namespace IIT_Dimlom_Geo1
             double yCur2 = 0.0;
             this.x2Box = e.X;
             this.y2Box = e.Y;
-            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur1, out yCur1);
-            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur2, out yCur2);
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX,
+                this.yBegY, this.xBegWin, this.yBegWin, out xCur1, out yCur1);
+            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX,
+                this.yBegY, this.xBegWin, this.yBegWin, out xCur2, out yCur2);
             double num1 = xCur2 - xCur1;
             double num2 = yCur2 - yCur1;
             this.xaCur = this.xminCur - num1;
             this.yaCur = this.yminCur - num2;
             this.xbCur = this.xmaxCur - num1;
             this.ybCur = this.ymaxCur - num2;
-            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth,
+                this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX,
+                out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, 
+                out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
             if (this.iCond < 0)
                 this.iGraphic = 1;
             this.panel7.Invalidate();
@@ -2508,7 +2578,7 @@ namespace IIT_Dimlom_Geo1
             }
             else if (this.kPolyProj > 0 || this.kTopoProj > 0)
             {
-                int num8 = (int)MessageBox.Show("Have to remove of all design data", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num8 = (int)MessageBox.Show("Придется удалить все графические(проектные) данные", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3781,7 +3851,7 @@ namespace IIT_Dimlom_Geo1
             {
                 this.nProcess = 400;
                 this.nControl = 0;
-                if (MessageBox.Show("Do you really want to Remove Last Action ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить последнее действие ?", "Действия с участком", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
                 this.ActionDelete();
                 this.myAct.KeepLoadAction(1);
@@ -4043,7 +4113,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myAct.factLine + "." + string.Format("{0}", (object)this.nAction)))
             {
-                int num = (int)MessageBox.Show("LINEAR TOPOLOGY of Actions wasn't created.", "Parcels' Actions", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("ЛИНЕЙНАЯ ТОПОЛОГИЯ Действий не создавалась.", "Действия с участками", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.kSel = -1;
                 this.kRcPnt = 0;
                 this.nProcess = 0;

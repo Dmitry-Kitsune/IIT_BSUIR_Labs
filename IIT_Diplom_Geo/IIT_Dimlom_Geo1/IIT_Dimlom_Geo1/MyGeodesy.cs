@@ -1613,7 +1613,7 @@ namespace IIT_Diplom_Geo1
             DllClass1.stringArray(symbProf, ref kArray);
             if (kArray < 9)
             {
-                int num = (int)MessageBox.Show("Index array DescribeProf");
+                int num = (int)MessageBox.Show("Индекс массива DescribeProf");
             }
             else
             {
@@ -13575,7 +13575,7 @@ namespace IIT_Diplom_Geo1
                         ++index1;
                         if (index1 > minArray)
                         {
-                            int num7 = (int)MessageBox.Show("Index array ControlInput");
+                            int num7 = (int)MessageBox.Show("Индекс массива ControlInput");
                             return;
                         }
                         tarName[index1] = str4;
@@ -15984,7 +15984,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -16204,7 +16204,7 @@ namespace IIT_Diplom_Geo1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("The Read operation failed as expected.");
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
             finally
             {
@@ -22239,7 +22239,7 @@ namespace IIT_Diplom_Geo1
                         ++index1;
                         if (index1 > kArray)
                         {
-                            int num13 = (int)MessageBox.Show("Index array PointsDesign");
+                            int num13 = (int)MessageBox.Show("Индекс массива PointsDesign");
                             return;
                         }
                         nameProj[index1] = str2;
@@ -22271,7 +22271,7 @@ namespace IIT_Diplom_Geo1
                             ++index2;
                             if (index2 > kArray)
                             {
-                                int num21 = (int)MessageBox.Show("Index array PointsDesign");
+                                int num21 = (int)MessageBox.Show("Индекс массива PointsDesign");
                                 return;
                             }
                             nameProj[index2] = nameProj[index3];

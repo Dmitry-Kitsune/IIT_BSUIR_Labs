@@ -3390,7 +3390,7 @@ namespace IIT_Dimlom_Geo1
             textBox4.ReadOnly = true;
             if (kLineProj != 0)
                 return;
-            int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            int num = (int)MessageBox.Show("Все строки были удалены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             nProcess = 0;
         }
 
@@ -3398,7 +3398,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineProj == 0)
             {
-                int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все строки были удалены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
                 kAdd = 0;
                 kRcPnt = 0;

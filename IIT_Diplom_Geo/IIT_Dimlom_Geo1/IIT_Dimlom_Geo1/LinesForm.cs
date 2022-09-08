@@ -2485,7 +2485,7 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Parallel Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Параллельная линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2516,7 +2516,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Point Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Точечная линия", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2547,7 +2547,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Lengthen Line", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Удлинить линию", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2578,7 +2578,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 2)
             {
-                int num = (int)MessageBox.Show("Линии < 2", "Tangent Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Касательная прямая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2609,7 +2609,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 2)
             {
-                int num = (int)MessageBox.Show("Линии < 2", "Tangent Inverse", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Линии < 2", "Касательная обратная", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2671,7 +2671,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.fileLine))
             {
-                int num = (int)MessageBox.Show("Нет линий", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Исправление", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2702,7 +2702,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(myLin.fileLine))
             {
-                int num = (int)MessageBox.Show("Нет линий", "Correct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Исправление", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2728,7 +2728,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Fillet Short Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Короткое скругление прямое", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2760,7 +2760,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Fillet Long Direct", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Длинное скругление прямое", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2792,7 +2792,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Fillet Direct R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Скругление прямое R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2824,7 +2824,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Fillet Inverse R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Скругление обратное R > 0", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2856,7 +2856,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput < 1)
             {
-                int num = (int)MessageBox.Show("Нет линий", "Fillet Short Inverse", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет линий", "Короткое обратное скругление", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -3022,7 +3022,7 @@ namespace IIT_Dimlom_Geo1
             myLin.AllActionRemove();
             if (kLineInput == 0)
             {
-                int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все строки были удалены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 nProcess = 0;
             }
             else
@@ -3033,7 +3033,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (kLineInput == 0)
             {
-                int num = (int)MessageBox.Show("All lines were removed", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Все строки были удалены", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 kSel = -1;
                 kAdd = 0;
                 kRcPnt = 0;
@@ -3082,7 +3082,7 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (textBox1.Text == "" || textBox4.Text == "")
             {
-                int num1 = (int)MessageBox.Show("May be you forgot down right button of the mouse", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Может быть, вы забыли нажать правую кнопку мыши", "Построение линий", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

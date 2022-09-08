@@ -38,7 +38,7 @@ namespace IIT_Diplom_Geo1
             this.mySel.FilePath();
             if (!File.Exists(this.mySel.tmpStr))
             {
-                int num = (int)MessageBox.Show("Drive and Проекты не выбраны", "Project selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск и Проекты не выбраны", "Выбор проекта", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             else

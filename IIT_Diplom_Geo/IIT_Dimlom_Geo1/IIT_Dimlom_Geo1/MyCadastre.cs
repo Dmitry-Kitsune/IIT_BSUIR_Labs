@@ -113,7 +113,7 @@ namespace IIT_Dimlom_Geo1
             panel4.AutoSize = StatusBarPanelAutoSize.Contents;
             panel5.AutoSize = StatusBarPanelAutoSize.Contents;
             panel6.AutoSize = StatusBarPanelAutoSize.Contents;
-            panel1.Text = "Geomatics software from B.Braverman";
+            panel1.Text = "Дипломный проект гр00332 Бурляев Д.А.";
             panel3.Text = "**";
             panel5.Text = "**";
             panel6.Text = DateTime.Now.ToShortDateString();
@@ -161,11 +161,11 @@ namespace IIT_Dimlom_Geo1
 
         private void button6_MouseHover(object sender, EventArgs e) => label3.Text = "Изменить диск для выбора старого проекта или создания нового";
 
-        private void button7_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update points' topographic symbologies";
+        private void button7_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление топографических символов точек";
 
-        private void button8_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update lines' topographic symbologies";
+        private void button8_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление топографических символов линий";
 
-        private void button9_MouseHover(object sender, EventArgs e) => label3.Text = "Create new or update polygons' topographic symbologies";
+        private void button9_MouseHover(object sender, EventArgs e) => label3.Text = "Создание новых или обновление топографических символов полигонов.";
 
         private void FormLoad()
         {
@@ -1160,7 +1160,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem != 71)
                 return;
-            label4.Text = "Кадастр и топография-Последний процесс: Parcels' actions";
+            label4.Text = "Кадастр и топография-Последний процесс: Действия с участками";
             if (kLineAct > 0)
             {
                 int iPar = 1;

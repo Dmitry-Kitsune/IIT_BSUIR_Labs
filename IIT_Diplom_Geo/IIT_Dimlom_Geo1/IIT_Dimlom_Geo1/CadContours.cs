@@ -606,7 +606,7 @@ namespace IIT_Dimlom_Geo1
                    DllClass1.DrawTre(e, kTriang, myTop.xTre, myTop.yTre, kCenTri, myTop.xCent, myTop.yCent, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
                     SolidBrush solidBrush = new SolidBrush(Color.Blue);
                     graphics.FillRectangle((Brush)solidBrush, 228, iHeight - 14, 4, 4);
-                    graphics.DrawString(" -- Centre of Triangle", new Font("Bold", 8f), (Brush)solidBrush, 222f, (float)(iHeight - 20));
+                    graphics.DrawString(" -- Центр треугольника", new Font("Bold", 8f), (Brush)solidBrush, 222f, (float)(iHeight - 20));
                 }
                 if (kPntSource > 0 && iPointShow == 0)
                     DrawPoint(e, kPntSource, myTop.xSour, myTop.ySour, scaleToWin, xBegX, yBegY, xBegWin, yBegWin);
@@ -626,7 +626,7 @@ namespace IIT_Dimlom_Geo1
                    DllClass1.LabelDraw(e, kPoly, myTop.namePolyFin, myTop.xLabFin, myTop.yLabFin, myTop.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myTop.brColor, iParam);
                     SolidBrush solidBrush = new SolidBrush(Color.Brown);
                     graphics.FillRectangle((Brush)solidBrush, 108, iHeight - 14, 4, 4);
-                    graphics.DrawString(" -- Label of Polygon", new Font("Bold", 8f), (Brush)solidBrush, 112f, (float)(iHeight - 20));
+                    graphics.DrawString(" -- Метка полигона", new Font("Bold", 8f), (Brush)solidBrush, 112f, (float)(iHeight - 20));
                 }
                 int xWin;
                 int yWin;
@@ -668,7 +668,7 @@ namespace IIT_Dimlom_Geo1
                         {
                             graphics.FillRectangle((Brush)solidBrush, xWin - 2, yWin - 2, 4, 4);
                             graphics.FillRectangle((Brush)solidBrush, 8, iHeight - 14, 4, 4);
-                            graphics.DrawString(" -- Split points", new Font("Bold", 8f), (Brush)solidBrush, 12f, (float)(iHeight - 20));
+                            graphics.DrawString(" -- Разделить точки", new Font("Bold", 8f), (Brush)solidBrush, 12f, (float)(iHeight - 20));
                         }
                     }
                 }

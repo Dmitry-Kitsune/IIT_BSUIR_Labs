@@ -191,7 +191,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(6, 228);
+            this.groupBox4.Location = new System.Drawing.Point(7, 228);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(338, 429);
             this.groupBox4.TabIndex = 4;

@@ -495,7 +495,7 @@ namespace IIT_Diplom_Geo1
             searchToolStripMenuItem1,
             toolStripSeparator6,
             aboutToolStripMenuItem1});
-            helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            helpToolStripMenuItem1.Name = "ПомощьToolStripMenuItem1";
             helpToolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
             helpToolStripMenuItem1.Text = "Помощь";
             // 

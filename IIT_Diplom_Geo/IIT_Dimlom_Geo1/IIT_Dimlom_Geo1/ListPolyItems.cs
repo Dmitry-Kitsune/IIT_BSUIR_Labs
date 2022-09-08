@@ -201,7 +201,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (num1 == 0)
             {
-                int num2 = (int)MessageBox.Show("Repeat item selection", "New symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Повторить выбор элемента","Новый символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

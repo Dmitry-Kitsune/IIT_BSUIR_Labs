@@ -1196,14 +1196,14 @@ namespace IIT_Dimlom_Geo1
                     }
                 }
                 if (num12 > 0)
-                    graphics.DrawString("Голубой цвет -- Doubtful Value", new Font("Bold", (float)emSize1), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(y1 - emSize1 / 2));
+                    graphics.DrawString("Голубой цвет -- Значение погрешностей", new Font("Bold", (float)emSize1), (Brush)new SolidBrush(Color.Cyan), 450f, (float)(y1 - emSize1 / 2));
             }
             if (nProcess == 170)
             {
                 if (kPhoto <= 0 || kRelate == 0)
                 {
                     nProcess = 0;
-                    int num = (int)MessageBox.Show("Данные отсутствуют", "Relative Orientation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Данные отсутствуют", "Относительная ориентация", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     panel7.Invalidate();
                     return;
                 }
@@ -1234,7 +1234,7 @@ namespace IIT_Dimlom_Geo1
                 if (kDiffer <= 0 && nProcess == 180)
                 {
                     nProcess = 0;
-                    int num = (int)MessageBox.Show("Данные отсутствуют", "Models Join", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    int num = (int)MessageBox.Show("Данные отсутствуют", "Соединение моделей", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     panel7.Invalidate();
                     return;
                 }
@@ -1319,7 +1319,7 @@ namespace IIT_Dimlom_Geo1
                     }
                 }
                 int emSize2 = 7;
-                graphics.DrawString("Average :", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 270f, (float)(y1 - emSize2 / 2));
+                graphics.DrawString("Средний :", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 270f, (float)(y1 - emSize2 / 2));
                 sTmp = string.Format("{0:F3}", (object)num22);
                 sTmp = "DX = " + sTmp;
                 graphics.DrawString(sTmp, new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 320f, (float)(y1 - emSize2 / 2));
@@ -1330,7 +1330,7 @@ namespace IIT_Dimlom_Geo1
                 sTmp = "DZ = " + sTmp;
                 graphics.DrawString(sTmp, new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Black), 420f, (float)(y1 - emSize2 / 2));
                 if (num26 > 0)
-                    graphics.DrawString("Red color -- Doubtful Value", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Red), 475f, (float)(y1 - emSize2 / 2));
+                    graphics.DrawString("Красный цвет -- Значение погрешностей", new Font("Bold", (float)emSize2), (Brush)new SolidBrush(Color.Red), 475f, (float)(y1 - emSize2 / 2));
             }
             if (nProcess == 200 || nProcess == 210 || nProcess == 130 || nProcess == 140 || nProcess == 220 || nProcess == 230 || nProcess == 240 || nProcess == 250 || nProcess == 290)
             {
@@ -1465,7 +1465,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (kControl > 0)
                 {
-                    graphics.DrawString("Average :  ", new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Black), 270f, (float)(y1 - emSize3 / 2));
+                    graphics.DrawString("Средний :  ", new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Black), 270f, (float)(y1 - emSize3 / 2));
                     sTmp = string.Format("{0:F3}", (object)dxx);
                     sTmp = "DX = " + sTmp;
                     graphics.DrawString(sTmp, new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Red), 320f, (float)(y1 - emSize3 / 2));
@@ -1477,7 +1477,7 @@ namespace IIT_Dimlom_Geo1
                     graphics.DrawString(sTmp, new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Green), 420f, (float)(y1 - emSize3 / 2));
                 }
                 if (num37 > 0)
-                    graphics.DrawString("Голубой цвет -- Doubtful Value", new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Cyan), 475f, (float)(y1 - emSize3 / 2));
+                    graphics.DrawString("Голубой цвет -- Значение погрешностей", new Font("Bold", (float)emSize3), (Brush)new SolidBrush(Color.Cyan), 475f, (float)(y1 - emSize3 / 2));
             }
             if (nControl != 10)
                 return;

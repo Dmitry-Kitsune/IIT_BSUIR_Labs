@@ -430,7 +430,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(7, 75);
+            this.groupBox4.Location = new System.Drawing.Point(5, 75);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(269, 353);
             this.groupBox4.TabIndex = 16;

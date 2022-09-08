@@ -117,6 +117,11 @@ namespace IIT_Dimlom_Geo1
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -154,11 +159,6 @@ namespace IIT_Dimlom_Geo1
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -186,8 +186,8 @@ namespace IIT_Dimlom_Geo1
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -204,7 +204,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(656, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 299);
+            this.groupBox1.Size = new System.Drawing.Size(359, 293);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Работа с проектом";
@@ -256,6 +256,65 @@ namespace IIT_Dimlom_Geo1
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.Points_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox3.Controls.Add(this.button31);
+            this.groupBox3.Controls.Add(this.button16);
+            this.groupBox3.Controls.Add(this.button11);
+            this.groupBox3.Controls.Add(this.button10);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(0, 75);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(359, 88);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Исходные данные";
+            // 
+            // button31
+            // 
+            this.button31.BackColor = System.Drawing.Color.White;
+            this.button31.Location = new System.Drawing.Point(181, 44);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(171, 38);
+            this.button31.TabIndex = 3;
+            this.button31.Text = "Аеротриангуляция \r\n(в разаработке)";
+            this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.AeroData_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(9, 44);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(166, 38);
+            this.button16.TabIndex = 2;
+            this.button16.Text = "Данные геодезии";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.GeoData_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(181, 16);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(173, 23);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Дополнительные точки";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.AddPoints_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(9, 16);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(166, 23);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Загрузка точек из файла";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.FilePoints_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -306,7 +365,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // groupBox10
             // 
-            this.groupBox10.BackColor = System.Drawing.Color.Gray;
+            this.groupBox10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox10.Controls.Add(this.label4);
             this.groupBox10.Controls.Add(this.button2);
             this.groupBox10.Controls.Add(this.checkBox30);
@@ -340,7 +399,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox10.Controls.Add(this.checkBox2);
             this.groupBox10.Controls.Add(this.checkBox1);
             this.groupBox10.ForeColor = System.Drawing.Color.Black;
-            this.groupBox10.Location = new System.Drawing.Point(656, 301);
+            this.groupBox10.Location = new System.Drawing.Point(656, 299);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(359, 250);
             this.groupBox10.TabIndex = 2;
@@ -636,65 +695,6 @@ namespace IIT_Dimlom_Geo1
             this.checkBox1.TabIndex = 0;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox3.Controls.Add(this.button31);
-            this.groupBox3.Controls.Add(this.button16);
-            this.groupBox3.Controls.Add(this.button11);
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(0, 75);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(359, 88);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Исходные данные";
-            // 
-            // button31
-            // 
-            this.button31.BackColor = System.Drawing.Color.White;
-            this.button31.Location = new System.Drawing.Point(181, 44);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(171, 38);
-            this.button31.TabIndex = 3;
-            this.button31.Text = "Аеротриангуляция \r\n(в разаработке)";
-            this.button31.UseVisualStyleBackColor = false;
-            this.button31.Click += new System.EventHandler(this.AeroData_Click);
-            // 
-            // button16
-            // 
-            this.button16.BackColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(9, 44);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(166, 38);
-            this.button16.TabIndex = 2;
-            this.button16.Text = "Данные геодезии";
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.GeoData_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(181, 16);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(173, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Дополнительные точки";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.AddPoints_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(9, 16);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(166, 23);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Загрузка точек из файла";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.FilePoints_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -881,7 +881,7 @@ namespace IIT_Dimlom_Geo1
             this.groupBox7.ForeColor = System.Drawing.Color.Black;
             this.groupBox7.Location = new System.Drawing.Point(656, 222);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(358, 80);
+            this.groupBox7.Size = new System.Drawing.Size(358, 74);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Модель рельефа и горизонталей";
@@ -997,8 +997,8 @@ namespace IIT_Dimlom_Geo1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1015, 726);
-            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.label2);
@@ -1012,13 +1012,13 @@ namespace IIT_Dimlom_Geo1
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Кадастр";
+            this.Name = "Cadasral";
             this.Text = "Кадастр и топография (построение планов)";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);

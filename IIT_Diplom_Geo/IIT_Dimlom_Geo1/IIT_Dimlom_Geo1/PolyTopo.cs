@@ -176,29 +176,29 @@ namespace IIT_Dimlom_Geo1
 
         private void button1_MouseLeave(object sender, EventArgs e) => this.label11.Text = "";
 
-        private void button2_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click Button for automatic Linear and Polygonal Topologies construction";
+        private void button2_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку для автоматического построения линейных и полигональных моделей (топологий).";
 
-        private void button3_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. For update of Linear Topology select and remove line";
+        private void button3_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Для обновления линейной топологии выберите и удалите линию";
 
-        private void button4_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button for Rebuilding of Polygonal Topology after corection of Linear Topology";
+        private void button4_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку для восстановления полигональной топологии после исправления линейной топологии.";
 
         private void button5_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Зажмите левую кнопкой мыши и переместите мышь. После выбора области отпустите кнопку. Нажмите правую кнопку мыши для исходного положения";
 
-        private void button6_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button6_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия этой кнопки кликните левой кнопкой возле точки, которую хотите приблизить. Кликните правой кнопкой мыши для исходного положения ";
 
-        private void button7_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку и отпустив левую кнопку мыши возле выбранной точки. Нажмите правую кнопку для исходного положения";
+        private void button7_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия этой кнопки кликните по области которую хотите отдалить. Нажмите правую кнопку для исходного положения";
 
-        private void button8_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку левую кнопкой мыши ведите вдоль экрана. Нажмите правую кнопку для возврата исходное положение";
+        private void button8_MouseHover(object sender, EventArgs e) => this.label11.Text = "После нажатия на эту кнопку, кликните правой кнопкой мыши по области экрана с графикой и передвигайте для смещения экрана. Нажмите правую кнопку для возврата исходное положение";
 
-        private void button14_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. By left button of mouse choose parcel";
+        private void button14_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. С помощью левой кнопеи мыши выьерите участок";
 
-        private void button15_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button if process of dividing and Legal Area is known";
+        private void button15_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите на кнопку, если известен процес разделения и допустимая площадь";
 
-        private void button18_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Dialog for input Legal areas is opened";
+        private void button18_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Откроется диалог для ввода допустимой площади";
 
-        private void button22_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Dialog is opened. Set up Formula for calculation tolerance of Calculated and Legal Areas";
+        private void button22_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку. Откроется окно. Установка(настройка) формулы для расчета допустимых и вычисленных площадей.";
 
-        private void button23_MouseHover(object sender, EventArgs e) => this.label11.Text = "Click button for node and linear topologies building";
+        private void button23_MouseHover(object sender, EventArgs e) => this.label11.Text = "Нажмите кнопку для построения узловой и линейной топологий";
 
 
         private void FormLoad()
@@ -281,7 +281,9 @@ namespace IIT_Dimlom_Geo1
             this.yminCur = this.ymin;
             this.xmaxCur = this.xmax;
             this.ymaxCur = this.ymax;
-            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, 
+                out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX,
+                out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -292,21 +294,31 @@ namespace IIT_Dimlom_Geo1
             if (this.nControl == 10)
                 graphics.DrawRectangle(new Pen(Color.Green, 2f), this.RcDraw);
             if (this.kPntPlus > 0 && this.iPointDraw > 0)
-                DllClass1.PointsDraw(e, this.myPol.fsymbPnt, this.iHeightShow, this.kPntPlus, this.myPol.namePnt, this.myPol.xPnt, this.myPol.yPnt, this.myPol.zPnt, this.myPol.xPntInscr, this.myPol.yPntInscr, this.myPol.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPol.nCode1, this.myPol.nCode2, this.kSymbPnt, this.myPol.numRec, this.myPol.numbUser, this.myPol.ixSqu, this.myPol.iySqu, this.myPol.nColor, this.myPol.brColor, this.myPol.pnColor);
+                DllClass1.PointsDraw(e, this.myPol.fsymbPnt, this.iHeightShow, this.kPntPlus, this.myPol.namePnt, 
+                    this.myPol.xPnt, this.myPol.yPnt, this.myPol.zPnt, this.myPol.xPntInscr, this.myPol.yPntInscr,
+                    this.myPol.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, 
+                    this.myPol.nCode1, this.myPol.nCode2, this.kSymbPnt, this.myPol.numRec, this.myPol.numbUser,
+                    this.myPol.ixSqu, this.myPol.iySqu, this.myPol.nColor, this.myPol.brColor, this.myPol.pnColor);
             if (this.kLineInput > 0 && this.iLineDraw > 0)
             {
                 this.iParam = 1;
-                DllClass1.LineDraw(e, this.kLineInput, this.myPol.k1, this.myPol.k2, this.myPol.xLin, this.myPol.yLin, this.myPol.rRadLine, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPol.pnColor, this.iParam);
+                DllClass1.LineDraw(e, this.kLineInput, this.myPol.k1, this.myPol.k2, this.myPol.xLin, this.myPol.yLin, 
+                    this.myPol.rRadLine, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPol.pnColor,
+                    this.iParam);
             }
             if (this.kLineTopo > 0 && this.iLineTopo > 0)
             {
                 this.iParam = 4;
-                DllClass1.LineDraw(e, this.kLineTopo, this.myPol.kl1, this.myPol.kl2, this.myPol.zLin, this.myPol.zPik, this.myPol.radLine, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPol.pnColor, this.iParam);
+                DllClass1.LineDraw(e, this.kLineTopo, this.myPol.kl1, this.myPol.kl2, this.myPol.zLin, 
+                    this.myPol.zPik, this.myPol.radLine, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin,
+                    this.yBegWin, this.myPol.pnColor, this.iParam);
             }
             if (this.myPol.kPoly > 0 && this.iPolyDraw > 0)
-                this.LabelDraw(e, this.myPol.kPoly, this.myPol.namePoly, this.myPol.xLab, this.myPol.yLab, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                this.LabelDraw(e, this.myPol.kPoly, this.myPol.namePoly, this.myPol.xLab, this.myPol.yLab,
+                    this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.kNode > 0 && this.iNodeDraw > 0)
-                DllClass1.DrawNode(e, this.kNode, this.myPol.nameNode, this.myPol.xNode, this.myPol.yNode, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.DrawNode(e, this.kNode, this.myPol.nameNode, this.myPol.xNode, this.myPol.yNode, 
+                    this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.kDangle > 0 && this.iDangleDraw > 0)
                 this.DangleDraw(e);
             if (this.nProcess == 520 || this.nProcess == 540)
@@ -329,10 +341,12 @@ namespace IIT_Dimlom_Geo1
             this.RcDraw.Y = e.Y;
             this.RcBox.X = e.X;
             this.RcBox.Y = e.Y;
-            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin,
+                this.yBegWin, out this.xCur, out this.yCur);
             if (this.nControl == 10)
             {
-                DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCurMin, out this.yCurMin);
+                DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    out this.xCurMin, out this.yCurMin);
                 if (e.Button == MouseButtons.Left)
                 {
                     this.isDrag = true;
@@ -349,7 +363,9 @@ namespace IIT_Dimlom_Geo1
                 this.yminCur = y1;
                 this.xmaxCur = x2;
                 this.ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                    out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin,
+                    out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
@@ -368,7 +384,9 @@ namespace IIT_Dimlom_Geo1
                 this.yminCur = y1;
                 this.xmaxCur = x2;
                 this.ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                    out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin,
+                    out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
@@ -383,14 +401,17 @@ namespace IIT_Dimlom_Geo1
                 this.dy = this.ymax - this.ymin;
                 if (this.dx < 0.05 || this.dy < 0.05)
                     return;
-                DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth, this.iHeight,
+                    out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, 
+                    out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
             }
             if (e.Button != MouseButtons.Left || this.nProcess != 520 && this.nProcess != 540)
                 return;
-            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, 
+                out this.xCur, out this.yCur);
             this.kSel = 0;
             this.xArc[0] = this.xCur;
             this.yArc[0] = this.yCur;
@@ -401,7 +422,8 @@ namespace IIT_Dimlom_Geo1
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, 
+                out this.xCur, out this.yCur);
             if (!File.Exists(this.myPol.filePoint))
             {
                 this.panel2.Text = string.Format("{0}", (object)e.X);
@@ -417,7 +439,8 @@ namespace IIT_Dimlom_Geo1
                 ControlPaint.DrawReversibleFrame(this.theRectangle, this.BackColor, FrameStyle.Dashed);
                 this.endPoint = this.PointToScreen(new Point(e.X, e.Y));
                 if (e.X > 15 && e.X < this.pixWid + 10 && e.Y > 15 && e.Y < this.pixHei + 10)
-                    this.theRectangle = new Rectangle(this.startPoint.X, this.startPoint.Y, this.endPoint.X - this.startPoint.X, this.endPoint.Y - this.startPoint.Y);
+                    this.theRectangle = new Rectangle(this.startPoint.X, this.startPoint.Y, this.endPoint.X - this.startPoint.X,
+                        this.endPoint.Y - this.startPoint.Y);
                 ControlPaint.DrawReversibleFrame(this.theRectangle, this.BackColor, FrameStyle.Dashed);
             }
             if (this.nControl != 40 || e.Button != MouseButtons.Left)
@@ -428,15 +451,19 @@ namespace IIT_Dimlom_Geo1
             double yCur2 = 0.0;
             this.x2Box = e.X;
             this.y2Box = e.Y;
-            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur1, out yCur1);
-            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur2, out yCur2);
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin,
+                this.yBegWin, out xCur1, out yCur1);
+            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, 
+                this.yBegWin, out xCur2, out yCur2);
             double num1 = xCur2 - xCur1;
             double num2 = yCur2 - yCur1;
             this.xaCur = this.xminCur - num1;
             this.yaCur = this.yminCur - num2;
             this.xbCur = this.xmaxCur - num1;
             this.ybCur = this.ymaxCur - num2;
-            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, this.iHeight,
+                out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, 
+                out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
             if (this.iCond < 0)
                 this.iGraphic = 1;
             this.panel7.Invalidate();
@@ -471,7 +498,10 @@ namespace IIT_Dimlom_Geo1
                     this.yminCur = this.yCurMin;
                     this.xmaxCur = this.xCurMax;
                     this.ymaxCur = this.yCurMax;
-                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, this.iWidth,
+                        this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY,
+                        out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin,
+                        out this.yEndWin, out this.iCond);
                     if (this.iCond < 0)
                     {
                         this.iGraphic = 1;
@@ -502,9 +532,13 @@ namespace IIT_Dimlom_Geo1
                 double yrd = num1 = 0.0;
                 double xrd = num1;
                 double rd = num1;
-                DllClass1.FindLine(this.xArc[0], this.yArc[0], this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.radLine, ref this.myPol.xOut, ref this.myPol.yOut, ref this.myPol.zLin, ref this.myPol.zPik, out rd, out xrd, out yrd, out this.kSel, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop, out this.xCur, out this.yCur, out az, out this.indLine);
+                DllClass1.FindLine(this.xArc[0], this.yArc[0], this.kLineTopo, ref this.myPol.kl1,
+                    ref this.myPol.kl2, ref this.myPol.radLine, ref this.myPol.xOut, ref this.myPol.yOut,
+                    ref this.myPol.zLin, ref this.myPol.zPik, out rd, out xrd, out yrd, out this.kSel, 
+                    ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop,
+                    out this.xCur, out this.yCur, out az, out this.indLine);
                 this.panel7.Invalidate();
-                if (MessageBox.Show("Вы действительно хотите удалить эту строку ?", "Linear Topology Correction", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show("Вы действительно хотите удалить эту строку ?", "Коррекция линейной топологии", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 {
                     this.kSel = -1;
                     this.kRcPnt = 0;
@@ -512,7 +546,9 @@ namespace IIT_Dimlom_Geo1
                     this.panel7.Invalidate();
                     return;
                 }
-                DllClass1.LineTopoDel(this.indLine, this.kLineTopo, ref this.myPol.radLine, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, out this.kNew, ref this.myPol.rWork, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xAdd, ref this.myPol.yAdd, ref this.myPol.nWork);
+                DllClass1.LineTopoDel(this.indLine, this.kLineTopo, ref this.myPol.radLine, ref this.myPol.kl1,
+                    ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, out this.kNew, ref this.myPol.rWork,
+                    ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xAdd, ref this.myPol.yAdd, ref this.myPol.nWork);
                 if (this.kNew == 0)
                     return;
                 this.kLineTopo = this.kNew;
@@ -533,7 +569,10 @@ namespace IIT_Dimlom_Geo1
                 this.myPol.KeepLineTopo();
                 this.kDangle = 0;
                 int kLine2 = 0;
-                DllClass1.DangleDelete(this.kLineTopo, ref this.myPol.radLine, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, out kLine2, ref this.myPol.pWork, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xWork1, ref this.myPol.yWork1, this.tolerance, out this.kDangle, ref this.myPol.nWork, ref this.myPol.ktt);
+                DllClass1.DangleDelete(this.kLineTopo, ref this.myPol.radLine, ref this.myPol.kl1, ref this.myPol.kl2,
+                    ref this.myPol.zLin, ref this.myPol.zPik, out kLine2, ref this.myPol.pWork, ref this.myPol.kt1, 
+                    ref this.myPol.kt2, ref this.myPol.xWork1, ref this.myPol.yWork1, this.tolerance, out this.kDangle, 
+                    ref this.myPol.nWork, ref this.myPol.ktt);
                 if (this.kDangle == 0)
                 {
                     if (File.Exists(this.myPol.fileDangle))
@@ -594,7 +633,10 @@ namespace IIT_Dimlom_Geo1
             double sCalc = 0.0;
             double sLeg = 0.0;
             this.indPoly = 0;
-            DllClass1.ParcelSelect(this.xArc[0], this.yArc[0], this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, ref this.myPol.areaPol, ref this.myPol.areaLeg, out sName, out sCalc, out sLeg, out this.indPoly);
+            DllClass1.ParcelSelect(this.xArc[0], this.yArc[0], this.myPol.kPoly, 
+                ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, 
+                ref this.myPol.areaPol, ref this.myPol.areaLeg, out sName, out sCalc, 
+                out sLeg, out this.indPoly);
             if (this.indPoly == 0)
                 return;
             int num7 = this.myPol.kt1[this.indPoly];
@@ -610,7 +652,8 @@ namespace IIT_Dimlom_Geo1
             double num10 = 0.0;
             for (int index = 1; index <= this.myPol.kPoly; ++index)
             {
-                if (index != this.indPoly && DllClass1.in_out(this.kSel, ref this.myPol.xWork, ref this.myPol.yWork, this.myPol.xLab[index], this.myPol.yLab[index]) != 0)
+                if (index != this.indPoly && DllClass1.in_out(this.kSel, ref this.myPol.xWork, 
+                    ref this.myPol.yWork, this.myPol.xLab[index], this.myPol.yLab[index]) != 0)
                 {
                     num9 += this.myPol.areaPol[index];
                     num10 += this.myPol.areaLeg[index];
@@ -650,7 +693,8 @@ namespace IIT_Dimlom_Geo1
             Point[] points = new Point[this.kSel + 1];
             for (int index = 0; index <= this.kSel; ++index)
             {
-                DllClass1.XYtoWIN(this.myPol.xWork[index], this.myPol.yWork[index], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
+                DllClass1.XYtoWIN(this.myPol.xWork[index], this.myPol.yWork[index], this.scaleToWin,
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
                 if (xWin != 0 || yWin != 0)
                 {
                     points[index].X = xWin;
@@ -672,7 +716,8 @@ namespace IIT_Dimlom_Geo1
             Point[] points = new Point[this.kOut];
             for (int index1 = 1; index1 <= this.kOut; ++index1)
             {
-                DllClass1.XYtoWIN(this.myPol.xOut[index1], this.myPol.yOut[index1], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
+                DllClass1.XYtoWIN(this.myPol.xOut[index1], this.myPol.yOut[index1], this.scaleToWin, 
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
                 if (xWin != 0 || yWin != 0)
                 {
                     int index2 = index1 - 1;
@@ -712,10 +757,12 @@ namespace IIT_Dimlom_Geo1
                     }
                     for (int index3 = num3 + 1; index3 <= num4; ++index3)
                     {
-                        DllClass1.XYtoWIN(this.myPol.xAdd[index3 - 1], this.myPol.yAdd[index3 - 1], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin2, out yWin2);
+                        DllClass1.XYtoWIN(this.myPol.xAdd[index3 - 1], this.myPol.yAdd[index3 - 1], this.scaleToWin,
+                            this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin2, out yWin2);
                         if (xWin2 != 0 || yWin2 != 0)
                         {
-                            DllClass1.XYtoWIN(this.myPol.xAdd[index3], this.myPol.yAdd[index3], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin1, out yWin1);
+                            DllClass1.XYtoWIN(this.myPol.xAdd[index3], this.myPol.yAdd[index3], this.scaleToWin,
+                                this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin1, out yWin1);
                             if (xWin1 != 0 || yWin1 != 0)
                             {
                                 Point pt1 = new Point(xWin2, yWin2);
@@ -755,10 +802,12 @@ namespace IIT_Dimlom_Geo1
             int yWin1 = 0;
             for (int index = 1; index <= kPol; ++index)
             {
-                DllClass1.XYtoWIN(xLab[index], yLab[index], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin1, out yWin1);
+                DllClass1.XYtoWIN(xLab[index], yLab[index], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin,
+                    this.yBegWin, out xWin1, out yWin1);
                 if (xWin1 != 0 || yWin1 != 0)
                 {
-                    graphics.DrawString(namePol[index], new Font("Bold", (float)(num + 3)), (Brush)new SolidBrush(Color.Red), (float)(xWin1 + num / 2), (float)(yWin1 - num + 1));
+                    graphics.DrawString(namePol[index], new Font("Bold", (float)(num + 3)), (Brush)new SolidBrush(Color.Red), 
+                        (float)(xWin1 + num / 2), (float)(yWin1 - num + 1));
                     graphics.FillRectangle((Brush)new SolidBrush(Color.Magenta), xWin1 - num / 2, yWin1 - num / 2, num, num);
                 }
             }
@@ -884,7 +933,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myPol.fileDangle))
             {
-                int num1 = (int)MessageBox.Show("Dangles are absent", "Polygonal Topology", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Висячки отсутствуют", "Полигональная топология", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -947,7 +996,9 @@ namespace IIT_Dimlom_Geo1
             this.myPol.LineTopoLoad();
             this.kLineTopo = this.myPol.kLineTopo;
             if (this.kLineTopo > 0)
-                DllClass1.CleanLineTopo(ref this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.radLine, ref this.myPol.zLin, ref this.myPol.zPik, ref this.myPol.nWork, ref this.myPol.xWork, ref this.myPol.yWork, this.tolerance);
+                DllClass1.CleanLineTopo(ref this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, 
+                    ref this.myPol.radLine, ref this.myPol.zLin, ref this.myPol.zPik, ref this.myPol.nWork,
+                    ref this.myPol.xWork, ref this.myPol.yWork, this.tolerance);
             if (this.kLineTopo == 0)
             {
                 int num = (int)MessageBox.Show("Линейные топографические знаки не были созданы", "Построение линейной топологии", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -959,9 +1010,22 @@ namespace IIT_Dimlom_Geo1
                 this.kNode = this.myPol.kNodeTopo;
                 int kNew = 0;
                 this.panel1.Text = "Пожалуйста подождите....Проверка двойных линий";
-                DllClass1.RemoveDoubleLine(this.tolerance, ref this.kLineTopo, ref this.myPol.rWork, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, out kNew, ref this.myPol.pWork, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.nWork, ref this.myPol.nDop1, ref this.myPol.nDop2, this.panel1);
+                DllClass1.RemoveDoubleLine(this.tolerance, ref this.kLineTopo, ref this.myPol.rWork, 
+                    ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik,
+                    out kNew, ref this.myPol.pWork, ref this.myPol.nWork1, ref this.myPol.nWork2, 
+                    ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.xDop, ref this.myPol.yDop,
+                    ref this.myPol.nWork, ref this.myPol.nDop1, ref this.myPol.nDop2, this.panel1);
                 this.panel1.Text = "Пожалуйста подождите....Построение полигональных топографических знаков";
-                DllClass1.LinesToPoly(this.tolerance, this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, this.kNode, ref this.myPol.xNode, ref this.myPol.yNode, out this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, ref this.myPol.areaPol, ref this.myPol.areaLeg, ref this.myPol.nSymbPoly, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xPol, ref this.myPol.yPol, out this.kInter, ref this.myPol.indPol, ref this.myPol.kn1, ref this.myPol.kn2, ref this.myPol.nWork, ref this.myPol.indInter, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, ref this.myPol.xWork2, ref this.myPol.yWork2, ref this.myPol.pWork, ref this.myPol.rWork, ref this.myPol.zDop, this.panel1);
+                DllClass1.LinesToPoly(this.tolerance, this.kLineTopo, ref this.myPol.kl1, ref this.myPol.kl2,
+                    ref this.myPol.zLin, ref this.myPol.zPik, this.kNode, ref this.myPol.xNode, ref this.myPol.yNode,
+                    out this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab,
+                    ref this.myPol.areaPol, ref this.myPol.areaLeg, ref this.myPol.nSymbPoly, ref this.myPol.kt1,
+                    ref this.myPol.kt2, ref this.myPol.xPol, ref this.myPol.yPol, out this.kInter, 
+                    ref this.myPol.indPol, ref this.myPol.kn1, ref this.myPol.kn2, ref this.myPol.nWork, 
+                    ref this.myPol.indInter, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.nWork1,
+                    ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork,
+                    ref this.myPol.xWork2, ref this.myPol.yWork2, ref this.myPol.pWork, ref this.myPol.rWork,
+                    ref this.myPol.zDop, this.panel1);
                 if (this.myPol.kPoly == 0)
                     return;
                 this.panel1.Text = "Число полигонов = " + Convert.ToString(this.myPol.kPoly);
@@ -976,7 +1040,12 @@ namespace IIT_Dimlom_Geo1
                 this.myPol.arExter = this.arExter;
                 this.myPol.KeepExter();
                 this.panel1.Text = "Пожалуйста подождите....Определение подписи(метки) полигона";
-                DllClass1.KeepPolyLabel(this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab, ref this.myPol.yLab, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xPol, ref this.myPol.yPol, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.xWork2, ref this.myPol.yWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.zDop, ref this.myPol.nDop1, ref this.myPol.nDop2, ref this.myPol.nDop3, this.panel1);
+                DllClass1.KeepPolyLabel(this.myPol.kPoly, ref this.myPol.namePoly, ref this.myPol.xLab,
+                    ref this.myPol.yLab, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xPol, 
+                    ref this.myPol.yPol, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.xWork2,
+                    ref this.myPol.yWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, 
+                    ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.zDop, ref this.myPol.nDop1, 
+                    ref this.myPol.nDop2, ref this.myPol.nDop3, this.panel1);
                 this.myPol.KeepPoly();
                 this.kPolySource = this.myPol.kPoly;
                 for (int index1 = 1; index1 <= this.myPol.kPoly; ++index1)
@@ -1233,7 +1302,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (num1 == 0)
             {
-                int num2 = (int)MessageBox.Show("Tolerance for Difference Calculated and Legal areas isn't defined", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Допуск для разницы расчетных и допустимых областей не определен", "Построение полигональных топографических знаков", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             DllClass1.CheckText(this.textBox2.Text, out this.sArea, out this.iCond);
             if (this.iCond < 0)
@@ -1264,7 +1333,7 @@ namespace IIT_Dimlom_Geo1
                     double num6 = (this.arExter - this.sArea) / this.sArea;
                     double num7 = 0.0;
                     int num8 = 0;
-                    this.sTmp = "Difference more than tolerance-Parcels :";
+                    this.sTmp = "Расхождение больше, чем допуск - Участки :";
                     for (int index = 1; index <= this.myPol.kPoly; ++index)
                     {
                         double num9 = num6 * this.myPol.areaPol[index];
@@ -1365,16 +1434,29 @@ namespace IIT_Dimlom_Geo1
             this.myPol.AllActionRemove();
             this.myPol.nAction = 0;
             this.myPol.KeepLoadAction(2);
-            DllClass1.LineTopology(this.tolerance, ref this.kPntPlus, ref this.myPol.xPnt, ref this.myPol.yPnt, ref this.kLineInput, ref this.myPol.rRadLine, ref this.myPol.k1, ref this.myPol.k2, ref this.myPol.xLin, ref this.myPol.yLin, out this.kNode, ref this.myPol.xNode, ref this.myPol.yNode, out this.kLineTopo, ref this.myPol.radLine, ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.nWork, ref this.myPol.nWork1, ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork, ref this.myPol.pWork, ref this.myPol.rWork, ref this.myPol.xWork1, ref this.myPol.yWork1, ref this.myPol.xAdd, ref this.myPol.yAdd, ref this.myPol.nDop1, ref this.myPol.nDop2, ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.xPik, ref this.myPol.yPik, this.panel1);
+            DllClass1.LineTopology(this.tolerance, ref this.kPntPlus, ref this.myPol.xPnt, 
+                ref this.myPol.yPnt, ref this.kLineInput, ref this.myPol.rRadLine, ref this.myPol.k1,
+                ref this.myPol.k2, ref this.myPol.xLin, ref this.myPol.yLin, out this.kNode, 
+                ref this.myPol.xNode, ref this.myPol.yNode, out this.kLineTopo, ref this.myPol.radLine, 
+                ref this.myPol.kl1, ref this.myPol.kl2, ref this.myPol.zLin, ref this.myPol.zPik, 
+                ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.nWork, ref this.myPol.nWork1, 
+                ref this.myPol.nWork2, ref this.myPol.xWork, ref this.myPol.yWork, ref this.myPol.zWork,
+                ref this.myPol.pWork, ref this.myPol.rWork, ref this.myPol.xWork1, ref this.myPol.yWork1,
+                ref this.myPol.xAdd, ref this.myPol.yAdd, ref this.myPol.nDop1, ref this.myPol.nDop2, 
+                ref this.myPol.xDop, ref this.myPol.yDop, ref this.myPol.xPik, ref this.myPol.yPik, this.panel1);
             int nName = 0;
             DllClass1.NewPointName(this.kPntPlus, this.myPol.namePnt, out nName, out this.sTmp);
-            DllClass1.NameNode(nName, this.kPntPlus, this.myPol.namePnt, this.myPol.xPnt, this.myPol.yPnt, ref this.kNode, ref this.myPol.nameNode, ref this.myPol.xNode, ref this.myPol.yNode);
+            DllClass1.NameNode(nName, this.kPntPlus, this.myPol.namePnt, this.myPol.xPnt, this.myPol.yPnt,
+                ref this.kNode, ref this.myPol.nameNode, ref this.myPol.xNode, ref this.myPol.yNode);
             this.myPol.kNodeTopo = this.kNode;
             this.myPol.KeepNode();
             this.myPol.kLineTopo = this.kLineTopo;
             this.myPol.KeepLineTopo();
             this.kDangle = 0;
-            DllClass1.DangleDelete(this.kLineInput, ref this.myPol.rWork, ref this.myPol.k1, ref this.myPol.k2, ref this.myPol.xLin, ref this.myPol.yLin, out kLine2, ref this.myPol.pWork, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xWork1, ref this.myPol.yWork1, this.tolerance, out this.kDangle, ref this.myPol.nWork, ref this.myPol.ktt);
+            DllClass1.DangleDelete(this.kLineInput, ref this.myPol.rWork, ref this.myPol.k1, 
+                ref this.myPol.k2, ref this.myPol.xLin, ref this.myPol.yLin, out kLine2, 
+                ref this.myPol.pWork, ref this.myPol.kt1, ref this.myPol.kt2, ref this.myPol.xWork1,
+                ref this.myPol.yWork1, this.tolerance, out this.kDangle, ref this.myPol.nWork, ref this.myPol.ktt);
             if (this.kDangle == 0)
                 this.button13.Visible = false;
             if (this.kDangle > 0)

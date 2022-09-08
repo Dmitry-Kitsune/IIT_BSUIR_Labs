@@ -428,9 +428,9 @@ namespace IIT_Dimlom_Geo1
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 77);
+            this.comboBox1.Location = new System.Drawing.Point(228, 77);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(77, 21);
+            this.comboBox1.Size = new System.Drawing.Size(90, 21);
             this.comboBox1.TabIndex = 9;
             // 
             // radioButton2
@@ -492,7 +492,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(122, 59);
+            this.textBox7.Location = new System.Drawing.Point(115, 58);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(107, 20);
             this.textBox7.TabIndex = 3;

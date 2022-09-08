@@ -305,14 +305,14 @@ namespace IIT_Dimlom_Geo1
                 return;
             if (nProblem == 1)
             {
-                label4.Text = "Последний процесс: Forming Points' библиотека символов";
+                label4.Text = "Последний процесс: Построение библиотеки символов точек";
                 if (kSymbPnt > 0)
                     mySub.RectCoord(pixWid, pixHei, kSymbPnt, mySub.heiSymb, out kRect, mySub.nVert,
                         mySub.xVert, mySub.yVert, out rWid, out rHei);
             }
             if (nProblem == 2)
             {
-                label4.Text = "Последний процесс: Forming Lines' библиотека символов";
+                label4.Text = "Последний процесс: Построение библиотеки символов линий";
                 if (kSymbLine > 0)
                     mySub.RectLineSign(pixWid, pixHei, kSymbLine, hSymbLine, out kRect, mySub.nVert,
                         mySub.xVert, mySub.yVert, out rWid, out rHei);

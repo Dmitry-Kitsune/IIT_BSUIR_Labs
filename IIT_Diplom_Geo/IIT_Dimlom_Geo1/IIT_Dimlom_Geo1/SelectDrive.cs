@@ -63,14 +63,14 @@ namespace IIT_Diplom_Geo1
                         this.label3.Text = this.comPath;
                     }
                     else
-                        this.label3.Text = "Isn't defined";
+                        this.label3.Text = "Не определено";
                 }
             }
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Drive wasn't selected. Do You want to leave Dialog?", "Drive selection", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Диск не выбран. Вы хотите выйти из диалогового окна?", "Выбор дисков", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 Form.ActiveForm.Close();
             if (this.listBox1.SelectedIndex <= -1)
                 return;
@@ -144,12 +144,5 @@ namespace IIT_Diplom_Geo1
         }
 
         private void Cancel_Click(object sender, EventArgs e) => Form.ActiveForm.Close();
-        //private void Cancel_Click(object sender, EventArgs e)
-        //{
-        //    if (File.Exists(this.gen.fileAdd))
-        //        File.Delete(this.gen.fileAdd);
-        //    Form.ActiveForm.Close();
-        //}
-
     }
 }

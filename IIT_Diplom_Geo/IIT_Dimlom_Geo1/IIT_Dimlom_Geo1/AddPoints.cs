@@ -194,7 +194,7 @@ namespace IIT_Dimlom_Geo1
             groupBox4.Visible = false;
             panel7.Invalidate();
         }
-        private void button1_MouseHover(object sender, EventArgs e) => label12.Text = "Вернуться к Main Menu";
+        private void button1_MouseHover(object sender, EventArgs e) => label12.Text = "Вернуться к Главному меню";
 
         private void button1_MouseLeave(object sender, EventArgs e) => label12.Text = "";
 
@@ -246,7 +246,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("The Read operation failed as expected.");
+                    Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
                 }
                 finally
                 {
@@ -450,23 +450,37 @@ namespace IIT_Dimlom_Geo1
             if (kLineAct > 0)
             {
                 int iPar = 1;
-                DllClass1.LineDraw(e, kLineAct, myPoint.kActLine1, myPoint.kActLine2, myPoint.xLineAct, myPoint.yLineAct, myPoint.radAct, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.pnColor, iPar);
+                DllClass1.LineDraw(e, kLineAct, myPoint.kActLine1, myPoint.kActLine2, myPoint.xLineAct,
+                    myPoint.yLineAct, myPoint.radAct, scaleToWin, xBegX, yBegY, xBegWin, yBegWin,
+                    myPoint.pnColor, iPar);
             }
             if (kPolyAct > 0)
             {
                 int iParam = 8;
-                DllClass1.LabelDraw(e, kPolyAct, myPoint.nameAct, myPoint.xAct, myPoint.yAct, myPoint.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.brColor, iParam);
+                DllClass1.LabelDraw(e, kPolyAct, myPoint.nameAct, myPoint.xAct, myPoint.yAct,
+                    myPoint.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.brColor, iParam);
             }
             if (kPntPlus > 0 && kPntFin == 0)
-                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntPlus, myPoint.namePnt, myPoint.xPnt, myPoint.yPnt, myPoint.zPnt, myPoint.xPntInscr, myPoint.yPntInscr, myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.nCode1, myPoint.nCode2, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor, myPoint.pnColor);
+                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntPlus, myPoint.namePnt,
+                    myPoint.xPnt, myPoint.yPnt, myPoint.zPnt, myPoint.xPntInscr, myPoint.yPntInscr,
+                    myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.nCode1,
+                    myPoint.nCode2, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.ixSqu, 
+                    myPoint.iySqu, myPoint.nColor, myPoint.brColor, myPoint.pnColor);
             if (kPntFin > 0)
-                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntFin, myPoint.namePntFin, myPoint.xPntFin, myPoint.yPntFin, myPoint.zPntFin, myPoint.xPntInscr, myPoint.yPntInscr, myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.nCode1Fin, myPoint.nCode2Fin, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor, myPoint.pnColor);
+                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntFin, myPoint.namePntFin,
+                    myPoint.xPntFin, myPoint.yPntFin, myPoint.zPntFin, myPoint.xPntInscr, 
+                    myPoint.yPntInscr, myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin,
+                    yBegWin, myPoint.nCode1Fin, myPoint.nCode2Fin, kSymbPnt, myPoint.numRec, 
+                    myPoint.numbUser, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor,
+                    myPoint.pnColor);
             if (nProcInput == 970 && kPntProj > -1)
                 DrawPntProj(e);
             if (kLineProj > 0)
             {
                 int iPar = 2;
-                DllClass1.LineDraw(e, kLineProj, myPoint.kPr1, myPoint.kPr2, myPoint.xLinProj, myPoint.yLinProj, myPoint.RadProj, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.pnColor, iPar);
+                DllClass1.LineDraw(e, kLineProj, myPoint.kPr1, myPoint.kPr2, myPoint.xLinProj,
+                    myPoint.yLinProj, myPoint.RadProj, scaleToWin, xBegX, yBegY, xBegWin, yBegWin,
+                    myPoint.pnColor, iPar);
             }
             if (kLineTopo > 0)
             {
@@ -520,7 +534,8 @@ namespace IIT_Dimlom_Geo1
                 ControlPaint.DrawReversibleFrame(theRectangle, BackColor, FrameStyle.Dashed);
                 endPoint = PointToScreen(new Point(e.X, e.Y));
                 if (e.X > 15 && e.X < pixWid + 10 && e.Y > 15 && e.Y < pixHei + 10)
-                    theRectangle = new Rectangle(startPoint.X, startPoint.Y, endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
+                    theRectangle = new Rectangle(startPoint.X, startPoint.Y, endPoint.X - startPoint.X,
+                        endPoint.Y - startPoint.Y);
                 ControlPaint.DrawReversibleFrame(theRectangle, BackColor, FrameStyle.Dashed);
             }
             if (nControl != 40)
@@ -667,8 +682,10 @@ namespace IIT_Dimlom_Geo1
                     yminCur = yCurMin;
                     xmaxCur = xCurMax;
                     ymaxCur = yCurMax;
-                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
-                        out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin,
+                        out scaleToGeo, 
+                        out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin,
+                        out yEndWin, out iCond);
                     if (iCond < 0)
                     {
                         iGraphic = 1;
@@ -698,7 +715,8 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index = 1; index <= kDat; ++index)
                     {
-                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
+                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin,
+                            yBegWin, out xCur, out yCur);
                         int indx = -1;
                         DllClass1.SelPoint(kPntPlus, myPoint.xPnt, myPoint.yPnt, xCur, yCur, out indx);
                         if (indx >= 1)
@@ -729,7 +747,8 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index = 1; index <= kDat; ++index)
                     {
-                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
+                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin,
+                            yBegWin, out xCur, out yCur);
                         int indx = -1;
                         DllClass1.SelPoint(kPntPlus, myPoint.xPnt, myPoint.yPnt, xCur, yCur, out indx);
                         if (indx >= 1)
@@ -765,7 +784,8 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index = 1; index <= kDat; ++index)
                     {
-                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
+                        DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin,
+                            yBegWin, out xCur, out yCur);
                         int indx = -1;
                         DllClass1.SelPoint(kPntPlus, myPoint.xPnt, myPoint.yPnt, xCur, yCur, out indx);
                         if (indx >= 0 && index == 1)

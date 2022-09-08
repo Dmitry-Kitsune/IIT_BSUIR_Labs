@@ -136,11 +136,11 @@ namespace IIT_Dimlom_Geo1
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(87, 155);
+            this.label2.Location = new System.Drawing.Point(29, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 13);
+            this.label2.Size = new System.Drawing.Size(238, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Сомнительные точки";
+            this.label2.Text = "Точки с погрешностьюю в измерениях";
             // 
             // textBox1
             // 
@@ -153,7 +153,7 @@ namespace IIT_Dimlom_Geo1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(62, 594);
+            this.label1.Location = new System.Drawing.Point(62, 581);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 13);
             this.label1.TabIndex = 15;
@@ -164,28 +164,28 @@ namespace IIT_Dimlom_Geo1
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(6, 171);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(285, 420);
+            this.listBox1.Size = new System.Drawing.Size(285, 407);
             this.listBox1.TabIndex = 14;
             // 
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(150, 610);
+            this.button14.Location = new System.Drawing.Point(150, 601);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(147, 32);
+            this.button14.Size = new System.Drawing.Size(147, 41);
             this.button14.TabIndex = 13;
-            this.button14.Text = "Без сомнительных точек";
+            this.button14.Text = "Без точек с погрешностями";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.WithoutPoints_Click);
             // 
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(13, 610);
+            this.button13.Location = new System.Drawing.Point(6, 601);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(131, 32);
+            this.button13.Size = new System.Drawing.Size(131, 41);
             this.button13.TabIndex = 12;
-            this.button13.Text = "С сомнительными точек";
+            this.button13.Text = "С точками с погрешностями";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.WithPoints_Click);
             // 

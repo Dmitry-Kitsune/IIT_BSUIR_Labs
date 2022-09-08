@@ -67,11 +67,11 @@ namespace IIT_Dimlom_Geo1
                 input.Close();
             }
             if (nProcess == 40)
-                label5.Text = "DoubleClick one of the basic symbols(1-8)";
+                label5.Text = "Дважды щелкните один из основных символов.(1-8)";
             if (nProcess == 200)
                 label5.Text = "";
             if (nProcess == 300)
-                label5.Text = "DoubleClick appropriate symbols";
+                label5.Text = "Дважды щелкните соответствующие символы";
             if (nProcess != 1000)
                 return;
             label5.Text = "";
@@ -381,7 +381,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (iCod1 == 0 || iCod2 == 0 || nBase == 0)
             {
-                int num2 = (int)MessageBox.Show("Repeat symbol selection", "help", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num2 = (int)MessageBox.Show("Повторить выбор символа", "Помощь", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

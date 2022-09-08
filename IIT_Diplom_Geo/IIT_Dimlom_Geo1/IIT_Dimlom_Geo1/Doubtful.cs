@@ -33,7 +33,7 @@ namespace IIT_Dimlom_Geo1
             myError.FilePath();
             if (!File.Exists(myError.tmpStr))
             {
-                int num = (int)MessageBox.Show("Диск не определен", "Points' Listing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Диск не определен", "Список точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Form.ActiveForm.Close();
             }
             if (!File.Exists(myError.fileProj))

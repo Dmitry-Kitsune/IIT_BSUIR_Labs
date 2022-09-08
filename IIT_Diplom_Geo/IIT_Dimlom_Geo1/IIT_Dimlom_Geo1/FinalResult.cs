@@ -235,7 +235,7 @@ namespace IIT_Dimlom_Geo1
             => this.label3.Text = "Нажмите кнопку. В диалоговом окне установить значение элементов";
 
         private void button11_MouseHover(object sender, EventArgs e)
-            => this.label3.Text = "Нажмите кнопку. С помощью выделения левой кнопки мыши Parcel(label). В диалоговом окне установить значение элементов";
+            => this.label3.Text = "Нажмите кнопку. С помощью левой кнопки мыши выделите Учесток (Названия). В диалоговом окне установить значение элементов";
 
         private void button19_MouseHover(object sender, EventArgs e) 
             => this.label3.Text = "Нажмите кнопку. С помощбю левой кнопки мыши выберите надпись (Нажатием) и укажите новое место";
@@ -257,7 +257,7 @@ namespace IIT_Dimlom_Geo1
             => this.label3.Text = "Нажмите кнопку. Вделите дополнительную надпись для перемещения ее на новое место. и укажите новое место с помощью мыши";
 
         private void button23_MouseHover(object sender, EventArgs e) 
-            => this.label3.Text = "Нажмите кнопку. С помощью выделения левой кнопки мыши additional inscription for removing";
+            => this.label3.Text = "Нажмите кнопку. С помощью левой кнопки мыши выделите дополнительную надпись для удаления";
 
         private void button27_MouseHover(object sender, EventArgs e) 
             => this.label3.Text = "Нажмите кнопку, чтобы открыть диалоговое окно для печати окончательных результатов.";
@@ -283,9 +283,16 @@ namespace IIT_Dimlom_Geo1
             this.ymax = -9999999.9;
             this.zmax = -9999999.9;
             DllClass1.SetColour(this.myFin.brColor, this.myFin.pnColor);
-            DllClass1.PointSymbLoad(this.myFin.fsymbPnt, out this.kSymbPnt, this.myFin.numRec, this.myFin.numbUser, this.myFin.heiSymb);
+            DllClass1.PointSymbLoad(this.myFin.fsymbPnt, out this.kSymbPnt, this.myFin.numRec, 
+                this.myFin.numbUser, this.myFin.heiSymb);
             this.myFin.kSymbPnt = this.kSymbPnt;
-            DllClass1.LineSymbolLoad(this.myFin.fsymbLine, out this.kSymbLine, out this.hSymbLine, this.myFin.sSymbLine, this.myFin.x1Line, this.myFin.y1Line, this.myFin.x2Line, this.myFin.y2Line, this.myFin.xDescr, this.myFin.yDescr, this.myFin.x1Dens, this.myFin.y1Dens, this.myFin.x1Sign, this.myFin.y1Sign, this.myFin.x2Sign, this.myFin.y2Sign, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.nColLine, this.myFin.nItem, this.myFin.itemLoc, this.myFin.nBaseSymb, this.myFin.sInscr, this.myFin.hInscr, this.myFin.iColInscr, this.myFin.iDensity);
+            DllClass1.LineSymbolLoad(this.myFin.fsymbLine, out this.kSymbLine, out this.hSymbLine, 
+                this.myFin.sSymbLine, this.myFin.x1Line, this.myFin.y1Line, this.myFin.x2Line, this.myFin.y2Line,
+                this.myFin.xDescr, this.myFin.yDescr, this.myFin.x1Dens, this.myFin.y1Dens, this.myFin.x1Sign,
+                this.myFin.y1Sign, this.myFin.x2Sign, this.myFin.y2Sign, this.myFin.n1Sign, this.myFin.n2Sign,
+                this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.nColLine,
+                this.myFin.nItem, this.myFin.itemLoc, this.myFin.nBaseSymb, this.myFin.sInscr, this.myFin.hInscr,
+                this.myFin.iColInscr, this.myFin.iDensity);
             this.myFin.PolySymbolLoad(this.myFin.fsymbPoly, out this.kSymbPoly, out this.hSymbPoly);
             this.myFin.LoadKeepSource(1);
             this.kPolySource = this.myFin.kPolySource;
@@ -405,7 +412,14 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (!File.Exists(this.myFin.flineFinal))
                 {
-                    DllClass1.LineFinal(this.kLineInput, this.myFin.nLineCode, this.myFin.nLongRad, this.myFin.sWidLine, this.myFin.dstLine, this.myFin.rRadLine, this.myFin.xRadLine, this.myFin.yRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin, this.kLineAct, this.myFin.radAct, this.myFin.kActLine1, this.myFin.kActLine2, this.myFin.xLineAct, this.myFin.yLineAct, out this.kLineFinal, this.myFin.nCodeFin, this.myFin.nLongFin, this.myFin.sWidFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin, this.myFin.yRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nWork1, this.myFin.xWork1, this.myFin.yWork1, this.tolerance);
+                    DllClass1.LineFinal(this.kLineInput, this.myFin.nLineCode, this.myFin.nLongRad, 
+                        this.myFin.sWidLine, this.myFin.dstLine, this.myFin.rRadLine, this.myFin.xRadLine, 
+                        this.myFin.yRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin,
+                        this.kLineAct, this.myFin.radAct, this.myFin.kActLine1, this.myFin.kActLine2, this.myFin.xLineAct,
+                        this.myFin.yLineAct, out this.kLineFinal, this.myFin.nCodeFin, this.myFin.nLongFin, 
+                        this.myFin.sWidFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin, 
+                        this.myFin.yRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, 
+                        this.myFin.nWork1, this.myFin.xWork1, this.myFin.yWork1, this.tolerance);
                     if (this.kLineFinal > 0)
                     {
                         this.myFin.kLineFinal = this.kLineFinal;
@@ -419,7 +433,11 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (!File.Exists(this.myFin.fpolyFinal))
                 {
-                    DllClass1.PolyFinal(this.kPolyAct, this.myFin.nameAct, this.myFin.xAct, this.myFin.yAct, this.myFin.aActCalc, this.myFin.aActLeg, this.myFin.kActPoly1, this.myFin.kActPoly2, this.myFin.xPolyAct, this.myFin.yPolyAct, out this.kPolyFinal, this.myFin.namePolyFin, this.myFin.xLabFin, this.myFin.yLabFin, this.myFin.arCalcFin, this.myFin.arLegFin, this.myFin.nSymbFin, this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xPolFin, this.myFin.yPolFin);
+                    DllClass1.PolyFinal(this.kPolyAct, this.myFin.nameAct, this.myFin.xAct, this.myFin.yAct, 
+                        this.myFin.aActCalc, this.myFin.aActLeg, this.myFin.kActPoly1, this.myFin.kActPoly2,
+                        this.myFin.xPolyAct, this.myFin.yPolyAct, out this.kPolyFinal, this.myFin.namePolyFin,
+                        this.myFin.xLabFin, this.myFin.yLabFin, this.myFin.arCalcFin, this.myFin.arLegFin,
+                        this.myFin.nSymbFin, this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xPolFin, this.myFin.yPolFin);
                     if (this.kPolyFinal > 0)
                     {
                         for (int index = 1; index <= this.kPolyFinal; ++index)
@@ -447,7 +465,11 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (!File.Exists(this.myFin.fpolyFinal))
                     {
-                        DllClass1.PolyFinal(this.kPoly, this.myFin.namePoly, this.myFin.xLab, this.myFin.yLab, this.myFin.areaPol, this.myFin.areaLeg, this.myFin.kt1, this.myFin.kt2, this.myFin.xPol, this.myFin.yPol, out this.kPolyFinal, this.myFin.namePolyFin, this.myFin.xLabFin, this.myFin.yLabFin, this.myFin.arCalcFin, this.myFin.arLegFin, this.myFin.nSymbFin, this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xPolFin, this.myFin.yPolFin);
+                        DllClass1.PolyFinal(this.kPoly, this.myFin.namePoly, this.myFin.xLab, this.myFin.yLab,
+                            this.myFin.areaPol, this.myFin.areaLeg, this.myFin.kt1, this.myFin.kt2, this.myFin.xPol,
+                            this.myFin.yPol, out this.kPolyFinal, this.myFin.namePolyFin, this.myFin.xLabFin, 
+                            this.myFin.yLabFin, this.myFin.arCalcFin, this.myFin.arLegFin, this.myFin.nSymbFin,
+                            this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xPolFin, this.myFin.yPolFin);
                         if (this.kPolyFinal > 0)
                         {
                             this.myFin.kPolyFinal = this.kPolyFinal;
@@ -476,7 +498,14 @@ namespace IIT_Dimlom_Geo1
                     }
                     if (!File.Exists(this.myFin.flineFinal))
                     {
-                        DllClass1.LineFinal(this.kLineInput, this.myFin.nLineCode, this.myFin.nLongRad, this.myFin.sWidLine, this.myFin.dstLine, this.myFin.rRadLine, this.myFin.xRadLine, this.myFin.yRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin, this.kLineTopo, this.myFin.radLine, this.myFin.kl1, this.myFin.kl2, this.myFin.zLin, this.myFin.zPik, out this.kLineFinal, this.myFin.nCodeFin, this.myFin.nLongFin, this.myFin.sWidFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin, this.myFin.yRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nWork, this.myFin.xWork, this.myFin.yWork, this.tolerance);
+                        DllClass1.LineFinal(this.kLineInput, this.myFin.nLineCode, this.myFin.nLongRad, 
+                            this.myFin.sWidLine, this.myFin.dstLine, this.myFin.rRadLine, this.myFin.xRadLine,
+                            this.myFin.yRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin,
+                            this.kLineTopo, this.myFin.radLine, this.myFin.kl1, this.myFin.kl2, this.myFin.zLin, 
+                            this.myFin.zPik, out this.kLineFinal, this.myFin.nCodeFin, this.myFin.nLongFin, 
+                            this.myFin.sWidFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin, 
+                            this.myFin.yRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin,
+                            this.myFin.nWork, this.myFin.xWork, this.myFin.yWork, this.tolerance);
                         if (this.kLineFinal > 0)
                         {
                             this.myFin.kLineFinal = this.kLineFinal;
@@ -519,7 +548,13 @@ namespace IIT_Dimlom_Geo1
             this.kItemCoord = this.myFin.kItemCoord;
             if (File.Exists(this.myFin.flineFinal))
             {
-                DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
+                DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu,
+                    this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin,
+                    this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem,
+                    this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord,
+                    this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem,
+                    this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop,
+                    this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
                 if (this.kItemCoord > 0)
                 {
                     this.myFin.kItemCoord = this.kItemCoord;
@@ -532,11 +567,25 @@ namespace IIT_Dimlom_Geo1
             this.yminCur = this.ymin;
             this.xmaxCur = this.xmax;
             this.ymaxCur = this.ymax;
-            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, 
+                out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX,
+                out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
             if (File.Exists(this.myFin.flineFinal))
             {
-                DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
-                DllClass1.InputLineItem(this.kPntPlus, this.myFin.xPnt, this.myFin.yPnt, this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.myFin.rRadFin, ref this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.sInscr, this.myFin.hInscr, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
+                DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu, 
+                    this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, 
+                    this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, 
+                    this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign, 
+                    this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, 
+                    this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin, this.xBegX, this.yBegY, 
+                    this.xBegWin, this.yBegWin, this.scaleToGeo);
+                DllClass1.InputLineItem(this.kPntPlus, this.myFin.xPnt, this.myFin.yPnt, this.kLineFinal, 
+                    this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, 
+                    this.myFin.rRadFin, ref this.kItemCoord, this.myFin.numSign, this.myFin.numItem, 
+                    this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, 
+                    this.myFin.xDop, this.myFin.yDop, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, 
+                    this.myFin.n2Sign, this.myFin.iDensity, this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.sInscr,
+                    this.myFin.hInscr, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
                 if (this.kItemCoord > 0)
                 {
                     this.myFin.kItemCoord = this.kItemCoord;
@@ -544,8 +593,18 @@ namespace IIT_Dimlom_Geo1
                 }
                 int kLinePart = 0;
                 int kPntPart = 0;
-                DllClass1.FormInputLine(this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin, this.myFin.yRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.nColLine, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.nBaseSymb, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xOut, this.myFin.yOut, this.myFin.xDop, this.myFin.yDop, this.kSymbLine, this.myFin.n1Sign, this.myFin.n2Sign, out kLinePart, this.myFin.xWork1, this.myFin.yWork1, this.myFin.xWork2, this.myFin.yWork2, this.myFin.nWork, this.myFin.nDop1, out kPntPart, this.myFin.xWork, this.myFin.yWork, this.myFin.nDop2, this.scaleToGeo);
-                DllClass1.KeepLoadParts(1, this.myFin.fPntLine, ref kPntPart, this.myFin.xWork, this.myFin.yWork, this.myFin.nDop2, ref kLinePart, this.myFin.xWork1, this.myFin.yWork1, this.myFin.xWork2, this.myFin.yWork2, this.myFin.nWork, this.myFin.nDop1);
+                DllClass1.FormInputLine(this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin,
+                    this.myFin.yFin, this.myFin.nCodeFin, this.myFin.distFin, this.myFin.rRadFin, this.myFin.xRadFin,
+                    this.myFin.yRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, 
+                    this.myFin.nColLine, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.iStyle1, this.myFin.iStyle2,
+                    this.myFin.nBaseSymb, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xOut, this.myFin.yOut,
+                    this.myFin.xDop, this.myFin.yDop, this.kSymbLine, this.myFin.n1Sign, this.myFin.n2Sign, 
+                    out kLinePart, this.myFin.xWork1, this.myFin.yWork1, this.myFin.xWork2, this.myFin.yWork2,
+                    this.myFin.nWork, this.myFin.nDop1, out kPntPart, this.myFin.xWork, this.myFin.yWork, 
+                    this.myFin.nDop2, this.scaleToGeo);
+                DllClass1.KeepLoadParts(1, this.myFin.fPntLine, ref kPntPart, this.myFin.xWork, 
+                    this.myFin.yWork, this.myFin.nDop2, ref kLinePart, this.myFin.xWork1, this.myFin.yWork1, 
+                    this.myFin.xWork2, this.myFin.yWork2, this.myFin.nWork, this.myFin.nDop1);
             }
             this.kInstall = 0;
             if (!File.Exists(this.myFin.fPolyItem))
@@ -581,7 +640,15 @@ namespace IIT_Dimlom_Geo1
             if (this.nControl == 10)
                 graphics.DrawRectangle(new Pen(Color.Green, 2f), this.RcDraw);
             if (this.kPolyFinal > 0 && this.iPolySymbol > 0)
-                DllClass1.DrawPoly(e, this.myFin.fitemPoly, this.kPolyFinal, this.myFin.namePolyFin, this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xLabFin, this.myFin.yLabFin, this.myFin.arCalcFin, this.myFin.nSymbFin, this.myFin.iHorVer, this.myFin.xPolFin, this.myFin.yPolFin, this.myFin.ki1, this.myFin.ki2, this.myFin.xAdd, this.myFin.yAdd, this.kSymbPoly, this.myFin.npSign1, this.myFin.npSign2, this.myFin.npItem, this.myFin.nBackCol, this.myFin.nOneSymb, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.xDop, this.myFin.yDop, this.myFin.xWork, this.myFin.yWork, this.myFin.xWork1, this.myFin.yWork1, this.myFin.brColor, this.myFin.pnColor);
+                DllClass1.DrawPoly(e, this.myFin.fitemPoly, this.kPolyFinal, this.myFin.namePolyFin, 
+                    this.myFin.kt1Fin, this.myFin.kt2Fin, this.myFin.xLabFin, this.myFin.yLabFin,
+                    this.myFin.arCalcFin, this.myFin.nSymbFin, this.myFin.iHorVer, this.myFin.xPolFin,
+                    this.myFin.yPolFin, this.myFin.ki1, this.myFin.ki2, this.myFin.xAdd, this.myFin.yAdd,
+                    this.kSymbPoly, this.myFin.npSign1, this.myFin.npSign2, this.myFin.npItem, this.myFin.nBackCol,
+                    this.myFin.nOneSymb, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, this.scaleToWin,
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.xDop, this.myFin.yDop, 
+                    this.myFin.xWork, this.myFin.yWork, this.myFin.xWork1, this.myFin.yWork1, this.myFin.brColor,
+                    this.myFin.pnColor);
             this.kInstall = 0;
             if (File.Exists(this.myFin.fPolyItem))
             {
@@ -615,10 +682,12 @@ namespace IIT_Dimlom_Geo1
                 for (int index1 = 1; index1 <= this.kInstall; ++index1)
                 {
                     int nSelect = this.myFin.nCent[index1];
-                    DllClass1.XYtoWIN(this.myFin.xLinParc[index1], this.myFin.yLinParc[index1], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
+                    DllClass1.XYtoWIN(this.myFin.xLinParc[index1], this.myFin.yLinParc[index1], this.scaleToWin,
+                        this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
                     int kPix;
                     int mClr;
-                    DllClass1.SelItemPoly(this.myFin.fitemPoly, nSelect, out int _, out int _, out int _, out kPix, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, out sTxt, out mClr);
+                    DllClass1.SelItemPoly(this.myFin.fitemPoly, nSelect, out int _, out int _, out int _, out kPix,
+                        this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, out sTxt, out mClr);
                     for (int index2 = 1; index2 <= kPix; ++index2)
                     {
                         int x = xWin + this.myFin.ixSqu[index2];
@@ -630,33 +699,57 @@ namespace IIT_Dimlom_Geo1
                 }
             }
             if (this.kNodeAct > 0 && this.iNodeShow > 0)
-                DllClass1.DrawNodeAct(e, this.kNodeAct, this.myFin.nameNodeAct, this.myFin.xNodeAct, this.myFin.yNodeAct, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.DrawNodeAct(e, this.kNodeAct, this.myFin.nameNodeAct, this.myFin.xNodeAct,
+                    this.myFin.yNodeAct, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.kNode > 0 && this.kNodeAct == 0 && this.iNodeShow > 0)
-                DllClass1.DrawNode(e, this.kNode, this.myFin.nameNode, this.myFin.xNode, this.myFin.yNode, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.DrawNode(e, this.kNode, this.myFin.nameNode, this.myFin.xNode, this.myFin.yNode,
+                    this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.kPntFin > 0 && this.iPointShow > 0)
-                DllClass1.PointsDraw(e, this.myFin.fsymbPnt, this.iHeightShow, this.kPntFin, this.myFin.namePntFin, this.myFin.xPntFin, this.myFin.yPntFin, this.myFin.zPntFin, this.myFin.xPntInscr, this.myFin.yPntInscr, this.myFin.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.nCode1Fin, this.myFin.nCode2Fin, this.kSymbPnt, this.myFin.numRec, this.myFin.numbUser, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColor, this.myFin.brColor, this.myFin.pnColor);
+                DllClass1.PointsDraw(e, this.myFin.fsymbPnt, this.iHeightShow, this.kPntFin, this.myFin.namePntFin,
+                    this.myFin.xPntFin, this.myFin.yPntFin, this.myFin.zPntFin, this.myFin.xPntInscr, this.myFin.yPntInscr,
+                    this.myFin.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    this.myFin.nCode1Fin, this.myFin.nCode2Fin, this.kSymbPnt, this.myFin.numRec, this.myFin.numbUser,
+                    this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColor, this.myFin.brColor, this.myFin.pnColor);
             if (this.kAddInscript > 0)
-                DllClass1.AddInscrDraw(e, this.kAddInscript, this.myFin.sAddInscr, this.myFin.xAddInscr, this.myFin.yAddInscr, this.myFin.nHorVer, this.myFin.nInsCol, this.myFin.brColor, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.AddInscrDraw(e, this.kAddInscript, this.myFin.sAddInscr, this.myFin.xAddInscr, 
+                    this.myFin.yAddInscr, this.myFin.nHorVer, this.myFin.nInsCol, this.myFin.brColor, this.scaleToWin,
+                    this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.kPolyFinal > 0 && this.iPolySymbol == 0)
             {
                 this.iParam = 8;
-                DllClass1.LabelDraw(e, this.kPolyFinal, this.myFin.namePolyFin, this.myFin.xLabFin, this.myFin.yLabFin, this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.brColor, this.iParam);
+                DllClass1.LabelDraw(e, this.kPolyFinal, this.myFin.namePolyFin, this.myFin.xLabFin, this.myFin.yLabFin,
+                    this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    this.myFin.brColor, this.iParam);
             }
             if (this.kLineFinal > 0 && this.iBordSymbol > 0)
             {
-                DllClass1.DrawInputLine(e, this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.myFin.sWidFin, this.myFin.rRadFin, this.myFin.xRadFin, this.myFin.yRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.nColLine, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.iStyle1, this.myFin.iStyle2, this.myFin.nBaseSymb, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.myFin.xWork2, this.myFin.yWork2, this.kSymbLine, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.brColor, this.myFin.pnColor, 0);
+                DllClass1.DrawInputLine(e, this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, 
+                    this.myFin.yFin, this.myFin.nCodeFin, this.myFin.sWidFin, this.myFin.rRadFin, this.myFin.xRadFin,
+                    this.myFin.yRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    this.myFin.nColLine, this.myFin.iWidth1, this.myFin.iWidth2, this.myFin.iStyle1, this.myFin.iStyle2,
+                    this.myFin.nBaseSymb, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, 
+                    this.myFin.xWork2, this.myFin.yWork2, this.kSymbLine, this.myFin.n1Sign, this.myFin.n2Sign, 
+                    this.myFin.brColor, this.myFin.pnColor, 0);
                 if (this.kItemCoord > 0)
-                    DllClass1.InputItemDraw(e, this.myFin.fitemLine, this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.itemLoc, this.myFin.nBaseSymb, this.myFin.sInscr, this.myFin.hInscr, this.myFin.iColInscr, this.kSymbLine, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.nDop1, this.myFin.nDop2, this.myFin.brColor);
+                    DllClass1.InputItemDraw(e, this.myFin.fitemLine, this.kItemCoord, this.myFin.numSign,
+                        this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.itemLoc,
+                        this.myFin.nBaseSymb, this.myFin.sInscr, this.myFin.hInscr, this.myFin.iColInscr, this.kSymbLine,
+                        this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, this.scaleToWin, this.xBegX, this.yBegY,
+                        this.xBegWin, this.yBegWin, this.myFin.nDop1, this.myFin.nDop2, this.myFin.brColor);
             }
             if (this.kPolyAct > 0)
             {
                 this.iParam = 4;
-                DllClass1.LabelDraw(e, this.kPolyAct, this.myFin.nameAct, this.myFin.xAct, this.myFin.yAct, this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.brColor, this.iParam);
+                DllClass1.LabelDraw(e, this.kPolyAct, this.myFin.nameAct, this.myFin.xAct, this.myFin.yAct,
+                    this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    this.myFin.brColor, this.iParam);
             }
             if (this.kLineFinal > 0 && this.iBordSymbol == 0)
             {
                 this.iParam = 1;
-                DllClass1.LineDraw(e, this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.rRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.pnColor, this.iParam);
+                DllClass1.LineDraw(e, this.kLineFinal, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin,
+                    this.myFin.yFin, this.myFin.rRadFin, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, 
+                    this.yBegWin, this.myFin.pnColor, this.iParam);
             }
             if (this.kRcPnt > 0)
             {
@@ -666,17 +759,23 @@ namespace IIT_Dimlom_Geo1
             if (this.kPolyCancel > 0 && this.iCancelPoly > 0)
             {
                 this.iParam = 3;
-                DllClass1.LabelDraw(e, this.kPolyCancel, this.myFin.nameCanc, this.myFin.xLabCanc, this.myFin.yLabCanc, this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.brColor, this.iParam);
+                DllClass1.LabelDraw(e, this.kPolyCancel, this.myFin.nameCanc, this.myFin.xLabCanc, 
+                    this.myFin.yLabCanc, this.myFin.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, 
+                    this.xBegWin, this.yBegWin, this.myFin.brColor, this.iParam);
                 if (this.kLineCancel > 0)
                 {
                     this.iParam = 3;
-                    DllClass1.LineDraw(e, this.kLineCancel, this.myFin.kLinCanc1, this.myFin.kLinCanc2, this.myFin.xLinCanc, this.myFin.yLinCanc, this.myFin.RadCanc, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.pnColor, this.iParam);
+                    DllClass1.LineDraw(e, this.kLineCancel, this.myFin.kLinCanc1, this.myFin.kLinCanc2, 
+                        this.myFin.xLinCanc, this.myFin.yLinCanc, this.myFin.RadCanc, this.scaleToWin, 
+                        this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myFin.pnColor, this.iParam);
                 }
             }
             if (File.Exists(this.myFin.fileContour) && this.iContours > 0)
-                DllClass1.ContourDraw(e, this.myFin.fileContour, this.myFin.xDop, this.myFin.yDop, this.myFin.xOut, this.myFin.yOut, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.ContourDraw(e, this.myFin.fileContour, this.myFin.xDop, this.myFin.yDop,
+                    this.myFin.xOut, this.myFin.yOut, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.nProcess == 910)
-                DllClass1.DrawSelLine(e, this.kSel, ref this.myFin.xSel, ref this.myFin.ySel, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
+                DllClass1.DrawSelLine(e, this.kSel, ref this.myFin.xSel, ref this.myFin.ySel, 
+                    this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin);
             if (this.nProcess == 410 || this.nProcess == 420)
             {
                 string sTxt = "";
@@ -712,10 +811,13 @@ namespace IIT_Dimlom_Geo1
                     for (int index3 = 1; index3 <= this.kInstall; ++index3)
                     {
                         int nSelect = this.myFin.nCent[index3];
-                        DllClass1.XYtoWIN(this.myFin.xLinParc[index3], this.myFin.yLinParc[index3], this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
+                        DllClass1.XYtoWIN(this.myFin.xLinParc[index3], this.myFin.yLinParc[index3],
+                            this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
                         int kPix;
                         int mClr;
-                        DllClass1.SelItemPoly(this.myFin.fitemPoly, nSelect, out int _, out int _, out int _, out kPix, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm, out sTxt, out mClr);
+                        DllClass1.SelItemPoly(this.myFin.fitemPoly, nSelect, out int _, out int _,
+                            out int _, out kPix, this.myFin.ixSqu, this.myFin.iySqu, this.myFin.nColorItm,
+                            out sTxt, out mClr);
                         for (int index4 = 1; index4 <= kPix; ++index4)
                         {
                             int x = xWin + this.myFin.ixSqu[index4];
@@ -756,7 +858,8 @@ namespace IIT_Dimlom_Geo1
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin,
+                this.yBegWin, out this.xCur, out this.yCur);
             if (!File.Exists(this.myFin.filePoint))
             {
                 this.panel2.Text = string.Format("{0}", (object)e.X);
@@ -783,15 +886,20 @@ namespace IIT_Dimlom_Geo1
             double yCur2 = 0.0;
             this.x2Box = e.X;
             this.y2Box = e.Y;
-            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur1, out yCur1);
-            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur2, out yCur2);
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY,
+                this.xBegWin, this.yBegWin, out xCur1, out yCur1);
+            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY,
+                this.xBegWin, this.yBegWin, out xCur2, out yCur2);
             double num1 = xCur2 - xCur1;
             double num2 = yCur2 - yCur1;
             this.xaCur = this.xminCur - num1;
             this.yaCur = this.yminCur - num2;
             this.xbCur = this.xmaxCur - num1;
             this.ybCur = this.ymaxCur - num2;
-            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, 
+                this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX,
+                out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin,
+                out this.xEndWin, out this.yEndWin, out this.iCond);
             if (this.iCond < 0)
                 this.iGraphic = 1;
             this.panel7.Invalidate();
@@ -806,10 +914,12 @@ namespace IIT_Dimlom_Geo1
             this.RcDraw.Y = e.Y;
             this.RcBox.X = e.X;
             this.RcBox.Y = e.Y;
-            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY,
+                this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
             if (this.nControl == 10)
             {
-                DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCurMin, out this.yCurMin);
+                DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, 
+                    this.yBegWin, out this.xCurMin, out this.yCurMin);
                 if (e.Button == MouseButtons.Left)
                 {
                     this.isDrag = true;
@@ -826,7 +936,9 @@ namespace IIT_Dimlom_Geo1
                 this.yminCur = y1;
                 this.xmaxCur = x2;
                 this.ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin,
+                    out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY,
+                    out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
@@ -845,16 +957,21 @@ namespace IIT_Dimlom_Geo1
                 this.yminCur = y1;
                 this.xmaxCur = x2;
                 this.ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin,
+                    out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY,
+                    out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
                 if (this.iCond < 0)
                     this.iGraphic = 1;
                 this.panel7.Invalidate();
             }
             if (e.Button == MouseButtons.Left)
             {
-                if (this.nProcess == 910 || this.nProcess == 920 || this.nProcess == 930 || this.nProcess == 940 || this.nProcess == 950 || this.nProcess == 960 || this.nProcess == 970 || this.nProcess == 980 || this.nProcess == 990)
+                if (this.nProcess == 910 || this.nProcess == 920 || this.nProcess == 930 || 
+                    this.nProcess == 940 || this.nProcess == 950 || this.nProcess == 960 || 
+                    this.nProcess == 970 || this.nProcess == 980 || this.nProcess == 990)
                 {
-                    DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+                    DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin,
+                        this.yBegWin, out this.xCur, out this.yCur);
                     ++this.kSel;
                     ++this.kRcPnt;
                     this.RcPnt[this.kRcPnt].X = e.X;
@@ -862,7 +979,8 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (this.nProcess == 810 || this.nProcess == 820 || this.nProcess == 830 || this.nProcess == 840)
                 {
-                    DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+                    DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY,
+                        this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
                     ++this.kSel;
                     ++this.kRcPnt;
                     this.RcPnt[this.kRcPnt].X = e.X;
@@ -951,7 +1069,10 @@ namespace IIT_Dimlom_Geo1
             this.dy = this.ymax - this.ymin;
             if (this.dx < 0.05 || this.dy < 0.05)
                 return;
-            DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur,
+                this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin,
+                out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
             if (this.iCond < 0)
                 this.iGraphic = 1;
             this.panel7.Invalidate();
@@ -986,7 +1107,10 @@ namespace IIT_Dimlom_Geo1
                     this.yminCur = this.yCurMin;
                     this.xmaxCur = this.xCurMax;
                     this.ymaxCur = this.yCurMax;
-                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                    DllClass1.CoorWin(this.xCurMin, this.yCurMin, this.xCurMax, this.yCurMax, 
+                        this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                        out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, 
+                        out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
                     if (this.iCond < 0)
                     {
                         this.iGraphic = 1;
@@ -1004,7 +1128,9 @@ namespace IIT_Dimlom_Geo1
                 this.xmaxCur = this.xbCur;
                 this.ymaxCur = this.ybCur;
             }
-            if (this.nProcess == 910 || this.nProcess == 920 || this.nProcess == 930 || this.nProcess == 940 || this.nProcess == 950 || this.nProcess == 960 || this.nProcess == 970 || this.nProcess == 980 || this.nProcess == 990)
+            if (this.nProcess == 910 || this.nProcess == 920 || this.nProcess == 930 ||
+                this.nProcess == 940 || this.nProcess == 950 || this.nProcess == 960 ||
+                this.nProcess == 970 || this.nProcess == 980 || this.nProcess == 990)
             {
                 this.RcPnt[this.kRcPnt].Width = 4;
                 this.RcPnt[this.kRcPnt].Height = 4;
@@ -1023,7 +1149,11 @@ namespace IIT_Dimlom_Geo1
                 double yrd = num = 0.0;
                 double xrd = num;
                 double rd = num;
-                DllClass1.FindLine(this.xCur, this.yCur, this.kLineFinal, ref this.myFin.k1Fin, ref this.myFin.k2Fin, ref this.myFin.rRadFin, ref this.myFin.xRadFin, ref this.myFin.yRadFin, ref this.myFin.xFin, ref this.myFin.yFin, out rd, out xrd, out yrd, out this.kSel, ref this.myFin.xSel, ref this.myFin.ySel, ref this.myFin.xDop, ref this.myFin.yDop, out double _, out double _, out az, out this.indLine);
+                DllClass1.FindLine(this.xCur, this.yCur, this.kLineFinal, ref this.myFin.k1Fin,
+                    ref this.myFin.k2Fin, ref this.myFin.rRadFin, ref this.myFin.xRadFin, 
+                    ref this.myFin.yRadFin, ref this.myFin.xFin, ref this.myFin.yFin, out rd,
+                    out xrd, out yrd, out this.kSel, ref this.myFin.xSel, ref this.myFin.ySel, 
+                    ref this.myFin.xDop, ref this.myFin.yDop, out double _, out double _, out az, out this.indLine);
                 if (this.kSel < 1)
                     return;
                 this.panel7.Invalidate();
@@ -1043,7 +1173,11 @@ namespace IIT_Dimlom_Geo1
                     double yrd = num = 0.0;
                     double xrd = num;
                     double rd = num;
-                    DllClass1.FindLine(this.xCur, this.yCur, this.kLineFinal, ref this.myFin.k1Fin, ref this.myFin.k2Fin, ref this.myFin.rRadFin, ref this.myFin.xRadFin, ref this.myFin.yRadFin, ref this.myFin.xFin, ref this.myFin.yFin, out rd, out xrd, out yrd, out this.kSel, ref this.myFin.xSel, ref this.myFin.ySel, ref this.myFin.xDop, ref this.myFin.yDop, out double _, out double _, out az, out this.indLine);
+                    DllClass1.FindLine(this.xCur, this.yCur, this.kLineFinal, ref this.myFin.k1Fin, 
+                        ref this.myFin.k2Fin, ref this.myFin.rRadFin, ref this.myFin.xRadFin, ref this.myFin.yRadFin,
+                        ref this.myFin.xFin, ref this.myFin.yFin, out rd, out xrd, out yrd, out this.kSel,
+                        ref this.myFin.xSel, ref this.myFin.ySel, ref this.myFin.xDop, ref this.myFin.yDop, 
+                        out double _, out double _, out az, out this.indLine);
                     if (this.kSel < 1)
                         return;
                 }
@@ -1069,7 +1203,14 @@ namespace IIT_Dimlom_Geo1
                     this.myFin.KeepLineFin();
                     if (File.Exists(this.myFin.flineFinal))
                     {
-                        DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
+                        DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm,
+                            this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin,
+                            this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin,
+                            this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign,
+                            this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign,
+                            this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, 
+                            this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin,
+                            this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
                         if (this.kItemCoord > 0)
                         {
                             this.myFin.kItemCoord = this.kItemCoord;
@@ -1487,7 +1628,15 @@ namespace IIT_Dimlom_Geo1
                                 this.myFin.KeepLineFin();
                                 if (File.Exists(this.myFin.flineFinal))
                                 {
-                                    DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign, this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem, this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.scaleToGeo);
+                                    DllClass1.LineItemCoor(this.myFin.fitemLine, this.myFin.nColorItm, 
+                                        this.myFin.ixSqu, this.myFin.iySqu, this.kLineFinal, this.myFin.rRadFin,
+                                        this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin,
+                                        this.myFin.nCodeFin, this.kSymbLine, this.myFin.nItem, this.myFin.n1Sign, 
+                                        this.myFin.n2Sign, this.myFin.iDensity, out this.kItemCoord, this.myFin.numSign,
+                                        this.myFin.numItem, this.myFin.xItem, this.myFin.yItem, this.myFin.azItem,
+                                        this.myFin.xAdd, this.myFin.yAdd, this.myFin.xDop, this.myFin.yDop, 
+                                        this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, 
+                                        this.scaleToGeo);
                                     if (this.kItemCoord > 0)
                                     {
                                         this.myFin.kItemCoord = this.kItemCoord;
@@ -1496,7 +1645,11 @@ namespace IIT_Dimlom_Geo1
                                    //this.myFin.LineLoad(fCurLine);
                                     this.myFin.LineLoad();
                                     this.kLineInput = this.myFin.kLineInput;
-                                    DllClass1.FinalInput(this.kLineInput, this.myFin.nLineCode, this.myFin.rRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin, this.myFin.yLin, this.kLineFinal, this.myFin.nCodeFin, this.myFin.rRadFin, this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, this.tolerance);
+                                    DllClass1.FinalInput(this.kLineInput, this.myFin.nLineCode,
+                                        this.myFin.rRadLine, this.myFin.k1, this.myFin.k2, this.myFin.xLin,
+                                        this.myFin.yLin, this.kLineFinal, this.myFin.nCodeFin, this.myFin.rRadFin,
+                                        this.myFin.k1Fin, this.myFin.k2Fin, this.myFin.xFin, this.myFin.yFin, 
+                                        this.tolerance);
                                     this.myFin.KeepLine();
                                 }
                                 this.kSel = -1;
@@ -1831,7 +1984,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (this.textBox8.Text == "")
             {
-                int num1 = (int)MessageBox.Show("Code of Symbol isn't right", "Point's Symbol");
+                int num1 = (int)MessageBox.Show("Код символа неверен", "Символ точки");
             }
             else
             {
@@ -1846,7 +1999,7 @@ namespace IIT_Dimlom_Geo1
                 }
                 if (num2 > 0)
                 {
-                    int num3 = (int)MessageBox.Show("Code of Symbol isn't number", "Point's Symbol");
+                    int num3 = (int)MessageBox.Show("Код символа не число", "Символ точки");
                 }
                 else
                 {
@@ -1911,20 +2064,20 @@ namespace IIT_Dimlom_Geo1
             this.button34.Visible = false;
             this.textBox1.Text = "";
             this.textBox2.Text = "";
-            this.comboBox1.Items.Add((object)"Black");
-            this.comboBox1.Items.Add((object)"Red");
-            this.comboBox1.Items.Add((object)"Green");
-            this.comboBox1.Items.Add((object)"Blue");
-            this.comboBox1.Items.Add((object)"Magenta");
-            this.comboBox1.Items.Add((object)"Cyan");
-            this.comboBox1.Items.Add((object)"Yellow");
-            this.comboBox1.Items.Add((object)"Brown");
-            this.comboBox1.Items.Add((object)"Gray");
-            this.comboBox1.Items.Add((object)"Orange");
-            this.comboBox1.Items.Add((object)"Pink");
-            this.comboBox1.Items.Add((object)"Sienna");
-            this.comboBox1.Items.Add((object)"Violet");
-            this.comboBox1.Items.Add((object)"Gold");
+            this.comboBox1.Items.Add((object)"Черный");
+            this.comboBox1.Items.Add((object)"Красный");
+            this.comboBox1.Items.Add((object)"Зеленый");
+            this.comboBox1.Items.Add((object)"Синий");
+            this.comboBox1.Items.Add((object)"Пурпурный");
+            this.comboBox1.Items.Add((object)"Голубой");
+            this.comboBox1.Items.Add((object)"Желтый");
+            this.comboBox1.Items.Add((object)"Коричневый");
+            this.comboBox1.Items.Add((object)"Серый");
+            this.comboBox1.Items.Add((object)"Оранжевый");
+            this.comboBox1.Items.Add((object)"Розовый");
+            this.comboBox1.Items.Add((object)"Сиена");
+            this.comboBox1.Items.Add((object)"Фиолетовый");
+            this.comboBox1.Items.Add((object)"Золотой");
             this.comboBox1.SelectedIndex = 0;
             this.iPolySymbol = 0;
             this.panel7.Invalidate();
@@ -1934,7 +2087,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myFin.fAddInscr))
             {
-                int num = (int)MessageBox.Show("Inscriptions weren't added", "Additional Inscription");
+                int num = (int)MessageBox.Show("Надпись не добавлена", "Дополнительная надпись");
             }
             else
             {
@@ -1961,7 +2114,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(this.myFin.fAddInscr))
             {
-                int num = (int)MessageBox.Show("Inscriptions weren't added", "Additional Inscription");
+                int num = (int)MessageBox.Show("Надпись не добавлена", "Дополнительная надпись");
             }
             else
             {
@@ -2247,7 +2400,7 @@ namespace IIT_Dimlom_Geo1
 
         private void AllItemDel_Click(object sender, EventArgs e)
         {
-            if (File.Exists(this.myFin.fPolyItem) && MessageBox.Show("Do you really want to Remove all items?", "All items Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (File.Exists(this.myFin.fPolyItem) && MessageBox.Show("Вы действительно хотите удалить все элементы?", "Удаление всех элементов", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 return;
             if (File.Exists(this.myFin.fPolyItem))
                 File.Delete(this.myFin.fPolyItem);

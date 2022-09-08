@@ -1018,7 +1018,9 @@ namespace IIT_Dimlom_Geo1
                 yminCur = y1;
                 xmaxCur = x2;
                 ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo,
+                    out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, 
+                    out yEndWin, out iCond);
                 if (iCond < 0)
                     iGraphic = 1;
                 panel7.Invalidate();
@@ -1038,7 +1040,9 @@ namespace IIT_Dimlom_Geo1
                 yminCur = y1;
                 xmaxCur = x2;
                 ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
+                    out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, 
+                    out yEndWin, out iCond);
                 if (iCond < 0)
                     iGraphic = 1;
                 panel7.Invalidate();
@@ -1076,7 +1080,9 @@ namespace IIT_Dimlom_Geo1
             dy = ymax - ymin;
             if (dx < 0.05 || dy < 0.05)
                 return;
-            DllClass1.CoorWin(xminCur, yminCur, xmaxCur, ymaxCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+            DllClass1.CoorWin(xminCur, yminCur, xmaxCur, ymaxCur, iWidth, iHeight, out scaleToWin, 
+                out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin,
+                out xEndWin, out yEndWin, out iCond);
             if (iCond < 0)
                 iGraphic = 1;
             kDat = 0;
@@ -1112,7 +1118,9 @@ namespace IIT_Dimlom_Geo1
                     yminCur = yCurMin;
                     xmaxCur = xCurMax;
                     ymaxCur = yCurMax;
-                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+                    DllClass1.CoorWin(xCurMin, yCurMin, xCurMax, yCurMax, iWidth, iHeight, out scaleToWin, 
+                        out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, 
+                        out xEndWin, out yEndWin, out iCond);
                     if (iCond < 0)
                         iGraphic = 1;
                 }
@@ -1292,7 +1300,9 @@ namespace IIT_Dimlom_Geo1
             yaCur = yminCur - dy;
             xbCur = xmaxCur - dx;
             ybCur = ymaxCur - dy;
-            DllClass1.CoorWin(xaCur, yaCur, xbCur, ybCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
+            DllClass1.CoorWin(xaCur, yaCur, xbCur, ybCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
+                out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin,
+                out iCond);
             if (iCond < 0)
                 iGraphic = 1;
             panel7.Invalidate();
@@ -2303,7 +2313,7 @@ namespace IIT_Dimlom_Geo1
             kRcPnt = 0;
             if (!File.Exists(myGeoCalc.fgeoGeo))
             {
-                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
                 panel7.Invalidate();
@@ -2313,7 +2323,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (indexGeo == 0)
             {
-                int num1 = (int)MessageBox.Show("Точка не выбрана", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Точка не выбрана", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2323,7 +2333,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox3.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num2 = (int)MessageBox.Show("Проверьте данные", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num2 = (int)MessageBox.Show("Проверьте данные", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     myGeoCalc.nGeoCode[indexGeo] = Convert.ToInt32(textBox3.Text);
@@ -2370,7 +2380,7 @@ namespace IIT_Dimlom_Geo1
             indPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2388,7 +2398,7 @@ namespace IIT_Dimlom_Geo1
             indPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2406,7 +2416,7 @@ namespace IIT_Dimlom_Geo1
             kRcPnt = 0;
             if (!File.Exists(myGeoCalc.ftahPoint))
             {
-                int num = (int)MessageBox.Show("Нет данных", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num = (int)MessageBox.Show("Нет данных", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2421,7 +2431,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (indexDTM < 0)
             {
-                int num1 = (int)MessageBox.Show("Точка не выбрана", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Точка не выбрана", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -2431,7 +2441,7 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.CheckText(textBox4.Text, out tText, out iCond);
                     if (iCond < 0)
                     {
-                        int num2 = (int)MessageBox.Show("Проверьте данные", "Change symbol", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int num2 = (int)MessageBox.Show("Проверьте данные", "Изменить символ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     myGeoCalc.nTah1[indexDTM] = Convert.ToInt32(textBox4.Text);

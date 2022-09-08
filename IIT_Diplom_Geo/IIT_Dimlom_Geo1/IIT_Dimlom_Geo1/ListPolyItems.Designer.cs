@@ -91,7 +91,7 @@ namespace IIT_Dimlom_Geo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Silver;
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Location = new System.Drawing.Point(33, 343);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 13);

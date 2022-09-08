@@ -16,7 +16,6 @@ namespace IIT_Diplom_Geo1
     public partial class CreateNewProj : Form
     {
 
-        //Private ???
         MyGeodesy myProj = new MyGeodesy();
 
         string sTmp = "";
@@ -52,9 +51,6 @@ namespace IIT_Diplom_Geo1
                     {
                         //sTemp - строковое выражение порядкового номера проекта и преобразование его в целое число nProject
                         Console.WriteLine($"CreateNewProj.CheckLoad-[DEBUG] Зполнение списка проектов... sTmp = {sTmp}");
-                        //nProject = System.Convert.ToInt32(sTmp);
-                        //nameProject = fbb.ReadString();
-                        //nameDirectory = fbb.ReadString();
                         this.nProject = Convert.ToInt32(this.sTmp);
                         this.myProj.curDirect = fbb.ReadString();
                         this.myProj.curProject = fbb.ReadString();
@@ -158,7 +154,7 @@ namespace IIT_Diplom_Geo1
                         binaryReader.Close();
                     }
                 }
-                //myProj.comPath = myProj.driveKey + ":\\" + myProj.dirKey;
+                
                 FileStream output1 = new FileStream(this.myProj.fileAllProj, FileMode.Append, FileAccess.Write);
                 BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
                 DateTime now1 = DateTime.Now;
