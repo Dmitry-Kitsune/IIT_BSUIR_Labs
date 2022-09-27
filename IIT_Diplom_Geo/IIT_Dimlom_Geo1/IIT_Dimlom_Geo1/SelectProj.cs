@@ -130,9 +130,6 @@ namespace IIT_Diplom_Geo1
                     //Цикл до появления помеченного проекта который становится текущим
                     for (int i = 0; i <= listBox1.SelectedIndex; i++)
                     {
-                        //sTmp = faa.ReadString();
-                        //nameProject = faa.ReadString();
-                        //nameDirectory = faa.ReadString();
                         this.nProject = Convert.ToInt32(this.sTmp);
                         this.mySel.curProject = faa.ReadString();
                         this.mySel.curDirect = faa.ReadString();

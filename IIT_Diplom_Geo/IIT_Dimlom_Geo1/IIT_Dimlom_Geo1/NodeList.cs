@@ -92,93 +92,93 @@ namespace IIT_Dimlom_Geo1
 
         public void FillList()
         {
-            for (int i1 = 1; i1 <= kTopo; ++i1)
+            for (int index1 = 1; index1 <= this.kTopo; ++index1)
             {
-                x1 = y1 = x2 = y2 = 0.0;
-                i1 = myNod.kl1[i1];
-                i2 = myNod.kl2[i1];
-                dist = 0.0;
-                for (int i2 = i1 + 1; i2 <= i2; ++i2)
+                this.x1 = this.y1 = this.x2 = this.y2 = 0.0;
+                this.i1 = this.myNod.kl1[index1];
+                this.i2 = this.myNod.kl2[index1];
+                this.dist = 0.0;
+                for (int index2 = this.i1 + 1; index2 <= this.i2; ++index2)
                 {
-                    dx = myNod.zLin[i2] - myNod.zLin[i2 - 1];
-                    dy = myNod.zPik[i2] - myNod.zPik[i2 - 1];
-                    ss = Math.Sqrt(dx * dx + dy * dy);
-                    dist += ss;
+                    this.dx = this.myNod.zLin[index2] - this.myNod.zLin[index2 - 1];
+                    this.dy = this.myNod.zPik[index2] - this.myNod.zPik[index2 - 1];
+                    this.ss = Math.Sqrt(this.dx * this.dx + this.dy * this.dy);
+                    this.dist += this.ss;
                 }
-                ip = 0;
-                for (int i3 = 0; i3 <= kPnt; ++i3)
+                this.ip = 0;
+                for (int index3 = 0; index3 <= this.kPnt; ++index3)
                 {
-                    dx = myNod.zLin[i1] - myNod.xPnt[i3];
-                    dy = myNod.zPik[i1] - myNod.yPnt[i3];
-                    ss = Math.Sqrt(dx * dx + dy * dy);
-                    if (ss < 0.003)
+                    this.dx = this.myNod.zLin[this.i1] - this.myNod.xPnt[index3];
+                    this.dy = this.myNod.zPik[this.i1] - this.myNod.yPnt[index3];
+                    this.ss = Math.Sqrt(this.dx * this.dx + this.dy * this.dy);
+                    if (this.ss < 0.003)
                     {
-                        ++ip;
-                        sTmp1 = myNod.namePnt[i3];
-                        x1 = myNod.xPnt[i3];
-                        y1 = myNod.yPnt[i3];
+                        ++this.ip;
+                        this.sTmp1 = this.myNod.namePnt[index3];
+                        this.x1 = this.myNod.xPnt[index3];
+                        this.y1 = this.myNod.yPnt[index3];
                         break;
                     }
                 }
-                if (ip == 0)
+                if (this.ip == 0)
                 {
-                    for (int i4 = 1; i4 <= kNode; ++i4)
+                    for (int index4 = 1; index4 <= this.kNode; ++index4)
                     {
-                        dx = myNod.zLin[i1] - myNod.xNode[i4];
-                        dy = myNod.zPik[i1] - myNod.yNode[i4];
-                        ss = Math.Sqrt(dx * dx + dy * dy);
-                        if (ss < 0.003)
+                        this.dx = this.myNod.zLin[this.i1] - this.myNod.xNode[index4];
+                        this.dy = this.myNod.zPik[this.i1] - this.myNod.yNode[index4];
+                        this.ss = Math.Sqrt(this.dx * this.dx + this.dy * this.dy);
+                        if (this.ss < 0.003)
                         {
-                            ++ip;
-                            sTmp1 = myNod.nameNode[i4];
-                            x1 = myNod.xNode[i4];
-                            y1 = myNod.yNode[i4];
+                            ++this.ip;
+                            this.sTmp1 = this.myNod.nameNode[index4];
+                            this.x1 = this.myNod.xNode[index4];
+                            this.y1 = this.myNod.yNode[index4];
                             break;
                         }
                     }
                 }
-                ip = 0;
-                for (int i5 = 0; i5 <= kPnt; ++i5)
+                this.ip = 0;
+                for (int index5 = 0; index5 <= this.kPnt; ++index5)
                 {
-                    dx = myNod.zLin[i2] - myNod.xPnt[i5];
-                    dy = myNod.zPik[i2] - myNod.yPnt[i5];
-                    ss = Math.Sqrt(dx * dx + dy * dy);
-                    if (ss < 0.003)
+                    this.dx = this.myNod.zLin[this.i2] - this.myNod.xPnt[index5];
+                    this.dy = this.myNod.zPik[this.i2] - this.myNod.yPnt[index5];
+                    this.ss = Math.Sqrt(this.dx * this.dx + this.dy * this.dy);
+                    if (this.ss < 0.003)
                     {
-                        ++ip;
-                        sTmp2 = myNod.namePnt[i5];
-                        x2 = myNod.xPnt[i5];
-                        y2 = myNod.yPnt[i5];
+                        ++this.ip;
+                        this.sTmp2 = this.myNod.namePnt[index5];
+                        this.x2 = this.myNod.xPnt[index5];
+                        this.y2 = this.myNod.yPnt[index5];
                         break;
                     }
                 }
-                if (ip == 0)
+                if (this.ip == 0)
                 {
-                    for (int i6 = 1; i6 <= kNode; ++i6)
+                    for (int index6 = 1; index6 <= this.kNode; ++index6)
                     {
-                        dx = myNod.zLin[i2] - myNod.xNode[i6];
-                        dy = myNod.zPik[i2] - myNod.yNode[i6];
-                        ss = Math.Sqrt(dx * dx + dy * dy);
-                        if (ss < 0.003)
+                        this.dx = this.myNod.zLin[this.i2] - this.myNod.xNode[index6];
+                        this.dy = this.myNod.zPik[this.i2] - this.myNod.yNode[index6];
+                        this.ss = Math.Sqrt(this.dx * this.dx + this.dy * this.dy);
+                        if (this.ss < 0.003)
                         {
-                            ++ip;
-                            sTmp2 = myNod.nameNode[i6];
-                            x2 = myNod.xNode[i6];
-                            y2 = myNod.yNode[i6];
+                            ++this.ip;
+                            this.sTmp2 = this.myNod.nameNode[index6];
+                            this.x2 = this.myNod.xNode[index6];
+                            this.y2 = this.myNod.yNode[index6];
                             break;
                         }
                     }
                 }
-                sDist = sTmp1 + "     " + string.Format("{0:F3}", (object)x1) + "     " + string.Format("{0:F3}", (object)y1);
-                listBox1.Items.Add((object)sDist);
-                if (myNod.radLine[i1] > 0.0)
-                    sDist = "                                                " + string.Format("{0:F3}", (object)dist) + "   " + string.Format("{0:F3}", (object)myNod.radLine[i1]);
-                if (myNod.radLine[i1] == 0.0)
-                    sDist = "                                                " + string.Format("{0:F3}", (object)dist);
-                listBox1.Items.Add((object)sDist);
-                sDist = sTmp2 + "     " + string.Format("{0:F3}", (object)x2) + "     " + string.Format("{0:F3}", (object)y2);
-                listBox1.Items.Add((object)sDist);
-                listBox1.Items.Add((object)"----------------------------------------------------------------------------------");
+                this.sDist = this.sTmp1 + "     " + string.Format("{0:F3}", (object)this.x1) + "     " + string.Format("{0:F3}", (object)this.y1);
+                this.listBox1.Items.Add((object)this.sDist);
+                if (this.myNod.radLine[index1] > 0.0)
+                    this.sDist = "                                                " + string.Format("{0:F3}", (object)this.dist) + "   " + string.Format("{0:F3}", (object)this.myNod.radLine[index1]);
+                if (this.myNod.radLine[index1] == 0.0)
+                    this.sDist = "                                                " + string.Format("{0:F3}", (object)this.dist);
+                this.listBox1.Items.Add((object)this.sDist);
+                this.sDist = this.sTmp2 + "     " + string.Format("{0:F3}", (object)this.x2) + "     " + string.Format("{0:F3}", (object)this.y2);
+                this.listBox1.Items.Add((object)this.sDist);
+                this.listBox1.Items.Add((object)"----------------------------------------------------------------------------------");
             }
         }
 

@@ -372,7 +372,7 @@ namespace IIT_Dimlom_Geo1
             kPoly = myTop.kPoly;
             kInter = 0;
             myTop.LoadKeepInscr(1);
-            myTop.KeepLoadBorder(2, fCurBorder);
+            myTop.KeepLoadBorder(2);
             kBorder = myTop.kBorder;
             kVert = 0;
             myTop.VertexLoadKeep(1);
@@ -1198,7 +1198,7 @@ namespace IIT_Dimlom_Geo1
                     kBorder = -1;
                    DllClass1.BorderBuilding(ref this.kHeight, ref myTop.xHeig, ref myTop.yHeig, out kBorder, myTop.xBorder, myTop.yBorder, myTop.nSpot, myTop.xSpot, myTop.ySpot, myTop.zSpot, myTop.nWork1, myTop.nWork2, panel1);
                     myTop.kBorder = kBorder;
-                    myTop.KeepLoadBorder(1, fCurBorder);
+                    myTop.KeepLoadBorder(1);
                     int kHeight = this.kHeight;
                     if (kLineInput > 0 && kVert > 0)
                     {

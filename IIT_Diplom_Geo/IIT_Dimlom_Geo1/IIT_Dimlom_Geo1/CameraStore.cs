@@ -152,74 +152,74 @@ namespace IIT_Dimlom_Geo1
 
         private void InitStore()
         {
-            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
-            textBox6.Text = textBox7.Text = textBox8.Text = textBox9.Text = textBox10.Text = "";
-            textBox11.Text = textBox12.Text = textBox13.Text = textBox14.Text = textBox15.Text = "";
-            textBox16.Text = textBox17.Text = textBox18.Text = textBox19.Text = textBox20.Text = "";
-            textBox21.Text = textBox22.Text = textBox23.Text = textBox24.Text = textBox25.Text = "";
-            textBox26.Text = textBox27.Text = textBox28.Text = textBox29.Text = textBox30.Text = "";
-            textBox31.Text = textBox32.Text = textBox33.Text = textBox34.Text = textBox35.Text = "";
+            this.textBox1.Text = this.textBox2.Text = this.textBox3.Text = this.textBox4.Text = this.textBox5.Text = "";
+            this.textBox6.Text = this.textBox7.Text = this.textBox8.Text = this.textBox9.Text = this.textBox10.Text = "";
+            this.textBox11.Text = this.textBox12.Text = this.textBox13.Text = this.textBox14.Text = this.textBox15.Text = "";
+            this.textBox16.Text = this.textBox17.Text = this.textBox18.Text = this.textBox19.Text = this.textBox20.Text = "";
+            this.textBox21.Text = this.textBox22.Text = this.textBox23.Text = this.textBox24.Text = this.textBox25.Text = "";
+            this.textBox26.Text = this.textBox27.Text = this.textBox28.Text = this.textBox29.Text = this.textBox30.Text = "";
+            this.textBox31.Text = this.textBox32.Text = this.textBox33.Text = this.textBox34.Text = this.textBox35.Text = "";
         }
 
         private void AcountMark(ref int km, ref string[] n, ref string[] x, ref string[] y)
         {
             int index = 0;
             km = 0;
-            if (textBox49.Text != "" && textBox50.Text != "")
+            if (this.textBox49.Text != "" && this.textBox50.Text != "")
             {
                 ++index;
-                n[index] = textBox41.Text;
-                x[index] = textBox49.Text;
-                y[index] = textBox50.Text;
+                n[index] = this.textBox41.Text;
+                x[index] = this.textBox49.Text;
+                y[index] = this.textBox50.Text;
             }
-            if (textBox51.Text != "" && textBox58.Text != "")
+            if (this.textBox51.Text != "" && this.textBox58.Text != "")
             {
                 ++index;
-                n[index] = textBox42.Text;
-                x[index] = textBox51.Text;
-                y[index] = textBox58.Text;
+                n[index] = this.textBox42.Text;
+                x[index] = this.textBox51.Text;
+                y[index] = this.textBox58.Text;
             }
-            if (textBox52.Text != "" && textBox59.Text != "")
+            if (this.textBox52.Text != "" && this.textBox59.Text != "")
             {
                 ++index;
-                n[index] = textBox43.Text;
-                x[index] = textBox52.Text;
-                y[index] = textBox59.Text;
+                n[index] = this.textBox43.Text;
+                x[index] = this.textBox52.Text;
+                y[index] = this.textBox59.Text;
             }
-            if (textBox53.Text != "" && textBox60.Text != "")
+            if (this.textBox53.Text != "" && this.textBox60.Text != "")
             {
                 ++index;
-                n[index] = textBox44.Text;
-                x[index] = textBox53.Text;
-                y[index] = textBox60.Text;
+                n[index] = this.textBox44.Text;
+                x[index] = this.textBox53.Text;
+                y[index] = this.textBox60.Text;
             }
-            if (textBox54.Text != "" && textBox61.Text != "")
+            if (this.textBox54.Text != "" && this.textBox61.Text != "")
             {
                 ++index;
-                n[index] = textBox45.Text;
-                x[index] = textBox54.Text;
-                y[index] = textBox61.Text;
+                n[index] = this.textBox45.Text;
+                x[index] = this.textBox54.Text;
+                y[index] = this.textBox61.Text;
             }
-            if (textBox55.Text != "" && textBox62.Text != "")
+            if (this.textBox55.Text != "" && this.textBox62.Text != "")
             {
                 ++index;
-                n[index] = textBox46.Text;
-                x[index] = textBox55.Text;
-                y[index] = textBox62.Text;
+                n[index] = this.textBox46.Text;
+                x[index] = this.textBox55.Text;
+                y[index] = this.textBox62.Text;
             }
-            if (textBox56.Text != "" && textBox63.Text != "")
+            if (this.textBox56.Text != "" && this.textBox63.Text != "")
             {
                 ++index;
-                n[index] = textBox47.Text;
-                x[index] = textBox56.Text;
-                y[index] = textBox63.Text;
+                n[index] = this.textBox47.Text;
+                x[index] = this.textBox56.Text;
+                y[index] = this.textBox63.Text;
             }
-            if (textBox57.Text != "" && textBox64.Text != "")
+            if (this.textBox57.Text != "" && this.textBox64.Text != "")
             {
                 ++index;
-                n[index] = textBox48.Text;
-                x[index] = textBox57.Text;
-                y[index] = textBox64.Text;
+                n[index] = this.textBox48.Text;
+                x[index] = this.textBox57.Text;
+                y[index] = this.textBox64.Text;
             }
             km = index;
         }
@@ -229,68 +229,68 @@ namespace IIT_Dimlom_Geo1
             int num1 = 0;
             kd = 0;
             int index1 = num1 + 1;
-            xd[index1] = textBox65.Text;
-            yd[index1] = textBox66.Text;
+            xd[index1] = this.textBox65.Text;
+            yd[index1] = this.textBox66.Text;
             int index2 = index1 + 1;
-            xd[index2] = textBox67.Text;
-            yd[index2] = textBox68.Text;
+            xd[index2] = this.textBox67.Text;
+            yd[index2] = this.textBox68.Text;
             int index3 = index2 + 1;
-            xd[index3] = textBox69.Text;
-            yd[index3] = textBox70.Text;
+            xd[index3] = this.textBox69.Text;
+            yd[index3] = this.textBox70.Text;
             int index4 = index3 + 1;
-            xd[index4] = textBox71.Text;
-            yd[index4] = textBox72.Text;
+            xd[index4] = this.textBox71.Text;
+            yd[index4] = this.textBox72.Text;
             int index5 = index4 + 1;
-            xd[index5] = textBox73.Text;
-            yd[index5] = textBox74.Text;
+            xd[index5] = this.textBox73.Text;
+            yd[index5] = this.textBox74.Text;
             int index6 = index5 + 1;
-            xd[index6] = textBox75.Text;
-            yd[index6] = textBox76.Text;
+            xd[index6] = this.textBox75.Text;
+            yd[index6] = this.textBox76.Text;
             int index7 = index6 + 1;
-            xd[index7] = textBox77.Text;
-            yd[index7] = textBox78.Text;
+            xd[index7] = this.textBox77.Text;
+            yd[index7] = this.textBox78.Text;
             int index8 = index7 + 1;
-            xd[index8] = textBox79.Text;
-            yd[index8] = textBox80.Text;
+            xd[index8] = this.textBox79.Text;
+            yd[index8] = this.textBox80.Text;
             int index9 = index8 + 1;
-            xd[index9] = textBox81.Text;
-            yd[index9] = textBox82.Text;
+            xd[index9] = this.textBox81.Text;
+            yd[index9] = this.textBox82.Text;
             int index10 = index9 + 1;
-            xd[index10] = textBox83.Text;
-            yd[index10] = textBox84.Text;
+            xd[index10] = this.textBox83.Text;
+            yd[index10] = this.textBox84.Text;
             int index11 = index10 + 1;
-            xd[index11] = textBox85.Text;
-            yd[index11] = textBox86.Text;
+            xd[index11] = this.textBox85.Text;
+            yd[index11] = this.textBox86.Text;
             int index12 = index11 + 1;
-            xd[index12] = textBox87.Text;
-            yd[index12] = textBox88.Text;
+            xd[index12] = this.textBox87.Text;
+            yd[index12] = this.textBox88.Text;
             int index13 = index12 + 1;
-            xd[index13] = textBox89.Text;
-            yd[index13] = textBox90.Text;
+            xd[index13] = this.textBox89.Text;
+            yd[index13] = this.textBox90.Text;
             int index14 = index13 + 1;
-            xd[index14] = textBox91.Text;
-            yd[index14] = textBox92.Text;
+            xd[index14] = this.textBox91.Text;
+            yd[index14] = this.textBox92.Text;
             int index15 = index14 + 1;
-            xd[index15] = textBox93.Text;
-            yd[index15] = textBox94.Text;
+            xd[index15] = this.textBox93.Text;
+            yd[index15] = this.textBox94.Text;
             int index16 = index15 + 1;
-            xd[index16] = textBox95.Text;
-            yd[index16] = textBox96.Text;
+            xd[index16] = this.textBox95.Text;
+            yd[index16] = this.textBox96.Text;
             int index17 = index16 + 1;
-            xd[index17] = textBox97.Text;
-            yd[index17] = textBox98.Text;
+            xd[index17] = this.textBox97.Text;
+            yd[index17] = this.textBox98.Text;
             int index18 = index17 + 1;
-            xd[index18] = textBox99.Text;
-            yd[index18] = textBox100.Text;
+            xd[index18] = this.textBox99.Text;
+            yd[index18] = this.textBox100.Text;
             int index19 = index18 + 1;
-            xd[index19] = textBox101.Text;
-            yd[index19] = textBox102.Text;
+            xd[index19] = this.textBox101.Text;
+            yd[index19] = this.textBox102.Text;
             int index20 = index19 + 1;
-            xd[index20] = textBox103.Text;
-            yd[index20] = textBox104.Text;
+            xd[index20] = this.textBox103.Text;
+            yd[index20] = this.textBox104.Text;
             int index21 = index20 + 1;
-            xd[index21] = textBox105.Text;
-            yd[index21] = textBox106.Text;
+            xd[index21] = this.textBox105.Text;
+            yd[index21] = this.textBox106.Text;
             kd = 21;
             int num2 = 0;
             for (int index22 = 1; index22 <= kd; ++index22)
@@ -327,79 +327,79 @@ namespace IIT_Dimlom_Geo1
 
         private void InitNew()
         {
-            textBox36.Text = textBox37.Text = textBox38.Text = textBox39.Text = textBox40.Text = "";
-            textBox49.Text = textBox50.Text = textBox51.Text = textBox58.Text = textBox52.Text = "";
-            textBox59.Text = textBox53.Text = textBox60.Text = textBox54.Text = textBox61.Text = "";
-            textBox55.Text = textBox62.Text = textBox56.Text = textBox63.Text = textBox57.Text = "";
-            textBox64.Text = "";
-            textBox66.Text = textBox68.Text = textBox70.Text = textBox72.Text = textBox74.Text = "";
-            textBox76.Text = textBox78.Text = textBox80.Text = textBox82.Text = textBox84.Text = "";
-            textBox86.Text = textBox88.Text = textBox90.Text = textBox92.Text = textBox94.Text = "";
-            textBox96.Text = textBox98.Text = textBox100.Text = textBox102.Text = textBox104.Text = "";
-            textBox106.Text = "";
+            this.textBox36.Text = this.textBox37.Text = this.textBox38.Text = this.textBox39.Text = this.textBox40.Text = "";
+            this.textBox49.Text = this.textBox50.Text = this.textBox51.Text = this.textBox58.Text = this.textBox52.Text = "";
+            this.textBox59.Text = this.textBox53.Text = this.textBox60.Text = this.textBox54.Text = this.textBox61.Text = "";
+            this.textBox55.Text = this.textBox62.Text = this.textBox56.Text = this.textBox63.Text = this.textBox57.Text = "";
+            this.textBox64.Text = "";
+            this.textBox66.Text = this.textBox68.Text = this.textBox70.Text = this.textBox72.Text = this.textBox74.Text = "";
+            this.textBox76.Text = this.textBox78.Text = this.textBox80.Text = this.textBox82.Text = this.textBox84.Text = "";
+            this.textBox86.Text = this.textBox88.Text = this.textBox90.Text = this.textBox92.Text = this.textBox94.Text = "";
+            this.textBox96.Text = this.textBox98.Text = this.textBox100.Text = this.textBox102.Text = this.textBox104.Text = "";
+            this.textBox106.Text = "";
         }
 
         private void BoxData(int j)
         {
             if (j == 1)
             {
-                textBox1.Text = numCam[j];
-                textBox6.Text = nameCam[j];
-                textBox11.Text = focCam[j];
-                textBox16.Text = xoCam[j];
-                textBox21.Text = yoCam[j];
-                textBox26.Text = markCam[j];
-                textBox31.Text = dstrCam[j];
+                this.textBox1.Text = this.numCam[j];
+                this.textBox6.Text = this.nameCam[j];
+                this.textBox11.Text = this.focCam[j];
+                this.textBox16.Text = this.xoCam[j];
+                this.textBox21.Text = this.yoCam[j];
+                this.textBox26.Text = this.markCam[j];
+                this.textBox31.Text = this.dstrCam[j];
             }
             if (j == 2)
             {
-                textBox2.Text = numCam[j];
-                textBox7.Text = nameCam[j];
-                textBox12.Text = focCam[j];
-                textBox17.Text = xoCam[j];
-                textBox22.Text = yoCam[j];
-                textBox27.Text = markCam[j];
-                textBox32.Text = dstrCam[j];
+                this.textBox2.Text = this.numCam[j];
+                this.textBox7.Text = this.nameCam[j];
+                this.textBox12.Text = this.focCam[j];
+                this.textBox17.Text = this.xoCam[j];
+                this.textBox22.Text = this.yoCam[j];
+                this.textBox27.Text = this.markCam[j];
+                this.textBox32.Text = this.dstrCam[j];
             }
             if (j == 3)
             {
-                textBox3.Text = numCam[j];
-                textBox8.Text = nameCam[j];
-                textBox13.Text = focCam[j];
-                textBox18.Text = xoCam[j];
-                textBox23.Text = yoCam[j];
-                textBox28.Text = markCam[j];
-                textBox33.Text = dstrCam[j];
+                this.textBox3.Text = this.numCam[j];
+                this.textBox8.Text = this.nameCam[j];
+                this.textBox13.Text = this.focCam[j];
+                this.textBox18.Text = this.xoCam[j];
+                this.textBox23.Text = this.yoCam[j];
+                this.textBox28.Text = this.markCam[j];
+                this.textBox33.Text = this.dstrCam[j];
             }
             if (j == 4)
             {
-                textBox4.Text = numCam[j];
-                textBox9.Text = nameCam[j];
-                textBox14.Text = focCam[j];
-                textBox19.Text = xoCam[j];
-                textBox24.Text = yoCam[j];
-                textBox29.Text = markCam[j];
-                textBox34.Text = dstrCam[j];
+                this.textBox4.Text = this.numCam[j];
+                this.textBox9.Text = this.nameCam[j];
+                this.textBox14.Text = this.focCam[j];
+                this.textBox19.Text = this.xoCam[j];
+                this.textBox24.Text = this.yoCam[j];
+                this.textBox29.Text = this.markCam[j];
+                this.textBox34.Text = this.dstrCam[j];
             }
             if (j != 5)
                 return;
-            textBox5.Text = numCam[j];
-            textBox10.Text = nameCam[j];
-            textBox15.Text = focCam[j];
-            textBox20.Text = xoCam[j];
-            textBox25.Text = yoCam[j];
-            textBox30.Text = markCam[j];
-            textBox35.Text = dstrCam[j];
+            this.textBox5.Text = this.numCam[j];
+            this.textBox10.Text = this.nameCam[j];
+            this.textBox15.Text = this.focCam[j];
+            this.textBox20.Text = this.xoCam[j];
+            this.textBox25.Text = this.yoCam[j];
+            this.textBox30.Text = this.markCam[j];
+            this.textBox35.Text = this.dstrCam[j];
         }
 
         private void ChangeBase(string sNum, string sName, string sFoc, string sXo, string sYo)
         {
-            textBox36.Text = sNum;
-            textBox37.Text = sName;
-            textBox38.Text = sFoc;
-            textBox39.Text = sXo;
-            textBox40.Text = sYo;
-            InitNameBox(out kName, nameBox);
+            this.textBox36.Text = sNum;
+            this.textBox37.Text = sName;
+            this.textBox38.Text = sFoc;
+            this.textBox39.Text = sXo;
+            this.textBox40.Text = sYo;
+            this.InitNameBox(out this.kName, this.nameBox);
         }
 
         private void ChangeMark(int km, string[] n, string[] x, string[] y)
@@ -408,54 +408,54 @@ namespace IIT_Dimlom_Geo1
             {
                 if (index == 1)
                 {
-                    textBox41.Text = n[index];
-                    textBox49.Text = x[index];
-                    textBox50.Text = y[index];
+                    this.textBox41.Text = n[index];
+                    this.textBox49.Text = x[index];
+                    this.textBox50.Text = y[index];
                 }
                 if (index == 2)
                 {
-                    textBox42.Text = n[index];
-                    textBox51.Text = x[index];
-                    textBox58.Text = y[index];
+                    this.textBox42.Text = n[index];
+                    this.textBox51.Text = x[index];
+                    this.textBox58.Text = y[index];
                 }
                 if (index == 3)
                 {
-                    textBox43.Text = n[index];
-                    textBox52.Text = x[index];
-                    textBox59.Text = y[index];
+                    this.textBox43.Text = n[index];
+                    this.textBox52.Text = x[index];
+                    this.textBox59.Text = y[index];
                 }
                 if (index == 4)
                 {
-                    textBox44.Text = n[index];
-                    textBox53.Text = x[index];
-                    textBox60.Text = y[index];
+                    this.textBox44.Text = n[index];
+                    this.textBox53.Text = x[index];
+                    this.textBox60.Text = y[index];
                 }
                 if (index == 5)
                 {
-                    textBox45.Text = n[index];
-                    textBox54.Text = x[index];
-                    textBox61.Text = y[index];
+                    this.textBox45.Text = n[index];
+                    this.textBox54.Text = x[index];
+                    this.textBox61.Text = y[index];
                 }
                 if (index == 6)
                 {
-                    textBox46.Text = n[index];
-                    textBox55.Text = x[index];
-                    textBox62.Text = y[index];
+                    this.textBox46.Text = n[index];
+                    this.textBox55.Text = x[index];
+                    this.textBox62.Text = y[index];
                 }
                 if (index == 7)
                 {
-                    textBox47.Text = n[index];
-                    textBox56.Text = x[index];
-                    textBox63.Text = y[index];
+                    this.textBox47.Text = n[index];
+                    this.textBox56.Text = x[index];
+                    this.textBox63.Text = y[index];
                 }
                 if (index == 8)
                 {
-                    textBox48.Text = n[index];
-                    textBox57.Text = x[index];
-                    textBox64.Text = y[index];
+                    this.textBox48.Text = n[index];
+                    this.textBox57.Text = x[index];
+                    this.textBox64.Text = y[index];
                 }
             }
-            InitNameBox(out kName, nameBox);
+            this.InitNameBox(out this.kName, this.nameBox);
         }
 
         private void ChangeDist(int kd, string[] xd, string[] yd)
@@ -464,113 +464,114 @@ namespace IIT_Dimlom_Geo1
             {
                 if (index == 1)
                 {
-                    textBox65.Text = xd[index];
-                    textBox66.Text = yd[index];
+                    this.textBox65.Text = xd[index];
+                    this.textBox66.Text = yd[index];
                 }
                 if (index == 2)
                 {
-                    textBox67.Text = xd[index];
-                    textBox68.Text = yd[index];
+                    this.textBox67.Text = xd[index];
+                    this.textBox68.Text = yd[index];
                 }
                 if (index == 3)
                 {
-                    textBox69.Text = xd[index];
-                    textBox70.Text = yd[index];
+                    this.textBox69.Text = xd[index];
+                    this.textBox70.Text = yd[index];
                 }
                 if (index == 4)
                 {
-                    textBox71.Text = xd[index];
-                    textBox72.Text = yd[index];
+                    this.textBox71.Text = xd[index];
+                    this.textBox72.Text = yd[index];
                 }
                 if (index == 5)
                 {
-                    textBox73.Text = xd[index];
-                    textBox74.Text = yd[index];
+                    this.textBox73.Text = xd[index];
+                    this.textBox74.Text = yd[index];
                 }
                 if (index == 6)
                 {
-                    textBox75.Text = xd[index];
-                    textBox76.Text = yd[index];
+                    this.textBox75.Text = xd[index];
+                    this.textBox76.Text = yd[index];
                 }
                 if (index == 7)
                 {
-                    textBox77.Text = xd[index];
-                    textBox78.Text = yd[index];
+                    this.textBox77.Text = xd[index];
+                    this.textBox78.Text = yd[index];
                 }
                 if (index == 8)
                 {
-                    textBox79.Text = xd[index];
-                    textBox80.Text = yd[index];
+                    this.textBox79.Text = xd[index];
+                    this.textBox80.Text = yd[index];
                 }
                 if (index == 9)
                 {
-                    textBox81.Text = xd[index];
-                    textBox82.Text = yd[index];
+                    this.textBox81.Text = xd[index];
+                    this.textBox82.Text = yd[index];
                 }
                 if (index == 10)
                 {
-                    textBox83.Text = xd[index];
-                    textBox84.Text = yd[index];
+                    this.textBox83.Text = xd[index];
+                    this.textBox84.Text = yd[index];
                 }
                 if (index == 11)
                 {
-                    textBox85.Text = xd[index];
-                    textBox86.Text = yd[index];
+                    this.textBox85.Text = xd[index];
+                    this.textBox86.Text = yd[index];
                 }
                 if (index == 12)
                 {
-                    textBox87.Text = xd[index];
-                    textBox88.Text = yd[index];
+                    this.textBox87.Text = xd[index];
+                    this.textBox88.Text = yd[index];
                 }
                 if (index == 13)
                 {
-                    textBox89.Text = xd[index];
-                    textBox90.Text = yd[index];
+                    this.textBox89.Text = xd[index];
+                    this.textBox90.Text = yd[index];
                 }
                 if (index == 14)
                 {
-                    textBox91.Text = xd[index];
-                    textBox92.Text = yd[index];
+                    this.textBox91.Text = xd[index];
+                    this.textBox92.Text = yd[index];
                 }
                 if (index == 15)
                 {
-                    textBox93.Text = xd[index];
-                    textBox94.Text = yd[index];
+                    this.textBox93.Text = xd[index];
+                    this.textBox94.Text = yd[index];
                 }
                 if (index == 16)
                 {
-                    textBox95.Text = xd[index];
-                    textBox96.Text = yd[index];
+                    this.textBox95.Text = xd[index];
+                    this.textBox96.Text = yd[index];
                 }
                 if (index == 17)
                 {
-                    textBox97.Text = xd[index];
-                    textBox98.Text = yd[index];
+                    this.textBox97.Text = xd[index];
+                    this.textBox98.Text = yd[index];
                 }
                 if (index == 18)
                 {
-                    textBox99.Text = xd[index];
-                    textBox100.Text = yd[index];
+                    this.textBox99.Text = xd[index];
+                    this.textBox100.Text = yd[index];
                 }
                 if (index == 19)
                 {
-                    textBox101.Text = xd[index];
-                    textBox102.Text = yd[index];
+                    this.textBox101.Text = xd[index];
+                    this.textBox102.Text = yd[index];
                 }
                 if (index == 20)
                 {
-                    textBox103.Text = xd[index];
-                    textBox104.Text = yd[index];
+                    this.textBox103.Text = xd[index];
+                    this.textBox104.Text = yd[index];
                 }
                 if (index == 21)
                 {
-                    textBox105.Text = xd[index];
-                    textBox106.Text = yd[index];
+                    this.textBox105.Text = xd[index];
+                    this.textBox106.Text = yd[index];
                 }
             }
-            InitNameBox(out kName, nameBox);
+            this.InitNameBox(out this.kName, this.nameBox);
         }
 
+      
         private void ChangeFile()
         {
             if (File.Exists(myCls.fileAdd))
@@ -640,7 +641,6 @@ namespace IIT_Dimlom_Geo1
             output.Close();
             binaryWriter.Close();
         }
-
         private void ConfirmSelect_Click(object sender, EventArgs e)
         {
             int num = 0;

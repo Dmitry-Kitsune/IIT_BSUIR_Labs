@@ -354,7 +354,7 @@ namespace IIT_Dimlom_Geo1
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Location = new System.Drawing.Point(12, 102);
+            this.panel7.Location = new System.Drawing.Point(12, 96);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(638, 536);
             this.panel7.TabIndex = 2;

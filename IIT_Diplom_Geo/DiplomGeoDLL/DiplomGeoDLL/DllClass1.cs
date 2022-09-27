@@ -20,6 +20,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using DiplomGeoDLL;
 using System.Drawing.Printing;
+using System.Runtime.InteropServices;
 
 namespace DiplomGeoDLL
 {
@@ -39,7 +40,15 @@ namespace DiplomGeoDLL
         public string driveKey;
         public string[] nameDrive;
 
-        public static void CheckDrive(string dirName, out string strPath)
+
+        private static int ToInt32(double value)
+        {
+            return value >= Int32.MaxValue ? Int32.MaxValue
+             : value <= Int32.MinValue ? Int32.MinValue
+              : Convert.ToInt32(value);
+        }
+
+            public static void CheckDrive(string dirName, out string strPath)
         {
             string sTmp = "";
             strPath = "";
@@ -23260,16 +23269,16 @@ namespace DiplomGeoDLL
         }
 
         public static void DrawNode(
-          PaintEventArgs e,
-          int kNode,
-          string[] nameNode,
-          double[] xNode,
-          double[] yNode,
-          double scaleToWin,
-          double xBegX,
-          double yBegY,
-          int xBegWin,
-          int yBegWin)
+            PaintEventArgs e,
+            int kNode,
+            string[] nameNode,
+            double[] xNode,
+            double[] yNode,
+            double scaleToWin,
+            double xBegX,
+            double yBegY,
+            int xBegWin,
+            int yBegWin)
         {
             Graphics graphics = e.Graphics;
             int xWin = 0;
@@ -23278,9 +23287,9 @@ namespace DiplomGeoDLL
             if (kNode <= 0)
                 return;
             int kArray = 999999;
-            stringArray(nameNode, ref kArray);
-            doubleArray(xNode, ref kArray);
-            doubleArray(yNode, ref kArray);
+            DllClass1.stringArray(nameNode, ref kArray);
+            DllClass1.doubleArray(xNode, ref kArray);
+            DllClass1.doubleArray(yNode, ref kArray);
             if (kNode > kArray)
             {
                 int num = (int)MessageBox.Show("Индекс массива DrawNode");
@@ -23288,13 +23297,13 @@ namespace DiplomGeoDLL
             else
             {
                 SolidBrush solidBrush = new SolidBrush(Color.Cyan);
-                for (int i = 1; i <= kNode; ++i)
+                for (int index = 1; index <= kNode; ++index)
                 {
-                    XYtoWIN(xNode[i], yNode[i], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+                    DllClass1.XYtoWIN(xNode[index], yNode[index], scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
                     if (xWin != 0 || yWin != 0)
                     {
                         graphics.FillRectangle((Brush)new SolidBrush(Color.Cyan), xWin - 2, yWin - 2, 5, 5);
-                        graphics.DrawString(nameNode[i], new Font("Bold", (float)emSize), (Brush)solidBrush, (float)(xWin + emSize / 2), (float)(yWin - emSize + 2));
+                        graphics.DrawString(nameNode[index], new Font("Bold", (float)emSize), (Brush)solidBrush, (float)(xWin + emSize / 2), (float)(yWin - emSize + 2));
                     }
                 }
             }
@@ -30734,6 +30743,14 @@ namespace DiplomGeoDLL
             }
         }
 
+        private static int ToInt32b(double value)
+        {
+            int result = value >= Int32.MaxValue ?  2
+             : value <= Int32.MinValue ? - 2
+              : Convert.ToInt32(value);
+            Console.WriteLine("ToInt32: value={0}, result={1}", value, result);
+            return result;
+        }
         public static void XYtoWIN(
           double xCur,
           double yCur,
@@ -30748,12 +30765,13 @@ namespace DiplomGeoDLL
             xWin = yWin = 0;
             if (double.IsNaN(xCur) || double.IsNaN(yCur))
             {
-                int num = (int)MessageBox.Show("Problem of data");
+                int num = (int)MessageBox.Show("Проблема с данными");
             }
             else
             {
-                xWin = Convert.ToInt32((double)xBegWin + (xCur - xBegX) * scaleToWin);
-                yWin = Convert.ToInt32((double)yBegWin - (yCur - yBegY) * scaleToWin);
+                xWin = DllClass1.ToInt32b((double)xBegWin + (xCur - xBegX) * scaleToWin);
+
+                yWin = DllClass1.ToInt32b((double)yBegWin - (yCur - yBegY) * scaleToWin);
             }
         }
 

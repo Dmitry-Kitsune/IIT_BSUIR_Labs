@@ -56,7 +56,7 @@ namespace IIT_Dimlom_Geo1
             this.pathGeo = binaryReader1.ReadString();
             binaryReader1.Close();
             input1.Close();
-            this.allGeo = this.pathGeo + "brall.dat";
+            this.allGeo = this.pathGeo + "brAllProj.dat";
             this.kRec = -1;
             FileStream input2 = new FileStream(this.allGeo, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
@@ -101,7 +101,7 @@ namespace IIT_Dimlom_Geo1
         private void Confirm_Click(object sender, EventArgs e)
         {
             this.myGeo.FilePath();
-            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Project не выбрано. Do You want to leave Dialog ?", "Выбор проекта", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (this.listBox1.SelectedIndex < 0 && MessageBox.Show("Проект не выбран. Вы хотите закрыть окно ?", "Выбор проекта", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 Form.ActiveForm.Close();
             }
@@ -209,7 +209,8 @@ namespace IIT_Dimlom_Geo1
                 this.curDir = this.sCurDir[this.listBox1.SelectedIndex];
                 this.fileTah = this.pathGeo + this.curDir + "\\ftah.pnt";
                 this.fileCalc = this.pathGeo + this.curDir + "\\fcalc.pnt";
-                this.fileGeo = this.pathGeo + this.curDir + "\\fgeo.xyz";
+               // this.fileGeo = this.pathGeo + this.curDir + "\\fgeo.xyz";
+                this.fileGeo = this.pathGeo + this.curDir + "\\fgeoGeo.xyz";
                 double num1 = 9999999.9;
                 double num2 = 9999999.9;
                 double num3 = 9999999.9;

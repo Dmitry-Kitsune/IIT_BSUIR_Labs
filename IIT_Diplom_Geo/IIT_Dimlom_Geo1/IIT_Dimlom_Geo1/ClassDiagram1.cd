@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="IIT_Dimlom_Geo1.AddPnt" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>eTg6iRAuL2OCgFaBEeCYwILGZc07cg4odyPESUTWFKI=</HashCode>
+      <FileName>AddPnt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.AddPoints" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>fTg7iRYuL+eTgFbDMeCYwKPGZc078m4udyPESWT2Nqo=</HashCode>
+      <FileName>AddPoints.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.Aero" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OTo+CEIsr22TplY3Ieq/i4OX4Rwq+cH+cSHseXX8dCI=</HashCode>
+      <FileName>Aero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.Cadasral" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>PLgdDEYcK+aTjjpnI+XBxLNvwR6a+OVucSSkbXX8vyk=</HashCode>
+      <FileName>Cadasral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.CadContours" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>PXs+CkC8L6fLgl4nouDa8sfXyd07+O/q9SPl43T0FCg=</HashCode>
+      <FileName>CadContours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.CadInterval" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAQABgAAACAAAACAAEYAAAAESAACCAAACI=</HashCode>
+      <FileName>CadInterval.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.CameraStore" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>/yICgFI6A6CBBPzHESKEABBCYOA4AADLEGBiACECDLI=</HashCode>
+      <FileName>CameraStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ControlPoints" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OXQaCAEoL2GCgNSBEKCIAAJGcMR7YCAQcSCGBWTAFCA=</HashCode>
+      <FileName>ControlPoints.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.DesignLine" Collapsed="true">
+    <Position X="16.25" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>Pb2fK/csfyeTh3ZXY/KZ0ePH59w7/+//ayPseX789y4=</HashCode>
+      <FileName>DesignLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.Doubtful" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAAACQEAACAAABAAAACAAEACAAAIQCAAEACAAAAAACA=</HashCode>
+      <FileName>Doubtful.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.DoubtfulPnt" Collapsed="true">
+    <Position X="22.5" Y="5.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ObkaCQMsLimSgFYRAOqoAMIWQcx7YCE0cSCEQUTAlCA=</HashCode>
+      <FileName>DoubtfulPnt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.FieldProject" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAgABQEAACABAFgEAACAAAQCAAAdAACAIhBgBAAgBIg=</HashCode>
+      <FileName>FieldProject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.FinalCorrect" Collapsed="true">
+    <Position X="22.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>YCiQEQAARbIQABCAEMCIAoBCJMQ7AAAomCABgAAAAIA=</HashCode>
+      <FileName>FinalCorrect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.FinalResult" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>fbpfjVIsLyeTgH7XI+Soze/Hx9w/9W/q8SOEfXT0taI=</HashCode>
+      <FileName>FinalResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.GeoCalc" Collapsed="true">
+    <Position X="1" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OT8bGg9tPzezgn43IfKIlMNH81884O/o9SvEeX72FXY=</HashCode>
+      <FileName>GeoCalc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.LegalArea" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ZCiQEQAARTAAAhCAEECIAgBCpMQ6AAAomCABBAAAAIA=</HashCode>
+      <FileName>LegalArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.LinesForm" Collapsed="true">
+    <Position X="22.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OT2fO9csLyeRh3a/Z/qc3MPH59w//+/+8SPseXT8VSw=</HashCode>
+      <FileName>LinesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.LineSign" Collapsed="true">
+    <Position X="22.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>+LtCyIqPsbJksBTHwHiFlCXv8897Y+vr0SYoezDw06Y=</HashCode>
+      <FileName>LineSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ListLineSign" Collapsed="true">
+    <Position X="22.5" Y="8.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>MBAgAAAAACIgBBBAAACQAAADUUB4BCBIQABAASAEECA=</HashCode>
+      <FileName>ListLineSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ListPntSign" Collapsed="true">
+    <Position X="1" Y="6.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IBAAABAAQCIAABBAAgCQAAEDUcBYFAAIwCAAASAEAiA=</HashCode>
+      <FileName>ListPntSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ListPoints" Collapsed="true">
+    <Position X="1" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IgAACQEAAGAACAgABAiAAEACAAEIACEAAAAQAAAAAAA=</HashCode>
+      <FileName>ListPoints.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ListPolyItems" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAAAQCIAABgAAACQCEAC0QA4BAAIQAAAQSIEACA=</HashCode>
+      <FileName>ListPolyItems.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ListPolySign" Collapsed="true">
+    <Position X="1.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAUCIAABAAAACQAIAC0AA4BAAIQQAAASAEACA=</HashCode>
+      <FileName>ListPolySign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.MainGeo" Collapsed="true">
+    <Position X="18" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OVgZCAQcq3abgFfIMMmCkObGQcwzMGoOYSAEAeDiNCA=</HashCode>
+      <FileName>MainGeo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.MapScale" Collapsed="true">
+    <Position X="14.75" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>O7w5FC3qIyKZhDg0IKSIxMJOa84/gCe45SCkEeHgNzo=</HashCode>
+      <FileName>MapScale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.MyCadastre" Collapsed="true">
+    <Position X="21" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>OHgZCAQcK3abgFbBMMmAEObGQcw7MGguYSAEAUDmNCA=</HashCode>
+      <FileName>MyCadastre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.NodeList" Collapsed="true">
+    <Position X="1" Y="8.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAADAQEAACICEAAAMACIAGBCAwAKACCQAQAhAAAgJAA=</HashCode>
+      <FileName>NodeList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.ParcelAction" Collapsed="true">
+    <Position X="5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>f7gbaw6uPz+DoF7nIeSYwePH4fw7e/5vcyPE7eT0NyA=</HashCode>
+      <FileName>ParcelAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.PointSign" Collapsed="true">
+    <Position X="8.25" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ULtCTAIG4TJksLCP1HiXwoGLQ9x78sro8yRoYzDwQ6Y=</HashCode>
+      <FileName>PointSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.PointsList" Collapsed="true">
+    <Position X="11.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IIAACQUAAGAAAAAAAACAAEACAAAIACEAAAAwAAAAAAA=</HashCode>
+      <FileName>PointsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.PolygonSign" Collapsed="true">
+    <Position X="13" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>QLtCTAIHoaJkMBwHwHiViuHP899748Lp0S5oczLx86Y=</HashCode>
+      <FileName>PolygonSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.PolyTopo" Collapsed="true">
+    <Position X="19.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>eTgfCQI8Ly+Q0N6D8OyZQoPH5847+m9o+aOEbWb0FaA=</HashCode>
+      <FileName>PolyTopo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Dimlom_Geo1.StripCamera" Collapsed="true">
+    <Position X="10" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ZicCiEMAAyCBADiDFAKAAQBCIUC4gCOAEKDgAAEAAcI=</HashCode>
+      <FileName>StripCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.CreateNewProj" Collapsed="true">
+    <Position X="1" Y="3" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ICAACAEAACAQAAgAAACAAAACEAAAAAAAGAgACiQgAQA=</HashCode>
+      <FileName>CreateNewProj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.ProjectMenu" Collapsed="true">
+    <Position X="22.5" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQEAQiIQABgIAACBAFACEGAAACkAARAwAABABAk=</HashCode>
+      <FileName>DriveProjectMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.GeoDemo" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>PfETCr8gDqcSSFYIAGCIAEISI4BgYq6QMReElTSARGE=</HashCode>
+      <FileName>GeoDemo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.MyGeodesy">
+    <Position X="15.25" Y="2.25" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Public" Collapsed="true" />
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>////7/////+/////v/f9///7/v///////////////+0=</HashCode>
+      <FileName>MyGeodesy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.Program">
+    <Position X="11.25" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.SelectDrive" Collapsed="true">
+    <Position X="3.25" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQEAACIAADgAAAGAQiACAAAYAEAAIEgABAAABAA=</HashCode>
+      <FileName>SelectDrive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IIT_Diplom_Geo1.SelectProj" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>IAAABQFAQCAQAAgAAACAAACCkSAAAACAuAAAAAQAAAA=</HashCode>
+      <FileName>SelectProj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1376,28 +1376,28 @@ namespace IIT_Dimlom_Geo1
 
         private void FinalResult_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(mySub.fileProj))
+            if (!File.Exists(this.mySub.fileProj))
             {
                 int num1 = (int)MessageBox.Show("Проект не выбран", "От точек к линиям", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (kPntPlus < 1)
+            else if (this.kPntPlus < 1)
             {
                 int num2 = (int)MessageBox.Show("Загрузка точек из файла", "Исправление и печать", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                mySub.FilePath();
-                nProcess = 130;
-                if (File.Exists(mySub.fileProcess))
-                    File.Delete(mySub.fileProcess);
-                FileStream output = new FileStream(mySub.fileProcess, FileMode.CreateNew);
+                this.mySub.FilePath();
+                this.nProcess = 130;
+                if (File.Exists(this.mySub.fileProcess))
+                    File.Delete(this.mySub.fileProcess);
+                FileStream output = new FileStream(this.mySub.fileProcess, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                binaryWriter.Write(nProcess);
+                binaryWriter.Write(this.nProcess);
                 binaryWriter.Close();
                 output.Close();
                 int num3 = (int)new FinalResult().ShowDialog((IWin32Window)this);
-                LoadData();
-                panel7.Invalidate();
+                this.LoadData();
+                this.panel7.Invalidate();
             }
         }
 

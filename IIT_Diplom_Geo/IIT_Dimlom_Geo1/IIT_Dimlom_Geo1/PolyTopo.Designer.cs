@@ -522,7 +522,7 @@ namespace IIT_Dimlom_Geo1
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(330, 39);
             this.button18.TabIndex = 5;
-            this.button18.Text = "Вставить Настоящих имен и допустимых площадей участков";
+            this.button18.Text = "Список имен и допустимых площадей участков";
             this.button18.UseVisualStyleBackColor = false;
             this.button18.Click += new System.EventHandler(this.EveryParcel_Click);
             // 
@@ -748,7 +748,7 @@ namespace IIT_Dimlom_Geo1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 702);
+            this.ClientSize = new System.Drawing.Size(1012, 715);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.groupBox4);

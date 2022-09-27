@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Text;
-using Microsoft.Win32;
 using DiplomGeoDLL;
 using IIT_Diplom_Geo1;
 using System.Drawing.Printing;
@@ -1898,7 +1897,7 @@ namespace IIT_Dimlom_Geo1
         {
             PrintPreviewControl1 = new PrintPreviewControl();
             PrintPreviewControl1.ClientSize = new Size(580, 680);
-            PrintPreviewControl1.Location = new Point(40, 0);
+            PrintPreviewControl1.Location = new Point(40, 80);
             PrintPreviewControl1.Document = docToPreview;
             Controls.Add((Control)PrintPreviewControl1);
             docToPreview.PrintPage += new PrintPageEventHandler(docToPreview_PrintPage);

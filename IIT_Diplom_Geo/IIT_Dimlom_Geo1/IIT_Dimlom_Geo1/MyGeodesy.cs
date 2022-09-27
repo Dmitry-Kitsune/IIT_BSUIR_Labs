@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using DiplomGeoDLL;
-using IIT_Diplom_Geo1;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Reflection;
 using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
+//
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Drawing.Text;
+
 
 
 // Доработать класс Aero
@@ -19,10 +21,7 @@ using System.Drawing.Drawing2D;
 
 namespace IIT_Diplom_Geo1
 {
-    //public class Form : System.Windows.Forms.ContainerControl
-    //{
 
-    //}
     public class MyGeodesy
     {
         public readonly string dirKey = "Diplom_Geo";
@@ -1046,11 +1045,15 @@ namespace IIT_Diplom_Geo1
             fstoreGeo = comPath + "brGeo.dat";
             filePixel = comPath + "filePixel.dat";
             fProblem = comPath + "brProblem";
-            fPntLine = comPath + "fpntline.dat";
             fileControl = comPath + "fileContr.pro";
             fArchive = comPath + "brArchive.arh";
             fArchLayer = comPath + "brArchlay.arh";
             aeroBlock = comPath + "block.geo";
+            // для кадастра
+            fileToler = this.comPath + "ftoler.tol";
+            fileBorder = this.comPath + "fborder.lin";
+            faddFile = this.comPath + "brfile.dat";
+                        
             int num = 0;
             if (File.Exists(fileProj))
             {
@@ -1177,6 +1180,7 @@ namespace IIT_Diplom_Geo1
             fgeoLine = minPath + "\\geodtm.lin";
             fgeoNode = minPath + "\\fgeonode.nod";
             // point files for cad
+            
             fsourcePnt = cadPath + "\\fsourcePnt.pnt";
             filePnt = this.cadPath + "\\dtm.pnt";
             filePoly = cadPath + "\\fpoly.pol";
@@ -15769,70 +15773,52 @@ namespace IIT_Diplom_Geo1
             }
         }
 
-        public void KeepLoadBorder(int iParam, string fCurBorder)
+        public void KeepLoadBorder(int iParam)
         {
             if (iParam == 1)
             {
-                if (File.Exists(fCurBorder))
-                    File.Delete(fCurBorder);
-                FileStream output = new FileStream(fCurBorder, FileMode.CreateNew);
+                if (File.Exists(this.fileBorder))
+                    File.Delete(this.fileBorder);
+                FileStream output = new FileStream(this.fileBorder, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                binaryWriter.Write(kBorder);
-                for (int index = 0; index <= kBorder; ++index)
+                binaryWriter.Write(this.kBorder);
+                binaryWriter.Write(this.sArea);
+                binaryWriter.Write(this.arExter);
+                for (int index = 0; index <= this.kBorder; ++index)
                 {
-                    binaryWriter.Write(xBorder[index]);
-                    binaryWriter.Write(yBorder[index]);
+                    binaryWriter.Write(this.xBorder[index]);
+                    binaryWriter.Write(this.yBorder[index]);
                 }
                 binaryWriter.Close();
                 output.Close();
             }
-            if (iParam == 2)
+            if (iParam != 2)
+                return;
+            this.kBorder = 0;
+            if (!File.Exists(this.fileBorder))
+                return;
+            FileStream input = new FileStream(this.fileBorder, FileMode.Open, FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader((Stream)input);
+            try
             {
-                kBorder = 0;
-                if (File.Exists(fCurBorder))
+                this.kBorder = binaryReader.ReadInt32();
+                this.sArea = binaryReader.ReadDouble();
+                this.arExter = binaryReader.ReadDouble();
+                for (int index = 0; index <= this.kBorder; ++index)
                 {
-                    FileStream input = new FileStream(fCurBorder, FileMode.Open, FileAccess.Read);
-                    BinaryReader binaryReader = new BinaryReader((Stream)input);
-                    kBorder = binaryReader.ReadInt32();
-                    for (int index = 0; index <= kBorder; ++index)
-                    {
-                        xBorder[index] = binaryReader.ReadDouble();
-                        yBorder[index] = binaryReader.ReadDouble();
-                    }
-                    binaryReader.Close();
-                    input.Close();
+                    this.xBorder[index] = binaryReader.ReadDouble();
+                    this.yBorder[index] = binaryReader.ReadDouble();
                 }
             }
-            if (iParam == 3)
+            catch (Exception ex)
             {
-                if (File.Exists(fCurBorder))
-                    File.Delete(fCurBorder);
-                FileStream output = new FileStream(fCurBorder, FileMode.CreateNew);
-                BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                binaryWriter.Write(kBordOper);
-                for (int index = 0; index <= kBordOper; ++index)
-                {
-                    binaryWriter.Write(xBordOper[index]);
-                    binaryWriter.Write(yBordOper[index]);
-                }
-                binaryWriter.Close();
-                output.Close();
+                Console.WriteLine("Операция чтения завершилась неудачно, как и ожидалось.");
             }
-            if (iParam != 4)
-                return;
-            kBordOper = 0;
-            if (!File.Exists(fCurBorder))
-                return;
-            FileStream input1 = new FileStream(fCurBorder, FileMode.Open, FileAccess.Read);
-            BinaryReader binaryReader1 = new BinaryReader((Stream)input1);
-            kBordOper = binaryReader1.ReadInt32();
-            for (int index = 0; index <= kBordOper; ++index)
+            finally
             {
-                xBordOper[index] = binaryReader1.ReadDouble();
-                yBordOper[index] = binaryReader1.ReadDouble();
+                binaryReader.Close();
+                input.Close();
             }
-            binaryReader1.Close();
-            input1.Close();
         }
 
         public void PointLoad()

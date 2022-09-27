@@ -4,7 +4,7 @@ C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(315,
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(332,22): warning C4244: '=': conversion from 'LRESULT' to 'int', possible loss of data
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(121,6): warning C4101: 'hDC': unreferenced local variable
   Generating code
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
   All 5 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
 C:\Users\Fuzzy\Source\Repos\Dmitry-Kitsune\SystemProg\Lab3\Lab-2\SP_PR3.cpp(350): warning C4715: 'Pr2_WndProc': not all control paths return a value
   Finished generating code

@@ -216,6 +216,7 @@ namespace IIT_Dimlom_Geo1
             // 
             // textBox1
             // 
+            this.textBox1.AcceptsReturn = true;
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(165, 6);
             this.textBox1.Name = "textBox1";

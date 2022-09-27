@@ -415,9 +415,11 @@
     </Compile>
     <EmbeddedResource Include="AddPnt.resx">
       <DependentUpon>AddPnt.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPoints.resx">
       <DependentUpon>AddPoints.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Aero.resx">
       <DependentUpon>Aero.cs</DependentUpon>
@@ -427,6 +429,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadContours.resx">
       <DependentUpon>CadContours.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CadInterval.resx">
       <DependentUpon>CadInterval.cs</DependentUpon>
@@ -439,6 +442,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewProj.resx">
       <DependentUpon>CreateNewProj.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DesignLine.resx">
       <DependentUpon>DesignLine.cs</DependentUpon>
@@ -448,6 +452,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoubtfulPnt.resx">
       <DependentUpon>DoubtfulPnt.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DriveProjectMenu.resx">
       <DependentUpon>DriveProjectMenu.cs</DependentUpon>
@@ -483,6 +488,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListLineSign.resx">
       <DependentUpon>ListLineSign.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ListPntSign.resx">
       <DependentUpon>ListPntSign.cs</DependentUpon>
@@ -538,10 +544,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectProj.resx">
       <DependentUpon>SelectProj.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StripCamera.resx">
       <DependentUpon>StripCamera.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
