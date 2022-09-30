@@ -50,7 +50,7 @@ namespace IIT_Dimlom_Geo1
             myList.curProject = binaryReader1.ReadString();
             input1.Close();
             binaryReader1.Close();
-            myList.curDirect = "brProj" + sTmp;
+            myList.curDirect = "Proj" + sTmp;
             if (File.Exists(myList.difTarget))
             {
                 FileStream input2 = new FileStream(myList.difTarget, FileMode.Open, FileAccess.Read);

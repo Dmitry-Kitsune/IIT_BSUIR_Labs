@@ -247,7 +247,8 @@ namespace IIT_Dimlom_Geo1
                 sTmp = mySub.comPath + mySub.curDirect;
                 if (!Directory.Exists(sTmp))
                     Directory.CreateDirectory(sTmp);
-                label2.Text = sPart[1] + "\\+" + mySub.curProject;
+                //label2.Text = sPart[1] + "\\+" + mySub.curProject;
+                label2.Text = mySub.comPath + "\\" + mySub.curProject;
                 if (!File.Exists(mySub.tmpStr) && nProcess == 910)
                 {
                     int num = (int)MessageBox.Show("Диск не был определен. Используйте 'Cменить диск'", "Кадастр и топография", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

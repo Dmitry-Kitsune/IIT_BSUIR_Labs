@@ -1405,7 +1405,7 @@ namespace IIT_Dimlom_Geo1
         {
             if (!File.Exists(mySub.flineFinal))
             {
-                int num1 = (int)MessageBox.Show("Проверить конечный результат", "Щелкните 'Окончательный результат коррекции'", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                int num1 = (int)MessageBox.Show("Проверить конечный результат", "Нажмите на кнопку 'Корректировка конечных результатов'", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {

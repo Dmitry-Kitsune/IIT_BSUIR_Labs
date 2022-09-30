@@ -1026,7 +1026,7 @@ namespace IIT_Diplom_Geo1
                 input1.Close();
             }
             fileAllProj = comPath + "brAllProj.dat";
-            fileProj = comPath + "brProj.dat";
+            fileProj = comPath + "Proj.dat";
             fileAdd = comPath + "brAdd.dat";
             fileProcess = comPath + "fileProc.pro";
             filePixel = comPath + "filePixel.dat";
@@ -1063,7 +1063,7 @@ namespace IIT_Diplom_Geo1
                 {
                     sTmp = binaryReader2.ReadString();
                     //binaryReader2.ReadString();
-                    curProject = binaryReader2.ReadString();
+                    curProject = binaryReader2.ReadString().Split( )[0];
                     input2.Close();
                     binaryReader2.Close();
                     if (sTmp != "")
@@ -1081,14 +1081,17 @@ namespace IIT_Diplom_Geo1
             }
             if (num == 0)
                 return;
-            curDirect = "\\brProj" + this.sTmp;
-            //curDirect = "\\Diplom_Projs" + sTmp;
+            //curDirect = "\\Proj" + this.sTmp;
+            curDirect = curProject;
             minPath = comPath + curDirect;
             cadPath = comPath + curDirect;
             try
             {
                 if (!Directory.Exists(minPath))
+                {
                     Directory.CreateDirectory(minPath);
+                    Console.WriteLine($"[DEBUG] public void FilePath = minPath - {minPath}");
+                    }
             }
             catch (Exception ex)
             {

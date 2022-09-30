@@ -46,7 +46,7 @@ namespace IIT_Dimlom_Geo1
             myList.curProject = binaryReader1.ReadString();
             input1.Close();
             binaryReader1.Close();
-            myList.curDirect = "brProj" + sTmp;
+            myList.curDirect = "Proj" + sTmp;
             kAdd = 0;
             if (File.Exists(myList.flinePoly))
             {

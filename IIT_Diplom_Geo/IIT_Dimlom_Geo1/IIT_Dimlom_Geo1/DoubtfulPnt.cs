@@ -108,7 +108,7 @@ namespace IIT_Dimlom_Geo1
                 mySub.curProject = binaryReader.ReadString();
                 input.Close();
                 binaryReader.Close();
-                mySub.curDirect = "brProj" + sTmp;
+                mySub.curDirect = "Proj" + sTmp;
                 LoadData();
                 DifControl();
             }

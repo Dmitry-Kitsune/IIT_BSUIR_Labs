@@ -167,7 +167,7 @@ namespace IIT_Dimlom_Geo1
             // 
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 22);
-            this.button2.Text = "Открыть проект";
+            this.button2.Text = "Создать проект";
             this.button2.Click += new System.EventHandler(this.ProjectOpen_Click);
             // 
             // button3

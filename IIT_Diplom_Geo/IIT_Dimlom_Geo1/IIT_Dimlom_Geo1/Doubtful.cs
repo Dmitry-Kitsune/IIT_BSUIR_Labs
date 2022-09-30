@@ -44,7 +44,7 @@ namespace IIT_Dimlom_Geo1
             myError.curProject = binaryReader1.ReadString();
             input1.Close();
             binaryReader1.Close();
-            myError.curDirect = "brProj" + sTmp;
+            myError.curDirect = "Proj" + sTmp;
             FileStream input2 = new FileStream(myError.fDoubtful, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader2 = new BinaryReader((Stream)input2);
             ks = binaryReader2.ReadInt32();

@@ -67,7 +67,7 @@ namespace IIT_Dimlom_Geo1
                 input.Close();
                 binaryReader.Close();
             }
-            myCam.curDirect = "brProj" + sTmp;
+            myCam.curDirect = "Proj" + sTmp;
             if (File.Exists(myCam.fileProcess))
             {
                 FileStream input = new FileStream(myCam.fileProcess, FileMode.Open, FileAccess.Read);

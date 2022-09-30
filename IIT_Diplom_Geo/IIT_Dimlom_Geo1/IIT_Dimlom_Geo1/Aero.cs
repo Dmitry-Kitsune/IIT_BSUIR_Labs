@@ -307,7 +307,8 @@ namespace IIT_Dimlom_Geo1
                 sTmp = mySub.comPath + mySub.curDirect;
                 if (!Directory.Exists(sTmp))
                     Directory.CreateDirectory(sTmp);
-                label2.Text = sPart[1] + "\\" + mySub.curProject;
+                //label2.Text = sPart[1] + "\\" + mySub.curProject;
+                label2.Text = mySub.comPath + "\\" + mySub.curProject;
                 LoadData();
                 panel7.Invalidate();
             }

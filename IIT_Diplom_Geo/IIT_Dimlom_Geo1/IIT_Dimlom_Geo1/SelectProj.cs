@@ -52,7 +52,7 @@ namespace IIT_Diplom_Geo1
                     input.Close();
                     binaryReader.Close();
                     this.nameProj = this.sTmp;
-                    this.mySel.curDirect = "brProj" + this.sTmp;
+                    this.mySel.curDirect = "Proj" + this.sTmp;
                 }
                 this.k = 0;
                 FileStream input1 = new FileStream(this.mySel.fileAllProj, FileMode.Open, FileAccess.Read);

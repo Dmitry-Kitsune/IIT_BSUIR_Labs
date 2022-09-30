@@ -254,7 +254,8 @@ namespace IIT_Dimlom_Geo1
                 sTmp = myGeoCalc.comPath + myGeoCalc.curDirect;
                 if (!Directory.Exists(sTmp))
                     Directory.CreateDirectory(sTmp);
-                label2.Text = sPart[1] + "\\+" + myGeoCalc.curProject;
+                // label2.Text = sPart[1] + "\\+" + myGeoCalc.curProject;
+                label2.Text = myGeoCalc.comPath + "\\" + myGeoCalc.curProject;
                 LoadData();
                 if (kGeo == 0)
                 {

@@ -117,12 +117,13 @@ namespace IIT_Diplom_Geo1
             }
             if (num1 != 0)
                 return;
-            this.listBox1.Items.Add((object)"         DIDN't  FIND");
+            this.listBox1.Items.Add((object)"       Не найден");
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            if (this.textBox1.Text == "")
+            if (this.textBoxNewProjName.Text == "")
+               // if (this.textBox1.Text == "")
             {
                 int num1 = (int)MessageBox.Show("Имя проекта не определено", "Новый проект", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -162,11 +163,14 @@ namespace IIT_Diplom_Geo1
                 this.nProject = this.nMax + 1;
                 this.sTmp = Convert.ToString(this.nProject);
                 this.myProj.curProject = this.textBoxNewProjName.Text + " " + (object)now2;
-                this.myProj.curDirect = this.myProj.comPath + "brProj" + this.sTmp;
+                //this.myProj.curDirect = this.myProj.comPath + "Proj" + this.sTmp;
+                this.myProj.curDirect = this.myProj.comPath + this.textBoxNewProjName.Text; //+ this.sTmp;
                 try
                 {
                     if (!Directory.Exists(this.myProj.curDirect))
-                        Directory.CreateDirectory(this.myProj.curDirect);
+                    { Directory.CreateDirectory(this.myProj.curDirect);
+                        Console.WriteLine($"[DEBUG]  Crreated new directory {this.myProj.curDirect}");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -174,7 +178,7 @@ namespace IIT_Diplom_Geo1
                 }
                 try
                 {
-                    //this.myProj.curDirect = "brProj" + this.sTmp;
+                    //this.myProj.curDirect = "Proj" + this.sTmp;
                     binaryWriter1.Write(this.sTmp);
                     binaryWriter1.Write(this.myProj.curProject);
                     binaryWriter1.Write(this.myProj.curDirect);
@@ -212,119 +216,17 @@ namespace IIT_Diplom_Geo1
                 Form.ActiveForm.Close();
             }
         }
-        //private void Confirm_Click(object sender, EventArgs e)
-        //{
-        //    //Проверка окна TextBox
-        //    if (textBoxNewProjName.Text == "")
-        //    {
-        //        MessageBox.Show("Имя проекта не определено...", "Новый проект", MessageBoxButtons.OK,
-        //            MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    //Создание директории для проектов
-        //    try
-        //    {
-        //        if (!Directory.Exists(myProj.comPath))
-        //        {
-        //            Directory.CreateDirectory(myProj.comPath);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Ошибка! Операция не удалась");
-        //    }
-        //    finally
-        //    {
-
-        //    }
-        //    //Определение времени открытия проекта
-        //    DateTime sDateTime = DateTime.Now;
-        //    sDateTime = DateTime.Now;
-
-        //    //Порядковый номер нового проекта и его строковое представление
-
-        //    nProject = nMax + 1;
-        //    sTmp = System.Convert.ToString(nProject);
-
-        //    //Название проекта с учетом времени создания
-        //    nameProject = textBoxNewProjName.Text + " " + sDateTime;
-
-        //    //Имя директории нового проекта
-        //    nameDirectory = myProj.comPath + "\\" + myProj.dirKey + sTmp;
-
-        //    // Создание директории нового проекта
-
-        //    try
-        //    {
-        //        if (!Directory.Exists(nameDirectory))
-        //        {
-        //            Directory.CreateDirectory(nameDirectory);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Ошибка операции (Создание директории нового проекта)");
-        //    }
-        //    finally { }
-
-        //    // Создание файла для информации о проекте
-        //    try
-        //    {
-        //        if (File.Exists(myProj.fileProj))
-        //        {
-        //            File.Delete(myProj.fileProj);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Операция удаления не удалась...");
-        //    }
-        //    finally { }
-
-        //    //Запись информации в файл
-        //    myProj.fileProj = "tempFileProj"; // убрать значение
-        //    FileStream fc = new FileStream(myProj.fileProj, FileMode.CreateNew);
-        //    BinaryWriter fcc = new BinaryWriter(fc);
-        //    fcc.Write(sTmp);
-        //    fcc.Write(nameProject);
-        //    fcc.Write(nameDirectory);
-        //    fcc.Close();
-        //    fc.Close();
-        //    File.Delete("tempFileProj"); // Временная строка
-
-        //    //Создание файла с перечислением всех проектов, если он не был создан
-        //    if (!File.Exists(myProj.fileAllProj))
-        //    {
-        //        myProj.fileAllProj = "tempAllProj"; // убрать значение
-        //        FileStream fd = new FileStream(myProj.fileAllProj, FileMode.CreateNew);
-        //        BinaryWriter fdd = new BinaryWriter(fd);
-        //        Console.WriteLine($"Запись информации о проектах при создании - {myProj.fileAllProj}");
-        //        fd.Close();
-        //        fdd.Close();
-        //        File.Delete("tempAllProj"); // Временная строка
-
-
-        //    }
-
-        //    // Добавление в файл информации о новом проекте
-        //    if (File.Exists(myProj.fileAllProj))
-        //    {
-        //        FileStream fe = new FileStream(myProj.fileAllProj, FileMode.Append, FileAccess.Write);
-        //        BinaryWriter fee = new BinaryWriter(fe);
-        //        fee.Write(sTmp);
-        //        fee.Write(nameProject);
-        //        fee.Write(nameDirectory);
-        //        Console.WriteLine($"Запись информации о проектах при создании - {myProj.fileAllProj}");
-        //        fee.Close();
-        //        fe.Close();
-        //    }
-
-        //CreateNewProj.ActiveForm.Hide();
-        //}
         private void Quit_Click(object sender, EventArgs e)
         {
             CreateNewProj.ActiveForm.Hide();
+        }
+
+        private void textBoxNewProjName_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox)
+            {
+                this.textBoxNewProjName.Text = (sender as TextBox).Text;
+            }
         }
     }
 }
