@@ -92,7 +92,7 @@ namespace IIT_Dimlom_Geo1
         private double dy;
 
 
-        MyGeodesy myPnt = new MyGeodesy();
+        MyGeodesy myPoint = new MyGeodesy();
 
         public AddPnt()
         {
@@ -158,7 +158,7 @@ namespace IIT_Dimlom_Geo1
             button14.MouseLeave += new EventHandler(button1_MouseLeave);
             button15.MouseHover += new EventHandler(button15_MouseHover);
             button15.MouseLeave += new EventHandler(button1_MouseLeave);
-            myPnt.FilePath();
+            myPoint.FilePath();
             FormLoad();
             radioButton1.Checked = true;
             groupBox4.Visible = false;
@@ -223,39 +223,39 @@ namespace IIT_Dimlom_Geo1
             char[] seps = new char[1] { '\\' };
             string[] sPart = new string[50];
             int k = 0;
-            DllClass1.ShareString(myPnt.comPath, kPart, seps, out k, out sPart);
-            DllClass1.SetColour(myPnt.brColor, myPnt.pnColor);
-            myPnt.pathSymbol = sPart[1] + "\\BrSymbol\\";
-            myPnt.fsymbPnt = myPnt.pathSymbol + "\\brsymb.pnt";
-            DllClass1.PointSymbLoad(myPnt.fsymbPnt, out kSymbPnt, 
-                myPnt.numRec, myPnt.numbUser, myPnt.heiSymb);
-            myPnt.kSymbPnt = kSymbPnt;
+            DllClass1.ShareString(myPoint.comPath, kPart, seps, out k, out sPart);
+            DllClass1.SetColour(myPoint.brColor, myPoint.pnColor);
+            myPoint.pathSymbol = sPart[1] + "\\BrSymbol\\";
+            myPoint.fsymbPnt = myPoint.pathSymbol + "\\brsymb.pnt";
+            DllClass1.PointSymbLoad(myPoint.fsymbPnt, out kSymbPnt, 
+                myPoint.numRec, myPoint.numbUser, myPoint.heiSymb);
+            myPoint.kSymbPnt = kSymbPnt;
             kTaheo = 0;
-            if (File.Exists(myPnt.ftahPoint))
+            if (File.Exists(myPoint.ftahPoint))
             {
-                FileStream input = new FileStream(myPnt.ftahPoint, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(myPoint.ftahPoint, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
                     kTaheo = binaryReader.ReadInt32();
                     for (int index = 0; index <= kTaheo; ++index)
                     {
-                        myPnt.nameTah[index] = binaryReader.ReadString();
-                        myPnt.xTah[index] = binaryReader.ReadDouble();
-                        myPnt.yTah[index] = binaryReader.ReadDouble();
-                        myPnt.zTah[index] = binaryReader.ReadDouble();
-                        myPnt.nTah1[index] = binaryReader.ReadInt32();
-                        myPnt.xTahInscr[index] = binaryReader.ReadDouble();
-                        myPnt.yTahInscr[index] = binaryReader.ReadDouble();
-                        myPnt.iHorVerTah[index] = binaryReader.ReadInt32();
-                        if (xmin > myPnt.xTah[index])
-                            xmin = myPnt.xTah[index];
-                        if (ymin > myPnt.yTah[index])
-                            ymin = myPnt.yTah[index];
-                        if (xmax < myPnt.xTah[index])
-                            xmax = myPnt.xTah[index];
-                        if (ymax < myPnt.yTah[index])
-                            ymax = myPnt.yTah[index];
+                        myPoint.nameTah[index] = binaryReader.ReadString();
+                        myPoint.xTah[index] = binaryReader.ReadDouble();
+                        myPoint.yTah[index] = binaryReader.ReadDouble();
+                        myPoint.zTah[index] = binaryReader.ReadDouble();
+                        myPoint.nTah1[index] = binaryReader.ReadInt32();
+                        myPoint.xTahInscr[index] = binaryReader.ReadDouble();
+                        myPoint.yTahInscr[index] = binaryReader.ReadDouble();
+                        myPoint.iHorVerTah[index] = binaryReader.ReadInt32();
+                        if (xmin > myPoint.xTah[index])
+                            xmin = myPoint.xTah[index];
+                        if (ymin > myPoint.yTah[index])
+                            ymin = myPoint.yTah[index];
+                        if (xmax < myPoint.xTah[index])
+                            xmax = myPoint.xTah[index];
+                        if (ymax < myPoint.yTah[index])
+                            ymax = myPoint.yTah[index];
                     }
                 }
                 catch (Exception ex)
@@ -268,7 +268,7 @@ namespace IIT_Dimlom_Geo1
                     input.Close();
                 }
                 if (kTaheo > 0)
-                    myPnt.LoadKeepTaheo(1);
+                    myPoint.LoadKeepTaheo(1);
             }
             xminCur = xmin;
             yminCur = ymin;
@@ -309,7 +309,7 @@ namespace IIT_Dimlom_Geo1
             if (nControl == 10)
                 graphics.DrawRectangle(new Pen(Color.Green, 2f), RcDraw);
             if (kTaheo > 0)
-                DllClass1.PointsDraw(e, myPnt.fsymbPnt, 0, kTaheo, myPnt.nameTah, myPnt.xTah, myPnt.yTah, myPnt.zTah, myPnt.xTahInscr, myPnt.yTahInscr, myPnt.iHorVerTah, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPnt.nTah1, myPnt.nCode2, kSymbPnt, myPnt.numRec, myPnt.numbUser, myPnt.ixSqu, myPnt.iySqu, myPnt.numCol, myPnt.brColor, myPnt.pnColor);
+                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kTaheo, myPoint.nameTah, myPoint.xTah, myPoint.yTah, myPoint.zTah, myPoint.xTahInscr, myPoint.yTahInscr, myPoint.iHorVerTah, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.nTah1, myPoint.nCode2, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.ixSqu, myPoint.iySqu, myPoint.numCol, myPoint.brColor, myPoint.pnColor);
             if (nProcess != 510 && nProcess != 520 && nProcess != 530 && nProcess != 540 && nProcess != 560 && nProcess != 570)
                 return;
             if (kRcPnt > 0)
@@ -336,17 +336,17 @@ namespace IIT_Dimlom_Geo1
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
             DllClass1.WINtoXY(e.X, e.Y, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
-            if (!File.Exists(myPnt.fgeoGeo))
+            if (!File.Exists(myPoint.fgeoGeo))
             {
                 panel2.Text = string.Format("{0}", (object)e.X);
                 panel4.Text = string.Format("{0}", (object)e.Y);
             }
-            if (File.Exists(myPnt.fgeoGeo))
+            if (File.Exists(myPoint.fgeoGeo))
             {
                 panel2.Text = string.Format("{0:F3}", (object)xCur);
                 panel4.Text = string.Format("{0:F3}", (object)yCur);
             }
-            if (File.Exists(myPnt.filePoints))
+            if (File.Exists(myPoint.filePoints))
             {
                 panel2.Text = string.Format("{0:F3}", (object)xCur);
                 panel4.Text = string.Format("{0:F3}", (object)yCur);
@@ -535,20 +535,20 @@ namespace IIT_Dimlom_Geo1
                     {
                         DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
                         int indx = -1;
-                        DllClass1.SelPoint(kTaheo, myPnt.xTah, myPnt.yTah, xCur, yCur, out indx);
+                        DllClass1.SelPoint(kTaheo, myPoint.xTah, myPoint.yTah, xCur, yCur, out indx);
                         if (indx >= 0)
                         {
                             if (index == 1)
                             {
-                                textBox1.Text = myPnt.nameTah[indx];
-                                xSel[0] = myPnt.xTah[indx];
-                                ySel[0] = myPnt.yTah[indx];
+                                textBox1.Text = myPoint.nameTah[indx];
+                                xSel[0] = myPoint.xTah[indx];
+                                ySel[0] = myPoint.yTah[indx];
                             }
                             if (index == 2)
                             {
-                                textBox2.Text = myPnt.nameTah[indx];
-                                xSel[1] = myPnt.xTah[indx];
-                                ySel[1] = myPnt.yTah[indx];
+                                textBox2.Text = myPoint.nameTah[indx];
+                                xSel[1] = myPoint.xTah[indx];
+                                ySel[1] = myPoint.yTah[indx];
                             }
                         }
                     }
@@ -566,26 +566,26 @@ namespace IIT_Dimlom_Geo1
                     {
                         DllClass1.WINtoXY(xDat[index], yDat[index], scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
                         int indx = -1;
-                        DllClass1.SelPoint(kTaheo, myPnt.xTah, myPnt.yTah, xCur, yCur, out indx);
+                        DllClass1.SelPoint(kTaheo, myPoint.xTah, myPoint.yTah, xCur, yCur, out indx);
                         if (indx >= 0)
                         {
                             if (index == 1)
                             {
-                                textBox1.Text = myPnt.nameTah[indx];
-                                xSel[0] = myPnt.xTah[indx];
-                                ySel[0] = myPnt.yTah[indx];
+                                textBox1.Text = myPoint.nameTah[indx];
+                                xSel[0] = myPoint.xTah[indx];
+                                ySel[0] = myPoint.yTah[indx];
                             }
                             if (index == 2)
                             {
-                                textBox2.Text = myPnt.nameTah[indx];
-                                xSel[1] = myPnt.xTah[indx];
-                                ySel[1] = myPnt.yTah[indx];
+                                textBox2.Text = myPoint.nameTah[indx];
+                                xSel[1] = myPoint.xTah[indx];
+                                ySel[1] = myPoint.yTah[indx];
                             }
                             if (index == 3)
                             {
-                                textBox3.Text = myPnt.nameTah[indx];
-                                xSel[2] = myPnt.xTah[indx];
-                                ySel[2] = myPnt.yTah[indx];
+                                textBox3.Text = myPoint.nameTah[indx];
+                                xSel[2] = myPoint.xTah[indx];
+                                ySel[2] = myPoint.yTah[indx];
                             }
                         }
                     }
@@ -603,15 +603,15 @@ namespace IIT_Dimlom_Geo1
                     DllClass1.WINtoXY(xDat[index], yDat[index],
                         scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
                     int indx = -1;
-                    DllClass1.SelPoint(kTaheo, myPnt.xTah,
-                        myPnt.yTah, xCur, yCur, out indx);
+                    DllClass1.SelPoint(kTaheo, myPoint.xTah,
+                        myPoint.yTah, xCur, yCur, out indx);
                     if (indx >= 0 && index == 1)
                     {
-                        textBox7.Text = myPnt.nameTah[indx];
-                        textBox8.Text = string.Format("{0:F3}", (object)myPnt.xTah[indx]);
-                        textBox9.Text = string.Format("{0:F3}", (object)myPnt.yTah[indx]);
-                        textBox10.Text = string.Format("{0:F3}", (object)myPnt.zTah[indx]);
-                        textBox11.Text = string.Format("{0}", (object)myPnt.nTah1[indx]);
+                        textBox7.Text = myPoint.nameTah[indx];
+                        textBox8.Text = string.Format("{0:F3}", (object)myPoint.xTah[indx]);
+                        textBox9.Text = string.Format("{0:F3}", (object)myPoint.yTah[indx]);
+                        textBox10.Text = string.Format("{0:F3}", (object)myPoint.zTah[indx]);
+                        textBox11.Text = string.Format("{0}", (object)myPoint.nTah1[indx]);
                     }
                 }
             }
@@ -882,7 +882,7 @@ namespace IIT_Dimlom_Geo1
         private void Calculate_Click(object sender, EventArgs e)
         {
             int nName = 0;
-            DllClass1.NewPointName(kTaheo, myPnt.nameTah, out nName, out sNew);
+            DllClass1.NewPointName(kTaheo, myPoint.nameTah, out nName, out sNew);
             if (nName < 0)
                 return;
             double tText1;
@@ -1090,13 +1090,13 @@ namespace IIT_Dimlom_Geo1
                 {
                     if (nProcess != 560)
                     {
-                        if (myPnt.nameTah[index] == sNew)
+                        if (myPoint.nameTah[index] == sNew)
                         {
                             int num8 = (int)MessageBox.Show("Дубликат имени точки (потор)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
-                        double num9 = myPnt.xTah[index] - xNew;
-                        double num10 = myPnt.yTah[index] - yNew;
+                        double num9 = myPoint.xTah[index] - xNew;
+                        double num10 = myPoint.yTah[index] - yNew;
                         if (Math.Sqrt(num9 * num9 + num10 * num10) < 0.003)
                         {
                             int num11 = (int)MessageBox.Show("Повтор координат точки(дубликат)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -1108,12 +1108,12 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index = 0; index <= kTaheo; ++index)
                     {
-                        if (myPnt.nameTah[index] == sNew)
+                        if (myPoint.nameTah[index] == sNew)
                         {
-                            myPnt.xTah[index] = xNew;
-                            myPnt.yTah[index] = yNew;
-                            myPnt.zTah[index] = zNew;
-                            myPnt.nTah1[index] = iCode1;
+                            myPoint.xTah[index] = xNew;
+                            myPoint.yTah[index] = yNew;
+                            myPoint.zTah[index] = zNew;
+                            myPoint.nTah1[index] = iCode1;
                             break;
                         }
                     }
@@ -1143,17 +1143,17 @@ namespace IIT_Dimlom_Geo1
                     if (nProcess != 560)
                     {
                         ++kTaheo;
-                        myPnt.nameTah[kTaheo] = sNew;
-                        myPnt.xTah[kTaheo] = xNew;
-                        myPnt.yTah[kTaheo] = yNew;
-                        myPnt.zTah[kTaheo] = zNew;
-                        myPnt.nTah1[kTaheo] = iCode1;
-                        myPnt.xTahInscr[kTaheo] = xNew;
-                        myPnt.yTahInscr[kTaheo] = yNew;
-                        myPnt.iHorVerTah[kTaheo] = 0;
+                        myPoint.nameTah[kTaheo] = sNew;
+                        myPoint.xTah[kTaheo] = xNew;
+                        myPoint.yTah[kTaheo] = yNew;
+                        myPoint.zTah[kTaheo] = zNew;
+                        myPoint.nTah1[kTaheo] = iCode1;
+                        myPoint.xTahInscr[kTaheo] = xNew;
+                        myPoint.yTahInscr[kTaheo] = yNew;
+                        myPoint.iHorVerTah[kTaheo] = 0;
                     }
-                    myPnt.kTaheo = kTaheo;
-                    myPnt.LoadKeepTaheo(2);
+                    myPoint.kTaheo = kTaheo;
+                    myPoint.LoadKeepTaheo(2);
                     FormLoad();
                     textBox7.Text = "";
                     textBox8.Text = "";
@@ -1174,22 +1174,22 @@ namespace IIT_Dimlom_Geo1
                 int index1 = -1;
                 for (int index2 = 0; index2 <= kTaheo; ++index2)
                 {
-                    if (!(myPnt.nameTah[index2] == textBox7.Text))
+                    if (!(myPoint.nameTah[index2] == textBox7.Text))
                     {
                         ++index1;
-                        myPnt.nameTah[index1] = myPnt.nameTah[index2];
-                        myPnt.xTah[index1] = myPnt.xTah[index2];
-                        myPnt.yTah[index1] = myPnt.yTah[index2];
-                        myPnt.zTah[index1] = myPnt.zTah[index2];
-                        myPnt.nTah1[index1] = myPnt.nTah1[index2];
-                        myPnt.xTahInscr[index1] = myPnt.xTahInscr[index2];
-                        myPnt.yTahInscr[index1] = myPnt.yTahInscr[index2];
-                        myPnt.iHorVerTah[index1] = myPnt.iHorVerTah[index2];
+                        myPoint.nameTah[index1] = myPoint.nameTah[index2];
+                        myPoint.xTah[index1] = myPoint.xTah[index2];
+                        myPoint.yTah[index1] = myPoint.yTah[index2];
+                        myPoint.zTah[index1] = myPoint.zTah[index2];
+                        myPoint.nTah1[index1] = myPoint.nTah1[index2];
+                        myPoint.xTahInscr[index1] = myPoint.xTahInscr[index2];
+                        myPoint.yTahInscr[index1] = myPoint.yTahInscr[index2];
+                        myPoint.iHorVerTah[index1] = myPoint.iHorVerTah[index2];
                     }
                 }
                 kTaheo = index1;
-                myPnt.kTaheo = kTaheo;
-                myPnt.LoadKeepTaheo(2);
+                myPoint.kTaheo = kTaheo;
+                myPoint.LoadKeepTaheo(2);
             }
             nProcess = 0;
             kRcPnt = 0;
@@ -1210,9 +1210,9 @@ namespace IIT_Dimlom_Geo1
         {
             int num = (int)new ListPntSign().ShowDialog((IWin32Window)this);
             int index = 0;
-            if (File.Exists(myPnt.fileAdd))
+            if (File.Exists(myPoint.fileAdd))
             {
-                FileStream input = new FileStream(myPnt.fileAdd, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(myPoint.fileAdd, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
@@ -1230,7 +1230,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (index == 0)
                 return;
-            textBox11.Text = string.Format("{0}", (object)myPnt.numbUser[index]);
+            textBox11.Text = string.Format("{0}", (object)myPoint.numbUser[index]);
         }
 
     }

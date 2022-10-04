@@ -30745,8 +30745,8 @@ namespace DiplomGeoDLL
 
         private static int ToInt32b(double value)
         {
-            int result = value >= Int32.MaxValue ?  2
-             : value <= Int32.MinValue ? - 2
+            int result = value >= Int32.MaxValue ? Int32.MaxValue / 2
+             : value <= Int32.MinValue ? Int32.MinValue / 2
               : Convert.ToInt32(value);
             Console.WriteLine("ToInt32: value={0}, result={1}", value, result);
             return result;

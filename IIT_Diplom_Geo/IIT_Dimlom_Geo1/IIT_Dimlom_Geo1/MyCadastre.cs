@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -261,19 +262,19 @@ namespace IIT_Dimlom_Geo1
         public void LoadData()
         {
             Cursor.Current = Cursors.WaitCursor;
-            DllClass1.SetColour(mySub.brColor, mySub.pnColor);
-            DllClass1.PointSymbLoad(mySub.fsymbPnt, out kSymbPnt, mySub.numRec, mySub.numbUser, mySub.heiSymb);
-            mySub.kSymbPnt = kSymbPnt;
-            DllClass1.LineSymbolLoad(mySub.fsymbLine, out kSymbLine, out hSymbLine, mySub.sSymbLine, mySub.x1Line, mySub.y1Line, mySub.x2Line, mySub.y2Line, mySub.xDescr, mySub.yDescr, mySub.x1Dens, mySub.y1Dens, mySub.x1Sign, mySub.y1Sign, mySub.x2Sign, mySub.y2Sign, mySub.n1Sign, mySub.n2Sign, mySub.iStyle1, mySub.iStyle2, mySub.iWidth1, mySub.iWidth2, mySub.nColLine, mySub.nItem, mySub.itemLoc, mySub.nBaseSymb, mySub.sInscr, mySub.hInscr, mySub.iColInscr, mySub.iDensity);
-            mySub.PolySymbolLoad(mySub.fsymbPoly, out kPolySymb, out hSymbPoly);
-            nProblem = 0;
-            if (File.Exists(mySub.fProblem) && File.Exists(mySub.fProblem))
+            DllClass1.SetColour(this.mySub.brColor, this.mySub.pnColor);
+            DllClass1.PointSymbLoad(this.mySub.fsymbPnt, out this.kSymbPnt, this.mySub.numRec, this.mySub.numbUser, this.mySub.heiSymb);
+            this.mySub.kSymbPnt = this.kSymbPnt;
+            DllClass1.LineSymbolLoad(this.mySub.fsymbLine, out this.kSymbLine, out this.hSymbLine, this.mySub.sSymbLine, this.mySub.x1Line, this.mySub.y1Line, this.mySub.x2Line, this.mySub.y2Line, this.mySub.xDescr, this.mySub.yDescr, this.mySub.x1Dens, this.mySub.y1Dens, this.mySub.x1Sign, this.mySub.y1Sign, this.mySub.x2Sign, this.mySub.y2Sign, this.mySub.n1Sign, this.mySub.n2Sign, this.mySub.iStyle1, this.mySub.iStyle2, this.mySub.iWidth1, this.mySub.iWidth2, this.mySub.nColLine, this.mySub.nItem, this.mySub.itemLoc, this.mySub.nBaseSymb, this.mySub.sInscr, this.mySub.hInscr, this.mySub.iColInscr, this.mySub.iDensity);
+            this.mySub.PolySymbolLoad(this.mySub.fsymbPoly, out this.kPolySymb, out this.hSymbPoly);
+            this.nProblem = 0;
+            if (File.Exists(this.mySub.fProblem) && File.Exists(this.mySub.fProblem))
             {
-                FileStream input = new FileStream(mySub.fProblem, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(this.mySub.fProblem, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
-                    nProblem = binaryReader.ReadInt32();
+                    this.nProblem = binaryReader.ReadInt32();
                 }
                 catch (Exception ex)
                 {
@@ -285,13 +286,13 @@ namespace IIT_Dimlom_Geo1
                     input.Close();
                 }
             }
-            if (nProblem == 0)
+            if (this.nProblem == 0)
                 return;
-            if (nProblem == 1)
+            if (this.nProblem == 1)
             {
                 label4.Text = "Последний процесс: Библиотека символов построения линий";
-                if (kSymbPnt > 0)
-                    mySub.RectCoord(pixWid, pixHei, kSymbPnt, mySub.heiSymb, out kRect, mySub.nVert, mySub.xVert, mySub.yVert, out rWid, out rHei);
+                if (this.kSymbPnt > 0)
+                    this.mySub.RectCoord(this.pixWid, this.pixHei, this.kSymbPnt, this.mySub.heiSymb, out this.kRect, this.mySub.nVert, this.mySub.xVert, this.mySub.yVert, out this.rWid, out this.rHei);
             }
             if (nProblem == 2)
             {
@@ -320,22 +321,22 @@ namespace IIT_Dimlom_Geo1
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
-                        kGeo = binaryReader.ReadInt32();
-                        for (int i = 1; i <= kGeo; ++i)
+                        this.kGeo = binaryReader.ReadInt32();
+                        for (int index = 1; index <= kGeo; ++index)
                         {
-                            mySub.nameGeo[i] = binaryReader.ReadString();
-                            mySub.xGeo[i] = binaryReader.ReadDouble();
-                            mySub.yGeo[i] = binaryReader.ReadDouble();
-                            mySub.zGeo[i] = binaryReader.ReadDouble();
-                            mySub.nGeoCode[i] = binaryReader.ReadInt32();
-                            if (xmin > mySub.xGeo[i])
-                                xmin = mySub.xGeo[i];
-                            if (ymin > mySub.yGeo[i])
-                                ymin = mySub.yGeo[i];
-                            if (xmax < mySub.xGeo[i])
-                                xmax = mySub.xGeo[i];
-                            if (ymax < mySub.yGeo[i])
-                                ymax = mySub.yGeo[i];
+                            this.mySub.nameGeo[index] = binaryReader.ReadString();
+                            this.mySub.xGeo[index] = binaryReader.ReadDouble();
+                            this.mySub.yGeo[index] = binaryReader.ReadDouble();
+                            this.mySub.zGeo[index] = binaryReader.ReadDouble();
+                            this.mySub.nGeoCode[index] = binaryReader.ReadInt32();
+                            if (this.xmin > this.mySub.xGeo[index])
+                                this.xmin = this.mySub.xGeo[index];
+                            if (this.ymin > this.mySub.yGeo[index])
+                                this.ymin = this.mySub.yGeo[index];
+                            if (this.xmax < this.mySub.xGeo[index])
+                                this.xmax = this.mySub.xGeo[index];
+                            if (this.ymax < this.mySub.yGeo[index])
+                                this.ymax = this.mySub.yGeo[index];
                         }
                     }
                     catch (Exception ex)
@@ -361,25 +362,25 @@ namespace IIT_Dimlom_Geo1
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
-                        kLineDop = binaryReader.ReadInt32();
-                        for (int i1 = 1; i1 <= kLineDop; ++i1)
+                        this.kLineDop = binaryReader.ReadInt32();
+                        for (int index1 = 1; index1 <= this.kLineDop; ++index1)
                         {
-                            kAdd = binaryReader.ReadInt32();
-                            for (int i2 = 1; i2 <= 2; ++i2)
+                            this.kAdd = binaryReader.ReadInt32();
+                            for (int index2 = 1; index2 <= 2; ++index2)
                             {
-                                sa[i2] = binaryReader.ReadString();
-                                xa[i2] = binaryReader.ReadDouble();
-                                ya[i2] = binaryReader.ReadDouble();
-                                za[i2] = binaryReader.ReadDouble();
+                                this.sa[index2] = binaryReader.ReadString();
+                                this.xa[index2] = binaryReader.ReadDouble();
+                                this.ya[index2] = binaryReader.ReadDouble();
+                                this.za[index2] = binaryReader.ReadDouble();
                             }
-                            mySub.sGeoDop1[i1] = sa[1];
-                            mySub.xGeoDop1[i1] = xa[1];
-                            mySub.yGeoDop1[i1] = ya[1];
-                            mySub.zGeoDop1[i1] = za[1];
-                            mySub.sGeoDop2[i1] = sa[2];
-                            mySub.xGeoDop2[i1] = xa[2];
-                            mySub.yGeoDop2[i1] = ya[2];
-                            mySub.zGeoDop2[i1] = za[2];
+                            this.mySub.sGeoDop1[index1] = this.sa[1];
+                            this.mySub.xGeoDop1[index1] = this.xa[1];
+                            this.mySub.yGeoDop1[index1] = this.ya[1];
+                            this.mySub.zGeoDop1[index1] = this.za[1];
+                            this.mySub.sGeoDop2[index1] = this.sa[2];
+                            this.mySub.xGeoDop2[index1] = this.xa[2];
+                            this.mySub.yGeoDop2[index1] = this.ya[2];
+                            this.mySub.zGeoDop2[index1] = this.za[2];
                         }
                     }
                     catch (Exception ex)
@@ -392,29 +393,29 @@ namespace IIT_Dimlom_Geo1
                         input.Close();
                     }
                 }
-                mySub.KeepLoadGeoAll(2, ref kGeoAll);
+                this.mySub.KeepLoadGeoAll(2, ref this.kGeoAll);
             }
-            if (nProblem == 12)
+            if (this.nProblem == 12)
             {
-                mySub.KeepLoadGeoAll(2, ref kGeoAll);
-                mySub.LoadKeepTaheo(1);
-                kTaheo = mySub.kTaheo;
-                xmin = 9999999.9;
-                ymin = 9999999.9;
-                xmax = -9999999.9;
-                ymax = -9999999.9;
-                if (kTaheo > 3)
+                this.mySub.KeepLoadGeoAll(2, ref this.kGeoAll);
+                this.mySub.LoadKeepTaheo(1);
+                this.kTaheo = this.mySub.kTaheo;
+                this.xmin = 9999999.9;
+                this.ymin = 9999999.9;
+                this.xmax = -9999999.9;
+                this.ymax = -9999999.9;
+                if (this.kTaheo > 3)
                 {
-                    for (int i = 0; i <= kTaheo; ++i)
+                    for (int index = 0; index <= this.kTaheo; ++index)
                     {
-                        if (xmin > mySub.xTah[i])
-                            xmin = mySub.xTah[i];
-                        if (ymin > mySub.yTah[i])
-                            ymin = mySub.yTah[i];
-                        if (xmax < mySub.xTah[i])
-                            xmax = mySub.xTah[i];
-                        if (ymax < mySub.yTah[i])
-                            ymax = mySub.yTah[i];
+                        if (this.xmin > this.mySub.xTah[index])
+                            this.xmin = this.mySub.xTah[index];
+                        if (this.ymin > this.mySub.yTah[index])
+                            this.ymin = this.mySub.yTah[index];
+                        if (this.xmax < this.mySub.xTah[index])
+                            this.xmax = this.mySub.xTah[index];
+                        if (this.ymax < this.mySub.yTah[index])
+                            this.ymax = this.mySub.yTah[index];
                     }
                     DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
                     if (iCond < 0)
@@ -429,25 +430,25 @@ namespace IIT_Dimlom_Geo1
                 ymax = -9999999.9;
                 if (File.Exists(mySub.fileGeo))
                 {
-                    FileStream input = new FileStream(mySub.fileGeo, FileMode.Open, FileAccess.Read);
+                    FileStream input = new FileStream(this.mySub.fileGeo, FileMode.Open, FileAccess.Read);
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
-                        kTar = binaryReader.ReadInt32();
-                        for (int i = 1; i <= kTar; ++i)
+                        this.kTar = binaryReader.ReadInt32();
+                        for (int index = 1; index <= this.kTar; ++index)
                         {
-                            mySub.tarName[i] = binaryReader.ReadString();
-                            mySub.xTar[i] = binaryReader.ReadDouble();
-                            mySub.yTar[i] = binaryReader.ReadDouble();
-                            mySub.zTar[i] = binaryReader.ReadDouble();
-                            if (xmin > mySub.xTar[i])
-                                xmin = mySub.xTar[i];
-                            if (ymin > mySub.yTar[i])
-                                ymin = mySub.yTar[i];
-                            if (xmax < mySub.xTar[i])
-                                xmax = mySub.xTar[i];
-                            if (ymax < mySub.yTar[i])
-                                ymax = mySub.yTar[i];
+                            this.mySub.tarName[index] = binaryReader.ReadString();
+                            this.mySub.xTar[index] = binaryReader.ReadDouble();
+                            this.mySub.yTar[index] = binaryReader.ReadDouble();
+                            this.mySub.zTar[index] = binaryReader.ReadDouble();
+                            if (this.xmin > this.mySub.xTar[index])
+                                this.xmin = this.mySub.xTar[index];
+                            if (this.ymin > this.mySub.yTar[index])
+                                this.ymin = this.mySub.yTar[index];
+                            if (this.xmax < this.mySub.xTar[index])
+                                this.xmax = this.mySub.xTar[index];
+                            if (this.ymax < this.mySub.yTar[index])
+                                this.ymax = this.mySub.yTar[index];
                         }
                     }
                     catch (Exception ex)
@@ -462,25 +463,25 @@ namespace IIT_Dimlom_Geo1
                 }
                 else if (File.Exists(mySub.currentGeo))
                 {
-                    FileStream input = new FileStream(mySub.currentGeo, FileMode.Open, FileAccess.Read);
+                    FileStream input = new FileStream(this.mySub.currentGeo, FileMode.Open, FileAccess.Read);
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
-                        kTar = binaryReader.ReadInt32();
-                        for (int i = 1; i <= kTar; ++i)
+                        this.kTar = binaryReader.ReadInt32();
+                        for (int index = 1; index <= this.kTar; ++index)
                         {
-                            mySub.tarName[i] = binaryReader.ReadString();
-                            mySub.xTar[i] = binaryReader.ReadDouble();
-                            mySub.yTar[i] = binaryReader.ReadDouble();
-                            mySub.zTar[i] = binaryReader.ReadDouble();
-                            if (xmin > mySub.xTar[i])
-                                xmin = mySub.xTar[i];
-                            if (ymin > mySub.yTar[i])
-                                ymin = mySub.yTar[i];
-                            if (xmax < mySub.xTar[i])
-                                xmax = mySub.xTar[i];
-                            if (ymax < mySub.yTar[i])
-                                ymax = mySub.yTar[i];
+                            this.mySub.tarName[index] = binaryReader.ReadString();
+                            this.mySub.xTar[index] = binaryReader.ReadDouble();
+                            this.mySub.yTar[index] = binaryReader.ReadDouble();
+                            this.mySub.zTar[index] = binaryReader.ReadDouble();
+                            if (this.xmin > this.mySub.xTar[index])
+                                this.xmin = this.mySub.xTar[index];
+                            if (this.ymin > this.mySub.yTar[index])
+                                this.ymin = this.mySub.yTar[index];
+                            if (this.xmax < this.mySub.xTar[index])
+                                this.xmax = this.mySub.xTar[index];
+                            if (this.ymax < this.mySub.yTar[index])
+                                this.ymax = this.mySub.yTar[index];
                         }
                     }
                     catch (Exception ex)
@@ -493,9 +494,9 @@ namespace IIT_Dimlom_Geo1
                         binaryReader.Close();
                     }
                 }
-                if (File.Exists(mySub.aeroBlock))
+                if (File.Exists(this.mySub.aeroBlock))
                 {
-                    FileStream input = new FileStream(mySub.aeroBlock, FileMode.Open, FileAccess.Read);
+                    FileStream input = new FileStream(this.mySub.aeroBlock, FileMode.Open, FileAccess.Read);
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
@@ -505,21 +506,21 @@ namespace IIT_Dimlom_Geo1
                         binaryReader.ReadDouble();
                         binaryReader.ReadDouble();
                         binaryReader.ReadDouble();
-                        kBlock = binaryReader.ReadInt32();
-                        for (int i = 1; i <= kBlock; ++i)
+                        this.kBlock = binaryReader.ReadInt32();
+                        for (int index = 1; index <= this.kBlock; ++index)
                         {
-                            mySub.blockName[i] = binaryReader.ReadString();
-                            mySub.xBlock[i] = binaryReader.ReadDouble();
-                            mySub.yBlock[i] = binaryReader.ReadDouble();
-                            mySub.zBlock[i] = binaryReader.ReadDouble();
-                            if (xmin > mySub.xBlock[i])
-                                xmin = mySub.xBlock[i];
-                            if (ymin > mySub.yBlock[i])
-                                ymin = mySub.yBlock[i];
-                            if (xmax < mySub.xBlock[i])
-                                xmax = mySub.xBlock[i];
-                            if (ymax < mySub.yBlock[i])
-                                ymax = mySub.yBlock[i];
+                            this.mySub.blockName[index] = binaryReader.ReadString();
+                            this.mySub.xBlock[index] = binaryReader.ReadDouble();
+                            this.mySub.yBlock[index] = binaryReader.ReadDouble();
+                            this.mySub.zBlock[index] = binaryReader.ReadDouble();
+                            if (this.xmin > this.mySub.xBlock[index])
+                                this.xmin = this.mySub.xBlock[index];
+                            if (this.ymin > this.mySub.yBlock[index])
+                                this.ymin = this.mySub.yBlock[index];
+                            if (this.xmax < this.mySub.xBlock[index])
+                                this.xmax = this.mySub.xBlock[index];
+                            if (this.ymax < this.mySub.yBlock[index])
+                                this.ymax = this.mySub.yBlock[index];
                         }
                     }
                     catch (Exception ex)
@@ -541,41 +542,40 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProblem == 31 || nProblem == 32 || nProblem == 33 || nProblem == 34 || nProblem == 41 || nProblem == 42 || nProblem == 51 || nProblem == 61 || nProblem == 62 || nProblem == 63)
             {
-                mySub.PointLoad();
-                //mySub.PointLoad(fCurPnt, fCurHeig);
-                kPntPlus = mySub.kPntPlus;
-                kPntInput = mySub.kPntInput;
-                if (kPntPlus < 2)
+                this.mySub.PointLoad();
+                this.kPntPlus = this.mySub.kPntPlus;
+                this.kPntInput = this.mySub.kPntInput;
+                if (this.kPntPlus < 2)
                 {
-                    panel7.Invalidate();
+                    this.panel7.Invalidate();
                     return;
                 }
-                for (int i = 0; i <= kPntPlus; ++i)
+                for (int index = 0; index <= this.kPntPlus; ++index)
                 {
-                    mySub.xPntInscr[i] = mySub.xPnt[i];
-                    mySub.yPntInscr[i] = mySub.yPnt[i];
-                    mySub.iHorVerPnt[i] = 0;
+                    this.mySub.xPntInscr[index] = this.mySub.xPnt[index];
+                    this.mySub.yPntInscr[index] = this.mySub.yPnt[index];
+                    this.mySub.iHorVerPnt[index] = 0;
                 }
-                xmin = 9999999.9;
-                ymin = 9999999.9;
-                xmax = -9999999.9;
-                ymax = -9999999.9;
-                if (kPntPlus > 3)
+                this.xmin = 9999999.9;
+                this.ymin = 9999999.9;
+                this.xmax = -9999999.9;
+                this.ymax = -9999999.9;
+                if (this.kPntPlus > 3)
                 {
-                    for (int i = 0; i <= kPntPlus; ++i)
+                    for (int index = 0; index <= this.kPntPlus; ++index)
                     {
-                        if (xmin > mySub.xPnt[i])
-                            xmin = mySub.xPnt[i];
-                        if (ymin > mySub.yPnt[i])
-                            ymin = mySub.yPnt[i];
-                        if (xmax < mySub.xPnt[i])
-                            xmax = mySub.xPnt[i];
-                        if (ymax < mySub.yPnt[i])
-                            ymax = mySub.yPnt[i];
+                        if (this.xmin > this.mySub.xPnt[index])
+                            this.xmin = this.mySub.xPnt[index];
+                        if (this.ymin > this.mySub.yPnt[index])
+                            this.ymin = this.mySub.yPnt[index];
+                        if (this.xmax < this.mySub.xPnt[index])
+                            this.xmax = this.mySub.xPnt[index];
+                        if (this.ymax < this.mySub.yPnt[index])
+                            this.ymax = this.mySub.yPnt[index];
                     }
-                    DllClass1.CoorWin(xmin, ymin, xmax, ymax, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-                    if (iCond < 0)
-                        iGraphic = 1;
+                    DllClass1.CoorWin(this.xmin, this.ymin, this.xmax, this.ymax, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+                    if (this.iCond < 0)
+                        this.iGraphic = 1;
                 }
             }
             if (nProblem == 41)

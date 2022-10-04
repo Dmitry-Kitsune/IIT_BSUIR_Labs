@@ -934,7 +934,7 @@ namespace IIT_Dimlom_Geo1
 
         private void AddPoints_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(mySub.fileProj))
+            if (!File.Exists(this.mySub.fileProj))
             {
                 int num1 = (int)MessageBox.Show("Проект не выбран", "Добавление точек", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -944,28 +944,29 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                mySub.FilePath();
-                nProcess = 920;
-                if (File.Exists(mySub.fileProcess))
-                    File.Delete(mySub.fileProcess);
-                FileStream output1 = new FileStream(mySub.fileProcess, FileMode.CreateNew);
+                this.mySub.FilePath();
+                this.nProcess = 920;
+                if (File.Exists(this.mySub.fileProcess))
+                    File.Delete(this.mySub.fileProcess);
+                FileStream output1 = new FileStream(this.mySub.fileProcess, FileMode.CreateNew);
                 BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
-                binaryWriter1.Write(nProcess);
+                binaryWriter1.Write(this.nProcess);
                 binaryWriter1.Close();
                 output1.Close();
                 int num3 = (int)new AddPoints().ShowDialog((IWin32Window)this);
-                LoadData();
-                nProblem = 32;
-                if (File.Exists(mySub.fProblem))
-                    File.Delete(mySub.fProblem);
-                FileStream output2 = new FileStream(mySub.fProblem, FileMode.CreateNew);
+                this.LoadData();
+                this.nProblem = 32;
+                if (File.Exists(this.mySub.fProblem))
+                    File.Delete(this.mySub.fProblem);
+                FileStream output2 = new FileStream(this.mySub.fProblem, FileMode.CreateNew);
                 BinaryWriter binaryWriter2 = new BinaryWriter((Stream)output2);
-                binaryWriter2.Write(nProblem);
+                binaryWriter2.Write(this.nProblem);
                 binaryWriter2.Close();
                 output2.Close();
-                panel7.Invalidate();
+                this.panel7.Invalidate();
             }
         }
+    
 
         private void ViewPoints_Click(object sender, EventArgs e)
         {

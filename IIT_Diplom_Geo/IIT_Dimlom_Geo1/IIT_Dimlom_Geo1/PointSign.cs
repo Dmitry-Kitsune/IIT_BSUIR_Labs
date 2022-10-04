@@ -74,7 +74,7 @@ namespace IIT_Dimlom_Geo1
 
         private char[] seps = new char[1] { '\\' };
         private string[] sPart = new string[50];
-        private MyGeodesy myPnt = new MyGeodesy();
+        private MyGeodesy myPoint = new MyGeodesy();
         public PointSign()
         {
             InitializeComponent();
@@ -119,16 +119,16 @@ namespace IIT_Dimlom_Geo1
         public void FormLoad()
         {
             numLast = 0;
-            myPnt.FilePath();
-            DllClass1.SetColour(myPnt.brColor, myPnt.pnColor);
+            myPoint.FilePath();
+            DllClass1.SetColour(myPoint.brColor, myPoint.pnColor);
             kSymbPnt = 0;
-            if (File.Exists(myPnt.fsymbPnt))
+            if (File.Exists(myPoint.fsymbPnt))
             {
-                if (File.Exists(myPnt.fPointPixel))
-                    File.Delete(myPnt.fPointPixel);
-                FileStream output = new FileStream(myPnt.fPointPixel, FileMode.CreateNew);
+                if (File.Exists(myPoint.fPointPixel))
+                    File.Delete(myPoint.fPointPixel);
+                FileStream output = new FileStream(myPoint.fPointPixel, FileMode.CreateNew);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                FileStream input = new FileStream(myPnt.fsymbPnt, FileMode.Open, FileAccess.Read);
+                FileStream input = new FileStream(myPoint.fsymbPnt, FileMode.Open, FileAccess.Read);
                 BinaryReader binaryReader = new BinaryReader((Stream)input);
                 try
                 {
@@ -184,9 +184,9 @@ namespace IIT_Dimlom_Geo1
                                 }
                             }
                             ++kSymbPnt;
-                            myPnt.heiSymb[kSymbPnt] = num6;
-                            myPnt.numbUser[kSymbPnt] = num2;
-                            myPnt.numLong[kSymbPnt] = num1;
+                            myPoint.heiSymb[kSymbPnt] = num6;
+                            myPoint.numbUser[kSymbPnt] = num2;
+                            myPoint.numLong[kSymbPnt] = num1;
                         }
                         if (num1 > 0)
                         {
@@ -209,9 +209,9 @@ namespace IIT_Dimlom_Geo1
                             binaryWriter.Write(num20);
                             binaryWriter.Write(num21);
                             ++kSymbPnt;
-                            myPnt.heiSymb[kSymbPnt] = num15;
-                            myPnt.numbUser[kSymbPnt] = num17;
-                            myPnt.numLong[kSymbPnt] = num1;
+                            myPoint.heiSymb[kSymbPnt] = num15;
+                            myPoint.numbUser[kSymbPnt] = num17;
+                            myPoint.numLong[kSymbPnt] = num1;
                         }
                     }
                 }
@@ -228,11 +228,11 @@ namespace IIT_Dimlom_Geo1
                 }
             }
             if (kSymbPnt > 0)
-                RectCoord(pixWid, pixHei, kSymbPnt, myPnt.heiSymb, out kRect, myPnt.nVert, myPnt.xVert, myPnt.yVert, out rWid, out rHei);
+                RectCoord(pixWid, pixHei, kSymbPnt, myPoint.heiSymb, out kRect, myPoint.nVert, myPoint.xVert, myPoint.yVert, out rWid, out rHei);
             nProblem = 1;
-            if (File.Exists(myPnt.fProblem))
-                File.Delete(myPnt.fProblem);
-            FileStream output1 = new FileStream(myPnt.fProblem, FileMode.CreateNew);
+            if (File.Exists(myPoint.fProblem))
+                File.Delete(myPoint.fProblem);
+            FileStream output1 = new FileStream(myPoint.fProblem, FileMode.CreateNew);
             BinaryWriter binaryWriter1 = new BinaryWriter((Stream)output1);
             binaryWriter1.Write(nProblem);
             binaryWriter1.Close();
@@ -346,11 +346,11 @@ namespace IIT_Dimlom_Geo1
                 }
                 numUser = Convert.ToInt32(tText);
                 sDescr = textBox6.Text;
-                DllClass1.GridCreate(1, iWidth, iHeight, wSign, hSign, sPixel, out kx, myPnt.ixPix, out ky, myPnt.iyPix, out kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out ix1Grid, out iy1Grid, out ix2Grid, out iy2Grid, pixWid, pixHei);
+                DllClass1.GridCreate(1, iWidth, iHeight, wSign, hSign, sPixel, out kx, myPoint.ixPix, out ky, myPoint.iyPix, out kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out ix1Grid, out iy1Grid, out ix2Grid, out iy2Grid, pixWid, pixHei);
                 kSqu = 0;
                 kPixel = 0;
                 kAction = 0;
-                int num1 = myPnt.ixPix[kx] - myPnt.ixPix[1];
+                int num1 = myPoint.ixPix[kx] - myPoint.ixPix[1];
                 Convert.ToInt32(wSign / sPixel);
                 int int32 = Convert.ToInt32(hSign / sPixel);
                 ixBeg = ix2Grid - num1 / 2;
@@ -379,7 +379,7 @@ namespace IIT_Dimlom_Geo1
                 {
                     for (int index = 1; index <= kSymbPnt; ++index)
                     {
-                        if (myPnt.numbUser[index] > 0 && myPnt.numbUser[index] == numUser)
+                        if (myPoint.numbUser[index] > 0 && myPoint.numbUser[index] == numUser)
                         {
                             ++num2;
                             break;
@@ -391,7 +391,7 @@ namespace IIT_Dimlom_Geo1
                     --numLast;
                     return;
                 }
-                DllClass1.SymbolUpdate(myPnt.fsymbPnt, myPnt.fPointPixel, kSymbPnt, nSel, text, iLong, numUser, sDescr);
+                DllClass1.SymbolUpdate(myPoint.fsymbPnt, myPoint.fPointPixel, kSymbPnt, nSel, text, iLong, numUser, sDescr);
                 FormLoad();
                 label2.Visible = false;
                 label3.Visible = false;
@@ -418,39 +418,39 @@ namespace IIT_Dimlom_Geo1
             Graphics graphics = e.Graphics;
             Pen pen = new Pen(Color.Black, 1f);
             if ((nProcess == 0 || nProcess == 10 || nProcess == 20) && iListShow > 0)
-                SymbPntDraw(e, myPnt.fsymbPnt, kRect, myPnt.nVert, myPnt.xVert, myPnt.yVert, rWid, rHei, kSymbPnt, myPnt.numRec, myPnt.numbUser, myPnt.nWork1, myPnt.nWork2, myPnt.nWork, myPnt.brColor);
+                SymbPntDraw(e, myPoint.fsymbPnt, kRect, myPoint.nVert, myPoint.xVert, myPoint.yVert, rWid, rHei, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.nWork1, myPoint.nWork2, myPoint.nWork, myPoint.brColor);
             if (nProcess != 10)
                 return;
-            DllClass1.GridDraw(e, kx, myPnt.ixPix, ky, myPnt.iyPix);
+            DllClass1.GridDraw(e, kx, myPoint.ixPix, ky, myPoint.iyPix);
             if (nControl == 101 || nControl == 103 || nControl == 104)
             {
-                DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+                DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
             }
             if (nControl == 102)
             {
-                DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+                DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
             }
             if (nControl == 105 || nControl == 106 || nControl == 107)
             {
-                DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+                DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
             }
             if (nControl == 108 || nControl == 109 || nControl == 111 || nControl == 112)
             {
-                DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+                DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
             }
             if (nControl == 113 || nControl == 114 || nControl == 115 || nControl == 116 || nControl == 117 || nControl == 118 || nControl == 119 || nControl == 121)
             {
-                DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+                DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+                DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
             }
             if (nControl != 122 && nControl != 123 && nControl != 124)
                 return;
-            DllClass1.DrawGrid(e, kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, myPnt.brColor);
-            DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, myPnt.brColor);
+            DllClass1.DrawGrid(e, kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, myPoint.brColor);
+            DllClass1.SignDraw(e, ixBeg, iyBeg, kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -497,39 +497,39 @@ namespace IIT_Dimlom_Geo1
             {
                 if (nControl == 101)
                 {
-                    DllClass1.GridChange(ref kSqu, ref myPnt.xSqu, ref myPnt.ySqu, ref myPnt.numCol, xDown, yDown, myPnt.nDat, out iCond);
+                    DllClass1.GridChange(ref kSqu, ref myPoint.xSqu, ref myPoint.ySqu, ref myPoint.numCol, xDown, yDown, myPoint.nDat, out iCond);
                     if (iCond == 0)
                     {
                         RadioColor(ref mColor);
-                        DllClass1.GridPoint(kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, xDown, yDown, out kCell, myPnt.xCell, myPnt.yCell);
+                        DllClass1.GridPoint(kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, xDown, yDown, out kCell, myPoint.xCell, myPoint.yCell);
                         if (kCell > 0)
                         {
                             for (int index = 1; index <= kCell; ++index)
                             {
                                 ++kSqu;
-                                myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                                myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                                myPnt.numCol[kSqu] = mColor;
+                                myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                                myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                                myPoint.numCol[kSqu] = mColor;
                             }
                         }
                     }
                     if (kSqu > 0)
                     {
-                        if (File.Exists(myPnt.fPointPixel))
-                            File.Delete(myPnt.fPointPixel);
-                        FileStream output = new FileStream(myPnt.fPointPixel, FileMode.CreateNew);
+                        if (File.Exists(myPoint.fPointPixel))
+                            File.Delete(myPoint.fPointPixel);
+                        FileStream output = new FileStream(myPoint.fPointPixel, FileMode.CreateNew);
                         BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
                         binaryWriter.Write(kSqu);
                         binaryWriter.Write(nControl);
                         for (int index = 1; index <= kSqu; ++index)
                         {
-                            binaryWriter.Write(myPnt.xSqu[index]);
-                            binaryWriter.Write(myPnt.ySqu[index]);
-                            binaryWriter.Write(myPnt.numCol[index]);
+                            binaryWriter.Write(myPoint.xSqu[index]);
+                            binaryWriter.Write(myPoint.ySqu[index]);
+                            binaryWriter.Write(myPoint.numCol[index]);
                         }
                         binaryWriter.Close();
                         output.Close();
-                        DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                        DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                     }
                     panel1.Invalidate();
                 }
@@ -540,7 +540,7 @@ namespace IIT_Dimlom_Geo1
                     x2Line = 1.0 * (double)(endPoint.X - 18);
                     y2Line = 1.0 * (double)(endPoint.Y - 45);
                     RadioColor(ref mColor);
-                    DllClass1.GridLine(kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, x1Line, y1Line, x2Line, y2Line, out kCell, myPnt.xCell, myPnt.yCell, out iCond);
+                    DllClass1.GridLine(kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, x1Line, y1Line, x2Line, y2Line, out kCell, myPoint.xCell, myPoint.yCell, out iCond);
                     if (iCond < 0)
                         return;
                     if (kCell > 0)
@@ -548,12 +548,12 @@ namespace IIT_Dimlom_Geo1
                         for (int index = 1; index <= kCell; ++index)
                         {
                             ++kSqu;
-                            myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                            myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                            myPnt.numCol[kSqu] = mColor;
+                            myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                            myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                            myPoint.numCol[kSqu] = mColor;
                         }
                         ++kAction;
-                        DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                        DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                     }
                     ixLine = startPoint.X - 18;
                     iyLine = startPoint.Y - 45;
@@ -569,18 +569,18 @@ namespace IIT_Dimlom_Geo1
             }
             if (nProcess != 20)
                 return;
-            DllClass1.RectSelect(xDown, yDown, kRect, myPnt.nVert, myPnt.xVert, myPnt.yVert, rWid, rHei, out nSel);
+            DllClass1.RectSelect(xDown, yDown, kRect, myPoint.nVert, myPoint.xVert, myPoint.yVert, rWid, rHei, out nSel);
             if (nSel == 0)
                 return;
             string sOrder;
             string sUser;
             string sDescript;
-            DllClass1.SymbolSelect(myPnt.fsymbPnt, nSel, out sOrder, out sUser, out sDescript, out iLong);
+            DllClass1.SymbolSelect(myPoint.fsymbPnt, nSel, out sOrder, out sUser, out sDescript, out iLong);
             if (sOrder == "")
             {
                 nSel = kSymbPnt;
                 if (nSel > 0)
-                    DllClass1.SymbolSelect(myPnt.fsymbPnt, nSel, out sOrder, out sUser, out sDescript, out iLong);
+                    DllClass1.SymbolSelect(myPoint.fsymbPnt, nSel, out sOrder, out sUser, out sDescript, out iLong);
             }
             label6.Visible = true;
             label7.Visible = true;
@@ -603,11 +603,11 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 103;
             RadioColor(ref mColor);
-            DllClass1.GridRectangle(1, kx, myPnt.ixPix, ky, myPnt.iyPix, out kCell, myPnt.xCell, myPnt.yCell);
+            DllClass1.GridRectangle(1, kx, myPoint.ixPix, ky, myPoint.iyPix, out kCell, myPoint.xCell, myPoint.yCell);
             int kArray = 999999;
-            DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-            DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-            DllClass1.intArray(myPnt.numCol, ref kArray);
+            DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+            DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+            DllClass1.intArray(myPoint.numCol, ref kArray);
             int num1 = kArray - 10;
             if (kCell > 0)
             {
@@ -619,12 +619,12 @@ namespace IIT_Dimlom_Geo1
                         int num2 = (int)MessageBox.Show("Индекс массива FillRectangle");
                         return;
                     }
-                    myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                    myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                    myPnt.numCol[kSqu] = mColor;
+                    myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                    myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                    myPoint.numCol[kSqu] = mColor;
                 }
                 ++kAction;
-                DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
             }
             panel1.Invalidate();
         }
@@ -633,11 +633,11 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 104;
             RadioColor(ref mColor);
-            DllClass1.GridRectangle(2, kx, myPnt.ixPix, ky, myPnt.iyPix, out kCell, myPnt.xCell, myPnt.yCell);
+            DllClass1.GridRectangle(2, kx, myPoint.ixPix, ky, myPoint.iyPix, out kCell, myPoint.xCell, myPoint.yCell);
             int kArray = 999999;
-            DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-            DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-            DllClass1.intArray(myPnt.numCol, ref kArray);
+            DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+            DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+            DllClass1.intArray(myPoint.numCol, ref kArray);
             int num1 = kArray - 10;
             if (kCell > 0)
             {
@@ -649,12 +649,12 @@ namespace IIT_Dimlom_Geo1
                         int num2 = (int)MessageBox.Show("Индекс массива FillRectangle");
                         return;
                     }
-                    myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                    myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                    myPnt.numCol[kSqu] = mColor;
+                    myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                    myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                    myPoint.numCol[kSqu] = mColor;
                 }
                 ++kAction;
-                DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
             }
             panel1.Invalidate();
         }
@@ -663,7 +663,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 105;
             RadioColor(ref mColor);
-            DllClass1.GridEllipse(1, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridEllipse(1, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -672,9 +672,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -686,12 +686,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива Ellipse");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -701,7 +701,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 106;
             RadioColor(ref mColor);
-            DllClass1.GridEllipse(2, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridEllipse(2, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -710,9 +710,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -724,12 +724,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillEllipse");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -739,11 +739,11 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 107;
             RadioColor(ref mColor);
-            DllClass1.ConcentricCircle(kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, myPnt.xDat, myPnt.yDat, out iCond);
+            DllClass1.ConcentricCircle(kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, myPoint.xDat, myPoint.yDat, out iCond);
             int kArray = 999999;
-            DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-            DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-            DllClass1.intArray(myPnt.numCol, ref kArray);
+            DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+            DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+            DllClass1.intArray(myPoint.numCol, ref kArray);
             int num1 = kArray - 10;
             if (kCell > 0)
             {
@@ -755,12 +755,12 @@ namespace IIT_Dimlom_Geo1
                         int num2 = (int)MessageBox.Show("Индекс массива Concentric");
                         return;
                     }
-                    myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                    myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                    myPnt.numCol[kSqu] = mColor;
+                    myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                    myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                    myPoint.numCol[kSqu] = mColor;
                 }
                 ++kAction;
-                DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 if (iCond < 0)
                 {
                     int num3 = (int)MessageBox.Show("Воспользуйтесь опцией 'Ручное создание'", "Создание символа", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -773,7 +773,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 108;
             RadioColor(ref mColor);
-            DllClass1.GridArc(1, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridArc(1, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -782,9 +782,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -796,12 +796,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива ArcLeft");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -811,7 +811,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 109;
             RadioColor(ref mColor);
-            DllClass1.GridArc(2, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridArc(2, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -820,9 +820,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -834,12 +834,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива ArcRight");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -849,7 +849,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 111;
             RadioColor(ref mColor);
-            DllClass1.GridArc(3, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridArc(3, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -858,9 +858,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -872,12 +872,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива ArcTop");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -887,7 +887,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 112;
             RadioColor(ref mColor);
-            DllClass1.GridArc(4, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridArc(4, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -896,9 +896,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -910,12 +910,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива ArcBottom");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -925,7 +925,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 113;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(1, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(1, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -934,9 +934,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -948,12 +948,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива TriangleLeft");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -963,7 +963,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 114;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(2, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(2, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -972,9 +972,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -986,12 +986,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillTriangleLeft");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1001,7 +1001,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 115;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(3, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(3, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1010,9 +1010,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1024,12 +1024,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива TriangleRight");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1039,7 +1039,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 116;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(4, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(4, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1048,9 +1048,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1062,12 +1062,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillTriangleRight");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1077,7 +1077,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 117;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(5, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(5, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1086,9 +1086,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1100,12 +1100,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива TriangleTop");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1115,7 +1115,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 118;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(6, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(6, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1124,9 +1124,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1138,12 +1138,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillTriangleTop");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1153,7 +1153,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 119;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(7, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(7, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1162,9 +1162,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1176,12 +1176,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива TriangleBottom");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1191,7 +1191,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 121;
             RadioColor(ref mColor);
-            DllClass1.GridTriangle(8, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridTriangle(8, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1200,9 +1200,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1214,12 +1214,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillTriangleBottom");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1229,7 +1229,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 122;
             RadioColor(ref mColor);
-            DllClass1.GridHexagon(1, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridHexagon(1, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1238,9 +1238,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1252,12 +1252,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1267,7 +1267,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 123;
             RadioColor(ref mColor);
-            DllClass1.GridHexagon(2, kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, out iCond);
+            DllClass1.GridHexagon(2, kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1276,9 +1276,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1290,12 +1290,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1305,7 +1305,7 @@ namespace IIT_Dimlom_Geo1
         {
             nControl = 124;
             RadioColor(ref mColor);
-            DllClass1.TriangleCircle(kx, myPnt.ixPix, ky, myPnt.iyPix, kPxy, myPnt.x1Pix, myPnt.y1Pix, myPnt.x2Pix, myPnt.y2Pix, out kCell, myPnt.xCell, myPnt.yCell, out kSpot, myPnt.xSpot, myPnt.ySpot, myPnt.xAngel, myPnt.yAngel, myPnt.xDat, myPnt.yDat, out iCond);
+            DllClass1.TriangleCircle(kx, myPoint.ixPix, ky, myPoint.iyPix, kPxy, myPoint.x1Pix, myPoint.y1Pix, myPoint.x2Pix, myPoint.y2Pix, out kCell, myPoint.xCell, myPoint.yCell, out kSpot, myPoint.xSpot, myPoint.ySpot, myPoint.xAngel, myPoint.yAngel, myPoint.xDat, myPoint.yDat, out iCond);
             if (iCond < 0)
             {
                 nControl = 0;
@@ -1314,9 +1314,9 @@ namespace IIT_Dimlom_Geo1
             else
             {
                 int kArray = 999999;
-                DllClass1.doubleArray(myPnt.xSqu, ref kArray);
-                DllClass1.doubleArray(myPnt.ySqu, ref kArray);
-                DllClass1.intArray(myPnt.numCol, ref kArray);
+                DllClass1.doubleArray(myPoint.xSqu, ref kArray);
+                DllClass1.doubleArray(myPoint.ySqu, ref kArray);
+                DllClass1.intArray(myPoint.numCol, ref kArray);
                 int num1 = kArray - 10;
                 if (kCell > 0)
                 {
@@ -1328,12 +1328,12 @@ namespace IIT_Dimlom_Geo1
                             int num2 = (int)MessageBox.Show("Индекс массива FillHexagon");
                             return;
                         }
-                        myPnt.xSqu[kSqu] = myPnt.xCell[index];
-                        myPnt.ySqu[kSqu] = myPnt.yCell[index];
-                        myPnt.numCol[kSqu] = mColor;
+                        myPoint.xSqu[kSqu] = myPoint.xCell[index];
+                        myPoint.ySqu[kSqu] = myPoint.yCell[index];
+                        myPoint.numCol[kSqu] = mColor;
                     }
                     ++kAction;
-                    DllClass1.GridPixel(kSqu, myPnt.xSqu, myPnt.ySqu, myPnt.numCol, out kPixel, myPnt.ixSqu, myPnt.iySqu, myPnt.nColor, ix1Grid, iy1Grid);
+                    DllClass1.GridPixel(kSqu, myPoint.xSqu, myPoint.ySqu, myPoint.numCol, out kPixel, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, ix1Grid, iy1Grid);
                 }
                 panel1.Invalidate();
             }
@@ -1341,7 +1341,7 @@ namespace IIT_Dimlom_Geo1
 
         private void KeepSymbol_Click(object sender, EventArgs e)
         {
-            myPnt.FilePath();
+            myPoint.FilePath();
             kLong = 0;
             ++numLast;
             wSymbol = Convert.ToInt32(wSign / sPixel);
@@ -1354,7 +1354,7 @@ namespace IIT_Dimlom_Geo1
             {
                 for (int index = 1; index <= kSymbPnt; ++index)
                 {
-                    if (myPnt.numbUser[index] > 0 && myPnt.numbUser[index] == numUser)
+                    if (myPoint.numbUser[index] > 0 && myPoint.numbUser[index] == numUser)
                     {
                         ++num;
                         break;
@@ -1367,7 +1367,7 @@ namespace IIT_Dimlom_Geo1
             }
             else
             {
-                FileStream output = new FileStream(myPnt.fsymbPnt, FileMode.Append, FileAccess.Write);
+                FileStream output = new FileStream(myPoint.fsymbPnt, FileMode.Append, FileAccess.Write);
                 BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
                 try
                 {
@@ -1388,9 +1388,9 @@ namespace IIT_Dimlom_Geo1
                         {
                             for (int index = 1; index <= kSqu; ++index)
                             {
-                                binaryWriter.Write(myPnt.xSqu[index]);
-                                binaryWriter.Write(myPnt.ySqu[index]);
-                                binaryWriter.Write(myPnt.numCol[index]);
+                                binaryWriter.Write(myPoint.xSqu[index]);
+                                binaryWriter.Write(myPoint.ySqu[index]);
+                                binaryWriter.Write(myPoint.numCol[index]);
                             }
                         }
                         binaryWriter.Write(kPixel);
@@ -1398,9 +1398,9 @@ namespace IIT_Dimlom_Geo1
                         {
                             for (int index = 1; index <= kPixel; ++index)
                             {
-                                binaryWriter.Write(myPnt.ixSqu[index]);
-                                binaryWriter.Write(myPnt.iySqu[index]);
-                                binaryWriter.Write(myPnt.nColor[index]);
+                                binaryWriter.Write(myPoint.ixSqu[index]);
+                                binaryWriter.Write(myPoint.iySqu[index]);
+                                binaryWriter.Write(myPoint.nColor[index]);
                             }
                         }
                     }
@@ -1426,7 +1426,7 @@ namespace IIT_Dimlom_Geo1
                 groupBox2.Visible = false;
                 for (int index = 1; index <= kRect; ++index)
                 {
-                    DllClass1.UpSign(kRect, myPnt.yVert, pixHei, out iCond);
+                    DllClass1.UpSign(kRect, myPoint.yVert, pixHei, out iCond);
                     if (iCond == 0)
                     {
                         iListShow = 1;
@@ -1465,7 +1465,7 @@ namespace IIT_Dimlom_Geo1
         {
             for (int index = 1; index <= kRect; ++index)
             {
-                DllClass1.UpSign(kRect, myPnt.yVert, pixHei, out iCond);
+                DllClass1.UpSign(kRect, myPoint.yVert, pixHei, out iCond);
                 if (iCond == 0)
                 {
                     panel1.Invalidate();
@@ -1474,7 +1474,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (MessageBox.Show("Вы действительно хотите удалить последний символ ?", "Создание символов точек", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                 return;
-            DllClass1.LastDelete(myPnt.fsymbPnt, myPnt.fPointPixel, ref kSymbPnt);
+            DllClass1.LastDelete(myPoint.fsymbPnt, myPoint.fPointPixel, ref kSymbPnt);
             FormLoad();
             if (kSymbPnt == 0)
                 kRect = 0;
@@ -1482,7 +1482,7 @@ namespace IIT_Dimlom_Geo1
             {
                 for (int index = 1; index <= kRect; ++index)
                 {
-                    DllClass1.UpSign(kRect, myPnt.yVert, pixHei, out iCond);
+                    DllClass1.UpSign(kRect, myPoint.yVert, pixHei, out iCond);
                     if (iCond == 0)
                         break;
                 }
@@ -1596,22 +1596,22 @@ namespace IIT_Dimlom_Geo1
 
         private void Up_Click(object sender, EventArgs e)
         {
-            DllClass1.UpSign(kRect, myPnt.yVert, pixHei, out iCond);
+            DllClass1.UpSign(kRect, myPoint.yVert, pixHei, out iCond);
             panel1.Invalidate();
         }
 
         private void Down_Click(object sender, EventArgs e)
         {
-            DllClass1.DownSign(kRect, myPnt.yVert, out iCond);
+            DllClass1.DownSign(kRect, myPoint.yVert, out iCond);
             panel1.Invalidate();
         }
 
         private void MoreDetail_Click(object sender, EventArgs e)
         {
             int num1 = 200;
-            if (File.Exists(myPnt.fileAdd))
-                File.Delete(myPnt.fileAdd);
-            FileStream output = new FileStream(myPnt.fileAdd, FileMode.CreateNew);
+            if (File.Exists(myPoint.fileAdd))
+                File.Delete(myPoint.fileAdd);
+            FileStream output = new FileStream(myPoint.fileAdd, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
             binaryWriter.Write(num1);
             binaryWriter.Close();

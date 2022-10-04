@@ -14,7 +14,7 @@ namespace IIT_Dimlom_Geo1
 {
     partial class AddPoints : Form
     {
-        private IContainer components;
+        //private IContainer components;
 
         private string sDialog = "";
         private int iWidth;
@@ -352,7 +352,7 @@ namespace IIT_Dimlom_Geo1
             Pen pen1 = new Pen(Color.Black);
             SolidBrush solidBrush2 = new SolidBrush(Color.Black);
             Pen pen2 = new Pen(Color.Black);
-            DllClass1.XYtoWIN(xNew, yNew, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, out xWin, out yWin);
+            DllClass1.XYtoWIN(xNew, yNew, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xWin, out yWin);
             if (xWin == 0 && yWin == 0)
                 return;
             graphics.FillRectangle((Brush)solidBrush1, xWin - 1, yWin - 1, 3, 3);
@@ -363,294 +363,289 @@ namespace IIT_Dimlom_Geo1
         {
             int num1;
             int index1 = num1 = 0;
-            if (kLineTopo == 0)
+            if (this.kLineTopo == 0)
                 return;
-            kLineAct = kLineTopo;
-            for (int index2 = 1; index2 <= kLineTopo; ++index2)
+            this.kLineAct = this.kLineTopo;
+            for (int index2 = 1; index2 <= this.kLineTopo; ++index2)
             {
-                myPoint.kActLine1[index2] = myPoint.kl1[index2];
-                myPoint.kActLine2[index2] = myPoint.kl2[index2];
-                int num2 = myPoint.kl1[index2];
-                int num3 = myPoint.kl2[index2];
+                this.myPoint.kActLine1[index2] = this.myPoint.kl1[index2];
+                this.myPoint.kActLine2[index2] = this.myPoint.kl2[index2];
+                int num2 = this.myPoint.kl1[index2];
+                int num3 = this.myPoint.kl2[index2];
                 for (int index3 = num2; index3 <= num3; ++index3)
                 {
                     ++index1;
-                    myPoint.xLineAct[index1] = myPoint.zLin[index3];
-                    myPoint.yLineAct[index1] = myPoint.zPik[index3];
+                    this.myPoint.xLineAct[index1] = this.myPoint.zLin[index3];
+                    this.myPoint.yLineAct[index1] = this.myPoint.zPik[index3];
                 }
             }
-            myPoint.kLineAct = kLineAct;
-            myPoint.KeepTopoAct(nAction);
-            if (myPoint.kPoly == 0)
+            this.myPoint.kLineAct = this.kLineAct;
+            this.myPoint.KeepTopoAct(this.nAction);
+            if (this.myPoint.kPoly == 0)
                 return;
-            kPoly = myPoint.kPoly;
-            kPolyAct = kPoly;
-            for (int index4 = 1; index4 <= kPolyAct; ++index4)
+            this.kPoly = this.myPoint.kPoly;
+            this.kPolyAct = this.kPoly;
+            for (int index4 = 1; index4 <= this.kPolyAct; ++index4)
             {
-                myPoint.nameAct[index4] = myPoint.namePoly[index4];
-                myPoint.xAct[index4] = myPoint.xLab[index4];
-                myPoint.yAct[index4] = myPoint.yLab[index4];
-                myPoint.aActCalc[index4] = myPoint.areaPol[index4];
-                myPoint.aActLeg[index4] = myPoint.areaLeg[index4];
-                myPoint.kActPoly1[index4] = myPoint.kt1[index4];
-                myPoint.kActPoly2[index4] = myPoint.kt2[index4];
-                int num4 = myPoint.kt1[index4];
-                int num5 = myPoint.kt2[index4];
+                this.myPoint.nameAct[index4] = this.myPoint.namePoly[index4];
+                this.myPoint.xAct[index4] = this.myPoint.xLab[index4];
+                this.myPoint.yAct[index4] = this.myPoint.yLab[index4];
+                this.myPoint.aActCalc[index4] = this.myPoint.areaPol[index4];
+                this.myPoint.aActLeg[index4] = this.myPoint.areaLeg[index4];
+                this.myPoint.kActPoly1[index4] = this.myPoint.kt1[index4];
+                this.myPoint.kActPoly2[index4] = this.myPoint.kt2[index4];
+                int num4 = this.myPoint.kt1[index4];
+                int num5 = this.myPoint.kt2[index4];
                 for (int index5 = num4; index5 <= num5; ++index5)
                 {
-                    myPoint.xPolyAct[index5] = myPoint.xPol[index5];
-                    myPoint.yPolyAct[index5] = myPoint.yPol[index5];
+                    this.myPoint.xPolyAct[index5] = this.myPoint.xPol[index5];
+                    this.myPoint.yPolyAct[index5] = this.myPoint.yPol[index5];
                 }
             }
-            kIntAct = 0;
-            for (int index6 = 1; index6 <= kPolyAct; ++index6)
+            this.kIntAct = 0;
+            for (int index6 = 1; index6 <= this.kPolyAct; ++index6)
             {
                 int k = -1;
-                int num6 = myPoint.kActPoly1[index6];
-                int num7 = myPoint.kActPoly2[index6];
+                int num6 = this.myPoint.kActPoly1[index6];
+                int num7 = this.myPoint.kActPoly2[index6];
                 for (int index7 = num6; index7 <= num7; ++index7)
                 {
                     ++k;
-                    myPoint.xOut[k] = myPoint.xPolyAct[index7];
-                    myPoint.yOut[k] = myPoint.yPolyAct[index7];
+                    this.myPoint.xOut[k] = this.myPoint.xPolyAct[index7];
+                    this.myPoint.yOut[k] = this.myPoint.yPolyAct[index7];
                 }
-                myPoint.kPolyActInt[index6] = 0;
-                for (int index8 = 1; index8 <= kPolyAct; ++index8)
+                this.myPoint.kPolyActInt[index6] = 0;
+                for (int index8 = 1; index8 <= this.kPolyAct; ++index8)
                 {
-                    if (index6 != index8 && myPoint.aActCalc[index8] < myPoint.aActCalc[index6] && DllClass1.in_out(k, ref myPoint.xOut, ref myPoint.yOut, myPoint.xAct[index8], myPoint.yAct[index8]) > 0)
+                    if (index6 != index8 && this.myPoint.aActCalc[index8] < this.myPoint.aActCalc[index6] && DllClass1.in_out(k, ref this.myPoint.xOut, ref this.myPoint.yOut, this.myPoint.xAct[index8], this.myPoint.yAct[index8]) > 0)
                     {
-                        myPoint.kPolyActInt[index6] = myPoint.kPolyActInt[index6] + 1;
-                        ++kIntAct;
-                        myPoint.kIndexAct1[kIntAct] = index6;
-                        myPoint.kIndexAct2[kIntAct] = index8;
+                        this.myPoint.kPolyActInt[index6] = this.myPoint.kPolyActInt[index6] + 1;
+                        ++this.kIntAct;
+                        this.myPoint.kIndexAct1[this.kIntAct] = index6;
+                        this.myPoint.kIndexAct2[this.kIntAct] = index8;
                     }
                 }
             }
-            myPoint.kPolyAct = kPolyAct;
-            myPoint.kIntAct = kIntAct;
-            myPoint.KeepPolyAct(nAction);
-            kNodeAct = kNode;
-            for (int index9 = 1; index9 <= kNodeAct; ++index9)
+            this.myPoint.kPolyAct = this.kPolyAct;
+            this.myPoint.kIntAct = this.kIntAct;
+            this.myPoint.KeepPolyAct(this.nAction);
+            this.kNodeAct = this.kNode;
+            for (int index9 = 1; index9 <= this.kNodeAct; ++index9)
             {
-                myPoint.nameNodeAct[index9] = myPoint.nameNode[index9];
-                myPoint.xNodeAct[index9] = myPoint.xNode[index9];
-                myPoint.yNodeAct[index9] = myPoint.yNode[index9];
+                this.myPoint.nameNodeAct[index9] = this.myPoint.nameNode[index9];
+                this.myPoint.xNodeAct[index9] = this.myPoint.xNode[index9];
+                this.myPoint.yNodeAct[index9] = this.myPoint.yNode[index9];
             }
-            myPoint.kNodeAct = kNodeAct;
-            myPoint.KeepNodeAct(nAction);
+            this.myPoint.kNodeAct = this.kNodeAct;
+            this.myPoint.KeepNodeAct(this.nAction);
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            if (iGraphic > 0)
+            if (this.iGraphic > 0)
                 return;
-            if (nControl == 10)
-                graphics.DrawRectangle(new Pen(Color.Green, 2f), RcDraw);
-            if (kLineAct > 0)
+            if (this.nControl == 10)
+                graphics.DrawRectangle(new Pen(Color.Green, 2f), this.RcDraw);
+            if (this.kLineAct > 0)
             {
                 int iPar = 1;
-                DllClass1.LineDraw(e, kLineAct, myPoint.kActLine1, myPoint.kActLine2, myPoint.xLineAct,
-                    myPoint.yLineAct, myPoint.radAct, scaleToWin, xBegX, yBegY, xBegWin, yBegWin,
-                    myPoint.pnColor, iPar);
+                DllClass1.LineDraw(e, this.kLineAct, this.myPoint.kActLine1, this.myPoint.kActLine2, this.myPoint.xLineAct, this.myPoint.yLineAct, this.myPoint.radAct, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.pnColor, iPar);
             }
-            if (kPolyAct > 0)
+            if (this.kPolyAct > 0)
             {
                 int iParam = 8;
-                DllClass1.LabelDraw(e, kPolyAct, myPoint.nameAct, myPoint.xAct, myPoint.yAct,
-                    myPoint.iHorVer, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.brColor, iParam);
+                DllClass1.LabelDraw(e, this.kPolyAct, this.myPoint.nameAct, this.myPoint.xAct, this.myPoint.yAct, this.myPoint.iHorVer, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.brColor, iParam);
             }
-            if (kPntPlus > 0 && kPntFin == 0)
-                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntPlus, myPoint.namePnt,
-                    myPoint.xPnt, myPoint.yPnt, myPoint.zPnt, myPoint.xPntInscr, myPoint.yPntInscr,
-                    myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.nCode1,
-                    myPoint.nCode2, kSymbPnt, myPoint.numRec, myPoint.numbUser, myPoint.ixSqu, 
-                    myPoint.iySqu, myPoint.nColor, myPoint.brColor, myPoint.pnColor);
-            if (kPntFin > 0)
-                DllClass1.PointsDraw(e, myPoint.fsymbPnt, 0, kPntFin, myPoint.namePntFin,
-                    myPoint.xPntFin, myPoint.yPntFin, myPoint.zPntFin, myPoint.xPntInscr, 
-                    myPoint.yPntInscr, myPoint.iHorVerPnt, scaleToWin, xBegX, yBegY, xBegWin,
-                    yBegWin, myPoint.nCode1Fin, myPoint.nCode2Fin, kSymbPnt, myPoint.numRec, 
-                    myPoint.numbUser, myPoint.ixSqu, myPoint.iySqu, myPoint.nColor, myPoint.brColor,
-                    myPoint.pnColor);
-            if (nProcInput == 970 && kPntProj > -1)
-                DrawPntProj(e);
-            if (kLineProj > 0)
+            if (this.kPntPlus > 0 && this.kPntFin == 0)
+                DllClass1.PointsDraw(e, this.myPoint.fsymbPnt, 0, this.kPntPlus, this.myPoint.namePnt, this.myPoint.xPnt, this.myPoint.yPnt, this.myPoint.zPnt, this.myPoint.xPntInscr, this.myPoint.yPntInscr, this.myPoint.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.nCode1, this.myPoint.nCode2, this.kSymbPnt, this.myPoint.numRec, this.myPoint.numbUser, this.myPoint.ixSqu, this.myPoint.iySqu, this.myPoint.nColor, this.myPoint.brColor, this.myPoint.pnColor);
+            if (this.kPntFin > 0)
+                DllClass1.PointsDraw(e, this.myPoint.fsymbPnt, 0, this.kPntFin, this.myPoint.namePntFin, this.myPoint.xPntFin, this.myPoint.yPntFin, this.myPoint.zPntFin, this.myPoint.xPntInscr, this.myPoint.yPntInscr, this.myPoint.iHorVerPnt, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.nCode1Fin, this.myPoint.nCode2Fin, this.kSymbPnt, this.myPoint.numRec, this.myPoint.numbUser, this.myPoint.ixSqu, this.myPoint.iySqu, this.myPoint.nColor, this.myPoint.brColor, this.myPoint.pnColor);
+            if (this.nProcInput == 970 && this.kPntProj > -1)
+                this.DrawPntProj(e);
+            if (this.kLineProj > 0)
             {
                 int iPar = 2;
-                DllClass1.LineDraw(e, kLineProj, myPoint.kPr1, myPoint.kPr2, myPoint.xLinProj,
-                    myPoint.yLinProj, myPoint.RadProj, scaleToWin, xBegX, yBegY, xBegWin, yBegWin,
-                    myPoint.pnColor, iPar);
+                DllClass1.LineDraw(e, this.kLineProj, this.myPoint.kPr1, this.myPoint.kPr2, this.myPoint.xLinProj, this.myPoint.yLinProj, this.myPoint.RadProj, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.pnColor, iPar);
             }
-            if (kLineTopo > 0)
+            if (this.kLineTopo > 0)
             {
-                iParam = 1;
-                DllClass1.LineDraw(e, kLineTopo, myPoint.kl1, myPoint.kl2, myPoint.zLin, myPoint.zPik, myPoint.radLine, scaleToWin, xBegX, yBegY, xBegWin, yBegWin, myPoint.pnColor, iParam);
+                this.iParam = 1;
+                DllClass1.LineDraw(e, this.kLineTopo, this.myPoint.kl1, this.myPoint.kl2, this.myPoint.zLin, this.myPoint.zPik, this.myPoint.radLine, this.scaleToWin, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, this.myPoint.pnColor, this.iParam);
             }
-            if (nProcess == 510 || nProcess == 520 || nProcess == 530 || nProcess == 540 || nProcess == 560 || nProcess == 570)
+            if (this.nProcess == 510 || this.nProcess == 520 || this.nProcess == 530 || this.nProcess == 540 || this.nProcess == 560 || this.nProcess == 570)
             {
-                if (kRcPnt > 0)
+                if (this.kRcPnt > 0)
                 {
-                    for (int index = 1; index <= kRcPnt; ++index)
-                        graphics.FillRectangle((Brush)new SolidBrush(Color.Cyan), RcPnt[index]);
-                    if (kRcPnt == 2 && nProcess != 540)
+                    for (int index = 1; index <= this.kRcPnt; ++index)
+                        graphics.FillRectangle((Brush)new SolidBrush(Color.Cyan), this.RcPnt[index]);
+                    if (this.kRcPnt == 2 && this.nProcess != 540)
                     {
                         Point[] pointArray = new Point[3];
-                        pointArray[0].X = RcPnt[1].X;
-                        pointArray[0].Y = RcPnt[1].Y;
-                        pointArray[1].X = RcPnt[2].X;
-                        pointArray[1].Y = RcPnt[2].Y;
+                        pointArray[0].X = this.RcPnt[1].X;
+                        pointArray[0].Y = this.RcPnt[1].Y;
+                        pointArray[1].X = this.RcPnt[2].X;
+                        pointArray[1].Y = this.RcPnt[2].Y;
                         graphics.DrawLine(new Pen(Color.Gold), pointArray[0], pointArray[1]);
                     }
                 }
-                if (xNew != 0.0 && yNew != 0.0)
-                    NewPointDraw(e, sNew, xNew, yNew);
+                if (this.xNew != 0.0 && this.yNew != 0.0)
+                    this.NewPointDraw(e, this.sNew, this.xNew, this.yNew);
             }
-            if (nProcess == 550 && xNew != 0.0 && yNew != 0.0)
-                NewPointDraw(e, sNew, xNew, yNew);
-            if ((nProcess == 580 || nProcess == 600 || nProcess == 610) && kRcPnt > 0)
+            if (this.nProcess == 550 && this.xNew != 0.0 && this.yNew != 0.0)
+                this.NewPointDraw(e, this.sNew, this.xNew, this.yNew);
+            if ((this.nProcess == 580 || this.nProcess == 600 || this.nProcess == 610) && this.kRcPnt > 0)
             {
-                for (int index = 1; index <= kRcPnt; ++index)
-                    graphics.FillRectangle((Brush)new SolidBrush(Color.Cyan), RcPnt[index]);
+                for (int index = 1; index <= this.kRcPnt; ++index)
+                    graphics.FillRectangle((Brush)new SolidBrush(Color.Cyan), this.RcPnt[index]);
             }
             Cursor.Current = Cursors.Default;
         }
 
         private void panel7_MouseMove(object sender, MouseEventArgs e)
         {
-            DllClass1.WINtoXY(e.X, e.Y, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
-            if (!File.Exists(myPoint.filePoint))
+            DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out this.xCur, out this.yCur);
+            if (!File.Exists(this.myPoint.filePnt))
             {
-                panel2.Text = string.Format("{0}", (object)e.X);
-                panel4.Text = string.Format("{0}", (object)e.Y);
+                this.panel2.Text = string.Format("{0}", (object)e.X);
+                this.panel4.Text = string.Format("{0}", (object)e.Y);
             }
-            if (File.Exists(myPoint.filePoint))
+            if (File.Exists(this.myPoint.filePnt))
             {
-                panel2.Text = string.Format("{0:F3}", (object)xCur);
-                panel4.Text = string.Format("{0:F3}", (object)yCur);
+                this.panel2.Text = string.Format("{0:F3}", (object)this.xCur);
+                this.panel4.Text = string.Format("{0:F3}", (object)this.yCur);
             }
-            if (nControl == 10 && e.Button == MouseButtons.Left && isDrag)
+            if (this.nControl == 10 && e.Button == MouseButtons.Left && this.isDrag)
             {
-                ControlPaint.DrawReversibleFrame(theRectangle, BackColor, FrameStyle.Dashed);
-                endPoint = PointToScreen(new Point(e.X, e.Y));
-                if (e.X > 15 && e.X < pixWid + 10 && e.Y > 15 && e.Y < pixHei + 10)
-                    theRectangle = new Rectangle(startPoint.X, startPoint.Y, endPoint.X - startPoint.X,
-                        endPoint.Y - startPoint.Y);
-                ControlPaint.DrawReversibleFrame(theRectangle, BackColor, FrameStyle.Dashed);
+                ControlPaint.DrawReversibleFrame(this.theRectangle, this.BackColor, FrameStyle.Dashed);
+                this.endPoint = this.PointToScreen(new Point(e.X, e.Y));
+                if (e.X > 15 && e.X < this.pixWid + 10 && e.Y > 15 && e.Y < this.pixHei + 10)
+                    this.theRectangle = new Rectangle(this.startPoint.X, this.startPoint.Y, this.endPoint.X - this.startPoint.X, this.endPoint.Y - this.startPoint.Y);
+                ControlPaint.DrawReversibleFrame(this.theRectangle, this.BackColor, FrameStyle.Dashed);
             }
-            if (nControl != 40)
+            if (this.nControl != 40)
                 return;
-            kDat = 0;
+            this.kDat = 0;
             if (e.Button != MouseButtons.Left)
                 return;
             double xCur1 = 0.0;
             double yCur1 = 0.0;
             double xCur2 = 0.0;
             double yCur2 = 0.0;
-            x2Box = e.X;
-            y2Box = e.Y;
-            DllClass1.WINtoXY(x1Box, y1Box, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur1, out yCur1);
-            DllClass1.WINtoXY(x2Box, y2Box, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur2, out yCur2);
+            this.x2Box = e.X;
+            this.y2Box = e.Y;
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur1, out yCur1);
+            DllClass1.WINtoXY(this.x2Box, this.y2Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin, out xCur2, out yCur2);
             double num1 = xCur2 - xCur1;
             double num2 = yCur2 - yCur1;
-            xaCur = xminCur - num1;
-            yaCur = yminCur - num2;
-            xbCur = xmaxCur - num1;
-            ybCur = ymaxCur - num2;
-            DllClass1.CoorWin(xaCur, yaCur, xbCur, ybCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
-                out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-            if (iCond < 0)
-                iGraphic = 1;
-            panel7.Invalidate();
+            this.xaCur = this.xminCur - num1;
+            this.yaCur = this.yminCur - num2;
+            this.xbCur = this.xmaxCur - num1;
+            this.ybCur = this.ymaxCur - num2;
+            DllClass1.CoorWin(this.xaCur, this.yaCur, this.xbCur, this.ybCur, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin, out this.iCond);
+            if (this.iCond < 0)
+                this.iGraphic = 1;
+            this.panel7.Invalidate();
         }
 
         private void panel7_MouseDown(object sender, MouseEventArgs e)
         {
-            CreateGraphics();
-            x1Box = e.X;
-            y1Box = e.Y;
-            RcDraw.X = e.X;
-            RcDraw.Y = e.Y;
-            RcBox.X = e.X;
-            RcBox.Y = e.Y;
-            DllClass1.WINtoXY(x1Box, y1Box, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCur, out yCur);
-            if (nControl == 10)
+            this.CreateGraphics();
+            this.x1Box = e.X;
+            this.y1Box = e.Y;
+            this.RcDraw.X = e.X;
+            this.RcDraw.Y = e.Y;
+            this.RcBox.X = e.X;
+            this.RcBox.Y = e.Y;
+            DllClass1.WINtoXY(this.x1Box, this.y1Box, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin,
+                this.yBegWin, out this.xCur, out this.yCur);
+            if (this.nControl == 10)
             {
-                DllClass1.WINtoXY(e.X, e.Y, scaleToGeo, xBegX, yBegY, xBegWin, yBegWin, out xCurMin, out yCurMin);
-                ++kDat;
-                xDat[kDat] = e.X;
-                yDat[kDat] = e.Y;
-                yDat[kDat] = e.Y;
+                DllClass1.WINtoXY(e.X, e.Y, this.scaleToGeo, this.xBegX, this.yBegY, this.xBegWin, this.yBegWin,
+                    out this.xCurMin, out this.yCurMin);
+                ++this.kDat;
+                this.xDat[this.kDat] = e.X;
+                this.yDat[this.kDat] = e.Y;
+                this.yDat[this.kDat] = e.Y;
                 if (e.Button == MouseButtons.Left)
                 {
-                    isDrag = true;
-                    startPoint = ((Control)sender).PointToScreen(new Point(e.X, e.Y));
+                    this.isDrag = true;
+                    this.startPoint = ((Control)sender).PointToScreen(new Point(e.X, e.Y));
                 }
             }
-            if (nControl == 20)
+
+            if (this.nControl == 20)
             {
-                kDat = 0;
-                double x1 = xCur - 0.4 * (xEndX - xBegX);
-                double y1 = yCur - 0.4 * (yEndY - yBegY);
-                double x2 = xCur + 0.4 * (xEndX - xBegX);
-                double y2 = yCur + 0.4 * (yEndY - yBegY);
-                xminCur = x1;
-                yminCur = y1;
-                xmaxCur = x2;
-                ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, 
-                    out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-                if (iCond < 0)
-                    iGraphic = 1;
-                panel7.Invalidate();
+                this.kDat = 0;
+                double x1 = this.xCur - 0.4 * (this.xEndX - this.xBegX);
+                double y1 = this.yCur - 0.4 * (this.yEndY - this.yBegY);
+                double x2 = this.xCur + 0.4 * (this.xEndX - this.xBegX);
+                double y2 = this.yCur + 0.4 * (this.yEndY - this.yBegY);
+                this.xminCur = x1;
+                this.yminCur = y1;
+                this.xmaxCur = x2;
+                this.ymaxCur = y2;
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                    out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin,
+                    out this.xEndWin, out this.yEndWin, out this.iCond);
+                if (this.iCond < 0)
+                    this.iGraphic = 1;
+                this.panel7.Invalidate();
             }
-            if (nControl == 30)
+
+            if (this.nControl == 30)
             {
-                kDat = 0;
-                double num1 = xCur - 0.5 * (xEndX - xBegX);
-                double num2 = yCur - 0.5 * (yEndY - yBegY);
-                double num3 = xCur + 0.5 * (xEndX - xBegX);
-                double num4 = yCur + 0.5 * (yEndY - yBegY);
-                double x1 = num1 - 0.2 * (xEndX - xBegX);
-                double y1 = num2 - 0.2 * (yEndY - yBegY);
-                double x2 = num3 + 0.2 * (xEndX - xBegX);
-                double y2 = num4 + 0.2 * (yEndY - yBegY);
-                xminCur = x1;
-                yminCur = y1;
-                xmaxCur = x2;
-                ymaxCur = y2;
-                DllClass1.CoorWin(x1, y1, x2, y2, iWidth, iHeight, out scaleToWin, out scaleToGeo, out xBegX, 
-                    out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-                if (iCond < 0)
-                    iGraphic = 1;
-                panel7.Invalidate();
+                this.kDat = 0;
+                double num1 = this.xCur - 0.5 * (this.xEndX - this.xBegX);
+                double num2 = this.yCur - 0.5 * (this.yEndY - this.yBegY);
+                double num3 = this.xCur + 0.5 * (this.xEndX - this.xBegX);
+                double num4 = this.yCur + 0.5 * (this.yEndY - this.yBegY);
+                double x1 = num1 - 0.2 * (this.xEndX - this.xBegX);
+                double y1 = num2 - 0.2 * (this.yEndY - this.yBegY);
+                double x2 = num3 + 0.2 * (this.xEndX - this.xBegX);
+                double y2 = num4 + 0.2 * (this.yEndY - this.yBegY);
+                this.xminCur = x1;
+                this.yminCur = y1;
+                this.xmaxCur = x2;
+                this.ymaxCur = y2;
+                DllClass1.CoorWin(x1, y1, x2, y2, this.iWidth, this.iHeight, out this.scaleToWin, out this.scaleToGeo,
+                    out this.xBegX, out this.yBegY, out this.xEndX, out this.yEndY, out this.xBegWin, out this.yBegWin,
+                    out this.xEndWin, out this.yEndWin, out this.iCond);
+                if (this.iCond < 0)
+                    this.iGraphic = 1;
+                this.panel7.Invalidate();
             }
+
             if (e.Button == MouseButtons.Right)
             {
-                xminCur = xmin;
-                yminCur = ymin;
-                xmaxCur = xmax;
-                ymaxCur = ymax;
-                dx = xmax - xmin;
-                dy = ymax - ymin;
-                if (dx < 0.05 || dy < 0.05)
+                this.xminCur = this.xmin;
+                this.yminCur = this.ymin;
+                this.xmaxCur = this.xmax;
+                this.ymaxCur = this.ymax;
+                this.dx = this.xmax - this.xmin;
+                this.dy = this.ymax - this.ymin;
+                if (this.dx < 0.05 || this.dy < 0.05)
                     return;
-                DllClass1.CoorWin(xminCur, yminCur, xmaxCur, ymaxCur, iWidth, iHeight, out scaleToWin, out scaleToGeo, 
-                    out xBegX, out yBegY, out xEndX, out yEndY, out xBegWin, out yBegWin, out xEndWin, out yEndWin, out iCond);
-                if (iCond < 0)
-                    iGraphic = 1;
-                kDat = 0;
-                panel7.Invalidate();
+                DllClass1.CoorWin(this.xminCur, this.yminCur, this.xmaxCur, this.ymaxCur, this.iWidth, this.iHeight,
+                    out this.scaleToWin, out this.scaleToGeo, out this.xBegX, out this.yBegY, out this.xEndX,
+                    out this.yEndY, out this.xBegWin, out this.yBegWin, out this.xEndWin, out this.yEndWin,
+                    out this.iCond);
+                if (this.iCond < 0)
+                    this.iGraphic = 1;
+                this.kDat = 0;
+                this.panel7.Invalidate();
             }
-            if (e.Button != MouseButtons.Left || nProcess != 510 && nProcess != 520 && nProcess != 530 && nProcess != 540 && nProcess 
-                != 560 && nProcess != 570 && nProcess != 580 && nProcess != 600 && nProcess != 610)
+
+            if (e.Button != MouseButtons.Left || this.nProcess != 510 && this.nProcess != 520 && this.nProcess != 530 &&
+                this.nProcess != 540 && this.nProcess != 560 && this.nProcess != 570 && this.nProcess != 580 &&
+                this.nProcess != 600 && this.nProcess != 610)
                 return;
-            ++kDat;
-            xDat[kDat] = e.X;
-            yDat[kDat] = e.Y;
-            ++kRcPnt;
-            RcPnt[kRcPnt].X = e.X;
-            RcPnt[kRcPnt].Y = e.Y;
+            ++this.kDat;
+            this.xDat[this.kDat] = e.X;
+            this.yDat[this.kDat] = e.Y;
+            ++this.kRcPnt;
+            this.RcPnt[this.kRcPnt].X = e.X;
+            this.RcPnt[this.kRcPnt].Y = e.Y;
         }
 
         private void panel7_MouseUp(object sender, MouseEventArgs e)
@@ -1384,52 +1379,52 @@ namespace IIT_Dimlom_Geo1
                     }
                 }
             }
-            textBox7.Text = sNew;
-            textBox8.Text = string.Format("{0:F3}", (object)xNew);
-            textBox9.Text = string.Format("{0:F3}", (object)yNew);
-            textBox10.Text = "0";
-            textBox11.Text = "0";
-            kDat = 0;
-            panel7.Invalidate();
+            this.textBox7.Text = sNew;
+            this.textBox8.Text = string.Format("{0:F3}", (object)xNew);
+            this.textBox9.Text = string.Format("{0:F3}", (object)yNew);
+            this.textBox10.Text = "0";
+            this.textBox11.Text = "0";
+            this.kDat = 0;
+            this.panel7.Invalidate();
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            kRcPnt = 0;
-            iCode1 = 0;
-            iCode2 = 0;
-            zNew = 0.0;
-            if (nProcess == 580 || nProcess == 590)
+            this.kRcPnt = 0;
+            this.iCode1 = 0;
+            this.iCode2 = 0;
+            this.zNew = 0.0;
+            if (this.nProcess == 580 || this.nProcess == 590)
             {
-                if (textBox7.Text == "")
+                if (this.textBox7.Text == "")
                 {
                     int num1 = (int)MessageBox.Show("Название точки - пусто", "Проектные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (textBox8.Text == "" || textBox9.Text == "")
+                else if (this.textBox8.Text == "" || this.textBox9.Text == "")
                 {
                     int num2 = (int)MessageBox.Show("Ошибка в координатах точки - пустоты(разрывы)", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    ++kPntProj;
-                    myPoint.nameProj[kPntProj] = textBox7.Text;
-                    DllClass1.CheckText(textBox8.Text, out myPoint.xProj[kPntProj], out iCond);
+                    ++this.kPntProj;
+                    this.myPoint.nameProj[this.kPntProj] = this.textBox7.Text;
+                    DllClass1.CheckText(this.textBox8.Text, out this.myPoint.xProj[this.kPntProj], out this.iCond);
                     if (iCond < 0)
                     {
                         int num3 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
-                        DllClass1.CheckText(textBox9.Text, out myPoint.yProj[kPntProj], out iCond);
+                        DllClass1.CheckText(this.textBox9.Text, out this.myPoint.yProj[this.kPntProj], out this.iCond);
                         if (iCond < 0)
                         {
                             int num4 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
-                            if (textBox10.Text != "")
+                            if (this.textBox10.Text != "")
                             {
-                                DllClass1.CheckText(textBox10.Text, out myPoint.zProj[kPntProj], out iCond);
+                                DllClass1.CheckText(this.textBox10.Text, out this.myPoint.zProj[this.kPntProj], out this.iCond);
                                 if (iCond < 0)
                                 {
                                     int num5 = (int)MessageBox.Show("Проверьте данные", "Засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -1437,88 +1432,88 @@ namespace IIT_Dimlom_Geo1
                                 }
                             }
                             double tText = 0.0;
-                            if (textBox11.Text != "")
+                            if (this.textBox11.Text != "")
                             {
-                                DllClass1.CheckText(textBox11.Text, out tText, out iCond);
+                                DllClass1.CheckText(this.textBox11.Text, out tText, out this.iCond);
                                 if (iCond < 0)
                                 {
                                     int num6 = (int)MessageBox.Show("Проверьте данные", "Обратная засечка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     return;
                                 }
-                                myPoint.nProj1[kPntProj] = Convert.ToInt32(textBox11.Text);
+                                this.myPoint.nProj1[this.kPntProj] = Convert.ToInt32(this.textBox11.Text);
                             }
-                            myPoint.kPntProj = kPntProj;
-                            myPoint.kProjInput = kProjInput;
-                            myPoint.KeepPointProj();
-                            textBox7.Text = "";
-                            textBox8.Text = "";
-                            textBox9.Text = "";
-                            textBox10.Text = "";
-                            textBox11.Text = "";
-                            kDat = 0;
-                            kRcPnt = 0;
-                            FormLoad();
-                            panel7.Invalidate();
+                            this.myPoint.kPntProj = this.kPntProj;
+                            this.myPoint.kProjInput = this.kProjInput;
+                            this.myPoint.KeepPointProj();
+                            this.textBox7.Text = "";
+                            this.textBox8.Text = "";
+                            this.textBox9.Text = "";
+                            this.textBox10.Text = "";
+                            this.textBox11.Text = "";
+                            this.kDat = 0;
+                            this.kRcPnt = 0;
+                            this.FormLoad();
+                            this.panel7.Invalidate();
                         }
                     }
                 }
             }
-            else if (nProcess == 570)
+            else if (this.nProcess == 570)
             {
                 int num7 = (int)MessageBox.Show("Использовать кнопку 'Удалить'", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (nProcess != 560 && textBox7.Text == "")
+            else if (this.nProcess != 560 && this.textBox7.Text == "")
             {
                 int num8 = (int)MessageBox.Show("Название точки - пусто", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                sNew = textBox7.Text;
-                if (nProcess == 550 || nProcess == 560 || nProcess == 610)
+                this.sNew = this.textBox7.Text;
+                if (this.nProcess == 550 || this.nProcess == 560 || this.nProcess == 610)
                 {
-                    if (textBox8.Text == "" || textBox9.Text == "")
+                    if (this.textBox8.Text == "" || this.textBox9.Text == "")
                     {
                         int num9 = (int)MessageBox.Show("Ошибка в координатах точки - пустоты(разрывы)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
-                    DllClass1.CheckText(textBox8.Text, out xNew, out iCond);
-                    if (iCond < 0)
+                    DllClass1.CheckText(this.textBox8.Text, out this.xNew, out this.iCond);
+                    if (this.iCond < 0)
                     {
                         int num10 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
-                    DllClass1.CheckText(textBox9.Text, out yNew, out iCond);
-                    if (iCond < 0)
+                    DllClass1.CheckText(this.textBox9.Text, out this.yNew, out this.iCond);
+                    if (this.iCond < 0)
                     {
                         int num11 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
-                if (textBox10.Text != "")
+                if (this.textBox10.Text != "")
                 {
-                    DllClass1.CheckText(textBox10.Text, out zNew, out iCond);
-                    if (iCond < 0)
+                    DllClass1.CheckText(this.textBox10.Text, out this.zNew, out this.iCond);
+                    if (this.iCond < 0)
                     {
                         int num12 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                 }
                 double tText = 0.0;
-                if (textBox11.Text != "")
+                if (this.textBox11.Text != "")
                 {
-                    DllClass1.CheckText(textBox11.Text, out tText, out iCond);
-                    if (iCond < 0)
+                    DllClass1.CheckText(this.textBox11.Text, out tText, out this.iCond);
+                    if (this.iCond < 0)
                     {
                         int num13 = (int)MessageBox.Show("Проверьте данные", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
-                    int int32 = Convert.ToInt32(textBox11.Text);
+                    int int32 = Convert.ToInt32(this.textBox11.Text);
                     if (int32 > 0)
                     {
                         int num14 = 0;
-                        for (int index = 1; index <= kSymbPnt; ++index)
+                        for (int index = 1; index <= this.kSymbPnt; ++index)
                         {
-                            if (myPoint.numbUser[index] == int32)
+                            if (this.myPoint.numbUser[index] == int32)
                             {
                                 ++num14;
                                 break;
@@ -1527,28 +1522,28 @@ namespace IIT_Dimlom_Geo1
                         if (num14 == 0)
                         {
                             int num15 = (int)MessageBox.Show("Проверьте код", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            textBox7.Text = "";
-                            textBox8.Text = "";
-                            textBox9.Text = "";
-                            textBox10.Text = "0";
-                            textBox11.Text = "0";
+                            this.textBox7.Text = "";
+                            this.textBox8.Text = "";
+                            this.textBox9.Text = "";
+                            this.textBox10.Text = "0";
+                            this.textBox11.Text = "0";
                             return;
                         }
                     }
-                    iCode1 = Convert.ToInt32(textBox11.Text);
+                    this.iCode1 = Convert.ToInt32(this.textBox11.Text);
                 }
-                iCode2 = 0;
-                for (int index = 0; index <= kPntPlus; ++index)
+                this.iCode2 = 0;
+                for (int index = 0; index <= this.kPntPlus; ++index)
                 {
-                    if (nProcess != 560)
+                    if (this.nProcess != 560)
                     {
-                        if (myPoint.namePnt[index] == sNew)
+                        if (this.myPoint.namePnt[index] == this.sNew)
                         {
-                            int num16 = (int)MessageBox.Show("Дубликат имени точки (потор)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            int num16 = (int)MessageBox.Show("Дубликат имени точки (повтор)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
-                        double num17 = myPoint.xPnt[index] - xNew;
-                        double num18 = myPoint.yPnt[index] - yNew;
+                        double num17 = this.myPoint.xPnt[index] - this.xNew;
+                        double num18 = this.myPoint.yPnt[index] - this.yNew;
                         if (Math.Sqrt(num17 * num17 + num18 * num18) < 0.003)
                         {
                             int num19 = (int)MessageBox.Show("Повтор координат точки(дубликат)", "Данные точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -1556,91 +1551,91 @@ namespace IIT_Dimlom_Geo1
                         }
                     }
                 }
-                if (nProcess == 560)
+                if (this.nProcess == 560)
                 {
-                    for (int index = 0; index <= kPntPlus; ++index)
+                    for (int index = 0; index <= this.kPntPlus; ++index)
                     {
-                        if (myPoint.namePnt[index] == sNew)
+                        if (this.myPoint.namePnt[index] == this.sNew)
                         {
-                            myPoint.xPnt[index] = xNew;
-                            myPoint.yPnt[index] = yNew;
-                            myPoint.zPnt[index] = zNew;
-                            myPoint.nCode1[index] = iCode1;
-                            myPoint.nCode2[index] = iCode2;
+                            this.myPoint.xPnt[index] = this.xNew;
+                            this.myPoint.yPnt[index] = this.yNew;
+                            this.myPoint.zPnt[index] = this.zNew;
+                            this.myPoint.nCode1[index] = this.iCode1;
+                            this.myPoint.nCode2[index] = this.iCode2;
                             break;
                         }
                     }
                 }
-                DllClass1.SelPntCode(iCode1, myPoint.kSymbPnt, myPoint.numRec, myPoint.numbUser, out nCode);
+                DllClass1.SelPntCode(iCode1, this.myPoint.kSymbPnt, this.myPoint.numRec, this.myPoint.numbUser, out nCode);
                 if (nCode < 0)
                     return;
-                kMess = 0;
-                sDialog = "Ошибка кода точки: ";
-                if (nCode < 0)
+                this.kMess = 0;
+                this.sDialog = "Ошибка кода точки: ";
+                if (this.nCode < 0)
                 {
-                    ++kMess;
-                    sDialog = sDialog + sNew + ",";
+                    ++this.kMess;
+                    this.sDialog = this.sDialog + this.sNew + ",";
                 }
-                if (kMess > 0)
+                if (this.kMess > 0)
                 {
                     int num20 = (int)MessageBox.Show(sDialog, "Символы точки", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     FormLoad();
-                    panel7.Invalidate();
+                    this.panel7.Invalidate();
                 }
                 else
                 {
-                    if (nProcess != 560)
+                    if (this.nProcess != 560)
                     {
-                        ++kPntPlus;
-                        myPoint.namePnt[kPntPlus] = sNew;
-                        myPoint.xPnt[kPntPlus] = xNew;
-                        myPoint.yPnt[kPntPlus] = yNew;
-                        myPoint.zPnt[kPntPlus] = zNew;
-                        myPoint.nCode1[kPntPlus] = iCode1;
-                        myPoint.nCode2[kPntPlus] = iCode2;
-                        myPoint.xPntInscr[kPntPlus] = xNew;
-                        myPoint.yPntInscr[kPntPlus] = yNew;
-                        myPoint.iHorVerPnt[kPntPlus] = 0;
+                        ++this.kPntPlus;
+                        this.myPoint.namePnt[this.kPntPlus] = this.sNew;
+                        this.myPoint.xPnt[this.kPntPlus] = this.xNew;
+                        this.myPoint.yPnt[this.kPntPlus] = this.yNew;
+                        this.myPoint.zPnt[this.kPntPlus] = this.zNew;
+                        this.myPoint.nCode1[this.kPntPlus] = this.iCode1;
+                        this.myPoint.nCode2[this.kPntPlus] = this.iCode2;
+                        this.myPoint.xPntInscr[this.kPntPlus] = this.xNew;
+                        this.myPoint.yPntInscr[this.kPntPlus] = this.yNew;
+                        this.myPoint.iHorVerPnt[this.kPntPlus] = 0;
                     }
-                    myPoint.kPntPlus = kPntPlus;
-                    myPoint.kPntInput = kPntInput;
-                    myPoint.KeepPoint();
-                    xmin = myPoint.xmin;
-                    ymin = myPoint.ymin;
-                    xmax = myPoint.xmax;
-                    ymax = myPoint.ymax;
-                    myPoint.LoadKeepInscr(2);
-                    kPntFin = 0;
-                    if (File.Exists(myPoint.fpointFinal))
-                        File.Delete(myPoint.fpointFinal);
-                    if (File.Exists(myPoint.fInscrFin))
-                        File.Delete(myPoint.fInscrFin);
-                    if (File.Exists(myPoint.fpointInscr))
+                    this.myPoint.kPntPlus = this.kPntPlus;
+                    this.myPoint.kPntInput = this.kPntInput;
+                    this.myPoint.KeepPoint();
+                    this.xmin = this.myPoint.xmin;
+                    this.ymin = this.myPoint.ymin;
+                    this.xmax = this.myPoint.xmax;
+                    this.ymax = this.myPoint.ymax;
+                    this.myPoint.LoadKeepInscr(2);
+                    this.kPntFin = 0;
+                    if (File.Exists(this.myPoint.fpointFinal))
+                        File.Delete(this.myPoint.fpointFinal);
+                    if (File.Exists(this.myPoint.fInscrFin))
+                        File.Delete(this.myPoint.fInscrFin);
+                    if (File.Exists(this.myPoint.fpointInscr))
                     {
-                        File.Delete(myPoint.fpointInscr);
-                        FileStream output = new FileStream(myPoint.fpointInscr, FileMode.CreateNew);
+                        File.Delete(this.myPoint.fpointInscr);
+                        FileStream output = new FileStream(this.myPoint.fpointInscr, FileMode.CreateNew);
                         BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-                        binaryWriter.Write(kPntPlus);
-                        for (int index = 0; index <= kPntPlus; ++index)
+                        binaryWriter.Write(this.kPntPlus);
+                        for (int index = 0; index <= this.kPntPlus; ++index)
                         {
-                            myPoint.xPntInscr[index] = myPoint.xPnt[index];
-                            myPoint.yPntInscr[index] = myPoint.yPnt[index];
-                            myPoint.iHorVerPnt[index] = 0;
-                            binaryWriter.Write(myPoint.xPnt[index]);
-                            binaryWriter.Write(myPoint.yPnt[index]);
-                            binaryWriter.Write(myPoint.iHorVerPnt[index]);
+                            this.myPoint.xPntInscr[index] = this.myPoint.xPnt[index];
+                            this.myPoint.yPntInscr[index] = this.myPoint.yPnt[index];
+                            this.myPoint.iHorVerPnt[index] = 0;
+                            binaryWriter.Write(this.myPoint.xPnt[index]);
+                            binaryWriter.Write(this.myPoint.yPnt[index]);
+                            binaryWriter.Write(this.myPoint.iHorVerPnt[index]);
                         }
                         binaryWriter.Close();
                         output.Close();
                     }
-                    textBox7.Text = "";
-                    textBox8.Text = "";
-                    textBox9.Text = "";
-                    textBox10.Text = "";
-                    textBox11.Text = "";
-                    kDat = 0;
-                    kRcPnt = 0;
-                    panel7.Invalidate();
+                    this.textBox7.Text = "";
+                    this.textBox8.Text = "";
+                    this.textBox9.Text = "";
+                    this.textBox10.Text = "";
+                    this.textBox11.Text = "";
+                    this.kDat = 0;
+                    this.kRcPnt = 0;
+                    this.panel7.Invalidate();
                 }
             }
         }
@@ -1705,44 +1700,44 @@ namespace IIT_Dimlom_Geo1
 
         private void PointGraphicly_Click(object sender, EventArgs e)
         {
-            nProcess = 610;
-            nControl = 0;
-            kDat = 0;
-            kRcPnt = 0;
-            sNew = "";
-            xNew = 0.0;
-            yNew = 0.0;
-            zNew = 0.0;
-            iCode1 = 0;
-            iCode2 = 0;
-            groupBox7.Visible = false;
-            groupBox4.Visible = true;
-            groupBox6.Visible = false;
-            textBox1.Visible = false;
-            textBox2.Visible = false;
-            textBox3.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox6.Visible = false;
-            textBox8.ReadOnly = false;
-            textBox9.ReadOnly = false;
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            button13.Visible = false;
+            this.nProcess = 610;
+            this.nControl = 0;
+            this.kDat = 0;
+            this.kRcPnt = 0;
+            this.sNew = "";
+            this.xNew = 0.0;
+            this.yNew = 0.0;
+            this.zNew = 0.0;
+            this.iCode1 = 0;
+            this.iCode2 = 0;
+            this.groupBox7.Visible = false;
+            this.groupBox4.Visible = true;
+            this.groupBox6.Visible = false;
+            this.textBox1.Visible = false;
+            this.textBox2.Visible = false;
+            this.textBox3.Visible = false;
+            this.textBox4.Visible = false;
+            this.textBox5.Visible = false;
+            this.textBox6.Visible = false;
+            this.textBox8.ReadOnly = false;
+            this.textBox9.ReadOnly = false;
+            this.label1.Visible = false;
+            this.label2.Visible = false;
+            this.label3.Visible = false;
+            this.label4.Visible = false;
+            this.label5.Visible = false;
+            this.label6.Visible = false;
+            this.button13.Visible = false;
             int nName = 0;
-            DllClass1.NewPointName(kPntPlus, myPoint.namePnt, out nName, out sNew);
+            DllClass1.NewPointName(this.kPntPlus, this.myPoint.namePnt, out nName, out this.sNew);
             if (nName < 0)
                 return;
-            textBox7.Text = sNew;
-            textBox8.Text = "";
-            textBox9.Text = "";
-            textBox10.Text = "0";
-            textBox11.Text = "0";
-            panel7.Invalidate();
+            this.textBox7.Text = this.sNew;
+            this.textBox8.Text = "";
+            this.textBox9.Text = "";
+            this.textBox10.Text = "0";
+            this.textBox11.Text = "0";
+            this.panel7.Invalidate();
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -1764,15 +1759,15 @@ namespace IIT_Dimlom_Geo1
                 kPntSource = kPntPlus;
                 for (int index = 0; index <= kPntSource; ++index)
                 {
-                    myPoint.nameSour[index] = myPoint.namePnt[index];
-                    myPoint.xSour[index] = myPoint.xPnt[index];
-                    myPoint.ySour[index] = myPoint.yPnt[index];
-                    myPoint.zSour[index] = myPoint.zPnt[index];
-                    myPoint.nSour1[index] = myPoint.nCode1[index];
-                    myPoint.nSour2[index] = myPoint.nCode2[index];
+                    this.myPoint.nameSour[index] = this.myPoint.namePnt[index];
+                    this.myPoint.xSour[index] = this.myPoint.xPnt[index];
+                    this.myPoint.ySour[index] = this.myPoint.yPnt[index];
+                    this.myPoint.zSour[index] = this.myPoint.zPnt[index];
+                    this.myPoint.nSour1[index] = this.myPoint.nCode1[index];
+                    this.myPoint.nSour2[index] = this.myPoint.nCode2[index];
                 }
-                myPoint.kPntSource = kPntSource;
-                myPoint.KeepPntSour();
+                this.myPoint.kPntSource = this.kPntSource;
+                this.myPoint.KeepPntSour();
             }
         }
 
@@ -1800,7 +1795,7 @@ namespace IIT_Dimlom_Geo1
             }
             if (index == 0)
                 return;
-            textBox11.Text = string.Format("{0}", (object)myPoint.numbUser[index]);
+            this.textBox11.Text = string.Format("{0}", (object)myPoint.numbUser[index]);
         }
 
         private void DesitgnGraphicly_Click(object sender, EventArgs e)

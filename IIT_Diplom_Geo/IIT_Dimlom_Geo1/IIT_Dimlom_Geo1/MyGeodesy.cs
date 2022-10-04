@@ -978,7 +978,7 @@ namespace IIT_Diplom_Geo1
                     BinaryReader binaryReader = new BinaryReader((Stream)input);
                     try
                     {
-                        pathSymbol = binaryReader.ReadString();
+                        this.pathSymbol = binaryReader.ReadString();
                     }
                     catch (Exception ex)
                     {
@@ -989,13 +989,13 @@ namespace IIT_Diplom_Geo1
                         binaryReader.Close();
                         input.Close();
                     }
-                    fsymbPnt = pathSymbol + "\\brsymb.pnt";
-                    fsymbLine = pathSymbol + "\\brsymb.lin";
-                    fsymbPoly = pathSymbol + "\\brsymb.pol";
-                    fitemLine = pathSymbol + "\\britem.lin";
-                    fitemPoly = pathSymbol + "\\britem.pol";
-                    fsymbProf = pathSymbol + "\\brsymb.crs";
-                    fitemProf = pathSymbol + "\\brItem.crs";
+                    this.fsymbPnt = this.pathSymbol + "\\brsymb.pnt";
+                    this.fsymbLine = this.pathSymbol + "\\brsymb.lin";
+                    this.fsymbPoly = this.pathSymbol + "\\brsymb.pol";
+                    this.fitemLine = this.pathSymbol + "\\britem.lin";
+                    this.fitemPoly = this.pathSymbol + "\\britem.pol";
+                    this.fsymbProf = this.pathSymbol + "\\brsymb.crs";
+                    this.fitemProf = this.pathSymbol + "\\brItem.crs";
                     break;
                 }
             }
@@ -1183,14 +1183,16 @@ namespace IIT_Diplom_Geo1
             fgeoLine = minPath + "\\geodtm.lin";
             fgeoNode = minPath + "\\fgeonode.nod";
             // point files for cad
-            
+
             fsourcePnt = cadPath + "\\fsourcePnt.pnt";
-            filePnt = this.cadPath + "\\dtm.pnt";
+            //fpointInscr = fsourcePnt; ////////////////////////
+            // filePnt = this.cadPath + "\\dtm.pnt";
             filePoly = cadPath + "\\fpoly.pol";
             fileDangle = cadPath + "\\fdang.dan";
             fpointFinal = cadPath + "\\fpoint.fin";
             fInscrFin = cadPath + "\\finscr.fin";
-            fpointInscr = cadPath + "\\finscr.pnt";
+            //fpointInscr = cadPath + "\\finscr.pnt";
+            this.fpointInscr = this.cadPath + "\\finscr.pnt";
             fpointProj = cadPath + "\\fproj.pnt";
             flineProj = cadPath + "\\fproj.lin";
             ftopoProj = cadPath + "\\fproj.top";
@@ -1233,6 +1235,108 @@ namespace IIT_Diplom_Geo1
             fVertLine = cadPath + "\\fVertLine.lin";
             fGeoInscr = cadPath + "\\finscr.geo";
             flinePoly = cadPath + "\\fline.pol";
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+            this.filePoint = filePnt;
+            //this.fileLine = this.cadPath + "\\dtm.lin";
+            //this.flineTopo = this.cadPath + "\\fline.top";
+            //this.filePoly = this.cadPath + "\\fpoly.pol";
+            //this.fileDangle = this.cadPath + "\\fdang.dan";
+            //this.fileNode = this.cadPath + "\\fnode.nod";
+            //this.fsourcePnt = this.cadPath + "\\fsource.pnt";
+            //this.fpointFinal = this.cadPath + "\\fpoint.fin";
+            //this.fpointInscr = this.cadPath + "\\finscr.pnt";
+            //this.fInscrFin = this.cadPath + "\\finscr.fin";
+            //this.fpointProj = this.cadPath + "\\fproj.pnt";
+            //this.flineProj = this.cadPath + "\\fproj.lin";
+            //this.ftopoProj = this.cadPath + "\\fproj.top";
+            //this.fileItems = this.cadPath + "\\fitem.itm";
+            //this.fpolyFinal = this.cadPath + "\\fpoly.fin";
+            //this.flineFinal = this.cadPath + "\\fline.fin";
+            //this.fileAction = this.cadPath + "\\faction.act";
+            //this.factLine = this.cadPath + "\\factlin";
+            //this.factPoly = this.cadPath + "\\factpol";
+            //this.factNode = this.cadPath + "\\factnod";
+            //this.fpolyCancel = this.cadPath + "\\fcancpol";
+            //this.flineCancel = this.cadPath + "\\fcanclin";
+            //this.flineNew = this.cadPath + "\\fnewline";
+            //this.fAddInscr = this.cadPath + "\\finscr.add";
+            //this.fileContour = this.cadPath + "\\fcontrs.lin";
+            //this.fpolyNew = this.cadPath + "\\fnewpoly";
+            //this.fileHeight = this.cadPath + "\\fheight.pnt";
+            //this.fCancLine = this.cadPath + "\\fcancfin.lin";
+            //this.fCancPoly = this.cadPath + "\\fcancfin.pol";
+            //this.fileExter = this.cadPath + "\\fexter.ext";
+            //this.fblockPoly = this.cadPath + "\\fblock.pol";
+            //this.fpolyInter = this.cadPath + "\\finter.pol";
+            //this.fileInterval = this.cadPath + "\\finterv.met";
+            //this.fileSplit = this.cadPath + "\\fsplit.pnt";
+            //this.faddPoly = this.cadPath + "\\fadd.pol";
+            //this.fileZminzmax = this.cadPath + "\\fzmizma.dat";
+            //this.flistAction = this.cadPath + "\\flist.act";
+            //this.fsourcePoly = this.cadPath + "\\fsource.pol";
+            //this.ftopoParc = this.cadPath + "\\ftopo.par";
+            //this.fnodeParc = this.cadPath + "\\fnode.par";
+            //this.fpolyParc = this.cadPath + "\\fpoly.par";
+            //this.ftmpPoly = this.cadPath + "\\ftmp.pol";
+            //this.fileTrian = this.cadPath + "\\ftriang.tin";
+            //this.fnodeProj = this.cadPath + "\\fproj.nod";
+            //this.fpolyProj = this.cadPath + "\\fproj.pol";
+            //this.factLin = this.cadPath + "\\factln";
+            //this.factPol = this.cadPath + "\\factpl";
+            //this.ftrianTemp = this.cadPath + "\\ftrian.add";
+            //this.fVertex = this.cadPath + "\\fvertex.pnt";
+            //this.fPolyItem = this.cadPath + "\\fpolyItem.itm";
+            //this.fVertLine = this.cadPath + "\\fVertLine.lin";
+            //this.fGeoInscr = this.cadPath + "\\finscr.geo";
+            //this.fileGeo = this.cadPath + "\\fgeo.xyz";
+            //this.fgeoGeo = this.cadPath + "\\fgeoGeo.xyz";
+            //this.fGeoAll = this.cadPath + "\\fgeoall.pnt";
+            //this.flinePoly = this.cadPath + "\\fline.pol";
+            //this.filePoints = this.cadPath + "\\fpoint.pnt";
+            //this.flineLine = this.cadPath + "\\fline.pnt";
+            //this.fcalcPoint = this.cadPath + "\\fcalc.pnt";
+            //this.fileInscr = this.cadPath + "\\finscr.pnt";
+            //this.ftahPoint = this.cadPath + "\\ftah.pnt";
+            //this.fileDifer = this.cadPath + "\\fdifer.dif";
+            //this.fileCheck = this.cadPath + "\\fcheck.lin";
+            //this.fDoubtful = this.cadPath + "\\fdoubt.lin";
+            //this.fileSource = this.cadPath + "\\fsource.mea";
+            //this.fileForm = this.cadPath + "\\fform.lin";
+            //this.ferrorNode = this.cadPath + "\\ferror.nod";
+            //this.fpointFile = this.cadPath + "\\fpoint.add";
+            //this.flineFile = this.cadPath + "\\fline.add";
+            //this.currentGeo = this.cadPath + "\\curgeo.xyz";
+            //this.aeroStrip = this.cadPath + "\\strip.fot";
+            //this.aeroSource = this.cadPath + "\\fsource.src";
+            //this.fileAero = this.cadPath + "\\measure.mea";
+            //this.difMeasure = this.cadPath + "\\difmea.dif";
+            //this.fotoStrip = this.cadPath + "\\fstrip.fot";
+            //this.freeBlock = this.cadPath + "\\frblock.fot";
+            //this.fileDoubt = this.cadPath + "\\fdoubt.dat";
+            //this.difModel = this.cadPath + "\\difmodel.dif";
+            //this.difTarget = this.cadPath + "\\diftarg.dif";
+            //this.fotoAero = this.cadPath + "\\coord.fot";
+            //this.difStrip = this.cadPath + "\\difstrip.dif";
+            //this.difStrip1 = this.cadPath + "\\difstrip1.dif";
+            //this.difStrip2 = this.cadPath + "\\difstrip2.dif";
+            //this.aerialPhoto = this.cadPath + "\\fmono.mea";
+            //this.frelOrient = this.cadPath + "\\forient.rel";
+            //this.fileModel = this.cadPath + "\\fmodel.mod";
+            //this.curControl = this.cadPath + "\\curcontr.xyz";
+            //this.difControl = this.cadPath + "\\difcontr.dif";
+            //this.monoPhoto = this.cadPath + "\\filemono.mea";
+            //this.fallGeo = this.cadPath + "\\fallgeo.xyz";
+            //this.modRelative = this.cadPath + "\\fvzaim.mod";
+            //this.fotoModel = this.cadPath + "\\fotomod.mod";
+            //this.modelPhoto = this.cadPath + "\\fmodmono.mod";
+            //this.fGeoModel = this.cadPath + "\\fgeomod.xyz";
+            //this.stereoModel = this.cadPath + "\\fmodel.mea";
+            //this.modelStrip = this.cadPath + "\\modstrip.mod";
+            //this.fgeoPoly = this.cadPath + "\\fgeoPoly.pol";
+            //this.fgeoLine = this.cadPath + "\\geodtm.lin";
+            //this.fgeoNode = this.cadPath + "\\fgeonode.nod";
 
 
         }
@@ -3177,23 +3281,23 @@ namespace IIT_Diplom_Geo1
 
         public void KeepPointProj()
         {
-            if (File.Exists(fpointProj))
-                File.Delete(fpointProj);
-            FileStream output = new FileStream(fpointProj, FileMode.CreateNew);
+            if (File.Exists(this.fpointProj))
+                File.Delete(this.fpointProj);
+            FileStream output = new FileStream(this.fpointProj, FileMode.CreateNew);
             BinaryWriter binaryWriter = new BinaryWriter((Stream)output);
-            binaryWriter.Write(kPntProj);
-            if (kPntProj > -1)
+            binaryWriter.Write(this.kPntProj);
+            if (this.kPntProj > -1)
             {
                 for (int index = 0; index <= kPntProj; ++index)
                 {
-                    binaryWriter.Write(nameProj[index]);
-                    binaryWriter.Write(xProj[index]);
-                    binaryWriter.Write(yProj[index]);
-                    binaryWriter.Write(zProj[index]);
-                    binaryWriter.Write(nProj1[index]);
-                    binaryWriter.Write(nProj2[index]);
+                    binaryWriter.Write(this.nameProj[index]);
+                    binaryWriter.Write(this.xProj[index]);
+                    binaryWriter.Write(this.yProj[index]);
+                    binaryWriter.Write(this.zProj[index]);
+                    binaryWriter.Write(this.nProj1[index]);
+                    binaryWriter.Write(this.nProj2[index]);
                 }
-                binaryWriter.Write(kProjInput);
+                binaryWriter.Write(this.kProjInput);
             }
             binaryWriter.Close();
             output.Close();
@@ -15833,6 +15937,7 @@ namespace IIT_Diplom_Geo1
                 return;
             FileStream input = new FileStream(this.filePnt, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
+            Console.WriteLine($"Загрузка точекк из файла filePnt ={this.filePnt}");
             try
             {
                 this.kPntPlus = binaryReader.ReadInt32();
@@ -15872,6 +15977,7 @@ namespace IIT_Diplom_Geo1
                 return;
             FileStream input = new FileStream(this.fsourcePnt, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
+            Console.WriteLine($"Загрузка точекк из файла fsourcePnt ={this.fsourcePnt}");
             try
             {
                 this.kPntSource = binaryReader.ReadInt32();
@@ -15898,28 +16004,29 @@ namespace IIT_Diplom_Geo1
         public void PointLoadFin()
         {
             Cursor.Current = Cursors.WaitCursor;
-            kPntFin = 0;
-            if (!File.Exists(fpointFinal))
+            this.kPntFin = 0;
+            if (!File.Exists(this.fpointFinal))
                 return;
-            FileStream input = new FileStream(fpointFinal, FileMode.Open, FileAccess.Read);
+            FileStream input = new FileStream(this.fpointFinal, FileMode.Open, FileAccess.Read);
             BinaryReader binaryReader = new BinaryReader((Stream)input);
+            Console.WriteLine($"Загрузка точекк из файла fpointFinal ={this.fpointFinal}");
             try
             {
-                kPntFin = binaryReader.ReadInt32();
-                xmin = binaryReader.ReadDouble();
-                ymin = binaryReader.ReadDouble();
-                zmin = binaryReader.ReadDouble();
-                xmax = binaryReader.ReadDouble();
-                ymax = binaryReader.ReadDouble();
-                zmax = binaryReader.ReadDouble();
+                this.kPntFin = binaryReader.ReadInt32();
+                this.xmin = binaryReader.ReadDouble();
+                this.ymin = binaryReader.ReadDouble();
+                this.zmin = binaryReader.ReadDouble();
+                this.xmax = binaryReader.ReadDouble();
+                this.ymax = binaryReader.ReadDouble();
+                this.zmax = binaryReader.ReadDouble();
                 for (int index = 0; index <= kPntFin; ++index)
                 {
-                    namePntFin[index] = binaryReader.ReadString();
-                    xPntFin[index] = binaryReader.ReadDouble();
-                    yPntFin[index] = binaryReader.ReadDouble();
-                    zPntFin[index] = binaryReader.ReadDouble();
-                    nCode1Fin[index] = binaryReader.ReadInt32();
-                    nCode2Fin[index] = binaryReader.ReadInt32();
+                    this.namePntFin[index] = binaryReader.ReadString();
+                    this.xPntFin[index] = binaryReader.ReadDouble();
+                    this.yPntFin[index] = binaryReader.ReadDouble();
+                    this.zPntFin[index] = binaryReader.ReadDouble();
+                    this.nCode1Fin[index] = binaryReader.ReadInt32();
+                    this.nCode2Fin[index] = binaryReader.ReadInt32();
                 }
             }
             catch (Exception ex)

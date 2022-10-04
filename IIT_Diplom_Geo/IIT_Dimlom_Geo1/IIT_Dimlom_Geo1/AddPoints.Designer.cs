@@ -4,15 +4,17 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System;
+using System.ComponentModel;
 
 namespace IIT_Dimlom_Geo1
 {
     partial class AddPoints
     {
+        private IContainer components;
         /// <summary>
         /// Required designer variable.
         /// </summary>
-       
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
